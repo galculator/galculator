@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: galculator 1.1.3CVS\n"
+"Project-Id-Version: galculator 1.1.4CVS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-11-11 00:26+0200\n"
-"PO-Revision-Date: 2003-08-31 00:45+0900\n"
+"POT-Creation-Date: 2003-11-12 00:49+0900\n"
+"PO-Revision-Date: 2003-11-12 00:45+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -24,9 +24,8 @@ msgid "Select result font"
 msgstr "計算結果用フォントの選択"
 
 #: src/callbacks.c:40
-#, fuzzy
 msgid "Select stack font"
-msgstr "計算結果用フォントの選択"
+msgstr "スタック用フォントの選択"
 
 #: src/callbacks.c:41
 msgid "Select module font"
@@ -45,9 +44,8 @@ msgid "Select result font color"
 msgstr "計算結果用フォントの色の選択"
 
 #: src/callbacks.c:45
-#, fuzzy
 msgid "Select stack color"
-msgstr "背景色の選択"
+msgstr "スタック用の色の選択"
 
 #: src/callbacks.c:46
 msgid "Select background color"
@@ -104,11 +102,11 @@ msgstr "y^x"
 
 #: src/callbacks.c:424
 msgid "x<>y"
-msgstr ""
+msgstr "x<>y"
 
 #: src/callbacks.c:426
 msgid "roll"
-msgstr ""
+msgstr "roll"
 
 #: src/callbacks.c:978
 msgid "save here"
@@ -273,18 +271,18 @@ msgid "unknown number base"
 msgstr "基数が不明です"
 
 #: src/general_functions.c:378
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
 msgstr ""
-"[%s] 関数 \"display_result_set_double\" に不明な基数が渡されました。%s\n"
+"[%s] 関数 \"get_display_number_string\" に不明な基数が渡されました。%s\n"
 
 #: src/general_functions.c:399
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
 msgstr ""
-"[%s] 関数 \"display_result_set_double\" に不明な基数が渡されました。%s\n"
+"[%s] 関数 \"get_display_number_length\" に不明な基数が渡されました。%s\n"
 
 #: src/general_functions.c:515
 #, c-format
@@ -528,7 +526,7 @@ msgstr "AND"
 #: ui/scientific_buttons.glade.h:24 ui/basic_buttons.glade.h:22
 #: ui/prefs.glade.h:17
 msgid "Add"
-msgstr "加算します"
+msgstr "加算"
 
 #: ui/scientific_buttons.glade.h:25 ui/basic_buttons.glade.h:23
 msgid "Add current display value to memory"
@@ -753,7 +751,7 @@ msgstr "平方根を計算します"
 
 #: ui/scientific_buttons.glade.h:80 ui/basic_buttons.glade.h:45
 msgid "Subtract"
-msgstr "減算します"
+msgstr "減算"
 
 #: ui/scientific_buttons.glade.h:81
 msgid "Tangent"
@@ -889,7 +887,7 @@ msgstr "decimal PI 3.14159265359"
 
 #: ui/prefs.glade.h:1
 msgid " "
-msgstr ""
+msgstr " "
 
 #: ui/prefs.glade.h:2
 msgid "    "
@@ -924,9 +922,8 @@ msgid "<b>Octal</b>"
 msgstr "<b>8進</b>"
 
 #: ui/prefs.glade.h:11
-#, fuzzy
 msgid "<b>RPN</b>"
-msgstr "<b>フォント</b>"
+msgstr "<b>RPN (逆ポーランド記法)</b>"
 
 #: ui/prefs.glade.h:12
 msgid "<b>Startup</b>"
@@ -1025,14 +1022,12 @@ msgid "Open brackets"
 msgstr "開いているカッコ"
 
 #: ui/prefs.glade.h:40
-#, fuzzy
 msgid "RPN stack color:"
-msgstr "背景色:"
+msgstr "RPN スタックの色:"
 
 #: ui/prefs.glade.h:41
-#, fuzzy
 msgid "RPN stack font:"
-msgstr "計算結果のフォント:"
+msgstr "RPN スタックのフォント:"
 
 #: ui/prefs.glade.h:42
 msgid "Remember display value on exit"
@@ -1064,7 +1059,7 @@ msgstr "値:"
 
 #: ui/prefs.glade.h:49
 msgid "finite stack size (x, y, z, t)"
-msgstr ""
+msgstr "スタック・サイズを有限にする (x, y, z, t)"
 
 #: ui/prefs.glade.h:50
 msgid "fix length to a multiple of"
@@ -1076,7 +1071,7 @@ msgstr "galculator - 設定"
 
 #: ui/prefs.glade.h:52
 msgid "infinite stack size"
-msgstr ""
+msgstr "スタック・サイズを無限にする"
 
 #: ui/prefs.glade.h:53
 msgid "signed"
