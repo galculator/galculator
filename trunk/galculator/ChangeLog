@@ -1,3 +1,6 @@
+2003-11-19 Simon Floery <chimaira@users.sf.net>
+	* RPN stack is remembered. several fixes
+
 2003-10-07 Simon Floery <chimaira@users.sf.net>
 	* introduced display_result_changed. fixes sf.net bug #750519
 

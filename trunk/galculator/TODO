@@ -1,25 +1,11 @@
 1.1.4
 ~~~~~
 
-RPN stack:
-	[DONE] x, y, z, t mode
-	[DONE] infinite mode
-	save it
-	[DONE] display it
+make it look like on pre 1.1.4 screenshots (abstand über/unter result line)
 
-RPN new buttons/operations:
-	[DONE] x<>y ... swap x and y
-	[DONE] roll ... roll down the stack: x->t->z->y->x
+make it build
 
-[DONE] mr and const should push the stack.
-
-[DONE] memory save, memory read and constant retrieve set calc_entry_start_new=TRUE
-
-stack clears on basic <-> scientific
-
-[DONE] test infinite <-> finite stack size
-
-[DONE] = <-> ENT in RPN startup
+stack clears on basic <-> scientific (good or bad?)
 
 =GUI======================================
 

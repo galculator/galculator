@@ -311,8 +311,16 @@ void ui_main_window_set_dispctrl (int location)
 		ui_pack_from_xml (box, 2, dispctrl_xml, "table_dispctrl", 
 			"button_clr", TRUE, TRUE);
 	} else if (location == DISPCTRL_RIGHT) {
+		printf ("2\n");
 		box = glade_xml_get_widget (main_window_xml, "display_hbox");
 		dispctrl_xml = glade_file_open (DISPCTRL_RIGHT_GLADE_FILE, 
+			"table_dispctrl", TRUE);
+		ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl",
+			"button_clr", FALSE, FALSE);
+	} else if (location == DISPCTRL_RIGHTV) {
+		printf ("3\n");
+		box = glade_xml_get_widget (main_window_xml, "display_hbox");
+		dispctrl_xml = glade_file_open (DISPCTRL_RIGHTV_GLADE_FILE, 
 			"table_dispctrl", TRUE);
 		ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl",
 			"button_clr", FALSE, FALSE);

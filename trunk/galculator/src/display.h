@@ -89,6 +89,9 @@ void display_result_backspace ();
 void display_set_line_double (double value, int line, char *tag);
 void display_stack_create ();
 void display_stack_remove ();
-void display_stack_set_yzt (double *stack);
+void display_stack_set_yzt (char **stack);
+void display_stack_set_yzt_double (double *stack);
+char **display_stack_get_yzt ();
+double *display_stack_get_yzt_double ();
 
 #endif /* display.h */

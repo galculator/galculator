@@ -29,6 +29,8 @@
 
 #define DEFAULT_DEC_POINT '.'
 
+#define CLEARED_DISPLAY	"0"
+
 #define CONFIG_FILE_NAME ".galculator"
 
 #define MAIN_GLADE_FILE 		PACKAGE_GLADE_DIR "/main_frame.glade"
@@ -39,6 +41,7 @@
 #define FONT_GLADE_FILE 		PACKAGE_GLADE_DIR "/font.glade"
 #define COLOR_GLADE_FILE 		PACKAGE_GLADE_DIR "/color.glade"
 #define DISPCTRL_RIGHT_GLADE_FILE	PACKAGE_GLADE_DIR "/dispctrl_right.glade"
+#define DISPCTRL_RIGHTV_GLADE_FILE	PACKAGE_GLADE_DIR "/dispctrl_right_vertical.glade"
 #define DISPCTRL_BOTTOM_GLADE_FILE	PACKAGE_GLADE_DIR "/dispctrl_bottom.glade"
 
 #define MY_INFINITY_STRING "inf"
@@ -110,6 +113,7 @@ enum {
 enum {
 	DISPCTRL_NONE,
 	DISPCTRL_RIGHT,
+	DISPCTRL_RIGHTV,
 	DISPCTRL_BOTTOM,
 	NR_DISPCTRL_LOCS
 };

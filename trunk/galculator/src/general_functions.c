@@ -59,7 +59,7 @@ void error_message (char *message)
 
 void clear ()
 {
-	display_result_set (DEFAULT_REM_VALUE);
+	display_result_set (CLEARED_DISPLAY);
 }
 
 /* clear all: display ("0"), calc_tree ... */
@@ -417,10 +417,11 @@ void gfunc_f1 (GtkToggleButton *button)
 	if (current_status.notation == CS_PAN) 
 		on_operation_button_clicked (button, NULL);
 	else {
+		current_status.rpn_have_result = FALSE;
 		display_result_set_double (rpn_stack_swapxy(
 			display_result_get_double()));
 		stack = rpn_stack_get (RPN_FINITE_STACK);
-		display_stack_set_yzt (stack);
+		display_stack_set_yzt_double (stack);
 		free (stack);
 	}
 }
@@ -435,10 +436,11 @@ void gfunc_f2 (GtkToggleButton *button)
 	if (current_status.notation == CS_PAN)
 		on_operation_button_clicked (button, NULL);
 	else {
+		current_status.rpn_have_result = FALSE;
 		display_result_set_double (rpn_stack_rolldown(
 			display_result_get_double()));
 				stack = rpn_stack_get (RPN_FINITE_STACK);
-		display_stack_set_yzt (stack);
+		display_stack_set_yzt_double (stack);
 		free (stack);
 	}
 }
@@ -460,8 +462,69 @@ void display_result_changed ()
 	if ((current_status.notation == CS_RPN) && (current_status.rpn_have_result == TRUE)) {
 		rpn_stack_push (display_result_get_double ());
 		stack = rpn_stack_get (RPN_FINITE_STACK);
-		display_stack_set_yzt (stack);
+		display_stack_set_yzt_double (stack);
 		free (stack);
 		current_status.rpn_have_result = FALSE;
 	}
+}
+
+void remember_display_values()
+{
+	char 	*stack[3];
+	
+	if (prefs.rem_display == TRUE) {
+		display_result_set (prefs.rem_valuex);
+		/* for the result setting the display string is enough */
+		if (current_status.notation == CS_RPN) {
+			stack[0] = prefs.rem_valuey;
+			stack[1] = prefs.rem_valuez;
+			stack[2] = prefs.rem_valuet;
+			display_stack_set_yzt (stack);
+			/* for the stack we have to update calc_basic */
+			rpn_stack_push (string2double(stack[2]));
+			rpn_stack_push (string2double(stack[1]));
+			rpn_stack_push (string2double(stack[0]));
+		}
+	}
+}
+
+/*
+ * string2double - this function makes a string to double conversion with 
+ * 	respect to internal calculator settings. it uses axtof.
+ */
+
+double string2double (char *string)
+{
+	switch (current_status.number) {
+		case CS_DEC:
+			return atof(string);
+			break;
+		case CS_HEX:
+			return axtof(string, 16, prefs.hex_bits, 
+				prefs.hex_signed);
+			break;
+		case CS_OCT:
+			return axtof(string, 8, prefs.oct_bits, 
+				prefs.oct_signed);
+			break;
+		case CS_BIN:
+			return axtof(string, 2, prefs.bin_bits, 
+				prefs.bin_signed);
+			break;
+		default:
+			fprintf (stderr, _("[%s] unknown number base in function \"display_result_get_double\". %s\n"), PROG_NAME, BUG_REPORT);
+	}
+	return 0;
+}
+
+void update_dispctrl()
+{
+	if (prefs.vis_dispctrl == FALSE) 
+		ui_main_window_set_dispctrl (DISPCTRL_NONE);
+	else if (prefs.mode == BASIC_MODE) 
+		ui_main_window_set_dispctrl (DISPCTRL_BOTTOM);
+	else if (current_status.notation == CS_RPN)
+		ui_main_window_set_dispctrl (DISPCTRL_RIGHTV);
+	else
+		ui_main_window_set_dispctrl (DISPCTRL_RIGHT);
 }

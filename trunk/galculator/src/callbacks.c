@@ -54,13 +54,29 @@ void
 on_quit_activate                      (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
-	/* remember display's value */
-	if (prefs.rem_value) g_free (prefs.rem_value);
-	prefs.rem_value = display_result_get();
+	char 	**stack;
+	
+	/* remember some things */
 	if (prefs.mode == SCIENTIFIC_MODE) {
 		/* save number and angle mode only in scientific mode. */
 		prefs.def_number = current_status.number;
 		prefs.def_angle = current_status.angle;
+	}
+	if (prefs.rem_valuex) g_free (prefs.rem_valuex);
+	prefs.rem_valuex = display_result_get();
+	if (current_status.notation == CS_RPN) {
+		if (prefs.rem_valuey) g_free (prefs.rem_valuey);
+		if (prefs.rem_valuez) g_free (prefs.rem_valuez);
+		if (prefs.rem_valuet) g_free (prefs.rem_valuet);
+		/* we only save the visible stack */
+		stack = display_stack_get_yzt();
+		prefs.rem_valuey = g_strdup(stack[0]);
+		g_free (stack[0]);
+		prefs.rem_valuez = g_strdup(stack[1]);
+		g_free (stack[1]);
+		prefs.rem_valuet = g_strdup(stack[2]);
+		g_free (stack[2]);
+		g_free (stack);
 	}
 	prefs.def_notation = current_status.notation;
 	gtk_main_quit();
@@ -175,7 +191,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,
 		case '=':
 			rpn_stack_push (current_token.number.value);
 			stack = rpn_stack_get (RPN_FINITE_STACK);
-			display_stack_set_yzt (stack);
+			display_stack_set_yzt_double (stack);
 			free (stack);
 			current_status.rpn_have_result = FALSE;
 			/* display line isn't cleared! */
@@ -184,7 +200,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,
 			current_status.rpn_have_result = FALSE;
 			display_result_set_double (rpn_stack_operation (current_token));
 			stack = rpn_stack_get (RPN_FINITE_STACK);
-			display_stack_set_yzt (stack);
+			display_stack_set_yzt_double (stack);
 			free (stack);
 			current_status.rpn_have_result = TRUE;
 		}
@@ -384,6 +400,7 @@ on_ordinary_activate                  (GtkMenuItem     *menuitem,
 	w = glade_xml_get_widget (button_box_xml, "button_f2");
 	if (w) gtk_button_set_label ((GtkButton *)w, _(")"));
 	display_stack_remove();
+	//update_dispctrl();
 }
 
 
@@ -406,6 +423,7 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
 	w = glade_xml_get_widget (button_box_xml, "button_f2");
 	if (w) gtk_button_set_label ((GtkButton *)w, _("roll"));
 	/* stack is created by all_clear */
+	//update_dispctrl();
 }
 
 void
@@ -468,11 +486,11 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 	
 	ui_main_window_buttons_destroy ();
 	ui_main_window_buttons_create (prefs.mode);
-	ui_main_window_set_dispctrl (DISPCTRL_BOTTOM);
-
+	//update_dispctrl();
+	
 	display_update_modules();
 
-	/* In basuc mode:
+	/* In basic mode:
 	 *	- number base is always decimal.
 	 *	- ignore angle, as there are no angle operations in basic mode.
 	 *	- notation is fully functional.
@@ -509,7 +527,7 @@ on_scientific_mode_activate (GtkMenuItem *menuitem,
 
 	ui_main_window_buttons_destroy ();
 	ui_main_window_buttons_create (prefs.mode);
-	ui_main_window_set_dispctrl (DISPCTRL_RIGHT);
+	//update_dispctrl();
 	
 	display_update_modules();
 	display_module_number_activate (prefs.def_number);
