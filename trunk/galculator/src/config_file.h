@@ -59,32 +59,32 @@
 
 typedef struct {
 	// 1st pref page
-	char 					*bkg_color;		// gdk_color_parse
-	char					*result_font; 	// pango_font_description_from_string
-	char 					*result_color;
-	char					*mod_font;
-	char 					*act_mod_color;
-	char 					*inact_mod_color;
-	gboolean				vis_number;
-	gboolean				vis_angle;
-	gboolean				vis_notation;
-	gboolean				vis_arith;
-	gboolean				vis_bracket;
+	char 		*bkg_color;		// gdk_color_parse
+	char		*result_font; 	// pango_font_description_from_string
+	char 		*result_color;
+	char		*mod_font;
+	char 		*act_mod_color;
+	char 		*inact_mod_color;
+	gboolean	vis_number;
+	gboolean	vis_angle;
+	gboolean	vis_notation;
+	gboolean	vis_arith;
+	gboolean	vis_bracket;
 	// 2nd pref page
-	gboolean				custom_button_font;
-	char 					*button_font;		// buttons
-	int						button_width;
-	int						button_height;
-	gboolean				vis_funcs;
-	gboolean				vis_logic;
-	gboolean				vis_dispctrl;
+	gboolean	custom_button_font;
+	char 		*button_font;		// buttons
+	int		button_width;
+	int		button_height;
+	gboolean	vis_funcs;
+	gboolean	vis_logic;
+	gboolean	vis_dispctrl;
 	// 3rd pref page
-	int						def_number;		// in accordance with enums in
-	int						def_angle;		// galculator.h
-	int						def_notation;
-	gboolean				rem_display;
-	char					*rem_value;		// done as string
-	gboolean				show_menu;
+	int		def_number;		// in accordance with enums in
+	int		def_angle;		// galculator.h
+	int		def_notation;
+	gboolean	rem_display;
+	char		*rem_value;		// done as string
+	gboolean	show_menu;
 } s_preferences;
 
 // default value ?

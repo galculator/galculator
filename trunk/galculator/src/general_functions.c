@@ -413,8 +413,7 @@ void update_all (s_preferences prefs)
 	show_menubar_item = (GtkCheckMenuItem *) glade_xml_get_widget (main_window_xml, "show_menubar1");
 	gtk_check_menu_item_set_active (show_menubar_item, prefs.show_menu);
 	
-	
-	// we need just a widget of the main window. take show_menubar_item as its there.
+		// we need just a widget of the main window. take show_menubar_item as its there.
 	gtk_window_resize ((GtkWindow *)gtk_widget_get_toplevel((GtkWidget *)show_menubar_item), 1, 1);
 }
 

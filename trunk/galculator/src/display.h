@@ -24,13 +24,19 @@
 #define DISPLAY_RESULT_PRECISION	12
 #define DISPLAY_RESULT_E_LENGTH		3
 
-#define DISPLAY_MARK_NUMBER			"mark_number"
-#define DISPLAY_MARK_ANGLE			"mark_angle"
+#define DISPLAY_MARK_NUMBER		"mark_number"
+#define DISPLAY_MARK_ANGLE		"mark_angle"
 #define DISPLAY_MARK_NOTATION		"mark_notation"
-#define DISPLAY_MARK_ARITH			"mark_arith"
+#define DISPLAY_MARK_ARITH		"mark_arith"
 #define DISPLAY_MARK_BRACKET		"mark_bracket"
 
 #define DISPLAY_MODULES_DELIM 		"   "
+
+enum {
+	DISPLAY_RESULT_LINE,
+	DISPLAY_MODULES_LINE,
+	DISPLAY_NR_LINES
+};
 
 enum {
 	DISPLAY_OPT_NUMBER,
@@ -65,9 +71,9 @@ int display_module_bracket_label_update (int option);
 void display_result_add_digit (char digit);
 void display_result_set (char *string_value);
 void display_result_set_double (double value);
-void display_result_set_angle (double value);
+void display_result_set_radiant (double value);
 char *display_result_get ();
-double display_result_get_as_double ();
+double display_result_get_double ();
 double display_result_get_rad_angle ();
 void display_append_e ();
 void display_result_toggle_sign ();

@@ -356,58 +356,59 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Main display</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">The main display.</atkproperty>
-			    <atkrelation target="tbutton_inv" type="controlled-by"/>
-			    <atkrelation target="tbutton_hyp" type="controlled-by"/>
-			    <atkrelation target="button_xor" type="controlled-by"/>
-			    <atkrelation target="button_tan" type="controlled-by"/>
-			    <atkrelation target="button_sqrt" type="controlled-by"/>
-			    <atkrelation target="button_sq" type="controlled-by"/>
-			    <atkrelation target="button_sin" type="controlled-by"/>
-			    <atkrelation target="button_sign" type="controlled-by"/>
-			    <atkrelation target="button_reci" type="controlled-by"/>
-			    <atkrelation target="button_pow" type="controlled-by"/>
-			    <atkrelation target="button_point" type="controlled-by"/>
-			    <atkrelation target="button_plus" type="controlled-by"/>
-			    <atkrelation target="button_paropen" type="controlled-by"/>
-			    <atkrelation target="button_parclose" type="controlled-by"/>
-			    <atkrelation target="button_or" type="controlled-by"/>
-			    <atkrelation target="button_mult" type="controlled-by"/>
-			    <atkrelation target="button_MS" type="controlled-by"/>
-			    <atkrelation target="button_MR" type="controlled-by"/>
-			    <atkrelation target="button_Mplus" type="controlled-by"/>
-			    <atkrelation target="button_mod" type="controlled-by"/>
-			    <atkrelation target="button_minus" type="controlled-by"/>
-			    <atkrelation target="button_lsh" type="controlled-by"/>
-			    <atkrelation target="button_log" type="controlled-by"/>
-			    <atkrelation target="button_ln" type="controlled-by"/>
-			    <atkrelation target="button_fac" type="controlled-by"/>
-			    <atkrelation target="button_f" type="controlled-by"/>
-			    <atkrelation target="button_enter" type="controlled-by"/>
-			    <atkrelation target="button_ee" type="controlled-by"/>
-			    <atkrelation target="button_const" type="controlled-by"/>
-			    <atkrelation target="button_e" type="controlled-by"/>
-			    <atkrelation target="button_div" type="controlled-by"/>
-			    <atkrelation target="button_d" type="controlled-by"/>
-			    <atkrelation target="button_cos" type="controlled-by"/>
-			    <atkrelation target="button_cmp" type="controlled-by"/>
-			    <atkrelation target="button_clr" type="controlled-by"/>
-			    <atkrelation target="button_c" type="controlled-by"/>
-			    <atkrelation target="button_backspace" type="controlled-by"/>
-			    <atkrelation target="button_b" type="controlled-by"/>
-			    <atkrelation target="button_and" type="controlled-by"/>
-			    <atkrelation target="button_allclr" type="controlled-by"/>
-			    <atkrelation target="button_a" type="controlled-by"/>
-			    <atkrelation target="button_9" type="controlled-by"/>
-			    <atkrelation target="button_8" type="controlled-by"/>
-			    <atkrelation target="button_7" type="controlled-by"/>
-			    <atkrelation target="button_6" type="controlled-by"/>
-			    <atkrelation target="button_5" type="controlled-by"/>
-			    <atkrelation target="button_4" type="controlled-by"/>
-			    <atkrelation target="button_3" type="controlled-by"/>
-			    <atkrelation target="button_2" type="controlled-by"/>
 			    <atkrelation target="scrolledwindow1" type="member-of"/>
+			    <atkrelation target="button_2" type="controlled-by"/>
+			    <atkrelation target="button_3" type="controlled-by"/>
+			    <atkrelation target="button_4" type="controlled-by"/>
+			    <atkrelation target="button_5" type="controlled-by"/>
+			    <atkrelation target="button_6" type="controlled-by"/>
+			    <atkrelation target="button_7" type="controlled-by"/>
+			    <atkrelation target="button_8" type="controlled-by"/>
+			    <atkrelation target="button_9" type="controlled-by"/>
+			    <atkrelation target="button_a" type="controlled-by"/>
+			    <atkrelation target="button_allclr" type="controlled-by"/>
+			    <atkrelation target="button_and" type="controlled-by"/>
+			    <atkrelation target="button_b" type="controlled-by"/>
+			    <atkrelation target="button_backspace" type="controlled-by"/>
+			    <atkrelation target="button_c" type="controlled-by"/>
+			    <atkrelation target="button_clr" type="controlled-by"/>
+			    <atkrelation target="button_cmp" type="controlled-by"/>
+			    <atkrelation target="button_cos" type="controlled-by"/>
+			    <atkrelation target="button_d" type="controlled-by"/>
+			    <atkrelation target="button_div" type="controlled-by"/>
+			    <atkrelation target="button_e" type="controlled-by"/>
+			    <atkrelation target="button_const" type="controlled-by"/>
+			    <atkrelation target="button_ee" type="controlled-by"/>
+			    <atkrelation target="button_enter" type="controlled-by"/>
+			    <atkrelation target="button_f" type="controlled-by"/>
+			    <atkrelation target="button_fac" type="controlled-by"/>
+			    <atkrelation target="button_ln" type="controlled-by"/>
+			    <atkrelation target="button_log" type="controlled-by"/>
+			    <atkrelation target="button_lsh" type="controlled-by"/>
+			    <atkrelation target="button_minus" type="controlled-by"/>
+			    <atkrelation target="button_mod" type="controlled-by"/>
+			    <atkrelation target="button_Mplus" type="controlled-by"/>
+			    <atkrelation target="button_MR" type="controlled-by"/>
+			    <atkrelation target="button_MS" type="controlled-by"/>
+			    <atkrelation target="button_mult" type="controlled-by"/>
+			    <atkrelation target="button_or" type="controlled-by"/>
+			    <atkrelation target="button_parclose" type="controlled-by"/>
+			    <atkrelation target="button_paropen" type="controlled-by"/>
+			    <atkrelation target="button_plus" type="controlled-by"/>
+			    <atkrelation target="button_point" type="controlled-by"/>
+			    <atkrelation target="button_pow" type="controlled-by"/>
+			    <atkrelation target="button_reci" type="controlled-by"/>
+			    <atkrelation target="button_sign" type="controlled-by"/>
+			    <atkrelation target="button_sin" type="controlled-by"/>
+			    <atkrelation target="button_sq" type="controlled-by"/>
+			    <atkrelation target="button_sqrt" type="controlled-by"/>
+			    <atkrelation target="button_tan" type="controlled-by"/>
+			    <atkrelation target="button_xor" type="controlled-by"/>
+			    <atkrelation target="tbutton_hyp" type="controlled-by"/>
+			    <atkrelation target="tbutton_inv" type="controlled-by"/>
 			  </accessibility>
 			  <signal name="button_press_event" handler="on_textview_button_press_event" last_modification_time="Sun, 11 May 2003 10:30:15 GMT"/>
+			  <signal name="selection_received" handler="on_textview_selection_received" last_modification_time="Wed, 18 Jun 2003 19:49:38 GMT"/>
 			</widget>
 		      </child>
 		    </widget>
@@ -447,8 +448,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Clear all</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Resets the calculator.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_dispctrl" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Wed, 18 Sep 2002 08:11:21 GMT"/>
 			  <accelerator key="Delete" modifiers="GDK_CONTROL_MASK" signal="clicked"/>
@@ -476,8 +477,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Clear</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Clears the display.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_dispctrl" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Wed, 18 Sep 2002 08:11:11 GMT"/>
 			  <accelerator key="Delete" modifiers="0" signal="clicked"/>
@@ -506,8 +507,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Backspace</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Removes the last digit from the display.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_dispctrl" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Tue, 10 Sep 2002 09:25:36 GMT"/>
 			  <accelerator key="BackSpace" modifiers="0" signal="clicked"/>
@@ -576,8 +577,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Hyperbolic mode</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Switches to hyperbolic mode.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_tbutton_fmod_clicked" last_modification_time="Sun, 08 Sep 2002 13:24:02 GMT"/>
 			  <accelerator key="h" modifiers="0" signal="clicked"/>
@@ -604,8 +605,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Factorial</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Computes the factorial.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Fri, 06 Sep 2002 16:11:04 GMT"/>
 			  <accelerator key="exclam" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
@@ -632,8 +633,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Cosine</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Computes the cosine.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Thu, 14 Nov 2002 22:52:29 GMT"/>
 			  <accelerator key="o" modifiers="0" signal="clicked"/>
@@ -660,8 +661,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Tangent</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Computes the tangent.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Thu, 14 Nov 2002 22:52:35 GMT"/>
 			  <accelerator key="t" modifiers="0" signal="clicked"/>
@@ -688,8 +689,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Square</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Computes the square.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Fri, 06 Sep 2002 16:11:04 GMT"/>
 			  <accelerator key="q" modifiers="0" signal="clicked"/>
@@ -716,8 +717,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Square root</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Computes the square root.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Tue, 17 Sep 2002 09:08:28 GMT"/>
 			  <accelerator key="r" modifiers="0" signal="clicked"/>
@@ -744,8 +745,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Logarithm (base: 10)</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Computes the logarithm (with base 10).</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Fri, 06 Sep 2002 16:11:04 GMT"/>
 			  <accelerator key="l" modifiers="0" signal="clicked"/>
@@ -772,8 +773,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Natural logarithm (base: e)</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Computes the natural logarithm (with base of Euler's number).</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Fri, 06 Sep 2002 16:11:04 GMT"/>
 			  <accelerator key="n" modifiers="0" signal="clicked"/>
@@ -800,8 +801,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Enter exponent (base: 10)</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Set display into &quot;enter exponent&quot; mode (base of 10).</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Tue, 17 Sep 2002 09:13:28 GMT"/>
 			  <accelerator key="e" modifiers="GDK_CONTROL_MASK | GDK_MOD1_MASK" signal="clicked"/>
@@ -825,8 +826,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">constants</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">gives a menu to select constants from</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_constant_button_clicked" last_modification_time="Sun, 08 Sep 2002 13:22:41 GMT"/>
 			  <accelerator key="e" modifiers="GDK_MOD1_MASK" signal="clicked"/>
@@ -900,8 +901,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Inverse mode</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Switches to inverse mode.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_tbutton_fmod_clicked" last_modification_time="Sun, 08 Sep 2002 13:24:02 GMT"/>
 			  <accelerator key="i" modifiers="0" signal="clicked"/>
@@ -928,8 +929,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Sine</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Computes the sine.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Thu, 14 Nov 2002 22:52:25 GMT"/>
 			  <accelerator key="s" modifiers="0" signal="clicked"/>
@@ -956,8 +957,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Power</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Computes the power.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:38:14 GMT"/>
 			  <accelerator key="asciicircum" modifiers="0" signal="clicked"/>
@@ -983,8 +984,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Reciprocal</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Computes the reciprocal.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_func" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Fri, 06 Sep 2002 16:11:04 GMT"/>
 			  <accelerator key="backslash" modifiers="0" signal="clicked"/>
@@ -1049,8 +1050,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Logical AND</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the logical AND operator.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_bin" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:38:19 GMT"/>
 			  <accelerator key="ampersand" modifiers="0" signal="clicked"/>
@@ -1076,8 +1077,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Logical OR</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the logical OR operator.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_bin" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:38:24 GMT"/>
 			  <accelerator key="bar" modifiers="0" signal="clicked"/>
@@ -1103,8 +1104,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Logical XOR</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the logical exclusive OR operator.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_bin" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:38:29 GMT"/>
 			  <accelerator key="x" modifiers="0" signal="clicked"/>
@@ -1131,8 +1132,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Bitwise complement</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the bitwise complement operator.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_bin" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Fri, 15 Nov 2002 13:09:55 GMT"/>
 			  <accelerator key="asciitilde" modifiers="0" signal="clicked"/>
@@ -1158,8 +1159,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Hexadecimal 0xC</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the hexadecimal digit C.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_bin" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 			  <accelerator key="c" modifiers="0" signal="clicked"/>
@@ -1186,8 +1187,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Hexadecimal 0xD</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the hexadecimal digit D.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_bin" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 			  <accelerator key="d" modifiers="0" signal="clicked"/>
@@ -1214,8 +1215,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Hexadecimal 0xE</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the hexadecimal digit E.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_bin" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 			  <accelerator key="e" modifiers="0" signal="clicked"/>
@@ -1242,8 +1243,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Hexadecimal 0xF</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the hexadecimal digit F.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_bin" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 			  <accelerator key="f" modifiers="0" signal="clicked"/>
@@ -1270,8 +1271,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Hexadecimal 0xB</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the hexadecimal digit B.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_bin" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 			  <accelerator key="b" modifiers="0" signal="clicked"/>
@@ -1298,8 +1299,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Hexadecimal 0xA</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the hexadecimal digit A.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_bin" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 			  <accelerator key="a" modifiers="0" signal="clicked"/>
@@ -1345,8 +1346,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">7</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the digit 7.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:11 GMT"/>
 			  <accelerator key="7" modifiers="0" signal="clicked"/>
@@ -1373,8 +1374,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">8</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the digit 8.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:15 GMT"/>
 			  <accelerator key="8" modifiers="0" signal="clicked"/>
@@ -1400,8 +1401,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">9</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the digit 9.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:19 GMT"/>
 			  <accelerator key="9" modifiers="0" signal="clicked"/>
@@ -1428,8 +1429,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Divide</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the division operator.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:37 GMT"/>
 			  <accelerator key="KP_Divide" modifiers="0" signal="clicked"/>
@@ -1456,8 +1457,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Modulus</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the modulus operator.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:41 GMT"/>
 			  <accelerator key="percent" modifiers="0" signal="clicked"/>
@@ -1482,8 +1483,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">4</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the digit 4.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:04:40 GMT"/>
 			  <accelerator key="KP_4" modifiers="0" signal="clicked"/>
@@ -1509,8 +1510,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">5</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the digit 5.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:04:55 GMT"/>
 			  <accelerator key="5" modifiers="0" signal="clicked"/>
@@ -1538,8 +1539,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Decimal point</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the decimal point.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 			  <accelerator key="comma" modifiers="0" signal="clicked"/>
@@ -1567,8 +1568,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">6</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the digit 6.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:06 GMT"/>
 			  <accelerator key="6" modifiers="0" signal="clicked"/>
@@ -1594,8 +1595,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">3</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the digit 3.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:03:06 GMT"/>
 			  <accelerator key="3" modifiers="0" signal="clicked"/>
@@ -1622,8 +1623,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Minus</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the minus operator.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:27 GMT"/>
 			  <accelerator key="KP_Subtract" modifiers="0" signal="clicked"/>
@@ -1649,8 +1650,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Plus</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the plus operator.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:21 GMT"/>
 			  <accelerator key="KP_Add" modifiers="0" signal="clicked"/>
@@ -1677,8 +1678,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Left shift</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the left-shift operator.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:48 GMT"/>
 			  <accelerator key="less" modifiers="0" signal="clicked"/>
@@ -1703,8 +1704,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Enter</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Calculates the complete equation and displays the result.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:53 GMT"/>
 			  <accelerator key="Return" modifiers="0" signal="clicked"/>
@@ -1732,8 +1733,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Change sign</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Changes the sign of the current display value.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Sun, 15 Sep 2002 14:50:16 GMT"/>
 			</widget>
@@ -1757,8 +1758,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Multiply</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the multiplication operator.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:32 GMT"/>
 			  <accelerator key="KP_Multiply" modifiers="0" signal="clicked"/>
@@ -1784,8 +1785,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">2</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters the digit 2.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:02:55 GMT"/>
 			  <accelerator key="2" modifiers="0" signal="clicked"/>
@@ -1810,8 +1811,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Memory add</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Adds the current display value to memory.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_mplus_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:23:58 GMT"/>
 
@@ -1880,8 +1881,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Memory read</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Reads the value saved in memory.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_mr_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:04:30 GMT"/>
 
@@ -1950,8 +1951,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Memory save</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Saves the current display value into memory.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_ms_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:23:49 GMT"/>
 
@@ -2021,8 +2022,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Close paren</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters a closing paren.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:38:06 GMT"/>
 			  <accelerator key="parenright" modifiers="0" signal="clicked"/>
@@ -2047,8 +2048,8 @@
 			  <accessibility>
 			    <atkproperty name="AtkObject::accessible_name" translatable="yes">Open paren</atkproperty>
 			    <atkproperty name="AtkObject::accessible_description" translatable="yes">Enters an opening paren.</atkproperty>
-			    <atkrelation target="textview" type="controller-for"/>
 			    <atkrelation target="table_standard" type="member-of"/>
+			    <atkrelation target="textview" type="controller-for"/>
 			  </accessibility>
 			  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:38:01 GMT"/>
 			  <accelerator key="parenleft" modifiers="0" signal="clicked"/>

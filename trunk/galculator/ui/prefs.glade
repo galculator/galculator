@@ -500,7 +500,6 @@
 				  <property name="visible">True</property>
 				  <property name="homogeneous">True</property>
 				  <property name="spacing">0</property>
-				  <signal name="button_release_event" handler="on_hbox15_button_release_event" last_modification_time="Mon, 09 Jun 2003 23:50:26 GMT"/>
 
 				  <child>
 				    <widget class="GtkLabel" id="label49">
