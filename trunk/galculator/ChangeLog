@@ -1,3 +1,7 @@
+2004-03-12 Simon Floery <chimaira@users.sf.net>
+	* fixed general functions (brackets, rpn roll-swap) bug
+	* pt_BR.po update
+
 ########################################
 # 2003-03-11 galculator 1.2.0 released #
 ########################################
