@@ -557,6 +557,7 @@
 		  <property name="invisible_char" translatable="yes">*</property>
 		  <property name="activates_default">False</property>
 		  <signal name="activate" handler="on_formula_entry_activate" last_modification_time="Sat, 31 Jan 2004 17:31:02 GMT"/>
+		  <signal name="changed" handler="on_formula_entry_changed" last_modification_time="Fri, 27 Feb 2004 08:32:03 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">6</property>

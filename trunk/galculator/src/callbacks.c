@@ -141,6 +141,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 	s_cb_token		current_token;
 	double			return_value, *stack;
 	GtkWidget		*tbutton;
+	char 			*operation_string;
 	
 	if (gtk_toggle_button_get_active(button) == FALSE) return;
 	button_activation (button);
@@ -148,8 +149,17 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 	if (current_status.notation == CS_FORMULA) {
 		if (strcmp (gtk_widget_get_name ((GtkWidget *) button), "button_enter") == 0)
 			ui_formula_entry_activate();
-		else ui_formula_entry_insert (
-			g_object_get_data (G_OBJECT (button), "display_string"));
+		/* as long as we don't support string operation ids, we take
+		 * operation char. take this later on:
+		 * else ui_formula_entry_insert (
+		 *	g_object_get_data (G_OBJECT (button), "display_string"));
+		 */
+		else {
+			operation_string = g_strdup_printf ("%c", (int) g_object_get_data (
+				G_OBJECT (button), "operation"));
+			ui_formula_entry_insert (operation_string);
+			g_free(operation_string);
+		}
 		return;
 	}
 	

@@ -173,8 +173,6 @@ int main (int argc, char *argv[])
 	
 	gtk_window_resize ((GtkWindow *)main_window, 1, 1);
 	
-	ui_formula_entry_state(FALSE);
-	
 	gtk_main ();
 
 	/* save changes to file */
