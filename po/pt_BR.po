@@ -11,17 +11,16 @@ msgstr ""
 "Project-Id-Version: galculator 1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-05-23 17:20+0300\n"
-"PO-Revision-Date: 2004-04-11 17:14-0400\n"
+"PO-Revision-Date: 2004-06-29 15:18-0400\n"
 "Last-Translator: Francisco Petrucio <fpetrucio@mat.ufal.br>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-15\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: galculator.desktop.in.h:1
-#, fuzzy
 msgid "Perform simple and scientific calculations"
-msgstr "Calculadora Científica"
+msgstr "Executa cálculos simples e científicos"
 
 #: src/callbacks.c:40
 msgid "Select result font"
@@ -381,6 +380,7 @@ msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
 "doing? If not: %s\n"
 msgstr ""
+"[%s] parser flex foi chamado mais que %i vezes. Você sabe o que está fazendo? Se não: %s\n"
 
 #: ui/main_frame.glade.h:1 ui/scientific_buttons.glade.h:5
 #: ui/basic_buttons.glade.h:5 ui/prefs.glade.h:3
@@ -409,7 +409,7 @@ msgstr "Controle do Mostrador"
 
 #: ui/main_frame.glade.h:7
 msgid "Formula entry text field - enter string expression to compute here."
-msgstr ""
+msgstr "Campo texto de entrada de fórmula - informe a expressão alfanumérica a ser computada aqui."
 
 #: ui/main_frame.glade.h:8 ui/prefs.glade.h:31
 msgid "Functions"
@@ -417,7 +417,7 @@ msgstr "Funções"
 
 #: ui/main_frame.glade.h:9
 msgid "Logical"
-msgstr "Lógico"
+msgstr "Lógicos"
 
 #: ui/main_frame.glade.h:10
 msgid "Notation _modes"
@@ -445,7 +445,7 @@ msgstr "Modo _Básico"
 
 #: ui/main_frame.glade.h:17
 msgid "_Binary"
-msgstr "_Binário"
+msgstr "_Binária"
 
 #: ui/main_frame.glade.h:18
 msgid "_Calculator"
@@ -505,7 +505,7 @@ msgstr "_Sair"
 
 #: ui/main_frame.glade.h:32
 msgid "_Radians"
-msgstr "_Radianos"
+msgstr "_Radiano"
 
 #: ui/main_frame.glade.h:33
 msgid "_Reverse Polish (RPN)"
@@ -799,11 +799,11 @@ msgstr "Raiz quadrada"
 
 #: ui/scientific_buttons.glade.h:79 ui/basic_buttons.glade.h:44
 msgid "Subtract"
-msgstr "Subtração"
+msgstr "Subtrai"
 
 #: ui/scientific_buttons.glade.h:80 ui/basic_buttons.glade.h:45
 msgid "Sum"
-msgstr ""
+msgstr "Soma"
 
 #: ui/scientific_buttons.glade.h:81
 msgid "Tangent"
@@ -1039,7 +1039,7 @@ msgstr "Mostrador"
 
 #: ui/prefs.glade.h:30
 msgid "Expression:"
-msgstr ""
+msgstr "Expressão:"
 
 #: ui/prefs.glade.h:32
 msgid "General"
@@ -1168,14 +1168,15 @@ msgstr "Reinicializa a calculadora (limpa tudo)"
 #~ msgid ""
 #~ "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
 #~ msgstr ""
-#~ "[%s] base trigonomÃ©trica desconhecida na funÃ§Ã£o "
+#~ "[%s] base trigonomÃƒÂ©trica desconhecida na funÃƒÂ§ÃƒÂ£o "
 #~ "\"display_result_set_angle\". %s\n"
 
 #~ msgid ""
 #~ "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
 #~ msgstr ""
-#~ "[%s] base trigonomÃ©trica desconhecida na funÃ§Ã£o "
+#~ "[%s] base trigonomÃƒÂ©trica desconhecida na funÃƒÂ§ÃƒÂ£o "
 #~ "\"display_result_get_rad_angle\". %s\n"
 
 #~ msgid "_Show menu bar"
 #~ msgstr "_Mostrar barra do menu"
+
