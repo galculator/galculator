@@ -42,13 +42,14 @@
 #define gettext_noop(String) String
 #define N_(String) gettext_noop (String)
 
-char 	*operator_precedence[] = {"=)", "+-&|x", "*/<>%", "^", "(", "%", NULL};
-char 	*right_associative = "^";
+static char 	*operator_precedence[] = {"=)", "+-&|x", "*/<>%", "^", "(", "%", NULL};
+static char 	*right_associative = "^";
 
-s_alg_stack	*current_stack=NULL;
-GArray		*rpn_stack;
-GPtrArray	*stackstack;
-int		alg_debug = 0, rpn_debug = 0;
+static s_alg_stack	*current_stack=NULL;
+static GArray		*rpn_stack;
+static GPtrArray	*stackstack;
+static int		rpn_stack_size;
+static int		alg_debug = 0, rpn_debug = 0;
 
 /*
  * GENERAL STUFF
@@ -291,23 +292,53 @@ void alg_free ()
  * RPN
  */
 
-void rpn_init (int debug_level)
+/* rpn_init. initializes everything from stack to sizes and debug.
+ */
+
+void rpn_init (int size, int debug_level)
 {
 	rpn_stack = g_array_new (FALSE, FALSE, sizeof(double));
-	rpn_debug = debug_level;
+	rpn_stack_size = 3;//size;
+	rpn_debug = 2;//debug_level;
 }
+
+/* rpn_stack_debug_print. printf stack to stderr
+ */
+
+void rpn_stack_debug_print ()
+{
+	int 	counter;
+	double	*stack;
+	
+	stack = rpn_stack_get (rpn_stack_size);
+	for (counter = 0; counter < MAX(rpn_stack_size, (int)rpn_stack->len); counter++)
+		fprintf (stderr, "[%s]\t %02i: %f\n", PROG_NAME, counter, stack[counter]);
+	free (stack);
+}
+
+/* rpn_stack_push. new values is prepended! then, if finite stack size, 
+ * remove last one. in the end some debugs.
+ */
 
 void rpn_stack_push (double number)
 {
-	rpn_stack = g_array_append_val (rpn_stack, number);
+	rpn_stack = g_array_prepend_val (rpn_stack, number);
+	if (((int)rpn_stack->len > rpn_stack_size) && (rpn_stack_size > 0))
+		rpn_stack = g_array_remove_index (rpn_stack, rpn_stack_size);
 	if (rpn_debug > 0) fprintf (stderr, "[%s] RPN stack size is %i.\n", 
-		PROG_NAME, rpn_stack->len);
+		PROG_NAME, (int)rpn_stack->len);
+	if (rpn_debug > 1) rpn_stack_debug_print();
 }
+
+/* rpn_stack_operation. does some operation. This is also the place where the
+ * stack is popped!
+ */
 
 double rpn_stack_operation (s_cb_token current_token)
 {
 	double	return_value;
 	double	left_hand;
+	double	last_on_stack;
 	
 	/* this function only serves binary operations. therefore, we need at 
 	 * least one element on the stack. if this is not the case, work with 0.
@@ -315,18 +346,89 @@ double rpn_stack_operation (s_cb_token current_token)
 	if (rpn_stack->len < 1) left_hand = 0;
 	else {
 		/* retrieve left_hand from stack */
-		left_hand = g_array_index (rpn_stack, double, 
-			rpn_stack->len - 1);
-		rpn_stack = g_array_remove_index (rpn_stack, 
-			rpn_stack->len - 1);
+		left_hand = g_array_index (rpn_stack, double, 0);
+		last_on_stack = g_array_index (rpn_stack, double, rpn_stack_size-1);
+		rpn_stack = g_array_remove_index (rpn_stack, 0);
+		// last register is kept, if stack size is finite
+		if (((int) rpn_stack->len == rpn_stack_size-1) && (rpn_stack_size > 0))
+			rpn_stack = g_array_append_val (rpn_stack, last_on_stack);
 	}
 	/* compute it */
 	return_value = compute_expression (left_hand, current_token.operation, 
 		current_token.number.value);
 	if (rpn_debug > 0) fprintf (stderr, "[%s] RPN stack size is %i.\n", 
-		PROG_NAME, rpn_stack->len);
+		PROG_NAME, (int)rpn_stack->len);
+	if (rpn_debug > 1) rpn_stack_debug_print();
 	return return_value;
 }
+
+/* rpn_stack_swapxy. swap first and second register. there are some special cases.
+ */
+
+void rpn_stack_swapxy ()
+{
+	double	*x, *y, x_val;
+	
+	if ((int)rpn_stack->len < 1) return;
+	if ((int)rpn_stack->len < 2) { 
+		x_val = 0.;
+		rpn_stack = g_array_append_val (rpn_stack, x_val);
+	} else {
+		x = &g_array_index (rpn_stack, double, 0);
+		x_val = *x;
+		y = &g_array_index (rpn_stack, double, 1);
+		*x = *y;
+		*y = x_val;
+	}
+	if (rpn_debug > 0) fprintf (stderr, "[%s] RPN stack size is %i.\n", 
+		PROG_NAME, (int)rpn_stack->len);
+	if (rpn_debug > 1) rpn_stack_debug_print();
+}
+
+/* rpn_stack_rolldown. y->x, z->y, ..., x->t
+ */
+
+void rpn_stack_rolldown ()
+{
+	double	*a, x;
+	int	counter;
+	
+	x = 0.;
+	/* in the following case we have to fill up with zeros. thus this is
+	 * done virtually in rpn_stack_get.
+	 */
+	if ((rpn_stack_size > 0) && ((int)rpn_stack->len < rpn_stack_size))
+		for (counter = rpn_stack->len; counter < rpn_stack_size; counter++)
+			rpn_stack = g_array_append_val (rpn_stack, x);
+	x = g_array_index (rpn_stack, double, 0);
+	for (counter = 0; counter < (int) rpn_stack->len - 2; counter++) {
+		a = &g_array_index (rpn_stack, double, counter);
+		*a = g_array_index (rpn_stack, double, counter + 1);
+	}
+	a = &g_array_index (rpn_stack, double, rpn_stack->len - 1);
+	*a = x;
+}
+
+/* rpn_stack_get. returns a double array with the first length elements of
+ * stack. returned array should be freed.
+ */
+
+double *rpn_stack_get (int length)
+{
+	double		*return_array;
+	int		counter;
+	
+	if (length <= 0) length = (int)rpn_stack->len;
+	return_array = (double *) malloc (length*sizeof(double));
+	for (counter = 0; counter < MIN (length, (int)rpn_stack->len); counter++)
+		return_array[counter] = g_array_index (rpn_stack, double, counter);
+	for (; counter < length; counter++) 
+		return_array[counter] = 0.;
+	return return_array;
+}
+
+/* rpn_free. the finalizer.
+ */
 
 void rpn_free ()
 {

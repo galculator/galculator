@@ -2,12 +2,12 @@
 ~~~~~
 
 RPN stack:
-	x, y, z, t mode
-	infinite mode
+	[DONE] x, y, z, t mode
+	[DONE] infinite mode
 	save it
 	display it
 
-RPN new buttons:
+RPN new buttons/operations:
 	x<>y ... swap x and y
 	rolldn ... roll down the stack: x->t->z->y->x
 	

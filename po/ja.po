@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.1.3CVS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-08-31 00:46+0900\n"
+"POT-Creation-Date: 2003-08-31 09:39+0200\n"
 "PO-Revision-Date: 2003-08-31 00:45+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -257,7 +257,7 @@ msgstr "[%s] 関数 \"axtof\" で文字 %c の変換に失敗しました。%s\n
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr "[%s] 関数 \"ftoax\" で数値 %f の変換に失敗しました。%s\n"
 
-#: src/ui.c:81
+#: src/ui.c:87
 #, c-format
 msgid ""
 "[%s] Couldn't load %s. This file is necessary to build galculator's user "
@@ -267,7 +267,7 @@ msgstr ""
 "フェースを構築するために必要です。正しくインストールされたか、さらにそのファ"
 "イルの権限をそれぞれ確認して下さい！\n"
 
-#: src/ui.c:337
+#: src/ui.c:365
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -278,7 +278,7 @@ msgstr ""
 "%s を使用すると問題が発生するかもしれません！ %s\n"
 ")"
 
-#: src/ui.c:645
+#: src/ui.c:686
 #, c-format
 msgid "%s Preferences"
 msgstr "%s の設定"

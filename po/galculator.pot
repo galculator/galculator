@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-08-25 19:09+0200\n"
+"POT-Creation-Date: 2003-08-31 09:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -224,14 +224,14 @@ msgstr ""
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr ""
 
-#: src/ui.c:81
+#: src/ui.c:87
 #, c-format
 msgid ""
 "[%s] Couldn't load %s. This file is necessary to build galculator's user "
 "interface. Make sure you did a make install and the file is accessible!\n"
 msgstr ""
 
-#: src/ui.c:337
+#: src/ui.c:365
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -239,7 +239,7 @@ msgid ""
 ")"
 msgstr ""
 
-#: src/ui.c:645
+#: src/ui.c:686
 #, c-format
 msgid "%s Preferences"
 msgstr ""
