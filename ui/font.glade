@@ -1,0 +1,77 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: xml -*-->
+<!DOCTYPE glade-interface SYSTEM "http://glade.gnome.org/glade-2.0.dtd">
+
+<glade-interface>
+
+<widget class="GtkFontSelectionDialog" id="font_dialog">
+  <property name="border_width">4</property>
+  <property name="title" translatable="yes">Select Font</property>
+  <property name="type">GTK_WINDOW_TOPLEVEL</property>
+  <property name="window_position">GTK_WIN_POS_NONE</property>
+  <property name="modal">False</property>
+  <property name="resizable">True</property>
+  <property name="destroy_with_parent">False</property>
+  <accessibility>
+    <atkproperty name="AtkObject::accessible_description" translatable="yes">A dialog that is used to change a font setting.</atkproperty>
+  </accessibility>
+
+  <child internal-child="cancel_button">
+    <widget class="GtkButton" id="cancel_button3">
+      <property name="visible">True</property>
+      <property name="can_default">True</property>
+      <property name="can_focus">True</property>
+      <property name="relief">GTK_RELIEF_NORMAL</property>
+      <accessibility>
+	<atkproperty name="AtkObject::accessible_description" translatable="yes">Cancels all changes and closes the dialog.</atkproperty>
+	<atkrelation target="font_dialog" type="member-of"/>
+      </accessibility>
+      <signal name="clicked" handler="on_font_cancel_button_clicked" last_modification_time="Sat, 22 Feb 2003 18:03:02 GMT"/>
+    </widget>
+  </child>
+
+  <child internal-child="apply_button">
+    <widget class="GtkButton" id="apply_button1">
+      <property name="visible">True</property>
+      <property name="can_default">True</property>
+      <property name="can_focus">True</property>
+      <property name="relief">GTK_RELIEF_NORMAL</property>
+      <accessibility>
+	<atkproperty name="AtkObject::accessible_description" translatable="yes">Applies all changes.</atkproperty>
+	<atkrelation target="font_dialog" type="member-of"/>
+      </accessibility>
+    </widget>
+  </child>
+
+  <child internal-child="ok_button">
+    <widget class="GtkButton" id="ok_button3">
+      <property name="visible">True</property>
+      <property name="can_default">True</property>
+      <property name="can_focus">True</property>
+      <property name="relief">GTK_RELIEF_NORMAL</property>
+      <accessibility>
+	<atkproperty name="AtkObject::accessible_description" translatable="yes">Applies all changes and closes the dialog.</atkproperty>
+	<atkrelation target="font_dialog" type="member-of"/>
+      </accessibility>
+      <signal name="clicked" handler="on_font_ok_button_clicked" last_modification_time="Sat, 22 Feb 2003 17:58:28 GMT"/>
+    </widget>
+  </child>
+
+  <child internal-child="font_selection">
+    <widget class="GtkFontSelection" id="font_selection1">
+      <property name="border_width">4</property>
+      <property name="visible">True</property>
+      <property name="preview_text" translatable="yes">decimal PI 3.14159265359</property>
+      <accessibility>
+	<atkproperty name="AtkObject::accessible_description" translatable="yes">Displays various fonts and font sizes to select from.</atkproperty>
+	<atkrelation target="font_dialog" type="member-of"/>
+      </accessibility>
+    </widget>
+    <packing>
+      <property name="padding">0</property>
+      <property name="expand">True</property>
+      <property name="fill">True</property>
+    </packing>
+  </child>
+</widget>
+
+</glade-interface>

@@ -1,0 +1,76 @@
+todo ASAP --> 1.1.1:
+~~~~~~~~~~~~~~~~~~~~
+
+=GUI======================================
+
+	GUI element to bring menu back
+	
+	seperate RPN and PAN GUIs
+		=> pan.glade (basic, scientific, user)
+		=> rpn.glade (basic, scientific, user) display stack for RPN
+		window resize + instant apply. 
+		GtkSizeGroup (also in prefs)
+		ev MC, MX (memory exchange)
+		eigene M* button group?
+			
+	prefs: some checks on add/update
+		place selection on updated item.
+		
+	kein disp module => keine letzte zeile
+
+=calculator==============================
+
+	prozent: x % y: "x Prozent von y"
+
+=i18n====================================
+
+	udpate translations
+		
+=HIG=====================================
+
+	(http://developer.gnome.org/projects/gup/hig/):
+	chapter 2: DONE
+	chapter 3: window/dialog title DONE
+				instant apply (only a close button) DONE
+				default button in every window (enter press)
+	chapter 4: 
+	chapter 5: menu view for button groups
+	chapter 6:
+	chapter 7:
+	chapter 8: prefs dialog und GtkSizeGroup
+
+=sourceforge=============================
+
+
+=general=================================
+
+update shortcuts text file
+
+#########################
+#########################
+
+1.1.2:
+
+paper tape display and formula entry mode
+
+to be done:
+~~~~~~~~~~~
+
+9+9+9+9+9+9+9+
+
+nice:
+~~~~~
+
+save session (display value, number/angle/not, etc) (defaults and user. directory
+with several config files)
+
+some rounding
+
+implement inverse of hyperbolic
+
+spaces for binary number base, tausendertrennzeichen
+
+complex numbers
+
+memory leaks:
+	* general_function.c: create_constants_menu dpointer!
