@@ -78,6 +78,7 @@ void display_result_add_digit (char digit);
 void display_result_set (char *string_value);
 void display_result_set_double (double value);
 void display_result_feed (char *string);
+char *display_get_line (int line_nr);
 char *display_result_get ();
 double display_result_get_double ();
 void display_append_e (GtkToggleButton *button);
@@ -85,6 +86,8 @@ void display_result_toggle_sign (GtkToggleButton *button);
 void display_result_backspace ();
 
 void display_set_line_double (double value, int line, char *tag);
+void display_set_line (char *string, int line, char *tag);
+
 void display_stack_create ();
 void display_stack_remove ();
 void display_stack_set_yzt (char **stack);

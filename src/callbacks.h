@@ -186,6 +186,8 @@ void on_prefs_bin_bits_value_changed (GtkSpinButton *spinbutton,
 void on_prefs_bin_signed_toggled (GtkToggleButton *togglebutton, 
 				gpointer user_data);
 
+void on_prefs_number_base_combo_changed (GtkCombo *combo, gpointer user_data);
+
 void const_list_selection_changed_cb (GtkTreeSelection *selection, 
 				gpointer data);
 					

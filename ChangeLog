@@ -1,5 +1,17 @@
+2004-09-27 Simon Floery <chimaira@users.sf.net>
+	* bugfix in string_add_separator
+	* display_set_line is single display modifier in display.c
+	* finnished separator stuff in display.c
+	* preferences GUI for separator stuff
+	* general_functions.c: binary infinity display bug fixed
+		(add_leading_zeros)
+
+2004-09-26 Simon Floery <chimaira@users.sf.net>
+	* made display_result_add_digit use display_result_set
+	
 2004-09-11 Simon Floery <chimaira@users.sf.net>
 	* string_add_separator, string_del_separator
+	* config_file.c: separator config options
 
 2004-07-11 Simon Floery <chimaira@users.sf.net>
 	* added Romanian translation (thanks to cosma)

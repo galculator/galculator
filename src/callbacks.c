@@ -1446,6 +1446,42 @@ void on_prefs_bin_length_value_changed (GtkSpinButton *spinbutton,
 	prefs.bin_length = (int) gtk_spin_button_get_value (spinbutton);
 }
 
+void on_prefs_number_base_combo_changed (GtkCombo *combo, gpointer user_data) 
+{
+	int i;
+	GtkOptionMenu	*optionmenu;
+	i = (int) user_data;
+	printf ("welcome: %i %i\n", gtk_option_menu_get_history (optionmenu), i);
+	switch (gtk_option_menu_get_history (optionmenu)) {
+	case 0:
+		gtk_widget_show (glade_xml_get_widget (prefs_xml, "prefs_vbox_dec"));
+		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_hex"));
+		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_oct"));
+		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_bin"));
+		break;
+	case 1:
+		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_dec"));
+		gtk_widget_show (glade_xml_get_widget (prefs_xml, "prefs_vbox_hex"));
+		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_oct"));
+		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_bin"));
+		break;
+	case 2:
+		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_dec"));
+		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_hex"));
+		gtk_widget_show (glade_xml_get_widget (prefs_xml, "prefs_vbox_oct"));
+		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_bin"));
+		break;
+	case 3:
+		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_dec"));
+		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_hex"));
+		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_oct"));
+		gtk_widget_show (glade_xml_get_widget (prefs_xml, "prefs_vbox_bin"));
+		break;
+	default:
+		error_message ("on_prefs_number_base_combo: unknown history index");
+	}
+}
+
 void on_togglebutton_released (GtkToggleButton *togglebutton, 
 					gpointer user_data)
 {
