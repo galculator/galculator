@@ -132,7 +132,7 @@ int main (int argc, char *argv[])
 	/* prepare calc_basic */
 
 	alg_init (0);
-	rpn_init (0);
+	rpn_init (4, 0);
 
 	/* finally show what we put together. do this as late asap */
 	gtk_widget_show (main_window);

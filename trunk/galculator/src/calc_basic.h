@@ -69,9 +69,10 @@ double alg_add_token (s_cb_token this_token);
 void alg_init (int debug_level);
 void alg_free ();
 
-void rpn_init (int debug_level);
+void rpn_init (int size, int debug_level);
 void rpn_stack_push (double number);
 double rpn_stack_operation (s_cb_token current_token);
+double *rpn_stack_get (int length);
 void rpn_free ();
 
 #endif /* calc_basic.h */

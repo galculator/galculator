@@ -73,7 +73,7 @@ void all_clear ()
 	}
 	else {
 		rpn_free();
-		rpn_init(0);
+		rpn_init(4, 0);
 		current_status.rpn_have_result = FALSE;
 	}
 	display_module_bracket_label_update (RESET);
