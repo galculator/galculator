@@ -31,8 +31,6 @@ extern char		dec_point[2];
 #define AB_HEX 1 << CS_HEX
 #define AB_OCT 1 << CS_OCT
 #define AB_BIN 1 << CS_BIN
-#define AB_PAN 1 << (CS_PAN + NR_NUMBER_BASES)
-#define AB_RPN 1 << (CS_RPN + NR_NUMBER_BASES)
 
 typedef struct {
 	char		*button_name;
@@ -46,6 +44,7 @@ void ui_main_window_buttons_create (int mode);
 void set_all_buttons_size (int width, int height);
 void set_all_buttons_font (char *font_string);
 void update_active_buttons (int number_base, int notation_mode);
+void update_dispctrl ();
 void button_activation (GtkToggleButton *b);
 gboolean button_deactivation (gpointer data);
 GtkWidget *ui_pref_dialog_create ();
@@ -57,6 +56,7 @@ GtkWidget *ui_constants_menu_create (s_constant *constant,
 GtkWidget *ui_memory_menu_create (s_array memory, 
 				GCallback const_handler, 
 				char *last_item);
+void ui_formula_entry_insert (G_CONST_RETURN gchar *text);
 void position_menu (GtkMenu *menu, 
 		gint *x, 
 		gint *y, 

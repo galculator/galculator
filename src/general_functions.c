@@ -67,16 +67,26 @@ void clear ()
 void all_clear ()
 {
 	clear();
-	if (current_status.notation == CS_PAN) {
-		alg_free();
-		alg_init(0);
-	}
-	else {
-		rpn_free();
-		rpn_init(prefs.stack_size, 0);
-		display_stack_remove();
-		display_stack_create();
-		current_status.rpn_have_result = FALSE;
+	switch (current_status.notation) {
+		case CS_PAN:
+			alg_free();
+			alg_init(0);
+			break;
+		case CS_RPN:
+			rpn_free();
+			rpn_init(prefs.stack_size, 0);
+			display_stack_remove();
+			display_stack_create();
+			current_status.rpn_have_result = FALSE;
+			break;
+		case CS_FORMULA:
+			alg_free();
+			rpn_free();
+			display_stack_remove();
+			break;
+		default:
+			fprintf (stderr, _("[%s] unknown notation mode in function \"all_clear\". %s\n"), PROG_NAME, BUG_REPORT);
+			
 	}
 	display_module_bracket_label_update (RESET);
 }
@@ -290,18 +300,17 @@ void apply_preferences (s_preferences prefs)
 
 	display_update_tags ();
 	display_set_bkg_color (prefs.bkg_color);
-
+	
 	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
 	menu_item = glade_xml_get_widget (main_window_xml, "show_menubar1");
 	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
 
-	
 	if (prefs.mode == BASIC_MODE) menu_item = 
 		glade_xml_get_widget (main_window_xml, "basic_mode");
 	else if (prefs.mode == SCIENTIFIC_MODE) menu_item = 
 		glade_xml_get_widget (main_window_xml, "scientific_mode");
 	gtk_menu_item_activate ((GtkMenuItem *) menu_item);
-	
+
 	set_all_buttons_size (prefs.button_width, prefs.button_height);
 
 	if (prefs.custom_button_font == TRUE) button_font = g_strdup (prefs.button_font);
@@ -341,12 +350,13 @@ void activate_menu_item (char *item_name)
 	
 	menu_item = (GtkMenuItem *) glade_xml_get_widget (main_window_xml, \
 		g_strstrip (g_ascii_strdown (item_name, -1)));
+	if (menu_item)
 	/* as we use this only for menu boxes, a simple activate is enough.
 	 * the extra magic in src/callbacks.c::on_scientific_mode_activate
 	 * is necessary only for checkboxmenuitems.
 	 */
-	gtk_menu_item_activate ((GtkMenuItem *) menu_item);
-
+		gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+	else fprintf (stderr, _("[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"), PROG_NAME, item_name, BUG_REPORT);
 }
 
 /* get_number_string - converts value to a string, with repect to base. returned
@@ -517,15 +527,27 @@ double string2double (char *string)
 	return 0;
 }
 
-void update_dispctrl()
+
+void set_button_label_and_tooltip (GladeXML *xml, char *button_name, 
+	char *label, char *tooltip)
 {
-	/* just put one here and hide it afterwards. we need the button
-			for working key accelerators. */
-	if (prefs.mode == BASIC_MODE) 
-		ui_main_window_set_dispctrl (DISPCTRL_BOTTOM);
-	else if (current_status.notation == CS_RPN)
-		ui_main_window_set_dispctrl (DISPCTRL_RIGHTV);
-	else ui_main_window_set_dispctrl (DISPCTRL_RIGHT);
-	set_widget_visibility (dispctrl_xml, "table_dispctrl", 
-		prefs.vis_dispctrl);
+	GtkWidget	*w;
+	GtkTooltipsData	*tooltip_data;
+	
+	w = glade_xml_get_widget (xml, button_name);
+	if (w) {
+		gtk_button_set_label ((GtkButton *)w, label);
+		tooltip_data = gtk_tooltips_data_get (w);
+		g_free (tooltip_data->tip_text);
+		tooltip_data->tip_text = g_strdup (tooltip);
+	}
+}
+
+gboolean formula_entry_is_active ()
+{
+	GtkWidget	*active_widget, *main_window;
+	
+	main_window = glade_xml_get_widget (main_window_xml, "main_window");
+	active_widget = gtk_window_get_focus ((GtkWindow *)main_window);
+	return !strcmp (gtk_widget_get_name (active_widget), "formula_entry");
 }

@@ -51,6 +51,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:11 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="7" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_7" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Home" modifiers="0" signal="clicked"/>
@@ -77,6 +78,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:15 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="8" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_8" modifiers="0" signal="clicked"/>
 		</widget>
@@ -102,6 +104,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:19 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="9" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_9" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Page_Up" modifiers="0" signal="clicked"/>
@@ -128,6 +131,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:37 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="KP_Divide" modifiers="0" signal="clicked"/>
 		  <accelerator key="slash" modifiers="0" signal="clicked"/>
 		</widget>
@@ -153,6 +157,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:04:40 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="KP_4" modifiers="0" signal="clicked"/>
 		  <accelerator key="4" modifiers="0" signal="clicked"/>
 		</widget>
@@ -178,6 +183,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:04:55 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="5" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_5" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Begin" modifiers="0" signal="clicked"/>
@@ -204,6 +210,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:06 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="6" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_6" modifiers="0" signal="clicked"/>
 		</widget>
@@ -229,6 +236,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:03:06 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="3" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_3" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Page_Down" modifiers="0" signal="clicked"/>
@@ -255,6 +263,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:27 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="KP_Subtract" modifiers="0" signal="clicked"/>
 		  <accelerator key="minus" modifiers="0" signal="clicked"/>
 		</widget>
@@ -280,6 +289,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:21 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="KP_Add" modifiers="0" signal="clicked"/>
 		  <accelerator key="plus" modifiers="0" signal="clicked"/>
 		</widget>
@@ -305,6 +315,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Sun, 15 Sep 2002 14:50:16 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">2</property>
@@ -328,6 +339,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:32 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="KP_Multiply" modifiers="0" signal="clicked"/>
 		  <accelerator key="asterisk" modifiers="0" signal="clicked"/>
 		</widget>
@@ -351,6 +363,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_mplus_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:23:58 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox4">
@@ -418,6 +431,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_mr_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:04:30 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox3">
@@ -485,6 +499,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_ms_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:23:49 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox2">
@@ -554,6 +569,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Fri, 19 Sep 2003 07:54:16 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="parenright" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
@@ -578,6 +594,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Fri, 19 Sep 2003 07:54:09 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="parenleft" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
@@ -602,6 +619,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:01:58 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="0" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_0" modifiers="0" signal="clicked"/>
 		</widget>
@@ -627,6 +645,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="comma" modifiers="0" signal="clicked"/>
 		  <accelerator key="period" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Decimal" modifiers="0" signal="clicked"/>
@@ -652,6 +671,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Sat, 12 Jul 2003 13:20:42 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="1" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_1" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_End" modifiers="0" signal="clicked"/>
@@ -676,6 +696,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Sat, 12 Jul 2003 13:20:42 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="KP_2" modifiers="0" signal="clicked"/>
 		  <accelerator key="2" modifiers="0" signal="clicked"/>
 		</widget>
@@ -701,6 +722,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:53 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="Return" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Enter" modifiers="0" signal="clicked"/>
 		  <accelerator key="equal" modifiers="0" signal="clicked"/>
@@ -727,6 +749,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Tue, 17 Sep 2002 09:08:28 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		  <accelerator key="r" modifiers="0" signal="clicked"/>
 		  <accelerator key="r" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
@@ -752,6 +775,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Mon, 09 Jun 2003 22:21:36 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">4</property>

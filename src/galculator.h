@@ -88,7 +88,7 @@ enum {
 enum {
 	CS_PAN,			/* _P_seudo _A_lgebraic _N_otation */
 	CS_RPN,			/* reverse polish notation */
-	/*CS_FORMULA,*/
+	CS_FORMULA,		/* formula entry */
 	NR_NOTATION_MODES
 };
 
@@ -121,7 +121,7 @@ enum {
 typedef struct {
 	unsigned	number:2;
 	unsigned	angle:2;
-	unsigned	notation:1;
+	unsigned	notation:2;
 	unsigned	fmod:2;
 	gboolean	calc_entry_start_new;
 	gboolean	rpn_have_result;
@@ -130,6 +130,8 @@ typedef struct {
 
 typedef struct {
 	char		*button_name;
+	/* for simplicity we put the display_names not in an array */
+	char		*display_names[4];
 	double		(*func[4])(double);
 	gboolean	is_trigonometric;
 } s_function_map;
@@ -141,11 +143,16 @@ typedef struct {
 
 typedef struct {
 	char		*button_name;
+	char 		*display_name;
 	void		(*func)();
 } s_gfunc_map;
 
 typedef struct {
 	char		*button_name;
+	/* display_string: what to display in history or formula entry. hasn't 
+	 * to be the button label, e.g. "n!" and "!" 
+	 */
+	char 		*display_string;
 	int		operation;
 } s_operation_map;
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.1.4CVS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-11-12 00:49+0900\n"
+"POT-Creation-Date: 2004-01-25 18:39+0200\n"
 "PO-Revision-Date: 2003-11-12 00:45+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -73,24 +73,43 @@ msgstr ""
 "\n"
 "(c) 2002-2003 by Simon Floery (chimaira@users.sf.net)"
 
-#: src/callbacks.c:395 ui/scientific_buttons.glade.h:21
+#: src/callbacks.c:398 ui/scientific_buttons.glade.h:21
 #: ui/basic_buttons.glade.h:21
 msgid "="
 msgstr "="
 
-#: src/callbacks.c:397 ui/scientific_buttons.glade.h:99
+#: src/callbacks.c:398 src/callbacks.c:420 ui/scientific_buttons.glade.h:40
+#: ui/basic_buttons.glade.h:29
+msgid "Enter"
+msgstr "計算結果を算出します"
+
+#: src/callbacks.c:400 ui/scientific_buttons.glade.h:99
 msgid "x^y"
 msgstr "x^y"
 
-#: src/callbacks.c:399 ui/scientific_buttons.glade.h:3
+#: src/callbacks.c:400 src/callbacks.c:422 ui/scientific_buttons.glade.h:72
+msgid "Power"
+msgstr "累乗を計算します"
+
+#: src/callbacks.c:402 ui/scientific_buttons.glade.h:3
 #: ui/basic_buttons.glade.h:3
 msgid "("
 msgstr "("
 
-#: src/callbacks.c:401 ui/scientific_buttons.glade.h:4
+#: src/callbacks.c:402 ui/scientific_buttons.glade.h:70
+#: ui/basic_buttons.glade.h:38
+msgid "Open Bracket"
+msgstr "開きカッコ"
+
+#: src/callbacks.c:404 ui/scientific_buttons.glade.h:4
 #: ui/basic_buttons.glade.h:4
 msgid ")"
 msgstr ")"
+
+#: src/callbacks.c:404 ui/scientific_buttons.glade.h:31
+#: ui/basic_buttons.glade.h:25
+msgid "Close Bracket"
+msgstr "閉じカッコ"
 
 #: src/callbacks.c:420
 msgid "ENT"
@@ -104,11 +123,19 @@ msgstr "y^x"
 msgid "x<>y"
 msgstr "x<>y"
 
+#: src/callbacks.c:424
+msgid "swap current number with top of stack"
+msgstr ""
+
 #: src/callbacks.c:426
 msgid "roll"
 msgstr "roll"
 
-#: src/callbacks.c:978
+#: src/callbacks.c:426
+msgid "roll down stack"
+msgstr ""
+
+#: src/callbacks.c:997
 msgid "save here"
 msgstr "ここに保存する"
 
@@ -146,28 +173,28 @@ msgstr "バグの報告をして下さい。"
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr "[%s] %c - 不明な操作文字です。%s\n"
 
-#: src/config_file.c:154
+#: src/config_file.c:156
 msgid "Pi"
 msgstr "Pi"
 
-#: src/config_file.c:155
+#: src/config_file.c:157
 msgid "pi"
 msgstr "pi"
 
-#: src/config_file.c:157
+#: src/config_file.c:159
 msgid "Euler's Number"
 msgstr "Euler's Number"
 
-#: src/config_file.c:158
+#: src/config_file.c:160
 msgid "e"
 msgstr "e"
 
-#: src/config_file.c:187
+#: src/config_file.c:189
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
 msgstr "[%s] 設定ファイル: 不明なエントリ %s=%s を無視します。%s\n"
 
-#: src/config_file.c:203
+#: src/config_file.c:205
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
@@ -175,14 +202,14 @@ msgstr ""
 "[%s] 設定ファイル: %s は TRUE または FALSE にして下さい。デフォルト値を使用し"
 "ます。%s\n"
 
-#: src/config_file.c:210
+#: src/config_file.c:212
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
 msgstr ""
 "[%s] 設定ファイル: config 構造体の中にある不明な key_type を無視します。%s\n"
 
-#: src/config_file.c:228
+#: src/config_file.c:230
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
@@ -191,7 +218,7 @@ msgstr ""
 "[%s] 不明なセクション %s が設定ファイル %s の中にあります。前のセクションを使"
 "用します。\n"
 
-#: src/config_file.c:307
+#: src/config_file.c:309
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
@@ -201,7 +228,7 @@ msgstr ""
 "[%s] 設定ファイル: 設定ファイル %s を読み込めません。初めて %s を起動した場合"
 "は何も心配ありません。デフォルト値を使用します。\n"
 
-#: src/config_file.c:342
+#: src/config_file.c:344
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
@@ -210,7 +237,7 @@ msgstr ""
 "[%s] 設定ファイル: 書き込む際におかしな論理値がありました。このキーをスキップ"
 "します。%s\n"
 
-#: src/config_file.c:350
+#: src/config_file.c:352
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
@@ -219,7 +246,7 @@ msgstr ""
 "[%s] 設定ファイル: \"config_structure\" の中にある不明な \"key_type\" を無視"
 "します。%s\n"
 
-#: src/config_file.c:365
+#: src/config_file.c:367
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
@@ -240,7 +267,7 @@ msgid "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
 msgstr ""
 "[%s] 関数 \"display_result_set_angle\" に不明なベース角度が渡されました。%s\n"
 
-#: src/display.c:900
+#: src/display.c:902
 #, c-format
 msgid ""
 "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
@@ -266,25 +293,25 @@ msgstr "[%s] 関数 \"axtof\" で文字 %c の変換に失敗しました。%s\n
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr "[%s] 関数 \"ftoax\" で数値 %f の変換に失敗しました。%s\n"
 
-#: src/general_functions.c:377
+#: src/general_functions.c:380
 msgid "unknown number base"
 msgstr "基数が不明です"
 
-#: src/general_functions.c:378
+#: src/general_functions.c:381
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
 msgstr ""
 "[%s] 関数 \"get_display_number_string\" に不明な基数が渡されました。%s\n"
 
-#: src/general_functions.c:399
+#: src/general_functions.c:402
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
 msgstr ""
 "[%s] 関数 \"get_display_number_length\" に不明な基数が渡されました。%s\n"
 
-#: src/general_functions.c:515
+#: src/general_functions.c:518
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"display_result_get_double\". %s\n"
@@ -312,136 +339,146 @@ msgstr ""
 "%s を使用すると問題が発生するかもしれません！ %s\n"
 ")"
 
-#: src/ui.c:699
+#: src/ui.c:701
 #, c-format
 msgid "%s Preferences"
 msgstr "%s の設定"
 
-#: ui/main_frame.glade.h:1
+#: ui/main_frame.glade.h:1 ui/scientific_buttons.glade.h:5
+#: ui/basic_buttons.glade.h:5 ui/prefs.glade.h:3
+msgid "*"
+msgstr "*"
+
+#: ui/main_frame.glade.h:2
 msgid "Angle _units"
 msgstr "角度の単位(U)"
 
-#: ui/main_frame.glade.h:2 ui/prefs.glade.h:22
+#: ui/main_frame.glade.h:3 ui/prefs.glade.h:22
 msgid "Buttons"
 msgstr "ボタン"
 
-#: ui/main_frame.glade.h:3
+#: ui/main_frame.glade.h:4
 msgid "Cu_t Display Value"
 msgstr "表示値の切り取り(_T)"
 
-#: ui/main_frame.glade.h:4
+#: ui/main_frame.glade.h:5
 msgid "D_egrees"
 msgstr "度(_E)"
 
-#: ui/main_frame.glade.h:5
+#: ui/main_frame.glade.h:6
 msgid "Display Control"
 msgstr "コントロール"
 
-#: ui/main_frame.glade.h:6
+#: ui/main_frame.glade.h:7
 msgid "Functions"
 msgstr "関数"
 
-#: ui/main_frame.glade.h:7
+#: ui/main_frame.glade.h:8
 msgid "Logical"
 msgstr "論理演算"
 
-#: ui/main_frame.glade.h:8
+#: ui/main_frame.glade.h:9
 msgid "Notation _modes"
 msgstr "表記モード(_M)"
 
-#: ui/main_frame.glade.h:9
+#: ui/main_frame.glade.h:10
+msgid "Show _formula entry"
+msgstr ""
+
+#: ui/main_frame.glade.h:11
+#, fuzzy
+msgid "Show _menu bar"
+msgstr "メニュー・バーを表示する"
+
+#: ui/main_frame.glade.h:12
 msgid "Standard"
 msgstr "標準"
 
-#: ui/main_frame.glade.h:10
+#: ui/main_frame.glade.h:13
 msgid "The main program window."
 msgstr "メイン・プログラムのウィンドウです"
 
-#: ui/main_frame.glade.h:11
+#: ui/main_frame.glade.h:14
 msgid "_About..."
 msgstr "情報(_A)..."
 
-#: ui/main_frame.glade.h:12
+#: ui/main_frame.glade.h:15
 msgid "_Algebraic"
 msgstr "代数記法(_A)"
 
-#: ui/main_frame.glade.h:13
+#: ui/main_frame.glade.h:16
 msgid "_Basic Mode"
 msgstr "基本モード(_B)"
 
-#: ui/main_frame.glade.h:14
+#: ui/main_frame.glade.h:17
 msgid "_Binary"
 msgstr "2進数(_B)"
 
-#: ui/main_frame.glade.h:15
+#: ui/main_frame.glade.h:18
 msgid "_Calculator"
 msgstr "計算機(_C)"
 
-#: ui/main_frame.glade.h:16
+#: ui/main_frame.glade.h:19
 msgid "_Copy Display Value"
 msgstr "表示値のコピー(_C)"
 
-#: ui/main_frame.glade.h:17
+#: ui/main_frame.glade.h:20
 msgid "_Decimal"
 msgstr "10進数(_D)"
 
-#: ui/main_frame.glade.h:18
+#: ui/main_frame.glade.h:21
 msgid "_Edit"
 msgstr "編集(_E)"
 
-#: ui/main_frame.glade.h:19
+#: ui/main_frame.glade.h:22
 msgid "_File"
 msgstr "ファイル(_F)"
 
-#: ui/main_frame.glade.h:20
+#: ui/main_frame.glade.h:23
 msgid "_Gradians"
 msgstr "グラジエント(_G)"
 
-#: ui/main_frame.glade.h:21
+#: ui/main_frame.glade.h:24
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: ui/main_frame.glade.h:22
+#: ui/main_frame.glade.h:25
 msgid "_Hexadecimal"
 msgstr "16進数(_H)"
 
-#: ui/main_frame.glade.h:23
+#: ui/main_frame.glade.h:26
 msgid "_Number bases"
 msgstr "基数(_N)"
 
-#: ui/main_frame.glade.h:24
+#: ui/main_frame.glade.h:27
 msgid "_Octal"
 msgstr "8進数(_O)"
 
-#: ui/main_frame.glade.h:25
+#: ui/main_frame.glade.h:28
 msgid "_Paste As Display Value"
 msgstr "表示値へ貼り付け(_P)"
 
-#: ui/main_frame.glade.h:26
+#: ui/main_frame.glade.h:29
 msgid "_Preferences..."
 msgstr "設定(_P)..."
 
-#: ui/main_frame.glade.h:27
+#: ui/main_frame.glade.h:30
 msgid "_Quit"
 msgstr "終了(_Q)"
 
-#: ui/main_frame.glade.h:28
+#: ui/main_frame.glade.h:31
 msgid "_Radians"
 msgstr "ラジアン(_R)"
 
-#: ui/main_frame.glade.h:29
+#: ui/main_frame.glade.h:32
 msgid "_Reverse Polish (RPN)"
 msgstr "逆ポーランド記法(RPN)(_R)"
 
-#: ui/main_frame.glade.h:30
+#: ui/main_frame.glade.h:33
 msgid "_Scientific Mode"
 msgstr "科学計算モード(_S)"
 
-#: ui/main_frame.glade.h:31
-msgid "_Show menu bar"
-msgstr "メニュー・バーの表示(_S)"
-
-#: ui/main_frame.glade.h:32
+#: ui/main_frame.glade.h:34
 msgid "_View"
 msgstr "表示(_V)"
 
@@ -449,11 +486,6 @@ msgstr "表示(_V)"
 #, no-c-format
 msgid "%"
 msgstr "%"
-
-#: ui/scientific_buttons.glade.h:5 ui/basic_buttons.glade.h:5
-#: ui/prefs.glade.h:3
-msgid "*"
-msgstr "*"
 
 #: ui/scientific_buttons.glade.h:6 ui/basic_buttons.glade.h:6
 msgid "+"
@@ -553,10 +585,6 @@ msgstr "CMP"
 msgid "Change sign"
 msgstr "符号を切り替えます"
 
-#: ui/scientific_buttons.glade.h:31 ui/basic_buttons.glade.h:25
-msgid "Close Bracket"
-msgstr "閉じカッコ"
-
 #: ui/scientific_buttons.glade.h:32 ui/prefs.glade.h:25
 msgid "Constants"
 msgstr "定数"
@@ -588,10 +616,6 @@ msgstr "EE"
 #: ui/scientific_buttons.glade.h:39 ui/basic_buttons.glade.h:28
 msgid "Eight"
 msgstr "数値の８"
-
-#: ui/scientific_buttons.glade.h:40 ui/basic_buttons.glade.h:29
-msgid "Enter"
-msgstr "計算結果を算出します"
 
 #: ui/scientific_buttons.glade.h:41
 msgid "Enter exponent (base: 10)"
@@ -709,17 +733,9 @@ msgstr "OR"
 msgid "One"
 msgstr "数値の１"
 
-#: ui/scientific_buttons.glade.h:70 ui/basic_buttons.glade.h:38
-msgid "Open Bracket"
-msgstr "開きカッコ"
-
 #: ui/scientific_buttons.glade.h:71 ui/basic_buttons.glade.h:39
 msgid "Percent"
 msgstr "百分率 (%) を計算します"
-
-#: ui/scientific_buttons.glade.h:72
-msgid "Power"
-msgstr "累乗を計算します"
 
 #: ui/scientific_buttons.glade.h:73 ui/basic_buttons.glade.h:40
 msgid "Read from memory"
@@ -1042,38 +1058,42 @@ msgid "Result font:"
 msgstr "計算結果のフォント:"
 
 #: ui/prefs.glade.h:45
+msgid "Show formula entry"
+msgstr ""
+
+#: ui/prefs.glade.h:46
 msgid "Show menu bar"
 msgstr "メニュー・バーを表示する"
 
-#: ui/prefs.glade.h:46
+#: ui/prefs.glade.h:47
 msgid "Update"
 msgstr "更新"
 
-#: ui/prefs.glade.h:47
+#: ui/prefs.glade.h:48
 msgid "Use custom button font"
 msgstr "ボタンのフォントをカスタマイズする"
 
-#: ui/prefs.glade.h:48
+#: ui/prefs.glade.h:49
 msgid "Value:"
 msgstr "値:"
 
-#: ui/prefs.glade.h:49
+#: ui/prefs.glade.h:50
 msgid "finite stack size (x, y, z, t)"
 msgstr "スタック・サイズを有限にする (x, y, z, t)"
 
-#: ui/prefs.glade.h:50
+#: ui/prefs.glade.h:51
 msgid "fix length to a multiple of"
 msgstr "固定長の乗算"
 
-#: ui/prefs.glade.h:51
+#: ui/prefs.glade.h:52
 msgid "galculator - Preferences"
 msgstr "galculator - 設定"
 
-#: ui/prefs.glade.h:52
+#: ui/prefs.glade.h:53
 msgid "infinite stack size"
 msgstr "スタック・サイズを無限にする"
 
-#: ui/prefs.glade.h:53
+#: ui/prefs.glade.h:54
 msgid "signed"
 msgstr "符号付き"
 
@@ -1096,3 +1116,6 @@ msgstr "表示内容をクリアします"
 #: ui/dispctrl_right.glade.h:6 ui/dispctrl_bottom.glade.h:6
 msgid "Reset calculator (clear all)"
 msgstr "電卓をリセット (全てクリア) します"
+
+#~ msgid "_Show menu bar"
+#~ msgstr "メニュー・バーの表示(_S)"

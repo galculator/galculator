@@ -1,15 +1,31 @@
-1.1.5
+1.1.5/1.2.0(?)
 ~~~~~
 
-tooltips in RPN mode
+[DONE] tooltips in RPN mode
 
-formula mode - entry is no own mode but an addon for both modes? YES
+[ ] formula mode - entry is no own mode but an addon for both modes? YES
 
-stack clears on basic <-> scientific (good or bad?)
+	text entry: if text entry active, input only occurs here
+		if not active, usual procedure but with recording in text entry
+		
+	UPDATE: entry has to be a new mode as it is impossible to integrate the
+		entry with the existing modes: e.g. entry is active. we click
+		the 5 and then the sin button: entry is "5sin" while it should
+		be "sin5". problem is that functions operate on current display.
+	
+	UPDATE: own mode but as now. every button click is only routed to the
+		text entry.
+
+[ ] right button mouse click gives popup for bringing back menu
+
+parser:
+[ ]	!
+[ ]	sign
+[ ]	better exit in error case
 
 =GUI======================================
 
-	GUI element to bring menu back?
+	GUI element to bring menu back? (--> popup)
 
 =i18n====================================
 
@@ -59,6 +75,8 @@ some rounding
 spaces for binary number base, "tausendertrennzeichen"
 
 complex numbers
+
+enlarge button font when maximizing window
 
 not nice:
 ~~~~~~~~~

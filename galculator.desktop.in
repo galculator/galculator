@@ -6,3 +6,4 @@ Icon=gnome-calc2.png
 Terminal=false
 Type=Application
 Categories=Application;Utility;
+Encoding=UTF-8

@@ -73,7 +73,7 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 	 * keypad's 0,2,4,6,8 won't work in gtkentry etc. (e.g. found in prefs)
 	 */
 	
-	/*fprintf (stderr, "[%s] key snooper (1): %i %i %s\n", PROG_NAME, event->state, event->keyval, gdk_keyval_name (event->keyval));*/
+	/* fprintf (stderr, "[%s] key snooper (1): %i %i %s\n", PROG_NAME, event->state, event->keyval, gdk_keyval_name (event->keyval)); */
 	if (((event->keyval != GDK_KP_2) && (event->keyval != GDK_KP_Down) &&
 		(event->keyval != GDK_KP_4) && (event->keyval != GDK_KP_Left) &&
 		(event->keyval != GDK_KP_6) && (event->keyval != GDK_KP_Right) &&
@@ -82,9 +82,13 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 		(strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(grab_widget)), 
 			"main_window") != 0))
 			event->state &= ~GDK_MOD2_MASK;
+	
+	if (formula_entry_is_active() && (event->type == GDK_KEY_PRESS)) {
+	}
+	
 	return FALSE;
 }
-	
+
 int main (int argc, char *argv[])
 {
 	char		*config_file_name;
@@ -110,7 +114,7 @@ int main (int argc, char *argv[])
 	/* at first, get config file */
 	config_file_name = g_strdup_printf ("%s/%s", getenv ("HOME"), CONFIG_FILE_NAME);
 	prefs = config_file_read (config_file_name);
-
+	
 	constant = config_file_get_constants();
 	g_free (config_file_name);
 
