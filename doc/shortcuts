@@ -25,13 +25,18 @@ x, X	XOR (^ is used for power)
 -	subtraction
 *	multiplication
 /	division
-%	module
+m,M	module
 <	left shift
+%	percent
 =, Return	=
-Constants:
 
-Alt-e	e
-Alt-p	Pi
+Popup Menus:
+
+Alt-o 	Constants Menu
+Alt-u 	User defined Functions
+Alt-s	Memory Save
+Alt-r	Memory Read
+Alt-+	Memory Add
 
 Functions:
 
@@ -44,19 +49,21 @@ o, O	cOs
 t, T	Tan
 q, Q	sQuare (x^2)
 r, R	sqRt
-\	1/x
 l, L	Log
 n, N	lN
 
 Display control:
 
-Delete, ALT-C	C
-Ctrl-Delete	AC
-Backspace	<-
+Delete, ALT-C		C
+Ctrl-Delete, ESC	AC
+Backspace		<-
 
 Menu shortcuts:
 
 Ctrl-Q	quit program
+Ctrl-X	Cut Display Value
+Ctrl-C	Copy Display Value
+Ctrl-V	Paste As Display Value
 Ctrl-P	preferences dialog
 Ctrl-D	change to decimal number base
 Ctrl-H	change to hexadecimal number base

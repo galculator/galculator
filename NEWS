@@ -1,3 +1,13 @@
+galculator 1.1.3
+	* introducing basic and scientific mode
+	* number base, angle unit and notation mode are remembered on exit.
+	no defaults anymore.
+	* binary: fix display length to a multiply of ...
+	* asinh, acosh, atanh
+	* percent operation
+	* bug fixes: crash on bracket closing, remember display value, GUI
+	* translation updates
+
 galculator 1.1.2 - no big news. just some updates.
 	* complete rewrite of basic computation code. Be careful - though it has 
 	already been tested seriously!

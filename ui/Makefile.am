@@ -8,7 +8,9 @@ glade_DATA = about.glade \
 		prefs.glade \
 		main_frame.glade \
 		scientific_buttons.glade \
-		basic_buttons.glade
+		basic_buttons.glade \
+		dispctrl_bottom.glade \
+		dispctrl_right.glade
 
 EXTRA_DIST = $(glade_DATA)
 

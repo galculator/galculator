@@ -10,9 +10,6 @@
   <property name="modal">False</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
-  <accessibility>
-    <atkproperty name="AtkObject::accessible_description" translatable="yes">The main program window.</atkproperty>
-  </accessibility>
   <signal name="destroy" handler="gtk_main_quit" last_modification_time="Thu, 05 Sep 2002 06:48:44 GMT"/>
 
   <child>
@@ -32,13 +29,13 @@
 
 	  <child>
 	    <widget class="GtkTable" id="table_buttons">
-	      <property name="border_width">5</property>
+	      <property name="border_width">6</property>
 	      <property name="visible">True</property>
 	      <property name="n_rows">5</property>
 	      <property name="n_columns">5</property>
 	      <property name="homogeneous">False</property>
-	      <property name="row_spacing">5</property>
-	      <property name="column_spacing">5</property>
+	      <property name="row_spacing">6</property>
+	      <property name="column_spacing">6</property>
 
 	      <child>
 		<widget class="GtkToggleButton" id="button_7">
@@ -623,7 +620,7 @@
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">Decimal point</property>
 		  <property name="can_focus">True</property>
-		  <property name="label" translatable="yes">.</property>
+		  <property name="label" translatable="no">.</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="active">False</property>
@@ -697,7 +694,7 @@
 		  <property name="visible">True</property>
 		  <property name="tooltip" translatable="yes">Enter</property>
 		  <property name="can_focus">True</property>
-		  <property name="label" translatable="yes">=</property>
+		  <property name="label" translatable="no">=</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="active">False</property>

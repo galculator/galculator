@@ -1,17 +1,27 @@
-2003-08-18 Simon Floery <simon.floery@gmx.at>
+2003-08-26 Simon Floery <chimaira@users.sf.net>
+	* fr.po translation update
+
+2003-08-25 Simon Floery <chimaira@users.sf.net>
+	* display control buttons in scientific resp basic mode.
+	* de.po translation update
+
+2003-08-20 Simon Floery <chimaira@users.sf.net>
+	* number, angle and notation are remembered on exit. no defaults anymore
+
+2003-08-18 Simon Floery <chimaira@users.sf.net>
 	* src/callbacks.c: fixed token.func bug (closes DBTS #205126)
 	* GUI updates (y^x in RPN, change font for "popup buttons")
 	* src/display.c: fixed order of init notation and rem_value (closes
 	sf.net #778572)
 
-2003-07-25 Simon Floery <simon.floery@gmx.at>
+2003-07-25 Simon Floery <chimaira@users.sf.net>
 	* added basic mode
 	* updates to scientific mode
 
-2003-07-17 Simon Floery <simon.floery@gmx.at>
+2003-07-17 Simon Floery <chimaira@users.sf.net>
 	* asinh, acosh, atanh
 
-2003-07-04 Simon Floery <simon.floery@gmx.at>
+2003-07-04 Simon Floery <chimaira@users.sf.net>
 	* src/callbacks.c: GtkSizeGroup for preferences dialog
 	* fix length to multiple of k in binary mode (fill with zeros)
 	(closes sf.net fr #760390)
@@ -21,18 +31,18 @@
 # 2003-07-06 galculator 1.1.2 released #
 ########################################
 
-2003-07-05 Simon Floery <simon.floery@gmx.at>
+2003-07-05 Simon Floery <chimaira@users.sf.net>
 	* updated french translation (thanks to seb128)
 
-2003-07-02 Simon Floery <simon.floery@gmx.at>
+2003-07-02 Simon Floery <chimaira@users.sf.net>
 	* src/calc_basic.c: complete rewrite
 
-2003-06-26 Simon Floery <simon.floery@gmx.at>
+2003-06-26 Simon Floery <chimaira@users.sf.net>
 
 	* src/display.c: fixed display_length bug (e.g. only one HEX char after
 	startup)
 
-2003-06-24 Simon Floery <simon.floery@gmx.at>
+2003-06-24 Simon Floery <chimaira@users.sf.net>
 
 	* added french translation (fr.po). thanks to seb128
 	* src/main.c: restricted key_snooper to main_window to get a working
@@ -46,7 +56,7 @@
 # 2003-06-23 galculator 1.1.1 released #
 ########################################
 
-2003-06-23 Simon Floery <simon.floery@gmx.at>
+2003-06-23 Simon Floery <chimaira@users.sf.net>
 
 	* specify bit length/signed for hex, oct and bin mode 
 	(closes DBTS #197490)
@@ -58,7 +68,7 @@
 # 2003-06-22 galculator 1.1.0 released #
 ########################################
 
-2003-06-18  Simon Floery <simon.floery@gmx.at>
+2003-06-18  Simon Floery <chimaira@users.sf.net>
 
 	* changed Changelog format
 	* src/display.c: removed mark_result_[start | end] in order to remove

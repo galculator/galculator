@@ -1,7 +1,7 @@
 /*
  *  display.c - code for this nifty display.
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
+ *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -24,10 +24,6 @@
 #include <math.h>
 #include <ctype.h>
 
-#include <gtk/gtk.h>
-#include <glib.h>
-#include <glade/glade.h>
-
 #include "galculator.h"
 #include "display.h"
 #include "general_functions.h"
@@ -35,6 +31,10 @@
 #include "math_functions.h"
 #include "calc_basic.h"
 #include "ui.h"
+
+#include <gtk/gtk.h>
+#include <glib.h>
+#include <glade/glade.h>
 
 static GtkTextView 	*view;
 static GtkTextBuffer 	*buffer;
@@ -200,9 +200,10 @@ void display_init (GtkWidget *a_parent_widget)
 
 	activate_menu_item (notation_mod_labels[prefs.def_notation]);
 	display_result_set (prefs.rem_value);
-	activate_menu_item (number_mod_labels[prefs.def_number]);
-	activate_menu_item (angle_mod_labels[prefs.def_angle]);
-	
+	/* number and angle are only in scient mode interesting. hence we
+	 * set them in src/callbacks.c::on_scientific_mode_activate
+	 */
+	 
 	display_lengths[CS_HEX] = prefs.hex_bits/4;
 	display_lengths[CS_OCT] = prefs.oct_bits/3;
 	display_lengths[CS_BIN] = prefs.bin_bits/1;
@@ -349,6 +350,30 @@ void display_module_leading_spaces (char *mark_name, gboolean leading_spaces)
 	// update text mark
 	gtk_text_buffer_delete_mark (buffer, start_mark);
 	gtk_text_buffer_create_mark (buffer, mark_name, &iter, TRUE);
+}
+
+/* display_module_number_activate.
+ */
+
+void display_module_number_activate (int number_base)
+{
+	activate_menu_item (number_mod_labels[number_base]);
+}
+
+/* display_module_angle_activate.
+ */
+
+void display_module_angle_activate (int angle_unit)
+{
+	activate_menu_item (angle_mod_labels[angle_unit]);
+}
+
+/* display_module_notation_activate.
+ */
+
+void display_module_notation_activate (int mode)
+{
+	activate_menu_item (notation_mod_labels[mode]);
 }
 
 void display_get_line_end_iter (GtkTextBuffer *b, int line_index, GtkTextIter *end)

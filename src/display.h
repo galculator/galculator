@@ -1,7 +1,7 @@
 /*
  *  display.h
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
+ *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -74,6 +74,9 @@ void display_set_bkg_color (char *color_string);
 void display_update_tags ();
 void display_module_arith_label_update (char operation);
 int display_module_bracket_label_update (int option);
+void display_module_number_activate (int number_base);
+void display_module_angle_activate (int angle_unit);
+void display_module_notation_activate (int mode);
 
 /* the result field */
 

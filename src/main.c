@@ -1,7 +1,7 @@
 /*
  *  main.c
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
+ *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -27,16 +27,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <gtk/gtk.h>
-#include <gdk/gdkkeysyms.h>
-#include <glade/glade.h>
-
 #include "calc_basic.h"
 #include "galculator.h"
 #include "display.h"
 #include "config_file.h"
 #include "general_functions.h"
 #include "ui.h"
+
+#include <gtk/gtk.h>
+#include <gdk/gdkkeysyms.h>
+#include <glade/glade.h>
 
 #define MASK_NUMLOCK GDK_MOD2_MASK
 
@@ -148,7 +148,9 @@ int main (int argc, char *argv[])
 
 	// see function key_snooper for details
 	gtk_key_snooper_install (key_snooper, NULL);
-
+	
+	gtk_window_resize ((GtkWindow *)main_window, 1, 1);
+	
 	gtk_main ();
 
 	/* save changes to file */

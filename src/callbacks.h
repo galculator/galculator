@@ -1,7 +1,7 @@
 /*
  *  callbacks.h
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
+ *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -153,7 +153,7 @@ void on_prefs_show_menu_toggled (GtkToggleButton *togglebutton,
 
 void on_prefs_rem_display_toggled (GtkToggleButton *togglebutton, 
 					gpointer user_data);
-					
+/*					
 void on_prefs_def_number_changed (GtkOptionMenu *optionmenu,
 					gpointer user_data);
 					
@@ -162,7 +162,7 @@ void on_prefs_def_angle_changed (GtkOptionMenu *optionmenu,
 					
 void on_prefs_def_notation_changed (GtkOptionMenu *optionmenu,
 					gpointer user_data);
-					
+*/					
 void on_prefs_button_width_changed (GtkSpinButton *spinbutton,
 					GtkScrollType arg1,
 					gpointer user_data);

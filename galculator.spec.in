@@ -39,5 +39,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/%{name}.1*
 
 %changelog
-* Thu Oct 3 2002 Simon Floery <simon.floery@gmx.at>
+* Thu Oct 3 2002 Simon Floery <chimaira@users.sf.net>
 - description update

@@ -1,26 +1,10 @@
-todo ASAP --> 1.1.3:
-~~~~~~~~~~~~~~~~~~~~
+1.1.4
+~~~~~
 
-basicify/scientify
+improved rpn mode (display stack for RPN (x,y,z,t and infinite))
+save stack
 
-dispctrl for basic mode (also adapt dispctrl in on_scientific_mode_activate!)
-
-remove translatables from *.glade!
-
-angle, number and notation on a switch to basic:
-two current_states: own for basic, one for scientific (solves number base, ...)?
-
-[OK] double on stack for brackets (the 2 bug reports: 0.23-(1))
-[OK] set_table_child_font - update for m+ etc
-[OK] y^x in RPN mode
-[OK] set_menu_[check | radio] on startup
-[OK] remember display value
-[OK] current_status = def* on startup
-
----- bug reports
-	* reply to sf.net rpn/angle prefs save report
-	* fix constants and stack
-	* libglade?
+---bug reports
 
 =GUI======================================
 
@@ -40,7 +24,7 @@ two current_states: own for basic, one for scientific (solves number base, ...)?
 	chapter 5: menu view for button groups
 	chapter 6:
 	chapter 7:
-	chapter 8: GtkSizeGroup
+	chapter 8: GtkSizeGroup (DONE pref dialog)
 
 =sourceforge/homepage====================
 
@@ -51,10 +35,6 @@ update shortcuts text file
 
 #########################
 #########################
-
-1.1.4
-	improved rpn mode (display stack for RPN (x,y,z,t and infinite))
-	save stack
 	
 1.1.5
 	formula mode
@@ -87,5 +67,4 @@ complex numbers
 not nice:
 ~~~~~~~~~
 
-memory leaks:
-	* __fill_in__
+memory leaks

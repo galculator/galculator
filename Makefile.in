@@ -57,6 +57,8 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
+host_alias = @host_alias@
+host_triplet = @host@
 CATALOGS = @CATALOGS@
 CATOBJEXT = @CATOBJEXT@
 CC = @CC@
@@ -64,6 +66,7 @@ DATADIRNAME = @DATADIRNAME@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
+HAVE_LIB = @HAVE_LIB@
 INSTOBJEXT = @INSTOBJEXT@
 INTLLIBS = @INTLLIBS@
 INTLTOOL_CAVES_RULE = @INTLTOOL_CAVES_RULE@
@@ -84,6 +87,8 @@ INTLTOOL_THEME_RULE = @INTLTOOL_THEME_RULE@
 INTLTOOL_UI_RULE = @INTLTOOL_UI_RULE@
 INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
 INTLTOOL_XML_RULE = @INTLTOOL_XML_RULE@
+LIB = @LIB@
+LTLIB = @LTLIB@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
 MKINSTALLDIRS = @MKINSTALLDIRS@
@@ -117,9 +122,9 @@ CONFIG_CLEAN_FILES =  galculator.spec
 DATA =  $(desktop_DATA)
 
 DIST_COMMON =  README ./stamp-h.in ABOUT-NLS AUTHORS COPYING ChangeLog \
-INSTALL Makefile.am Makefile.in NEWS THANKS TODO aclocal.m4 config.h.in \
-configure configure.in galculator.spec.in install-sh missing \
-mkinstalldirs
+INSTALL Makefile.am Makefile.in NEWS THANKS TODO aclocal.m4 \
+config.guess config.h.in config.sub configure configure.in \
+galculator.spec.in install-sh missing mkinstalldirs
 
 
 DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)

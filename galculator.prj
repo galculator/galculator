@@ -93,9 +93,7 @@ module.source.files=\
 
 module.pixmap.name=.
 module.pixmap.type=
-module.pixmap.files=\
-	web/screenshot.jpg\
-	web/.xvpics/screenshot.jpg
+module.pixmap.files=
 
 module.data.name=.
 module.data.type=
@@ -114,7 +112,9 @@ module.doc.files=\
 	AUTHORS\
 	INSTALL\
 	ChangeLog\
-	COPYING
+	COPYING\
+	doc/shortcuts\
+	doc/galculator.1
 
 module.po.files=
 

@@ -1,7 +1,7 @@
 /*
  *  config_file.c - manages config file access.
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
+ *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -68,9 +68,9 @@ static s_prefs_entry prefs_list[35] = {
 	{"bin_signed", &(prefs.bin_signed), BOOLEAN, "prefs_bin_signed", set_checkbutton},
 	{"bin_fixed", &(prefs.bin_fixed), BOOLEAN, "prefs_bin_fixed", set_checkbutton},
 	{"bin_length", &(prefs.bin_length), INTEGER, "prefs_bin_length", set_spinbutton},
-	{"default_number_base", &(prefs.def_number), INTEGER, "prefs_def_number", set_optmenu},
-	{"default_angle_base", &(prefs.def_angle), INTEGER, "prefs_def_angle", set_optmenu},
-	{"default_notation_mode", &(prefs.def_notation), INTEGER, "prefs_def_notation", set_optmenu},
+	{"default_number_base", &(prefs.def_number), INTEGER, NULL, NULL},
+	{"default_angle_base", &(prefs.def_angle), INTEGER, NULL, NULL},
+	{"default_notation_mode", &(prefs.def_notation), INTEGER, NULL, NULL},
 	{"remembers_display", &(prefs.rem_display), BOOLEAN, "prefs_rem_display", set_checkbutton},
 	{"remembered_value", &(prefs.rem_value), STRING, NULL, NULL},
 	{"show_menu_bar", &(prefs.show_menu), BOOLEAN, "prefs_show_menu", set_checkbutton},
