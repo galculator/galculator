@@ -1101,7 +1101,7 @@ msgstr "Backspace"
 
 #: ui/dispctrl_right.glade.h:5 ui/dispctrl_bottom.glade.h:5
 msgid "Clear display"
-msgstr "LÃ¶scht das Display"
+msgstr "Löscht das Display"
 
 #: ui/dispctrl_right.glade.h:6 ui/dispctrl_bottom.glade.h:6
 msgid "Reset calculator (clear all)"
