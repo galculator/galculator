@@ -1,4 +1,16 @@
 ########################################
+# 2003-06-23 galculator 1.1.1 released #
+########################################
+
+2003-06-23 Simon Floery <simon.floery@gmx.at>
+
+	* specify bit length/signed for hex, oct and bin mode 
+	(closes DBTS #197490)
+	* src/callbacks.c fixed bug in interface preferences dialog <-> 
+	font/color dialogs
+	* src/general_functions.c: position_menu works with GTK 2.0 again
+
+########################################
 # 2003-06-22 galculator 1.1.0 released #
 ########################################
 

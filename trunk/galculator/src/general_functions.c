@@ -177,13 +177,14 @@ void set_button_group_font (GladeXML *xml, char *table_name, char *font_string)
  *  a number is called negative, if its msb is set!
  */
 
-double axtof (char *bin_string, int base, int display_length)
+double axtof (char *bin_string, int base, int nr_bits, gboolean is_signed)
 {
 	double 		return_value=0;
-	int		counter, sign_length=0;
+	int		counter;
 	
 	/* according to man strtod, inf should be there in every case */
 	if (strstr (g_ascii_strdown (bin_string, -1), "inf") != NULL) return INFINITY;
+
 	for (counter = strlen (bin_string) - 1; counter >= 0; counter--) {
 		if (bin_string[counter] - '0' < 10) \
 			return_value += (bin_string[counter] - '0') * pow (base, strlen (bin_string) - 1 - counter);
@@ -193,13 +194,11 @@ double axtof (char *bin_string, int base, int display_length)
 	}
 	
 	/* handle negative numbers. */
-	/* determine, how much bits a sign of this number base stands for */
-	while (pow (2, sign_length) < base) sign_length++;
-	/* if most significant bit is set, its a negative number. using
-	 * pow (base, display_length - 1) as limit is WRONG.
-	 */
-	if (return_value >= pow (2, sign_length*display_length - 1)) \
-		return_value = (-1) * (pow (base, display_length) - return_value);
+
+	/* if most significant bit is set, its a negative number. using */
+	if (is_signed == TRUE) 
+		if (return_value >= pow (2, nr_bits - 1))
+			return_value = (-1) * (pow (2, nr_bits) - return_value);
 	return return_value;
 }
 
@@ -215,21 +214,22 @@ int rem (double x, long long int y)
  *  see axtof for details about what is a negative number.
  */
 
-char *ftoax (double x, int base, int display_length)
+char *ftoax (double x, int base, int nr_bits, gboolean is_signed)
 {
 	char		*return_string;
-	int		length=0, counter, remainder, sign_length=0;
+	int		length=0, counter, remainder;
 	double		localx;
 	
-	/* determine, how much bits a sign for this number base stands for */
-	while (pow (2, sign_length) < base) sign_length++;
 	/* handle huge values --> infinity */
-	if (x < (-1)*pow (2, display_length*sign_length - 1)) return g_strdup(MY_INFINITY_STRING);
-	if (x >= pow (2, display_length*sign_length - 1)) return g_strdup(MY_INFINITY_STRING);
-		
-	/* handle negative numbers */
-	if (x < 0) x = pow (2, display_length*sign_length) + x;
-	
+	if (is_signed == TRUE) {
+		if (x < (-1)*pow (2, nr_bits - 1)) return g_strdup(MY_INFINITY_STRING);
+		if (x >= pow (2, nr_bits - 1)) return g_strdup(MY_INFINITY_STRING);
+		/* handle negative numbers */
+		if (x < 0) x = pow (2, nr_bits) + x;
+	} else {
+		if (x >= pow (2, nr_bits)) return g_strdup(MY_INFINITY_STRING);
+		if (x < 0) return g_strdup(MY_INFINITY_STRING);
+	}
 	/* doing it this way and not with logs as this is much more numerical stable */
 	localx = x;
 	while ((localx=floor(localx/(double)base)) >= 1) length++;
@@ -243,7 +243,7 @@ char *ftoax (double x, int base, int display_length)
 		if (remainder < 10) return_string[counter] = '0' + remainder;
 		else if (remainder < 20) return_string[counter] = 'A' + remainder - 10;
 		else fprintf (stderr, _("[%s] failed to convert %f in function \"ftoax\". %s\n"), PROG_NAME, x, BUG_REPORT);
-		localx = floor (localx/(double)base);
+		localx = floor (localx / (double)base);
 	}
 	return return_string;
 }
@@ -350,6 +350,7 @@ GtkWidget *show_font_dialog (char *title, GtkButton *button)
 		gtk_button_get_label (button));
 	gtk_widget_hide (((GtkFontSelectionDialog *)font_dialog)->apply_button);
 	gtk_widget_show (font_dialog);
+
 	return font_dialog;
 }
 
@@ -569,7 +570,7 @@ void set_object_data (GladeXML *xml)
 void position_menu (GtkMenu *menu, gint *x, gint *y, gboolean *push_in, gpointer user_data)
 {
 	/* this code is taken from GTK 2.2.1 source, therefore credits go there.
-	 *  gtk+-2.2.1/gtk/gtkoptionmenu.c
+	 *  gtk+-2.0.6/gtk/gtkoptionmenu.c (function gtk_option_menu_position)
 	 * modified to fit our button menu widget.
 	 */
 	GtkWidget *child;
@@ -607,7 +608,8 @@ void position_menu (GtkMenu *menu, gint *x, gint *y, gboolean *push_in, gpointer
 		children = children->next;
 	}
 	
-	screen_width = gdk_screen_get_width (gtk_widget_get_screen (widget));
+	//screen_width = gdk_screen_get_width (gtk_widget_get_screen (widget));
+	screen_width = gdk_screen_width ();
 	
 	if (menu_xpos < 0) menu_xpos = 0;
 	else if ((menu_xpos + menu_width) > screen_width)

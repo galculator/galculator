@@ -32,30 +32,36 @@
 #define SECTION_GENERAL "[general]"
 #define SECTION_CONSTANTS "[constants]"
 
-#define DEFAULT_BKG_COLOR			"#e6edbd"
-#define DEFAULT_RESULT_FONT			"Sans Bold 26"
+#define DEFAULT_BKG_COLOR		"#e6edbd"
+#define DEFAULT_RESULT_FONT		"Sans Bold 26"
 #define	DEFAULT_RESULT_COLOR 		"black"
-#define DEFAULT_MOD_FONT			"Sans Bold 9"
+#define DEFAULT_MOD_FONT		"Sans Bold 9"
 #define DEFAULT_ACT_MOD_COLOR		"black"
 #define DEFAULT_INACT_MOD_COLOR		"grey"
-#define	DEFAULT_VIS_NUMBER			TRUE
-#define	DEFAULT_VIS_ANGLE			TRUE
+#define	DEFAULT_VIS_NUMBER		TRUE
+#define	DEFAULT_VIS_ANGLE		TRUE
 #define	DEFAULT_VIS_NOTATION		TRUE
-#define DEFAULT_VIS_ARITH			TRUE
-#define DEFAULT_VIS_BRACKET			TRUE
+#define DEFAULT_VIS_ARITH		TRUE
+#define DEFAULT_VIS_BRACKET		TRUE
 #define DEFAULT_CUSTOM_BUTTON_FONT	FALSE
-#define DEFAULT_BUTTON_FONT			"Sans 10"
+#define DEFAULT_BUTTON_FONT		"Sans 10"
 #define DEFAULT_BUTTON_WIDTH 		40
 #define DEFAULT_BUTTON_HEIGHT 		25
-#define DEFAULT_VIS_FUNCS			TRUE
-#define DEFAULT_VIS_LOGIC			TRUE
+#define DEFAULT_VIS_FUNCS		TRUE
+#define DEFAULT_VIS_LOGIC		TRUE
 #define DEFAULT_VIS_DISPCTRL		TRUE
-#define DEFAULT_NUMBER				CS_DEC
-#define DEFAULT_ANGLE				CS_RAD
-#define DEFAULT_NOTATION			CS_PAN
-#define DEFAULT_REM_DISPLAY			FALSE
-#define	DEFAULT_REM_VALUE			"0"			// must not end with a newline!
-#define DEFAULT_SHOW_MENU			TRUE
+#define DEFAULT_HEX_BITS		32
+#define DEFAULT_HEX_SIGNED		TRUE
+#define DEFAULT_OCT_BITS		32
+#define DEFAULT_OCT_SIGNED		TRUE
+#define DEFAULT_BIN_BITS		16
+#define DEFAULT_BIN_SIGNED		TRUE
+#define DEFAULT_NUMBER			CS_DEC
+#define DEFAULT_ANGLE			CS_RAD
+#define DEFAULT_NOTATION		CS_PAN
+#define DEFAULT_REM_DISPLAY		FALSE
+#define	DEFAULT_REM_VALUE		"0"			// must not end with a newline!
+#define DEFAULT_SHOW_MENU		TRUE
 
 typedef struct {
 	// 1st pref page
@@ -79,6 +85,15 @@ typedef struct {
 	gboolean	vis_logic;
 	gboolean	vis_dispctrl;
 	// 3rd pref page
+	// constants. handled different
+	// 4th pref page
+	int		hex_bits;
+	gboolean	hex_signed;
+	int		oct_bits;
+	gboolean	oct_signed;
+	int		bin_bits;
+	gboolean	bin_signed;
+	// 5th pref page
 	int		def_number;		// in accordance with enums in
 	int		def_angle;		// galculator.h
 	int		def_notation;
@@ -93,7 +108,7 @@ typedef struct {
 typedef struct {
 	char 	*key;
 	void	*variable;
-	int		key_type;
+	int	key_type;
 	char 	*widget_name;
 	void	(*set_handler)(GladeXML *, char *, void *);
 } s_prefs_entry;

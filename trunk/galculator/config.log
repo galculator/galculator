@@ -137,7 +137,7 @@ configure: failed program was:
 | #define PACKAGE_STRING ""
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE "galculator"
-| #define VERSION "1.1.0"
+| #define VERSION "1.1.1"
 | /* end confdefs.h.  */
 | 
 | /* Override any gcc2 internal prototype to avoid an error.  */
@@ -171,7 +171,7 @@ configure: failed program was:
 | #define PACKAGE_STRING ""
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE "galculator"
-| #define VERSION "1.1.0"
+| #define VERSION "1.1.1"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
 configure:2763: result: gcc -E
@@ -190,7 +190,7 @@ configure: failed program was:
 | #define PACKAGE_STRING ""
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE "galculator"
-| #define VERSION "1.1.0"
+| #define VERSION "1.1.1"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
 configure:2875: checking for egrep
@@ -352,6 +352,7 @@ config.status:684: creating po/Makefile.in
 config.status:684: creating ui/Makefile
 config.status:684: creating doc/Makefile
 config.status:788: creating config.h
+config.status:907: config.h is unchanged
 config.status:1007: executing default-1 commands
 config.status:1007: executing default-2 commands
 config.status:1007: executing default-3 commands
@@ -486,7 +487,7 @@ PO_IN_DATADIR_TRUE=''
 SET_MAKE=''
 SHELL='/bin/sh'
 USE_NLS='yes'
-VERSION='1.1.0'
+VERSION='1.1.1'
 XGETTEXT='/usr/bin/xgettext'
 ac_ct_CC='gcc'
 bindir='${exec_prefix}/bin'
@@ -535,6 +536,6 @@ target_alias=''
 #define PACKAGE_TARNAME ""
 #define PACKAGE_VERSION ""
 #define STDC_HEADERS 1
-#define VERSION "1.1.0"
+#define VERSION "1.1.1"
 
 configure: exit 0
