@@ -6,14 +6,14 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=6
-1=15
-2=872
-3=188
-4=14
-5=1
-6=37
-7=1
+0=69
+1=1
+2=908
+3=334
+4=89
+5=29
+6=2
+7=18
 8=16
 9=13
 10=21
@@ -42,8 +42,14 @@ filter.dir.ignore.hidden=0
 clean before build=false
 
 [filelist]
-0=/home/sf/Devel/galculator/ChangeLog
-1=/home/sf/Devel/galculator/TODO
+0=/home/sf/Devel/galculator/src/general_functions.c
+1=/home/sf/Devel/galculator/src/galculator.h
+2=/home/sf/Devel/galculator/src/ui.c
+3=/home/sf/Devel/galculator/src/callbacks.c
+4=/home/sf/Devel/galculator/src/parser.c
+5=/home/sf/Devel/galculator/src/parser.h
+6=/home/sf/Devel/galculator/ChangeLog
+7=/home/sf/Devel/galculator/TODO
 
 [Project Tree]
 0=0

@@ -34,6 +34,7 @@
 #include "parser.h"
 #include "calc_basic.h"
 #include "galculator.h"
+#include "math_functions.h"
 
 /* is_operation. determines on behalf of current and previous character if 
  * current one is an operation.
@@ -68,13 +69,47 @@ int remove_whitespaces (char *string)
 	return new_string_counter;
 }
 
+/* factorial_preprocessing. factorial sign is always after the bracket
+ * expression it is determined for. this function puts it before that
+ * expression. so far ! is the only function with this extra behaviour, 
+ * therefore this special case handling.
+ */
+
+void factorial_preprocessing (char *string, int string_length)
+{
+	int 		counter, inner_counter, fac_counter=0, *bracket_counter=NULL;
+	
+	for (counter = string_length-1; counter >= 0; counter--) {
+		if (string[counter] == '!') {
+			fac_counter++;
+			bracket_counter = (int *) realloc (bracket_counter, fac_counter * sizeof(int));
+			bracket_counter[fac_counter-1] = 0;
+		}
+		if (fac_counter > 0) {
+			if (string[counter] == ')')
+				for (inner_counter = 0; inner_counter < fac_counter; inner_counter++)
+					bracket_counter[inner_counter]++;
+			string[counter + bracket_counter[0]] = string[counter];
+			if (string[counter] == '(')
+				for (inner_counter = 0; inner_counter < fac_counter; inner_counter++)
+					bracket_counter[inner_counter]--;
+			if ((bracket_counter[fac_counter-1] == 0) && (string[counter] != '!')) {
+				string[counter+bracket_counter[0]] = '!';
+				fac_counter--;
+				bracket_counter = (int *) realloc (bracket_counter, fac_counter * sizeof(int));
+			}
+		}
+	}
+	
+}
+
 /* identify_function. tries to match given string to a function
  */
 
 static double (*identify_function (char *string))(double)
 {
 	int 			counter=0;
-	s_string_func_pair 	map[16] = {
+	s_string_func_pair 	map[18] = {
 		{"sin", sin},
 		{"cos", cos},
 		{"tan", tan},
@@ -90,6 +125,8 @@ static double (*identify_function (char *string))(double)
 		{"asinh", asinh},
 		{"acosh", acosh},
 		{"atanh", atanh},
+		{"!", factorial},
+		{"~", cmp},
 		{NULL, NULL}};
 	
 	while ((map[counter].function != NULL) && 
@@ -156,6 +193,9 @@ double parse_string(const char *input_string)
 	
 	string = g_strdup_printf ("%s=", input_string);
 	string_length = remove_whitespaces (string);
+	printf ("..%s\n", string);
+	factorial_preprocessing (string, string_length);
+	printf ("..%s\n", string);
 	number = string;
 	for (counter = 0; counter < string_length; counter++) {
 		/* current character is an operation BUT not a minus sign 

@@ -60,6 +60,17 @@ void error_message (char *message)
 void clear ()
 {
 	display_result_set (CLEARED_DISPLAY);
+	if (current_status.notation == CS_FORMULA) ui_formula_entry_set ("");
+}
+
+/* backspace. if formula_entry is active, backspace works anyway. but if we
+ * press GUI's backspace button this gives the expected result.
+ */
+
+void backspace ()
+{
+	if (current_status.notation == CS_FORMULA) ui_formula_entry_backspace();
+	else display_result_backspace();
 }
 
 /* clear all: display ("0"), calc_tree ... */
