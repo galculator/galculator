@@ -37,10 +37,12 @@
 #include <glade/glade.h>
 
 #define SELECT_RESULT_FONT _("Select result font")
+#define SELECT_STACK_FONT _("Select stack font")
 #define SELECT_MODULE_FONT _("Select module font")
 #define SELECT_ACT_MOD_COLOR _("Select active module color")
 #define SELECT_INACT_MOD_COLOR _("Select inactive module color")
 #define SELECT_RESULT_FONT_COLOR _("Select result font color")
+#define SELECT_STACK_COLOR _("Select stack color")
 #define SELECT_BKG_COLOR _("Select background color")
 #define SELECT_BUTTON_FONT _("Select button font")	
 
@@ -602,7 +604,6 @@ on_prefs_result_font_clicked           (GtkButton       *button,
 	font_dialog = ui_font_dialog_create (SELECT_RESULT_FONT, button);
 }
 
-
 void
 on_prefs_result_color_clicked          (GtkButton       *button,
                                         gpointer         user_data)
@@ -610,6 +611,19 @@ on_prefs_result_color_clicked          (GtkButton       *button,
 	color_dialog = ui_color_dialog_create (SELECT_RESULT_FONT_COLOR, button);
 }
 
+void
+on_prefs_stack_font_clicked           (GtkButton       *button,
+                                        gpointer         user_data)
+{
+	font_dialog = ui_font_dialog_create (SELECT_STACK_FONT, button);
+}
+
+void
+on_prefs_stack_color_clicked          (GtkButton       *button,
+                                        gpointer         user_data)
+{
+	color_dialog = ui_color_dialog_create (SELECT_STACK_COLOR, button);
+}
 
 void
 on_prefs_mod_font_clicked              (GtkButton       *button,
@@ -676,6 +690,13 @@ on_color_ok_button_clicked             (GtkButton       *button,
 		prefs.result_color = gdk_color_to_string(color);
 		display_update_tags();
 	}
+	else if (strcmp (title, SELECT_STACK_COLOR) == 0)
+	{
+		da = glade_xml_get_widget (prefs_xml, "prefs_stack_color");
+		if (prefs.stack_color != NULL) g_free (prefs.stack_color);
+		prefs.stack_color = gdk_color_to_string(color);
+		display_update_tags();
+	}
 	else if (strcmp (title, SELECT_ACT_MOD_COLOR) == 0)
 	{
 		da = glade_xml_get_widget (prefs_xml, "prefs_act_mod_color");
@@ -715,6 +736,13 @@ on_font_ok_button_clicked              (GtkButton       *button,
 		font_button = (GtkButton *) glade_xml_get_widget (prefs_xml, "prefs_result_font");
 		if (prefs.result_font != NULL) g_free (prefs.result_font);
 		prefs.result_font = g_strdup(font_name);
+		display_update_tags();
+	}
+	else if (strcmp (title, SELECT_STACK_FONT) == 0)
+	{
+		font_button = (GtkButton *) glade_xml_get_widget (prefs_xml, "prefs_stack_font");
+		if (prefs.stack_font != NULL) g_free (prefs.stack_font);
+		prefs.stack_font = g_strdup(font_name);
 		display_update_tags();
 	}
 	else if (strcmp (title, SELECT_MODULE_FONT) == 0)
