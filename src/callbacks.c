@@ -1272,4 +1272,11 @@ void on_infinite_stack_size_clicked (GtkRadioButton *rb, gpointer user_data)
 	prefs.stack_size = RPN_INFINITE_STACK;
 	rpn_stack_set_size (prefs.stack_size);
 }
+
+void on_main_window_button_press_event(GtkWidget *widget,
+						GdkEventButton *event,
+						gpointer user_data)
+{
+	printf ("Hallo\n");
+}
 /* END */
