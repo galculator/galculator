@@ -9,9 +9,14 @@
 
 [ ] parser
 	[DONE] negative numbers
-	[ ] functions
-	[ ] whitespaces
+	[DONE] functions
+	[DONE] whitespaces
 	[ ] !
+	[DONE] constants
+	[ ] AND, OR, MOD, LSH, ...
+
+[?] constant  dec point bug 
+[DONE] strtod - wenn im rest was drinnen, warnung
 
 [?] pref option? accelerator active for formula entry: key "s" gives "sin("
 

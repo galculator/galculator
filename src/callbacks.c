@@ -31,6 +31,7 @@
 #include "config_file.h"
 #include "callbacks.h"
 #include "ui.h"
+#include "parser.h"
 
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
@@ -1295,10 +1296,13 @@ gboolean on_button_press_event (GtkWidget *widget, GdkEventButton *event, gpoint
 	return FALSE;
 }
 
-void on_formula_entry_activate (GtkEntry *entry,
-                                            gpointer user_data)
+void on_formula_entry_activate (GtkEntry *entry, gpointer user_data)
 {
-	printf ("parse: %s\n", gtk_entry_get_text (entry));
+	display_result_set_double (parse_string (gtk_entry_get_text (entry)));
+	/*
+	current_status.calc_entry_start_new = TRUE;	
+	current_status.rpn_have_result = TRUE;
+	*/
 }
 
 

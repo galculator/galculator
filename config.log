@@ -389,6 +389,7 @@ config.status:759: creating po/Makefile.in
 config.status:759: creating ui/Makefile
 config.status:759: creating doc/Makefile
 config.status:825: creating config.h
+config.status:945: config.h is unchanged
 config.status:1103: executing default-1 commands
 config.status:1103: executing default-2 commands
 config.status:1103: executing default-3 commands

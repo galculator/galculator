@@ -138,11 +138,6 @@ typedef struct {
 
 typedef struct {
 	char		*button_name;
-	double		constant;
-} s_constant_map;
-
-typedef struct {
-	char		*button_name;
 	char 		*display_name;
 	void		(*func)();
 } s_gfunc_map;
