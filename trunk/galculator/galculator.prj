@@ -1,0 +1,143 @@
+# Anjuta Version 1.0.2 
+Compatibility Level: 1 
+
+<PROJECT_DESCRIPTION_START>
+a GTK 2 based scientific calculator
+<PROJECT_DESCRIPTION_END>
+<CONFIG_PROGS_START>
+<CONFIG_PROGS_END>
+<CONFIG_LIBS_START>
+<CONFIG_LIBS_END>
+<CONFIG_HEADERS_START>
+<CONFIG_HEADERS_END>
+<CONFIG_CHARACTERISTICS_START>
+<CONFIG_CHARACTERISTICS_END>
+<CONFIG_LIB_FUNCS_START>
+<CONFIG_LIB_FUNCS_END>
+<CONFIG_ADDITIONAL_START>
+<CONFIG_ADDITIONAL_END>
+<CONFIG_FILES_START>
+<CONFIG_FILES_END>
+<MAKEFILE_AM_START>
+<MAKEFILE_AM_END>
+
+props.file.type=project
+
+anjuta.version=1.0.2
+anjuta.compatibility.level=1
+
+project.name=galculator
+project.type=GTK
+project.target.type=EXECUTABLE
+project.version=1.0rc1
+project.author=Simon Floery
+project.source.target=of course the world best calculator
+project.has.gettext=0
+project.programming.language=C
+project.excluded.modules=	intl
+
+project.config.extra.modules.before=
+project.config.extra.modules.after=
+project.config.blocked=1
+project.config.disable.overwriting=1 1 1 1 1 1 1 1 1 
+
+project.menu.entry=galculator Version 0.7
+project.menu.group=Application
+project.menu.comment=galculator Version 0.7
+project.menu.icon=
+project.menu.need.terminal=0
+
+project.configure.options=
+anjuta.program.arguments=
+preferences.indent.automatic=1
+preferences.use.tabs=1
+preferences.indent.opening=0
+preferences.indent.closing=0
+preferences.tabsize=8
+preferences.indent.size=8
+preferences.autoformat.style=Style of Kangleipak
+preferences.autoformat.custom.style= -i8 -sc -bli0 -bl0 -cbi0 -ss
+preferences.autoformat.disable=0
+preferences.debugger.command=gdb
+preferences.ui.designer=glade '$(project.name).glade'
+preferences.help.browser=devhelp -s '$(current.file.selection)'
+
+module.include.name=.
+module.include.type=
+module.include.expanded=1
+module.include.files=\
+	src/display.h\
+	src/callbacks.h\
+	src/math_functions.h\
+	src/calc_basic.h\
+	src/galculator.h\
+	src/general_functions.h\
+	src/config_file.h
+
+module.source.name=.
+module.source.type=
+module.source.expanded=1
+module.source.files=\
+	src/display.c\
+	src/callbacks.c\
+	src/main.c\
+	src/math_functions.c\
+	src/calc_basic.c\
+	src/general_functions.c\
+	src/config_file.c
+
+module.pixmap.name=.
+module.pixmap.type=
+module.pixmap.expanded=1
+module.pixmap.files=\
+	web/screenshot.jpg\
+	web/.xvpics/screenshot.jpg
+
+module.data.name=.
+module.data.type=
+module.data.expanded=0
+module.data.files=
+
+module.help.name=.
+module.help.type=
+module.help.expanded=0
+module.help.files=
+
+module.doc.name=.
+module.doc.type=
+module.doc.expanded=1
+module.doc.files=\
+	web/screenshots.html\
+	web/features.html\
+	web/index.html\
+	web/navigation.html\
+	web/download.html\
+	web/home.html\
+	NEWS\
+	TODO\
+	README\
+	AUTHORS\
+	INSTALL\
+	ChangeLog\
+	COPYING
+
+module.po.expanded=0
+module.po.files=
+
+compiler.options.supports=
+compiler.options.include.paths=\
+	.\
+	..
+compiler.options.library.paths=
+compiler.options.libraries=
+compiler.options.libraries.selected=
+compiler.options.defines=\
+	HAVE_CONFIG_H
+compiler.options.warning.buttons=0 0 1 1 0 1 0 0 0 0 0 0 0 1 0 0 
+compiler.options.optimize.buttons=0 0 1 0 
+compiler.options.other.buttons=1 0 
+compiler.options.other.c.flags=
+compiler.options.other.l.flags=
+compiler.options.other.l.libs=
+project.source.paths=
+

@@ -1,0 +1,12 @@
+galculator
+==========
+
+a GTK 2 based scientific calculator 
+
+For installation information see the INSTALL file.
+For hacking information see the calc_basic_internal file.
+
+RPMs: a spec file is included (galculator.spec). Thanks to Victor.
+DEBs: galculator is DEBIAN/unstable. Thanks to seb128.
+
+simon floery (simon.floery@gmx.at)

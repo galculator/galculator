@@ -1,0 +1,93 @@
+09-06-2003 constants popup, user defined constants
+	memory popups
+
+  -  -2003 galculator 1.0 released
+==================================
+
+03-06-2003 improved keypad support
+26-05-2003 i18n
+12-05-2003 instant apply pref dialog (plus additional HIGs)
+11-05-2003 moved to libglade
+	paste numbers with mouse middle button click
+	button activation and signals: bug fixes
+30-04-2003 added KP_Delete and KP_Separator to key_snooper
+	removed statusbar from GUI
+
+24-04-2003 galculator 1.0 released
+==================================
+
+21-04-2003 fixed resizing problems with last_arith and bracket modules
+20-04-2003 useless buttons are greyed out depending on current mode
+	added Categories to galculator.desktop
+	GUI updates (first small step towards HIG)
+	use default/custom button font
+19-04-2003 it's possible to save the display value on exit
+13-04-2003 key press activates button like mouse click
+06-04-2003 color button got a viewport
+03-04-2003 in RPN mode enter button gets an "ENT" label
+30-03-2003 fixed not working sqrt button
+
+29-03-2003 galculator 1.0rc1 released
+=====================================
+
+29-03-2003 fixed bug #186694
+20-03-2003 fixes to display code
+18-03-2003 fixes to display modules' code
+17-03-2003 removed any specific command line options
+	applied "non-gcc" patches (thanks to Brandon)
+	updated man page
+15-03-2003 new color button
+10-03-2003 big accessibility improvement patch by Maik
+	GUI updates
+09-03-2003 GUI fixes (border width <-> row/col spacing)
+	complete display code rewrite (tables --> gtk_widget_get_pointer)
+07-03-2003 added "last arithmetic" and "open brackets" display modules
+04-03-2003 new behaviour for two successive arithmetic operation button clicks:
+	past: 10+*10 = 10 + 10 * 10 = 110
+	now:  10+*10 = 10 + 10 = 20 (only first operation counts)
+01-03-2003 GUI updates (thanks to Maik)
+28-02-2003 new display organisation (modules)
+	memory buttons' tooltips show current memory value
+	Shortcut for Hide/Unhide Menubar
+26-02-2003 preferences dialog
+	settings are saved to a configuration file
+	some additional shortcuts
+	a lot of tooltips
+13-02-2003 new display code
+24-01-2003 fixed 0%0 bug
+23-01-2003 fixed negative number conversion bug (conversion.patch)
+
+19-01-2003 galculator 0.9 released
+==================================
+
+17-01-2003 fixed grave calc_tree bug
+04-01-2003 cleaned up building process
+	man page
+03-01-2003 using locale's decimal point
+	final display aspects (infinity, display_lengths)
+29-11-2002 introduced command line arguments
+	change button size
+	change font
+28-11-2002 negative number support in hex/oct/bin
+21-11-2002 AND, OR and XOR operations added to calc_basic
+	CMP function added to math_functions
+	Set Button group visibility ([menu]Settings->Show Buttons)
+20-11-2002 display capabilities update for DEC/HEX/OCT/BIN
+19-11-2002 char <-> double converting (dec/hex/oct/bin)
+15-11-2002 support for radiant, degree and grad
+	the INV and HYP button can't be activated both at the same time (there is no asinh!)
+	added mod and lsh operation
+
+14-11-2002 galculator 0.8 released
+==================================
+
+05-11-2002 display ok and working
+25-10-2002 angle unit conversion working
+	improved display
+18-10-2002 modified autogen.sh to pass argument --copy to automake [thanks to james (james@and.org)]
+	buttons resize now [thanks to james (james@and.org)] 
+10-10-2002 added RPN support
+03-10-2002 added spec and gnome menu file [thanks to Victor (gbs@tnss.kharkov.ua)]
+
+02-10-2002 initial galculator 0.7 release
+=========================================

@@ -1,0 +1,30 @@
+galculator 1.0
+	useless bottons are greyed out
+	display modules cause window resizing problem solved
+	new default font handling
+	startup with last display value
+	key press activates button like mouse click
+	other GUI updates and bug fixes
+
+galculator 1.0rc1
+	new display and display modules
+	preferences dialog
+	configuration file
+	gtk accessibility
+	bug fixes
+
+galculator 0.9
+	Support for decimal, hexadecimal, octal and binary numbers. 
+	Support for three different base units: radiant, degree and grad. 
+	new operations/functions: MOD, LSH, AND, OR, XOR, CMP.
+	GUI options (button group visibility, button size, button font). 
+	command line arguments.
+
+galculator 0.8
+
+	spec file, "gnome menu support", GUI resizing improved, display updates, 
+	RPN support.
+
+galculator 0.7
+
+	initial release

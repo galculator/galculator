@@ -1,0 +1,13 @@
+galculator.desktop.in
+src/callbacks.c
+src/main.c
+src/galculator.h
+src/calc_basic.c
+src/config_file.c
+src/display.c
+src/general_functions.c
+ui/main.glade
+ui/about.glade
+ui/color.glade
+ui/font.glade
+ui/prefs.glade

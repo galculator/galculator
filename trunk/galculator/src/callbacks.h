@@ -1,0 +1,190 @@
+/*
+ *  callbacks.h
+ *	part of galculator
+ *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Library General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ */
+
+#include <gtk/gtk.h>
+
+/* FILE */
+
+void
+on_number_button_clicked               (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_operation_button_clicked            (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_function_button_clicked             (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_constant_button_clicked             (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_tbutton_fmod_clicked                (GtkButton       *button,
+										gpointer		 user_data);
+void
+on_gfunc_button_clicked                (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_about_ok_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_quit_activate                       (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_dec_activate                        (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_hex_activate                        (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_oct_activate                        (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_bin_activate                        (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_deg_activate                        (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_rad_activate                        (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_grad_activate                       (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_ordinary_activate                   (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_rpn_activate                        (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_about_activate                      (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_preferences1_activate               (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_prefs_result_font_clicked           (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_prefs_result_color_clicked          (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_prefs_mod_font_clicked              (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_prefs_act_mod_color_clicked         (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_prefs_inact_mod_color_clicked       (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_prefs_bkg_color_clicked             (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_prefs_button_font_clicked           (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_prefs_close_clicked                (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_color_ok_button_clicked             (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_color_cancel_button_clicked         (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_font_ok_button_clicked              (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_font_cancel_button_clicked          (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_prefs_cancel_clicked                (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_color_cancel_button_clicked         (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_font_cancel_button_clicked          (GtkButton       *button,
+                                        gpointer         user_data);
+void
+on_show_menubar1_activate              (GtkMenuItem     *menuitem,
+                                        gpointer         user_data);
+void
+on_prefs_custom_button_font_toggled    (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+gboolean on_textview_button_press_event (GtkWidget *widget,
+                                        GdkEventButton *event,
+                                        gpointer user_data);
+
+void on_textview_selection_received (GtkWidget *widget,
+                                            GtkSelectionData *data,
+                                            guint time,
+                                            gpointer user_data);
+											
+gboolean on_button_event(GtkWidget *widget, GdkEvent *event, gpointer user_data);
+
+void on_prefs_vis_number_toggled (GtkToggleButton *togglebutton, 
+										gpointer user_data);
+										
+void on_prefs_vis_angle_toggled (GtkToggleButton *togglebutton, 
+										gpointer user_data);
+
+void on_prefs_vis_notation_toggled (GtkToggleButton *togglebutton, 
+										gpointer user_data);
+
+void on_prefs_vis_arith_toggled (GtkToggleButton *togglebutton, 
+										gpointer user_data);
+
+void on_prefs_vis_bracket_toggled (GtkToggleButton *togglebutton, 
+										gpointer user_data);
+
+void on_prefs_vis_funcs_toggled (GtkToggleButton *togglebutton, 
+										gpointer user_data);
+
+void on_prefs_vis_logic_toggled (GtkToggleButton *togglebutton, 
+										gpointer user_data);
+
+void on_prefs_vis_dispctrl_toggled (GtkToggleButton *togglebutton, 
+										gpointer user_data);
+										
+void on_prefs_show_menu_toggled (GtkToggleButton *togglebutton, 
+										gpointer user_data);
+
+void on_prefs_rem_display_toggled (GtkToggleButton *togglebutton, 
+										gpointer user_data);
+										
+void on_prefs_def_number_changed (GtkOptionMenu *optionmenu,
+										gpointer user_data);
+										
+void on_prefs_def_angle_changed (GtkOptionMenu *optionmenu,
+										gpointer user_data);
+										
+void on_prefs_def_notation_changed (GtkOptionMenu *optionmenu,
+										gpointer user_data);
+										
+void on_prefs_button_width_changed (GtkSpinButton *spinbutton,
+										GtkScrollType arg1,
+										gpointer user_data);
+
+void on_prefs_button_height_changed (GtkSpinButton *spinbutton,
+										GtkScrollType arg1,
+										gpointer user_data);
