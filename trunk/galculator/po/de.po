@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-17 15:35+0200\n"
+"POT-Creation-Date: 2004-03-20 19:20+0200\n"
 "PO-Revision-Date: 2003-05-26 14:24+0200\n"
 "Last-Translator: Simon Floery <chimaira@users.sf.net>\n"
 "Language-Team: German <de@li.org>\n"
@@ -74,11 +74,11 @@ msgstr ""
 "\n"
 "(c) 2002-2004 by Simon Floery (chimaira@users.sf.net)"
 
-#: src/callbacks.c:1074
+#: src/callbacks.c:1082
 msgid "save here"
 msgstr "speichere hier"
 
-#: src/main.c:58
+#: src/main.c:59
 #, c-format
 msgid ""
 "\n"
@@ -107,7 +107,7 @@ msgstr ""
 msgid "Please submit a bugreport."
 msgstr "Bitte erstelle einen Bugreport."
 
-#: src/calc_basic.c:151
+#: src/calc_basic.c:149
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr "[%s] %c - Unbekanntes Operationszeichen. %s\n"
@@ -128,12 +128,12 @@ msgstr "Eulersche Zahl"
 msgid "e"
 msgstr "e"
 
-#: src/config_file.c:204
+#: src/config_file.c:207
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
 msgstr "[%s] configurtion file: ignoriere unbekannten Eintrag %s=%s. %s\n"
 
-#: src/config_file.c:220
+#: src/config_file.c:223
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
@@ -141,7 +141,7 @@ msgstr ""
 "[%s] configuration file: %s muss TRUE oder FALSE sein. Es wird der default "
 "Wert verwendet. %s\n"
 
-#: src/config_file.c:226
+#: src/config_file.c:229
 #, c-format
 msgid ""
 "[%s] configuration file: failed to convert %s to a number properly. Have you "
@@ -150,7 +150,7 @@ msgstr ""
 "[%s] configuration file: Konnte %s nicht in eine Zahl umwandeln. Wurden die "
 "locales Einstellungen geändert? %s\n"
 
-#: src/config_file.c:229
+#: src/config_file.c:232
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
@@ -158,7 +158,7 @@ msgstr ""
 "[%s] configuration file: ignoriere unbekannten key_type in config structure. "
 "%s\n"
 
-#: src/config_file.c:248
+#: src/config_file.c:251
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
@@ -167,7 +167,7 @@ msgstr ""
 "[%s] Der unbekannte Abschnitt %s wurde in der Konfigurationsdatei %s "
 "gefunden. Setze mit vorherigem Abschnitt fort.\n"
 
-#: src/config_file.c:367
+#: src/config_file.c:370
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
@@ -178,7 +178,7 @@ msgstr ""
 "öffnen. Das stellt kein Problem das, wenn %s zum ersten Mal gestartet wird. "
 "Es werdendie Standard-Einstellungen verwendet.\n"
 
-#: src/config_file.c:405
+#: src/config_file.c:408
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
@@ -187,7 +187,7 @@ msgstr ""
 "[%s] configuration file: Überspringe aktuellen (eventuell problematischen) "
 "Schlüssel. %s\n"
 
-#: src/config_file.c:413
+#: src/config_file.c:416
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
@@ -196,7 +196,7 @@ msgstr ""
 "[%s] configuration file: ignoriere unbekannten \"key_type\" in "
 "\"config_structure\". %s\n"
 
-#: src/config_file.c:436
+#: src/config_file.c:439
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
@@ -211,14 +211,14 @@ msgstr ""
 "[%s] unbekannte Display Option in der Funktion \"display_change_option\". %"
 "s\n"
 
-#: src/display.c:805
+#: src/display.c:804
 #, c-format
 msgid "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
 msgstr ""
 "[%s] unbekannte Winkeleinheit in der Funktion \"display_result_set_angle\". %"
 "s\n"
 
-#: src/display.c:892
+#: src/display.c:891
 #, c-format
 msgid ""
 "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
@@ -226,44 +226,44 @@ msgstr ""
 "[%s] unbekannte Winkeleinheit in der Funktion \"display_result_get_rad_angle"
 "\". %s\n"
 
-#: src/general_functions.c:40
+#: src/general_functions.c:41
 msgid "unsupported inverse function"
 msgstr "nicht unterstÃŒtzte inverse Funktion"
 
-#: src/general_functions.c:46
+#: src/general_functions.c:47
 msgid "unsupported hyperbolic function"
 msgstr "nicht unterstÃŒtzte hyperbolische Funktion"
 
-#: src/general_functions.c:100
+#: src/general_functions.c:101
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
 msgstr "[%s] unbekannter Notationsmodus in der Funktion \"all_clear\". %s\n"
 
-#: src/general_functions.c:124
+#: src/general_functions.c:125
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
 "[%s] das Zeichen %c konnte von der Funktion \"axtof\" nicht umgewandelt "
 "werden. %s\n"
 
-#: src/general_functions.c:176
+#: src/general_functions.c:177
 #, c-format
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr ""
 "[%s] %f konnte von der Funktion \"ftoax\" nicht umgewandelt werden. %s\n"
 
-#: src/general_functions.c:371
+#: src/general_functions.c:372
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr ""
 "[%s] Das Widget %s konnte von der Funktion \"activate_menu_item\" nicht "
 "gefunden werden. %s\n"
 
-#: src/general_functions.c:399
+#: src/general_functions.c:400
 msgid "unknown number base"
 msgstr "unbekannte Zahlenbasis"
 
-#: src/general_functions.c:400
+#: src/general_functions.c:401
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
@@ -271,7 +271,7 @@ msgstr ""
 "[%s] unbekannte Zahlenbasis in der Funktion \"get_display_number_string\". %"
 "s\n"
 
-#: src/general_functions.c:421
+#: src/general_functions.c:422
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
@@ -279,7 +279,7 @@ msgstr ""
 "[%s] unbekannte Zahlenbasis in der Funktion \"display_result_number_length"
 "\". %s\n"
 
-#: src/general_functions.c:526
+#: src/general_functions.c:529
 #, c-format
 msgid ""
 "[%s] failed to convert %s to a number properly in function \"string2double"
@@ -288,7 +288,7 @@ msgstr ""
 "[%s] %s konnte in der Funktion \"string2double\" nicht in eine Zahl "
 "umgewandeltwerden. Wurden die locales Einstellungen geändert? %s\n"
 
-#: src/general_functions.c:542
+#: src/general_functions.c:545
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr "[%s] unbekannte Zahlenbasis in der Funktion \"string2double\". %s\n"
@@ -423,6 +423,8 @@ msgstr "Display Funktionen"
 #: ui/main_frame.glade.h:7
 msgid "Formula entry text field - enter string expression to compute here."
 msgstr ""
+"Textfeld für die Formeleingabe: Die zu berechnende Zeichenfolge wird hier "
+"eingegeben."
 
 #: ui/main_frame.glade.h:8 ui/prefs.glade.h:31
 msgid "Functions"
@@ -1000,7 +1002,6 @@ msgid "<b>User defined constants:</b>"
 msgstr "<b>Benutzerdefinierte Konstanten:</b>"
 
 #: ui/prefs.glade.h:14
-#, fuzzy
 msgid "<b>User defined functions:</b>"
 msgstr "<b>Benutzerdefinierte Funktionen</b>"
 
@@ -1050,7 +1051,7 @@ msgstr "Display"
 
 #: ui/prefs.glade.h:30
 msgid "Expression:"
-msgstr ""
+msgstr "Formelausdruck:"
 
 #: ui/prefs.glade.h:32
 msgid "General"
@@ -1133,9 +1134,8 @@ msgid "Value:"
 msgstr "Wert:"
 
 #: ui/prefs.glade.h:52
-#, fuzzy
 msgid "Variable:"
-msgstr "Wert:"
+msgstr "Unbekannte:"
 
 #: ui/prefs.glade.h:53
 msgid "finite stack size (x, y, z, t)"
@@ -1249,7 +1249,7 @@ msgstr "Setze Taschenrechner zurück (Lösche alles)"
 #~ msgstr "Berechnet den Tangens."
 
 #~ msgid "Contains the main display."
-#~ msgstr "EnthÃ€lt das Display."
+#~ msgstr "Enthält das Display."
 
 #~ msgid "Enters a closing paren."
 #~ msgstr "Klammer zu"

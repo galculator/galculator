@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-17 15:35+0200\n"
+"POT-Creation-Date: 2004-03-20 19:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,11 +70,11 @@ msgid ""
 "(c) 2002-2004 by Simon Floery (chimaira@users.sf.net)"
 msgstr ""
 
-#: src/callbacks.c:1074
+#: src/callbacks.c:1082
 msgid "save here"
 msgstr ""
 
-#: src/main.c:58
+#: src/main.c:59
 #, c-format
 msgid ""
 "\n"
@@ -93,7 +93,7 @@ msgstr ""
 msgid "Please submit a bugreport."
 msgstr ""
 
-#: src/calc_basic.c:151
+#: src/calc_basic.c:149
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr ""
@@ -114,38 +114,38 @@ msgstr ""
 msgid "e"
 msgstr ""
 
-#: src/config_file.c:204
+#: src/config_file.c:207
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
 msgstr ""
 
-#: src/config_file.c:220
+#: src/config_file.c:223
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
 msgstr ""
 
-#: src/config_file.c:226
+#: src/config_file.c:229
 #, c-format
 msgid ""
 "[%s] configuration file: failed to convert %s to a number properly. Have you "
 "changed your locales? %s\n"
 msgstr ""
 
-#: src/config_file.c:229
+#: src/config_file.c:232
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
 msgstr ""
 
-#: src/config_file.c:248
+#: src/config_file.c:251
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
 msgstr ""
 
-#: src/config_file.c:367
+#: src/config_file.c:370
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
@@ -153,21 +153,21 @@ msgid ""
 "defaults.\n"
 msgstr ""
 
-#: src/config_file.c:405
+#: src/config_file.c:408
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
 "s\n"
 msgstr ""
 
-#: src/config_file.c:413
+#: src/config_file.c:416
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
 "\". %s\n"
 msgstr ""
 
-#: src/config_file.c:436
+#: src/config_file.c:439
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
@@ -178,69 +178,69 @@ msgstr ""
 msgid "[%s] unknown display option in function \"display_change_option\". %s\n"
 msgstr ""
 
-#: src/display.c:805
+#: src/display.c:804
 #, c-format
 msgid "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
 msgstr ""
 
-#: src/display.c:892
+#: src/display.c:891
 #, c-format
 msgid ""
 "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:40
+#: src/general_functions.c:41
 msgid "unsupported inverse function"
 msgstr ""
 
-#: src/general_functions.c:46
+#: src/general_functions.c:47
 msgid "unsupported hyperbolic function"
 msgstr ""
 
-#: src/general_functions.c:100
+#: src/general_functions.c:101
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:124
+#: src/general_functions.c:125
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:176
+#: src/general_functions.c:177
 #, c-format
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:371
+#: src/general_functions.c:372
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:399
+#: src/general_functions.c:400
 msgid "unknown number base"
 msgstr ""
 
-#: src/general_functions.c:400
+#: src/general_functions.c:401
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:421
+#: src/general_functions.c:422
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:526
+#: src/general_functions.c:529
 #, c-format
 msgid ""
 "[%s] failed to convert %s to a number properly in function \"string2double"
 "\". Have you changed your locales? %s\n"
 msgstr ""
 
-#: src/general_functions.c:542
+#: src/general_functions.c:545
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr ""

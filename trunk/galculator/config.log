@@ -142,7 +142,7 @@ configure: failed program was:
 | #define PACKAGE_STRING ""
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE "galculator"
-| #define VERSION "1.2.1CVS"
+| #define VERSION "1.2.1"
 | /* end confdefs.h.  */
 | 
 | /* Override any gcc2 internal prototype to avoid an error.  */
@@ -175,7 +175,7 @@ configure: failed program was:
 | #define PACKAGE_STRING ""
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE "galculator"
-| #define VERSION "1.2.1CVS"
+| #define VERSION "1.2.1"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
 configure:2875: result: gcc -E
@@ -193,7 +193,7 @@ configure: failed program was:
 | #define PACKAGE_STRING ""
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE "galculator"
-| #define VERSION "1.2.1CVS"
+| #define VERSION "1.2.1"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
 configure:2987: checking for egrep
@@ -557,7 +557,7 @@ PO_IN_DATADIR_TRUE=''
 SET_MAKE=''
 SHELL='/bin/sh'
 USE_NLS='yes'
-VERSION='1.2.1CVS'
+VERSION='1.2.1'
 XGETTEXT='/usr/bin/xgettext'
 ac_ct_CC='gcc'
 bindir='${exec_prefix}/bin'
@@ -606,7 +606,7 @@ target_alias=''
 #define PACKAGE_TARNAME ""
 #define PACKAGE_VERSION ""
 #define STDC_HEADERS 1
-#define VERSION "1.2.1CVS"
+#define VERSION "1.2.1"
 #define YYTEXT_POINTER 1
 
 configure: exit 0
