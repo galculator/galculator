@@ -1455,7 +1455,7 @@ fi
 
 PACKAGE=galculator
 
-VERSION=1.1.4CVS
+VERSION=1.1.4
 
 if test "`cd $srcdir && pwd`" != "`pwd`" && test -f $srcdir/config.status; then
   { { echo "$as_me:$LINENO: error: source directory already configured; run \"make distclean\" there first" >&5

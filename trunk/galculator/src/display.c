@@ -125,12 +125,17 @@ void on_textview_selection_received (GtkWidget *widget,
 
 void display_create_text_tags ()
 {
+	int	pixels=0;
+	
 	/* note: wrap MUST NOT be set to none in order to justify the text! */
+	if (current_status.notation == CS_PAN) pixels = 5;
 
 	gtk_text_buffer_create_tag (buffer, "result",
 		"justification", GTK_JUSTIFY_RIGHT,
 		"font", prefs.result_font,
 		"foreground", prefs.result_color,
+		"pixels-above-lines", pixels,
+		"pixels-below-lines", pixels,
 		NULL);
 	
 	gtk_text_buffer_create_tag (buffer, "active_module",

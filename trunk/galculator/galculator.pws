@@ -6,12 +6,12 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=73
-1=526
-2=1
-3=530
-4=116
-5=302
+0=1
+1=136
+2=537
+3=60
+4=33
+5=8
 6=782
 7=1
 8=27
@@ -39,16 +39,12 @@ filter.file.ignore.hidden=0
 filter.dir.ignore.hidden=0
 
 [filelist]
-0=/home/sf/Devel/galculator/src/general_functions.h
-1=/home/sf/Devel/galculator/src/general_functions.c
-2=/home/sf/Devel/galculator/src/config_file.h
-3=/home/sf/Devel/galculator/src/callbacks.c
-4=/home/sf/Devel/galculator/src/galculator.h
-5=/home/sf/Devel/galculator/src/ui.c
-6=/home/sf/Devel/galculator/src/display.c
-7=/home/sf/Devel/galculator/NEWS
-8=/home/sf/Devel/galculator/ChangeLog
-9=/home/sf/Devel/galculator/TODO
+0=/home/sf/Devel/galculator/src/general_functions.c
+1=/home/sf/Devel/galculator/src/main.c
+2=/home/sf/Devel/galculator/src/callbacks.c
+3=/home/sf/Devel/galculator/doc/shortcuts
+4=/home/sf/Devel/galculator/ChangeLog
+5=/home/sf/Devel/galculator/TODO
 
 [Project Tree]
 0=0
@@ -70,11 +66,11 @@ filter.dir.ignore.hidden=0
 7=display_result_get_double
 
 [find_text]
-0=DISPCTRL_BOTTOM
-1=have a look
-2=set also
-3=yzt
-4=rem_disp
-5=look
-6=REM_VAL
-7=rem_value
+0=^
+1=rpn_activate
+2=dispctrl_xml
+3=DISPCTRL_BOTTOM
+4=have a look
+5=set also
+6=yzt
+7=rem_disp

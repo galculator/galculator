@@ -114,6 +114,8 @@ int main (int argc, char *argv[])
 	constant = config_file_get_constants();
 	g_free (config_file_name);
 
+	current_status.notation = prefs.def_notation;
+	
 	/* at first get the main frame */
 	
 	main_window = ui_main_window_create();

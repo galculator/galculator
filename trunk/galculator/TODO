@@ -1,9 +1,9 @@
-1.1.4
+1.1.5
 ~~~~~
 
-make it look like on pre 1.1.4 screenshots (abstand über/unter result line)
+formula mode
 
-make it build
+entry is no own mode but an addon for both modes?
 
 stack clears on basic <-> scientific (good or bad?)
 
@@ -37,10 +37,6 @@ update shortcuts text file
 #########################
 #########################
 	
-1.1.5
-	formula mode
-	entry is no own mode but an addon for both modes?
-
 1.2.0:
 
 paper tape display (history) and formula entry mode and functions

@@ -400,7 +400,9 @@ on_ordinary_activate                  (GtkMenuItem     *menuitem,
 	w = glade_xml_get_widget (button_box_xml, "button_f2");
 	if (w) gtk_button_set_label ((GtkButton *)w, _(")"));
 	display_stack_remove();
-	//update_dispctrl();
+	update_dispctrl();
+	/* pixel above/below display result line */
+	display_update_tags ();
 }
 
 
@@ -423,7 +425,9 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
 	w = glade_xml_get_widget (button_box_xml, "button_f2");
 	if (w) gtk_button_set_label ((GtkButton *)w, _("roll"));
 	/* stack is created by all_clear */
-	//update_dispctrl();
+	update_dispctrl();
+	/* pixel above/below display result line */
+	display_update_tags ();
 }
 
 void
@@ -486,7 +490,7 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 	
 	ui_main_window_buttons_destroy ();
 	ui_main_window_buttons_create (prefs.mode);
-	//update_dispctrl();
+	update_dispctrl();
 	
 	display_update_modules();
 
@@ -496,7 +500,7 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 	 *	- notation is fully functional.
 	 */	
 	display_module_number_activate (CS_DEC);
-	display_module_notation_activate (prefs.def_notation);
+	display_module_notation_activate (current_status.notation);
 	
 	menu_item = glade_xml_get_widget (main_window_xml, "display_control");
 	if (((GtkCheckMenuItem *) menu_item)->active == prefs.vis_dispctrl)
@@ -527,14 +531,14 @@ on_scientific_mode_activate (GtkMenuItem *menuitem,
 
 	ui_main_window_buttons_destroy ();
 	ui_main_window_buttons_create (prefs.mode);
-	//update_dispctrl();
-	
+
 	display_update_modules();
 	display_module_number_activate (prefs.def_number);
 	display_module_angle_activate (prefs.def_angle);
-	display_module_notation_activate (prefs.def_notation);
+	display_module_notation_activate (current_status.notation);
 
 	update_active_buttons (current_status.number, current_status.notation);
+	update_dispctrl();
 	
 	menu_item = glade_xml_get_widget (main_window_xml, "functions");
 	gtk_widget_set_sensitive (menu_item, TRUE);

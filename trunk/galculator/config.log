@@ -61,7 +61,7 @@ configure:1646: found /usr/bin/gcc
 configure:1656: result: gcc
 configure:1900: checking for C compiler version
 configure:1903: gcc --version </dev/null >&5
-gcc (GCC) 3.3.2 20030831 (Debian prerelease)
+gcc (GCC) 3.3.2 (Debian)
 Copyright (C) 2003 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -71,7 +71,7 @@ configure:1908: gcc -v </dev/null >&5
 Reading specs from /usr/lib/gcc-lib/i486-linux/3.3.2/specs
 Configured with: ../src/configure -v --enable-languages=c,c++,java,f77,pascal,objc,ada,treelang --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-gxx-include-dir=/usr/include/c++/3.3 --enable-shared --with-system-zlib --enable-nls --without-included-gettext --enable-__cxa_atexit --enable-clocale=gnu --enable-debug --enable-java-gc=boehm --enable-java-awt=xlib --enable-objc-gc i486-linux
 Thread model: posix
-gcc version 3.3.2 20030831 (Debian prerelease)
+gcc version 3.3.2 (Debian)
 configure:1911: $? = 0
 configure:1913: gcc -V </dev/null >&5
 gcc: `-V' option must have argument
@@ -113,7 +113,7 @@ configure:2301: test -s conftest.o
 configure:2304: $? = 0
 configure:2322: result: none needed
 configure:2340: gcc -c -g -O2  conftest.c >&5
-conftest.c:2: error: syntax error before "me"
+conftest.c:2: error: parse error before "me"
 configure:2343: $? = 1
 configure: failed program was:
 | #ifndef __cplusplus
@@ -137,7 +137,7 @@ configure: failed program was:
 | #define PACKAGE_STRING ""
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE "galculator"
-| #define VERSION "1.1.4CVS"
+| #define VERSION "1.1.4"
 | /* end confdefs.h.  */
 | 
 | /* Override any gcc2 internal prototype to avoid an error.  */
@@ -171,7 +171,7 @@ configure: failed program was:
 | #define PACKAGE_STRING ""
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE "galculator"
-| #define VERSION "1.1.4CVS"
+| #define VERSION "1.1.4"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
 configure:2765: result: gcc -E
@@ -190,7 +190,7 @@ configure: failed program was:
 | #define PACKAGE_STRING ""
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE "galculator"
-| #define VERSION "1.1.4CVS"
+| #define VERSION "1.1.4"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
 configure:2877: checking for egrep
@@ -487,7 +487,7 @@ PO_IN_DATADIR_TRUE=''
 SET_MAKE=''
 SHELL='/bin/sh'
 USE_NLS='yes'
-VERSION='1.1.4CVS'
+VERSION='1.1.4'
 XGETTEXT='/usr/bin/xgettext'
 ac_ct_CC='gcc'
 bindir='${exec_prefix}/bin'
@@ -536,6 +536,6 @@ target_alias=''
 #define PACKAGE_TARNAME ""
 #define PACKAGE_VERSION ""
 #define STDC_HEADERS 1
-#define VERSION "1.1.4CVS"
+#define VERSION "1.1.4"
 
 configure: exit 0

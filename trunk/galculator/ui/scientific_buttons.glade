@@ -251,6 +251,8 @@
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:38:14 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
 		  <accelerator key="asciicircum" modifiers="0" signal="clicked"/>
+		  <accelerator key="p" modifiers="0" signal="clicked"/>
+		  <accelerator key="p" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">1</property>

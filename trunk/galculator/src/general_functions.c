@@ -519,12 +519,13 @@ double string2double (char *string)
 
 void update_dispctrl()
 {
-	if (prefs.vis_dispctrl == FALSE) 
-		ui_main_window_set_dispctrl (DISPCTRL_NONE);
-	else if (prefs.mode == BASIC_MODE) 
+	/* just put one here and hide it afterwards. we need the button
+			for working key accelerators. */
+	if (prefs.mode == BASIC_MODE) 
 		ui_main_window_set_dispctrl (DISPCTRL_BOTTOM);
 	else if (current_status.notation == CS_RPN)
 		ui_main_window_set_dispctrl (DISPCTRL_RIGHTV);
-	else
-		ui_main_window_set_dispctrl (DISPCTRL_RIGHT);
+	else ui_main_window_set_dispctrl (DISPCTRL_RIGHT);
+	set_widget_visibility (dispctrl_xml, "table_dispctrl", 
+		prefs.vis_dispctrl);
 }

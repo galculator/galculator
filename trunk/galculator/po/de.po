@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-10-07 20:02+0300\n"
+"POT-Creation-Date: 2003-11-11 00:26+0200\n"
 "PO-Revision-Date: 2003-05-26 14:24+0200\n"
 "Last-Translator: Simon Floery <chimaira@users.sf.net>\n"
 "Language-Team: German <de@li.org>\n"
@@ -22,19 +22,19 @@ msgstr "Wissenschaftlicher Taschenrechner"
 
 #: src/callbacks.c:39
 msgid "Select result font"
-msgstr "Schriftauswahl"
+msgstr "Schriftauswahl für Resultat"
 
 #: src/callbacks.c:40
 msgid "Select stack font"
-msgstr "Schriftauswahl (Stack)"
+msgstr "Schriftauswahl für Stack"
 
 #: src/callbacks.c:41
 msgid "Select module font"
-msgstr "Schriftauswahl"
+msgstr "Schriftauswahl für Module"
 
 #: src/callbacks.c:42
 msgid "Select active module color"
-msgstr "Farbe eines inaktiven Moduls"
+msgstr "Farbe eines aktiven Moduls"
 
 #: src/callbacks.c:43
 msgid "Select inactive module color"
@@ -56,12 +56,12 @@ msgstr "Hintergrundfarbe"
 msgid "Select button font"
 msgstr "eigene Schrift für Tasten"
 
-#: src/callbacks.c:81
+#: src/callbacks.c:97
 #, c-format
 msgid "About %s"
 msgstr "Info zu %s"
 
-#: src/callbacks.c:84
+#: src/callbacks.c:100
 #, c-format
 msgid ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
@@ -74,42 +74,42 @@ msgstr ""
 "\n"
 "(c) 2002-2003 by Simon Floery (chimaira@users.sf.net)"
 
-#: src/callbacks.c:379 ui/scientific_buttons.glade.h:21
+#: src/callbacks.c:395 ui/scientific_buttons.glade.h:21
 #: ui/basic_buttons.glade.h:21
 msgid "="
 msgstr "="
 
-#: src/callbacks.c:381 ui/scientific_buttons.glade.h:99
+#: src/callbacks.c:397 ui/scientific_buttons.glade.h:99
 msgid "x^y"
 msgstr "x^y"
 
-#: src/callbacks.c:383 ui/scientific_buttons.glade.h:3
+#: src/callbacks.c:399 ui/scientific_buttons.glade.h:3
 #: ui/basic_buttons.glade.h:3
 msgid "("
 msgstr "("
 
-#: src/callbacks.c:385 ui/scientific_buttons.glade.h:4
+#: src/callbacks.c:401 ui/scientific_buttons.glade.h:4
 #: ui/basic_buttons.glade.h:4
 msgid ")"
 msgstr ")"
 
-#: src/callbacks.c:401
+#: src/callbacks.c:420
 msgid "ENT"
 msgstr "ENT"
 
-#: src/callbacks.c:403
+#: src/callbacks.c:422
 msgid "y^x"
 msgstr "y^x"
 
-#: src/callbacks.c:405
+#: src/callbacks.c:424
 msgid "x<>y"
 msgstr "x<>y"
 
-#: src/callbacks.c:407
+#: src/callbacks.c:426
 msgid "roll"
 msgstr "roll"
 
-#: src/callbacks.c:956
+#: src/callbacks.c:978
 msgid "save here"
 msgstr "speichere hier"
 
@@ -138,7 +138,7 @@ msgstr ""
 " -v, --version\t\tInformationen zur aktuellen Version\n"
 "\n"
 
-#: src/galculator.h:55
+#: src/galculator.h:58
 msgid "Please submit a bugreport."
 msgstr "Bitte erstelle einen Bugreport."
 
@@ -147,28 +147,28 @@ msgstr "Bitte erstelle einen Bugreport."
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr "[%s] %c - Unbekanntes Operationszeichen. %s\n"
 
-#: src/config_file.c:148
+#: src/config_file.c:154
 msgid "Pi"
 msgstr "Pi"
 
-#: src/config_file.c:149
+#: src/config_file.c:155
 msgid "pi"
 msgstr "pi"
 
-#: src/config_file.c:151
+#: src/config_file.c:157
 msgid "Euler's Number"
 msgstr "Eulersche Zahl"
 
-#: src/config_file.c:152
+#: src/config_file.c:158
 msgid "e"
 msgstr "e"
 
-#: src/config_file.c:181
+#: src/config_file.c:187
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
 msgstr "[%s] configurtion file: ignoriere unbekannten Eintrag %s=%s. %s\n"
 
-#: src/config_file.c:197
+#: src/config_file.c:203
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
@@ -176,7 +176,7 @@ msgstr ""
 "[%s] configuration file: %s muss TRUE oder FALSE sein. Es wird der default "
 "Wert verwendet. %s\n"
 
-#: src/config_file.c:204
+#: src/config_file.c:210
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
@@ -184,7 +184,7 @@ msgstr ""
 "[%s] configuration file: ignoriere unbekannten key_type in config structure. "
 "%s\n"
 
-#: src/config_file.c:222
+#: src/config_file.c:228
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
@@ -193,7 +193,7 @@ msgstr ""
 "[%s] Der unbekannte Abschnitt %s wurde in der Konfigurationsdatei %s "
 "gefunden. Setze mit vorherigem Abschnitt fort.\n"
 
-#: src/config_file.c:301
+#: src/config_file.c:307
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
@@ -204,7 +204,7 @@ msgstr ""
 "öffnen. Das stellt kein Problem das, wenn %s zum ersten Mal gestartet wird. "
 "Es werdendie Standard-Einstellungen verwendet.\n"
 
-#: src/config_file.c:336
+#: src/config_file.c:342
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
@@ -213,7 +213,7 @@ msgstr ""
 "[%s] configuration file: Überspringe aktuellen (eventuell problematischen) "
 "Schlüssel. %s\n"
 
-#: src/config_file.c:344
+#: src/config_file.c:350
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
@@ -222,7 +222,7 @@ msgstr ""
 "[%s] configuration file: ignoriere unbekannten \"key_type\" in "
 "\"config_structure\". %s\n"
 
-#: src/config_file.c:359
+#: src/config_file.c:365
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
@@ -230,29 +230,21 @@ msgstr ""
 "[%s] configuration file: Die Einstellungen konnten nicht gespeichert werden %"
 "s.\n"
 
-#: src/display.c:566
+#: src/display.c:571
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\". %s\n"
 msgstr ""
 "[%s] unbekannte Display Option in der Funktion \"display_change_option\". %"
 "s\n"
 
-#: src/display.c:753
+#: src/display.c:813
 #, c-format
 msgid "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
 msgstr ""
 "[%s] unbekannte Winkeleinheit in der Funktion \"display_result_set_angle\". %"
 "s\n"
 
-#: src/display.c:827
-#, c-format
-msgid ""
-"[%s] unknown number base in function \"display_result_get_double\". %s\n"
-msgstr ""
-"[%s] unbekannte Zahlenbasis in der Funktion \"display_result_get_double\". %"
-"s\n"
-
-#: src/display.c:852
+#: src/display.c:900
 #, c-format
 msgid ""
 "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
@@ -286,6 +278,7 @@ msgid "unknown number base"
 msgstr "unbekannte Zahlenbasis"
 
 #: src/general_functions.c:378
+#, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
 msgstr ""
@@ -293,10 +286,19 @@ msgstr ""
 "s\n"
 
 #: src/general_functions.c:399
+#, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
 msgstr ""
-"[%s] unbekannte Zahlenbasis in der Funktion \"display_result_number_length\". %"
+"[%s] unbekannte Zahlenbasis in der Funktion \"display_result_number_length"
+"\". %s\n"
+
+#: src/general_functions.c:515
+#, c-format
+msgid ""
+"[%s] unknown number base in function \"display_result_get_double\". %s\n"
+msgstr ""
+"[%s] unbekannte Zahlenbasis in der Funktion \"display_result_get_double\". %"
 "s\n"
 
 #: src/ui.c:85
@@ -309,7 +311,7 @@ msgstr ""
 "galculatorsgraphische Oberfläche zu erstellen. Wurde ein make install "
 "durchgeführt undkann auf die Datei zugegriffen werden?\n"
 
-#: src/ui.c:367
+#: src/ui.c:378
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -320,7 +322,7 @@ msgstr ""
 "Es könnte Probleme beim Ausführen von %s geben! %s\n"
 ")"
 
-#: src/ui.c:688
+#: src/ui.c:699
 #, c-format
 msgid "%s Preferences"
 msgstr "%s Einstellungen"
