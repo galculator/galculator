@@ -339,8 +339,8 @@ on_gfunc_button_clicked                (GtkToggleButton       *button,
 		}
 	}	
 	func = g_object_get_data (G_OBJECT (button), "func");
-	if (func) func(button);
-	else error_message ("This button has no function associated with");
+	if (func != NULL) func(button);
+	else error_message ("This button has no general function associated with");
 }
 
 /*

@@ -548,6 +548,7 @@
 	      <child>
 		<widget class="GtkEntry" id="formula_entry">
 		  <property name="visible">True</property>
+		  <property name="tooltip" translatable="yes">Formula entry text field - enter string expression to compute here.</property>
 		  <property name="can_focus">True</property>
 		  <property name="editable">True</property>
 		  <property name="visibility">True</property>

@@ -121,9 +121,9 @@ static void apply_object_data (s_operation_map operation_map[],
 	counter = 0;
 	while (gfunc_map[counter].button_name != NULL) {
 		object = G_OBJECT (glade_xml_get_widget (button_box_xml, 
-			operation_map[counter].button_name));
+			gfunc_map[counter].button_name));
+ 		g_object_set_data (object, "display_string", gfunc_map[counter].display_string);
 		g_object_set_data (object, "func", gfunc_map[counter].func);
-		g_object_set_data (object, "display_name", gfunc_map[counter].func);
 		counter++;
 	};
 	
@@ -242,7 +242,7 @@ static void set_disp_ctrl_object_data ()
 	while (map[counter].button_name != NULL) {
 		g_object_set_data (G_OBJECT (glade_xml_get_widget (
 			dispctrl_xml, map[counter].button_name)),
-			"display_string", map[counter].display_name);
+			"display_string", map[counter].display_string);
 		g_object_set_data (G_OBJECT (glade_xml_get_widget (
 			dispctrl_xml, map[counter].button_name)),
 			"func", map[counter].func);
@@ -391,7 +391,7 @@ void ui_main_window_buttons_create (int mode)
 			"button_1", TRUE, TRUE);
 		set_scientific_object_data (button_box_xml);
 	} else error_message ("Unknown mode in \"ui_main_window_buttons_create\"");
-	
+
 	signal_cb.detailed_signal = g_strdup ("button_press_event");
 	signal_cb.callback = (GCallback) on_button_press_event;
 	set_all_normal_buttons_property (set_table_child_callback, (gpointer) &signal_cb);

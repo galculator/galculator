@@ -5,6 +5,8 @@ formula entry mode and functions
 
 parser: [ ] char* operations
 	[ ] bin,hex,oct
+	
+bugfix rpn stack push
 
 =GUI======================================
 

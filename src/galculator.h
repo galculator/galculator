@@ -138,7 +138,7 @@ typedef struct {
 
 typedef struct {
 	char		*button_name;
-	char 		*display_name;
+	char 		*display_string;
 	void		(*func)();
 } s_gfunc_map;
 
