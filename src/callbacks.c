@@ -126,7 +126,7 @@ on_operation_button_clicked            (GtkButton       *button,
 	
 	button_activation (button);
 	/* current number, get it from the display! */
-	current_token.number = display_result_get_as_double ();
+	current_token.number = display_result_get_double ();
 	current_token.operator = (int) g_object_get_data (G_OBJECT (button), "operation");
 	// do inverse left shift is a right shift
 	if ((current_token.operator == '<') && \
@@ -207,12 +207,12 @@ on_function_button_clicked             (GtkButton       *button,
 			display_result_set_double (\
 				func[current_status.fmod](display_result_get_rad_angle()));
 		} else {
-			display_result_set_angle (\
-				func[current_status.fmod](display_result_get_as_double()));
+			display_result_set_radiant (\
+				func[current_status.fmod](display_result_get_double()));
 		}	
 	} else {
 		display_result_set_double (\
-			func[current_status.fmod](display_result_get_as_double()));
+			func[current_status.fmod](display_result_get_double()));
 	}
 	if (inv_button != NULL)	{
 		gtk_toggle_button_set_active (inv_button, FALSE);
@@ -377,9 +377,9 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
 
 static void const_list_selection_changed_cb (GtkTreeSelection *selection, gpointer data)
 {
-        GtkTreeModel 		*model;
-	char 			*string;
-	GtkWidget		*entry;
+        GtkTreeModel 	*model;
+	char 		*string;
+	GtkWidget	*entry;
 	
         if (gtk_tree_selection_get_selected (selection, &model, &current_list_iter))
         {
@@ -523,9 +523,9 @@ void
 on_color_ok_button_clicked             (GtkButton       *button,
                                         gpointer         user_data)
 {
-	const char 		*title;
-	GtkWidget		*da=NULL;
-	GdkColor		color;
+	const char 	*title;
+	GtkWidget	*da=NULL;
+	GdkColor	color;
 
 	title = gtk_window_get_title ((GtkWindow *) color_dialog);
 	gtk_color_selection_get_current_color ((GtkColorSelection *)(((GtkColorSelectionDialog *) color_dialog)->colorsel), \
@@ -573,7 +573,7 @@ on_font_ok_button_clicked              (GtkButton       *button,
 	GtkButton		*font_button=NULL;
 	const char 		*title;
 	char			*font_name, *button_font;
-	extern GladeXML	*main_window_xml;
+	extern GladeXML		*main_window_xml;
 
 	title = gtk_window_get_title ((GtkWindow *) font_dialog);
 	font_name = gtk_font_selection_dialog_get_font_name ((GtkFontSelectionDialog *)font_dialog);
@@ -651,9 +651,10 @@ void
 on_prefs_custom_button_font_toggled    (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-	GtkWidget		*w;
-	char			*button_font;
+	GtkWidget	*w;
+	char		*button_font;
 	extern GladeXML	*main_window_xml;
+	
 	prefs.custom_button_font = gtk_toggle_button_get_active (togglebutton);
 	
 	w = glade_xml_get_widget (prefs_xml, "prefs_button_font_label");
@@ -677,21 +678,21 @@ on_prefs_custom_button_font_toggled    (GtkToggleButton *togglebutton,
  */
 
 gboolean on_textview_button_press_event (GtkWidget *widget,
-										GdkEventButton *event,
-										gpointer user_data)
+						GdkEventButton *event,
+						gpointer user_data)
 {
-	static 					GdkAtom targets_atom = GDK_NONE;
-	int						x, y;
-	GtkTextIter				start, end;
-	char 					*selected_text;
-	extern GtkTextView		*view;
+	static 			GdkAtom targets_atom = GDK_NONE;
+	int			x, y;
+	GtkTextIter		start, end;
+	char 			*selected_text;
+	extern GtkTextView	*view;
 	extern GtkTextBuffer	*buffer;
 	
 	if (event->button == 1)	{
 		gtk_widget_get_pointer (widget, &x, &y);
 		gtk_text_view_get_iter_at_location (view, &start, x, y);
 		// we return if we are in the first line
-		if (gtk_text_iter_get_line (&start) == 0) return FALSE;
+		if (gtk_text_iter_get_line (&start) != DISPLAY_MODULES_LINE) return FALSE;
 		// we return if its the end iterator
 		if (gtk_text_iter_is_end (&start) == TRUE) return FALSE;
 		end = start;
@@ -725,9 +726,9 @@ gboolean on_textview_button_press_event (GtkWidget *widget,
  */
 
 void on_textview_selection_received (GtkWidget *widget,
-										GtkSelectionData *data,
-										guint time,
-										gpointer user_data)
+					GtkSelectionData *data,
+					guint time,
+					gpointer user_data)
 {
 	int		counter;
 	
@@ -884,7 +885,7 @@ void ms_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 		memory.data = (double *) realloc (memory.data, (index + 1) * sizeof(double));
 		memory.len++;
 	}
-	memory.data[index] = display_result_get_as_double();
+	memory.data[index] = display_result_get_double();
 }
 
 
@@ -930,7 +931,7 @@ void mplus_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	int		index;
 	
 	index = GPOINTER_TO_INT(user_data);
-	memory.data[index] += display_result_get_as_double();
+	memory.data[index] += display_result_get_double();
 }
 
 void
@@ -986,7 +987,7 @@ void mx_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	
 	index = GPOINTER_TO_INT(user_data);
 	temp = memory.data[index];
-	memory.data[index] = display_result_get_as_double();
+	memory.data[index] = display_result_get_double();
 	display_result_set_double (temp);
 }
 
@@ -1068,7 +1069,6 @@ void on_prefs_cupdate_clicked (GtkButton *button, gpointer user_data)
 {
 	extern s_constant	*constant;
 	GtkWidget		*entry;
-	GtkTreeIter		iter;
 	GtkTreePath		*path;
 	int			index;
 	
@@ -1082,13 +1082,12 @@ void on_prefs_cupdate_clicked (GtkButton *button, gpointer user_data)
         entry = glade_xml_get_widget (prefs_xml, "prefs_cdesc_entry");
 	constant[index].desc = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
 	
-	gtk_list_store_insert_after (store, &iter, &current_list_iter);
-	gtk_list_store_set (store, &iter, 
+	gtk_list_store_set (store, &current_list_iter, 
 		NAME_COLUMN, constant[index].name, 
 		VALUE_COLUMN, constant[index].value, 
 		DESC_COLUMN, constant[index].desc, 
 		-1);
 		
-	gtk_list_store_remove (store, &current_list_iter);
+	
 }
 /* END */

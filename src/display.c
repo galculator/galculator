@@ -1,4 +1,4 @@
-/*
+/*s
  *  display.c - code for this nifty display.
  *	part of galculator
  *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
@@ -37,12 +37,13 @@
 
 GtkTextView 		*view;
 GtkTextBuffer 		*buffer;
-static GtkTextMark 	*mark_result_start, *mark_result_end;
 static int 		display_result_counter = 0;
 gboolean 		calc_entry_start_new;
 extern char		dec_point;
 extern s_preferences	prefs;
 extern s_current_status current_status;
+
+char	display_result[30];
 
 char	*number_mod_labels[5] = {" DEC ", " HEX ", " OCT ", " BIN ", NULL}, 
 	*angle_mod_labels[4] = {" DEG ", " RAD ", " GRAD ", NULL},
@@ -133,20 +134,11 @@ void display_init (GtkWidget *a_parent_widget)
 		pango_font_metrics_get_approximate_digit_width (font_metrics));
 	tab_array = pango_tab_array_new_with_positions (1, FALSE, PANGO_TAB_LEFT, 3*char_width);
 	gtk_text_view_set_tabs (view, tab_array);
-	pango_tab_array_free (tab_array);		
+	pango_tab_array_free (tab_array);
 	
-	/* the order of the following commands looks a bit strange. but we have to
-		do it this way to get a correct mark_result_end. */
-		
-	gtk_text_buffer_get_start_iter (buffer, &iter);
-	mark_result_start = gtk_text_buffer_create_mark (buffer, "result start", &iter, TRUE);
-	
-	gtk_text_buffer_insert_with_tags_by_name (buffer, &iter, \
-		"0\n", -1, "result", NULL);
-	
-	/* mark_result_end shoudl be before the \n */
-	gtk_text_iter_backward_char (&iter);
-	mark_result_end = gtk_text_buffer_create_mark (buffer, "result end", &iter, FALSE);
+	gtk_text_buffer_get_iter_at_line (buffer, &iter, DISPLAY_RESULT_LINE);
+	gtk_text_buffer_insert_with_tags_by_name (buffer, &iter, 
+		prefs.rem_value, -1, "result", NULL);
 	
 	display_update_modules ();
 
@@ -158,9 +150,6 @@ void display_init (GtkWidget *a_parent_widget)
 	*/
 	
 	activate_menu_item (notation_mod_labels[prefs.def_notation]);
-	
-	display_result_set (prefs.rem_value);
-	
 	activate_menu_item (number_mod_labels[prefs.def_number]);
 	activate_menu_item (angle_mod_labels[prefs.def_angle]);
 }
@@ -306,6 +295,29 @@ void display_module_leading_spaces (char *mark_name, gboolean leading_spaces)
 	gtk_text_buffer_create_mark (buffer, mark_name, &iter, TRUE);
 }
 
+void display_get_line_end_iter (GtkTextBuffer *b, int line_index, GtkTextIter *end)
+{
+	gtk_text_buffer_get_iter_at_line (b, end, line_index);
+	gtk_text_iter_forward_to_line_end (end);
+}
+
+void display_get_line_iters (GtkTextBuffer *b, int line_index, GtkTextIter *start, GtkTextIter *end)
+{	
+	gtk_text_buffer_get_iter_at_line (b, start, line_index);
+	*end = *start;
+	gtk_text_iter_forward_to_line_end (end);
+}
+
+void display_delete_line (GtkTextBuffer *b, int line_index, GtkTextIter *iter)
+{
+	GtkTextIter start, end;
+	
+	display_get_line_iters (b, line_index, &start, &end);
+	if (gtk_text_iter_get_line (&end) == line_index)
+		gtk_text_buffer_delete (buffer, &start, &end);
+	*iter = start;
+}
+
 /*
  * display_create_modules - the display modules compose the second line of then
  *	display. available modules:
@@ -317,68 +329,86 @@ void display_module_leading_spaces (char *mark_name, gboolean leading_spaces)
 void display_update_modules ()
 {
 	GtkTextIter	start, end;
-	gboolean	leading_spaces = FALSE;
+	gboolean	first_module = TRUE;
 	
-	// at first delete all and then insert them (to get same order again)
-	gtk_text_buffer_get_iter_at_mark (buffer, &start, mark_result_end); 
-	// jump over '\n'
-	gtk_text_iter_forward_char (&start);
-	gtk_text_buffer_get_end_iter (buffer, &end);
-	gtk_text_buffer_delete (buffer, &start, &end);	
+	
+	display_get_line_end_iter (buffer, DISPLAY_RESULT_LINE, &start);
+	display_get_line_end_iter (buffer, DISPLAY_MODULES_LINE, &end);
+	gtk_text_buffer_delete (buffer, &start, &end);
 	
 	/* change number base */
 	if (prefs.vis_number == TRUE) {
-		gtk_text_buffer_get_end_iter (buffer, &start);
+		if (first_module) 
+			gtk_text_buffer_insert_with_tags_by_name (buffer, &start, "\n", \
+				-1, "result", NULL);
+		gtk_text_buffer_get_iter_at_line (buffer, &start, DISPLAY_MODULES_LINE);
+		gtk_text_iter_forward_to_line_end (&start);
 		if (gtk_text_buffer_get_mark (buffer, DISPLAY_MARK_NUMBER) != NULL) \
 			gtk_text_buffer_delete_mark_by_name (buffer, DISPLAY_MARK_NUMBER);
 		gtk_text_buffer_create_mark (buffer, DISPLAY_MARK_NUMBER, &start, TRUE);
 		display_module_base_create (number_mod_labels, DISPLAY_MARK_NUMBER, current_status.number);
-		display_module_leading_spaces (DISPLAY_MARK_NUMBER, leading_spaces);
-		leading_spaces = TRUE;
+		display_module_leading_spaces (DISPLAY_MARK_NUMBER, !first_module);
+		first_module = FALSE;
 	}
 	
 	/* angle */
 	if (prefs.vis_angle == TRUE) {
-		gtk_text_buffer_get_end_iter (buffer, &start);
+		if (first_module) 
+			gtk_text_buffer_insert_with_tags_by_name (buffer, &start, "\n", \
+				-1, "result", NULL);
+		gtk_text_buffer_get_iter_at_line (buffer, &start, DISPLAY_MODULES_LINE);
+		gtk_text_iter_forward_to_line_end (&start);
 		if (gtk_text_buffer_get_mark (buffer, DISPLAY_MARK_ANGLE) != NULL) \
 			gtk_text_buffer_delete_mark_by_name (buffer, DISPLAY_MARK_ANGLE);
 		gtk_text_buffer_create_mark (buffer, DISPLAY_MARK_ANGLE, &start, TRUE);
 		display_module_base_create (angle_mod_labels, DISPLAY_MARK_ANGLE, current_status.angle);
-		display_module_leading_spaces (DISPLAY_MARK_ANGLE, leading_spaces);
-		leading_spaces = TRUE;
+		display_module_leading_spaces (DISPLAY_MARK_ANGLE, !first_module);
+		first_module = FALSE;
 	}
 	
 	/* notation */
 	if (prefs.vis_notation == TRUE) {
-		gtk_text_buffer_get_end_iter (buffer, &start);
+		if (first_module) 
+			gtk_text_buffer_insert_with_tags_by_name (buffer, &start, "\n", \
+				-1, "result", NULL);
+		gtk_text_buffer_get_iter_at_line (buffer, &start, DISPLAY_MODULES_LINE);
+		gtk_text_iter_forward_to_line_end (&start);
 		if (gtk_text_buffer_get_mark (buffer, DISPLAY_MARK_NOTATION) != NULL) \
 			gtk_text_buffer_delete_mark_by_name (buffer, DISPLAY_MARK_NOTATION);
 		gtk_text_buffer_create_mark (buffer, DISPLAY_MARK_NOTATION, &start, TRUE);
 		display_module_base_create (notation_mod_labels, DISPLAY_MARK_NOTATION, current_status.notation);
-		display_module_leading_spaces (DISPLAY_MARK_NOTATION, leading_spaces);
-		leading_spaces = TRUE;
+		display_module_leading_spaces (DISPLAY_MARK_NOTATION, !first_module);
+		first_module = FALSE;
 	}	
 	
 	/* last arithmetic operation */
 	if (prefs.vis_arith == TRUE) {
-		gtk_text_buffer_get_end_iter (buffer, &start);
+		if (first_module) 
+			gtk_text_buffer_insert_with_tags_by_name (buffer, &start, "\n", \
+				-1, "result", NULL);
+		gtk_text_buffer_get_iter_at_line (buffer, &start, DISPLAY_MODULES_LINE);
+		gtk_text_iter_forward_to_line_end (&start);
 		if (gtk_text_buffer_get_mark (buffer, DISPLAY_MARK_ARITH) != NULL) \
 			gtk_text_buffer_delete_mark_by_name (buffer, DISPLAY_MARK_ARITH);
 		gtk_text_buffer_create_mark (buffer, DISPLAY_MARK_ARITH, &start, TRUE);
 		display_module_arith_label_update (NOP);
-		display_module_leading_spaces (DISPLAY_MARK_ARITH, leading_spaces);
-		leading_spaces = TRUE;
+		display_module_leading_spaces (DISPLAY_MARK_ARITH, !first_module);
+		first_module = FALSE;
 	}
 	
 	/* number of open brackets */
 	if (prefs.vis_bracket == TRUE) {
-		gtk_text_buffer_get_end_iter (buffer, &start);
+		if (first_module) 
+			gtk_text_buffer_insert_with_tags_by_name (buffer, &start, "\n", \
+				-1, "result", NULL);
+		gtk_text_buffer_get_iter_at_line (buffer, &start, DISPLAY_MODULES_LINE);
+		gtk_text_iter_forward_to_line_end (&start);
 		if (gtk_text_buffer_get_mark (buffer, DISPLAY_MARK_BRACKET) != NULL) \
 			gtk_text_buffer_delete_mark_by_name (buffer, DISPLAY_MARK_BRACKET);
 		gtk_text_buffer_create_mark (buffer, DISPLAY_MARK_BRACKET, &start, TRUE);
 		display_module_bracket_label_update (NOP);
-		display_module_leading_spaces (DISPLAY_MARK_BRACKET, leading_spaces);
-		leading_spaces = TRUE;
+		display_module_leading_spaces (DISPLAY_MARK_BRACKET, !first_module);
+		first_module = FALSE;
 	}
 }
 
@@ -401,7 +431,7 @@ void display_module_base_delete (char *mark_name, char **text)
 	}
 
 	gtk_text_buffer_get_iter_at_mark (buffer, &start, this_mark);
-	end=start;
+	end = start;
 	gtk_text_iter_forward_chars (&end, length);
 	gtk_text_buffer_delete (buffer, &start, &end);
 }
@@ -422,7 +452,7 @@ void display_change_option (int new_status, int opt_group)
 		case DISPLAY_OPT_NUMBER:
 			update_active_buttons (main_window_xml, new_status, current_status.notation);
 			if (current_status.number == new_status) return;
-			display_value = display_result_get_as_double ();
+			display_value = display_result_get_double ();
 			old_status = current_status.number;
 			current_status.number = new_status;
 			display_result_set_double (display_value);
@@ -490,8 +520,7 @@ void display_update_tags ()
 	
 	display_create_text_tags ();
 	
-	gtk_text_buffer_get_iter_at_mark (buffer, &start, mark_result_start);
-	gtk_text_buffer_get_iter_at_mark (buffer, &end, mark_result_end);
+	display_get_line_iters (buffer, DISPLAY_RESULT_LINE, &start, &end);
 	gtk_text_buffer_apply_tag_by_name (buffer, "result", &start, &end);
 	
 	display_update_modules ();
@@ -520,7 +549,7 @@ void display_result_add_digit (char digit)
 	   where we don't expect the older one to be there. therefore doing it this way
 	*/
 	if ((current_status.notation == CS_RPN) && (rpn_have_result == TRUE)) {
-		calc_rpn_stack_add (display_result_get_as_double ());
+		calc_rpn_stack_add (display_result_get_double ());
 		rpn_have_result = FALSE;
 	}
 	
@@ -538,14 +567,14 @@ void display_result_add_digit (char digit)
 		if (strlen (display_result_get()) == 0) display_result_set ("0");
 		else if ((strchr (display_result_get(), dec_point) == NULL) && \
 					(strchr (display_result_get(), 'e') == NULL)) {
-			gtk_text_buffer_get_iter_at_mark (buffer, &end, mark_result_end);
+			display_get_line_end_iter (buffer, DISPLAY_RESULT_LINE, &end);
 			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, digit_as_string, \
 				-1, "result", NULL);
 		}
 	} else if (display_result_counter < display_lengths[current_status.number]) {
 		if (strcmp (display_result_get(), "0") == 0) display_result_set (digit_as_string);
 		else {
-			gtk_text_buffer_get_iter_at_mark (buffer, &end, mark_result_end);
+			display_get_line_end_iter (buffer, DISPLAY_RESULT_LINE, &end);
 			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, digit_as_string, \
 				-1, "result", NULL);
 			/* increment counter only in this if directive as above the counter remains 1! */
@@ -561,7 +590,7 @@ void display_result_add_digit (char digit)
 
 void display_result_set_double (double value)
 {
-	GtkTextIter 		start, end;
+	GtkTextIter 		start;
 	char			*string_value;
 	extern gboolean		allow_arith_op;
 	
@@ -570,13 +599,7 @@ void display_result_set_double (double value)
 	
 	/* at first clear the result field */
 	
-	gtk_text_buffer_get_iter_at_mark (buffer, &start, mark_result_start);
-	gtk_text_buffer_get_iter_at_mark (buffer, &end, mark_result_end);
-	gtk_text_buffer_delete (buffer, &start, &end);
-	
-	/* then set it to the new value */
-	
-	gtk_text_buffer_get_iter_at_mark (buffer, &start, mark_result_start);
+	display_delete_line (buffer, DISPLAY_RESULT_LINE, &start);
 	
 	switch (current_status.number) {
 		case CS_DEC:
@@ -601,11 +624,11 @@ void display_result_set_double (double value)
 }
 
 /*
- * display_result_set_angle - this function is used e.g. by trigonometric functions.
+ * display_result_set_radiant - this function is used e.g. by trigonometric functions.
  *	pays attention to rad/deg/grad
  */
 
-void display_result_set_angle (double value)
+void display_result_set_radiant (double value)
 {
 	switch (current_status.angle) {
 	case CS_DEG:
@@ -624,7 +647,7 @@ void display_result_set_angle (double value)
 
 void display_result_set (char *string_value)
 {
-	GtkTextIter 		start, end;
+	GtkTextIter 		end;
 	extern gboolean		allow_arith_op;
 	
 	allow_arith_op = TRUE;
@@ -632,12 +655,8 @@ void display_result_set (char *string_value)
 	
 	/* at first clear the result field */
 	
-	gtk_text_buffer_get_iter_at_mark (buffer, &start, mark_result_start);
-	gtk_text_buffer_get_iter_at_mark (buffer, &end, mark_result_end);
-	gtk_text_buffer_delete (buffer, &start, &end);
+	display_delete_line (buffer, DISPLAY_RESULT_LINE, &end);
 	
-	/* then set it to the new value */
-	gtk_text_buffer_get_iter_at_mark (buffer, &end, mark_result_end);
 	/* here we call no kill_trailing_zeros. we set the result_field to what we entered */
 	gtk_text_buffer_insert_with_tags_by_name (buffer, &end, string_value, \
 		-1, "result", NULL);
@@ -659,12 +678,11 @@ char *display_result_get ()
 {
 	GtkTextIter 	start, end;
 	
-	gtk_text_buffer_get_iter_at_mark (buffer, &start, mark_result_start);
-	gtk_text_buffer_get_iter_at_mark (buffer, &end, mark_result_end);
+	display_get_line_iters (buffer, DISPLAY_RESULT_LINE, &start, &end);
 	return gtk_text_buffer_get_text (buffer, &start, &end, TRUE);
 }
 
-double display_result_get_as_double ()
+double display_result_get_double ()
 {
 	switch (current_status.number) {
 		case CS_DEC:
@@ -680,7 +698,7 @@ double display_result_get_as_double ()
 			return axtof(display_result_get(), 2, display_lengths[current_status.number]);
 			break;
 		default:
-			fprintf (stderr, _("[%s] unknown number base in function \"display_result_get_as_double\". %s\n"), PROG_NAME, BUG_REPORT);
+			fprintf (stderr, _("[%s] unknown number base in function \"display_result_get_double\". %s\n"), PROG_NAME, BUG_REPORT);
 	}
 	return 0;
 }	
@@ -695,7 +713,7 @@ double display_result_get_rad_angle ()
 {
 	double		value;
 	
-	value = display_result_get_as_double();
+	value = display_result_get_double();
 	switch (current_status.angle)
 	{
 	case CS_DEG:
@@ -717,7 +735,7 @@ void display_append_e ()
 	if (current_status.number != CS_DEC) return;
 	if (calc_entry_start_new == FALSE) {
 		if (strstr (display_result_get(), "e+") == NULL) {
-			gtk_text_buffer_get_iter_at_mark (buffer, &end, mark_result_end);
+			display_get_line_end_iter (buffer, DISPLAY_RESULT_LINE, &end);
 			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, "e+", -1, "result", NULL);
 		}
 	} else {
@@ -734,8 +752,7 @@ void display_result_toggle_sign ()
 	
 	if (current_status.number != CS_DEC) return;
 	/* we could call display_result_get but we need start iterator later on anyway */
-	gtk_text_buffer_get_iter_at_mark (buffer, &start, mark_result_start);
-	gtk_text_buffer_get_iter_at_mark (buffer, &end, mark_result_end);
+	display_get_line_iters (buffer, DISPLAY_RESULT_LINE, &start, &end);
 	result_field = gtk_text_buffer_get_text (buffer, &start, &end, TRUE);
 	/* if there is no e? we toggle the leading sign, otherwise the sign after e */
 	if ((e_pointer = strchr (result_field, 'e')) == NULL) {

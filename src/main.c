@@ -72,7 +72,8 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 	if ((event->keyval != GDK_KP_2) && (event->keyval != GDK_KP_Down) &&
 		(event->keyval != GDK_KP_4) && (event->keyval != GDK_KP_Left) &&
 		(event->keyval != GDK_KP_6) && (event->keyval != GDK_KP_Right) &&
-		(event->keyval != GDK_KP_8) && (event->keyval != GDK_KP_Up))
+		(event->keyval != GDK_KP_8) && (event->keyval != GDK_KP_Up) &&
+		(event->keyval != GDK_KP_0) && (event->keyval != GDK_KP_Insert))
 			event->state &= ~GDK_MOD2_MASK;
 	return FALSE;
 }
