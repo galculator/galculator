@@ -1,24 +1,23 @@
-1.1.5/1.2.0(?)
+1.2.0
 ~~~~~
 
 [DONE] tooltips in RPN mode
 
 [DONE] formula mode - in GUI
 
+[DONE] right button mouse click gives popup for bringing back menu
+
 [ ] parser
-	[ ]	!
-	[ ]	sign
-	[ ]	better exit in error case
+	[DONE] negative numbers
+	[ ] functions
+	[ ] whitespaces
+	[ ] !
 
 [?] pref option? accelerator active for formula entry: key "s" gives "sin("
-
-[ ] right button mouse click gives popup for bringing back menu
-	Show/Hide Menu
 
 
 =GUI======================================
 
-	GUI element to bring menu back? (--> popup)
 
 =i18n====================================
 
@@ -46,9 +45,8 @@ update shortcuts text file
 #########################
 #########################
 	
-1.2.0:
+paper tape display (history) and formula entry mode and functions 
 
-paper tape display (history) and formula entry mode and functions
 	[wcalc]
 
 to be done:

@@ -1,3 +1,9 @@
+galculator 1.2.0
+	* formula entry mode
+	* right mouse button click gives popup menu ((un-)hide menubar)
+	* bugfixes: tooltips in RPN mode, char conversion in HEX mode
+	* translation updates
+
 galculator 1.1.4 - the RPN update release.
 	* finite (x,y,z,t)/infinite stack in RPN
 	* display and remember stack in RPN

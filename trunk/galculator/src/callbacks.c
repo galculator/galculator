@@ -1,7 +1,7 @@
 /*
  *  callbacks.c - functions to handle GUI events.
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2004 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -99,7 +99,7 @@ on_about_activate                     (GtkMenuItem     *menuitem,
 	gtk_label_set_justify (about_label, GTK_JUSTIFY_CENTER);
 	about_text = g_strdup_printf (_("<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n\
 <span size=\"large\">a GTK 2 based scientific calculator</span>\n\n\
-(c) 2002-2003 by Simon Floery (chimaira@users.sf.net)"), PROG_NAME, VERSION);
+(c) 2002-2004 by Simon Floery (chimaira@users.sf.net)"), PROG_NAME, VERSION);
 	gtk_label_set_markup (about_label, \
 		about_text);
 	gtk_widget_show (about_dialog);

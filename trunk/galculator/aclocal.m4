@@ -1013,7 +1013,7 @@ ll## intltool.m4 - Configure intltool for the target system. -*-Shell-script-*-
 
 dnl AC_PROG_INTLTOOL([MINIMUM-VERSION])
 # serial 1 AC_PROG_INTLTOOL
-AC_DEFUN(AC_PROG_INTLTOOL,
+AC_DEFUN([AC_PROG_INTLTOOL],
 [
 
 if test -n "$1"; then

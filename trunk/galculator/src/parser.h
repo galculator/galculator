@@ -1,5 +1,5 @@
 /*
- *  math_functions.h
+ *  parser.h
  *	part of galculator
  *  	(c) 2002-2004 Simon Floery (chimaira@users.sf.net)
  *
@@ -18,21 +18,14 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifndef _MATH_FUNCTIONS_H
-#define _MATH_FUNCTIONS_H 1
+#ifndef _PARSER_H
+#define _PARSER_H 1
 
-double pow10y (double y);
-double reciprocal (double x);
-double idx (double x);
-double powx2 (double x);
-double factorial (double n);
-double cmp (double n);
-double rad2deg (double value);
-double rad2grad (double value);
-double deg2rad (double value);
-double grad2rad (double value);
-double asinh (double x);
-double acosh (double x);
-double atanh (double x);
+typedef struct {
+	char 	*name;
+	double	(*function)(double);
+} s_string_func_pair;
 
-#endif /* math_functions.h */
+#define OPERATION_CHARS "+-*/=()"
+
+#endif	/* parser.h */
