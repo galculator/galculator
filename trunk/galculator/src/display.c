@@ -126,25 +126,23 @@ void on_textview_selection_received (GtkWidget *widget,
 void display_create_text_tags ()
 {
 	/* note: wrap MUST NOT be set to none in order to justify the text! */
-	gtk_text_buffer_create_tag (buffer, "result", \
-		"justification", GTK_JUSTIFY_RIGHT, \
-		"font", prefs.result_font, \
-		/* "pixels_below_lines", 5, \ */
-		"foreground", prefs.result_color, \
-		NULL);	
-	
-	gtk_text_buffer_create_tag (buffer, "active_module", \
- 		"font", prefs.mod_font, \
-		"foreground", prefs.act_mod_color, \
-		"wrap-mode", GTK_WRAP_NONE, \
-		"pixels_above_lines", 5, \
+
+	gtk_text_buffer_create_tag (buffer, "result",
+		"justification", GTK_JUSTIFY_RIGHT,
+		"font", prefs.result_font,
+		"foreground", prefs.result_color,
 		NULL);
 	
-	gtk_text_buffer_create_tag (buffer, "inactive_module", \
-		"font", prefs.mod_font, \
-		"foreground", prefs.inact_mod_color, \
-		"wrap-mode", GTK_WRAP_NONE, \
-		"pixels_above_lines", 5, \
+	gtk_text_buffer_create_tag (buffer, "active_module",
+ 		"font", prefs.mod_font,
+		"foreground", prefs.act_mod_color,
+		"wrap-mode", GTK_WRAP_NONE,
+		NULL);
+	
+	gtk_text_buffer_create_tag (buffer, "inactive_module",
+		"font", prefs.mod_font,
+		"foreground", prefs.inact_mod_color,
+		"wrap-mode", GTK_WRAP_NONE,
 		NULL);
 	
 	gtk_text_buffer_create_tag (buffer, "stack", 
@@ -197,18 +195,13 @@ void display_init (GtkWidget *a_parent_widget)
 
 	display_update_modules ();
 
-	/* after creating the modules, we set the three base modules and the init
-		state of the calculator:
-		at first, we set the notation as this clears the display. Afterwards,  
-		we set the display to a maybe remembered value. Then, angle and number base
-		are done
-	*/
-
-	activate_menu_item (notation_mod_labels[prefs.def_notation]);
 	display_result_set (prefs.rem_value);
-	/* number and angle are only in scient mode interesting. hence we
-	 * set them in src/callbacks.c::on_scientific_mode_activate
+	
+	/* number, angle and notation are now set in src/callbacks.c::
+	 * on_scientific_mode_activate resp on_basic_mode_activate.
 	 */
+
+	 
 }
 
 /*
@@ -598,7 +591,7 @@ void display_update_tags ()
 	GtkTextTagTable		*tag_table;
 	GtkTextTag 		*tag;
 	
-	/* remove tag "result" from tag_table, so we can define a new tag named "result" */
+	/* remove all tags from tag_table, so we can define the new tags */
 	tag_table = gtk_text_buffer_get_tag_table (buffer);
 	tag = gtk_text_tag_table_lookup (tag_table, "result");
 	gtk_text_tag_table_remove (tag_table, tag);
@@ -609,11 +602,21 @@ void display_update_tags ()
 	tag = gtk_text_tag_table_lookup (tag_table, "stack");
 	gtk_text_tag_table_remove (tag_table, tag);
 	
+	/* create the tags again, up2date */
 	display_create_text_tags ();
 	
+	/* apply to stack */
+	if (display_result_line > 0) {
+		gtk_text_buffer_get_iter_at_line (buffer, &start, 0);
+		display_get_line_end_iter (buffer, display_result_line - 1, &end);
+		gtk_text_buffer_apply_tag_by_name (buffer, "stack", &start, &end);
+	}
+
+	/* apply to result */
 	display_get_line_iters (buffer, display_result_line, &start, &end);
 	gtk_text_buffer_apply_tag_by_name (buffer, "result", &start, &end);
 	
+	/* apply to modules */
 	display_update_modules ();
 }
 
@@ -678,6 +681,7 @@ void display_stack_create ()
 	int 		counter;
 	GtkTextIter	start;
 	
+	if (display_result_line > 0) return;
 	display_result_line = 3;
 	for (counter = 0; counter < display_result_line; counter++) {
 		gtk_text_buffer_get_iter_at_line (buffer, &start, 0);
@@ -792,7 +796,7 @@ void display_result_feed (char *string)
 		if (is_valid_number(current_status.number, string[counter])) \
 			display_result_add_digit (string[counter]);
 	}
-	if (string[0] == '-') display_result_toggle_sign ();
+	if (string[0] == '-') display_result_toggle_sign (NULL);
 }
 /*
  * display_get_entry. returns a pointer to the current entry text. 
@@ -856,7 +860,7 @@ double display_result_get_rad_angle ()
 	return -1;
 }
 
-void display_append_e ()
+void display_append_e (GtkToggleButton *button)
 {
 	GtkTextIter		end;
 	
@@ -873,7 +877,7 @@ void display_append_e ()
 	display_result_counter = get_display_number_length(current_status.number) - DISPLAY_RESULT_E_LENGTH;
 }
 
-void display_result_toggle_sign ()
+void display_result_toggle_sign (GtkToggleButton *button)
 {
 	GtkTextIter		start, end;
 	char			*result_field, *e_pointer;

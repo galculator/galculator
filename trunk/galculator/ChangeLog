@@ -1,5 +1,12 @@
+2003-09-20 Simon Floery <chimaira@users.sf.net>
+	* sf.net bug #798511 fixed
+
+2003-09-19 Simon Floery <chimaira@users.sf.net>
+	* RPN updates: rolldown stack, swap xy on stack 
+	(satifies sf.net fr #799397 and DBTS #202633)
+
 2003-09-18 Simon Floery <chimaira@users.sf.net>
-	* src/display.c: display stack
+	* src/display.c: display RPN stack
 	
 2003-09-11 Simon Floery <chimaira@users.sf.net>
 	* ui/prefs.galde: added (in)finite RPN stack option, naturally updates

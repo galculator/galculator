@@ -347,7 +347,7 @@ double rpn_stack_operation (s_cb_token current_token)
 	else {
 		/* retrieve left_hand from stack */
 		left_hand = g_array_index (rpn_stack, double, 0);
-		last_on_stack = g_array_index (rpn_stack, double, rpn_stack_size-1);
+		last_on_stack = g_array_index (rpn_stack, double, (int)rpn_stack->len-1);
 		rpn_stack = g_array_remove_index (rpn_stack, 0);
 		/* last register is kept, if stack size is finite */
 		if (((int) rpn_stack->len == rpn_stack_size-1) && (rpn_stack_size > 0))
@@ -365,48 +365,47 @@ double rpn_stack_operation (s_cb_token current_token)
 /* rpn_stack_swapxy. swap first and second register. there are some special cases.
  */
 
-void rpn_stack_swapxy ()
+double rpn_stack_swapxy (double x)
 {
-	double	*x, *y, x_val;
+	double	*y, ret_val;
 	
-	if ((int)rpn_stack->len < 1) return;
-	if ((int)rpn_stack->len < 2) { 
-		x_val = 0.;
-		rpn_stack = g_array_append_val (rpn_stack, x_val);
+	if ((int)rpn_stack->len < 1) { 
+		ret_val = 0.;
+		rpn_stack = g_array_append_val (rpn_stack, x);
 	} else {
-		x = &g_array_index (rpn_stack, double, 0);
-		x_val = *x;
-		y = &g_array_index (rpn_stack, double, 1);
-		*x = *y;
-		*y = x_val;
+		y = &g_array_index (rpn_stack, double, 0);
+		ret_val = *y;
+		*y = x;
 	}
 	if (rpn_debug > 0) fprintf (stderr, "[%s] RPN stack size is %i.\n", 
 		PROG_NAME, (int)rpn_stack->len);
 	if (rpn_debug > 1) debug_rpn_stack_print();
+	return ret_val;
 }
 
 /* rpn_stack_rolldown. y->x, z->y, ..., x->t
  */
 
-void rpn_stack_rolldown ()
+double rpn_stack_rolldown (double x)
 {
-	double	*a, x;
+	double	*a, ret_val;
 	int	counter;
 	
-	x = 0.;
+	ret_val = 0.;
 	/* in the following case we have to fill up with zeros. thus this is
 	 * done virtually in rpn_stack_get.
 	 */
 	if ((rpn_stack_size > 0) && ((int)rpn_stack->len < rpn_stack_size))
 		for (counter = rpn_stack->len; counter < rpn_stack_size; counter++)
-			rpn_stack = g_array_append_val (rpn_stack, x);
-	x = g_array_index (rpn_stack, double, 0);
-	for (counter = 0; counter < (int) rpn_stack->len - 2; counter++) {
+			rpn_stack = g_array_append_val (rpn_stack, ret_val);
+	ret_val = g_array_index (rpn_stack, double, 0);
+	for (counter = 0; counter < (int) rpn_stack->len - 1; counter++) {
 		a = &g_array_index (rpn_stack, double, counter);
 		*a = g_array_index (rpn_stack, double, counter + 1);
 	}
 	a = &g_array_index (rpn_stack, double, rpn_stack->len - 1);
 	*a = x;
+	return ret_val;
 }
 
 /* rpn_stack_get. returns a double array with the first length elements of
@@ -427,6 +426,18 @@ double *rpn_stack_get (int length)
 	return return_array;
 }
 
+/* rpn_stack_set_size. write rpn_stack_size.
+ */
+
+void rpn_stack_set_size (int size)
+{
+	int	counter;
+
+	if ((size > 0) && ((size < rpn_stack_size) || (rpn_stack_size == -1)))
+		for (counter = size; counter < rpn_stack->len; counter++)
+			rpn_stack = g_array_remove_index (rpn_stack, counter);
+	rpn_stack_size = size;
+}
 /* rpn_free. the finalizer.
  */
 

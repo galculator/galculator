@@ -60,4 +60,8 @@ void activate_menu_item (char *item_name);
 
 char *get_display_number_string (double value, int base);
 int get_display_number_length (int base);
+
+void gfunc_f1 (GtkToggleButton *button);
+void gfunc_f2 (GtkToggleButton *button);
+
 #endif /* general_functions.h */

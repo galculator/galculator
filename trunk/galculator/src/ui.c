@@ -66,8 +66,6 @@ s_active_buttons active_buttons[] = {\
 	{"button_tan", AB_DEC | AB_RPN | AB_PAN}, \
 	{"button_point", ~(AB_BIN | AB_OCT | AB_HEX)}, \
 	{"button_sign", ~(AB_BIN | AB_OCT | AB_HEX)}, \
-	{"button_paropen", ~(AB_RPN)}, \
-	{"button_parclose", ~(AB_RPN)}, \
 	{NULL}\
 };
 
@@ -141,41 +139,43 @@ static void apply_object_data (s_operation_map operation_map[],
 
 static void set_scientific_object_data ()
 {
-	s_operation_map	operation_map[] = {\
-		{"button_pow", '^'},\
-		{"button_lsh", '<'},\
-		{"button_mod", 'm'},\
-		{"button_and", '&'},\
-		{"button_or", '|'},\
-		{"button_xor", 'x'},\
-		{"button_enter", '='},\
-		{"button_plus", '+'},\
-		{"button_minus", '-'},\
-		{"button_mult", '*'},\
-		{"button_div", '/'},\
-		{"button_paropen", '('},\
-		{"button_parclose", ')'},\
-		{"button_percent", '%'},\
-		{NULL}\
+	s_operation_map	operation_map[] = {
+		{"button_pow", '^'},
+		{"button_lsh", '<'},
+		{"button_mod", 'm'},
+		{"button_and", '&'},
+		{"button_or", '|'},
+		{"button_xor", 'x'},
+		{"button_enter", '='},
+		{"button_plus", '+'},
+		{"button_minus", '-'},
+		{"button_mult", '*'},
+		{"button_div", '/'},
+		{"button_percent", '%'},
+		{"button_f1", '('},		/* paropen or swapxy */
+		{"button_f2", ')'},		/* parclose or rolldn */
+		{NULL}
 	};
 	
-	s_gfunc_map gfunc_map[] = {\
-		{"button_sign", display_result_toggle_sign},\
-		{"button_ee", display_append_e},\
-		{NULL}\
+	s_gfunc_map gfunc_map[] = {
+		{"button_sign", display_result_toggle_sign},
+		{"button_ee", display_append_e},
+		{"button_f1", gfunc_f1},	/* paropen or swapxy */
+		{"button_f2", gfunc_f2},	/* parclose or rolldn */
+		{NULL}
 	};
 	
-	s_function_map function_map[] = {\
-		{"button_sin", {sin, asin, sinh, asinh}, TRUE},\
-		{"button_cos", {cos, acos, cosh, acosh}, TRUE},\
-		{"button_tan", {tan, atan, tanh, atanh}, TRUE},\
-		{"button_log", {log10, pow10y, log10, log10}, FALSE},\
-		{"button_ln", {log, exp, log, log}, FALSE},\
-		{"button_sq", {powx2, sqrt, powx2, powx2}, FALSE},\
-		{"button_sqrt", {sqrt, powx2, sqrt, sqrt}, FALSE},\
-		{"button_fac", {factorial, factorial, factorial, factorial}, FALSE},\
-		{"button_cmp", {cmp, cmp, cmp, cmp}, FALSE},\
-		{NULL}\
+	s_function_map function_map[] = {
+		{"button_sin", {sin, asin, sinh, asinh}, TRUE},
+		{"button_cos", {cos, acos, cosh, acosh}, TRUE},
+		{"button_tan", {tan, atan, tanh, atanh}, TRUE},
+		{"button_log", {log10, pow10y, log10, log10}, FALSE},
+		{"button_ln", {log, exp, log, log}, FALSE},
+		{"button_sq", {powx2, sqrt, powx2, powx2}, FALSE},
+		{"button_sqrt", {sqrt, powx2, sqrt, sqrt}, FALSE},
+		{"button_fac", {factorial, factorial, factorial, factorial}, FALSE},
+		{"button_cmp", {cmp, cmp, cmp, cmp}, FALSE},
+		{NULL}
 	};
 
 	apply_object_data (operation_map, gfunc_map, function_map);
@@ -187,26 +187,28 @@ static void set_scientific_object_data ()
 
 static void set_basic_object_data ()
 {
-	s_operation_map	operation_map[] = {\
-		{"button_enter", '='},\
-		{"button_plus", '+'},\
-		{"button_minus", '-'},\
-		{"button_mult", '*'},\
-		{"button_div", '/'},\
-		{"button_paropen", '('},\
-		{"button_parclose", ')'},\
-		{"button_percent", '%'},\
-		{NULL}\
+	s_operation_map	operation_map[] = {
+		{"button_enter", '='},
+		{"button_plus", '+'},
+		{"button_minus", '-'},
+		{"button_mult", '*'},
+		{"button_div", '/'},
+		{"button_percent", '%'},
+		{"button_f1", '('},		/* paropen or swapxy */
+		{"button_f2", ')'},		/* parclose or rolldn */
+		{NULL}
 	};
 	
-	s_gfunc_map gfunc_map[] = {\
-		{"button_sign", display_result_toggle_sign},\
-		{NULL}\
+	s_gfunc_map gfunc_map[] = {
+		{"button_sign", display_result_toggle_sign},
+		{"button_f1", gfunc_f1},	/* paropen or swapxy */
+		{"button_f2", gfunc_f2},	/* parclose or rolldn */
+		{NULL}
 	};
 	
-	s_function_map function_map[] = {\
-		{"button_sqrt", {sqrt, powx2, sqrt, sqrt}, FALSE},\
-		{NULL}\
+	s_function_map function_map[] = {
+		{"button_sqrt", {sqrt, powx2, sqrt, sqrt}, FALSE},
+		{NULL}
 	};
 	
 	apply_object_data (operation_map, gfunc_map, function_map);
@@ -343,7 +345,7 @@ void ui_main_window_buttons_create (int mode)
 {
 	GtkWidget	*box;
 	struct lconv 	*locale_settings;
-
+	
 	if (mode == BASIC_MODE) {
 		button_box_xml = glade_file_open (BASIC_GLADE_FILE, "button_box", TRUE);
 		box = glade_xml_get_widget (main_window_xml, "window_vbox");
