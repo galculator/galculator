@@ -29,7 +29,7 @@ anjuta.compatibility.level=1
 project.name=galculator
 project.type=GTK
 project.target.type=EXECUTABLE
-project.version=1.1.4CVS
+project.version=1.2.1CVS
 project.author=Simon Floery
 project.source.target=dummytarget
 project.has.gettext=0
@@ -77,7 +77,8 @@ module.include.files=\
 	src/general_functions.h\
 	src/config_file.h\
 	src/ui.h\
-	src/parser.h
+	src/parser.h\
+	src/flex_parser.h
 
 module.source.name=.
 module.source.type=
@@ -90,7 +91,8 @@ module.source.files=\
 	src/general_functions.c\
 	src/config_file.c\
 	src/ui.c\
-	src/parser.c
+	src/parser.c\
+	src/flex_parser.lex
 
 module.pixmap.name=.
 module.pixmap.type=

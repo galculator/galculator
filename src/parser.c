@@ -35,6 +35,7 @@
 #include "calc_basic.h"
 #include "galculator.h"
 #include "math_functions.h"
+#include "flex_parser.h"
 
 static gboolean error;
 
@@ -196,6 +197,8 @@ s_parser_result parse_string(const char *input_string)
 	s_cb_token	current_token;
 	s_parser_result	this;
 	
+	flex_parser(g_strdup(input_string));
+	return;
 	error = FALSE;
 	this.result = 0.;
 	string = g_strdup_printf ("%s=", input_string);

@@ -144,105 +144,124 @@ m4trace:configure.in:21: -1- AC_DEFINE_TRACE_LITERAL([GETTEXT_PACKAGE])
 m4trace:configure.in:21: -1- AH_OUTPUT([GETTEXT_PACKAGE], [/* Name of gettext package */
 #undef GETTEXT_PACKAGE])
 m4trace:configure.in:22: -1- AC_SUBST([GETTEXT_PACKAGE])
-m4trace:configure.in:26: -1- AC_CHECK_HEADERS([locale.h])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_LOCALE_H], [/* Define to 1 if you have the <locale.h> header file. */
+m4trace:configure.in:25: -1- AC_SUBST([LEX])
+m4trace:configure.in:25: -1- AC_PROG_LEX
+m4trace:configure.in:25: -1- AC_SUBST([LEX])
+m4trace:configure.in:25: -1- AC_CHECK_LIB([fl], [yywrap], [LEXLIB="-lfl"], [AC_CHECK_LIB(l, yywrap, LEXLIB="-ll")])
+m4trace:configure.in:25: -1- AC_CHECK_LIB([l], [yywrap], [LEXLIB="-ll"])
+m4trace:configure.in:25: -1- AC_SUBST([LEXLIB])
+m4trace:configure.in:25: -1- AC_SUBST([LEX_OUTPUT_ROOT], [$ac_cv_prog_lex_root])
+m4trace:configure.in:25: -1- AC_DEFINE_TRACE_LITERAL([YYTEXT_POINTER])
+m4trace:configure.in:25: -1- AH_OUTPUT([YYTEXT_POINTER], [/* Define to 1 if `lex\' declares `yytext\' as a `char *\' by default, not a
+   `char[]\'. */
+#undef YYTEXT_POINTER])
+m4trace:configure.in:25: -1- _m4_warn([obsolete], [The macro `AC_DECL_YYTEXT' is obsolete.
+You should run autoupdate.], [autoconf/programs.m4:438: AC_DECL_YYTEXT is expanded from...
+aclocal.m4:1243: AM_PROG_LEX is expanded from...
+configure.in:25: the top level])
+m4trace:configure.in:25: -1- AC_PROG_LEX
+m4trace:configure.in:25: -1- _m4_warn([syntax], [AC_PROG_LEX invoked multiple times], [autoconf/programs.m4:438: AC_DECL_YYTEXT is expanded from...
+aclocal.m4:1243: AM_PROG_LEX is expanded from...
+configure.in:25: the top level])
+m4trace:configure.in:29: -1- AC_CHECK_HEADERS([locale.h])
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_LOCALE_H], [/* Define to 1 if you have the <locale.h> header file. */
 #undef HAVE_LOCALE_H])
-m4trace:configure.in:26: -1- AC_CHECK_HEADERS([sys/types.h sys/stat.h stdlib.h string.h memory.h strings.h \
+m4trace:configure.in:29: -1- AC_CHECK_HEADERS([sys/types.h sys/stat.h stdlib.h string.h memory.h strings.h \
 		  inttypes.h stdint.h unistd.h], [], [], [$ac_includes_default])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_SYS_TYPES_H], [/* Define to 1 if you have the <sys/types.h> header file. */
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_SYS_TYPES_H], [/* Define to 1 if you have the <sys/types.h> header file. */
 #undef HAVE_SYS_TYPES_H])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_SYS_STAT_H], [/* Define to 1 if you have the <sys/stat.h> header file. */
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_SYS_STAT_H], [/* Define to 1 if you have the <sys/stat.h> header file. */
 #undef HAVE_SYS_STAT_H])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_STDLIB_H], [/* Define to 1 if you have the <stdlib.h> header file. */
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_STDLIB_H], [/* Define to 1 if you have the <stdlib.h> header file. */
 #undef HAVE_STDLIB_H])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_STRING_H], [/* Define to 1 if you have the <string.h> header file. */
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_STRING_H], [/* Define to 1 if you have the <string.h> header file. */
 #undef HAVE_STRING_H])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_MEMORY_H], [/* Define to 1 if you have the <memory.h> header file. */
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_MEMORY_H], [/* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_STRINGS_H], [/* Define to 1 if you have the <strings.h> header file. */
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_STRINGS_H], [/* Define to 1 if you have the <strings.h> header file. */
 #undef HAVE_STRINGS_H])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_INTTYPES_H], [/* Define to 1 if you have the <inttypes.h> header file. */
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_INTTYPES_H], [/* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_STDINT_H], [/* Define to 1 if you have the <stdint.h> header file. */
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_STDINT_H], [/* Define to 1 if you have the <stdint.h> header file. */
 #undef HAVE_STDINT_H])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_UNISTD_H], [/* Define to 1 if you have the <unistd.h> header file. */
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_UNISTD_H], [/* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H])
-m4trace:configure.in:26: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
+m4trace:configure.in:29: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
 You should run autoupdate.], [autoconf/general.m4:2223: AC_TRY_LINK is expanded from...
 autoconf/general.m4:1799: AC_CACHE_VAL is expanded from...
 autoconf/general.m4:1808: AC_CACHE_CHECK is expanded from...
-aclocal.m4:1291: GLIB_LC_MESSAGES is expanded from...
-aclocal.m4:1586: GLIB_GNU_GETTEXT is expanded from...
-aclocal.m4:1615: AM_GLIB_GNU_GETTEXT is expanded from...
-configure.in:26: the top level])
-m4trace:configure.in:26: -1- AC_DEFINE_TRACE_LITERAL([HAVE_LC_MESSAGES])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_LC_MESSAGES], [/* Define if your <locale.h> file defines LC_MESSAGES. */
+aclocal.m4:1300: GLIB_LC_MESSAGES is expanded from...
+aclocal.m4:1595: GLIB_GNU_GETTEXT is expanded from...
+aclocal.m4:1624: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.in:29: the top level])
+m4trace:configure.in:29: -1- AC_DEFINE_TRACE_LITERAL([HAVE_LC_MESSAGES])
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_LC_MESSAGES], [/* Define if your <locale.h> file defines LC_MESSAGES. */
 #undef HAVE_LC_MESSAGES])
-m4trace:configure.in:26: -1- AC_SUBST([USE_NLS])
-m4trace:configure.in:26: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
+m4trace:configure.in:29: -1- AC_SUBST([USE_NLS])
+m4trace:configure.in:29: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
 You should run autoupdate.], [autoconf/general.m4:2223: AC_TRY_LINK is expanded from...
 autoconf/general.m4:1799: AC_CACHE_VAL is expanded from...
 autoconf/general.m4:1808: AC_CACHE_CHECK is expanded from...
 autoconf/headers.m4:91: AC_CHECK_HEADER is expanded from...
-aclocal.m4:1503: GLIB_WITH_NLS is expanded from...
-aclocal.m4:1586: GLIB_GNU_GETTEXT is expanded from...
-aclocal.m4:1615: AM_GLIB_GNU_GETTEXT is expanded from...
-configure.in:26: the top level])
-m4trace:configure.in:26: -1- AC_CHECK_FUNCS([bind_textdomain_codeset])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_BIND_TEXTDOMAIN_CODESET], [/* Define to 1 if you have the `bind_textdomain_codeset\' function. */
+aclocal.m4:1512: GLIB_WITH_NLS is expanded from...
+aclocal.m4:1595: GLIB_GNU_GETTEXT is expanded from...
+aclocal.m4:1624: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.in:29: the top level])
+m4trace:configure.in:29: -1- AC_CHECK_FUNCS([bind_textdomain_codeset])
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_BIND_TEXTDOMAIN_CODESET], [/* Define to 1 if you have the `bind_textdomain_codeset\' function. */
 #undef HAVE_BIND_TEXTDOMAIN_CODESET])
-m4trace:configure.in:26: -1- AC_CHECK_LIB([intl], [bindtextdomain], [AC_CHECK_LIB(intl, dgettext,
+m4trace:configure.in:29: -1- AC_CHECK_LIB([intl], [bindtextdomain], [AC_CHECK_LIB(intl, dgettext,
 		          gt_cv_func_dgettext_libintl=yes)])
-m4trace:configure.in:26: -1- AC_CHECK_LIB([intl], [dgettext], [gt_cv_func_dgettext_libintl=yes])
-m4trace:configure.in:26: -1- AC_CHECK_LIB([intl], [dcgettext], [gt_cv_func_dgettext_libintl=yes
+m4trace:configure.in:29: -1- AC_CHECK_LIB([intl], [dgettext], [gt_cv_func_dgettext_libintl=yes])
+m4trace:configure.in:29: -1- AC_CHECK_LIB([intl], [dcgettext], [gt_cv_func_dgettext_libintl=yes
 			libintl_extra_libs=-liconv], [:], [-liconv])
-m4trace:configure.in:26: -1- AC_CHECK_FUNCS([bind_textdomain_codeset])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_BIND_TEXTDOMAIN_CODESET], [/* Define to 1 if you have the `bind_textdomain_codeset\' function. */
+m4trace:configure.in:29: -1- AC_CHECK_FUNCS([bind_textdomain_codeset])
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_BIND_TEXTDOMAIN_CODESET], [/* Define to 1 if you have the `bind_textdomain_codeset\' function. */
 #undef HAVE_BIND_TEXTDOMAIN_CODESET])
-m4trace:configure.in:26: -1- AC_DEFINE_TRACE_LITERAL([HAVE_GETTEXT])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_GETTEXT], [/* Define if the GNU gettext() function is already present or preinstalled. */
+m4trace:configure.in:29: -1- AC_DEFINE_TRACE_LITERAL([HAVE_GETTEXT])
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_GETTEXT], [/* Define if the GNU gettext() function is already present or preinstalled. */
 #undef HAVE_GETTEXT])
-m4trace:configure.in:26: -1- AC_SUBST([MSGFMT])
-m4trace:configure.in:26: -1- AC_CHECK_FUNCS([dcgettext])
-m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_DCGETTEXT], [/* Define to 1 if you have the `dcgettext\' function. */
+m4trace:configure.in:29: -1- AC_SUBST([MSGFMT])
+m4trace:configure.in:29: -1- AC_CHECK_FUNCS([dcgettext])
+m4trace:configure.in:29: -1- AH_OUTPUT([HAVE_DCGETTEXT], [/* Define to 1 if you have the `dcgettext\' function. */
 #undef HAVE_DCGETTEXT])
-m4trace:configure.in:26: -1- AC_SUBST([GMSGFMT], [$ac_cv_path_GMSGFMT])
-m4trace:configure.in:26: -1- AC_SUBST([XGETTEXT])
-m4trace:configure.in:26: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
+m4trace:configure.in:29: -1- AC_SUBST([GMSGFMT], [$ac_cv_path_GMSGFMT])
+m4trace:configure.in:29: -1- AC_SUBST([XGETTEXT])
+m4trace:configure.in:29: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
 You should run autoupdate.], [autoconf/general.m4:2223: AC_TRY_LINK is expanded from...
 autoconf/headers.m4:91: AC_CHECK_HEADER is expanded from...
-aclocal.m4:1503: GLIB_WITH_NLS is expanded from...
-aclocal.m4:1586: GLIB_GNU_GETTEXT is expanded from...
-aclocal.m4:1615: AM_GLIB_GNU_GETTEXT is expanded from...
-configure.in:26: the top level])
-m4trace:configure.in:26: -1- AC_DEFINE_TRACE_LITERAL([ENABLE_NLS])
-m4trace:configure.in:26: -1- AH_OUTPUT([ENABLE_NLS], [/* always defined to indicate that i18n is enabled */
+aclocal.m4:1512: GLIB_WITH_NLS is expanded from...
+aclocal.m4:1595: GLIB_GNU_GETTEXT is expanded from...
+aclocal.m4:1624: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.in:29: the top level])
+m4trace:configure.in:29: -1- AC_DEFINE_TRACE_LITERAL([ENABLE_NLS])
+m4trace:configure.in:29: -1- AH_OUTPUT([ENABLE_NLS], [/* always defined to indicate that i18n is enabled */
 #undef ENABLE_NLS])
-m4trace:configure.in:26: -1- _m4_warn([obsolete], [The macro `AC_OUTPUT_COMMANDS' is obsolete.
+m4trace:configure.in:29: -1- _m4_warn([obsolete], [The macro `AC_OUTPUT_COMMANDS' is obsolete.
 You should run autoupdate.], [autoconf/status.m4:318: AC_OUTPUT_COMMANDS is expanded from...
-aclocal.m4:1503: GLIB_WITH_NLS is expanded from...
-aclocal.m4:1586: GLIB_GNU_GETTEXT is expanded from...
-aclocal.m4:1615: AM_GLIB_GNU_GETTEXT is expanded from...
-configure.in:26: the top level])
-m4trace:configure.in:26: -1- AC_SUBST([CATALOGS])
-m4trace:configure.in:26: -1- AC_SUBST([CATOBJEXT])
-m4trace:configure.in:26: -1- AC_SUBST([DATADIRNAME])
-m4trace:configure.in:26: -1- AC_SUBST([GMOFILES])
-m4trace:configure.in:26: -1- AC_SUBST([INSTOBJEXT])
-m4trace:configure.in:26: -1- AC_SUBST([INTLLIBS])
-m4trace:configure.in:26: -1- AC_SUBST([PO_IN_DATADIR_TRUE])
-m4trace:configure.in:26: -1- AC_SUBST([PO_IN_DATADIR_FALSE])
-m4trace:configure.in:26: -1- AC_SUBST([POFILES])
-m4trace:configure.in:26: -1- AC_SUBST([POSUB])
-m4trace:configure.in:26: -1- AC_SUBST([MKINSTALLDIRS])
-m4trace:configure.in:44: -1- AC_CONFIG_FILES([Makefile
+aclocal.m4:1512: GLIB_WITH_NLS is expanded from...
+aclocal.m4:1595: GLIB_GNU_GETTEXT is expanded from...
+aclocal.m4:1624: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.in:29: the top level])
+m4trace:configure.in:29: -1- AC_SUBST([CATALOGS])
+m4trace:configure.in:29: -1- AC_SUBST([CATOBJEXT])
+m4trace:configure.in:29: -1- AC_SUBST([DATADIRNAME])
+m4trace:configure.in:29: -1- AC_SUBST([GMOFILES])
+m4trace:configure.in:29: -1- AC_SUBST([INSTOBJEXT])
+m4trace:configure.in:29: -1- AC_SUBST([INTLLIBS])
+m4trace:configure.in:29: -1- AC_SUBST([PO_IN_DATADIR_TRUE])
+m4trace:configure.in:29: -1- AC_SUBST([PO_IN_DATADIR_FALSE])
+m4trace:configure.in:29: -1- AC_SUBST([POFILES])
+m4trace:configure.in:29: -1- AC_SUBST([POSUB])
+m4trace:configure.in:29: -1- AC_SUBST([MKINSTALLDIRS])
+m4trace:configure.in:47: -1- AC_CONFIG_FILES([Makefile
 galculator.spec
 src/Makefile
 po/Makefile.in 
 ui/Makefile
 doc/Makefile
 ])
-m4trace:configure.in:44: -1- _m4_warn([obsolete], [AC_OUTPUT should be used without arguments.
+m4trace:configure.in:47: -1- _m4_warn([obsolete], [AC_OUTPUT should be used without arguments.
 You should run autoupdate.], [])
-m4trace:configure.in:44: -1- AC_SUBST([LIB@&t@OBJS], [$ac_libobjs])
-m4trace:configure.in:44: -1- AC_SUBST([LTLIBOBJS], [$ac_ltlibobjs])
+m4trace:configure.in:47: -1- AC_SUBST([LIB@&t@OBJS], [$ac_libobjs])
+m4trace:configure.in:47: -1- AC_SUBST([LTLIBOBJS], [$ac_ltlibobjs])
