@@ -634,6 +634,7 @@ void display_result_add_digit (char digit)
 {
 	char			digit_as_string[2];
 	GtkTextIter		end;
+	double			*stack;
 	
 	/* put a ev. result onto the stack */
 	/* an alternative idea would be to do this immediately after getting a result
@@ -643,6 +644,9 @@ void display_result_add_digit (char digit)
 	*/
 	if ((current_status.notation == CS_RPN) && (current_status.rpn_have_result == TRUE)) {
 		rpn_stack_push (display_result_get_double ());
+		stack = rpn_stack_get (RPN_FINITE_STACK);
+		display_stack_set_xyzt (stack);
+		free (stack);
 		current_status.rpn_have_result = FALSE;
 	}
 	

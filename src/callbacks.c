@@ -241,6 +241,8 @@ void constants_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	
 	const_value = user_data;
 	display_result_set (const_value);
+	current_status.rpn_have_result = TRUE;
+	current_status.calc_entry_start_new = TRUE;
 }
 
 
@@ -937,6 +939,7 @@ void ms_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 		memory.len++;
 	}
 	memory.data[index] = display_result_get_double();
+	current_status.calc_entry_start_new = TRUE;
 }
 
 void
@@ -958,6 +961,8 @@ void mr_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	
 	index = GPOINTER_TO_INT(user_data);
 	display_result_set_double(memory.data[index]);
+	current_status.rpn_have_result = TRUE;
+	current_status.calc_entry_start_new = TRUE;
 }
 
 void

@@ -434,7 +434,7 @@ void rpn_stack_set_size (int size)
 	int	counter;
 
 	if ((size > 0) && ((size < rpn_stack_size) || (rpn_stack_size == -1)))
-		for (counter = size; counter < rpn_stack->len; counter++)
+		for (counter = ((int)rpn_stack->len-1); counter >= size; counter--)
 			rpn_stack = g_array_remove_index (rpn_stack, counter);
 	rpn_stack_size = size;
 }
