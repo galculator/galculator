@@ -1,12 +1,13 @@
 1.2.1
 -----
 
-formula entry mode and functions 
+formula entry mode and functions: add x temporarily as constant:
+	[ ] parser?
 
 parser: [ ] char* operations
 	[ ] bin,hex,oct
 	
-bugfix rpn stack push
+are swapxy, rolldn stack enabling or what?
 
 =GUI======================================
 

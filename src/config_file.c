@@ -83,7 +83,8 @@ static s_prefs_entry prefs_list[41] = {
 	{NULL, NULL, 0, NULL, NULL}
 };
 static char *prefs_list_old_entries[3] = {"show_status_bar", "remembered_value", NULL};
-static s_constant *cf_constant;
+static s_constant *cf_constant=NULL;
+static s_user_function *cf_user_function=NULL;
 
 /*
  * config_file_get_default_prefs - initialize ALL members of the given s_preferences
@@ -161,6 +162,22 @@ static void config_file_get_default_consts (s_constant **consts)
 }
 
 /*
+ * config_file_get_default_user_functions - fill in default user functions
+ */
+
+static void config_file_get_default_user_functions (s_user_function **this_user_funcs)
+{
+	*this_user_funcs = (s_user_function *) malloc (3 * sizeof (s_user_function));
+	(*this_user_funcs)[0].name = g_strdup ("f");
+	(*this_user_funcs)[0].variable = g_strdup ("x");
+	(*this_user_funcs)[0].expression = g_strdup_printf ("1-x");
+	(*this_user_funcs)[1].name = g_strdup ("cot");
+	(*this_user_funcs)[1].variable = g_strdup ("x");
+	(*this_user_funcs)[1].expression = g_strdup_printf ("cos(x)/sin(x)");
+	(*this_user_funcs)[2].name = NULL;
+}
+
+/*
  * config_file_set_prefs - find the key in the s_prefs_entry struct to retrieve
  *	the variable to set. The way to set this variable is given by key_type.
  * 	used by config_file_read.
@@ -227,6 +244,7 @@ int config_file_get_mode (char *line, char *filename, int old_mode)
 	if ((line[0] == '[') && (line[len - 1] == ']')) {
 		if (strcmp (line, SECTION_GENERAL) == 0) return GENERAL;
 		else if (strcmp (line, SECTION_CONSTANTS) == 0) return CONSTANTS;
+		else if (strcmp (line, SECTION_USER_FUNCTIONS) == 0) return USER_FUNCTIONS;
 		else fprintf (stderr, _("[%s] found unknown section %s in \
 configuration file %s. Using preceding section.\n"), PACKAGE, line, filename);
 	}
@@ -265,6 +283,42 @@ void config_file_set_constants (char *line)
 	cf_constant[nr_consts].desc = NULL;
 }
 
+/* config_file_set_user_functions
+ *
+ */
+
+void config_file_set_user_functions (char *line)
+{
+	char 		*name, *variable, *expression;
+	static int	nr_user_functions=0;
+	
+	name = line;
+	variable = strchr (line, '(');
+	if (variable == NULL) return;
+	*variable = '\0';
+	variable++;
+	expression = strchr (variable, ')');
+	if (expression == NULL) return;
+	*expression = '\0';
+	expression++;
+	expression = strchr (expression, '=');
+	if (expression == NULL) return;
+	expression++;
+	name = g_strstrip(name);
+	variable = g_strstrip(variable);
+	expression = g_strstrip(expression);
+	/* allowing name to be "" */
+	if ((strlen(variable) == 0) || (strlen(expression) == 0)) return;
+	nr_user_functions++;
+	cf_user_function = (s_user_function *) realloc (cf_user_function, 
+		(nr_user_functions + 1) * sizeof(s_user_function));
+	cf_user_function[nr_user_functions-1].name = g_strdup (name);
+	cf_user_function[nr_user_functions-1].variable = g_strdup (variable);
+	cf_user_function[nr_user_functions-1].expression = g_strdup (expression);
+	/* keep it NULL terminated */
+	cf_user_function[nr_user_functions].name = NULL;
+}
+
 /*
  * config_file_read - open/read/close. values are saved to global variable prefs!
  * 	policy: if there is no constants section, pi and e are added as default
@@ -276,7 +330,7 @@ s_preferences config_file_read (char *filename)
 	char		line[MAX_FILE_LINE_LENGTH], *key, *value;
 	FILE		*this_file;
 	int		mode=GENERAL;
-	gboolean 	have_const_section=FALSE;
+	gboolean 	have_const_section=FALSE, have_user_function_section=FALSE;
 	
 	this_file = fopen (filename, "r");
 	config_file_get_default_prefs (&prefs);
@@ -301,6 +355,10 @@ s_preferences config_file_read (char *filename)
 					have_const_section = TRUE;
 					config_file_set_constants (line);
 					break;
+				case USER_FUNCTIONS:
+					have_user_function_section = TRUE;
+					config_file_set_user_functions (line);
+					break;
 				}
 			}
 		}
@@ -309,6 +367,7 @@ s_preferences config_file_read (char *filename)
 	else fprintf (stderr, _("[%s] configuration file: couldn't open configuration file %s for reading. \
 Nothing to worry about if you are starting %s for the first time. Using defaults.\n"), PACKAGE, filename, PACKAGE);
 	if (have_const_section == FALSE) config_file_get_default_consts (&cf_constant);
+	if (have_user_function_section == FALSE) config_file_get_default_user_functions (&cf_user_function);
 	return prefs;
 }
 
@@ -316,7 +375,7 @@ Nothing to worry about if you are starting %s for the first time. Using defaults
  * config_file_write - open/write/close.
  */
 
-void config_file_write (char *filename, s_preferences this_prefs)
+void config_file_write (char *filename, s_preferences this_prefs, s_constant *this_constants, s_user_function *this_user_functions)
 {
 	int		*int_var, counter=0;
 	char 		**string_var;
@@ -325,6 +384,8 @@ void config_file_write (char *filename, s_preferences this_prefs)
 	char 		*line=NULL;
 	FILE		*this_file;
 	
+	cf_constant = this_constants;
+	cf_user_function = this_user_functions;
 	this_file = fopen (filename, "w+");
 	/* overwrite local prefs memory with supplied prefs. probably ugly. */
 	prefs = this_prefs;
@@ -362,6 +423,14 @@ void config_file_write (char *filename, s_preferences this_prefs)
 				cf_constant[counter].name, cf_constant[counter].value);
 			counter++;
 		}
+		counter = 0;
+		fprintf (this_file, "\n%s\n\n", SECTION_USER_FUNCTIONS);
+		while (cf_user_function[counter].name != NULL) {	
+			fprintf (this_file, "%s(%s)=%s\n", cf_user_function[counter].name, 
+				cf_user_function[counter].variable, 
+				cf_user_function[counter].expression);
+			counter++;
+		}
 		fclose (this_file);
 	}	
 	else fprintf (stderr, _("[%s] configuration file: couldn't save/write to configuration file %s.\n"), PACKAGE, filename);
@@ -375,4 +444,9 @@ s_prefs_entry *config_file_get_prefs_list()
 s_constant *config_file_get_constants()
 {
 	return cf_constant;
+}
+
+s_user_function *config_file_get_user_functions()
+{
+	return cf_user_function;
 }
