@@ -78,6 +78,15 @@ m4trace:configure.in:5: -1- AC_SUBST([MAINTAINER_MODE_TRUE])
 m4trace:configure.in:5: -1- AC_SUBST([MAINTAINER_MODE_FALSE])
 m4trace:configure.in:5: -1- AC_SUBST([MAINT])
 m4trace:configure.in:7: -1- AC_CONFIG_HEADERS([config.h])
+m4trace:configure.in:7: -1- _m4_warn([obsolete], [The macro `AC_OUTPUT_COMMANDS' is obsolete.
+You should run autoupdate.], [autoconf/status.m4:318: AC_OUTPUT_COMMANDS is expanded from...
+aclocal.m4:1010: AM_CONFIG_HEADER is expanded from...
+configure.in:7: the top level])
+m4trace:configure.in:7: -3- _m4_warn([obsolete], [The macro `_AC_OUTPUT_COMMANDS_CNT' is obsolete.
+You should run autoupdate.], [autoconf/status.m4:321: _AC_OUTPUT_COMMANDS_CNT is expanded from...
+autoconf/status.m4:318: AC_OUTPUT_COMMANDS is expanded from...
+aclocal.m4:1010: AM_CONFIG_HEADER is expanded from...
+configure.in:7: the top level])
 m4trace:configure.in:9: -1- AC_PROG_CC
 m4trace:configure.in:9: -1- AC_SUBST([CC])
 m4trace:configure.in:9: -1- AC_SUBST([CFLAGS])
@@ -103,6 +112,7 @@ m4trace:configure.in:10: -1- AC_SUBST([INTLTOOL_SHEET_RULE])
 m4trace:configure.in:10: -1- AC_SUBST([INTLTOOL_SOUNDLIST_RULE])
 m4trace:configure.in:10: -1- AC_SUBST([INTLTOOL_UI_RULE])
 m4trace:configure.in:10: -1- AC_SUBST([INTLTOOL_XAM_RULE])
+m4trace:configure.in:10: -1- AC_SUBST([INTLTOOL_KBD_RULE])
 m4trace:configure.in:10: -1- AC_SUBST([INTLTOOL_XML_RULE])
 m4trace:configure.in:10: -1- AC_SUBST([INTLTOOL_CAVES_RULE])
 m4trace:configure.in:10: -1- AC_SUBST([INTLTOOL_SCHEMAS_RULE])
@@ -111,6 +121,10 @@ m4trace:configure.in:10: -1- AC_SUBST([INTLTOOL_EXTRACT])
 m4trace:configure.in:10: -1- AC_SUBST([INTLTOOL_MERGE])
 m4trace:configure.in:10: -1- AC_SUBST([INTLTOOL_UPDATE])
 m4trace:configure.in:10: -1- AC_SUBST([INTLTOOL_PERL], [$ac_cv_path_INTLTOOL_PERL])
+m4trace:configure.in:10: -1- _m4_warn([obsolete], [The macro `AC_OUTPUT_COMMANDS' is obsolete.
+You should run autoupdate.], [autoconf/status.m4:318: AC_OUTPUT_COMMANDS is expanded from...
+aclocal.m4:1149: AC_PROG_INTLTOOL is expanded from...
+configure.in:10: the top level])
 m4trace:configure.in:11: -1- AC_CHECK_LIB([cposix], [strerror], [LIBS="$LIBS -lcposix"])
 m4trace:configure.in:13: -1- AC_HEADER_STDC
 m4trace:configure.in:13: -1- AC_PROG_CPP
@@ -134,7 +148,7 @@ m4trace:configure.in:26: -1- AC_CHECK_HEADERS([locale.h])
 m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_LOCALE_H], [/* Define to 1 if you have the <locale.h> header file. */
 #undef HAVE_LOCALE_H])
 m4trace:configure.in:26: -1- AC_CHECK_HEADERS([sys/types.h sys/stat.h stdlib.h string.h memory.h strings.h \
-                  inttypes.h stdint.h unistd.h], [], [], [$ac_includes_default])
+		  inttypes.h stdint.h unistd.h], [], [], [$ac_includes_default])
 m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_SYS_TYPES_H], [/* Define to 1 if you have the <sys/types.h> header file. */
 #undef HAVE_SYS_TYPES_H])
 m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_SYS_STAT_H], [/* Define to 1 if you have the <sys/stat.h> header file. */
@@ -153,10 +167,27 @@ m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_STDINT_H], [/* Define to 1 if you h
 #undef HAVE_STDINT_H])
 m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_UNISTD_H], [/* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H])
+m4trace:configure.in:26: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
+You should run autoupdate.], [autoconf/general.m4:2223: AC_TRY_LINK is expanded from...
+autoconf/general.m4:1799: AC_CACHE_VAL is expanded from...
+autoconf/general.m4:1808: AC_CACHE_CHECK is expanded from...
+aclocal.m4:1291: GLIB_LC_MESSAGES is expanded from...
+aclocal.m4:1586: GLIB_GNU_GETTEXT is expanded from...
+aclocal.m4:1615: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.in:26: the top level])
 m4trace:configure.in:26: -1- AC_DEFINE_TRACE_LITERAL([HAVE_LC_MESSAGES])
 m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_LC_MESSAGES], [/* Define if your <locale.h> file defines LC_MESSAGES. */
 #undef HAVE_LC_MESSAGES])
 m4trace:configure.in:26: -1- AC_SUBST([USE_NLS])
+m4trace:configure.in:26: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
+You should run autoupdate.], [autoconf/general.m4:2223: AC_TRY_LINK is expanded from...
+autoconf/general.m4:1799: AC_CACHE_VAL is expanded from...
+autoconf/general.m4:1808: AC_CACHE_CHECK is expanded from...
+autoconf/headers.m4:91: AC_CHECK_HEADER is expanded from...
+aclocal.m4:1503: GLIB_WITH_NLS is expanded from...
+aclocal.m4:1586: GLIB_GNU_GETTEXT is expanded from...
+aclocal.m4:1615: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.in:26: the top level])
 m4trace:configure.in:26: -1- AC_CHECK_FUNCS([bind_textdomain_codeset])
 m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_BIND_TEXTDOMAIN_CODESET], [/* Define to 1 if you have the `bind_textdomain_codeset\' function. */
 #undef HAVE_BIND_TEXTDOMAIN_CODESET])
@@ -177,9 +208,22 @@ m4trace:configure.in:26: -1- AH_OUTPUT([HAVE_DCGETTEXT], [/* Define to 1 if you 
 #undef HAVE_DCGETTEXT])
 m4trace:configure.in:26: -1- AC_SUBST([GMSGFMT], [$ac_cv_path_GMSGFMT])
 m4trace:configure.in:26: -1- AC_SUBST([XGETTEXT])
+m4trace:configure.in:26: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
+You should run autoupdate.], [autoconf/general.m4:2223: AC_TRY_LINK is expanded from...
+autoconf/headers.m4:91: AC_CHECK_HEADER is expanded from...
+aclocal.m4:1503: GLIB_WITH_NLS is expanded from...
+aclocal.m4:1586: GLIB_GNU_GETTEXT is expanded from...
+aclocal.m4:1615: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.in:26: the top level])
 m4trace:configure.in:26: -1- AC_DEFINE_TRACE_LITERAL([ENABLE_NLS])
 m4trace:configure.in:26: -1- AH_OUTPUT([ENABLE_NLS], [/* always defined to indicate that i18n is enabled */
 #undef ENABLE_NLS])
+m4trace:configure.in:26: -1- _m4_warn([obsolete], [The macro `AC_OUTPUT_COMMANDS' is obsolete.
+You should run autoupdate.], [autoconf/status.m4:318: AC_OUTPUT_COMMANDS is expanded from...
+aclocal.m4:1503: GLIB_WITH_NLS is expanded from...
+aclocal.m4:1586: GLIB_GNU_GETTEXT is expanded from...
+aclocal.m4:1615: AM_GLIB_GNU_GETTEXT is expanded from...
+configure.in:26: the top level])
 m4trace:configure.in:26: -1- AC_SUBST([CATALOGS])
 m4trace:configure.in:26: -1- AC_SUBST([CATOBJEXT])
 m4trace:configure.in:26: -1- AC_SUBST([DATADIRNAME])
@@ -198,5 +242,7 @@ po/Makefile.in
 ui/Makefile
 doc/Makefile
 ])
+m4trace:configure.in:44: -1- _m4_warn([obsolete], [AC_OUTPUT should be used without arguments.
+You should run autoupdate.], [])
 m4trace:configure.in:44: -1- AC_SUBST([LIB@&t@OBJS], [$ac_libobjs])
 m4trace:configure.in:44: -1- AC_SUBST([LTLIBOBJS], [$ac_ltlibobjs])

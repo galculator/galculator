@@ -123,7 +123,11 @@ on_number_button_clicked               (GtkToggleButton  *button,
 {	
 	if (gtk_toggle_button_get_active(button) == FALSE) return;
 	button_activation (button);
-	display_result_add_digit (*(gtk_button_get_label ((GtkButton *)button)));
+	if (current_status.notation == CS_FORMULA)
+		ui_formula_entry_insert (gtk_button_get_label ((GtkButton *)button));
+	else
+		display_result_add_digit (*(gtk_button_get_label ((GtkButton *)button)));
+	return;
 }
 
 /* this callback is called if a button for doing one of the arithmetic operations plus, minus, 
@@ -131,8 +135,7 @@ on_number_button_clicked               (GtkToggleButton  *button,
  */
 
 void
-on_operation_button_clicked            (GtkToggleButton       *button,
-                                        gpointer         user_data)
+on_operation_button_clicked            (GtkToggleButton       *button,                                        gpointer         user_data)
 {
 	s_cb_token		current_token;
 	double			return_value, *stack;
@@ -140,6 +143,13 @@ on_operation_button_clicked            (GtkToggleButton       *button,
 	
 	if (gtk_toggle_button_get_active(button) == FALSE) return;
 	button_activation (button);
+	
+	if (current_status.notation == CS_FORMULA) {
+		ui_formula_entry_insert (
+			g_object_get_data (G_OBJECT (button), "display_string"));
+		return;
+	}
+	
 	current_token.operation = (int) g_object_get_data (G_OBJECT (button), "operation");
 	/* current number, get it from the display! */
 	if (current_token.operation != '(') 
@@ -207,6 +217,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,
 	} else error_message ("on_operation_button_clicked: unknown status");
 
 	current_status.calc_entry_start_new = TRUE;
+	return;
 }
 
 /* this callback is called if a button for a function manipulating the current 
@@ -218,13 +229,18 @@ void
 on_function_button_clicked             (GtkToggleButton	*button,
                                         gpointer user_data)
 {
-	double			(*func[4])(double);
-	gboolean		is_trigonometric;
-	GtkWidget		*tbutton;
+	double		(*func[4])(double);
+	char 		**display_name;
+	gboolean	is_trigonometric;
+	GtkWidget	*tbutton;
 	
 	if (gtk_toggle_button_get_active(button) == FALSE) return;
 	button_activation (button);
-
+	if (current_status.notation == CS_FORMULA) {
+		display_name = (char **) g_object_get_data (G_OBJECT (button), "display_names");
+		ui_formula_entry_insert (display_name[current_status.fmod]);
+		return;
+	}	
 	memcpy (func, g_object_get_data (G_OBJECT (button), "func"), sizeof (func));
 	is_trigonometric = (gboolean) g_object_get_data (G_OBJECT (button), "is_trigonometric");
 	if (!func) error_message ("This button has no function associated with");
@@ -379,55 +395,61 @@ on_grad_activate                      (GtkMenuItem     *menuitem,
 	display_change_option (CS_GRAD, DISPLAY_OPT_ANGLE);
 }
 
-
 void
 on_ordinary_activate                  (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
-	GtkWidget	*w;
-	
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
-	/* printf ("pan\n"); */
 	display_change_option (CS_PAN, DISPLAY_OPT_NOTATION);
+	set_widget_visibility (main_window_xml, "formula_entry_hbox", FALSE);
 	rpn_free ();
 	all_clear ();
-	w = glade_xml_get_widget (button_box_xml, "button_enter");
-	if (w) gtk_button_set_label ((GtkButton *)w, _("="));
-	w = glade_xml_get_widget (button_box_xml, "button_pow");
-	if (w) gtk_button_set_label ((GtkButton *)w, _("x^y"));
-	w = glade_xml_get_widget (button_box_xml, "button_f1");
-	if (w) gtk_button_set_label ((GtkButton *)w, _("("));
-	w = glade_xml_get_widget (button_box_xml, "button_f2");
-	if (w) gtk_button_set_label ((GtkButton *)w, _(")"));
+	set_button_label_and_tooltip (button_box_xml, "button_enter", 
+		_("="), _("Enter"));
+	set_button_label_and_tooltip (button_box_xml, "button_pow", 
+		_("x^y"), _("Power"));
+	set_button_label_and_tooltip (button_box_xml, "button_f1", 
+		_("("), _("Open Bracket"));
+	set_button_label_and_tooltip (button_box_xml, "button_f2", 
+		_(")"), _("Close Bracket"));
 	display_stack_remove();
 	update_dispctrl();
 	/* pixel above/below display result line */
 	display_update_tags ();
 }
 
-
 void
 on_rpn_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
-	GtkWidget	*w;
-	
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
 	display_change_option (CS_RPN, DISPLAY_OPT_NOTATION);
+	set_widget_visibility (main_window_xml, "formula_entry_hbox", FALSE);
 	alg_free ();
 	all_clear ();
-	w = glade_xml_get_widget (button_box_xml, "button_enter");
-	if (w) gtk_button_set_label ((GtkButton *)w, _("ENT"));
-	w = glade_xml_get_widget (button_box_xml, "button_pow");
-	if (w) gtk_button_set_label ((GtkButton *)w, _("y^x"));
-	w = glade_xml_get_widget (button_box_xml, "button_f1");
-	if (w) gtk_button_set_label ((GtkButton *)w, _("x<>y"));
-	w = glade_xml_get_widget (button_box_xml, "button_f2");
-	if (w) gtk_button_set_label ((GtkButton *)w, _("roll"));
+	set_button_label_and_tooltip (button_box_xml, "button_enter", 
+		_("ENT"), _("Enter"));
+	set_button_label_and_tooltip (button_box_xml, "button_pow", 
+		_("y^x"), _("Power"));
+	set_button_label_and_tooltip (button_box_xml, "button_f1", 
+		_("x<>y"), _("swap current number with top of stack"));
+	set_button_label_and_tooltip (button_box_xml, "button_f2", 
+		_("roll"), _("roll down stack"));
 	/* stack is created by all_clear */
 	update_dispctrl();
 	/* pixel above/below display result line */
 	display_update_tags ();
+}
+
+void 
+on_form_activate 			(GtkMenuItem     *menuitem,
+					gpointer         user_data)
+{
+	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
+	display_change_option (CS_FORMULA, DISPLAY_OPT_NOTATION);
+	all_clear();
+	update_dispctrl();
+	set_widget_visibility (main_window_xml, "formula_entry_hbox", TRUE);	
 }
 
 void
@@ -583,8 +605,6 @@ on_cut_activate (GtkMenuItem     *menuitem,
 	clear ();
 }
 
-
-
 void
 on_paste_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
@@ -592,7 +612,6 @@ on_paste_activate (GtkMenuItem     *menuitem,
 	display_result_feed (gtk_clipboard_wait_for_text (
 		gtk_clipboard_get (GDK_SELECTION_CLIPBOARD)));
 }
-
 
 void
 on_copy_activate (GtkMenuItem     *menuitem,
@@ -1279,4 +1298,14 @@ void on_main_window_button_press_event(GtkWidget *widget,
 {
 	printf ("Hallo\n");
 }
+
+gboolean on_button_press_event (GtkWidget *widget,
+						GdkEventButton *event,
+						gpointer user_data)
+{
+	printf ("Hallo22\n");
+	return FALSE;
+}
+
+
 /* END */

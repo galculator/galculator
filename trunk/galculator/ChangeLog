@@ -1,6 +1,9 @@
+2003-12-31 Simon Floery <chimaira@users.sf.net>
+	* fixed DBTS #220857 (tooltips in RPN mode)
+
 2003-11-21 Simon Floery <chimaira@users.sf.net>
 	* patch: lower hex chars to upper chars (thanks to Remi)
-
+	
 2003-11-15 Simon Floery <chimaira@users.sf.net>
 	* patch galculator.spec.in (thanks to Filippo)
 

@@ -70,5 +70,9 @@ void remember_display_values();
 
 double string2double (char *string);
 
-void update_dispctrl();
+void set_button_label_and_tooltip (GladeXML *xml, char *button_name, 
+	char *label, char *tooltip);
+	
+gboolean formula_entry_is_active ();
+
 #endif /* general_functions.h */

@@ -43,7 +43,7 @@ static int		display_result_line = 0;
 
 static char	*number_mod_labels[5] = {" DEC ", " HEX ", " OCT ", " BIN ", NULL}, 
 		*angle_mod_labels[4] = {" DEG ", " RAD ", " GRAD ", NULL},
-		*notation_mod_labels[3] = {" ALG ", " RPN ", NULL};	
+		*notation_mod_labels[4] = {" ALG ", " RPN ", " FORM ", NULL};	
 
 /*
  * display.c mainly consists of two parts: first display setup code
@@ -309,7 +309,7 @@ void display_module_base_create (char **module_label, char *mark_name, int activ
 	int		label_counter=0, counter;
 	GtkTextIter 	start, end;
 	GtkTextMark	*this_mark;
-	
+
 	if ((this_mark = gtk_text_buffer_get_mark (buffer, mark_name)) == NULL) return;
 	while (module_label[label_counter] != NULL) label_counter++;
 	for (counter = (label_counter-1); counter >= 0; counter--) {
@@ -528,7 +528,6 @@ void display_module_base_delete (char *mark_name, char **text)
 
 void display_change_option (int new_status, int opt_group)
 {
-	int	old_status;
 	double	display_value=0;
 	double 	*stack;
 	
@@ -538,7 +537,6 @@ void display_change_option (int new_status, int opt_group)
 			if (current_status.number == new_status) return;
 			display_value = display_result_get_double ();
 			stack = display_stack_get_yzt_double ();
-			old_status = current_status.number;
 			current_status.number = new_status;
 			display_result_set_double (display_value);
 			display_stack_set_yzt_double (stack);
@@ -550,7 +548,6 @@ void display_change_option (int new_status, int opt_group)
 			break;
 		case DISPLAY_OPT_ANGLE:
 			if (current_status.angle == new_status) return;
-			old_status = current_status.angle;
 			current_status.angle = new_status;
 			if ((prefs.vis_angle) && (prefs.mode == SCIENTIFIC_MODE)){
 				display_module_base_delete (DISPLAY_MARK_ANGLE, angle_mod_labels);
@@ -560,7 +557,6 @@ void display_change_option (int new_status, int opt_group)
 		case DISPLAY_OPT_NOTATION:
 			update_active_buttons (current_status.number, new_status);
 			if (current_status.notation == new_status) return;
-			old_status = current_status.notation;
 			current_status.notation = new_status;
 			if ((prefs.vis_notation) && (prefs.mode == SCIENTIFIC_MODE)){
 				display_module_base_delete (DISPLAY_MARK_NOTATION, notation_mod_labels);

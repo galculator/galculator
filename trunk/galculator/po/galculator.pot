@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-11-11 00:26+0200\n"
+"POT-Creation-Date: 2004-01-25 18:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,23 +70,42 @@ msgid ""
 "(c) 2002-2003 by Simon Floery (chimaira@users.sf.net)"
 msgstr ""
 
-#: src/callbacks.c:395 ui/scientific_buttons.glade.h:21
+#: src/callbacks.c:398 ui/scientific_buttons.glade.h:21
 #: ui/basic_buttons.glade.h:21
 msgid "="
 msgstr ""
 
-#: src/callbacks.c:397 ui/scientific_buttons.glade.h:99
+#: src/callbacks.c:398 src/callbacks.c:420 ui/scientific_buttons.glade.h:40
+#: ui/basic_buttons.glade.h:29
+msgid "Enter"
+msgstr ""
+
+#: src/callbacks.c:400 ui/scientific_buttons.glade.h:99
 msgid "x^y"
 msgstr ""
 
-#: src/callbacks.c:399 ui/scientific_buttons.glade.h:3
+#: src/callbacks.c:400 src/callbacks.c:422 ui/scientific_buttons.glade.h:72
+msgid "Power"
+msgstr ""
+
+#: src/callbacks.c:402 ui/scientific_buttons.glade.h:3
 #: ui/basic_buttons.glade.h:3
 msgid "("
 msgstr ""
 
-#: src/callbacks.c:401 ui/scientific_buttons.glade.h:4
+#: src/callbacks.c:402 ui/scientific_buttons.glade.h:70
+#: ui/basic_buttons.glade.h:38
+msgid "Open Bracket"
+msgstr ""
+
+#: src/callbacks.c:404 ui/scientific_buttons.glade.h:4
 #: ui/basic_buttons.glade.h:4
 msgid ")"
+msgstr ""
+
+#: src/callbacks.c:404 ui/scientific_buttons.glade.h:31
+#: ui/basic_buttons.glade.h:25
+msgid "Close Bracket"
 msgstr ""
 
 #: src/callbacks.c:420
@@ -101,11 +120,19 @@ msgstr ""
 msgid "x<>y"
 msgstr ""
 
+#: src/callbacks.c:424
+msgid "swap current number with top of stack"
+msgstr ""
+
 #: src/callbacks.c:426
 msgid "roll"
 msgstr ""
 
-#: src/callbacks.c:978
+#: src/callbacks.c:426
+msgid "roll down stack"
+msgstr ""
+
+#: src/callbacks.c:997
 msgid "save here"
 msgstr ""
 
@@ -133,47 +160,47 @@ msgstr ""
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr ""
 
-#: src/config_file.c:154
+#: src/config_file.c:156
 msgid "Pi"
 msgstr ""
 
-#: src/config_file.c:155
+#: src/config_file.c:157
 msgid "pi"
 msgstr ""
 
-#: src/config_file.c:157
+#: src/config_file.c:159
 msgid "Euler's Number"
 msgstr ""
 
-#: src/config_file.c:158
+#: src/config_file.c:160
 msgid "e"
 msgstr ""
 
-#: src/config_file.c:187
+#: src/config_file.c:189
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
 msgstr ""
 
-#: src/config_file.c:203
+#: src/config_file.c:205
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
 msgstr ""
 
-#: src/config_file.c:210
+#: src/config_file.c:212
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
 msgstr ""
 
-#: src/config_file.c:228
+#: src/config_file.c:230
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
 msgstr ""
 
-#: src/config_file.c:307
+#: src/config_file.c:309
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
@@ -181,21 +208,21 @@ msgid ""
 "defaults.\n"
 msgstr ""
 
-#: src/config_file.c:342
+#: src/config_file.c:344
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
 "s\n"
 msgstr ""
 
-#: src/config_file.c:350
+#: src/config_file.c:352
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
 "\". %s\n"
 msgstr ""
 
-#: src/config_file.c:365
+#: src/config_file.c:367
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
@@ -211,7 +238,7 @@ msgstr ""
 msgid "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
 msgstr ""
 
-#: src/display.c:900
+#: src/display.c:902
 #, c-format
 msgid ""
 "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
@@ -235,23 +262,23 @@ msgstr ""
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:377
+#: src/general_functions.c:380
 msgid "unknown number base"
 msgstr ""
 
-#: src/general_functions.c:378
+#: src/general_functions.c:381
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:399
+#: src/general_functions.c:402
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:515
+#: src/general_functions.c:518
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"display_result_get_double\". %s\n"
@@ -272,147 +299,151 @@ msgid ""
 ")"
 msgstr ""
 
-#: src/ui.c:699
+#: src/ui.c:701
 #, c-format
 msgid "%s Preferences"
 msgstr ""
 
-#: ui/main_frame.glade.h:1
+#: ui/main_frame.glade.h:1 ui/scientific_buttons.glade.h:5
+#: ui/basic_buttons.glade.h:5 ui/prefs.glade.h:3
+msgid "*"
+msgstr ""
+
+#: ui/main_frame.glade.h:2
 msgid "Angle _units"
 msgstr ""
 
-#: ui/main_frame.glade.h:2 ui/prefs.glade.h:22
+#: ui/main_frame.glade.h:3 ui/prefs.glade.h:22
 msgid "Buttons"
 msgstr ""
 
-#: ui/main_frame.glade.h:3
+#: ui/main_frame.glade.h:4
 msgid "Cu_t Display Value"
 msgstr ""
 
-#: ui/main_frame.glade.h:4
+#: ui/main_frame.glade.h:5
 msgid "D_egrees"
 msgstr ""
 
-#: ui/main_frame.glade.h:5
+#: ui/main_frame.glade.h:6
 msgid "Display Control"
 msgstr ""
 
-#: ui/main_frame.glade.h:6
+#: ui/main_frame.glade.h:7
 msgid "Functions"
 msgstr ""
 
-#: ui/main_frame.glade.h:7
+#: ui/main_frame.glade.h:8
 msgid "Logical"
 msgstr ""
 
-#: ui/main_frame.glade.h:8
+#: ui/main_frame.glade.h:9
 msgid "Notation _modes"
 msgstr ""
 
-#: ui/main_frame.glade.h:9
-msgid "Standard"
-msgstr ""
-
 #: ui/main_frame.glade.h:10
-msgid "The main program window."
+msgid "Show _formula entry"
 msgstr ""
 
 #: ui/main_frame.glade.h:11
-msgid "_About..."
+msgid "Show _menu bar"
 msgstr ""
 
 #: ui/main_frame.glade.h:12
-msgid "_Algebraic"
+msgid "Standard"
 msgstr ""
 
 #: ui/main_frame.glade.h:13
-msgid "_Basic Mode"
+msgid "The main program window."
 msgstr ""
 
 #: ui/main_frame.glade.h:14
-msgid "_Binary"
+msgid "_About..."
 msgstr ""
 
 #: ui/main_frame.glade.h:15
-msgid "_Calculator"
+msgid "_Algebraic"
 msgstr ""
 
 #: ui/main_frame.glade.h:16
-msgid "_Copy Display Value"
+msgid "_Basic Mode"
 msgstr ""
 
 #: ui/main_frame.glade.h:17
-msgid "_Decimal"
+msgid "_Binary"
 msgstr ""
 
 #: ui/main_frame.glade.h:18
-msgid "_Edit"
+msgid "_Calculator"
 msgstr ""
 
 #: ui/main_frame.glade.h:19
-msgid "_File"
+msgid "_Copy Display Value"
 msgstr ""
 
 #: ui/main_frame.glade.h:20
-msgid "_Gradians"
+msgid "_Decimal"
 msgstr ""
 
 #: ui/main_frame.glade.h:21
-msgid "_Help"
+msgid "_Edit"
 msgstr ""
 
 #: ui/main_frame.glade.h:22
-msgid "_Hexadecimal"
+msgid "_File"
 msgstr ""
 
 #: ui/main_frame.glade.h:23
-msgid "_Number bases"
+msgid "_Gradians"
 msgstr ""
 
 #: ui/main_frame.glade.h:24
-msgid "_Octal"
+msgid "_Help"
 msgstr ""
 
 #: ui/main_frame.glade.h:25
-msgid "_Paste As Display Value"
+msgid "_Hexadecimal"
 msgstr ""
 
 #: ui/main_frame.glade.h:26
-msgid "_Preferences..."
+msgid "_Number bases"
 msgstr ""
 
 #: ui/main_frame.glade.h:27
-msgid "_Quit"
+msgid "_Octal"
 msgstr ""
 
 #: ui/main_frame.glade.h:28
-msgid "_Radians"
+msgid "_Paste As Display Value"
 msgstr ""
 
 #: ui/main_frame.glade.h:29
-msgid "_Reverse Polish (RPN)"
+msgid "_Preferences..."
 msgstr ""
 
 #: ui/main_frame.glade.h:30
-msgid "_Scientific Mode"
+msgid "_Quit"
 msgstr ""
 
 #: ui/main_frame.glade.h:31
-msgid "_Show menu bar"
+msgid "_Radians"
 msgstr ""
 
 #: ui/main_frame.glade.h:32
+msgid "_Reverse Polish (RPN)"
+msgstr ""
+
+#: ui/main_frame.glade.h:33
+msgid "_Scientific Mode"
+msgstr ""
+
+#: ui/main_frame.glade.h:34
 msgid "_View"
 msgstr ""
 
 #: ui/scientific_buttons.glade.h:2 ui/basic_buttons.glade.h:2
 #, no-c-format
 msgid "%"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:5 ui/basic_buttons.glade.h:5
-#: ui/prefs.glade.h:3
-msgid "*"
 msgstr ""
 
 #: ui/scientific_buttons.glade.h:6 ui/basic_buttons.glade.h:6
@@ -513,10 +544,6 @@ msgstr ""
 msgid "Change sign"
 msgstr ""
 
-#: ui/scientific_buttons.glade.h:31 ui/basic_buttons.glade.h:25
-msgid "Close Bracket"
-msgstr ""
-
 #: ui/scientific_buttons.glade.h:32 ui/prefs.glade.h:25
 msgid "Constants"
 msgstr ""
@@ -547,10 +574,6 @@ msgstr ""
 
 #: ui/scientific_buttons.glade.h:39 ui/basic_buttons.glade.h:28
 msgid "Eight"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:40 ui/basic_buttons.glade.h:29
-msgid "Enter"
 msgstr ""
 
 #: ui/scientific_buttons.glade.h:41
@@ -669,16 +692,8 @@ msgstr ""
 msgid "One"
 msgstr ""
 
-#: ui/scientific_buttons.glade.h:70 ui/basic_buttons.glade.h:38
-msgid "Open Bracket"
-msgstr ""
-
 #: ui/scientific_buttons.glade.h:71 ui/basic_buttons.glade.h:39
 msgid "Percent"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:72
-msgid "Power"
 msgstr ""
 
 #: ui/scientific_buttons.glade.h:73 ui/basic_buttons.glade.h:40
@@ -1002,38 +1017,42 @@ msgid "Result font:"
 msgstr ""
 
 #: ui/prefs.glade.h:45
-msgid "Show menu bar"
+msgid "Show formula entry"
 msgstr ""
 
 #: ui/prefs.glade.h:46
-msgid "Update"
+msgid "Show menu bar"
 msgstr ""
 
 #: ui/prefs.glade.h:47
-msgid "Use custom button font"
+msgid "Update"
 msgstr ""
 
 #: ui/prefs.glade.h:48
-msgid "Value:"
+msgid "Use custom button font"
 msgstr ""
 
 #: ui/prefs.glade.h:49
-msgid "finite stack size (x, y, z, t)"
+msgid "Value:"
 msgstr ""
 
 #: ui/prefs.glade.h:50
-msgid "fix length to a multiple of"
+msgid "finite stack size (x, y, z, t)"
 msgstr ""
 
 #: ui/prefs.glade.h:51
-msgid "galculator - Preferences"
+msgid "fix length to a multiple of"
 msgstr ""
 
 #: ui/prefs.glade.h:52
-msgid "infinite stack size"
+msgid "galculator - Preferences"
 msgstr ""
 
 #: ui/prefs.glade.h:53
+msgid "infinite stack size"
+msgstr ""
+
+#: ui/prefs.glade.h:54
 msgid "signed"
 msgstr ""
 

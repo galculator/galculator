@@ -60,10 +60,10 @@ s_active_buttons active_buttons[] = {\
 	{"button_d", ~(AB_DEC | AB_BIN | AB_OCT)}, \
 	{"button_e", ~(AB_DEC | AB_BIN | AB_OCT)}, \
 	{"button_f", ~(AB_DEC | AB_BIN | AB_OCT)}, \
-	{"button_ee", AB_DEC | AB_RPN | AB_PAN}, \
-	{"button_sin", AB_DEC | AB_RPN | AB_PAN}, \
-	{"button_cos", AB_DEC | AB_RPN | AB_PAN}, \
-	{"button_tan", AB_DEC | AB_RPN | AB_PAN}, \
+	{"button_ee", AB_DEC}, \
+	{"button_sin", AB_DEC}, \
+	{"button_cos", AB_DEC}, \
+	{"button_tan", AB_DEC}, \
 	{"button_point", ~(AB_BIN | AB_OCT | AB_HEX)}, \
 	{"button_sign", ~(AB_BIN | AB_OCT | AB_HEX)}, \
 	{NULL}\
@@ -102,20 +102,25 @@ static void apply_object_data (s_operation_map operation_map[],
 {
 	int 		counter;
 	gpointer	*func;
+	GObject		*object;
 	
 	counter = 0;
 	while (operation_map[counter].button_name != NULL) {
-		g_object_set_data (G_OBJECT (glade_xml_get_widget (button_box_xml, 
-			operation_map[counter].button_name)),
-			"operation", GINT_TO_POINTER(operation_map[counter].operation));
+		object = G_OBJECT (glade_xml_get_widget (button_box_xml, 
+			operation_map[counter].button_name));
+		g_object_set_data (object, "operation",
+			GINT_TO_POINTER(operation_map[counter].operation));
+		g_object_set_data (object, "display_string",
+			operation_map[counter].display_string);
 		counter++;
 	}
 	
 	counter = 0;
 	while (gfunc_map[counter].button_name != NULL) {
-		g_object_set_data (G_OBJECT (glade_xml_get_widget (button_box_xml, 
-			gfunc_map[counter].button_name)),
-			"func", gfunc_map[counter].func);
+		object = G_OBJECT (glade_xml_get_widget (button_box_xml, 
+			operation_map[counter].button_name));
+		g_object_set_data (object, "func", gfunc_map[counter].func);
+		g_object_set_data (object, "display_name", gfunc_map[counter].func);
 		counter++;
 	};
 	
@@ -123,12 +128,12 @@ static void apply_object_data (s_operation_map operation_map[],
 	while (function_map[counter].button_name != NULL) {
 		func = (void *) malloc (sizeof (function_map[counter].func));
 		memcpy (func, function_map[counter].func, sizeof (function_map[counter].func));
-		g_object_set_data (G_OBJECT (glade_xml_get_widget (button_box_xml, 
-			function_map[counter].button_name)),
-			"func", func);
-		g_object_set_data (G_OBJECT (glade_xml_get_widget (button_box_xml, 
-			function_map[counter].button_name)),
-			"is_trigonometric", GINT_TO_POINTER((int)function_map[counter].is_trigonometric));		
+		object = G_OBJECT (glade_xml_get_widget (button_box_xml, 
+			function_map[counter].button_name));
+		g_object_set_data (object, "display_names", function_map[counter].display_names);
+		g_object_set_data (object, "func", func);
+		g_object_set_data (object, "is_trigonometric", 
+			GINT_TO_POINTER((int)function_map[counter].is_trigonometric));		
 		counter++;
 	};
 }
@@ -140,41 +145,43 @@ static void apply_object_data (s_operation_map operation_map[],
 static void set_scientific_object_data ()
 {
 	s_operation_map	operation_map[] = {
-		{"button_pow", '^'},
-		{"button_lsh", '<'},
-		{"button_mod", 'm'},
-		{"button_and", '&'},
-		{"button_or", '|'},
-		{"button_xor", 'x'},
-		{"button_enter", '='},
-		{"button_plus", '+'},
-		{"button_minus", '-'},
-		{"button_mult", '*'},
-		{"button_div", '/'},
-		{"button_percent", '%'},
-		{"button_f1", '('},		/* paropen or swapxy */
-		{"button_f2", ')'},		/* parclose or rolldn */
+		{"button_pow", "^", '^'},
+		{"button_lsh", "<<", '<'},
+		{"button_mod", "MOD", 'm'},
+		{"button_and", "AND", '&'},
+		{"button_or", "OR", '|'},
+		{"button_xor", "XOR", 'x'},
+		{"button_enter", "=", '='},
+		{"button_plus", "+", '+'},
+		{"button_minus", "-", '-'},
+		{"button_mult", "*", '*'},
+		{"button_div", "/", '/'},
+		{"button_percent", "%", '%'},
+		{"button_f1", "(", '('},	/* paropen or swapxy */
+		{"button_f2", ")", ')'},	/* parclose or rolldn */
 		{NULL}
 	};
 	
 	s_gfunc_map gfunc_map[] = {
-		{"button_sign", display_result_toggle_sign},
-		{"button_ee", display_append_e},
-		{"button_f1", gfunc_f1},	/* paropen or swapxy */
-		{"button_f2", gfunc_f2},	/* parclose or rolldn */
+		{"button_sign", "-", display_result_toggle_sign},
+		{"button_ee", "e", display_append_e},
+		{"button_f1", "(", gfunc_f1},	/* paropen or swapxy */
+		{"button_f2", ")", gfunc_f2},	/* parclose or rolldn */
 		{NULL}
 	};
 	
-	s_function_map function_map[] = {
-		{"button_sin", {sin, asin, sinh, asinh}, TRUE},
-		{"button_cos", {cos, acos, cosh, acosh}, TRUE},
-		{"button_tan", {tan, atan, tanh, atanh}, TRUE},
-		{"button_log", {log10, pow10y, log10, log10}, FALSE},
-		{"button_ln", {log, exp, log, log}, FALSE},
-		{"button_sq", {powx2, sqrt, powx2, powx2}, FALSE},
-		{"button_sqrt", {sqrt, powx2, sqrt, sqrt}, FALSE},
-		{"button_fac", {factorial, factorial, factorial, factorial}, FALSE},
-		{"button_cmp", {cmp, cmp, cmp, cmp}, FALSE},
+	/* declare this one static as we need the display_names throughout */
+	
+	static s_function_map function_map[] = {
+		{"button_sin", {"sin(", "asin(", "sinh(", "asinh("}, {sin, asin, sinh, asinh}, TRUE},
+		{"button_cos", {"cos(", "acos(", "cosh(", "acosh("}, {cos, acos, cosh, acosh}, TRUE},
+		{"button_tan", {"tan(", "atan(", "tanh(", "atanh("}, {tan, atan, tanh, atanh}, TRUE},
+		{"button_log", {"log(", "10^", "log(", "log("}, {log10, pow10y, log10, log10}, FALSE},
+		{"button_ln", {"ln(", "e^", "ln(", "ln("}, {log, exp, log, log}, FALSE},
+		{"button_sq", {"^2", "sqrt(", "^2", "^2"}, {powx2, sqrt, powx2, powx2}, FALSE},
+		{"button_sqrt", {"sqrt(", "^2", "sqrt(", "sqrt("}, {sqrt, powx2, sqrt, sqrt}, FALSE},
+		{"button_fac", {"!", "!", "!", "!"}, {factorial, factorial, factorial, factorial}, FALSE},
+		{"button_cmp", {"~", "~", "~", "~"}, {cmp, cmp, cmp, cmp}, FALSE},
 		{NULL}
 	};
 
@@ -188,14 +195,14 @@ static void set_scientific_object_data ()
 static void set_basic_object_data ()
 {
 	s_operation_map	operation_map[] = {
-		{"button_enter", '='},
-		{"button_plus", '+'},
-		{"button_minus", '-'},
-		{"button_mult", '*'},
-		{"button_div", '/'},
-		{"button_percent", '%'},
-		{"button_f1", '('},		/* paropen or swapxy */
-		{"button_f2", ')'},		/* parclose or rolldn */
+		{"button_enter", "=", '='},
+		{"button_plus", "+", '+'},
+		{"button_minus", "-", '-'},
+		{"button_mult", "*", '*'},
+		{"button_div", "/", '/'},
+		{"button_percent", "%", '%'},
+		{"button_f1", "(", '('},	/* paropen or swapxy */
+		{"button_f2", ")", ')'},	/* parclose or rolldn */
 		{NULL}
 	};
 	
@@ -207,7 +214,7 @@ static void set_basic_object_data ()
 	};
 	
 	s_function_map function_map[] = {
-		{"button_sqrt", {sqrt, powx2, sqrt, sqrt}, FALSE},
+		{"button_sqrt", {"sqrt", "^2", "sqrt", "sqrt"}, {sqrt, powx2, sqrt, sqrt}, FALSE},
 		{NULL}
 	};
 	
@@ -360,13 +367,13 @@ void ui_main_window_buttons_create (int mode)
 	if (mode == BASIC_MODE) {
 		button_box_xml = glade_file_open (BASIC_GLADE_FILE, "button_box", TRUE);
 		box = glade_xml_get_widget (main_window_xml, "window_vbox");
-		ui_pack_from_xml (box, 3, button_box_xml, "button_box", 
+		ui_pack_from_xml (box, 4, button_box_xml, "button_box", 
 			"button_1", TRUE, TRUE);
 		set_basic_object_data (button_box_xml);
 	} else if (mode == SCIENTIFIC_MODE) {
 		button_box_xml = glade_file_open (SCIENTIFIC_GLADE_FILE, "button_box", TRUE);
 		box = glade_xml_get_widget (main_window_xml, "window_vbox");
-		ui_pack_from_xml (box, 3, button_box_xml, "button_box", 
+		ui_pack_from_xml (box, 4, button_box_xml, "button_box", 
 			"button_1", TRUE, TRUE);
 		set_scientific_object_data (button_box_xml);
 	} else error_message ("Unknown mode in \"ui_main_window_buttons_create\"");
@@ -427,10 +434,11 @@ static void set_table_child_font (gpointer data, gpointer user_data)
 static void set_all_buttons_property (GFunc func, gpointer data)
 {
 	GtkTable	*table;
-	
-	/* at first the display control table. always there; somehor */
+
+	/* at first the display control table. always there; somehow */
 	table = (GtkTable *) glade_xml_get_widget (dispctrl_xml, 
 		"table_dispctrl");
+	
 	/* dispctrl_right has an extra table for cosmetic reasons. */
 	if (GTK_IS_TABLE (((GtkTableChild *)table->children->data)->widget))
 		table = (GtkTable *) ((GtkTableChild *)table->children->data)->widget;
@@ -454,6 +462,7 @@ static void set_all_buttons_property (GFunc func, gpointer data)
 		g_list_foreach (table->children, func, data);
 	}
 	else error_message ("Unknown mode in \"set_all_buttons_property\"");
+
 }
 
 /* set_all_buttons_size. gateway for set_all_buttons_property.
@@ -499,7 +508,8 @@ void update_active_buttons (int number_base, int notation_mode)
 	GtkWidget	*current_button;
 	unsigned int	state;
 	
-	state = (1 << number_base) | (1 << (notation_mode + NR_NUMBER_BASES));
+	/* state = (1 << number_base) | (1 << (notation_mode + NR_NUMBER_BASES)); */
+	state = 1 << number_base;
 	while (active_buttons[counter].button_name != NULL) {
 		current_button = glade_xml_get_widget (button_box_xml, 
 			active_buttons[counter].button_name);
@@ -511,6 +521,19 @@ void update_active_buttons (int number_base, int notation_mode)
 			(active_buttons[counter].mask & state) == state);
 		counter++;
 	}
+}
+
+void update_dispctrl()
+{
+	/* just put one here and hide it afterwards. we need the button
+			for working key accelerators. */
+	if (prefs.mode == BASIC_MODE) 
+		ui_main_window_set_dispctrl (DISPCTRL_BOTTOM);
+	else if (current_status.notation == CS_RPN)
+		ui_main_window_set_dispctrl (DISPCTRL_RIGHTV);
+	else ui_main_window_set_dispctrl (DISPCTRL_RIGHT);
+	set_widget_visibility (dispctrl_xml, "table_dispctrl", 
+		prefs.vis_dispctrl);
 }
 
 /*
@@ -785,4 +808,17 @@ GtkWidget *ui_about_dialog_create()
 		"about_dialog", FALSE);
 	glade_xml_signal_autoconnect(about_dialog_xml);
 	return glade_xml_get_widget (about_dialog_xml, "about_dialog");
+}
+
+void ui_formula_entry_insert (G_CONST_RETURN gchar *text)
+{
+	GtkWidget	*formula_entry;
+	int		position;
+	
+	formula_entry = glade_xml_get_widget (main_window_xml, "formula_entry");
+	position = gtk_editable_get_position ((GtkEditable *) formula_entry);
+	gtk_editable_insert_text ((GtkEditable *) formula_entry, text, -1,
+                                             &position);
+	gtk_editable_set_position ((GtkEditable *) formula_entry, position);
+	
 }

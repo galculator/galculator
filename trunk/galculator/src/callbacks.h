@@ -72,7 +72,10 @@ on_ordinary_activate                   (GtkMenuItem     *menuitem,
                                         gpointer         user_data);
 void
 on_rpn_activate                        (GtkMenuItem     *menuitem,
-                                        gpointer         user_data);
+                                        gpointer         user_data);					
+void 
+on_form_activate 			(GtkMenuItem     *menuitem,
+					gpointer         user_data);
 void
 on_about_activate                      (GtkMenuItem     *menuitem,
                                         gpointer         user_data);
@@ -153,16 +156,7 @@ void on_prefs_show_menu_toggled (GtkToggleButton *togglebutton,
 
 void on_prefs_rem_display_toggled (GtkToggleButton *togglebutton, 
 					gpointer user_data);
-/*					
-void on_prefs_def_number_changed (GtkOptionMenu *optionmenu,
-					gpointer user_data);
 					
-void on_prefs_def_angle_changed (GtkOptionMenu *optionmenu,
-					gpointer user_data);
-					
-void on_prefs_def_notation_changed (GtkOptionMenu *optionmenu,
-					gpointer user_data);
-*/					
 void on_prefs_button_width_changed (GtkSpinButton *spinbutton,
 					GtkScrollType arg1,
 					gpointer user_data);
@@ -235,5 +229,9 @@ void on_infinite_stack_size_clicked (GtkRadioButton *rb,
 			gpointer user_data);
 
 void on_main_window_button_press_event(GtkWidget *widget,
+						GdkEventButton *event,
+						gpointer user_data);
+
+gboolean on_button_press_event (GtkWidget *widget,
 						GdkEventButton *event,
 						gpointer user_data);
