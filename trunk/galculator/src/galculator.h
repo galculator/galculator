@@ -104,10 +104,17 @@ enum {
 };
 
 enum {
-	NAME_COLUMN,
-	VALUE_COLUMN,
-	DESC_COLUMN,
+	CONST_NAME_COLUMN,
+	CONST_VALUE_COLUMN,
+	CONST_DESC_COLUMN,
 	NR_CONST_COLUMNS
+};
+
+enum {
+	UFUNC_NAME_COLUMN,
+	UFUNC_VARIABLE_COLUMN,
+	UFUNC_EXPRESSION_COLUMN,
+	NR_UFUNC_COLUMNS
 };
 
 enum {
@@ -124,7 +131,7 @@ typedef struct {
 	unsigned	notation:2;
 	unsigned	fmod:2;
 	gboolean	calc_entry_start_new;
-	gboolean	rpn_have_result;
+	gboolean	rpn_stack_lift_enabled;
 	gboolean	allow_arith_op;
 } s_current_status;
 
@@ -163,6 +170,12 @@ typedef struct {
 } s_constant;
 
 typedef struct {
+	char 		*name;
+	char 		*variable;
+	char 		*expression;
+} s_user_function;
+
+typedef struct {
 	double		*data;
 	int		len;
 } s_array;
@@ -171,6 +184,7 @@ extern s_array		memory;
 #include "config_file.h"
 extern s_preferences	prefs;
 extern s_constant 	*constant;
+extern s_user_function	*user_function;
 extern s_current_status	current_status;
 
 #endif /* galculator.h */

@@ -635,8 +635,6 @@ void display_result_add_digit (char digit)
 	char			digit_as_string[2];
 	GtkTextIter		end;
 	
-	display_result_changed();
-	
 	digit_as_string[0] = digit;
 	digit_as_string[1] = '\0';
 	
@@ -782,9 +780,7 @@ void display_result_set_double (double value)
 {	
 	current_status.allow_arith_op = TRUE;
 	display_module_arith_label_update (' ');
-	
-	display_result_changed();
-	
+
 	display_set_line_double (value, display_result_line, "result");
 }
 
@@ -816,9 +812,7 @@ void display_result_set (char *string_value)
 	
 	current_status.allow_arith_op = TRUE;
 	display_module_arith_label_update (' ');
-	
-	display_result_changed();
-	
+
 	/* at first clear the result field */
 	
 	display_delete_line (buffer, display_result_line, &end);
@@ -903,9 +897,7 @@ double display_result_get_rad_angle ()
 void display_append_e (GtkToggleButton *button)
 {
 	GtkTextIter		end;
-	
-	display_result_changed();
-	
+
 	if (current_status.number != CS_DEC) return;
 	if (current_status.calc_entry_start_new == FALSE) {
 		if (strstr (display_result_get(), "e+") == NULL) {
@@ -923,9 +915,7 @@ void display_result_toggle_sign (GtkToggleButton *button)
 {
 	GtkTextIter		start, end;
 	char			*result_field, *e_pointer;
-	
-	display_result_changed();
-	
+
 	if (current_status.number != CS_DEC) return;
 	/* we could call display_result_get but we need start iterator later on anyway */
 	display_get_line_iters (buffer, display_result_line, &start, &end);
@@ -957,9 +947,7 @@ void display_result_toggle_sign (GtkToggleButton *button)
 void display_result_backspace ()
 {															
 	char	*current_entry;
-	
-	display_result_changed();
-	
+
 	if (current_status.calc_entry_start_new == TRUE) {
 		current_status.calc_entry_start_new = FALSE;
 		display_result_set ("0");

@@ -127,6 +127,7 @@ on_number_button_clicked               (GtkToggleButton  *button,
 	if (current_status.notation == CS_FORMULA)
 		ui_formula_entry_insert (gtk_button_get_label ((GtkButton *)button));
 	else
+		rpn_stack_lift();
 		display_result_add_digit (*(gtk_button_get_label ((GtkButton *)button)));
 	return;
 }
@@ -216,16 +217,17 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 			stack = rpn_stack_get (RPN_FINITE_STACK);
 			display_stack_set_yzt_double (stack);
 			free (stack);
-			current_status.rpn_have_result = FALSE;
+			/* ENT is a stack lift disabling button */
+			current_status.rpn_stack_lift_enabled = FALSE;
 			/* display line isn't cleared! */
 			break;
 		default:
-			current_status.rpn_have_result = FALSE;
 			display_result_set_double (rpn_stack_operation (current_token));
 			stack = rpn_stack_get (RPN_FINITE_STACK);
 			display_stack_set_yzt_double (stack);
 			free (stack);
-			current_status.rpn_have_result = TRUE;
+			/* all other operations are stack lift enabling */
+			current_status.rpn_stack_lift_enabled = TRUE;
 		}
 	} else error_message ("on_operation_button_clicked: unknown status");
 
@@ -273,38 +275,14 @@ on_function_button_clicked             (GtkToggleButton	*button,
 			func[current_status.fmod](display_result_get_double()));
 	}
 	current_status.calc_entry_start_new = TRUE;	
-	if (current_status.notation == CS_RPN) current_status.rpn_have_result = TRUE;
+	if (current_status.notation == CS_RPN) 
+		current_status.rpn_stack_lift_enabled = TRUE;
 	if (current_status.fmod != 0) {
 		tbutton = glade_xml_get_widget (button_box_xml, "button_inv");
 		gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
 		tbutton = glade_xml_get_widget (button_box_xml, "button_hyp");
 		gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
 	}
-}
-
-void constants_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
-{
-	char		*const_value;
-	
-	const_value = user_data;
-	current_status.rpn_have_result = TRUE;
-	display_result_set (const_value);
-	current_status.rpn_have_result = TRUE;
-	current_status.calc_entry_start_new = TRUE;
-}
-
-
-void
-on_constant_button_clicked             (GtkToggleButton       *button,
-                                        gpointer         user_data)
-{
-	GtkWidget		*menu;
-	
-	if (gtk_toggle_button_get_active(button) == FALSE) return;
-	button_activation (button);
-	menu = ui_constants_menu_create(constant, (GCallback)constants_menu_handler);
-	gtk_menu_popup ((GtkMenu *)menu, NULL, NULL, (GtkMenuPositionFunc) position_menu, 
-		button, 0, 0);
 }
 
 /* tbutton_fmod - these are function modifiers such as INV (inverse) 
@@ -337,7 +315,9 @@ on_gfunc_button_clicked                (GtkToggleButton       *button,
 			ui_formula_entry_insert (display_string);
 			return;
 		}
-	}	
+	}
+	if (strcmp(gtk_widget_get_name((GtkWidget *) button), "button_ee") == 0) 
+		rpn_stack_lift();
 	func = g_object_get_data (G_OBJECT (button), "func");
 	if (func != NULL) func(button);
 	else error_message ("This button has no general function associated with");
@@ -633,6 +613,30 @@ on_copy_activate (GtkMenuItem     *menuitem,
  * Preferences
  */
 
+void user_function_list_selection_changed_cb (GtkTreeSelection *selection, gpointer data)
+{
+	GtkTreeModel 	*model;
+	char 		*string;
+	GtkWidget	*entry;
+	GtkTreeIter 	current_list_iter;
+	
+        if (gtk_tree_selection_get_selected (selection, &model, &current_list_iter))
+        {
+                gtk_tree_model_get (model, &current_list_iter, UFUNC_NAME_COLUMN, &string, -1);
+		entry = glade_xml_get_widget (prefs_xml, "prefs_ufname_entry");
+		gtk_entry_set_text ((GtkEntry *) entry, string);
+                g_free (string);
+		gtk_tree_model_get (model, &current_list_iter, UFUNC_VARIABLE_COLUMN, &string, -1);
+		entry = glade_xml_get_widget (prefs_xml, "prefs_ufvar_entry");
+		gtk_entry_set_text ((GtkEntry *) entry, string);
+                g_free (string);
+		gtk_tree_model_get (model, &current_list_iter, UFUNC_EXPRESSION_COLUMN, &string, -1);
+		entry = glade_xml_get_widget (prefs_xml, "prefs_ufexpr_entry");
+		gtk_entry_set_text ((GtkEntry *) entry, string);
+                g_free (string);
+        }
+}
+
 void const_list_selection_changed_cb (GtkTreeSelection *selection, gpointer data)
 {
         GtkTreeModel 	*model;
@@ -642,20 +646,19 @@ void const_list_selection_changed_cb (GtkTreeSelection *selection, gpointer data
 	
         if (gtk_tree_selection_get_selected (selection, &model, &current_list_iter))
         {
-                gtk_tree_model_get (model, &current_list_iter, NAME_COLUMN, &string, -1);
+                gtk_tree_model_get (model, &current_list_iter, CONST_NAME_COLUMN, &string, -1);
 		entry = glade_xml_get_widget (prefs_xml, "prefs_cname_entry");
 		gtk_entry_set_text ((GtkEntry *) entry, string);
                 g_free (string);
-		gtk_tree_model_get (model, &current_list_iter, VALUE_COLUMN, &string, -1);
+		gtk_tree_model_get (model, &current_list_iter, CONST_VALUE_COLUMN, &string, -1);
 		entry = glade_xml_get_widget (prefs_xml, "prefs_cvalue_entry");
 		gtk_entry_set_text ((GtkEntry *) entry, string);
                 g_free (string);
-		gtk_tree_model_get (model, &current_list_iter, DESC_COLUMN, &string, -1);
+		gtk_tree_model_get (model, &current_list_iter, CONST_DESC_COLUMN, &string, -1);
 		entry = glade_xml_get_widget (prefs_xml, "prefs_cdesc_entry");
 		gtk_entry_set_text ((GtkEntry *) entry, string);
                 g_free (string);
         }
- 
 }
 
 void
@@ -986,6 +989,66 @@ void on_prefs_button_height_changed (GtkSpinButton *spinbutton,
 	set_all_buttons_size (prefs.button_width, prefs.button_height);
 }
 
+/*
+ * USER FUNCTIONS
+ */
+
+void user_functions_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
+{
+	int 	index;
+	
+	index = (int) user_data;
+	printf ("compute %s(%s)=%s with %s=%f\n", user_function[index].name,
+		user_function[index].variable, user_function[index].expression,
+		user_function[index].variable, display_result_get_double());
+}
+
+void
+on_user_function_button_clicked (GtkToggleButton       *button,
+                                        gpointer         user_data)
+{
+	GtkWidget	*menu;
+	
+	if (gtk_toggle_button_get_active(button) == FALSE) return;
+	button_activation (button);
+	menu = ui_user_functions_menu_create(user_function, (GCallback)user_functions_menu_handler);
+	gtk_menu_popup ((GtkMenu *)menu, NULL, NULL, (GtkMenuPositionFunc) position_menu, 
+		button, 0, 0);
+}
+
+/*
+ * CONSTANTS
+ */
+
+void constants_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
+{
+	char		*const_value;
+	
+	rpn_stack_lift();
+	const_value = user_data;
+	display_result_set (const_value);
+	current_status.rpn_stack_lift_enabled = TRUE;
+	current_status.calc_entry_start_new = TRUE;
+}
+
+
+void
+on_constant_button_clicked (GtkToggleButton       *button,
+                                        gpointer         user_data)
+{
+	GtkWidget		*menu;
+	
+	if (gtk_toggle_button_get_active(button) == FALSE) return;
+	button_activation (button);
+	menu = ui_constants_menu_create(constant, (GCallback)constants_menu_handler);
+	gtk_menu_popup ((GtkMenu *)menu, NULL, NULL, (GtkMenuPositionFunc) position_menu, 
+		button, 0, 0);
+}
+
+/*
+ * MEMORY
+ */
+
 void ms_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 {
 	int		index;
@@ -1017,9 +1080,10 @@ void mr_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 {
 	int		index;
 	
+	rpn_stack_lift();
 	index = GPOINTER_TO_INT(user_data);
 	display_result_set_double(memory.data[index]);
-	current_status.rpn_have_result = TRUE;
+	current_status.rpn_stack_lift_enabled = TRUE;
 	current_status.calc_entry_start_new = TRUE;
 }
 
@@ -1114,6 +1178,111 @@ on_mx_button_clicked             (GtkToggleButton       *button,
 
 }
 
+void on_prefs_ufclear_clicked (GtkButton *button, gpointer user_data)
+{
+	GtkWidget	*entry;
+	
+	entry = glade_xml_get_widget (prefs_xml, "prefs_ufname_entry");
+	gtk_entry_set_text ((GtkEntry *) entry, "");
+        entry = glade_xml_get_widget (prefs_xml, "prefs_ufvar_entry");
+	gtk_entry_set_text ((GtkEntry *) entry, "");
+        entry = glade_xml_get_widget (prefs_xml, "prefs_ufexpr_entry");
+	gtk_entry_set_text ((GtkEntry *) entry, "");
+}
+
+void on_prefs_ufadd_clicked (GtkButton *button, gpointer user_data)
+{
+	GtkWidget		*entry;
+	GtkTreeIter   		iter;
+	int			nr_user_functions;
+	char 			*name, *value, *desc;
+	
+	entry = glade_xml_get_widget (prefs_xml, "prefs_ufname_entry");
+	name = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
+        entry = glade_xml_get_widget (prefs_xml, "prefs_ufvar_entry");
+	value = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
+        entry = glade_xml_get_widget (prefs_xml, "prefs_ufexpr_entry");
+	desc = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
+	
+	if ((strlen(name) == 0) || (strlen(value) == 0) || (strlen(desc) == 0)) {
+		g_free (name);
+		g_free (value);
+		g_free (desc);
+		return;
+	}
+		
+	nr_user_functions = prefs_user_function_store->length;
+	user_function = (s_user_function *) realloc (user_function, (nr_user_functions + 2) * sizeof(s_user_function));
+	user_function[nr_user_functions + 1].name = NULL;
+	
+	user_function[nr_user_functions].name = name;
+	user_function[nr_user_functions].variable = value;
+	user_function[nr_user_functions].expression = desc;
+	
+	gtk_list_store_append (prefs_user_function_store, &iter);	
+	gtk_list_store_set (prefs_user_function_store, &iter, 
+		UFUNC_NAME_COLUMN, user_function[nr_user_functions].name, 
+		UFUNC_VARIABLE_COLUMN, user_function[nr_user_functions].variable, 
+		UFUNC_EXPRESSION_COLUMN, user_function[nr_user_functions].expression, 
+		-1);
+}
+
+void on_prefs_ufdelete_clicked (GtkButton *button, gpointer user_data)
+{
+	GtkTreePath		*path;
+	int			index, counter, nr_user_functions;
+	GtkTreeIter		current_list_iter;
+		
+	if (!gtk_tree_selection_get_selected (gtk_tree_view_get_selection(
+		(GtkTreeView *)glade_xml_get_widget (prefs_xml, "user_function_treeview")),
+		NULL, &current_list_iter)) return;
+	
+	nr_user_functions = prefs_user_function_store->length;
+	path = gtk_tree_model_get_path (GTK_TREE_MODEL (prefs_user_function_store), 
+		&current_list_iter);
+	index = *(gtk_tree_path_get_indices (path));
+
+	gtk_list_store_remove (prefs_user_function_store, &current_list_iter);
+	on_prefs_ufclear_clicked (NULL, NULL);
+
+	for (counter = index; counter < (nr_user_functions - 1); counter++)
+		memcpy (&user_function[counter], &user_function[counter+1], sizeof(s_user_function));
+	
+	nr_user_functions--;
+	user_function = (s_user_function *) realloc (user_function, (nr_user_functions + 1) * sizeof(s_user_function));
+	
+	user_function[nr_user_functions].name = NULL;
+}
+
+void on_prefs_ufupdate_clicked (GtkButton *button, gpointer user_data)
+{
+	GtkWidget	*entry;
+	GtkTreePath	*path;
+	int		index;
+	GtkTreeIter 	current_list_iter;
+	
+	if (!gtk_tree_selection_get_selected (gtk_tree_view_get_selection(
+		(GtkTreeView *)glade_xml_get_widget (prefs_xml, "user_function_treeview")),
+		NULL, &current_list_iter)) return;
+	
+	path = gtk_tree_model_get_path (GTK_TREE_MODEL (prefs_user_function_store), 
+		&current_list_iter);
+	index = *(gtk_tree_path_get_indices (path));
+	
+	entry = glade_xml_get_widget (prefs_xml, "prefs_ufname_entry");
+	user_function[index].name = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
+        entry = glade_xml_get_widget (prefs_xml, "prefs_ufvar_entry");
+	user_function[index].variable = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
+        entry = glade_xml_get_widget (prefs_xml, "prefs_ufexpr_entry");
+	user_function[index].expression = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
+	
+	gtk_list_store_set (prefs_user_function_store, &current_list_iter, 
+		UFUNC_NAME_COLUMN, user_function[index].name, 
+		UFUNC_VARIABLE_COLUMN, user_function[index].variable, 
+		UFUNC_EXPRESSION_COLUMN, user_function[index].expression, 
+		-1);
+}
+
 void on_prefs_cclear_clicked (GtkButton *button, gpointer user_data)
 {
 	GtkWidget	*entry;
@@ -1147,7 +1316,7 @@ void on_prefs_cadd_clicked (GtkButton *button, gpointer user_data)
 		return;
 	}
 		
-	nr_consts = store->length;
+	nr_consts = prefs_constant_store->length;
 	constant = (s_constant *) realloc (constant, (nr_consts + 2) * sizeof(s_constant));
 	constant[nr_consts + 1].desc = NULL;
 	
@@ -1155,11 +1324,11 @@ void on_prefs_cadd_clicked (GtkButton *button, gpointer user_data)
 	constant[nr_consts].value = value;
 	constant[nr_consts].desc = desc;
 	
-	gtk_list_store_append (store, &iter);	
-	gtk_list_store_set (store, &iter, 
-		NAME_COLUMN, constant[nr_consts].name, 
-		VALUE_COLUMN, constant[nr_consts].value, 
-		DESC_COLUMN, constant[nr_consts].desc, 
+	gtk_list_store_append (prefs_constant_store, &iter);	
+	gtk_list_store_set (prefs_constant_store, &iter, 
+		CONST_NAME_COLUMN, constant[nr_consts].name, 
+		CONST_VALUE_COLUMN, constant[nr_consts].value, 
+		CONST_DESC_COLUMN, constant[nr_consts].desc, 
 		-1);
 }
 
@@ -1170,14 +1339,14 @@ void on_prefs_cdelete_clicked (GtkButton *button, gpointer user_data)
 	GtkTreeIter		current_list_iter;
 		
 	if (!gtk_tree_selection_get_selected (gtk_tree_view_get_selection(
-		(GtkTreeView *)glade_xml_get_widget (prefs_xml, "treeview1")),
+		(GtkTreeView *)glade_xml_get_widget (prefs_xml, "constant_treeview")),
 		NULL, &current_list_iter)) return;
 	
-	nr_consts = store->length;
-	path = gtk_tree_model_get_path (GTK_TREE_MODEL (store), &current_list_iter);
+	nr_consts = prefs_constant_store->length;
+	path = gtk_tree_model_get_path (GTK_TREE_MODEL (prefs_constant_store), &current_list_iter);
 	index = *(gtk_tree_path_get_indices (path));
 
-	gtk_list_store_remove (store, &current_list_iter);
+	gtk_list_store_remove (prefs_constant_store, &current_list_iter);
 	on_prefs_cclear_clicked (NULL, NULL);
 
 	for (counter = index; counter < (nr_consts - 1); counter++)
@@ -1197,10 +1366,11 @@ void on_prefs_cupdate_clicked (GtkButton *button, gpointer user_data)
 	GtkTreeIter 	current_list_iter;
 	
 	if (!gtk_tree_selection_get_selected (gtk_tree_view_get_selection(
-		(GtkTreeView *)glade_xml_get_widget (prefs_xml, "treeview1")),
+		(GtkTreeView *)glade_xml_get_widget (prefs_xml, "constant_treeview")),
 		NULL, &current_list_iter)) return;
 	
-	path = gtk_tree_model_get_path (GTK_TREE_MODEL (store), &current_list_iter);
+	path = gtk_tree_model_get_path (GTK_TREE_MODEL (prefs_constant_store), 
+		&current_list_iter);
 	index = *(gtk_tree_path_get_indices (path));
 	
 	entry = glade_xml_get_widget (prefs_xml, "prefs_cname_entry");
@@ -1210,10 +1380,10 @@ void on_prefs_cupdate_clicked (GtkButton *button, gpointer user_data)
         entry = glade_xml_get_widget (prefs_xml, "prefs_cdesc_entry");
 	constant[index].desc = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
 	
-	gtk_list_store_set (store, &current_list_iter, 
-		NAME_COLUMN, constant[index].name, 
-		VALUE_COLUMN, constant[index].value, 
-		DESC_COLUMN, constant[index].desc, 
+	gtk_list_store_set (prefs_constant_store, &current_list_iter, 
+		CONST_NAME_COLUMN, constant[index].name, 
+		CONST_VALUE_COLUMN, constant[index].value, 
+		CONST_DESC_COLUMN, constant[index].desc, 
 		-1);
 }
 

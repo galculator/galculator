@@ -31,6 +31,7 @@
 
 #define SECTION_GENERAL "[general]"
 #define SECTION_CONSTANTS "[constants]"
+#define SECTION_USER_FUNCTIONS "[user functions]"
 
 #define DEFAULT_BKG_COLOR		"#e6edbd"
 #define DEFAULT_RESULT_FONT		"Sans Bold 26"
@@ -142,11 +143,13 @@ enum {
 
 enum {
 	GENERAL,
-	CONSTANTS
+	CONSTANTS,
+	USER_FUNCTIONS
 };
 
 s_preferences config_file_read (char *filename);
-void config_file_write (char *filename, s_preferences this_prefs);
+void config_file_write (char *filename, s_preferences this_prefs, s_constant *this_constants, s_user_function *this_user_functions);
 s_prefs_entry *config_file_get_prefs_list();
 s_constant *config_file_get_constants();
+s_user_function  *config_file_get_user_functions();
 #endif /* config_file.h */

@@ -37,7 +37,7 @@
 GladeXML	*main_window_xml, *dispctrl_xml, *button_box_xml, *prefs_xml, 
 		*about_dialog_xml;
 char		dec_point[2];
-GtkListStore	*store;
+GtkListStore	*prefs_constant_store, *prefs_user_function_store;
 
 static void set_disp_ctrl_object_data ();
 static void set_all_dispctrl_buttons_property (GFunc func, gpointer data);
@@ -705,6 +705,27 @@ void position_menu (GtkMenu *menu,
 	*push_in = TRUE;
 }
 
+GtkWidget *ui_user_functions_menu_create (s_user_function *user_function, GCallback user_function_handler)
+{
+	GtkWidget	*menu, *child;
+	int		counter=0;
+	char		*label;
+	
+	menu = gtk_menu_new();
+	while (user_function[counter].name != NULL) {
+		label = g_strdup_printf ("%s(%s) = %s", user_function[counter].name, 
+			user_function[counter].variable, 
+			user_function[counter].expression);
+		child = gtk_menu_item_new_with_label(label);
+		g_free (label);
+		gtk_menu_shell_append ((GtkMenuShell *) menu, child);
+		gtk_widget_show (child);
+		g_signal_connect (G_OBJECT (child), "activate", user_function_handler, GINT_TO_POINTER(counter));
+		counter++;
+	}
+	return menu;
+}
+
 GtkWidget *ui_constants_menu_create (s_constant *constant, GCallback const_handler)
 {
 	GtkWidget	*menu, *child;
@@ -807,32 +828,69 @@ GtkWidget *ui_pref_dialog_create ()
 
 	/* make user defined constants list. */
 	
-	store = gtk_list_store_new (NR_CONST_COLUMNS, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
+	prefs_constant_store = gtk_list_store_new (NR_CONST_COLUMNS, 
+		G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
 	counter = 0;
 	while (constant[counter].desc != NULL) {
-		gtk_list_store_append (store, &iter);
-		gtk_list_store_set (store, &iter, 
-			NAME_COLUMN, constant[counter].name, 
-			VALUE_COLUMN, constant[counter].value, 
-			DESC_COLUMN, constant[counter].desc,
+		gtk_list_store_append (prefs_constant_store, &iter);
+		gtk_list_store_set (prefs_constant_store, &iter, 
+			CONST_NAME_COLUMN, constant[counter].name, 
+			CONST_VALUE_COLUMN, constant[counter].value, 
+			CONST_DESC_COLUMN, constant[counter].desc,
 			-1);
 		counter++;
 	}
-	tree_view = glade_xml_get_widget (prefs_xml, "treeview1");
-	gtk_tree_view_set_model ((GtkTreeView *) tree_view, GTK_TREE_MODEL (store));
+	tree_view = glade_xml_get_widget (prefs_xml, "constant_treeview");
+	gtk_tree_view_set_model ((GtkTreeView *) tree_view, 
+		GTK_TREE_MODEL (prefs_constant_store));
 	renderer = gtk_cell_renderer_text_new ();
-	column = gtk_tree_view_column_new_with_attributes ("Name", renderer, "text", NAME_COLUMN, NULL);
+	column = gtk_tree_view_column_new_with_attributes ("Name", renderer, 
+		"text", CONST_NAME_COLUMN, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
-	column = gtk_tree_view_column_new_with_attributes ("Value", renderer, "text", VALUE_COLUMN, NULL);
+	column = gtk_tree_view_column_new_with_attributes ("Value", renderer, 
+		"text", CONST_VALUE_COLUMN, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
-	column = gtk_tree_view_column_new_with_attributes ("Description", renderer, "text", DESC_COLUMN, NULL);
+	column = gtk_tree_view_column_new_with_attributes ("Description", renderer, 
+		"text", CONST_DESC_COLUMN, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
 	select = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
 	gtk_tree_selection_set_mode (select, GTK_SELECTION_SINGLE);
 	g_signal_connect (G_OBJECT (select), "changed",
                   G_CALLBACK (const_list_selection_changed_cb),
                   NULL);
+	
+	/* make user defined function list */
 
+	prefs_user_function_store = gtk_list_store_new (NR_UFUNC_COLUMNS, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
+	counter = 0;
+	while (user_function[counter].name != NULL) {
+		gtk_list_store_append (prefs_user_function_store, &iter);
+		gtk_list_store_set (prefs_user_function_store, &iter, 
+			UFUNC_NAME_COLUMN, user_function[counter].name, 
+			UFUNC_VARIABLE_COLUMN, user_function[counter].variable, 
+			UFUNC_EXPRESSION_COLUMN, user_function[counter].expression,
+			-1);
+		counter++;
+	}
+	tree_view = glade_xml_get_widget (prefs_xml, "user_function_treeview");
+	gtk_tree_view_set_model ((GtkTreeView *) tree_view, 
+		GTK_TREE_MODEL (prefs_user_function_store));
+	renderer = gtk_cell_renderer_text_new ();
+	column = gtk_tree_view_column_new_with_attributes ("Name", renderer, 
+		"text", UFUNC_NAME_COLUMN, NULL);
+	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
+	column = gtk_tree_view_column_new_with_attributes ("Variable", renderer, 
+		"text", UFUNC_VARIABLE_COLUMN, NULL);
+	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
+	column = gtk_tree_view_column_new_with_attributes ("Expression", renderer, 
+		"text", UFUNC_EXPRESSION_COLUMN, NULL);
+	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
+	select = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
+	gtk_tree_selection_set_mode (select, GTK_SELECTION_SINGLE);
+	g_signal_connect (G_OBJECT (select), "changed",
+                  G_CALLBACK (user_function_list_selection_changed_cb),
+                  NULL);	
+	
 	/* pack widget of same size into GtkSizeGroup */
 
 	sgroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
@@ -852,6 +910,16 @@ GtkWidget *ui_pref_dialog_create ()
 		glade_xml_get_widget (prefs_xml, "prefs_const_delete_button"));
 	gtk_size_group_add_widget (sgroup,
 		glade_xml_get_widget (prefs_xml, "prefs_const_clear_button"));
+	
+	sgroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	gtk_size_group_add_widget (sgroup, 
+		glade_xml_get_widget (prefs_xml, "prefs_func_add_button"));
+	gtk_size_group_add_widget (sgroup,
+		glade_xml_get_widget (prefs_xml, "prefs_func_update_button"));
+	gtk_size_group_add_widget (sgroup,
+		glade_xml_get_widget (prefs_xml, "prefs_func_delete_button"));
+	gtk_size_group_add_widget (sgroup,
+		glade_xml_get_widget (prefs_xml, "prefs_func_clear_button"));
 	
 	sgroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
 	gtk_size_group_add_widget (sgroup, 

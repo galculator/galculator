@@ -51,6 +51,7 @@ s_preferences		prefs;
 s_current_status 	current_status = {0, 0, 0, 0, FALSE, FALSE, TRUE};
 s_array			memory;
 s_constant 		*constant;
+s_user_function		*user_function;
 
 void print_usage ()
 {
@@ -131,6 +132,7 @@ int main (int argc, char *argv[])
 	prefs = config_file_read (config_file_name);
 	
 	constant = config_file_get_constants();
+	user_function = config_file_get_user_functions();
 	g_free (config_file_name);
 
 	current_status.notation = prefs.def_notation;
@@ -178,7 +180,7 @@ int main (int argc, char *argv[])
 	/* save changes to file */
 
 	config_file_name = g_strdup_printf ("%s/%s", getenv ("HOME"), CONFIG_FILE_NAME);
-	config_file_write (config_file_name, prefs);
+	config_file_write (config_file_name, prefs, constant, user_function);
 	g_free (config_file_name);
 
 	return EXIT_SUCCESS;

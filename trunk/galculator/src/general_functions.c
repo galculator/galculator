@@ -88,7 +88,8 @@ void all_clear ()
 			rpn_init(prefs.stack_size, 0);
 			display_stack_remove();
 			display_stack_create();
-			current_status.rpn_have_result = FALSE;
+			/* it's a stack lifting disabling functon */
+			current_status.rpn_stack_lift_enabled = FALSE;
 			break;
 		case CS_FORMULA:
 			alg_free();
@@ -438,7 +439,8 @@ void gfunc_f1 (GtkToggleButton *button)
 	if (current_status.notation == CS_PAN) 
 		on_operation_button_clicked (button, NULL);
 	else {
-		current_status.rpn_have_result = FALSE;
+		printf ("swapxy - am i stack lift enabling?\n");
+		current_status.rpn_stack_lift_enabled = FALSE;
 		display_result_set_double (rpn_stack_swapxy(
 			display_result_get_double()));
 		stack = rpn_stack_get (RPN_FINITE_STACK);
@@ -457,7 +459,8 @@ void gfunc_f2 (GtkToggleButton *button)
 	if (current_status.notation == CS_PAN)
 		on_operation_button_clicked (button, NULL);
 	else {
-		current_status.rpn_have_result = FALSE;
+		printf ("rolldn - am i stack lift enabling?\n");
+		current_status.rpn_stack_lift_enabled = FALSE;
 		display_result_set_double (rpn_stack_rolldown(
 			display_result_get_double()));
 				stack = rpn_stack_get (RPN_FINITE_STACK);
@@ -466,26 +469,25 @@ void gfunc_f2 (GtkToggleButton *button)
 	}
 }
 
-/*
- *
+/* push_rpn_result. The terminology used here originates from HP 15 Owner's
+ * handbook. If a button doesn't terminate digit entry, it "starts" one.
+ * Therefore those buttons have to push result on the stack, is stack lift is
+ * enabled (current_status.rpn_stack_lift_enabled).
+ * Buttons not terminating digit entry are:
+ *	0-9, A-F, ., EE, const, MR
  */
 
-void display_result_changed ()
+void rpn_stack_lift ()
 {
 	double	*stack;
 	
-	/* put a ev. result onto the stack */
-	/* an alternative idea would be to do this immediately after getting a result
-	   in calc_basic's rpn routines or in on_function_button_clicked. but if we
-	   use on_function_button_clicked twice, there are two results on the stack
-	   where we don't expect the older one to be there. therefore doing it this way
-	*/
-	if ((current_status.notation == CS_RPN) && (current_status.rpn_have_result == TRUE)) {
+	if ((current_status.notation == CS_RPN) && 
+		(current_status.rpn_stack_lift_enabled == TRUE)) {
 		rpn_stack_push (display_result_get_double ());
 		stack = rpn_stack_get (RPN_FINITE_STACK);
 		display_stack_set_yzt_double (stack);
 		free (stack);
-		current_status.rpn_have_result = FALSE;
+		current_status.rpn_stack_lift_enabled = FALSE;
 	}
 }
 

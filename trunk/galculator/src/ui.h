@@ -23,7 +23,7 @@ extern GladeXML 	*button_box_xml;
 extern GladeXML 	*prefs_xml;
 extern GladeXML 	*about_dialog_xml;
 extern GladeXML		*dispctrl_xml;
-extern GtkListStore	*store;
+extern GtkListStore	*prefs_constant_store, *prefs_user_function_store;
 extern char		dec_point[2];
 
 /* active_buttons flags */
@@ -58,6 +58,8 @@ GtkWidget *ui_pref_dialog_create ();
 GtkWidget *ui_about_dialog_create();
 GtkWidget *ui_font_dialog_create (char *title, GtkButton *button);
 GtkWidget *ui_color_dialog_create (char *title, GtkButton *button);
+GtkWidget *ui_user_functions_menu_create (s_user_function *user_function, 
+				GCallback user_function_handler);
 GtkWidget *ui_constants_menu_create (s_constant *constant, 
 				GCallback const_handler);
 GtkWidget *ui_memory_menu_create (s_array memory, 

@@ -236,3 +236,10 @@ void on_formula_entry_activate (GtkEntry *entry,
                                             gpointer user_data);
 					    
 void on_formula_entry_changed (GtkEditable *editable, gpointer user_data);
+
+void
+on_user_function_button_clicked (GtkToggleButton       *button,
+                                        gpointer         user_data);
+
+void user_function_list_selection_changed_cb (GtkTreeSelection *selection, 
+					gpointer data);
