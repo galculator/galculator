@@ -1,4 +1,6 @@
 galculator 1.2.1
+	* parser for formula entry mode implemented with flex
+	* formula entry enhancements (dec/hex/bin/oct, string operation ids, ..)
 	* user defined functions
 	* bugfixes: "dead" buttons, RPN stack lift
 	* translation updates

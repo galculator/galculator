@@ -158,7 +158,7 @@ static void config_file_get_default_consts (s_constant **consts)
 	(*consts)[1].desc = g_strdup (_("Euler's Number"));
 	(*consts)[1].name = g_strdup (_("e"));
 	(*consts)[1].value = g_strdup_printf ("%.11f", G_E);
-	(*consts)[2].desc = NULL;
+	(*consts)[2].name = NULL;
 }
 
 /*
@@ -280,7 +280,7 @@ void config_file_set_constants (char *line)
 	cf_constant[nr_consts-1].name = g_strdup (name);
 	cf_constant[nr_consts-1].value = g_strdup (value);
 	/* keep it NULL terminated */
-	cf_constant[nr_consts].desc = NULL;
+	cf_constant[nr_consts].name = NULL;
 }
 
 /* config_file_set_user_functions
@@ -418,7 +418,7 @@ void config_file_write (char *filename, s_preferences this_prefs, s_constant *th
 		}
 		counter = 0;
 		fprintf (this_file, "\n%s\n\n", SECTION_CONSTANTS);
-		while (cf_constant[counter].desc != NULL) {
+		while (cf_constant[counter].name != NULL) {
 			fprintf (this_file, "%s:%s=%s\n", cf_constant[counter].desc, 
 				cf_constant[counter].name, cf_constant[counter].value);
 			counter++;

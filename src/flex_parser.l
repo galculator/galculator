@@ -162,20 +162,32 @@ void flex_parser_submit_func_token (double (*func)(double))
 	bracket_counter++;
 }
 
-double flex_parser (char *string)
+double flex_parser (const char *string)
 {
 	YY_BUFFER_STATE yybs;
-	int 		state;
+	int 		state, string_length;
+	char		*my_string;
 	
+	string_length = strlen(string);
+	if (string[string_length-1] != '=') {
+		my_string = (char *) malloc ((string_length + 2) * sizeof(char));
+		strcpy(my_string, string);
+		my_string[string_length] = '=';
+		my_string[string_length + 1] = '\0';
+	} else {
+		my_string = (char *) malloc ((strlen(string) + 1) * sizeof(char));
+		strcpy (my_string, string);
+	}
 	alg_free();
 	alg_init(0);
 	bracket_counter = 0;
-        yybs = yy_scan_string (string);
+        yybs = yy_scan_string (my_string);
 	BEGIN(INITIAL);
         state = yylex();
         yy_delete_buffer(yybs);
 	if ((state == TRUE) && (bracket_counter == 0)) 
 		printf ("[result] %f\n", parser_token.number);
 	else printf ("[ERROR]\n");
+	free (my_string);
 	return parser_token.number;
 }

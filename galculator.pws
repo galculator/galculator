@@ -6,16 +6,16 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=1
-1=30
-2=200
-3=3
-4=26
-5=466
-6=23
-7=29
-8=30
-9=9
+0=31
+1=957
+2=160
+3=1024
+4=270
+5=44
+6=30
+7=187
+8=475
+9=5
 10=22
 11=1
 
@@ -42,13 +42,16 @@ filter.dir.ignore.hidden=0
 clean before build=false
 
 [filelist]
-0=/home/sf/Devel/galculator/src/calc_basic.h
-1=/home/sf/Devel/galculator/src/flex_parser.h
-2=/home/sf/Devel/galculator/src/parser.c
-3=/home/sf/Devel/galculator/ChangeLog
-4=/home/sf/Devel/galculator/src/flex_parser.l
-5=/home/sf/Devel/galculator/src/general_functions.c
-6=/home/sf/Devel/galculator/TODO
+0=/home/sf/Devel/galculator/src/flex_parser.h
+1=/home/sf/Devel/galculator/src/ui.c
+2=/home/sf/Devel/galculator/src/config_file.c
+3=/home/sf/Devel/galculator/src/callbacks.c
+4=/home/sf/Devel/galculator/src/calc_basic.c
+5=/home/sf/Devel/galculator/src/calc_basic.h
+6=/home/sf/Devel/galculator/ChangeLog
+7=/home/sf/Devel/galculator/src/flex_parser.l
+8=/home/sf/Devel/galculator/src/general_functions.c
+9=/home/sf/Devel/galculator/TODO
 
 [Project Tree]
 0=0
@@ -70,11 +73,11 @@ clean before build=false
 7=first_module
 
 [find_text]
-0=store
-1=on_prefs_cadd
-2=user_functions
-3=rpn_have_res
-4=push_rpn_result
-5=rpn_have_result
-6=rpn_have_
-7=calc_entry_start
+0=const
+1=token
+2=pars
+3=BEGIN(OP)
+4=string2double
+5=store
+6=on_prefs_cadd
+7=user_functions
