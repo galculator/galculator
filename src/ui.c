@@ -875,6 +875,14 @@ GtkWidget *ui_about_dialog_create()
 	return glade_xml_get_widget (about_dialog_xml, "about_dialog");
 }
 
+void ui_formula_entry_activate ()
+{
+	GtkWidget	*formula_entry;
+	
+	formula_entry = glade_xml_get_widget (main_window_xml, "formula_entry");
+	gtk_widget_activate(formula_entry);
+}
+
 void ui_formula_entry_set (G_CONST_RETURN gchar *text)
 {
 	GtkWidget	*formula_entry;
@@ -895,7 +903,6 @@ void ui_formula_entry_insert (G_CONST_RETURN gchar *text)
 	gtk_editable_insert_text ((GtkEditable *) formula_entry, text, -1,
                                              &position);
 	gtk_editable_set_position ((GtkEditable *) formula_entry, position);
-	
 }
 
 void ui_formula_entry_backspace ()
@@ -907,6 +914,27 @@ void ui_formula_entry_backspace ()
 		strlen(gtk_entry_get_text((GtkEntry *) formula_entry)) - 1, -1);
 }
 
+/* ui_formula_entry_state. if color == NULL looks like we get default. this is
+ * what we want.
+ */
+
+void ui_formula_entry_state (gboolean error)
+{
+	GtkWidget		*formula_entry;
+	GdkColor		*color=NULL;
+	
+	formula_entry = glade_xml_get_widget (main_window_xml, "formula_entry");
+	if (error) {
+		color = (GdkColor *) malloc(sizeof(GdkColor));
+		gdk_color_parse ("red", color);
+	}
+	gtk_widget_modify_text (formula_entry, 0, color);
+	gtk_widget_modify_text (formula_entry, 1, color);
+	gtk_widget_modify_text (formula_entry, 2, color);
+	gtk_widget_modify_text (formula_entry, 3, color);
+	gtk_widget_modify_text (formula_entry, 4, color);
+	if (color) g_free(color);
+}
 
 void ui_button_set_pan ()
 {

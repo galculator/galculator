@@ -146,7 +146,9 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 	button_activation (button);
 	
 	if (current_status.notation == CS_FORMULA) {
-		ui_formula_entry_insert (
+		if (strcmp (gtk_widget_get_name ((GtkWidget *) button), "button_enter") == 0)
+			ui_formula_entry_activate();
+		else ui_formula_entry_insert (
 			g_object_get_data (G_OBJECT (button), "display_string"));
 		return;
 	}
@@ -1306,12 +1308,16 @@ gboolean on_button_press_event (GtkWidget *widget, GdkEventButton *event, gpoint
 
 void on_formula_entry_activate (GtkEntry *entry, gpointer user_data)
 {
-	display_result_set_double (parse_string (gtk_entry_get_text (entry)));
-	/*
-	current_status.calc_entry_start_new = TRUE;	
-	current_status.rpn_have_result = TRUE;
-	*/
+	s_parser_result		parser;
+	
+	parser = parse_string (gtk_entry_get_text (entry));
+	ui_formula_entry_state (parser.error);
+	if (!parser.error) display_result_set_double (parser.result);
 }
 
+void on_formula_entry_changed (GtkEditable *editable, gpointer user_data)
+{
+	ui_formula_entry_state(FALSE);
+}
 
 /* END */
