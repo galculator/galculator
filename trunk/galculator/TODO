@@ -15,7 +15,9 @@ todo ASAP --> 1.1.2:
 			
 	prefs: some checks on add/update?
 	
-	check return of glade_xml_new (gtk_message_dialog_new)
+	fixed binary length (sf fr #760390)
+	
+	is display_length out of date?
 
 =calculator==============================
 
@@ -48,7 +50,7 @@ update shortcuts text file
 #########################
 #########################
 
-1.1.2:
+1.2.0:
 
 paper tape display and formula entry mode
 

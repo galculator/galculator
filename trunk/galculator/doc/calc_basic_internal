@@ -102,3 +102,15 @@ sub_tree, the next function on the function_stack is applied.
 
 We have to consider yet, how far this requires a change of the way tokens are
 passed to the calc_basic code.
+
+**
+** UPDATE
+**
+
+current implementation idea: enhance s_token to take a number as well as a
+pointer to a function. If operation equals an open parenthesis, we have a 
+function (currently, the number field is unused!), otherwise a number. [union]
+
+Probably we should do without an additional stack ("function_stack") but enhance
+current sub_tree_stack. This stack would take not only a pointer to the subtree's
+root but additionaly the corresponding function.

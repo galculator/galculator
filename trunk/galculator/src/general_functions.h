@@ -69,4 +69,6 @@ void position_menu (GtkMenu *menu, gint *x, gint *y, gboolean *push_in, gpointer
 GtkWidget *create_constants_menu (s_constant *constant, GCallback const_handler);
 GtkWidget *create_memory_menu (s_array memory, GCallback const_handler, char *last_item);
 
+void glade_file_not_found (char *filename);
+
 #endif /* general_functions.h */

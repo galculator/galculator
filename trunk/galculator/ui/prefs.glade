@@ -286,7 +286,7 @@
 			    <widget class="GtkButton" id="prefs_result_font">
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
-			      <property name="label" translatable="yes">button5</property>
+			      <property name="label" translatable="yes"></property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
 			      <signal name="clicked" handler="on_prefs_result_font_clicked" last_modification_time="Sat, 22 Feb 2003 14:45:49 GMT"/>
@@ -304,7 +304,7 @@
 			    <widget class="GtkButton" id="prefs_mod_font">
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
-			      <property name="label" translatable="yes">button7</property>
+			      <property name="label" translatable="yes"></property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
 			      <signal name="clicked" handler="on_prefs_mod_font_clicked" last_modification_time="Sat, 22 Feb 2003 14:46:00 GMT"/>
@@ -334,7 +334,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label43">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -375,7 +375,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label44">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -419,7 +419,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label47">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -460,7 +460,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label48">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -504,7 +504,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label49">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -545,7 +545,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label50">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -589,7 +589,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label45">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -630,7 +630,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label46">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1020,7 +1020,7 @@
 			    <widget class="GtkButton" id="prefs_button_font">
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
-			      <property name="label" translatable="yes">button1</property>
+			      <property name="label" translatable="yes"></property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
 			      <signal name="clicked" handler="on_prefs_button_font_clicked" last_modification_time="Sun, 20 Apr 2003 21:16:57 GMT"/>

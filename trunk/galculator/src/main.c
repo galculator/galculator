@@ -127,9 +127,7 @@ You might face problems when using %s! %s\n)"), PACKAGE, locale_settings->decima
 	main_window_xml = glade_xml_new (MAIN_GLADE_FILE, "main_window", NULL);
 	
 	if (main_window_xml == NULL) {
-		fprintf (stderr, _("[%s] Couldn't load %s. This file is necessary \
-to build galculator's user interface. Make sure you did a make install and the file \
-is accessible!\n"), PACKAGE, MAIN_GLADE_FILE);
+		glade_file_not_found (MAIN_GLADE_FILE);
 		return EXIT_FAILURE;
 	}
 	

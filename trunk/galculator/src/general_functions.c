@@ -342,6 +342,7 @@ GtkWidget *show_font_dialog (char *title, GtkButton *button)
 	GtkWidget		*font_dialog;
 	
 	font_xml = glade_xml_new (FONT_GLADE_FILE, "font_dialog", NULL);
+	if (font_xml == NULL) glade_file_not_found (FONT_GLADE_FILE);
 	glade_xml_signal_autoconnect(font_xml);
 	font_dialog = glade_xml_get_widget (font_xml, "font_dialog");
 	
@@ -370,6 +371,7 @@ GtkWidget *show_color_dialog (char *title, GtkButton *button)
 	color = style->fg[GTK_STATE_NORMAL];
 	
 	color_xml = glade_xml_new (COLOR_GLADE_FILE, "color_dialog", NULL);
+	if (color_xml == NULL) glade_file_not_found (COLOR_GLADE_FILE);
 	glade_xml_signal_autoconnect(color_xml);
 	color_dialog = glade_xml_get_widget (color_xml, "color_dialog");
 	
@@ -663,4 +665,11 @@ GtkWidget *create_memory_menu (s_array memory, GCallback const_handler, char *la
 		g_signal_connect (G_OBJECT (child), "activate", const_handler, GINT_TO_POINTER(counter));
 	}
 	return menu;
+}
+
+void glade_file_not_found (char *filename)
+{
+	fprintf (stderr, _("[%s] Couldn't load %s. This file is necessary \
+to build galculator's user interface. Make sure you did a make install and the file \
+is accessible!\n"), PACKAGE, filename);
 }
