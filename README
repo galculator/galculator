@@ -132,7 +132,7 @@ display and you press the percent button and enter 123, you get as result
 
 If you press the [EE] button the display will never become 0e+ but 1e+ instead.
 
-There is a simple plausability check for the character choosen as thousand's
+There is a simple plausibility check for the character choosen as thousand's
 separator: it must not be a number in the configured number base and for
 a decimal number base neither decimal point nor "e" (exponent identifier
 string) nor "-" (minus).

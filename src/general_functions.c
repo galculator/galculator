@@ -113,17 +113,21 @@ double axtof (char *bin_string, int base, int nr_bits, gboolean is_signed)
 {
 	double 		return_value=0;
 	int		counter;
+	char		*lower_bin_string;
 	
+	lower_bin_string = g_ascii_strdown(bin_string, -1);
 	/* according to man strtod, inf should be there in every case */
-	if (strstr (g_ascii_strdown (bin_string, -1), "inf") != NULL) return INFINITY;
+	if (strstr (lower_bin_string, "inf") != NULL) return INFINITY;
 
-	for (counter = strlen (bin_string) - 1; counter >= 0; counter--) {
-		if (bin_string[counter] - '0' < 10) \
-			return_value += (bin_string[counter] - '0') * pow (base, strlen (bin_string) - 1 - counter);
-		else if (bin_string[counter] - 'A' < 10) \
-			return_value += (bin_string[counter] - 'A' + 10) * pow (base, strlen (bin_string) - 1 - counter);
-		else fprintf (stderr, _("[%s] failed to convert char %c in function \"axtof\". %s\n"), PROG_NAME, bin_string[counter], BUG_REPORT);
+	for (counter = strlen (lower_bin_string) - 1; counter >= 0; counter--) {
+		if (lower_bin_string[counter] - '0' < 10) \
+			return_value += (lower_bin_string[counter] - '0') * pow (base, strlen (lower_bin_string) - 1 - counter);
+		else if (lower_bin_string[counter] - 'a' < 10) \
+			return_value += (lower_bin_string[counter] - 'a' + 10) * pow (base, strlen (lower_bin_string) - 1 - counter);
+		else fprintf (stderr, _("[%s] failed to convert char %c in function \"axtof\". %s\n"), PROG_NAME, lower_bin_string[counter], BUG_REPORT);
 	}
+	
+	g_free (lower_bin_string);
 	
 	/* handle negative numbers. */
 
@@ -656,7 +660,7 @@ void set_button_label_and_tooltip (GladeXML *xml, char *button_name,
 	}
 }
 
-gboolean formula_entry_is_active (GtkWidget *window_widget)
+GtkWidget *formula_entry_is_active (GtkWidget *window_widget)
 {
 	GtkWidget	*active_widget=NULL, *main_window=NULL;
 	
@@ -664,9 +668,27 @@ gboolean formula_entry_is_active (GtkWidget *window_widget)
 	if (main_window != NULL)
 		active_widget = gtk_window_get_focus ((GtkWindow *)main_window);
 	if (active_widget != NULL)
-		return !strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(window_widget)),"main_window") &
-			!strcmp (gtk_widget_get_name (active_widget), "formula_entry");
-	return FALSE;
+		if ((strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(window_widget)),"main_window") == 0) &&
+			(strcmp (gtk_widget_get_name (active_widget), "formula_entry") == 0)) 
+			return active_widget;
+	return NULL;
+}
+
+/* sometimes it makes no sense to check for the toplevel widget's name, e.g.
+ * for menuitems. then use this func.
+ */
+
+GtkWidget *formula_entry_is_active_no_toplevel_check ()
+{
+	GtkWidget	*active_widget=NULL, *main_window=NULL;
+	
+	main_window = glade_xml_get_widget (main_window_xml, "main_window");
+	if (main_window) 
+		active_widget = gtk_window_get_focus ((GtkWindow *) main_window);
+	if (active_widget)
+		if (strcmp (gtk_widget_get_name (active_widget), "formula_entry") == 0) 
+			return active_widget;
+	return NULL;
 }
 
 s_flex_parser_result compute_user_function (char *expression, char *variable, char *value)

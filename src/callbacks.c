@@ -124,11 +124,12 @@ on_number_button_clicked               (GtkToggleButton  *button,
 {	
 	if (gtk_toggle_button_get_active(button) == FALSE) return;
 	button_activation (button);
-	if (current_status.notation == CS_FORMULA)
+	if (current_status.notation == CS_FORMULA) {
 		ui_formula_entry_insert (gtk_button_get_label ((GtkButton *)button));
-	else
+	} else {
 		rpn_stack_lift();
 		display_result_add_digit (*(gtk_button_get_label ((GtkButton *)button)));
+	}
 	return;
 }
 
@@ -575,8 +576,17 @@ void
 on_paste_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
-	display_result_feed (gtk_clipboard_wait_for_text (
-		gtk_clipboard_get (GDK_SELECTION_CLIPBOARD)));
+	GtkWidget	*formula_entry;
+	char		*cp_text;
+	
+	cp_text = gtk_clipboard_wait_for_text (gtk_clipboard_get (GDK_SELECTION_CLIPBOARD));
+	if (cp_text) {
+		if ((formula_entry = formula_entry_is_active_no_toplevel_check ()) != NULL) {
+			gtk_editable_paste_clipboard((GtkEditable *)formula_entry);
+		}
+		else display_result_feed (cp_text);
+		g_free (cp_text);
+	}
 }
 
 void

@@ -64,7 +64,7 @@ gboolean on_textview_button_press_event (GtkWidget *widget,
 	int			x, y;
 	GtkTextIter		start, end;
 	char 			*selected_text;
-	
+
 	if (event->button == 1)	{
 		gtk_widget_get_pointer (widget, &x, &y);
 		gtk_text_view_get_iter_at_location (view, &start, x, y);
@@ -113,7 +113,7 @@ void on_textview_selection_received (GtkWidget *widget,
 	
 	/* Make sure we got the data in the expected form */
 	if (data->type != GDK_SELECTION_TYPE_STRING) return;
-	
+
 	display_result_feed (data->data);
 
 	return;

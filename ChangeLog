@@ -1,3 +1,12 @@
+2004-11-07 Simon Floery <chimaira@users.sf.net>
+	* callbacks.c: on_paste_activate CTRL-V in formula entry (small bugfix)
+	* updated ja.po
+
+2004-10-22 Simon Floery <chimaira@users.sf.net>
+	* general_functions.c: lower_bin_string in axtof (small bugfix)
+	* callbacks.c: on_number_button_clicked missing brackets (small bugfix)
+	* callbacks.c: on_paste_activate check for NULL pointer (small bugfix)
+
 ########################################
 # 2004-10-21 galculator 1.2.4 released #
 ########################################
