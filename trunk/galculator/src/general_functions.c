@@ -1,7 +1,7 @@
 /*
  *  general_functions.c - this and that.
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
+ *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -23,9 +23,6 @@
 #include <string.h>
 #include <math.h>
 
-#include <gtk/gtk.h>
-#include <glade/glade.h>
-
 #include "galculator.h"
 #include "general_functions.h"
 #include "math_functions.h"
@@ -34,6 +31,9 @@
 #include "config_file.h"
 #include "callbacks.h"
 #include "ui.h"
+
+#include <gtk/gtk.h>
+#include <glade/glade.h>
 
 double error_unsupported_inv (double dummy)
 {
@@ -74,7 +74,7 @@ void all_clear ()
 	else {
 		rpn_free();
 		rpn_init(0);
-		current_status.rpn_have_result=FALSE;
+		current_status.rpn_have_result = FALSE;
 	}
 	display_module_bracket_label_update (RESET);
 }
@@ -160,6 +160,8 @@ char *add_leading_zeros (char *string, int multiple)
 	char	*new_string;
 	int	length, offset, counter;
 	
+	// I don't want "0" to become "000000000" or whatever
+	if (strcmp (string, "0") == 0) return string;
 	length = strlen(string);
 	offset = (multiple - length%multiple)%multiple;
 	length += offset;
@@ -200,12 +202,11 @@ void set_spinbutton (GladeXML *xml, char *spinbutton_name, void *value)
 {
 	GtkSpinButton	*spin_button;
 	int		*int_var;
-	double		d_var;
 	
 	int_var = value;
-	d_var = (double) *int_var;
+	//d_var = (double) *int_var;
 	spin_button = (GtkSpinButton *) glade_xml_get_widget (xml, spinbutton_name);
-	//gtk_spin_button_set_value (spin_button, 1.0);
+	gtk_spin_button_set_value (spin_button, *int_var);
 }
 
 void set_optmenu (GladeXML *xml, char *optmenu_name, void *index)
@@ -275,13 +276,6 @@ void apply_preferences (s_preferences prefs)
 	display_update_tags ();
 	display_set_bkg_color (prefs.bkg_color);
 
-	set_all_buttons_size (prefs.button_width, prefs.button_height);
-
-	if (prefs.custom_button_font == TRUE) button_font = g_strdup (prefs.button_font);
-	else button_font = g_strdup ("");
-	set_all_buttons_font (button_font);
-	g_free (button_font);
-
 	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
 	menu_item = glade_xml_get_widget (main_window_xml, "show_menubar1");
 	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
@@ -291,6 +285,13 @@ void apply_preferences (s_preferences prefs)
 	else if (prefs.mode == SCIENTIFIC_MODE) menu_item = 
 		glade_xml_get_widget (main_window_xml, "scientific_mode");
 	gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+	
+	set_all_buttons_size (prefs.button_width, prefs.button_height);
+
+	if (prefs.custom_button_font == TRUE) button_font = g_strdup (prefs.button_font);
+	else button_font = g_strdup ("");
+	set_all_buttons_font (button_font);
+	g_free (button_font);
 }
 
 /*
@@ -320,10 +321,14 @@ gboolean is_valid_number (int number_base, char number)
 
 void activate_menu_item (char *item_name)
 {
-	GtkMenuItem		*current_item;
+	GtkMenuItem		*menu_item;
 	
-	current_item = (GtkMenuItem *) glade_xml_get_widget (main_window_xml, \
+	menu_item = (GtkMenuItem *) glade_xml_get_widget (main_window_xml, \
 		g_strstrip (g_ascii_strdown (item_name, -1)));
-	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) current_item, FALSE);
-	gtk_menu_item_activate (current_item);
+	/* as we use this only for menu boxes, a simple activate is enough.
+	 * the extra magic in src/callbacks.c::on_scientific_mode_activate
+	 * is necessary only for checkboxmenuitems.
+	 */
+	gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+
 }

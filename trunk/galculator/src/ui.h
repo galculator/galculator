@@ -1,7 +1,7 @@
 /*
  *  ui.h - general user interface code.
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
+ *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -22,9 +22,11 @@ extern GladeXML 	*main_window_xml;
 extern GladeXML 	*button_box_xml;
 extern GladeXML 	*prefs_xml;
 extern GladeXML 	*about_dialog_xml;
+extern GladeXML		*dispctrl_xml;
 extern GtkListStore	*store;
 extern char		dec_point[2];
 
+// active_buttons flags
 #define AB_DEC 1 << CS_DEC
 #define AB_HEX 1 << CS_HEX
 #define AB_OCT 1 << CS_OCT
@@ -38,6 +40,7 @@ typedef struct {
 } s_active_buttons;
 
 GtkWidget *ui_main_window_create ();
+void ui_main_window_set_dispctrl (int location);
 void ui_main_window_buttons_destroy ();
 void ui_main_window_buttons_create (int mode);
 void set_all_buttons_size (int width, int height);

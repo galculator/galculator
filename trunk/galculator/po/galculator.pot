@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-07-03 17:34+0200\n"
+"POT-Creation-Date: 2003-08-25 19:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,81 +20,69 @@ msgstr ""
 msgid "Scientific calculator"
 msgstr ""
 
-#: src/callbacks.c:38
+#: src/callbacks.c:39
 msgid "Select result font"
 msgstr ""
 
-#: src/callbacks.c:39
+#: src/callbacks.c:40
 msgid "Select module font"
 msgstr ""
 
-#: src/callbacks.c:40
+#: src/callbacks.c:41
 msgid "Select active module color"
 msgstr ""
 
-#: src/callbacks.c:41
+#: src/callbacks.c:42
 msgid "Select inactive module color"
 msgstr ""
 
-#: src/callbacks.c:42
+#: src/callbacks.c:43
 msgid "Select result font color"
 msgstr ""
 
-#: src/callbacks.c:43
+#: src/callbacks.c:44
 msgid "Select background color"
 msgstr ""
 
-#: src/callbacks.c:44
+#: src/callbacks.c:45
 msgid "Select button font"
 msgstr ""
 
-#: src/callbacks.c:85
+#: src/callbacks.c:79
 #, c-format
 msgid "About %s"
 msgstr ""
 
-#: src/callbacks.c:88
+#: src/callbacks.c:82
 #, c-format
 msgid ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
 "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
 "\n"
-"(c) 2002-2003 by Simon Floery (simon.floery@gmx.at)"
+"(c) 2002-2003 by Simon Floery (chimaira@users.sf.net)"
 msgstr ""
 
-#: src/callbacks.c:183
-#, c-format
-msgid "[%s] on_operation_button_clicked: unknown status. %s\n"
+#: src/callbacks.c:366 ui/scientific_buttons.glade.h:21
+msgid "="
 msgstr ""
 
-#: src/callbacks.c:272
-msgid "unknown function modifier (INV/HYP)"
+#: src/callbacks.c:368 ui/scientific_buttons.glade.h:99
+msgid "x^y"
 msgstr ""
 
-#: src/callbacks.c:377
+#: src/callbacks.c:384
 msgid "ENT"
 msgstr ""
 
-#: src/callbacks.c:423
-#, c-format
-msgid "%s Preferences"
+#: src/callbacks.c:386
+msgid "y^x"
 msgstr ""
 
-#: src/callbacks.c:565
-#, c-format
-msgid "[%s] Color Dialog (%s) not found. %s\n"
-msgstr ""
-
-#: src/callbacks.c:612
-#, c-format
-msgid "[%s] Font Dialog (%s) not found. %s\n"
-msgstr ""
-
-#: src/callbacks.c:905
+#: src/callbacks.c:900
 msgid "save here"
 msgstr ""
 
-#: src/main.c:51
+#: src/main.c:50
 #, c-format
 msgid ""
 "\n"
@@ -109,74 +97,56 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/main.c:123
-#, c-format
-msgid ""
-"[%s] length of decimal point (in locale) is not supported: >%s<\n"
-"You might face problems when using %s! %s\n"
-")"
-msgstr ""
-
-#: src/galculator.h:51
+#: src/galculator.h:55
 msgid "Please submit a bugreport."
 msgstr ""
 
-#: src/calc_basic.c:139
+#: src/calc_basic.c:150
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr ""
 
-#: src/calc_basic.c:144
-#, c-format
-msgid "[%s] computing: %f %c %f = %f\n"
-msgstr ""
-
-#: src/calc_basic.c:268 src/calc_basic.c:291
-#, c-format
-msgid "[%s] RPN stack size is %i.\n"
-msgstr ""
-
-#: src/config_file.c:135
+#: src/config_file.c:142
 msgid "Pi"
 msgstr ""
 
-#: src/config_file.c:136
+#: src/config_file.c:143
 msgid "pi"
 msgstr ""
 
-#: src/config_file.c:138
+#: src/config_file.c:145
 msgid "Euler's Number"
 msgstr ""
 
-#: src/config_file.c:139
+#: src/config_file.c:146
 msgid "e"
 msgstr ""
 
-#: src/config_file.c:168
+#: src/config_file.c:175
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
-msgstr ""
-
-#: src/config_file.c:184
-#, c-format
-msgid ""
-"[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
 msgstr ""
 
 #: src/config_file.c:191
 #, c-format
 msgid ""
+"[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
+msgstr ""
+
+#: src/config_file.c:198
+#, c-format
+msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
 msgstr ""
 
-#: src/config_file.c:209
+#: src/config_file.c:216
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
 msgstr ""
 
-#: src/config_file.c:288
+#: src/config_file.c:295
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
@@ -184,769 +154,617 @@ msgid ""
 "defaults.\n"
 msgstr ""
 
-#: src/config_file.c:321
+#: src/config_file.c:330
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
 "s\n"
 msgstr ""
 
-#: src/config_file.c:329
+#: src/config_file.c:338
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
 "\". %s\n"
 msgstr ""
 
-#: src/config_file.c:344
+#: src/config_file.c:353
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
 msgstr ""
 
-#: src/display.c:488
+#: src/display.c:566
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\". %s\n"
 msgstr ""
 
-#: src/display.c:622
+#: src/display.c:701
 msgid "unknown number base"
 msgstr ""
 
-#: src/display.c:623
+#: src/display.c:702
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"display_result_set_double\". %s\n"
 msgstr ""
 
-#: src/display.c:648
+#: src/display.c:727
 #, c-format
 msgid "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
 msgstr ""
 
-#: src/display.c:705
+#: src/display.c:799
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"display_result_get_double\". %s\n"
 msgstr ""
 
-#: src/display.c:730
+#: src/display.c:824
 #, c-format
 msgid ""
 "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:73
+#: src/general_functions.c:40
 msgid "unsupported inverse function"
 msgstr ""
 
-#: src/general_functions.c:79
+#: src/general_functions.c:46
 msgid "unsupported hyperbolic function"
 msgstr ""
 
-#: src/general_functions.c:197
+#: src/general_functions.c:100
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:249
+#: src/general_functions.c:152
 #, c-format
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:676
+#: src/ui.c:81
 #, c-format
 msgid ""
 "[%s] Couldn't load %s. This file is necessary to build galculator's user "
 "interface. Make sure you did a make install and the file is accessible!\n"
 msgstr ""
 
-#: ui/main.glade.h:2
+#: src/ui.c:337
+#, c-format
+msgid ""
+"[%s] length of decimal point (in locale) is not supported: >%s<\n"
+"You might face problems when using %s! %s\n"
+")"
+msgstr ""
+
+#: src/ui.c:645
+#, c-format
+msgid "%s Preferences"
+msgstr ""
+
+#: ui/main_frame.glade.h:1
+msgid "Angle _units"
+msgstr ""
+
+#: ui/main_frame.glade.h:2 ui/prefs.glade.h:20
+msgid "Buttons"
+msgstr ""
+
+#: ui/main_frame.glade.h:3
+msgid "Cu_t Display Value"
+msgstr ""
+
+#: ui/main_frame.glade.h:4
+msgid "D_egrees"
+msgstr ""
+
+#: ui/main_frame.glade.h:5
+msgid "Display Control"
+msgstr ""
+
+#: ui/main_frame.glade.h:6
+msgid "Functions"
+msgstr ""
+
+#: ui/main_frame.glade.h:7
+msgid "Logical"
+msgstr ""
+
+#: ui/main_frame.glade.h:8
+msgid "Notation _modes"
+msgstr ""
+
+#: ui/main_frame.glade.h:9
+msgid "Standard"
+msgstr ""
+
+#: ui/main_frame.glade.h:10
+msgid "The main program window."
+msgstr ""
+
+#: ui/main_frame.glade.h:11
+msgid "_About..."
+msgstr ""
+
+#: ui/main_frame.glade.h:12
+msgid "_Algebraic"
+msgstr ""
+
+#: ui/main_frame.glade.h:13
+msgid "_Basic Mode"
+msgstr ""
+
+#: ui/main_frame.glade.h:14
+msgid "_Binary"
+msgstr ""
+
+#: ui/main_frame.glade.h:15
+msgid "_Calculator"
+msgstr ""
+
+#: ui/main_frame.glade.h:16
+msgid "_Copy Display Value"
+msgstr ""
+
+#: ui/main_frame.glade.h:17
+msgid "_Decimal"
+msgstr ""
+
+#: ui/main_frame.glade.h:18
+msgid "_Edit"
+msgstr ""
+
+#: ui/main_frame.glade.h:19
+msgid "_File"
+msgstr ""
+
+#: ui/main_frame.glade.h:20
+msgid "_Gradians"
+msgstr ""
+
+#: ui/main_frame.glade.h:21
+msgid "_Help"
+msgstr ""
+
+#: ui/main_frame.glade.h:22
+msgid "_Hexadecimal"
+msgstr ""
+
+#: ui/main_frame.glade.h:23
+msgid "_Number bases"
+msgstr ""
+
+#: ui/main_frame.glade.h:24
+msgid "_Octal"
+msgstr ""
+
+#: ui/main_frame.glade.h:25
+msgid "_Paste As Display Value"
+msgstr ""
+
+#: ui/main_frame.glade.h:26
+msgid "_Preferences..."
+msgstr ""
+
+#: ui/main_frame.glade.h:27
+msgid "_Quit"
+msgstr ""
+
+#: ui/main_frame.glade.h:28
+msgid "_Radians"
+msgstr ""
+
+#: ui/main_frame.glade.h:29
+msgid "_Reverse Polish (RPN)"
+msgstr ""
+
+#: ui/main_frame.glade.h:30
+msgid "_Scientific Mode"
+msgstr ""
+
+#: ui/main_frame.glade.h:31
+msgid "_Show menu bar"
+msgstr ""
+
+#: ui/main_frame.glade.h:32
+msgid "_View"
+msgstr ""
+
+#: ui/scientific_buttons.glade.h:2 ui/basic_buttons.glade.h:2
 #, no-c-format
 msgid "%"
 msgstr ""
 
-#: ui/main.glade.h:3
+#: ui/scientific_buttons.glade.h:3 ui/basic_buttons.glade.h:3
 msgid "("
 msgstr ""
 
-#: ui/main.glade.h:4
+#: ui/scientific_buttons.glade.h:4 ui/basic_buttons.glade.h:4
 msgid ")"
 msgstr ""
 
-#: ui/main.glade.h:5 ui/prefs.glade.h:2
+#: ui/scientific_buttons.glade.h:5 ui/basic_buttons.glade.h:5
+#: ui/prefs.glade.h:2
 msgid "*"
 msgstr ""
 
-#: ui/main.glade.h:6
+#: ui/scientific_buttons.glade.h:6 ui/basic_buttons.glade.h:6
 msgid "+"
 msgstr ""
 
-#: ui/main.glade.h:7
+#: ui/scientific_buttons.glade.h:7 ui/basic_buttons.glade.h:7
 msgid "+/-"
 msgstr ""
 
-#: ui/main.glade.h:8
+#: ui/scientific_buttons.glade.h:8 ui/basic_buttons.glade.h:8
 msgid "-"
 msgstr ""
 
-#: ui/main.glade.h:9
+#: ui/scientific_buttons.glade.h:9
 msgid "."
 msgstr ""
 
-#: ui/main.glade.h:10
+#: ui/scientific_buttons.glade.h:10 ui/basic_buttons.glade.h:9
 msgid "/"
 msgstr ""
 
-#: ui/main.glade.h:11
+#: ui/scientific_buttons.glade.h:11 ui/basic_buttons.glade.h:10
 msgid "0"
 msgstr ""
 
-#: ui/main.glade.h:12
+#: ui/scientific_buttons.glade.h:12 ui/basic_buttons.glade.h:11
 msgid "1"
 msgstr ""
 
-#: ui/main.glade.h:13
-msgid "1/x"
-msgstr ""
-
-#: ui/main.glade.h:14
+#: ui/scientific_buttons.glade.h:13 ui/basic_buttons.glade.h:12
 msgid "2"
 msgstr ""
 
-#: ui/main.glade.h:15
+#: ui/scientific_buttons.glade.h:14 ui/basic_buttons.glade.h:13
 msgid "3"
 msgstr ""
 
-#: ui/main.glade.h:16
+#: ui/scientific_buttons.glade.h:15 ui/basic_buttons.glade.h:14
 msgid "4"
 msgstr ""
 
-#: ui/main.glade.h:17
+#: ui/scientific_buttons.glade.h:16 ui/basic_buttons.glade.h:15
 msgid "5"
 msgstr ""
 
-#: ui/main.glade.h:18
+#: ui/scientific_buttons.glade.h:17 ui/basic_buttons.glade.h:16
 msgid "6"
 msgstr ""
 
-#: ui/main.glade.h:19
+#: ui/scientific_buttons.glade.h:18 ui/basic_buttons.glade.h:17
 msgid "7"
 msgstr ""
 
-#: ui/main.glade.h:20
+#: ui/scientific_buttons.glade.h:19 ui/basic_buttons.glade.h:18
 msgid "8"
 msgstr ""
 
-#: ui/main.glade.h:21
+#: ui/scientific_buttons.glade.h:20 ui/basic_buttons.glade.h:19
 msgid "9"
 msgstr ""
 
-#: ui/main.glade.h:22
-msgid "<-"
-msgstr ""
-
-#: ui/main.glade.h:23
-msgid "="
-msgstr ""
-
-#: ui/main.glade.h:24
+#: ui/scientific_buttons.glade.h:22
 msgid "A"
 msgstr ""
 
-#: ui/main.glade.h:25
-msgid "AC"
-msgstr ""
-
-#: ui/main.glade.h:26
+#: ui/scientific_buttons.glade.h:23
 msgid "AND"
 msgstr ""
 
-#: ui/main.glade.h:27
+#: ui/scientific_buttons.glade.h:24 ui/basic_buttons.glade.h:20
+#: ui/prefs.glade.h:15
+msgid "Add"
+msgstr ""
+
+#: ui/scientific_buttons.glade.h:25 ui/basic_buttons.glade.h:21
 msgid "Add current display value to memory"
 msgstr ""
 
-#: ui/main.glade.h:28
-msgid "Adds the current display value to memory."
-msgstr ""
-
-#: ui/main.glade.h:29
-msgid "Angle _units"
-msgstr ""
-
-#: ui/main.glade.h:30
+#: ui/scientific_buttons.glade.h:26
 msgid "B"
 msgstr ""
 
-#: ui/main.glade.h:31
-msgid "Backspace"
-msgstr ""
-
-#: ui/main.glade.h:32
+#: ui/scientific_buttons.glade.h:27
 msgid "Bitwise complement"
 msgstr ""
 
-#: ui/main.glade.h:33
+#: ui/scientific_buttons.glade.h:28 ui/dispctrl_right.glade.h:4
+#: ui/dispctrl_bottom.glade.h:4
 msgid "C"
 msgstr ""
 
-#: ui/main.glade.h:34
+#: ui/scientific_buttons.glade.h:29
 msgid "CMP"
 msgstr ""
 
-#: ui/main.glade.h:35
-msgid "Calculates the complete equation and displays the result."
-msgstr ""
-
-#: ui/main.glade.h:36
+#: ui/scientific_buttons.glade.h:30 ui/basic_buttons.glade.h:22
 msgid "Change sign"
 msgstr ""
 
-#: ui/main.glade.h:37
-msgid "Changes the sign of the current display value."
+#: ui/scientific_buttons.glade.h:31 ui/basic_buttons.glade.h:23
+msgid "Close Bracket"
 msgstr ""
 
-#: ui/main.glade.h:38 ui/prefs.glade.h:25
-msgid "Clear"
-msgstr ""
-
-#: ui/main.glade.h:39
-msgid "Clear all"
-msgstr ""
-
-#: ui/main.glade.h:40
-msgid "Clear display"
-msgstr ""
-
-#: ui/main.glade.h:41
-msgid "Clears the display."
-msgstr ""
-
-#: ui/main.glade.h:42
-msgid "Close paren"
-msgstr ""
-
-#: ui/main.glade.h:43
-msgid "Computes the cosine."
-msgstr ""
-
-#: ui/main.glade.h:44
-msgid "Computes the factorial."
-msgstr ""
-
-#: ui/main.glade.h:45
-msgid "Computes the logarithm (with base 10)."
-msgstr ""
-
-#: ui/main.glade.h:46
-msgid "Computes the natural logarithm (with base of Euler's number)."
-msgstr ""
-
-#: ui/main.glade.h:47
-msgid "Computes the power."
-msgstr ""
-
-#: ui/main.glade.h:48
-msgid "Computes the reciprocal."
-msgstr ""
-
-#: ui/main.glade.h:49
-msgid "Computes the sine."
-msgstr ""
-
-#: ui/main.glade.h:50
-msgid "Computes the square root."
-msgstr ""
-
-#: ui/main.glade.h:51
-msgid "Computes the square."
-msgstr ""
-
-#: ui/main.glade.h:52
-msgid "Computes the tangent."
-msgstr ""
-
-#: ui/main.glade.h:53 ui/prefs.glade.h:27
+#: ui/scientific_buttons.glade.h:32 ui/prefs.glade.h:23
 msgid "Constants"
 msgstr ""
 
-#: ui/main.glade.h:54
-msgid "Contains the main display."
-msgstr ""
-
-#: ui/main.glade.h:55
+#: ui/scientific_buttons.glade.h:33
 msgid "Cosine"
 msgstr ""
 
-#: ui/main.glade.h:56
+#: ui/scientific_buttons.glade.h:34
 msgid "D"
 msgstr ""
 
-#: ui/main.glade.h:57
-msgid "D_egrees"
-msgstr ""
-
-#: ui/main.glade.h:58
+#: ui/scientific_buttons.glade.h:35 ui/basic_buttons.glade.h:24
 msgid "Decimal point"
 msgstr ""
 
-#: ui/main.glade.h:59
+#: ui/scientific_buttons.glade.h:36 ui/basic_buttons.glade.h:25
 msgid "Divide"
 msgstr ""
 
-#: ui/main.glade.h:60
+#: ui/scientific_buttons.glade.h:37
 msgid "E"
 msgstr ""
 
-#: ui/main.glade.h:61
+#: ui/scientific_buttons.glade.h:38
 msgid "EE"
 msgstr ""
 
-#: ui/main.glade.h:62
+#: ui/scientific_buttons.glade.h:39 ui/basic_buttons.glade.h:26
+msgid "Eight"
+msgstr ""
+
+#: ui/scientific_buttons.glade.h:40 ui/basic_buttons.glade.h:27
 msgid "Enter"
 msgstr ""
 
-#: ui/main.glade.h:63
+#: ui/scientific_buttons.glade.h:41
 msgid "Enter exponent (base: 10)"
 msgstr ""
 
-#: ui/main.glade.h:64
-msgid "Enters a closing paren."
-msgstr ""
-
-#: ui/main.glade.h:65
-msgid "Enters an opening paren."
-msgstr ""
-
-#: ui/main.glade.h:66
-msgid "Enters the bitwise complement operator."
-msgstr ""
-
-#: ui/main.glade.h:67
-msgid "Enters the decimal point."
-msgstr ""
-
-#: ui/main.glade.h:68
-msgid "Enters the digit 2."
-msgstr ""
-
-#: ui/main.glade.h:69
-msgid "Enters the digit 3."
-msgstr ""
-
-#: ui/main.glade.h:70
-msgid "Enters the digit 4."
-msgstr ""
-
-#: ui/main.glade.h:71
-msgid "Enters the digit 5."
-msgstr ""
-
-#: ui/main.glade.h:72
-msgid "Enters the digit 6."
-msgstr ""
-
-#: ui/main.glade.h:73
-msgid "Enters the digit 7."
-msgstr ""
-
-#: ui/main.glade.h:74
-msgid "Enters the digit 8."
-msgstr ""
-
-#: ui/main.glade.h:75
-msgid "Enters the digit 9."
-msgstr ""
-
-#: ui/main.glade.h:76
-msgid "Enters the division operator."
-msgstr ""
-
-#: ui/main.glade.h:77
-msgid "Enters the hexadecimal digit A."
-msgstr ""
-
-#: ui/main.glade.h:78
-msgid "Enters the hexadecimal digit B."
-msgstr ""
-
-#: ui/main.glade.h:79
-msgid "Enters the hexadecimal digit C."
-msgstr ""
-
-#: ui/main.glade.h:80
-msgid "Enters the hexadecimal digit D."
-msgstr ""
-
-#: ui/main.glade.h:81
-msgid "Enters the hexadecimal digit E."
-msgstr ""
-
-#: ui/main.glade.h:82
-msgid "Enters the hexadecimal digit F."
-msgstr ""
-
-#: ui/main.glade.h:83
-msgid "Enters the left-shift operator."
-msgstr ""
-
-#: ui/main.glade.h:84
-msgid "Enters the logical AND operator."
-msgstr ""
-
-#: ui/main.glade.h:85
-msgid "Enters the logical OR operator."
-msgstr ""
-
-#: ui/main.glade.h:86
-msgid "Enters the logical exclusive OR operator."
-msgstr ""
-
-#: ui/main.glade.h:87
-msgid "Enters the minus operator."
-msgstr ""
-
-#: ui/main.glade.h:88
-msgid "Enters the modulus operator."
-msgstr ""
-
-#: ui/main.glade.h:89
-msgid "Enters the multiplication operator."
-msgstr ""
-
-#: ui/main.glade.h:90
-msgid "Enters the plus operator."
-msgstr ""
-
-#: ui/main.glade.h:91
+#: ui/scientific_buttons.glade.h:42
 msgid "F"
 msgstr ""
 
-#: ui/main.glade.h:92
+#: ui/scientific_buttons.glade.h:43
 msgid "Factorial"
 msgstr ""
 
-#: ui/main.glade.h:93
+#: ui/scientific_buttons.glade.h:44 ui/basic_buttons.glade.h:28
+msgid "Five"
+msgstr ""
+
+#: ui/scientific_buttons.glade.h:45 ui/basic_buttons.glade.h:29
+msgid "Four"
+msgstr ""
+
+#: ui/scientific_buttons.glade.h:46
 msgid "Hexadecimal 0xA"
 msgstr ""
 
-#: ui/main.glade.h:94
+#: ui/scientific_buttons.glade.h:47
 msgid "Hexadecimal 0xB"
 msgstr ""
 
-#: ui/main.glade.h:95
+#: ui/scientific_buttons.glade.h:48
 msgid "Hexadecimal 0xC"
 msgstr ""
 
-#: ui/main.glade.h:96
+#: ui/scientific_buttons.glade.h:49
 msgid "Hexadecimal 0xD"
 msgstr ""
 
-#: ui/main.glade.h:97
+#: ui/scientific_buttons.glade.h:50
 msgid "Hexadecimal 0xE"
 msgstr ""
 
-#: ui/main.glade.h:98
+#: ui/scientific_buttons.glade.h:51
 msgid "Hexadecimal 0xF"
 msgstr ""
 
-#: ui/main.glade.h:99
+#: ui/scientific_buttons.glade.h:52
 msgid "Hyperbolic mode"
 msgstr ""
 
-#: ui/main.glade.h:100
+#: ui/scientific_buttons.glade.h:53
 msgid "Inverse mode"
 msgstr ""
 
-#: ui/main.glade.h:101
+#: ui/scientific_buttons.glade.h:54
 msgid "LSH"
 msgstr ""
 
-#: ui/main.glade.h:102
+#: ui/scientific_buttons.glade.h:55
 msgid "Left shift"
 msgstr ""
 
-#: ui/main.glade.h:103
+#: ui/scientific_buttons.glade.h:56
 msgid "Logarithm (base: 10)"
 msgstr ""
 
-#: ui/main.glade.h:104
+#: ui/scientific_buttons.glade.h:57
 msgid "Logical AND"
 msgstr ""
 
-#: ui/main.glade.h:105
+#: ui/scientific_buttons.glade.h:58
 msgid "Logical OR"
 msgstr ""
 
-#: ui/main.glade.h:106
+#: ui/scientific_buttons.glade.h:59
 msgid "Logical XOR"
 msgstr ""
 
-#: ui/main.glade.h:107
+#: ui/scientific_buttons.glade.h:60 ui/basic_buttons.glade.h:30
 msgid "M+"
 msgstr ""
 
-#: ui/main.glade.h:108
+#: ui/scientific_buttons.glade.h:61
 msgid "MOD"
 msgstr ""
 
-#: ui/main.glade.h:109
+#: ui/scientific_buttons.glade.h:62 ui/basic_buttons.glade.h:31
 msgid "MR"
 msgstr ""
 
-#: ui/main.glade.h:110
+#: ui/scientific_buttons.glade.h:63 ui/basic_buttons.glade.h:32
 msgid "MS"
 msgstr ""
 
-#: ui/main.glade.h:111
-msgid "Main display"
-msgstr ""
-
-#: ui/main.glade.h:112
-msgid "Memory add"
-msgstr ""
-
-#: ui/main.glade.h:113
-msgid "Memory read"
-msgstr ""
-
-#: ui/main.glade.h:114
-msgid "Memory save"
-msgstr ""
-
-#: ui/main.glade.h:115
-msgid "Minus"
-msgstr ""
-
-#: ui/main.glade.h:116
+#: ui/scientific_buttons.glade.h:64
 msgid "Modulus"
 msgstr ""
 
-#: ui/main.glade.h:117
+#: ui/scientific_buttons.glade.h:65 ui/basic_buttons.glade.h:33
 msgid "Multiply"
 msgstr ""
 
-#: ui/main.glade.h:118
+#: ui/scientific_buttons.glade.h:66
 msgid "Natural logarithm (base: e)"
 msgstr ""
 
-#: ui/main.glade.h:119
-msgid "Notation _modes"
+#: ui/scientific_buttons.glade.h:67 ui/basic_buttons.glade.h:34
+msgid "Nine"
 msgstr ""
 
-#: ui/main.glade.h:120
+#: ui/scientific_buttons.glade.h:68
 msgid "OR"
 msgstr ""
 
-#: ui/main.glade.h:121
-msgid "Open paren"
+#: ui/scientific_buttons.glade.h:69 ui/basic_buttons.glade.h:35
+msgid "One"
 msgstr ""
 
-#: ui/main.glade.h:122
-msgid "Plus"
+#: ui/scientific_buttons.glade.h:70 ui/basic_buttons.glade.h:36
+msgid "Open Bracket"
 msgstr ""
 
-#: ui/main.glade.h:123
+#: ui/scientific_buttons.glade.h:71 ui/basic_buttons.glade.h:37
+msgid "Percent"
+msgstr ""
+
+#: ui/scientific_buttons.glade.h:72
 msgid "Power"
 msgstr ""
 
-#: ui/main.glade.h:124
+#: ui/scientific_buttons.glade.h:73 ui/basic_buttons.glade.h:38
 msgid "Read from memory"
 msgstr ""
 
-#: ui/main.glade.h:125
-msgid "Reads the value saved in memory."
-msgstr ""
-
-#: ui/main.glade.h:126
-msgid "Reciprocal"
-msgstr ""
-
-#: ui/main.glade.h:127
-msgid "Removes the last digit from the display."
-msgstr ""
-
-#: ui/main.glade.h:128
-msgid "Reset calculator (clear all)"
-msgstr ""
-
-#: ui/main.glade.h:129
-msgid "Resets the calculator."
-msgstr ""
-
-#: ui/main.glade.h:130
+#: ui/scientific_buttons.glade.h:74 ui/basic_buttons.glade.h:39
 msgid "Save to memory"
 msgstr ""
 
-#: ui/main.glade.h:131
-msgid "Saves the current display value into memory."
+#: ui/scientific_buttons.glade.h:75 ui/basic_buttons.glade.h:40
+msgid "Seven"
 msgstr ""
 
-#: ui/main.glade.h:132
-msgid "Set display into \"enter exponent\" mode (base of 10)."
-msgstr ""
-
-#: ui/main.glade.h:133
+#: ui/scientific_buttons.glade.h:76
 msgid "Sine"
 msgstr ""
 
-#: ui/main.glade.h:134
+#: ui/scientific_buttons.glade.h:77 ui/basic_buttons.glade.h:41
+msgid "Six"
+msgstr ""
+
+#: ui/scientific_buttons.glade.h:78
 msgid "Square"
 msgstr ""
 
-#: ui/main.glade.h:135
+#: ui/scientific_buttons.glade.h:79 ui/basic_buttons.glade.h:42
 msgid "Square root"
 msgstr ""
 
-#: ui/main.glade.h:136
-msgid "Switches to hyperbolic mode."
+#: ui/scientific_buttons.glade.h:80 ui/basic_buttons.glade.h:43
+msgid "Subtract"
 msgstr ""
 
-#: ui/main.glade.h:137
-msgid "Switches to inverse mode."
-msgstr ""
-
-#: ui/main.glade.h:138
+#: ui/scientific_buttons.glade.h:81
 msgid "Tangent"
 msgstr ""
 
-#: ui/main.glade.h:139
-msgid "The main display."
+#: ui/scientific_buttons.glade.h:82 ui/basic_buttons.glade.h:44
+msgid "Three"
 msgstr ""
 
-#: ui/main.glade.h:140
-msgid "The main program window."
+#: ui/scientific_buttons.glade.h:83 ui/basic_buttons.glade.h:45
+msgid "Two"
 msgstr ""
 
-#: ui/main.glade.h:141
+#: ui/scientific_buttons.glade.h:84
+msgid "User defined functions"
+msgstr ""
+
+#: ui/scientific_buttons.glade.h:85
 msgid "XOR"
 msgstr ""
 
-#: ui/main.glade.h:142
-msgid "_About..."
+#: ui/scientific_buttons.glade.h:86 ui/basic_buttons.glade.h:46
+msgid "Zero"
 msgstr ""
 
-#: ui/main.glade.h:143
-msgid "_Algebraic"
-msgstr ""
-
-#: ui/main.glade.h:144
-msgid "_Binary"
-msgstr ""
-
-#: ui/main.glade.h:145
-msgid "_Decimal"
-msgstr ""
-
-#: ui/main.glade.h:146
-msgid "_File"
-msgstr ""
-
-#: ui/main.glade.h:147
-msgid "_Gradians"
-msgstr ""
-
-#: ui/main.glade.h:148
-msgid "_Help"
-msgstr ""
-
-#: ui/main.glade.h:149
-msgid "_Hexadecimal"
-msgstr ""
-
-#: ui/main.glade.h:150
-msgid "_Number bases"
-msgstr ""
-
-#: ui/main.glade.h:151
-msgid "_Octal"
-msgstr ""
-
-#: ui/main.glade.h:152
-msgid "_Preferences..."
-msgstr ""
-
-#: ui/main.glade.h:153
-msgid "_Quit"
-msgstr ""
-
-#: ui/main.glade.h:154
-msgid "_Radians"
-msgstr ""
-
-#: ui/main.glade.h:155
-msgid "_Reverse Polish (RPN)"
-msgstr ""
-
-#: ui/main.glade.h:156
-msgid "_Settings"
-msgstr ""
-
-#: ui/main.glade.h:157
-msgid "_Show menu bar"
-msgstr ""
-
-#: ui/main.glade.h:158
+#: ui/scientific_buttons.glade.h:87
 msgid "con"
 msgstr ""
 
-#: ui/main.glade.h:159
-msgid "constants"
-msgstr ""
-
-#: ui/main.glade.h:160
+#: ui/scientific_buttons.glade.h:88
 msgid "cos"
 msgstr ""
 
-#: ui/main.glade.h:161
-msgid "gives a menu to select constants from"
+#: ui/scientific_buttons.glade.h:89
+msgid "fun"
 msgstr ""
 
-#: ui/main.glade.h:162
+#: ui/scientific_buttons.glade.h:90
 msgid "hyp"
 msgstr ""
 
-#: ui/main.glade.h:163
+#: ui/scientific_buttons.glade.h:91
 msgid "inv"
 msgstr ""
 
-#: ui/main.glade.h:164
+#: ui/scientific_buttons.glade.h:92
 msgid "ln"
 msgstr ""
 
-#: ui/main.glade.h:165
+#: ui/scientific_buttons.glade.h:93
 msgid "log"
 msgstr ""
 
-#: ui/main.glade.h:166
+#: ui/scientific_buttons.glade.h:94
 msgid "n!"
 msgstr ""
 
-#: ui/main.glade.h:167
+#: ui/scientific_buttons.glade.h:95
 msgid "sin"
 msgstr ""
 
-#: ui/main.glade.h:168
+#: ui/scientific_buttons.glade.h:96 ui/basic_buttons.glade.h:47
 msgid "sqrt"
 msgstr ""
 
-#: ui/main.glade.h:169
+#: ui/scientific_buttons.glade.h:97
 msgid "tan"
 msgstr ""
 
-#: ui/main.glade.h:170
+#: ui/scientific_buttons.glade.h:98
 msgid "x^2"
-msgstr ""
-
-#: ui/main.glade.h:171
-msgid "x^y"
 msgstr ""
 
 #: ui/about.glade.h:1
 msgid "A dialog that shows information about this program."
 msgstr ""
 
-#: ui/about.glade.h:2 ui/prefs.glade.h:26
+#: ui/about.glade.h:2 ui/prefs.glade.h:22
 msgid "Closes the dialog."
 msgstr ""
 
@@ -1054,178 +872,138 @@ msgstr ""
 msgid "Active module color:"
 msgstr ""
 
-#: ui/prefs.glade.h:15
-msgid "Add"
-msgstr ""
-
 #: ui/prefs.glade.h:16
-msgid "Algebraic"
-msgstr ""
-
-#: ui/prefs.glade.h:17
 msgid "Angle base units"
 msgstr ""
 
-#: ui/prefs.glade.h:18
+#: ui/prefs.glade.h:17
 msgid "Arithmetic operation"
 msgstr ""
 
-#: ui/prefs.glade.h:19
+#: ui/prefs.glade.h:18
 msgid "Background color:"
 msgstr ""
 
-#: ui/prefs.glade.h:20
-msgid "Binary"
-msgstr ""
-
-#: ui/prefs.glade.h:21
+#: ui/prefs.glade.h:19
 msgid "Button font:"
 msgstr ""
 
-#: ui/prefs.glade.h:22
-msgid "Button height:"
-msgstr ""
-
-#: ui/prefs.glade.h:23
-msgid "Button width:"
+#: ui/prefs.glade.h:21
+msgid "Clear"
 msgstr ""
 
 #: ui/prefs.glade.h:24
-msgid "Buttons"
-msgstr ""
-
-#: ui/prefs.glade.h:28
-msgid "Decimal"
-msgstr ""
-
-#: ui/prefs.glade.h:29
-msgid "Default angle unit:"
-msgstr ""
-
-#: ui/prefs.glade.h:30
-msgid "Default notation mode:"
-msgstr ""
-
-#: ui/prefs.glade.h:31
-msgid "Default number base:"
-msgstr ""
-
-#: ui/prefs.glade.h:32
-msgid "Degrees"
-msgstr ""
-
-#: ui/prefs.glade.h:33
 msgid "Delete"
 msgstr ""
 
-#: ui/prefs.glade.h:34
+#: ui/prefs.glade.h:25
 msgid "Description:"
 msgstr ""
 
-#: ui/prefs.glade.h:35
+#: ui/prefs.glade.h:26
 msgid "Display"
 msgstr ""
 
-#: ui/prefs.glade.h:36
-msgid "Display control buttons (C, AC, <-)"
+#: ui/prefs.glade.h:27
+msgid "General"
 msgstr ""
 
-#: ui/prefs.glade.h:37
-msgid "Function buttons (sin, cos, etc.)"
-msgstr ""
-
-#: ui/prefs.glade.h:38
-msgid "Gradians"
-msgstr ""
-
-#: ui/prefs.glade.h:39
-msgid "Hexadecimal"
-msgstr ""
-
-#: ui/prefs.glade.h:40
+#: ui/prefs.glade.h:28
 msgid "Inactive module color:"
 msgstr ""
 
-#: ui/prefs.glade.h:41
-msgid "Logic buttons (AND, OR, etc.)"
+#: ui/prefs.glade.h:29
+msgid "Minimal button height:"
 msgstr ""
 
-#: ui/prefs.glade.h:42
-msgid "Miscellaneous"
+#: ui/prefs.glade.h:30
+msgid "Minimal button width:"
 msgstr ""
 
-#: ui/prefs.glade.h:43
+#: ui/prefs.glade.h:31
 msgid "Module font:"
 msgstr ""
 
-#: ui/prefs.glade.h:44
+#: ui/prefs.glade.h:32
 msgid "Name:"
 msgstr ""
 
-#: ui/prefs.glade.h:45
+#: ui/prefs.glade.h:33
 msgid "Notation"
 msgstr ""
 
-#: ui/prefs.glade.h:46
+#: ui/prefs.glade.h:34
 msgid "Number base units"
 msgstr ""
 
-#: ui/prefs.glade.h:47
+#: ui/prefs.glade.h:35
 msgid "Number of Bits: "
 msgstr ""
 
-#: ui/prefs.glade.h:48
+#: ui/prefs.glade.h:36
 msgid "Numbers"
 msgstr ""
 
-#: ui/prefs.glade.h:49
-msgid "Octal"
-msgstr ""
-
-#: ui/prefs.glade.h:50
+#: ui/prefs.glade.h:37
 msgid "Open brackets"
 msgstr ""
 
-#: ui/prefs.glade.h:51
-msgid "Radians"
-msgstr ""
-
-#: ui/prefs.glade.h:52
+#: ui/prefs.glade.h:38
 msgid "Remember display value on exit"
 msgstr ""
 
-#: ui/prefs.glade.h:53
+#: ui/prefs.glade.h:39
 msgid "Result font color:"
 msgstr ""
 
-#: ui/prefs.glade.h:54
+#: ui/prefs.glade.h:40
 msgid "Result font:"
 msgstr ""
 
-#: ui/prefs.glade.h:55
-msgid "Reverse Polish (RPN)"
-msgstr ""
-
-#: ui/prefs.glade.h:56
+#: ui/prefs.glade.h:41
 msgid "Show menu bar"
 msgstr ""
 
-#: ui/prefs.glade.h:57
+#: ui/prefs.glade.h:42
 msgid "Update"
 msgstr ""
 
-#: ui/prefs.glade.h:58
+#: ui/prefs.glade.h:43
 msgid "Use custom button font"
 msgstr ""
 
-#: ui/prefs.glade.h:59
+#: ui/prefs.glade.h:44
 msgid "Value:"
 msgstr ""
 
-#: ui/prefs.glade.h:60
+#: ui/prefs.glade.h:45
+msgid "fix length to a multiple of"
+msgstr ""
+
+#: ui/prefs.glade.h:46
 msgid "galculator - Preferences"
 msgstr ""
 
-#: ui/prefs.glade.h:61
+#: ui/prefs.glade.h:47
 msgid "signed"
+msgstr ""
+
+#: ui/dispctrl_right.glade.h:1 ui/dispctrl_bottom.glade.h:1
+msgid "<-"
+msgstr ""
+
+#: ui/dispctrl_right.glade.h:2 ui/dispctrl_bottom.glade.h:2
+msgid "AC"
+msgstr ""
+
+#: ui/dispctrl_right.glade.h:3 ui/dispctrl_bottom.glade.h:3
+msgid "Backspace"
+msgstr ""
+
+#: ui/dispctrl_right.glade.h:5 ui/dispctrl_bottom.glade.h:5
+msgid "Clear display"
+msgstr ""
+
+#: ui/dispctrl_right.glade.h:6 ui/dispctrl_bottom.glade.h:6
+msgid "Reset calculator (clear all)"
 msgstr ""

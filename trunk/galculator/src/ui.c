@@ -1,7 +1,7 @@
 /*
  *  ui.c - general user interface code.
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
+ *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -23,9 +23,6 @@
 #include <string.h>
 #include <locale.h>
 
-#include <gtk/gtk.h>
-#include <glade/glade.h>
-
 #include "galculator.h"
 #include "ui.h"
 #include "display.h"
@@ -34,13 +31,19 @@
 #include "general_functions.h"
 #include "callbacks.h"
 
-GladeXML		*main_window_xml, *button_box_xml, *prefs_xml, *about_dialog_xml;
-char			dec_point[2];
+#include <gtk/gtk.h>
+#include <glade/glade.h>
+
+GladeXML	*main_window_xml, *dispctrl_xml, *button_box_xml, *prefs_xml, 
+		*about_dialog_xml;
+char		dec_point[2];
 GtkListStore	*store;
 
 static void set_disp_ctrl_object_data ();
 
-// assume TRUE for all other bases/modes!
+/* active_buttons. bit mask, in which modes the corresponding button is active.
+ * assume TRUE for all other bases/modes!
+ */
 
 s_active_buttons active_buttons[] = {\
 	{"button_2", ~(AB_BIN)}, \
@@ -68,6 +71,10 @@ s_active_buttons active_buttons[] = {\
 	{NULL}\
 };
 
+/* glade_file_open. opens a new .glade file, checks if this open was successful
+ * and returns *GladeXML.
+ */
+
 static GladeXML *glade_file_open (char *filename, 
 				char *root_widget, 
 				gboolean fatal)
@@ -85,14 +92,11 @@ is accessible!\n"), PACKAGE, filename);
 	return xml;
 }
 
-GtkWidget *ui_main_window_create ()
-{
-	main_window_xml = glade_file_open (MAIN_GLADE_FILE, "main_window", TRUE);
-	/* connect the signals in the interface */
-	glade_xml_signal_autoconnect(main_window_xml);
-	set_disp_ctrl_object_data ();
-	return glade_xml_get_widget (main_window_xml, "main_window");
-}
+/* apply_object_data. with gtk (better gobject) we can store additional
+ * information for a widget (resp gobject). This information could be the
+ * operation sign for src/calc_basic.c. This function sets such object data.
+ * Is called from set_scientific_object_data resp set_basic_object_data.
+ */
 
 static void apply_object_data (s_operation_map operation_map[],
 			s_gfunc_map gfunc_map[],
@@ -130,6 +134,10 @@ static void apply_object_data (s_operation_map operation_map[],
 		counter++;
 	};
 }
+
+/* set_scientific_object_data. Here, we set the information that is saved in
+ * apply_object_data. For scientific mode.
+ */
 
 static void set_scientific_object_data ()
 {
@@ -173,6 +181,10 @@ static void set_scientific_object_data ()
 	apply_object_data (operation_map, gfunc_map, function_map);
 }
 
+/* set_basic_object_data. Here, we set the information that is saved in
+ * apply_object_data. For basic mode.
+ */
+
 static void set_basic_object_data ()
 {
 	s_operation_map	operation_map[] = {\
@@ -200,6 +212,10 @@ static void set_basic_object_data ()
 	apply_object_data (operation_map, gfunc_map, function_map);
 }
 
+/* set_disp_ctrl_object_data. Here, we set the information that is saved in
+ * apply_object_data. For display control buttons.
+ */
+
 static void set_disp_ctrl_object_data ()
 {
 	int	counter=0;
@@ -213,11 +229,99 @@ static void set_disp_ctrl_object_data ()
 
 	while (map[counter].button_name != NULL) {
 		g_object_set_data (G_OBJECT (glade_xml_get_widget (
-			main_window_xml, map[counter].button_name)),
+			dispctrl_xml, map[counter].button_name)),
 			"func", map[counter].func);
 		counter++;
 	};
 }
+
+/* ui_pack_from_xml. This is a very special function. But we need it at least
+ * three times. takes child_name from child_xml and adds it to box at index.
+ * signals are connected and accel_group of accel_child_name is attached to
+ * box's toplevel window.
+ */
+
+static void ui_pack_from_xml (GtkWidget *box, 
+				int index, 
+				GladeXML *child_xml, 
+				char *child_name,
+				char *accel_child_name,
+				gboolean expand,
+				gboolean fill)
+{
+	GtkWidget	*child_widget, *accel_child_widget;
+	GtkAccelGroup	*accel_group;
+	
+	// at first connect signal handlers
+	glade_xml_signal_autoconnect (child_xml);
+	// next, get the "root" child
+	child_widget = glade_xml_get_widget (child_xml, child_name);
+	/* we have to add the accel_group of child to the main_window in order
+	 * to get working accelerators.
+	 */
+	accel_child_widget = glade_xml_get_widget (child_xml, accel_child_name);
+
+	accel_group = gtk_accel_group_from_accel_closure ((GClosure *) 
+		(gtk_widget_list_accel_closures (accel_child_widget))->data);
+	
+	gtk_window_add_accel_group ((GtkWindow *) gtk_widget_get_toplevel (box),
+		accel_group);
+
+	gtk_box_pack_start ((GtkBox *) box, child_widget, expand, fill, 0);
+	gtk_box_reorder_child ((GtkBox *) box, child_widget, index);
+	gtk_widget_show (box);
+}
+
+
+/* ui_main_window_create. creates the main_window, containing menu toolbar and
+ * the display skeleton. display control buttons and the calculator's buttons
+ * are added by the callbacks for scientific resp basic mode.
+ */
+
+GtkWidget *ui_main_window_create ()
+{
+	main_window_xml = glade_file_open (MAIN_GLADE_FILE, "main_window", TRUE);
+	/* connect the signals in the interface */
+	glade_xml_signal_autoconnect(main_window_xml);
+	return glade_xml_get_widget (main_window_xml, "main_window");
+}
+
+/* ui_main_window_set_dispctrl. we can't (un-)hide the dispctrl buttons as they
+ * have the same key accelerators and thus only one button group would get
+ * activated.
+ */
+
+void ui_main_window_set_dispctrl (int location)
+{
+	GtkWidget	*table_dispctrl, *box;
+	
+	// destroy any existing display controls
+	if (dispctrl_xml) {
+		table_dispctrl = glade_xml_get_widget (dispctrl_xml, "table_dispctrl");
+		if (table_dispctrl) gtk_widget_destroy (table_dispctrl);
+		g_free (dispctrl_xml);
+	}	
+	// now create the one at location
+	if (location == DISPCTRL_BOTTOM) {
+		box = glade_xml_get_widget (main_window_xml, "window_vbox");
+		dispctrl_xml = glade_file_open (DISPCTRL_BOTTOM_GLADE_FILE, 
+			"table_dispctrl", TRUE);
+		ui_pack_from_xml (box, 2, dispctrl_xml, "table_dispctrl", 
+			"button_clr", TRUE, TRUE);
+	} else if (location == DISPCTRL_RIGHT) {
+		box = glade_xml_get_widget (main_window_xml, "display_hbox");
+		dispctrl_xml = glade_file_open (DISPCTRL_RIGHT_GLADE_FILE, 
+			"table_dispctrl", TRUE);
+		ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl",
+			"button_clr", FALSE, FALSE);
+	} else if (location != DISPCTRL_NONE) 
+		error_message ("Unknown mode in \"ui_main_window_set_dispctrl\"");
+	set_disp_ctrl_object_data ();
+}
+
+/* ui_main_window_buttons_destroy. removes the scientific resp basic mode 
+ * buttons. display control buttons are not touched here!
+ */
 
 void ui_main_window_buttons_destroy ()
 {
@@ -231,43 +335,28 @@ void ui_main_window_buttons_destroy ()
 	g_list_free (children);
 }
 
+/* ui_main_window_buttons_create. fills main_window with calculator's buttons,
+ * paying respect to current mode. dispctrl buttons need to be done extra.
+ */
+
 void ui_main_window_buttons_create (int mode)
 {
-	GtkWidget	*button_box, *box;
+	GtkWidget	*box;
 	struct lconv 	*locale_settings;
-	GList		*closure_list;
-	GtkAccelGroup	*accel_group;
-	
-	if (mode == BASIC_MODE) 
+
+	if (mode == BASIC_MODE) {
 		button_box_xml = glade_file_open (BASIC_GLADE_FILE, "button_box", TRUE);
-	else if (prefs.mode == SCIENTIFIC_MODE) 
-		button_box_xml = glade_file_open (SCIENTIFIC_GLADE_FILE, "button_box", TRUE);
-	else error_message (_("Unknown mode."));
-	glade_xml_signal_autoconnect (button_box_xml);
-	button_box = glade_xml_get_widget (button_box_xml, "button_box");
-	/* we have to add the accel_group of button_box to the main_window
-	 * in order to get working accelerators.
-	 */
-	
-	closure_list = gtk_widget_list_accel_closures (
-		glade_xml_get_widget (button_box_xml, "button_1"));
-	accel_group = gtk_accel_group_from_accel_closure (
-		(GClosure *) closure_list->data);
-	gtk_window_add_accel_group ((GtkWindow *) glade_xml_get_widget (
-		main_window_xml, "main_window"), accel_group);
-	/* the buttons we want */
-	
-	/* find old buttons and remove them */
-	box = glade_xml_get_widget (main_window_xml, "window_vbox");
-	gtk_box_pack_start ((GtkBox *) box, button_box, TRUE, TRUE, 0);
-	gtk_widget_show (button_box);
-	
-	/* associate buttons with some data */
-	if (mode == BASIC_MODE) 
+		box = glade_xml_get_widget (main_window_xml, "window_vbox");
+		ui_pack_from_xml (box, 3, button_box_xml, "button_box", 
+			"button_1", TRUE, TRUE);
 		set_basic_object_data (button_box_xml);
-	else if (mode == SCIENTIFIC_MODE) 
+	} else if (mode == SCIENTIFIC_MODE) {
+		button_box_xml = glade_file_open (SCIENTIFIC_GLADE_FILE, "button_box", TRUE);
+		box = glade_xml_get_widget (main_window_xml, "window_vbox");
+		ui_pack_from_xml (box, 3, button_box_xml, "button_box", 
+			"button_1", TRUE, TRUE);
 		set_scientific_object_data (button_box_xml);
-	else error_message (_("Unknown mode."));
+	} else error_message ("Unknown mode in \"ui_main_window_buttons_create\"");
 	
 	/* update "decimal point" button to locale's decimal point */
 	dec_point[0] = DEFAULT_DEC_POINT;
@@ -278,10 +367,13 @@ is not supported: >%s<\nYou might face problems when using %s! %s\n)"),
 		PACKAGE, locale_settings->decimal_point, PROG_NAME, BUG_REPORT);
 	} else dec_point[0] = locale_settings->decimal_point[0];
 	dec_point[1] = '\0';
-
 	gtk_button_set_label ((GtkButton *) glade_xml_get_widget (
 		button_box_xml, "button_point"), dec_point);
 }
+
+/* set_table_child_size. Function argument for set_all_buttons_property.
+ * sets the size.
+ */
 
 static void set_table_child_size (gpointer data, gpointer user_data)
 {
@@ -293,15 +385,21 @@ static void set_table_child_size (gpointer data, gpointer user_data)
 	gtk_widget_set_size_request (table_child->widget, size->width, size->height);
 }
 
+/* set_table_child_font. Function argument for set_all_buttons_property.
+ * sets the font of buttons. We have to set the label of the button!
+ */
+
 static void set_table_child_font (gpointer data, gpointer user_data)
 {
 	PangoFontDescription	*font;
 	GtkTableChild		*table_child;
-	GtkWidget		*w;
+	GtkWidget		*w=NULL;
 	
 	font = user_data;				/* dereference */
 	table_child = data;
-	w = gtk_bin_get_child ((GtkBin *)(table_child->widget));
+	
+	if (GTK_IS_BIN (table_child->widget)) 
+		w = gtk_bin_get_child ((GtkBin *)(table_child->widget));
 	/* if it's a normal button, w is now the label we want to font-change.
 	 * if it's a popup button, we have to get the most left child first.
 	 */
@@ -310,14 +408,21 @@ static void set_table_child_font (gpointer data, gpointer user_data)
 	// else do nothing
 }
 
+/* set_all_buttons_property. calls func with argument data for every button.
+ */
+
 static void set_all_buttons_property (GFunc func, gpointer data)
 {
 	GtkTable	*table;
 	
 	/* at first the display control table. always there; somehor */
-	table = (GtkTable *) glade_xml_get_widget (main_window_xml, 
+	table = (GtkTable *) glade_xml_get_widget (dispctrl_xml, 
 		"table_dispctrl");
+	// dispctrl_right has an extra table for cosmetic reasons.
+	if (GTK_IS_TABLE (((GtkTableChild *)table->children->data)->widget))
+		table = (GtkTable *) ((GtkTableChild *)table->children->data)->widget;
 	g_list_foreach (table->children, func, data);
+	
 	/* now depending on mode the remaining buttons */
 	if (prefs.mode == BASIC_MODE) {
 		table = (GtkTable *) glade_xml_get_widget (button_box_xml, 
@@ -335,8 +440,11 @@ static void set_all_buttons_property (GFunc func, gpointer data)
 			"table_func_buttons");
 		g_list_foreach (table->children, func, data);
 	}
-	else error_message (_("Unknown mode."));
+	else error_message ("Unknown mode in \"set_all_buttons_property\"");
 }
+
+/* set_all_buttons_size. gateway for set_all_buttons_property.
+ */
 
 void set_all_buttons_size (int width, int height)
 {
@@ -346,6 +454,9 @@ void set_all_buttons_size (int width, int height)
 	size.height = height;
 	set_all_buttons_property (set_table_child_size, (gpointer) &size);
 }
+
+/* set_all_buttons_font. gateway for set_all_buttons_property.
+ */
 
 void set_all_buttons_font (char *font_string)
 {
@@ -360,16 +471,12 @@ gboolean button_deactivation (gpointer data)
 	GtkToggleButton 	*b;
 	
 	b = (GtkToggleButton*) data;
-	//_gtk_button_set_depressed (b, FALSE);
-	//gtk_widget_set_state ((GtkWidget *) b, GTK_STATE_NORMAL);
 	gtk_toggle_button_set_active (b, FALSE);
 	return FALSE;	
 }
 
 void button_activation (GtkToggleButton *b)
 {
-	//gtk_widget_set_state ((GtkWidget *) b, GTK_STATE_ACTIVE);
-	//_gtk_button_set_depressed (b, TRUE);
 	g_timeout_add (100, button_deactivation, (gpointer) b);
 }
 

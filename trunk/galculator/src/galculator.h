@@ -1,7 +1,7 @@
 /*
  *  galculator.h - general definitions.
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
+ *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -31,13 +31,15 @@
 
 #define CONFIG_FILE_NAME ".galculator"
 
-#define MAIN_GLADE_FILE 	PACKAGE_GLADE_DIR "/main_frame.glade"
-#define SCIENTIFIC_GLADE_FILE	PACKAGE_GLADE_DIR "/scientific_buttons.glade"
-#define BASIC_GLADE_FILE	PACKAGE_GLADE_DIR "/basic_buttons.glade"
-#define ABOUT_GLADE_FILE 	PACKAGE_GLADE_DIR "/about.glade"
-#define PREFS_GLADE_FILE 	PACKAGE_GLADE_DIR "/prefs.glade"
-#define FONT_GLADE_FILE 	PACKAGE_GLADE_DIR "/font.glade"
-#define COLOR_GLADE_FILE 	PACKAGE_GLADE_DIR "/color.glade"
+#define MAIN_GLADE_FILE 		PACKAGE_GLADE_DIR "/main_frame.glade"
+#define SCIENTIFIC_GLADE_FILE		PACKAGE_GLADE_DIR "/scientific_buttons.glade"
+#define BASIC_GLADE_FILE		PACKAGE_GLADE_DIR "/basic_buttons.glade"
+#define ABOUT_GLADE_FILE 		PACKAGE_GLADE_DIR "/about.glade"
+#define PREFS_GLADE_FILE 		PACKAGE_GLADE_DIR "/prefs.glade"
+#define FONT_GLADE_FILE 		PACKAGE_GLADE_DIR "/font.glade"
+#define COLOR_GLADE_FILE 		PACKAGE_GLADE_DIR "/color.glade"
+#define DISPCTRL_RIGHT_GLADE_FILE	PACKAGE_GLADE_DIR "/dispctrl_right.glade"
+#define DISPCTRL_BOTTOM_GLADE_FILE	PACKAGE_GLADE_DIR "/dispctrl_bottom.glade"
 
 #define MY_INFINITY_STRING "inf"
 
@@ -81,7 +83,7 @@ enum {
 };
 
 enum {
-	CS_PAN,			// __P__seudo __A__lgebraic __N__otation
+	CS_PAN,			// _P_seudo _A_lgebraic _N_otation
 	CS_RPN,			// reverse polish notation
 	//CS_FORMULA,
 	NR_NOTATION_MODES
@@ -103,6 +105,13 @@ enum {
 	VALUE_COLUMN,
 	DESC_COLUMN,
 	NR_CONST_COLUMNS
+};
+
+enum {
+	DISPCTRL_NONE,
+	DISPCTRL_RIGHT,
+	DISPCTRL_BOTTOM,
+	NR_DISPCTRL_LOCS
 };
 
 typedef struct {

@@ -1,7 +1,7 @@
 /*
  *  callbacks.c - functions to handle GUI events.
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
+ *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -23,10 +23,6 @@
 #include <string.h>
 #include <math.h>
 
-#include <gtk/gtk.h>
-#include <gdk/gdkkeysyms.h>
-#include <glade/glade.h>
-
 #include "calc_basic.h"
 #include "galculator.h"
 #include "math_functions.h"
@@ -35,6 +31,10 @@
 #include "config_file.h"
 #include "callbacks.h"
 #include "ui.h"
+
+#include <gtk/gtk.h>
+#include <gdk/gdkkeysyms.h>
+#include <glade/glade.h>
 
 #define SELECT_RESULT_FONT _("Select result font")
 #define SELECT_MODULE_FONT _("Select module font")
@@ -45,7 +45,6 @@
 #define SELECT_BUTTON_FONT _("Select button font")	
 
 static GtkWidget		*font_dialog, *color_dialog;
-static GtkTreeIter 		current_list_iter;
 
 /* File */
 
@@ -56,6 +55,12 @@ on_quit_activate                      (GtkMenuItem     *menuitem,
 	// remember display's value
 	if (prefs.rem_value) g_free (prefs.rem_value);
 	prefs.rem_value = display_result_get();
+	if (prefs.mode == SCIENTIFIC_MODE) {
+		// save number and angle mode only in scientific mode.
+		prefs.def_number = current_status.number;
+		prefs.def_angle = current_status.angle;
+	}
+	prefs.def_notation = current_status.notation;
 	gtk_main_quit();
 }
 
@@ -76,7 +81,7 @@ on_about_activate                     (GtkMenuItem     *menuitem,
 	gtk_label_set_justify (about_label, GTK_JUSTIFY_CENTER);
 	about_text = g_strdup_printf (_("<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n\
 <span size=\"large\">a GTK 2 based scientific calculator</span>\n\n\
-(c) 2002-2003 by Simon Floery (simon.floery@gmx.at)"), PROG_NAME, VERSION);
+(c) 2002-2003 by Simon Floery (chimaira@users.sf.net)"), PROG_NAME, VERSION);
 	gtk_label_set_markup (about_label, \
 		about_text);
 	gtk_widget_show (about_dialog);
@@ -173,7 +178,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,
 			display_result_set_double (rpn_stack_operation (current_token));
 			current_status.rpn_have_result = TRUE;
 		}
-	} else fprintf (stderr, _("[%s] on_operation_button_clicked: unknown status. %s\n"), PROG_NAME, BUG_REPORT);
+	} else error_message ("on_operation_button_clicked: unknown status");
 
 	current_status.calc_entry_start_new = TRUE;
 }
@@ -196,6 +201,7 @@ on_function_button_clicked             (GtkToggleButton	*button,
 
 	memcpy (func, g_object_get_data (G_OBJECT (button), "func"), sizeof (func));
 	is_trigonometric = (gboolean) g_object_get_data (G_OBJECT (button), "is_trigonometric");
+	if (!func) error_message ("This button has no function associated with");
 	/* hyperbolic versions of trigonometric functions doesn't have to pay attention to
 		angle base. therefore do it like a normal function
 	 */
@@ -255,7 +261,7 @@ on_tbutton_fmod_clicked                (GtkButton       *button,
 		current_status.fmod ^= 1 << CS_FMOD_FLAG_INV;
 	else if (strcmp (gtk_button_get_label (button), "hyp") == 0)
 		current_status.fmod ^= 1 << CS_FMOD_FLAG_HYP;
-	else error_message (_("unknown function modifier (INV/HYP)"));
+	else error_message ("unknown function modifier (INV/HYP)");
 }
 
 void
@@ -267,7 +273,8 @@ on_gfunc_button_clicked                (GtkToggleButton       *button,
 	if (gtk_toggle_button_get_active(button) == FALSE) return;
 	button_activation (button);
 	func = g_object_get_data (G_OBJECT (button), "func");
-	func();
+	if (func) func();
+	else error_message ("This button has no function associated with");
 }
 
 /*
@@ -279,7 +286,7 @@ on_dec_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	printf ("dec\n");
+	//printf ("dec\n");
 	display_change_option (CS_DEC, DISPLAY_OPT_NUMBER);
 }
 
@@ -289,7 +296,7 @@ on_hex_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	printf ("hex\n");
+	//printf ("hex\n");
 	display_change_option (CS_HEX, DISPLAY_OPT_NUMBER);
 }
 
@@ -299,7 +306,7 @@ on_oct_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	printf ("oct\n");
+	//printf ("oct\n");
 	display_change_option (CS_OCT, DISPLAY_OPT_NUMBER);
 }
 
@@ -309,7 +316,7 @@ on_bin_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	printf ("bin\n");
+	//printf ("bin\n");
 	display_change_option (CS_BIN, DISPLAY_OPT_NUMBER);
 }
 
@@ -319,7 +326,7 @@ on_deg_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	printf ("deg\n");
+	//printf ("deg\n");
 	display_change_option (CS_DEG, DISPLAY_OPT_ANGLE);
 }
 
@@ -329,7 +336,7 @@ on_rad_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	printf ("rad\n");
+	//printf ("rad\n");
 	display_change_option (CS_RAD, DISPLAY_OPT_ANGLE);
 }
 
@@ -339,7 +346,7 @@ on_grad_activate                      (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	printf ("grad\n");
+	//printf ("grad\n");
 	display_change_option (CS_GRAD, DISPLAY_OPT_ANGLE);
 }
 
@@ -350,13 +357,13 @@ on_ordinary_activate                  (GtkMenuItem     *menuitem,
 {
 	GtkWidget	*w;
 	
-	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	printf ("pan\n");
+	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
+	//printf ("pan\n");
 	display_change_option (CS_PAN, DISPLAY_OPT_NOTATION);
 	rpn_free ();
 	all_clear ();
 	w = glade_xml_get_widget (button_box_xml, "button_enter");
-	if (w) gtk_button_set_label ((GtkButton *)w, "=");
+	if (w) gtk_button_set_label ((GtkButton *)w, _("="));
 	w = glade_xml_get_widget (button_box_xml, "button_pow");
 	if (w) gtk_button_set_label ((GtkButton *)w, _("x^y"));
 }
@@ -368,8 +375,8 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
 {
 	GtkWidget	*w;
 	
-	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	printf ("rpn\n");
+	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
+	//printf ("rpn\n");
 	display_change_option (CS_RPN, DISPLAY_OPT_NOTATION);
 	alg_free ();
 	all_clear ();
@@ -383,10 +390,9 @@ void
 on_display_control_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
-	if (prefs.mode == BASIC_MODE) return;
 	prefs.vis_dispctrl = 
 		gtk_check_menu_item_get_active((GtkCheckMenuItem *) menuitem);
-	set_widget_visibility (main_window_xml, "table_dispctrl",
+	set_widget_visibility (dispctrl_xml, "table_dispctrl", 
 		prefs.vis_dispctrl);
 }
 
@@ -431,13 +437,26 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 	GtkWidget	*menu_item;
 	
 	if (((GtkCheckMenuItem *) menuitem)->active == FALSE) return;
+	if (prefs.mode == SCIENTIFIC_MODE) {
+		// remember number and angle. notation is active in basic mode
+		prefs.def_number = current_status.number;
+		prefs.def_angle = current_status.angle;
+	}
 	prefs.mode = BASIC_MODE;
-	activate_menu_item ("dec");
+	
 	ui_main_window_buttons_destroy ();
 	ui_main_window_buttons_create (prefs.mode);
+	ui_main_window_set_dispctrl (DISPCTRL_BOTTOM);
+
 	display_update_modules();
-	// hide them. but they will stil work.
-	set_widget_visibility (main_window_xml, "table_dispctrl", FALSE);
+	
+	activate_menu_item ("dec");
+	
+	menu_item = glade_xml_get_widget (main_window_xml, "display_control");
+	if (((GtkCheckMenuItem *) menu_item)->active == prefs.vis_dispctrl)
+			gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+	gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+	
 	update_active_buttons (current_status.number, current_status.notation);
 	menu_item = glade_xml_get_widget (main_window_xml, "functions");
 	gtk_widget_set_sensitive (menu_item, FALSE);
@@ -452,18 +471,22 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 }
 
 void
-on_scientific_mode_activate (GtkMenuItem     *menuitem,
-			gpointer         user_data)
+on_scientific_mode_activate (GtkMenuItem *menuitem,
+				gpointer user_data)
 {
 	GtkWidget	*menu_item;
 	
 	if (((GtkCheckMenuItem *) menuitem)->active == FALSE) return;
 	prefs.mode = SCIENTIFIC_MODE;
+
 	ui_main_window_buttons_destroy ();
 	ui_main_window_buttons_create (prefs.mode);
+	ui_main_window_set_dispctrl (DISPCTRL_RIGHT);
+	
 	display_update_modules();
-	set_widget_visibility (main_window_xml, "table_dispctrl", 
-		prefs.vis_dispctrl);
+	display_module_number_activate (prefs.def_number);
+	display_module_angle_activate (prefs.def_angle);
+
 	update_active_buttons (current_status.number, current_status.notation);
 	
 	menu_item = glade_xml_get_widget (main_window_xml, "functions");
@@ -474,6 +497,11 @@ on_scientific_mode_activate (GtkMenuItem     *menuitem,
 	 * state here.
 	 */
 	if (((GtkCheckMenuItem *) menu_item)->active == prefs.vis_funcs) 
+			gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+	gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+	
+	menu_item = glade_xml_get_widget (main_window_xml, "display_control");
+	if (((GtkCheckMenuItem *) menu_item)->active == prefs.vis_dispctrl)
 			gtk_menu_item_activate ((GtkMenuItem *) menu_item);
 	gtk_menu_item_activate ((GtkMenuItem *) menu_item);
 	
@@ -532,6 +560,7 @@ void const_list_selection_changed_cb (GtkTreeSelection *selection, gpointer data
         GtkTreeModel 	*model;
 	char 		*string;
 	GtkWidget	*entry;
+	GtkTreeIter 	current_list_iter;
 	
         if (gtk_tree_selection_get_selected (selection, &model, &current_list_iter))
         {
@@ -653,7 +682,8 @@ on_color_ok_button_clicked             (GtkButton       *button,
 		prefs.inact_mod_color = gdk_color_to_string(color);
 		display_update_tags();
 	}
-	else fprintf (stderr, _("[%s] Color Dialog (%s) not found. %s\n"), PACKAGE, title, BUG_REPORT);
+	else fprintf (stderr, "[%s] Color Dialog (%s) not found. %s\n", PACKAGE, 
+		title, BUG_REPORT);
 
 	gtk_widget_really_modify_fg (da, color);
 	
@@ -696,7 +726,8 @@ on_font_ok_button_clicked              (GtkButton       *button,
 		set_all_buttons_font (button_font);	
 		g_free (button_font);
 	}
-	else fprintf (stderr, _("[%s] Font Dialog (%s) not found. %s\n"), PACKAGE, title, BUG_REPORT);
+	else fprintf (stderr, "[%s] Font Dialog (%s) not found. %s\n", PACKAGE, 
+		title, BUG_REPORT);
 	
 	gtk_widget_destroy (font_dialog);
 	
@@ -810,7 +841,7 @@ void on_prefs_rem_display_toggled (GtkToggleButton *togglebutton,
 	prefs.rem_display = gtk_toggle_button_get_active (togglebutton);
 	// only is important when leaving galculator
 }
-
+/*
 void on_prefs_def_number_changed (GtkOptionMenu *optionmenu,
 				gpointer user_data)
 {
@@ -828,7 +859,7 @@ void on_prefs_def_notation_changed (GtkOptionMenu *optionmenu,
 {
 	prefs.def_notation = gtk_option_menu_get_history (optionmenu);
 }
-
+*/
 void on_prefs_button_width_changed (GtkSpinButton *spinbutton,
 					GtkScrollType arg1,
 					gpointer user_data)
@@ -838,8 +869,8 @@ void on_prefs_button_width_changed (GtkSpinButton *spinbutton,
 }
 
 void on_prefs_button_height_changed (GtkSpinButton *spinbutton,
-											GtkScrollType arg1,
-											gpointer user_data)
+					GtkScrollType arg1,
+					gpointer user_data)
 {	
 	prefs.button_height = (int) gtk_spin_button_get_value (spinbutton);
 	set_all_buttons_size (prefs.button_width, prefs.button_height);
@@ -858,10 +889,9 @@ void ms_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	memory.data[index] = display_result_get_double();
 }
 
-
 void
-on_ms_button_clicked             (GtkToggleButton       *button,
-				gpointer         user_data)
+on_ms_button_clicked (GtkToggleButton       *button,
+			gpointer user_data)
 {
 	GtkWidget	*menu;
 	
@@ -988,17 +1018,29 @@ void on_prefs_cadd_clicked (GtkButton *button, gpointer user_data)
 	GtkWidget		*entry;
 	GtkTreeIter   		iter;
 	int			nr_consts;
+	char 			*name, *value, *desc;
 	
+	entry = glade_xml_get_widget (prefs_xml, "prefs_cname_entry");
+	name = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
+        entry = glade_xml_get_widget (prefs_xml, "prefs_cvalue_entry");
+	value = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
+        entry = glade_xml_get_widget (prefs_xml, "prefs_cdesc_entry");
+	desc = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
+	
+	if ((strlen(name) == 0) || (strlen(value) == 0) || (strlen(desc) == 0)) {
+		g_free (name);
+		g_free (value);
+		g_free (desc);
+		return;
+	}
+		
 	nr_consts = store->length;
 	constant = (s_constant *) realloc (constant, (nr_consts + 2) * sizeof(s_constant));
 	constant[nr_consts + 1].desc = NULL;
 	
-	entry = glade_xml_get_widget (prefs_xml, "prefs_cname_entry");
-	constant[nr_consts].name = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
-        entry = glade_xml_get_widget (prefs_xml, "prefs_cvalue_entry");
-	constant[nr_consts].value = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
-        entry = glade_xml_get_widget (prefs_xml, "prefs_cdesc_entry");
-	constant[nr_consts].desc = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
+	constant[nr_consts].name = name;
+	constant[nr_consts].value = value;
+	constant[nr_consts].desc = desc;
 	
 	gtk_list_store_append (store, &iter);	
 	gtk_list_store_set (store, &iter, 
@@ -1012,6 +1054,11 @@ void on_prefs_cdelete_clicked (GtkButton *button, gpointer user_data)
 {
 	GtkTreePath		*path;
 	int			index, counter, nr_consts;
+	GtkTreeIter		current_list_iter;
+		
+	if (!gtk_tree_selection_get_selected (gtk_tree_view_get_selection(
+		(GtkTreeView *)glade_xml_get_widget (prefs_xml, "treeview1")),
+		NULL, &current_list_iter)) return;
 	
 	nr_consts = store->length;
 	path = gtk_tree_model_get_path (GTK_TREE_MODEL (store), &current_list_iter);
@@ -1031,9 +1078,14 @@ void on_prefs_cdelete_clicked (GtkButton *button, gpointer user_data)
 
 void on_prefs_cupdate_clicked (GtkButton *button, gpointer user_data)
 {
-	GtkWidget		*entry;
-	GtkTreePath		*path;
-	int			index;
+	GtkWidget	*entry;
+	GtkTreePath	*path;
+	int		index;
+	GtkTreeIter 	current_list_iter;
+	
+	if (!gtk_tree_selection_get_selected (gtk_tree_view_get_selection(
+		(GtkTreeView *)glade_xml_get_widget (prefs_xml, "treeview1")),
+		NULL, &current_list_iter)) return;
 	
 	path = gtk_tree_model_get_path (GTK_TREE_MODEL (store), &current_list_iter);
 	index = *(gtk_tree_path_get_indices (path));
@@ -1050,8 +1102,6 @@ void on_prefs_cupdate_clicked (GtkButton *button, gpointer user_data)
 		VALUE_COLUMN, constant[index].value, 
 		DESC_COLUMN, constant[index].desc, 
 		-1);
-		
-	
 }
 
 void on_prefs_hex_bits_value_changed (GtkSpinButton *spinbutton,
@@ -1139,5 +1189,6 @@ void on_main_window_check_resize (GtkContainer *container,
 	gtk_window_resize ((GtkWindow *)gtk_widget_get_toplevel((GtkWidget *)container), 1, 1);
 	itsme = TRUE;
 }
+
 
 /* END */

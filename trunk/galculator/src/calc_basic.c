@@ -2,7 +2,7 @@
  *  calc_basic.c - arithmetic precedence handling and computing in basic 
  *			calculator mode.
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
+ *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -78,7 +78,7 @@ void debug_input ()
 	printf ("\t\tdisplay value: %f\n", alg_add_token (current_token));
 }
 
-/* reduce. op1 is before op2 in the computation.
+/* reduce. TRUE if op1 comes before op2 in a computation.
  */
 
 static int reduce (char op1, char op2)
@@ -152,7 +152,7 @@ character. %s\n"), PROG_NAME, operator, BUG_REPORT);
 		result = left_hand;
 		break;
 	}	
-	if (alg_debug + rpn_debug > 0) fprintf (stderr, _("[%s] computing: %f %c %f = %f\n"), 
+	if (alg_debug + rpn_debug > 0) fprintf (stderr, "[%s] computing: %f %c %f = %f\n", 
 		PROG_NAME, left_hand, operator, right_hand, result);
 	return result;
 }
@@ -300,7 +300,7 @@ void rpn_init (int debug_level)
 void rpn_stack_push (double number)
 {
 	rpn_stack = g_array_append_val (rpn_stack, number);
-	if (rpn_debug > 0) fprintf (stderr, _("[%s] RPN stack size is %i.\n"), 
+	if (rpn_debug > 0) fprintf (stderr, "[%s] RPN stack size is %i.\n", 
 		PROG_NAME, rpn_stack->len);
 }
 
@@ -323,7 +323,7 @@ double rpn_stack_operation (s_cb_token current_token)
 	/* compute it */
 	return_value = compute_expression (left_hand, current_token.operation, 
 		current_token.number.value);
-	if (rpn_debug > 0) fprintf (stderr, _("[%s] RPN stack size is %i.\n"), 
+	if (rpn_debug > 0) fprintf (stderr, "[%s] RPN stack size is %i.\n", 
 		PROG_NAME, rpn_stack->len);
 	return return_value;
 }

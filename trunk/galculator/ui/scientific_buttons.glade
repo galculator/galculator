@@ -10,9 +10,6 @@
   <property name="modal">False</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
-  <accessibility>
-    <atkproperty name="AtkObject::accessible_description" translatable="yes">The main program window.</atkproperty>
-  </accessibility>
   <signal name="destroy" handler="gtk_main_quit" last_modification_time="Thu, 05 Sep 2002 06:48:44 GMT"/>
 
   <child>
@@ -26,19 +23,19 @@
 
       <child>
 	<widget class="GtkHBox" id="button_box">
+	  <property name="border_width">6</property>
 	  <property name="visible">True</property>
 	  <property name="homogeneous">False</property>
-	  <property name="spacing">0</property>
+	  <property name="spacing">12</property>
 
 	  <child>
 	    <widget class="GtkTable" id="table_func_buttons">
-	      <property name="border_width">5</property>
 	      <property name="visible">True</property>
 	      <property name="n_rows">5</property>
 	      <property name="n_columns">3</property>
 	      <property name="homogeneous">False</property>
-	      <property name="row_spacing">5</property>
-	      <property name="column_spacing">5</property>
+	      <property name="row_spacing">6</property>
+	      <property name="column_spacing">6</property>
 
 	      <child>
 		<widget class="GtkToggleButton" id="button_tan">
@@ -269,14 +266,17 @@
 		  <property name="height_request">25</property>
 		  <property name="visible">True</property>
 		  <property name="sensitive">False</property>
-		  <property name="tooltip" translatable="yes">User defined functions (coming soon ...)</property>
+		  <property name="tooltip" translatable="yes">User defined functions</property>
 		  <property name="can_focus">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
+		  <accessibility>
+		    <atkproperty name="AtkObject::accessible_description" translatable="yes">User defined functions</atkproperty>
+		  </accessibility>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Tue, 17 Sep 2002 09:13:28 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <accelerator key="e" modifiers="GDK_CONTROL_MASK | GDK_MOD1_MASK" signal="clicked"/>
+		  <accelerator key="u" modifiers="GDK_MOD1_MASK" signal="clicked"/>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox5">
@@ -343,7 +343,7 @@
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_constant_button_clicked" last_modification_time="Sun, 08 Sep 2002 13:22:41 GMT"/>
-		  <accelerator key="e" modifiers="GDK_MOD1_MASK" signal="clicked"/>
+		  <accelerator key="o" modifiers="GDK_MOD1_MASK" signal="clicked"/>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox1">
@@ -413,6 +413,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Mon, 09 Jun 2003 22:21:36 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <accelerator key="percent" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">0</property>
@@ -504,13 +505,12 @@
 
 	  <child>
 	    <widget class="GtkTable" id="table_bin_buttons">
-	      <property name="border_width">5</property>
 	      <property name="visible">True</property>
 	      <property name="n_rows">5</property>
 	      <property name="n_columns">2</property>
 	      <property name="homogeneous">False</property>
-	      <property name="row_spacing">5</property>
-	      <property name="column_spacing">5</property>
+	      <property name="row_spacing">6</property>
+	      <property name="column_spacing">6</property>
 
 	      <child>
 		<widget class="GtkToggleButton" id="button_and">
@@ -768,13 +768,12 @@
 
 	  <child>
 	    <widget class="GtkTable" id="table_standard_buttons">
-	      <property name="border_width">5</property>
 	      <property name="visible">True</property>
 	      <property name="n_rows">5</property>
 	      <property name="n_columns">5</property>
 	      <property name="homogeneous">False</property>
-	      <property name="row_spacing">5</property>
-	      <property name="column_spacing">5</property>
+	      <property name="row_spacing">6</property>
+	      <property name="column_spacing">6</property>
 
 	      <child>
 		<widget class="GtkToggleButton" id="button_7">
@@ -892,7 +891,8 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:41 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <accelerator key="percent" modifiers="0" signal="clicked"/>
+		  <accelerator key="M" modifiers="0" signal="clicked"/>
+		  <accelerator key="m" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">4</property>
@@ -1138,6 +1138,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_mplus_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:23:58 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <accelerator key="plus" modifiers="GDK_MOD1_MASK" signal="clicked"/>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox4">
@@ -1205,6 +1206,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_mr_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:04:30 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <accelerator key="r" modifiers="GDK_MOD1_MASK" signal="clicked"/>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox3">
@@ -1272,6 +1274,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_ms_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:23:49 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <accelerator key="s" modifiers="GDK_MOD1_MASK" signal="clicked"/>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox2">

@@ -112,7 +112,7 @@
 		      <child>
 			<widget class="GtkLabel" id="label29">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">    </property>
+			  <property name="label" translatable="no">    </property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -335,7 +335,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label43">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -376,7 +376,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label44">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -420,7 +420,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label47">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -461,7 +461,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label48">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -505,7 +505,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label49">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -546,7 +546,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label50">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -590,7 +590,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label45">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -631,7 +631,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label46">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes"> </property>
+				      <property name="label" translatable="no"> </property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -944,7 +944,7 @@
 		      <child>
 			<widget class="GtkLabel" id="label36">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">    </property>
+			  <property name="label" translatable="no">    </property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1094,7 +1094,7 @@
 		      <child>
 			<widget class="GtkLabel" id="label33">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">    </property>
+			  <property name="label" translatable="no">    </property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1315,7 +1315,7 @@
 		      <child>
 			<widget class="GtkLabel" id="label53">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">    </property>
+			  <property name="label" translatable="no">    </property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1694,7 +1694,7 @@
 		      <child>
 			<widget class="GtkLabel" id="label62">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">    </property>
+			  <property name="label" translatable="no">    </property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1846,7 +1846,7 @@
 		      <child>
 			<widget class="GtkLabel" id="label65">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">    </property>
+			  <property name="label" translatable="no">    </property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1998,7 +1998,7 @@
 		      <child>
 			<widget class="GtkLabel" id="label66">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">    </property>
+			  <property name="label" translatable="no">    </property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -2226,7 +2226,7 @@
 		      <child>
 			<widget class="GtkLabel" id="label39">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">    </property>
+			  <property name="label" translatable="no">    </property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -2247,49 +2247,11 @@
 		      <child>
 			<widget class="GtkTable" id="table1">
 			  <property name="visible">True</property>
-			  <property name="n_rows">4</property>
-			  <property name="n_columns">2</property>
+			  <property name="n_rows">1</property>
+			  <property name="n_columns">1</property>
 			  <property name="homogeneous">False</property>
 			  <property name="row_spacing">6</property>
 			  <property name="column_spacing">12</property>
-
-			  <child>
-			    <widget class="GtkOptionMenu" id="prefs_def_notation">
-			      <property name="visible">True</property>
-			      <property name="can_focus">True</property>
-			      <property name="history">0</property>
-			      <signal name="changed" handler="on_prefs_def_notation_changed" last_modification_time="Mon, 12 May 2003 17:14:05 GMT"/>
-
-			      <child>
-				<widget class="GtkMenu" id="menu3">
-
-				  <child>
-				    <widget class="GtkMenuItem" id="algebraic1">
-				      <property name="visible">True</property>
-				      <property name="label" translatable="yes">Algebraic</property>
-				      <property name="use_underline">True</property>
-				    </widget>
-				  </child>
-
-				  <child>
-				    <widget class="GtkMenuItem" id="reverse_polish1">
-				      <property name="visible">True</property>
-				      <property name="label" translatable="yes">Reverse Polish (RPN)</property>
-				      <property name="use_underline">True</property>
-				    </widget>
-				  </child>
-				</widget>
-			      </child>
-			    </widget>
-			    <packing>
-			      <property name="left_attach">1</property>
-			      <property name="right_attach">2</property>
-			      <property name="top_attach">2</property>
-			      <property name="bottom_attach">3</property>
-			      <property name="x_options">fill</property>
-			      <property name="y_options"></property>
-			    </packing>
-			  </child>
 
 			  <child>
 			    <widget class="GtkCheckButton" id="prefs_rem_display">
@@ -2305,177 +2267,11 @@
 			    </widget>
 			    <packing>
 			      <property name="left_attach">0</property>
-			      <property name="right_attach">2</property>
-			      <property name="top_attach">3</property>
-			      <property name="bottom_attach">4</property>
-			      <property name="x_options">fill</property>
-			      <property name="y_options"></property>
-			    </packing>
-			  </child>
-
-			  <child>
-			    <widget class="GtkOptionMenu" id="prefs_def_angle">
-			      <property name="visible">True</property>
-			      <property name="can_focus">True</property>
-			      <property name="history">0</property>
-			      <signal name="changed" handler="on_prefs_def_angle_changed" last_modification_time="Mon, 18 Aug 2003 15:00:05 GMT"/>
-
-			      <child>
-				<widget class="GtkMenu" id="menu2">
-
-				  <child>
-				    <widget class="GtkMenuItem" id="degree1">
-				      <property name="visible">True</property>
-				      <property name="label" translatable="yes">Degrees</property>
-				      <property name="use_underline">True</property>
-				    </widget>
-				  </child>
-
-				  <child>
-				    <widget class="GtkMenuItem" id="radiant1">
-				      <property name="visible">True</property>
-				      <property name="label" translatable="yes">Radians</property>
-				      <property name="use_underline">True</property>
-				    </widget>
-				  </child>
-
-				  <child>
-				    <widget class="GtkMenuItem" id="grad1">
-				      <property name="visible">True</property>
-				      <property name="label" translatable="yes">Gradians</property>
-				      <property name="use_underline">True</property>
-				    </widget>
-				  </child>
-				</widget>
-			      </child>
-			    </widget>
-			    <packing>
-			      <property name="left_attach">1</property>
-			      <property name="right_attach">2</property>
-			      <property name="top_attach">1</property>
-			      <property name="bottom_attach">2</property>
-			      <property name="x_options">fill</property>
-			      <property name="y_options"></property>
-			    </packing>
-			  </child>
-
-			  <child>
-			    <widget class="GtkOptionMenu" id="prefs_def_number">
-			      <property name="visible">True</property>
-			      <property name="can_focus">True</property>
-			      <property name="history">0</property>
-			      <signal name="changed" handler="on_prefs_def_number_changed" last_modification_time="Mon, 12 May 2003 17:13:58 GMT"/>
-
-			      <child>
-				<widget class="GtkMenu" id="menu1">
-
-				  <child>
-				    <widget class="GtkMenuItem" id="decimal1">
-				      <property name="visible">True</property>
-				      <property name="label" translatable="yes">Decimal</property>
-				      <property name="use_underline">True</property>
-				    </widget>
-				  </child>
-
-				  <child>
-				    <widget class="GtkMenuItem" id="hexadecimal1">
-				      <property name="visible">True</property>
-				      <property name="label" translatable="yes">Hexadecimal</property>
-				      <property name="use_underline">True</property>
-				    </widget>
-				  </child>
-
-				  <child>
-				    <widget class="GtkMenuItem" id="octal1">
-				      <property name="visible">True</property>
-				      <property name="label" translatable="yes">Octal</property>
-				      <property name="use_underline">True</property>
-				    </widget>
-				  </child>
-
-				  <child>
-				    <widget class="GtkMenuItem" id="binary1">
-				      <property name="visible">True</property>
-				      <property name="label" translatable="yes">Binary</property>
-				      <property name="use_underline">True</property>
-				    </widget>
-				  </child>
-				</widget>
-			      </child>
-			    </widget>
-			    <packing>
-			      <property name="left_attach">1</property>
-			      <property name="right_attach">2</property>
-			      <property name="top_attach">0</property>
-			      <property name="bottom_attach">1</property>
-			      <property name="x_options">fill</property>
-			      <property name="y_options"></property>
-			    </packing>
-			  </child>
-
-			  <child>
-			    <widget class="GtkLabel" id="prefs_def_angle_label">
-			      <property name="visible">True</property>
-			      <property name="label" translatable="yes">Default angle unit:</property>
-			      <property name="use_underline">False</property>
-			      <property name="use_markup">False</property>
-			      <property name="justify">GTK_JUSTIFY_LEFT</property>
-			      <property name="wrap">False</property>
-			      <property name="selectable">False</property>
-			      <property name="xalign">0</property>
-			      <property name="yalign">0.5</property>
-			      <property name="xpad">0</property>
-			      <property name="ypad">0</property>
-			    </widget>
-			    <packing>
-			      <property name="left_attach">0</property>
-			      <property name="right_attach">1</property>
-			      <property name="top_attach">1</property>
-			      <property name="bottom_attach">2</property>
-			    </packing>
-			  </child>
-
-			  <child>
-			    <widget class="GtkLabel" id="prefs_def_number_label">
-			      <property name="visible">True</property>
-			      <property name="label" translatable="yes">Default number base:</property>
-			      <property name="use_underline">False</property>
-			      <property name="use_markup">False</property>
-			      <property name="justify">GTK_JUSTIFY_LEFT</property>
-			      <property name="wrap">False</property>
-			      <property name="selectable">False</property>
-			      <property name="xalign">0</property>
-			      <property name="yalign">0.5</property>
-			      <property name="xpad">0</property>
-			      <property name="ypad">0</property>
-			    </widget>
-			    <packing>
-			      <property name="left_attach">0</property>
 			      <property name="right_attach">1</property>
 			      <property name="top_attach">0</property>
 			      <property name="bottom_attach">1</property>
-			    </packing>
-			  </child>
-
-			  <child>
-			    <widget class="GtkLabel" id="prefs_def_notation_label">
-			      <property name="visible">True</property>
-			      <property name="label" translatable="yes">Default notation mode:</property>
-			      <property name="use_underline">False</property>
-			      <property name="use_markup">False</property>
-			      <property name="justify">GTK_JUSTIFY_LEFT</property>
-			      <property name="wrap">False</property>
-			      <property name="selectable">False</property>
-			      <property name="xalign">0</property>
-			      <property name="yalign">0.5</property>
-			      <property name="xpad">0</property>
-			      <property name="ypad">0</property>
-			    </widget>
-			    <packing>
-			      <property name="left_attach">0</property>
-			      <property name="right_attach">1</property>
-			      <property name="top_attach">2</property>
-			      <property name="bottom_attach">3</property>
+			      <property name="x_options">fill</property>
+			      <property name="y_options"></property>
 			    </packing>
 			  </child>
 			</widget>
@@ -2536,7 +2332,7 @@
 		      <child>
 			<widget class="GtkLabel" id="label37">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">    </property>
+			  <property name="label" translatable="no">    </property>
 			  <property name="use_underline">False</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
