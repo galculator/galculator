@@ -1,3 +1,13 @@
+2003-06-24 Simon Floery <simon.floery@gmx.at>
+
+	* added french translation (fr.po). thanks to seb128
+	* src/main.c: restricted key_snooper to main_window to get a working
+	keypad in preferences dialog etc.
+	* src/general_functions.c: gcc-2.95 fix
+	(closes sf.net #759830)
+	* src/main.c: check main_window_xml for NULL and abort with an error
+	message.
+
 ########################################
 # 2003-06-23 galculator 1.1.1 released #
 ########################################
@@ -6,7 +16,7 @@
 
 	* specify bit length/signed for hex, oct and bin mode 
 	(closes DBTS #197490)
-	* src/callbacks.c fixed bug in interface preferences dialog <-> 
+	* src/callbacks.c: fixed bug in interface preferences dialog <-> 
 	font/color dialogs
 	* src/general_functions.c: position_menu works with GTK 2.0 again
 

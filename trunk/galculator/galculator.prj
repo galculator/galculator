@@ -107,12 +107,6 @@ module.doc.name=.
 module.doc.type=
 module.doc.expanded=1
 module.doc.files=\
-	web/screenshots.html\
-	web/features.html\
-	web/index.html\
-	web/navigation.html\
-	web/download.html\
-	web/home.html\
 	NEWS\
 	TODO\
 	README\
