@@ -549,6 +549,78 @@ double string2double (char *string, int number_base)
 	return 0;
 }
 
+/* string_separator. insert separator.
+ * 	string - the string to modify
+ *	separate - whether to do sth at all
+ *	block_length - insert separator all block_length chars
+ *	separator - separator char to insert
+ * 	dpoint - char representing the decimal point
+ * we do not free string here as it might be used later on!
+ */
+
+char *string_separator (char* string, gboolean separate, int block_length, char separator, char dpoint)
+{
+	int	int_length=0, frac_length=0, counter=0, new_counter=0, offset;
+	char 	*new_string;
+	
+	if (!separate) return string;
+	/* at first, get length of parts pre- and succeeding the decimal point */
+	while ((string[int_length] != '\0') && (string[int_length] != dpoint))
+		int_length++;
+	if (string[int_length] != '\0')
+		while (string[int_length + frac_length + 1] != '\0') frac_length++;
+	/* then allocate memory for new string holding separators */
+	new_string = (char *) malloc ((strlen(string) + (int_length-1)/block_length +
+		(frac_length-1)/block_length) * sizeof(char));
+	/* then copy from string to new_string and insert separators */
+	while ((string[counter] != '\0') && (string[counter] != dpoint)) {
+		if ((counter > 0) && ((int_length % block_length) == (counter % block_length))) {
+			new_string[new_counter] = separator;
+			new_counter++;
+		}
+		new_string[new_counter] = string[counter];
+		new_counter++;
+		counter++;
+	}
+	if (string[int_length] != '\0') {
+		/* copy decimal point */
+		new_string[new_counter] = string[counter];
+		new_counter++;
+		counter++;
+		offset = counter;
+		while (string[counter] != '\0') {
+			if (((counter - offset) > 0) && ((counter - offset) % block_length == 0)) {
+				new_string[new_counter] = separator;
+				new_counter++;
+			}
+			new_string[new_counter] = string[counter];
+			new_counter++;
+			counter++;
+		}
+	}
+	new_string[new_counter] = '\0';
+	return new_string;
+}
+
+/* string_del_separator. removes separator from string, in place.
+ */
+
+char *string_del_separator (char *string, char separator)
+{
+	int	counter=0, new_counter=0;
+	
+	while (string[counter] != '\0') {
+		if (string[counter] == separator) {
+			counter++;
+			continue;
+		}
+		string[new_counter] = string[counter];
+		counter++;
+		new_counter++;
+	}
+	string[new_counter] = '\0';
+	return string;
+}
 
 void set_button_label_and_tooltip (GladeXML *xml, char *button_name, 
 	char *label, char *tooltip)

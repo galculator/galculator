@@ -72,6 +72,9 @@ void remember_display_values();
 
 double string2double (char *string, int number_base);
 
+char *string_add_separator (char *string, gboolean separate, int block_length, char separator, char dpoint);
+char *string_del_separator (char *string, char separator);
+
 void set_button_label_and_tooltip (GladeXML *xml, char *button_name, 
 	char *label, char *tooltip);
 	
