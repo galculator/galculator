@@ -6,12 +6,12 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=458
-1=69
-2=1137
-3=1
-4=22
-5=6
+0=501
+1=112
+2=153
+3=369
+4=64
+5=56
 6=226
 7=1
 8=1
@@ -39,24 +39,28 @@ filter.file.ignore.hidden=0
 filter.dir.ignore.hidden=0
 
 [filelist]
-0=/home/sf/Devel/galculator/src/calc_basic.c
+0=/home/sf/Devel/galculator/src/display.c
+1=/home/sf/Devel/galculator/src/general_functions.c
+2=/home/sf/Devel/galculator/src/main.c
+3=/home/sf/Devel/galculator/src/callbacks.c
+4=/home/sf/Devel/galculator/src/calc_basic.h
+5=/home/sf/Devel/galculator/src/calc_basic.c
 
 [replace_text]
-0=first_module
-1=display_result_get_double
-2=VERSION
-3=PACKAGE
-4=));
-5=signal="clicked"
-6=signal=\\"clicked
-7=clicked
+0=operation
+1=first_module
+2=display_result_get_double
+3=VERSION
+4=PACKAGE
+5=));
+6=signal="clicked"
+7=signal=\\"clicked
 
 [find_text]
-0=sub_tree_stack
-1=glade_xml_new
-2=void glade_file_not_found (char *filename)
-3=main
-4=select_bkg_color
-5=display
-6=display_lengths
-7=position_menu
+0=calc_rpn
+2=.number
+3=operator
+4=calc_
+5=calc_tree
+6=sub_tree_stack
+7=glade_xml_new

@@ -103,9 +103,13 @@ void all_clear ()
 	extern s_current_status 	current_status;
 
 	clear();
-	if (current_status.notation == CS_PAN) calc_tree_free();
+	if (current_status.notation == CS_PAN) {
+		alg_free();
+		alg_init(0);
+	}
 	else {
-		calc_rpn_free();
+		rpn_free();
+		rpn_init(0);
 		rpn_have_result=FALSE;
 	}
 	display_module_bracket_label_update (RESET);

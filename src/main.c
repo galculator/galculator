@@ -154,8 +154,8 @@ You might face problems when using %s! %s\n)"), PACKAGE, locale_settings->decima
 							  
 	/* prepare calc_basic */
 
-	calc_tree_init (0);
-	calc_rpn_init (0);
+	alg_init (0);
+	rpn_init (0);
 	
 	/* finally show what we put together. do this as late asap */
 	gtk_widget_show (main_window);

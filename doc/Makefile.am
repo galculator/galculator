@@ -4,4 +4,4 @@
 
 man_MANS = galculator.1
 
-EXTRA_DIST = calc_basic_internal shortcuts $(man_MANS)
+EXTRA_DIST = shortcuts $(man_MANS)
