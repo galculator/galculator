@@ -75,5 +75,5 @@ Ctrl-R	change to radiant angle base
 Ctrl-G	change to GRAD angle base
 Ctrl-A	change to (normal) algebraic notation
 Ctrl-N	change to Reverse Polish Notation (RPN)
+Ctrl-F	change to Formula Entry Mode
 Ctrl-M	Hide/Unhide Menubar
-Ctrl-F  Hide/Unhide Formula Entry
