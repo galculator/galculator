@@ -327,7 +327,7 @@ configure:4225: $? = 0
 configure:4228: test -s conftest
 configure:4231: $? = 0
 configure:4384: checking for catalogs to be installed
-configure:4409: result:  de
+configure:4409: result:  de fr
 configure:4552: creating ./config.status
 
 ## ---------------------- ##
@@ -420,7 +420,7 @@ ACLOCAL='aclocal-1.4'
 AUTOCONF='autoconf'
 AUTOHEADER='autoheader'
 AUTOMAKE='automake-1.4'
-CATALOGS=' de.gmo'
+CATALOGS=' de.gmo fr.gmo'
 CATOBJEXT='.gmo'
 CC='gcc'
 CFLAGS='-g -O2 -Wall'
@@ -434,7 +434,7 @@ ECHO_T=''
 EGREP='grep -E'
 EXEEXT=''
 GETTEXT_PACKAGE='galculator'
-GMOFILES=' de.gmo'
+GMOFILES=' de.gmo fr.gmo'
 GMSGFMT='/usr/bin/msgfmt'
 INSTALL_DATA='${INSTALL} -m 644'
 INSTALL_PROGRAM='${INSTALL}'
@@ -480,7 +480,7 @@ PACKAGE_TARNAME=''
 PACKAGE_VERSION=''
 PATH_SEPARATOR=':'
 PKG_CONFIG='/usr/bin/pkg-config'
-POFILES=' de.po'
+POFILES=' de.po fr.po'
 POSUB='po'
 PO_IN_DATADIR_FALSE=''
 PO_IN_DATADIR_TRUE=''

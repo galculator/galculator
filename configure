@@ -3158,7 +3158,7 @@ _ACEOF
 
 
 
-ALL_LINGUAS="de"
+ALL_LINGUAS="de fr"
 # On IRIX 5.3, sys/types and inttypes.h are conflicting.
 
 

@@ -6,9 +6,9 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=178
-1=569
-2=31
+0=88
+1=5
+2=21
 3=316
 4=315
 5=11
@@ -49,11 +49,11 @@ filter.dir.ignore.hidden=0
 7=clicked
 
 [find_text]
-0=select_bkg_color
-1=display
-2=display_lengths
-3=position_menu
-4=option
-5=save here
-6=save ehre
-7=ue
+0=main
+1=select_bkg_color
+2=display
+3=display_lengths
+4=position_menu
+5=option
+6=save here
+7=save ehre

@@ -1,57 +1,56 @@
-# French translations for galculator package.
-# Copyright (C) 2003 THE galculator'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the galculator package.
-# Simon Floery <replace@me.com>, 2003.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: galculator 1.09\n"
+"Project-Id-Version: galculator 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-06-19 17:56+0200\n"
-"PO-Revision-Date: 2003-06-08 23:39+0200\n"
-"Last-Translator: Simon Floery <replace@me.com>\n"
-"Language-Team: French <traduc@traduc.org>\n"
+"POT-Creation-Date: 2003-06-22 12:25+0200\n"
+"PO-Revision-Date: 2003-06-22 17:17+0200\n"
+"Last-Translator:\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: galculator.desktop.in.h:1
 msgid "Scientific calculator"
-msgstr ""
+msgstr "Calculatrice Scientifique"
 
 #: src/callbacks.c:38
 msgid "Select result font"
-msgstr ""
+msgstr "Police du résultat"
 
 #: src/callbacks.c:39
 msgid "Select module font"
-msgstr "test"
+msgstr "Police du module"
 
 #: src/callbacks.c:40
 msgid "Select active module color"
-msgstr ""
+msgstr "Choix de la couleur du module actif"
 
 #: src/callbacks.c:41
 msgid "Select inactive module color"
-msgstr ""
+msgstr "Choix de la couleur du module inactif"
 
 #: src/callbacks.c:42
 msgid "Select result font color"
-msgstr ""
+msgstr "Choix de la couleur de la police du résultat"
 
 #: src/callbacks.c:43
 msgid "Select background color"
-msgstr ""
+msgstr "Choix de la couleur de l'arrière-plan"
 
 #: src/callbacks.c:44
 msgid "Select button font"
-msgstr ""
+msgstr "Choix de la police des boutons"
 
 #: src/callbacks.c:84
 #, c-format
 msgid "About %s"
-msgstr ""
+msgstr "À propos de %s"
 
 #: src/callbacks.c:87
 #, c-format
@@ -61,38 +60,42 @@ msgid ""
 "\n"
 "(c) 2002-2003 by Simon Floery (simon.floery@gmx.at)"
 msgstr ""
+"<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
+"<span size=\"large\">Une calculatrice scientifique basée sur GTK 2</span>\n"
+"\n"
+"© 2002-2003 par Simon Floery (simon.floery@gmx.at)"
 
 #: src/callbacks.c:181
 #, c-format
 msgid "[%s] on_operation_button_clicked: unknown status. %s\n"
-msgstr ""
+msgstr "[%s] on_operation_button_clicked: status inconnu. %s\n"
 
 #: src/callbacks.c:270
 msgid "unknown function modifier (INV/HYP)"
-msgstr ""
+msgstr "Modificateur de fonction inconnu (INV/HYP)"
 
 #: src/callbacks.c:375
 msgid "ENT"
-msgstr ""
+msgstr "ENT"
 
 #: src/callbacks.c:420
 #, c-format
 msgid "%s Preferences"
-msgstr ""
+msgstr "Préférences de %s"
 
 #: src/callbacks.c:563
 #, c-format
 msgid "[%s] Color Dialog (%s) not found. %s\n"
-msgstr ""
+msgstr "[%s] Sélecteur de couleurs (%s) non trouvé. %s\n"
 
 #: src/callbacks.c:609
 #, c-format
 msgid "[%s] Font Dialog (%s) not found. %s\n"
-msgstr ""
+msgstr "[%s] Sélecteur de polices (%s) non trouvé. %s\n"
 
 #: src/callbacks.c:900
 msgid "save here"
-msgstr ""
+msgstr "sauvegarder ici"
 
 #: src/main.c:51
 #, c-format
@@ -108,6 +111,16 @@ msgid ""
 " -v, --version\t\tShow version information\n"
 "\n"
 msgstr ""
+"\n"
+"%s v%s, (c) 2002-2003 Simon Floery\n"
+"\n"
+"Utilisation: %s [options]\n"
+"\n"
+"options:\n"
+"(GTK options)\n"
+" -h, --help\t\tAffiche ce message d'aide\n"
+" -v, --version\t\tAffiche le numéro de version\n"
+"\n"
 
 #: src/main.c:122
 #, c-format
@@ -116,58 +129,63 @@ msgid ""
 "You might face problems when using %s! %s\n"
 ")"
 msgstr ""
+"[%s] la longueur du point décimal (dans la locale) n'est pas supportée: >%s<\n"
+"Vous devriez régler le problème en utilisant %s! %s\n"
+")"
 
 #: src/galculator.h:51
 msgid "Please submit a bugreport."
-msgstr ""
+msgstr "Remplissez un rapport de bug s'il vous plait"
 
 #: src/calc_basic.c:243
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
-msgstr ""
+msgstr "[%s] %c - Caractère d'opération inconnu. %s\n"
 
 #: src/calc_basic.c:246
 #, c-format
 msgid "[%s] computing: %f %c %f = %f\n"
-msgstr ""
+msgstr "[%s] calcul: %f %c %f = %f\n"
 
 #: src/calc_basic.c:507 src/calc_basic.c:526
 #, c-format
 msgid "[%s] RPN stack size is %i.\n"
-msgstr ""
+msgstr "[%s] La taille de la pile RPN est %i.\n"
 
 #: src/config_file.c:118
 msgid "Pi"
-msgstr ""
+msgstr "Pi"
 
 #: src/config_file.c:119
 msgid "pi"
-msgstr ""
+msgstr "pi"
 
 #: src/config_file.c:121
 msgid "Euler's Number"
-msgstr ""
+msgstr "Constante d'Euler"
 
 #: src/config_file.c:122
 msgid "e"
-msgstr ""
+msgstr "e"
 
 #: src/config_file.c:151
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
-msgstr ""
+msgstr "[%s] fichier de configuration: entrée inconnue ignorée %s=%s. %s\n"
 
 #: src/config_file.c:167
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
 msgstr ""
+"[%s] fichier de configuration: %s doit être TRUE ou FALSE. Utilisation de defaults. %s\n"
 
 #: src/config_file.c:174
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
 msgstr ""
+"[%s] fichier de configuration: key_type inconnue dans la structure de configuration ignorée. %s\n"
 
 #: src/config_file.c:192
 #, c-format
@@ -175,6 +193,8 @@ msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
 msgstr ""
+"[%s] a trouvé une section inconnue %s dans le fichier de configuration %s."
+"Utilisation de la section précédente.\n"
 
 #: src/config_file.c:271
 #, c-format
@@ -183,6 +203,9 @@ msgid ""
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
 msgstr ""
+"[%s] fichier de configuration: impossible d'ouvrir le fichier de configuration %s en lecture. "
+"Ignorez ce message si vous lancez %s pour la première fois. Utilisation des paramètres"
+"par défauts.\n"
 
 #: src/config_file.c:304
 #, c-format
@@ -190,6 +213,7 @@ msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
 "s\n"
 msgstr ""
+"[%s] fichier de configuration: étrange boolean à l'écriture. Clé ignorée. %s\n"
 
 #: src/config_file.c:312
 #, c-format
@@ -197,1020 +221,1026 @@ msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
 "\". %s\n"
 msgstr ""
+"[%s] fichier de configuration: \"key_type\" inconnu ignoré dans \"config_structure"
+"\". %s\n"
 
 #: src/config_file.c:327
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
 msgstr ""
+"[%s] fichier de configuration: impossible d'écrire le fichier de configuration %s.\n"
 
 #: src/display.c:484
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\". %s\n"
-msgstr ""
+msgstr "[%s] option d'affichage inconnue dans la fonction \"display_change_option\". %s\n"
 
 #: src/display.c:618
 msgid "unknown number base"
-msgstr ""
+msgstr "base de numérotation inconnue"
 
 #: src/display.c:619
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"display_result_set_double\". %s\n"
 msgstr ""
+"[%s] base de numérotation inconnue dans la fonction \"display_result_set_double\". %s\n"
 
 #: src/display.c:644
 #, c-format
 msgid "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
-msgstr ""
+msgstr "[%s] Type d'angle inconnu dans la fonction \"display_result_set_angle\". %s\n"
 
 #: src/display.c:701
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"display_result_get_double\". %s\n"
 msgstr ""
+"[%s] base de numérotation inconnue dans la fonction \"display_result_get_double\". %s\n"
 
 #: src/display.c:726
 #, c-format
 msgid ""
 "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
 msgstr ""
+"[%s] Type d'angle inconnu dans la fonction \"display_result_get_rad_angle\". %s\n"
 
 #: src/general_functions.c:73
 msgid "unsupported inverse function"
-msgstr ""
+msgstr "Fonction inverse non supportée"
 
 #: src/general_functions.c:79
 msgid "unsupported hyperbolic function"
-msgstr ""
+msgstr "Fonction hyperbolique non supportée"
 
 #: src/general_functions.c:192
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr ""
+msgstr "[%s] échec de la conversion du caractère %c dans la fonction \"axtof\". %s\n"
 
 #: src/general_functions.c:245
 #, c-format
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
-msgstr ""
+msgstr "[%s] échec de la conversion de %f dans la fonction \"ftoax\". %s\n"
 
 #: ui/main.glade.h:2
 #, no-c-format
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: ui/main.glade.h:3
 msgid "("
-msgstr ""
+msgstr "("
 
 #: ui/main.glade.h:4
 msgid ")"
-msgstr ""
+msgstr ")"
 
 #: ui/main.glade.h:5 ui/prefs.glade.h:3
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: ui/main.glade.h:6
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #: ui/main.glade.h:7
 msgid "+/-"
-msgstr ""
+msgstr "+/-"
 
 #: ui/main.glade.h:8
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: ui/main.glade.h:9
 msgid "."
-msgstr ""
+msgstr "."
 
 #: ui/main.glade.h:10
 msgid "/"
-msgstr ""
+msgstr "/"
 
 #: ui/main.glade.h:11
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: ui/main.glade.h:12
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ui/main.glade.h:13
 msgid "1/x"
-msgstr ""
+msgstr "1/x"
 
 #: ui/main.glade.h:14
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ui/main.glade.h:15
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: ui/main.glade.h:16
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: ui/main.glade.h:17
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: ui/main.glade.h:18
 msgid "6"
-msgstr ""
+msgstr "6"
 
 #: ui/main.glade.h:19
 msgid "7"
-msgstr ""
+msgstr "7"
 
 #: ui/main.glade.h:20
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: ui/main.glade.h:21
 msgid "9"
-msgstr ""
+msgstr "9"
 
 #: ui/main.glade.h:22
 msgid "<-"
-msgstr ""
+msgstr "<-"
 
 #: ui/main.glade.h:23
 msgid "="
-msgstr ""
+msgstr "="
 
 #: ui/main.glade.h:24
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: ui/main.glade.h:25
 msgid "AC"
-msgstr ""
+msgstr "AC"
 
 #: ui/main.glade.h:26
 msgid "AND"
-msgstr ""
+msgstr "AND"
 
 #: ui/main.glade.h:27
 msgid "Add current display value to memory"
-msgstr ""
+msgstr "Ajoute le résultat actuel dans la mémoire"
 
 #: ui/main.glade.h:28
 msgid "Adds the current display value to memory."
-msgstr ""
+msgstr "Ajoute les résultats actuels dans la mémoire"
 
 #: ui/main.glade.h:29
 msgid "Angle _units"
-msgstr ""
+msgstr "Unités angulaires"
 
 #: ui/main.glade.h:30
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: ui/main.glade.h:31
 msgid "Backspace"
-msgstr ""
+msgstr "Effacer"
 
 #: ui/main.glade.h:32
 msgid "Bitwise complement"
-msgstr ""
+msgstr "Complément binaire"
 
 #: ui/main.glade.h:33
 msgid "C"
-msgstr ""
+msgstr "C"
 
 #: ui/main.glade.h:34
 msgid "CMP"
-msgstr ""
+msgstr "CMP"
 
 #: ui/main.glade.h:35
 msgid "Calculates the complete equation and displays the result."
-msgstr ""
+msgstr "Evalue l'équation complète et affiche le résultat"
 
 #: ui/main.glade.h:36
 msgid "Change sign"
-msgstr ""
+msgstr "Changer le signe"
 
 #: ui/main.glade.h:37
 msgid "Changes the sign of the current display value."
-msgstr ""
+msgstr "Changer le signe de la valeur actuellement affichée"
 
 #: ui/main.glade.h:38 ui/prefs.glade.h:23
 msgid "Clear"
-msgstr ""
+msgstr "Effacer"
 
 #: ui/main.glade.h:39
 msgid "Clear all"
-msgstr ""
+msgstr "Tout effacer"
 
 #: ui/main.glade.h:40
 msgid "Clear display"
-msgstr ""
+msgstr "Effacer l'affichage"
 
 #: ui/main.glade.h:41
 msgid "Clears the display."
-msgstr ""
+msgstr "Effacer l'affichage"
 
 #: ui/main.glade.h:42
 msgid "Close paren"
-msgstr ""
+msgstr "Fermer la parenthèse"
 
 #: ui/main.glade.h:43
 msgid "Computes the cosine."
-msgstr ""
+msgstr "Calcul du cosinus"
 
 #: ui/main.glade.h:44
 msgid "Computes the factorial."
-msgstr ""
+msgstr "Calcul de la factorielle"
 
 #: ui/main.glade.h:45
 msgid "Computes the logarithm (with base 10)."
-msgstr ""
+msgstr "Calcul du logarithme (base 10)"
 
 #: ui/main.glade.h:46
 msgid "Computes the natural logarithm (with base of Euler's number)."
-msgstr ""
+msgstr "Calcul du logarithme naturel (base e)"
 
 #: ui/main.glade.h:47
 msgid "Computes the power."
-msgstr ""
+msgstr "Calcul de la puissance"
 
 #: ui/main.glade.h:48
 msgid "Computes the reciprocal."
-msgstr ""
+msgstr "Calcul de l'inverse"
 
 #: ui/main.glade.h:49
 msgid "Computes the sine."
-msgstr ""
+msgstr "Calcul du sinus"
 
 #: ui/main.glade.h:50
 msgid "Computes the square root."
-msgstr ""
+msgstr "Calcul de la racine carrée"
 
 #: ui/main.glade.h:51
 msgid "Computes the square."
-msgstr ""
+msgstr "Calcul du carré"
 
 #: ui/main.glade.h:52
 msgid "Computes the tangent."
-msgstr ""
+msgstr "Calcul de la tangente"
 
 #: ui/main.glade.h:53 ui/prefs.glade.h:25
 msgid "Constants"
-msgstr ""
+msgstr "Constantes"
 
 #: ui/main.glade.h:54
 msgid "Contains the main display."
-msgstr ""
+msgstr "Contenu de l'écran principal"
 
 #: ui/main.glade.h:55
 msgid "Cosine"
-msgstr ""
+msgstr "Cosinus"
 
 #: ui/main.glade.h:56
 msgid "D"
-msgstr ""
+msgstr "D"
 
 #: ui/main.glade.h:57
 msgid "D_egrees"
-msgstr ""
+msgstr "D_egrés"
 
 #: ui/main.glade.h:58
 msgid "Decimal point"
-msgstr ""
+msgstr "Point décimal"
 
 #: ui/main.glade.h:59
 msgid "Divide"
-msgstr ""
+msgstr "Division"
 
 #: ui/main.glade.h:60
 msgid "E"
-msgstr ""
+msgstr "E"
 
 #: ui/main.glade.h:61
 msgid "EE"
-msgstr ""
+msgstr "EE"
 
 #: ui/main.glade.h:62
 msgid "Enter"
-msgstr ""
+msgstr "Entrée"
 
 #: ui/main.glade.h:63
 msgid "Enter exponent (base: 10)"
-msgstr ""
+msgstr "Entrez l'exposant (base: 10)"
 
 #: ui/main.glade.h:64
 msgid "Enters a closing paren."
-msgstr ""
+msgstr "Entrez une parenthèse fermante,"
 
 #: ui/main.glade.h:65
 msgid "Enters an opening paren."
-msgstr ""
+msgstr "Entrez une paranthèse ouvrante."
 
 #: ui/main.glade.h:66
 msgid "Enters the bitwise complement operator."
-msgstr ""
+msgstr "Entrez l'opérateur de complément binaire"
 
 #: ui/main.glade.h:67
 msgid "Enters the decimal point."
-msgstr ""
+msgstr "Entrez le point décimal"
 
 #: ui/main.glade.h:68
 msgid "Enters the digit 2."
-msgstr ""
+msgstr "Entrez le digit 2."
 
 #: ui/main.glade.h:69
 msgid "Enters the digit 3."
-msgstr ""
+msgstr "Entrez le digit 3."
 
 #: ui/main.glade.h:70
 msgid "Enters the digit 4."
-msgstr ""
+msgstr "Entrez le digit 4."
 
 #: ui/main.glade.h:71
 msgid "Enters the digit 5."
-msgstr ""
+msgstr "Entrez le digit 5."
 
 #: ui/main.glade.h:72
 msgid "Enters the digit 6."
-msgstr ""
+msgstr "Entrez le digit 6."
 
 #: ui/main.glade.h:73
 msgid "Enters the digit 7."
-msgstr ""
+msgstr "Entrez le digit 7."
 
 #: ui/main.glade.h:74
 msgid "Enters the digit 8."
-msgstr ""
+msgstr "Entrez le digit 8."
 
 #: ui/main.glade.h:75
 msgid "Enters the digit 9."
-msgstr ""
+msgstr "Entrez le digit 9."
 
 #: ui/main.glade.h:76
 msgid "Enters the division operator."
-msgstr ""
+msgstr "Entrez l'opérateur de division"
 
 #: ui/main.glade.h:77
 msgid "Enters the hexadecimal digit A."
-msgstr ""
+msgstr "Entrez le digit hexadécimal A"
 
 #: ui/main.glade.h:78
 msgid "Enters the hexadecimal digit B."
-msgstr ""
+msgstr "Entrez le digit hexadécimal B"
 
 #: ui/main.glade.h:79
 msgid "Enters the hexadecimal digit C."
-msgstr ""
+msgstr "Entrez le digit hexadécimal C"
 
 #: ui/main.glade.h:80
 msgid "Enters the hexadecimal digit D."
-msgstr ""
+msgstr "Entrez le digit hexadécimal D"
 
 #: ui/main.glade.h:81
 msgid "Enters the hexadecimal digit E."
-msgstr ""
+msgstr "Entrez le digit hexadécimal E"
 
 #: ui/main.glade.h:82
 msgid "Enters the hexadecimal digit F."
-msgstr ""
+msgstr "Entrez le digit hexadécimal F"
 
 #: ui/main.glade.h:83
 msgid "Enters the left-shift operator."
-msgstr ""
+msgstr "Entrez l'opérateur de décalage à gauche."
 
 #: ui/main.glade.h:84
 msgid "Enters the logical AND operator."
-msgstr ""
+msgstr "Entrez l'opérateur logique ET"
 
 #: ui/main.glade.h:85
 msgid "Enters the logical OR operator."
-msgstr ""
+msgstr "Entrez l'opérateurlogique OU"
 
 #: ui/main.glade.h:86
 msgid "Enters the logical exclusive OR operator."
-msgstr ""
+msgstr "Entrez l'opérateur logique OU exclusif"
 
 #: ui/main.glade.h:87
 msgid "Enters the minus operator."
-msgstr ""
+msgstr "Entrez l'opérateur de changement de signe"
 
 #: ui/main.glade.h:88
 msgid "Enters the modulus operator."
-msgstr ""
+msgstr "Entrez l'opérateur modulo "
 
 #: ui/main.glade.h:89
 msgid "Enters the multiplication operator."
-msgstr ""
+msgstr "Entrez l'opérateur de multiplication"
 
 #: ui/main.glade.h:90
 msgid "Enters the plus operator."
-msgstr ""
+msgstr "Entrez l'opérateur d'addition"
 
 #: ui/main.glade.h:91
 msgid "F"
-msgstr ""
+msgstr "F"
 
 #: ui/main.glade.h:92
 msgid "Factorial"
-msgstr ""
+msgstr "Factorielle"
 
 #: ui/main.glade.h:93
-msgid "Hexadecimal 0xA"
-msgstr ""
+msgid "hexadecimal 0xA"
+msgstr "hexadécimal 0xA"
 
 #: ui/main.glade.h:94
-msgid "Hexadecimal 0xB"
-msgstr ""
+msgid "hexadecimal 0xB"
+msgstr "hexadécimal 0xB"
 
 #: ui/main.glade.h:95
-msgid "Hexadecimal 0xC"
-msgstr ""
+msgid "hexadecimal 0xC"
+msgstr "hexadécimal 0xC"
 
 #: ui/main.glade.h:96
-msgid "Hexadecimal 0xD"
-msgstr ""
+msgid "hexadecimal 0xD"
+msgstr "hexadécimal 0xD"
 
 #: ui/main.glade.h:97
-msgid "Hexadecimal 0xE"
-msgstr ""
+msgid "hexadecimal 0xE"
+msgstr "hexadécimal 0xE"
 
 #: ui/main.glade.h:98
-msgid "Hexadecimal 0xF"
-msgstr ""
+msgid "hexadecimal 0xF"
+msgstr "hexadécimal 0xF"
 
 #: ui/main.glade.h:99
 msgid "Hyperbolic mode"
-msgstr ""
+msgstr "Mode hyperbolique"
 
 #: ui/main.glade.h:100
 msgid "Inverse mode"
-msgstr ""
+msgstr "Mode inverse"
 
 #: ui/main.glade.h:101
 msgid "LSH"
-msgstr ""
+msgstr "LSH"
 
 #: ui/main.glade.h:102
 msgid "Left shift"
-msgstr ""
+msgstr "Décalage à gauche"
 
 #: ui/main.glade.h:103
 msgid "Logarithm (base: 10)"
-msgstr ""
+msgstr "Logarithme (base 10)"
 
 #: ui/main.glade.h:104
 msgid "Logical AND"
-msgstr ""
+msgstr "ET logique"
 
 #: ui/main.glade.h:105
 msgid "Logical OR"
-msgstr ""
+msgstr "OU logique"
 
 #: ui/main.glade.h:106
 msgid "Logical XOR"
-msgstr ""
+msgstr "OU exclusif logique"
 
 #: ui/main.glade.h:107
 msgid "M+"
-msgstr ""
+msgstr "M+"
 
 #: ui/main.glade.h:108
 msgid "MOD"
-msgstr ""
+msgstr "MOD"
 
 #: ui/main.glade.h:109
 msgid "MR"
-msgstr ""
+msgstr "MR"
 
 #: ui/main.glade.h:110
 msgid "MS"
-msgstr ""
+msgstr "MS"
 
 #: ui/main.glade.h:111
 msgid "Main display"
-msgstr ""
+msgstr "Affichage principal"
 
 #: ui/main.glade.h:112
 msgid "Memory add"
-msgstr ""
+msgstr "Ajoute à la mémoire"
 
 #: ui/main.glade.h:113
 msgid "Memory read"
-msgstr ""
+msgstr "Lis la mémoire"
 
 #: ui/main.glade.h:114
 msgid "Memory save"
-msgstr ""
+msgstr "Sauvegarde la mémoire"
 
 #: ui/main.glade.h:115
 msgid "Minus"
-msgstr ""
+msgstr "Opposé"
 
 #: ui/main.glade.h:116
 msgid "Modulus"
-msgstr ""
+msgstr "Modulo"
 
 #: ui/main.glade.h:117
 msgid "Multiply"
-msgstr ""
+msgstr "Multiplication"
 
 #: ui/main.glade.h:118
 msgid "Natural logarithm (base: e)"
-msgstr ""
+msgstr "Logarithme naturel (base: e)"
 
 #: ui/main.glade.h:119
 msgid "Notation _modes"
-msgstr ""
+msgstr "_Modes de notation"
 
 #: ui/main.glade.h:120
 msgid "OR"
-msgstr ""
+msgstr "OR"
 
 #: ui/main.glade.h:121
 msgid "Open paren"
-msgstr ""
+msgstr "Parenthèse ouvertes"
 
 #: ui/main.glade.h:122
 msgid "Plus"
-msgstr ""
+msgstr "Somme"
 
 #: ui/main.glade.h:123
 msgid "Power"
-msgstr ""
+msgstr "Puissance"
 
 #: ui/main.glade.h:124
 msgid "Read from memory"
-msgstr ""
+msgstr "Lecture de la mémoire"
 
 #: ui/main.glade.h:125
 msgid "Reads the value saved in memory."
-msgstr ""
+msgstr "Lecture de la valeur sauvegardée en mémoire"
 
 #: ui/main.glade.h:126
 msgid "Reciprocal"
-msgstr ""
+msgstr "Inverse"
 
 #: ui/main.glade.h:127
 msgid "Removes the last digit from the display."
-msgstr ""
+msgstr "Enlève le dernier digit de l'affichage"
 
 #: ui/main.glade.h:128
 msgid "Reset calculator (clear all)"
-msgstr ""
+msgstr "Remise à zéro de la calculatrice (efface tout)"
 
 #: ui/main.glade.h:129
 msgid "Resets the calculator."
-msgstr ""
+msgstr "Remise à zéro de la calculatrice"
 
 #: ui/main.glade.h:130
 msgid "Save to memory"
-msgstr ""
+msgstr "Sauvegarde la mémoire"
 
 #: ui/main.glade.h:131
 msgid "Saves the current display value into memory."
-msgstr ""
+msgstr "Sauvegarde de la valeur actuellement affichée en mémoire"
 
 #: ui/main.glade.h:132
 msgid "Set display into \"enter exponent\" mode (base of 10)."
-msgstr ""
+msgstr "Place l'affichage en mode \"enter exponent\" (base 10)."
 
 #: ui/main.glade.h:133
 msgid "Sine"
-msgstr ""
+msgstr "Sinus"
 
 #: ui/main.glade.h:134
 msgid "Square"
-msgstr ""
+msgstr "Carré"
 
 #: ui/main.glade.h:135
 msgid "Square root"
-msgstr ""
+msgstr "Racine carrée"
 
 #: ui/main.glade.h:136
 msgid "Switches to hyperbolic mode."
-msgstr ""
+msgstr "Passer au mode hyperbolique."
 
 #: ui/main.glade.h:137
 msgid "Switches to inverse mode."
-msgstr ""
+msgstr "Passer au mode inverse."
 
 #: ui/main.glade.h:138
 msgid "Tangent"
-msgstr ""
+msgstr "Tangente"
 
 #: ui/main.glade.h:139
 msgid "The main display."
-msgstr ""
+msgstr "Ecran principal"
 
 #: ui/main.glade.h:140
 msgid "The main program window."
-msgstr ""
+msgstr "Fenêtre principale"
 
 #: ui/main.glade.h:141
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: ui/main.glade.h:142
 msgid "_About..."
-msgstr ""
+msgstr "_À propos..."
 
 #: ui/main.glade.h:143
 msgid "_Algebraic"
-msgstr ""
+msgstr "_Algébrique"
 
 #: ui/main.glade.h:144
 msgid "_Binary"
-msgstr ""
+msgstr "_Binaire"
 
 #: ui/main.glade.h:145
 msgid "_Decimal"
-msgstr ""
+msgstr "_Décimale"
 
 #: ui/main.glade.h:146
 msgid "_File"
-msgstr ""
+msgstr "_Fichier"
 
 #: ui/main.glade.h:147
 msgid "_Gradians"
-msgstr ""
+msgstr "_Grades"
 
 #: ui/main.glade.h:148
 msgid "_Help"
-msgstr ""
+msgstr "_Aide"
 
 #: ui/main.glade.h:149
-msgid "_Hexadecimal"
-msgstr ""
+msgid "_hexadecimal"
+msgstr "_hexadécimale"
 
 #: ui/main.glade.h:150
 msgid "_Number bases"
-msgstr ""
+msgstr "Bases de _numérotation"
 
 #: ui/main.glade.h:151
 msgid "_Octal"
-msgstr ""
+msgstr "_Octale"
 
 #: ui/main.glade.h:152
 msgid "_Preferences..."
-msgstr ""
+msgstr "_Préférences..."
 
 #: ui/main.glade.h:153
 msgid "_Quit"
-msgstr ""
+msgstr "_Quitter"
 
 #: ui/main.glade.h:154
 msgid "_Radians"
-msgstr ""
+msgstr "_Radians"
 
 #: ui/main.glade.h:155
 msgid "_Reverse Polish (RPN)"
-msgstr ""
+msgstr "Logique Polonaise Inve_rse (RPN)"
 
 #: ui/main.glade.h:156
 msgid "_Settings"
-msgstr ""
+msgstr "_Préférences"
 
 #: ui/main.glade.h:157
 msgid "_Show menu bar"
-msgstr ""
+msgstr "_Afficher la barre de menu"
 
 #: ui/main.glade.h:158
 msgid "con"
-msgstr ""
+msgstr "con"
 
 #: ui/main.glade.h:159
 msgid "constants"
-msgstr ""
+msgstr "constantes"
 
 #: ui/main.glade.h:160
 msgid "cos"
-msgstr ""
+msgstr "cos"
 
 #: ui/main.glade.h:161
 msgid "gives a menu to select constants from"
-msgstr ""
+msgstr "donne un menu pour choisir les constantes"
 
 #: ui/main.glade.h:162
 msgid "hyp"
-msgstr ""
+msgstr "hyp"
 
 #: ui/main.glade.h:163
 msgid "inv"
-msgstr ""
+msgstr "inv"
 
 #: ui/main.glade.h:164
 msgid "ln"
-msgstr ""
+msgstr "ln"
 
 #: ui/main.glade.h:165
 msgid "log"
-msgstr ""
+msgstr "log"
 
 #: ui/main.glade.h:166
 msgid "n!"
-msgstr ""
+msgstr "n!"
 
 #: ui/main.glade.h:167
 msgid "sin"
-msgstr ""
+msgstr "sin"
 
 #: ui/main.glade.h:168
 msgid "sqrt"
-msgstr ""
+msgstr "sqrt"
 
 #: ui/main.glade.h:169
 msgid "tan"
-msgstr ""
+msgstr "tan"
 
 #: ui/main.glade.h:170
 msgid "x^2"
-msgstr ""
+msgstr "X^2"
 
 #: ui/main.glade.h:171
 msgid "x^y"
-msgstr ""
+msgstr "x^y"
 
 #: ui/about.glade.h:1
 msgid "A dialog that shows information about this program."
-msgstr ""
+msgstr "Une fenêtre qui affiche des informations à proros du logiciel"
 
 #: ui/about.glade.h:2 ui/prefs.glade.h:24
 msgid "Closes the dialog."
-msgstr ""
+msgstr "Ferme la fenêtre."
 
 #: ui/about.glade.h:3
 msgid "Shows information about the program."
-msgstr ""
+msgstr "Affiche des informations à propos du logiciel."
 
 #: ui/about.glade.h:4
 msgid "fill_me"
-msgstr ""
+msgstr "fill_me"
 
 #: ui/color.glade.h:1
 msgid "A dialog that is used to change a color setting."
-msgstr ""
+msgstr "Une fenêtre utilisée pour changer les propriétés des couleurs"
 
 #: ui/color.glade.h:2 ui/font.glade.h:2
 msgid "Applies all changes and closes the dialog."
-msgstr ""
+msgstr "Appliquer tous les changement et fermer la fenêtre."
 
 #: ui/color.glade.h:3 ui/font.glade.h:4
 msgid "Cancels all changes and closes the dialog."
-msgstr ""
+msgstr "Annuler tous les changement et fermer la fenêtre"
 
 #: ui/color.glade.h:4
 msgid "Contains various widgets to select a color value."
-msgstr ""
+msgstr "Contient différents composants pour choisir une valeur de couleur"
 
 #: ui/color.glade.h:5
 msgid "Select Color"
-msgstr ""
+msgstr "Choix d'une couleur"
 
 #: ui/color.glade.h:6
 msgid "Shows some help about the dialog."
-msgstr ""
+msgstr "Affiche de l'aide à propos de la fenêtre"
 
 #: ui/font.glade.h:1
 msgid "A dialog that is used to change a font setting."
-msgstr ""
+msgstr "Une fenêtre utilisée pour changer les propriétés des polices."
 
 #: ui/font.glade.h:3
 msgid "Applies all changes."
-msgstr ""
+msgstr "Appliquer tous les changements."
 
 #: ui/font.glade.h:5
 msgid "Displays various fonts and font sizes to select from."
-msgstr ""
+msgstr "Afficher différentes polices et tailles de polices pour la sélection."
 
 #: ui/font.glade.h:6
 msgid "Select Font"
-msgstr ""
+msgstr "Choix d'une police"
 
 #: ui/font.glade.h:7
 msgid "decimal PI 3.14159265359"
-msgstr ""
+msgstr "decimal PI 3.14159265359"
 
 #: ui/prefs.glade.h:1
 msgid " "
-msgstr ""
+msgstr " "
 
 #: ui/prefs.glade.h:2
 msgid "    "
-msgstr ""
+msgstr "    "
 
 #: ui/prefs.glade.h:4
 msgid "<b>Appearance</b>"
-msgstr ""
+msgstr "<b>Apparence</b>"
 
 #: ui/prefs.glade.h:5
 msgid "<b>Dimension</b>"
-msgstr ""
+msgstr "<b>Dimension</b>"
 
 #: ui/prefs.glade.h:6
 msgid "<b>Font</b>"
-msgstr ""
+msgstr "<b>Police</b>"
 
 #: ui/prefs.glade.h:7
 msgid "<b>Modules Visibility</b>"
-msgstr ""
+msgstr "<b>Affichage des modules</b>"
 
 #: ui/prefs.glade.h:8
 msgid "<b>Startup</b>"
-msgstr ""
+msgstr "<b>Démarrage</b>"
 
 #: ui/prefs.glade.h:9
 msgid "<b>User defined constants:</b>"
-msgstr ""
+msgstr "<b>Constantes définies par l'utilisateur:</b>"
 
 #: ui/prefs.glade.h:10
 msgid "<b>Visibility</b>"
-msgstr ""
+msgstr "<b>Affichage</b>"
 
 #: ui/prefs.glade.h:11
 msgid "A dialog that is used to change preferences settings."
-msgstr ""
+msgstr "Une fenêtre utilisée pour changer les préférences."
 
 #: ui/prefs.glade.h:12
 msgid "Active module color:"
-msgstr ""
+msgstr "Couleur des modules actifs."
 
 #: ui/prefs.glade.h:13
 msgid "Add"
-msgstr ""
+msgstr "Ajouter"
 
 #: ui/prefs.glade.h:14
 msgid "Algebraic"
-msgstr ""
+msgstr "Algébrique"
 
 #: ui/prefs.glade.h:15
 msgid "Angle base units"
-msgstr ""
+msgstr "Unités angulaires"
 
 #: ui/prefs.glade.h:16
 msgid "Arithmetic operation"
-msgstr ""
+msgstr "Opérations arithmétiques"
 
 #: ui/prefs.glade.h:17
 msgid "Background color:"
-msgstr ""
+msgstr "Couleur d'arrière-plan:"
 
 #: ui/prefs.glade.h:18
 msgid "Binary"
-msgstr ""
+msgstr "Binaire"
 
 #: ui/prefs.glade.h:19
 msgid "Button font:"
-msgstr ""
+msgstr "Police des boutons:"
 
 #: ui/prefs.glade.h:20
 msgid "Button height:"
-msgstr ""
+msgstr "Hauteur des boutons:"
 
 #: ui/prefs.glade.h:21
 msgid "Button width:"
-msgstr ""
+msgstr "Largeur des boutons:"
 
 #: ui/prefs.glade.h:22
 msgid "Buttons"
-msgstr ""
+msgstr "Boutons"
 
 #: ui/prefs.glade.h:26
 msgid "Decimal"
-msgstr ""
+msgstr "Décimale"
 
 #: ui/prefs.glade.h:27
 msgid "Default angle unit:"
-msgstr ""
+msgstr "Unités angulaires par défaut:"
 
 #: ui/prefs.glade.h:28
 msgid "Default notation mode:"
-msgstr ""
+msgstr "Mode de notation par défaut:"
 
 #: ui/prefs.glade.h:29
 msgid "Default number base:"
-msgstr ""
+msgstr "Base de numérotation par défaut:"
 
 #: ui/prefs.glade.h:30
 msgid "Degrees"
-msgstr ""
+msgstr "Degrés"
 
 #: ui/prefs.glade.h:31
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #: ui/prefs.glade.h:32
 msgid "Description:"
-msgstr ""
+msgstr "Description"
 
 #: ui/prefs.glade.h:33
 msgid "Display"
-msgstr ""
+msgstr "Affichage"
 
 #: ui/prefs.glade.h:34
 msgid "Display control buttons (C, AC, <-)"
-msgstr ""
+msgstr "Affichage des boutons de contrôle (C, AC, <-)"
 
 #: ui/prefs.glade.h:35
 msgid "Function buttons (sin, cos, etc.)"
-msgstr ""
+msgstr "Boutons de fonction (sin, cos, etc.)"
 
 #: ui/prefs.glade.h:36
 msgid "Gradians"
-msgstr ""
+msgstr "Grades"
 
 #: ui/prefs.glade.h:37
-msgid "Hexadecimal"
-msgstr ""
+msgid "hexadecimal"
+msgstr "Hexadécimale"
 
 #: ui/prefs.glade.h:38
 msgid "Inactive module color:"
-msgstr ""
+msgstr "Couleur des modules inactifs"
 
 #: ui/prefs.glade.h:39
 msgid "Logic buttons (AND, OR, etc.)"
-msgstr ""
+msgstr "Boutons logiques (ET, OU, etc.)"
 
 #: ui/prefs.glade.h:40
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Divers"
 
 #: ui/prefs.glade.h:41
 msgid "Module font:"
-msgstr ""
+msgstr "Police des modules:"
 
 #: ui/prefs.glade.h:42
 msgid "Name:"
-msgstr ""
+msgstr "Nom:"
 
 #: ui/prefs.glade.h:43
 msgid "Notation"
-msgstr ""
+msgstr "Notation"
 
 #: ui/prefs.glade.h:44
 msgid "Number base units"
-msgstr ""
+msgstr "Bases de numérotation"
 
 #: ui/prefs.glade.h:45
 msgid "Octal"
-msgstr ""
+msgstr "Octale"
 
 #: ui/prefs.glade.h:46
 msgid "Open brackets"
-msgstr ""
+msgstr "État des parenthèses"
 
 #: ui/prefs.glade.h:47
 msgid "Radians"
-msgstr ""
+msgstr "Radians"
 
 #: ui/prefs.glade.h:48
 msgid "Remember display value on exit"
-msgstr ""
+msgstr "Mémoriser la valeur affichée en quittant"
 
 #: ui/prefs.glade.h:49
 msgid "Result font color:"
-msgstr ""
+msgstr "Couleur de la police des résultats:"
 
 #: ui/prefs.glade.h:50
 msgid "Result font:"
-msgstr ""
+msgstr "Police des résultats:"
 
 #: ui/prefs.glade.h:51
 msgid "Reverse Polish (RPN)"
-msgstr ""
+msgstr "Logique polonaise inverse (RPN)"
 
 #: ui/prefs.glade.h:52
 msgid "Show menu bar"
-msgstr ""
+msgstr "Afficher la barre de menu"
 
 #: ui/prefs.glade.h:53
 msgid "Update"
-msgstr ""
+msgstr "Mettre à jour"
 
 #: ui/prefs.glade.h:54
 msgid "Use custom button font"
-msgstr ""
+msgstr "Utiliser la police personnalisée pour les boutons"
 
 #: ui/prefs.glade.h:55
 msgid "Value:"
-msgstr ""
+msgstr "Valeur:"
 
 #: ui/prefs.glade.h:56
 msgid "button1"
-msgstr ""
+msgstr "button1"
 
 #: ui/prefs.glade.h:57
 msgid "button5"
-msgstr ""
+msgstr "button5"
 
 #: ui/prefs.glade.h:58
 msgid "button7"
-msgstr ""
+msgstr "button7"
 
 #: ui/prefs.glade.h:59
 msgid "galculator - Preferences"
-msgstr ""
+msgstr "galculator - Préférences"

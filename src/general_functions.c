@@ -513,14 +513,6 @@ void set_object_data (GladeXML *xml)
 		{NULL}\
 	};
 	
-	while (operation_map[counter].button_name != NULL) {
-		g_object_set_data (G_OBJECT (glade_xml_get_widget (xml, 
-			operation_map[counter].button_name)),
-			"operation", GINT_TO_POINTER(operation_map[counter].operation));
-		counter++;
-	}
-	counter = 0;
-
 	s_gfunc_map gfunc_map[] = {\
 		{"button_sign", display_result_toggle_sign},\
 		{"button_backspace", display_result_backspace},\
@@ -529,14 +521,6 @@ void set_object_data (GladeXML *xml)
 		{"button_allclr", all_clear},\
 		{NULL}\
 	};
-	
-	while (gfunc_map[counter].button_name != NULL) {
-		g_object_set_data (G_OBJECT (glade_xml_get_widget (xml, 
-			gfunc_map[counter].button_name)),
-			"func", gfunc_map[counter].func);
-		counter++;
-	};
-	counter = 0;
 	
 	s_function_map function_map[] = {\
 		{"button_sin", {sin, asin, sinh, sin}, TRUE},\
@@ -551,6 +535,22 @@ void set_object_data (GladeXML *xml)
 		{"button_cmp", {cmp, cmp, cmp, cmp}, FALSE},\
 		{NULL}\
 	};
+
+	while (operation_map[counter].button_name != NULL) {
+		g_object_set_data (G_OBJECT (glade_xml_get_widget (xml, 
+			operation_map[counter].button_name)),
+			"operation", GINT_TO_POINTER(operation_map[counter].operation));
+		counter++;
+	}
+	counter = 0;
+	
+	while (gfunc_map[counter].button_name != NULL) {
+		g_object_set_data (G_OBJECT (glade_xml_get_widget (xml, 
+			gfunc_map[counter].button_name)),
+			"func", gfunc_map[counter].func);
+		counter++;
+	};
+	counter = 0;
 	
 	while (function_map[counter].button_name != NULL) {
 		func = (void *) malloc (sizeof (function_map[counter].func));

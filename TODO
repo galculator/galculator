@@ -14,6 +14,8 @@ todo ASAP --> 1.1.2:
 		eigene M* button group?
 			
 	prefs: some checks on add/update?
+	
+	check return of glade_xml_new (gtk_message_dialog_new)
 
 =calculator==============================
 

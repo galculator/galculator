@@ -59,21 +59,22 @@ PACKAGE, VERSION, PACKAGE);
 
 int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 {
-	/* the problem: NUMLOCK is a modifier for gdk, like Shift or Control or Alt.
-	 * If NUMLOCK is activated, an accelerator defined e.g. with CTRL-q won't work as they
-	 * are caught as CTRL-NUMLOCK-q. As a matter of fact, we can't set the NUMLOCK modifier
-	 * in GLADE. I catch here
-	 * any key pressed and delete, if not 0-9 or decimal on keypad, the NUMLOCK flag.
-	 * 0-9 and decimal on the keypad need the NUMLOCK flag, otherwise they are interpreted
-	 * as Pgup and all the funny staff found on a deactivated keypad.
+	/* the problem: key acceleration in gtk2 works a bit strange. I do not
+	 * understand it completely. The following is in part the result of a
+	 * long trial and error process. If you can explain why it works, please
+	 * tell me.
+	 * btw, do this only if main_window is the current window. otherwise, 
+	 * keypad's 0,2,4,6,8 won't work in gtkentry etc. (e.g. found in prefs)
 	 */
 	
 	//fprintf (stderr, "[%s] key snooper (1): %i %i %s\n", PROG_NAME, event->state, event->keyval, gdk_keyval_name (event->keyval));
-	if ((event->keyval != GDK_KP_2) && (event->keyval != GDK_KP_Down) &&
+	if (((event->keyval != GDK_KP_2) && (event->keyval != GDK_KP_Down) &&
 		(event->keyval != GDK_KP_4) && (event->keyval != GDK_KP_Left) &&
 		(event->keyval != GDK_KP_6) && (event->keyval != GDK_KP_Right) &&
 		(event->keyval != GDK_KP_8) && (event->keyval != GDK_KP_Up) &&
-		(event->keyval != GDK_KP_0) && (event->keyval != GDK_KP_Insert))
+		(event->keyval != GDK_KP_0) && (event->keyval != GDK_KP_Insert)) ||
+		(strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(grab_widget)), 
+			"main_window") != 0))
 			event->state &= ~GDK_MOD2_MASK;
 	return FALSE;
 }
@@ -124,6 +125,14 @@ You might face problems when using %s! %s\n)"), PACKAGE, locale_settings->decima
 	} else dec_point = locale_settings->decimal_point[0];
 	
 	main_window_xml = glade_xml_new (MAIN_GLADE_FILE, "main_window", NULL);
+	
+	if (main_window_xml == NULL) {
+		fprintf (stderr, _("[%s] Couldn't load %s. This file is necessary \
+to build galculator's user interface. Make sure you did a make install and the file \
+is accessible!\n"), PACKAGE, MAIN_GLADE_FILE);
+		return EXIT_FAILURE;
+	}
+	
 	/* connect the signals in the interface */
 	glade_xml_signal_autoconnect(main_window_xml);
 	set_object_data (main_window_xml);
