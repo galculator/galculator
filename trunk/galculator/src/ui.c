@@ -733,7 +733,7 @@ GtkWidget *ui_constants_menu_create (s_constant *constant, GCallback const_handl
 	char		*label;
 	
 	menu = gtk_menu_new();
-	while (constant[counter].desc != NULL) {
+	while (constant[counter].name != NULL) {
 		label = g_strdup_printf ("%s: %s (%s)", constant[counter].name, constant[counter].value, constant[counter].desc);
 		child = gtk_menu_item_new_with_label(label);
 		g_free (label);
@@ -745,7 +745,7 @@ GtkWidget *ui_constants_menu_create (s_constant *constant, GCallback const_handl
 	return menu;
 }
 
-GtkWidget *ui_memory_menu_create (s_array memory, GCallback const_handler, char *last_item)
+GtkWidget *ui_memory_menu_create (s_array memory, GCallback memory_handler, char *last_item)
 {
 	GtkWidget	*menu, *child;
 	int		counter=0;
@@ -758,7 +758,7 @@ GtkWidget *ui_memory_menu_create (s_array memory, GCallback const_handler, char 
 		g_free (label);
 		gtk_menu_shell_append ((GtkMenuShell *) menu, child);
 		gtk_widget_show (child);
-		g_signal_connect (G_OBJECT (child), "activate", const_handler, GINT_TO_POINTER(counter));
+		g_signal_connect (G_OBJECT (child), "activate", memory_handler, GINT_TO_POINTER(counter));
 	}
 	if (last_item != NULL) {
 		label = g_strdup (last_item);
@@ -766,7 +766,7 @@ GtkWidget *ui_memory_menu_create (s_array memory, GCallback const_handler, char 
 		g_free (label);
 		gtk_menu_shell_append ((GtkMenuShell *) menu, child);
 		gtk_widget_show (child);
-		g_signal_connect (G_OBJECT (child), "activate", const_handler, GINT_TO_POINTER(counter));
+		g_signal_connect (G_OBJECT (child), "activate", memory_handler, GINT_TO_POINTER(counter));
 	}
 	return menu;
 }
@@ -831,7 +831,7 @@ GtkWidget *ui_pref_dialog_create ()
 	prefs_constant_store = gtk_list_store_new (NR_CONST_COLUMNS, 
 		G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
 	counter = 0;
-	while (constant[counter].desc != NULL) {
+	while (constant[counter].name != NULL) {
 		gtk_list_store_append (prefs_constant_store, &iter);
 		gtk_list_store_set (prefs_constant_store, &iter, 
 			CONST_NAME_COLUMN, constant[counter].name, 

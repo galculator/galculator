@@ -994,12 +994,23 @@ void on_prefs_button_height_changed (GtkSpinButton *spinbutton,
 
 void user_functions_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 {
-	int 	index;
+	int 	index, nr_constants;
 	
 	index = (int) user_data;
-	printf ("compute %s(%s)=%s with %s=%f\n", user_function[index].name,
-		user_function[index].variable, user_function[index].expression,
-		user_function[index].variable, display_result_get_double());
+	
+	nr_constants = 0;
+	while (constant[nr_constants].name != NULL) nr_constants++;
+	constant = (s_constant *) realloc (constant, (nr_constants + 2) * sizeof(s_constant));
+	constant[nr_constants + 1].name = NULL;
+	
+	constant[nr_constants].name = user_function[index].variable;
+	constant[nr_constants].value = display_result_get();
+	constant[nr_constants].desc = NULL;
+	
+	display_result_set_double (flex_parser(user_function[index].expression));
+	
+	constant = (s_constant *) realloc (constant, (nr_constants + 1) * sizeof(s_constant));
+	constant[nr_constants].name = NULL;
 }
 
 void
@@ -1317,7 +1328,7 @@ void on_prefs_cadd_clicked (GtkButton *button, gpointer user_data)
 		
 	nr_consts = prefs_constant_store->length;
 	constant = (s_constant *) realloc (constant, (nr_consts + 2) * sizeof(s_constant));
-	constant[nr_consts + 1].desc = NULL;
+	constant[nr_consts + 1].name = NULL;
 	
 	constant[nr_consts].name = name;
 	constant[nr_consts].value = value;
@@ -1354,7 +1365,7 @@ void on_prefs_cdelete_clicked (GtkButton *button, gpointer user_data)
 	nr_consts--;
 	constant = (s_constant *) realloc (constant, (nr_consts + 1) * sizeof(s_constant));
 	
-	constant[nr_consts].desc = NULL;
+	constant[nr_consts].name = NULL;
 }
 
 void on_prefs_cupdate_clicked (GtkButton *button, gpointer user_data)
