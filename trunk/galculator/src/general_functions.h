@@ -64,4 +64,6 @@ int get_display_number_length (int base);
 void gfunc_f1 (GtkToggleButton *button);
 void gfunc_f2 (GtkToggleButton *button);
 
+void display_result_changed ();
+
 #endif /* general_functions.h */

@@ -11,7 +11,7 @@ RPN new buttons/operations:
 	[DONE] x<>y ... swap x and y
 	[DONE] roll ... roll down the stack: x->t->z->y->x
 
-mr and const should push the stack: problem: display_result_set & rpn_have_result
+[DONE] mr and const should push the stack.
 
 [DONE] memory save, memory read and constant retrieve set calc_entry_start_new=TRUE
 
@@ -19,8 +19,7 @@ stack clears on basic <-> scientific
 
 [DONE] test infinite <-> finite stack size
 
----bug reports
-	[DONE] = <-> ENT in RPN startup
+[DONE] = <-> ENT in RPN startup
 
 =GUI======================================
 

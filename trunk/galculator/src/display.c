@@ -620,35 +620,21 @@ void display_update_tags ()
 	display_update_modules ();
 }
 
-/*
- * END of display CONFIGuration code.
- * from here on display manipulation code.
- */
+/******************
+ *** END of display CONFIGuration code.
+ *** from here on display manipulation code.
+ ******************/
 
 /*
  * display_result_add_digit. appends the given digit to the current entry, 
  * handles zeros, decimal points. call e.g. with *(gtk_button_get_label (button))
  */
-
 void display_result_add_digit (char digit)
 {
 	char			digit_as_string[2];
 	GtkTextIter		end;
-	double			*stack;
 	
-	/* put a ev. result onto the stack */
-	/* an alternative idea would be to do this immediately after getting a result
-	   in calc_basic's rpn routines or in on_function_button_clicked. but if we
-	   use on_function_button_clicked twice, there are two results on the stack
-	   where we don't expect the older one to be there. therefore doing it this way
-	*/
-	if ((current_status.notation == CS_RPN) && (current_status.rpn_have_result == TRUE)) {
-		rpn_stack_push (display_result_get_double ());
-		stack = rpn_stack_get (RPN_FINITE_STACK);
-		display_stack_set_xyzt (stack);
-		free (stack);
-		current_status.rpn_have_result = FALSE;
-	}
+	display_result_changed();
 	
 	digit_as_string[0] = digit;
 	digit_as_string[1] = '\0';
@@ -708,7 +694,7 @@ void display_stack_remove ()
  *
  */
 
-void display_stack_set_xyzt (double *stack)
+void display_stack_set_yzt (double *stack)
 {
 	int		counter;
 
@@ -721,7 +707,7 @@ void display_set_line_double (double value, int line, char *tag)
 {
 	char 		*string_value;
 	GtkTextIter	start;
-	
+
 	/* at first clear the result field */
 	display_delete_line (buffer, line, &start);
 	
@@ -740,6 +726,8 @@ void display_result_set_double (double value)
 {	
 	current_status.allow_arith_op = TRUE;
 	display_module_arith_label_update (' ');
+	
+	display_result_changed();
 	
 	display_set_line_double (value, display_result_line, "result");
 }
@@ -772,6 +760,8 @@ void display_result_set (char *string_value)
 	
 	current_status.allow_arith_op = TRUE;
 	display_module_arith_label_update (' ');
+	
+	display_result_changed();
 	
 	/* at first clear the result field */
 	
@@ -868,6 +858,8 @@ void display_append_e (GtkToggleButton *button)
 {
 	GtkTextIter		end;
 	
+	display_result_changed();
+	
 	if (current_status.number != CS_DEC) return;
 	if (current_status.calc_entry_start_new == FALSE) {
 		if (strstr (display_result_get(), "e+") == NULL) {
@@ -885,6 +877,8 @@ void display_result_toggle_sign (GtkToggleButton *button)
 {
 	GtkTextIter		start, end;
 	char			*result_field, *e_pointer;
+	
+	display_result_changed();
 	
 	if (current_status.number != CS_DEC) return;
 	/* we could call display_result_get but we need start iterator later on anyway */
@@ -917,6 +911,8 @@ void display_result_toggle_sign (GtkToggleButton *button)
 void display_result_backspace ()
 {															
 	char	*current_entry;
+	
+	display_result_changed();
 	
 	if (current_status.calc_entry_start_new == TRUE) {
 		current_status.calc_entry_start_new = FALSE;
