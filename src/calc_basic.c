@@ -72,10 +72,10 @@ void debug_input ()
 	s_cb_token	current_token;
 	
 	scanf ("%s", input);
-	current_token.number.value = atof (input);
+	current_token.number = atof (input);
 	scanf ("%s", input);
 	current_token.operation = input[0];
-	if (current_token.operation == '(') current_token.number.func = id;
+	current_token.func = NULL;
 	printf ("\t\tdisplay value: %f\n", alg_add_token (current_token));
 }
 
@@ -171,7 +171,7 @@ static s_alg_stack *alg_stack_new (s_cb_token this_token)
 	s_alg_stack	*new_stack;
 	
 	new_stack = (s_alg_stack *) malloc (sizeof(s_alg_stack));
-	new_stack->func = this_token.number.func;
+	new_stack->func = this_token.func;
 	new_stack->number = NULL;
 	new_stack->operation = NULL;
 	new_stack->size = 0;
@@ -187,7 +187,7 @@ static void alg_stack_append (s_alg_stack *stack, s_cb_token token)
 	stack->size++;
 	stack->number = (double *) realloc (stack->number, 
 		stack->size * sizeof(double));
-	stack->number[stack->size-1] = token.number.value;
+	stack->number[stack->size-1] = token.number;
 	stack->operation = (char *) realloc (stack->operation,
 		stack->size * sizeof(char));
 	stack->operation[stack->size-1] = token.operation;
@@ -241,8 +241,7 @@ double alg_add_token (s_cb_token this_token)
 	switch (this_token.operation) {
 	case '(':
 		g_ptr_array_add (stackstack, current_stack);
-		if (this_token.number.func == NULL) 
-			this_token.number.func = id;
+		if (this_token.func == NULL) this_token.func = id;
 		current_stack = alg_stack_new (this_token);
 		break;
 	case ')':
@@ -250,6 +249,12 @@ double alg_add_token (s_cb_token this_token)
 		alg_stack_append (current_stack, this_token);
 		return_value = current_stack->func (
 			alg_stack_pool (current_stack));
+		/* we may specify a function after a bracket enclosed expression
+		 * this is necessary e.g. for factorial. This function is 
+		 * applied after the stack function, so sin(3)! will be (sin(3))!
+		 */
+		if (this_token.func != NULL)
+			return_value = this_token.func(return_value);
 		alg_stack_free (current_stack);
 		current_stack = g_ptr_array_remove_index (stackstack, 
 			stackstack->len - 1);
@@ -275,7 +280,7 @@ void alg_init (int debug_level)
 	
 	alg_debug = debug_level;
 	stackstack = g_ptr_array_new ();
-	token.number.func = id;
+	token.func = id;
 	current_stack = alg_stack_new(token);	
 }
 
@@ -355,7 +360,7 @@ double rpn_stack_operation (s_cb_token current_token)
 	}
 	/* compute it */
 	return_value = compute_expression (left_hand, current_token.operation, 
-		current_token.number.value);
+		current_token.number);
 	if (rpn_debug > 0) fprintf (stderr, "[%s] RPN stack size is %i.\n", 
 		PROG_NAME, (int)rpn_stack->len);
 	if (rpn_debug > 1) debug_rpn_stack_print();

@@ -752,7 +752,7 @@ double *display_stack_get_yzt_double ()
 	double_stack = (double *) malloc (display_result_line * sizeof(double));
 	string_stack = display_stack_get_yzt();
 	for (counter = 0; counter < display_result_line; counter++)
-		double_stack[counter] = string2double (string_stack[counter]);
+		double_stack[counter] = string2double (string_stack[counter], current_status.number);
 	return double_stack;
 }
 
@@ -863,7 +863,7 @@ double display_result_get_double ()
 	double	ret_val;
 	
 	result_string = display_result_get();
-	ret_val = string2double (result_string);
+	ret_val = string2double (result_string, current_status.number);
 	g_free (result_string);
 		
 	return ret_val;

@@ -69,7 +69,7 @@ void rpn_stack_lift ();
 
 void remember_display_values();
 
-double string2double (char *string);
+double string2double (char *string, int number_base);
 
 void set_button_label_and_tooltip (GladeXML *xml, char *button_name, 
 	char *label, char *tooltip);

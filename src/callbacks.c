@@ -31,7 +31,7 @@
 #include "config_file.h"
 #include "callbacks.h"
 #include "ui.h"
-#include "parser.h"
+#include "flex_parser.h"
 
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
@@ -166,9 +166,8 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 	
 	current_token.operation = (int) g_object_get_data (G_OBJECT (button), "operation");
 	/* current number, get it from the display! */
-	if (current_token.operation != '(') 
-		current_token.number.value = display_result_get_double ();
-	else current_token.number.func = NULL;	
+	current_token.number = display_result_get_double ();
+	current_token.func = NULL;	
 	/* do inverse left shift is a right shift */
 	if ((current_token.operation == '<') && \
 		(BIT (current_status.fmod, CS_FMOD_FLAG_INV) == 1)) {
@@ -213,7 +212,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 	} else if (current_status.notation == CS_RPN) {
 		switch (current_token.operation) {
 		case '=':
-			rpn_stack_push (current_token.number.value);
+			rpn_stack_push (current_token.number);
 			stack = rpn_stack_get (RPN_FINITE_STACK);
 			display_stack_set_yzt_double (stack);
 			free (stack);
@@ -1488,11 +1487,13 @@ gboolean on_button_press_event (GtkWidget *widget, GdkEventButton *event, gpoint
 
 void on_formula_entry_activate (GtkEntry *entry, gpointer user_data)
 {
-	s_parser_result		parser;
+	/*s_parser_result		parser;
 	
 	parser = parse_string (gtk_entry_get_text (entry));
 	ui_formula_entry_state (parser.error);
 	if (!parser.error) display_result_set_double (parser.result);
+	*/
+	display_result_set_double (flex_parser(gtk_entry_get_text(entry)));
 }
 
 void on_formula_entry_changed (GtkEditable *editable, gpointer user_data)
