@@ -139,14 +139,14 @@ int main (int argc, char *argv[])
 	/* prepare calc_basic */
 
 	alg_init (0);
-	rpn_init (4, 0);
+	rpn_init (prefs.stack_size, 0);
 
 	/* finally show what we put together. do this as late asap */
 	gtk_widget_show (main_window);
 
 	/* main_windows has to be visible to get a nice and proper display */	
 	display_init (main_window);
-
+	
 	/* apply changes */
 	apply_preferences (prefs);
 

@@ -73,7 +73,9 @@ void all_clear ()
 	}
 	else {
 		rpn_free();
-		rpn_init(3, 0);
+		rpn_init(prefs.stack_size, 0);
+		display_stack_remove();
+		display_stack_create();
 		current_status.rpn_have_result = FALSE;
 	}
 	display_module_bracket_label_update (RESET);
@@ -185,7 +187,7 @@ void set_button_label (GladeXML *xml, char *button_name, void *new_label)
 	
 	string_var = new_label;	
 	button = (GtkButton *) glade_xml_get_widget (xml, button_name);
-	gtk_button_set_label (button, *string_var);	
+	if (button) gtk_button_set_label (button, *string_var);	
 }
 
 void set_checkbutton (GladeXML *xml, char *checkbutton_name, void *is_active)
@@ -195,7 +197,7 @@ void set_checkbutton (GladeXML *xml, char *checkbutton_name, void *is_active)
 	
 	bool_var = is_active;
 	toggle_button = (GtkToggleButton *) glade_xml_get_widget (xml, checkbutton_name);	
-	gtk_toggle_button_set_active (toggle_button, *bool_var);
+	if (toggle_button) gtk_toggle_button_set_active (toggle_button, *bool_var);
 }
 
 void set_spinbutton (GladeXML *xml, char *spinbutton_name, void *value)
@@ -206,7 +208,7 @@ void set_spinbutton (GladeXML *xml, char *spinbutton_name, void *value)
 	int_var = value;
 	/*d_var = (double) *int_var;*/
 	spin_button = (GtkSpinButton *) glade_xml_get_widget (xml, spinbutton_name);
-	gtk_spin_button_set_value (spin_button, *int_var);
+	if (spin_button) gtk_spin_button_set_value (spin_button, *int_var);
 }
 
 void set_optmenu (GladeXML *xml, char *optmenu_name, void *index)
@@ -216,7 +218,7 @@ void set_optmenu (GladeXML *xml, char *optmenu_name, void *index)
 	
 	int_var = index;	
 	opt_menu = (GtkOptionMenu *) glade_xml_get_widget (xml, optmenu_name);
-	gtk_option_menu_set_history (opt_menu, *int_var);
+	if (opt_menu) gtk_option_menu_set_history (opt_menu, *int_var);
 }
 
 /*
@@ -261,7 +263,7 @@ void set_stacksize (GladeXML *xml, char *name, void *stack_size)
 	
 	/* name is NULL */
 	size = stack_size;
-	if (*size == 3)
+	if (*size == RPN_FINITE_STACK)
 		tb = (GtkToggleButton *) glade_xml_get_widget (xml, "finite_stack_size");
 	else tb = (GtkToggleButton *) glade_xml_get_widget (xml, "infinite_stack_size");
 	gtk_toggle_button_set_active (tb, TRUE);
@@ -293,6 +295,7 @@ void apply_preferences (s_preferences prefs)
 	menu_item = glade_xml_get_widget (main_window_xml, "show_menubar1");
 	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
 
+	
 	if (prefs.mode == BASIC_MODE) menu_item = 
 		glade_xml_get_widget (main_window_xml, "basic_mode");
 	else if (prefs.mode == SCIENTIFIC_MODE) menu_item = 
@@ -396,4 +399,46 @@ int get_display_number_length (int base)
 			fprintf (stderr, _("[%s] unknown number base in function \"get_display_number_length\". %s\n"), PROG_NAME, BUG_REPORT);
 			return 0;
 		}
+}
+
+/* gfunc_f1. The parenthesis open (PAN) resp swapxy (RPN) button is special. It
+ *	has to be operation and gfunc button both in one. There (see also
+ *	ui.c::set_basic_object_data it gets both information. in both cases
+ *	it is connected to on_gfunc_button_clicked, which calls this function,
+ *	which itseld seperates on behalf of current notation, how to continue.
+ *	gfunc_f2 is the same. If there will be more buttons of this kind, we
+ *	should consider introducing a new button class.
+ */
+
+void gfunc_f1 (GtkToggleButton *button)
+{
+	double		*stack;
+	
+	if (current_status.notation == CS_PAN) 
+		on_operation_button_clicked (button, NULL);
+	else {
+		display_result_set_double (rpn_stack_swapxy(
+			display_result_get_double()));
+		stack = rpn_stack_get (RPN_FINITE_STACK);
+		display_stack_set_xyzt (stack);
+		free (stack);
+	}
+}
+
+/* gfunc_f2. see gfunc1
+ */
+
+void gfunc_f2 (GtkToggleButton *button)
+{
+	double 		*stack;
+	
+	if (current_status.notation == CS_PAN)
+		on_operation_button_clicked (button, NULL);
+	else {
+		display_result_set_double (rpn_stack_rolldown(
+			display_result_get_double()));
+				stack = rpn_stack_get (RPN_FINITE_STACK);
+		display_stack_set_xyzt (stack);
+		free (stack);
+	}
 }

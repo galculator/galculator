@@ -82,8 +82,8 @@ void display_result_feed (char *string);
 char *display_result_get ();
 double display_result_get_double ();
 double display_result_get_rad_angle ();
-void display_append_e ();
-void display_result_toggle_sign ();
+void display_append_e (GtkToggleButton *button);
+void display_result_toggle_sign (GtkToggleButton *button);
 void display_result_backspace ();
 
 void display_set_line_double (double value, int line, char *tag);

@@ -34,6 +34,9 @@
 	#define BUG_REPORT	"Please submit a bugreport."
 #endif
 
+#define RPN_FINITE_STACK	3
+#define RPN_INFINITE_STACK	-1
+
 enum {THIS_LEVEL, LEVEL_UP, LEVEL_DOWN};
 
 typedef union {
@@ -72,7 +75,10 @@ void alg_free ();
 void rpn_init (int size, int debug_level);
 void rpn_stack_push (double number);
 double rpn_stack_operation (s_cb_token current_token);
+double rpn_stack_rolldown (double x);
+double rpn_stack_swapxy (double x);
 double *rpn_stack_get (int length);
+void rpn_stack_set_size (int size);
 void rpn_free ();
 
 #endif /* calc_basic.h */

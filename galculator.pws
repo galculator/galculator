@@ -6,14 +6,14 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=39
-1=262
-2=352
-3=4
-4=691
-5=34
-6=153
-7=5
+0=29
+1=344
+2=428
+3=388
+4=301
+5=2
+6=806
+7=32
 8=9
 9=45
 10=8
@@ -39,12 +39,7 @@ filter.file.ignore.hidden=0
 filter.dir.ignore.hidden=0
 
 [filelist]
-0=/home/sf/Devel/galculator/src/display.h
-1=/home/sf/Devel/galculator/src/general_functions.c
-2=/home/sf/Devel/galculator/src/calc_basic.c
-3=/home/sf/Devel/galculator/ChangeLog
-4=/home/sf/Devel/galculator/src/display.c
-5=/home/sf/Devel/galculator/TODO
+0=/home/sf/Devel/galculator/TODO
 
 [Project Tree]
 0=0
@@ -66,11 +61,11 @@ filter.dir.ignore.hidden=0
 7=display_result_get_double
 
 [find_text]
-0=//
-1=display_length
-2=display_lengths
-3=display_delete_line
-4=rpn_init
-5=fuzzy
-6=Standard
-7=_File
+0=4
+1=update_tag
+2=set_label
+3=rpn_init
+4=rpn
+5=insert_with
+6=debug_pr
+7=rpn_stack_debug

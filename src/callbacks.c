@@ -174,14 +174,14 @@ on_operation_button_clicked            (GtkToggleButton       *button,
 		switch (current_token.operation) {
 		case '=':
 			rpn_stack_push (current_token.number.value);
-			stack = rpn_stack_get (3);
+			stack = rpn_stack_get (RPN_FINITE_STACK);
 			display_stack_set_xyzt (stack);
 			free (stack);
 			current_status.rpn_have_result = FALSE;
 			break;
 		default:
 			display_result_set_double (rpn_stack_operation (current_token));
-			stack = rpn_stack_get (3);
+			stack = rpn_stack_get (RPN_FINITE_STACK);
 			display_stack_set_xyzt (stack);
 			free (stack);
 			current_status.rpn_have_result = TRUE;
@@ -281,7 +281,7 @@ on_gfunc_button_clicked                (GtkToggleButton       *button,
 	if (gtk_toggle_button_get_active(button) == FALSE) return;
 	button_activation (button);
 	func = g_object_get_data (G_OBJECT (button), "func");
-	if (func) func();
+	if (func) func(button);
 	else error_message ("This button has no function associated with");
 }
 
@@ -366,7 +366,7 @@ on_ordinary_activate                  (GtkMenuItem     *menuitem,
 	GtkWidget	*w;
 	
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
-	/*printf ("pan\n");*/
+	/* printf ("pan\n"); */
 	display_change_option (CS_PAN, DISPLAY_OPT_NOTATION);
 	rpn_free ();
 	all_clear ();
@@ -374,6 +374,10 @@ on_ordinary_activate                  (GtkMenuItem     *menuitem,
 	if (w) gtk_button_set_label ((GtkButton *)w, _("="));
 	w = glade_xml_get_widget (button_box_xml, "button_pow");
 	if (w) gtk_button_set_label ((GtkButton *)w, _("x^y"));
+	w = glade_xml_get_widget (button_box_xml, "button_f1");
+	if (w) gtk_button_set_label ((GtkButton *)w, _("("));
+	w = glade_xml_get_widget (button_box_xml, "button_f2");
+	if (w) gtk_button_set_label ((GtkButton *)w, _(")"));
 	display_stack_remove();
 }
 
@@ -385,7 +389,6 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
 	GtkWidget	*w;
 	
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
-	/*printf ("rpn\n");*/
 	display_change_option (CS_RPN, DISPLAY_OPT_NOTATION);
 	alg_free ();
 	all_clear ();
@@ -393,7 +396,11 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
 	if (w) gtk_button_set_label ((GtkButton *)w, _("ENT"));
 	w = glade_xml_get_widget (button_box_xml, "button_pow");
 	if (w) gtk_button_set_label ((GtkButton *)w, _("y^x"));
-	display_stack_create();
+	w = glade_xml_get_widget (button_box_xml, "button_f1");
+	if (w) gtk_button_set_label ((GtkButton *)w, _("x<>y"));
+	w = glade_xml_get_widget (button_box_xml, "button_f2");
+	if (w) gtk_button_set_label ((GtkButton *)w, _("roll"));
+	/* stack is created by all_clear */
 }
 
 void
@@ -459,8 +466,14 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 	ui_main_window_set_dispctrl (DISPCTRL_BOTTOM);
 
 	display_update_modules();
-	
-	activate_menu_item ("dec");
+
+	/* In basuc mode:
+	 *	- number base is always decimal.
+	 *	- ignore angle, as there are no angle operations in basic mode.
+	 *	- notation is fully functional.
+	 */	
+	display_module_number_activate (CS_DEC);
+	display_module_notation_activate (prefs.def_notation);
 	
 	menu_item = glade_xml_get_widget (main_window_xml, "display_control");
 	if (((GtkCheckMenuItem *) menu_item)->active == prefs.vis_dispctrl)
@@ -496,6 +509,7 @@ on_scientific_mode_activate (GtkMenuItem *menuitem,
 	display_update_modules();
 	display_module_number_activate (prefs.def_number);
 	display_module_angle_activate (prefs.def_angle);
+	display_module_notation_activate (prefs.def_notation);
 
 	update_active_buttons (current_status.number, current_status.notation);
 	
@@ -1219,11 +1233,13 @@ void on_main_window_check_resize (GtkContainer *container,
 
 void on_finite_stack_size_clicked (GtkRadioButton *rb, gpointer user_data)
 {
-	prefs.stack_size = 4;
+	prefs.stack_size = RPN_FINITE_STACK;
+	rpn_stack_set_size (prefs.stack_size);
 }
 
 void on_infinite_stack_size_clicked (GtkRadioButton *rb, gpointer user_data)
 {
-	prefs.stack_size = -1;
+	prefs.stack_size = RPN_INFINITE_STACK;
+	rpn_stack_set_size (prefs.stack_size);
 }
 /* END */
