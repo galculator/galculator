@@ -21,6 +21,9 @@ GETTEXT_PACKAGE=galculator
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Name of gettext package])
 AC_SUBST(GETTEXT_PACKAGE)
 
+dnl Check for (f)lex
+AM_PROG_LEX
+
 dnl Add the languages which your application supports here.
 ALL_LINGUAS="de fr ja pt_BR"
 AM_GLIB_GNU_GETTEXT

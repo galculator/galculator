@@ -1,17 +1,14 @@
 1.2.1
 -----
 
+FLEX
+
 formula entry mode and functions: add x temporarily as constant:
 	[ ] parser?
 
 parser: [ ] char* operations
 	[ ] bin,hex,oct
 	
-are swapxy, rolldn stack enabling or what?
-
-=GUI======================================
-
-
 =i18n====================================
 
 	udpate translations

@@ -7,12 +7,12 @@ ShowLocals=true
 
 [filenumbers]
 0=1
-1=489
-2=126
-3=835
-4=1
-5=1002
-6=1
+1=30
+2=200
+3=3
+4=26
+5=466
+6=23
 7=29
 8=30
 9=9
@@ -42,14 +42,13 @@ filter.dir.ignore.hidden=0
 clean before build=false
 
 [filelist]
-0=/home/sf/Devel/galculator/src/main.c
-1=/home/sf/Devel/galculator/src/general_functions.c
-2=/home/sf/Devel/galculator/src/galculator.h
-3=/home/sf/Devel/galculator/src/display.c
-4=/home/sf/Devel/galculator/src/ui.c
-5=/home/sf/Devel/galculator/src/callbacks.c
-6=/home/sf/Devel/galculator/ChangeLog
-7=/home/sf/Devel/galculator/TODO
+0=/home/sf/Devel/galculator/src/calc_basic.h
+1=/home/sf/Devel/galculator/src/flex_parser.h
+2=/home/sf/Devel/galculator/src/parser.c
+3=/home/sf/Devel/galculator/ChangeLog
+4=/home/sf/Devel/galculator/src/flex_parser.l
+5=/home/sf/Devel/galculator/src/general_functions.c
+6=/home/sf/Devel/galculator/TODO
 
 [Project Tree]
 0=0
@@ -61,21 +60,21 @@ clean before build=false
 0=0
 
 [replace_text]
-0=prefs
-1=cprefs
-2=current_status.rpn_have_result
-3=current_status.allow_arith_op
-4=current_status.calc_entry_start_new
-5=operation
-6=first_module
-7=display_result_get_double
+0=rpn_stack_lift
+1=prefs
+2=cprefs
+3=current_status.rpn_have_result
+4=current_status.allow_arith_op
+5=current_status.calc_entry_start_new
+6=operation
+7=first_module
 
 [find_text]
-0=rpn_have_
-1=calc_entry_start
-2=allow_arith
-3=rpn_have_result
-4=calc_entry_start_new
-5=display_result_changed
-6=display_result_cha
-7=treeview
+0=store
+1=on_prefs_cadd
+2=user_functions
+3=rpn_have_res
+4=push_rpn_result
+5=rpn_have_result
+6=rpn_have_
+7=calc_entry_start

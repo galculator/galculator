@@ -439,13 +439,12 @@ void gfunc_f1 (GtkToggleButton *button)
 	if (current_status.notation == CS_PAN) 
 		on_operation_button_clicked (button, NULL);
 	else {
-		printf ("swapxy - am i stack lift enabling?\n");
-		current_status.rpn_stack_lift_enabled = FALSE;
 		display_result_set_double (rpn_stack_swapxy(
 			display_result_get_double()));
 		stack = rpn_stack_get (RPN_FINITE_STACK);
 		display_stack_set_yzt_double (stack);
 		free (stack);
+		current_status.rpn_stack_lift_enabled = TRUE;
 	}
 }
 
@@ -459,13 +458,12 @@ void gfunc_f2 (GtkToggleButton *button)
 	if (current_status.notation == CS_PAN)
 		on_operation_button_clicked (button, NULL);
 	else {
-		printf ("rolldn - am i stack lift enabling?\n");
-		current_status.rpn_stack_lift_enabled = FALSE;
 		display_result_set_double (rpn_stack_rolldown(
 			display_result_get_double()));
 				stack = rpn_stack_get (RPN_FINITE_STACK);
 		display_stack_set_yzt_double (stack);
 		free (stack);
+		current_status.rpn_stack_lift_enabled = TRUE;
 	}
 }
 

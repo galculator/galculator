@@ -1,3 +1,7 @@
+2004-03-17 Simon Floery <chimaira@users.sf.net>
+	* implement parser with flex
+	* modified build process for flex
+
 2004-03-14 Simon Floery <chimaira@users.sf.net>
 	* fixed stack lifting in RPN mode (thanks to Christian)
 	* GUI part for user defined functions

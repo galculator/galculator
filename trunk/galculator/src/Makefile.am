@@ -18,6 +18,8 @@ galculator_SOURCES = \
 	config_file.c config_file.h \
 	callbacks.c callbacks.h \
 	ui.c ui.h \
-	parser.c parser.h
+	parser.c parser.h \
+	flex_parser.l
 
 galculator_LDADD = @PACKAGE_LIBS@
+
