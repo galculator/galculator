@@ -1,7 +1,7 @@
 /*
  *  main.c
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2004 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -54,7 +54,7 @@ s_constant 		*constant;
 
 void print_usage ()
 {
-	printf (_("\n%s v%s, (c) 2002-2003 Simon Floery\n\n\
+	printf (_("\n%s v%s, (c) 2002-2004 Simon Floery\n\n\
 Usage: %s [options]\n\n\
 options:\n\
 (GTK options)\n\

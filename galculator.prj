@@ -76,7 +76,8 @@ module.include.files=\
 	src/galculator.h\
 	src/general_functions.h\
 	src/config_file.h\
-	src/ui.h
+	src/ui.h\
+	src/parser.h
 
 module.source.name=.
 module.source.type=
@@ -88,7 +89,8 @@ module.source.files=\
 	src/calc_basic.c\
 	src/general_functions.c\
 	src/config_file.c\
-	src/ui.c
+	src/ui.c\
+	src/parser.c
 
 module.pixmap.name=.
 module.pixmap.type=

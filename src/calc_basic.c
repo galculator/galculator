@@ -2,7 +2,7 @@
  *  calc_basic.c - arithmetic precedence handling and computing in basic 
  *			calculator mode.
  *	part of galculator
- *  	(c) 2002-2003 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2004 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -241,7 +241,7 @@ double alg_add_token (s_cb_token this_token)
 	switch (this_token.operation) {
 	case '(':
 		g_ptr_array_add (stackstack, current_stack);
-		if (this_token.number.func == NULL)
+		if (this_token.number.func == NULL) 
 			this_token.number.func = id;
 		current_stack = alg_stack_new (this_token);
 		break;

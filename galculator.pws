@@ -6,14 +6,14 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=241
-1=61
-2=146
-3=849
-4=550
-5=112
-6=1297
-7=43
+0=4
+1=4
+2=4
+3=5
+4=5
+5=5
+6=4
+7=12
 8=16
 9=18
 10=21
@@ -42,15 +42,14 @@ filter.dir.ignore.hidden=0
 clean before build=false
 
 [filelist]
-0=/home/sf/Devel/galculator/src/callbacks.h
-1=/home/sf/Devel/galculator/src/ui.h
-2=/home/sf/Devel/galculator/src/galculator.h
-3=/home/sf/Devel/galculator/src/ui.c
-4=/home/sf/Devel/galculator/src/general_functions.c
-5=/home/sf/Devel/galculator/src/main.c
-6=/home/sf/Devel/galculator/src/callbacks.c
-7=/home/sf/Devel/galculator/ChangeLog
-8=/home/sf/Devel/galculator/TODO
+0=/home/sf/Devel/galculator/src/callbacks.c
+1=/home/sf/Devel/galculator/src/general_functions.h
+2=/home/sf/Devel/galculator/src/parser.h
+3=/home/sf/Devel/galculator/src/calc_basic.h
+4=/home/sf/Devel/galculator/src/parser.c
+5=/home/sf/Devel/galculator/src/calc_basic.c
+6=/home/sf/Devel/galculator/src/galculator.h
+7=/home/sf/Devel/galculator/TODO
 
 [Project Tree]
 0=0
@@ -72,11 +71,11 @@ clean before build=false
 7=display_result_get_double
 
 [find_text]
-0=GtkMenu
-1=unknownqq
-2=formula
-3=ai:
-4=old_status
-5=fprintf
-6=error_mess
-7=form
+0=menu
+1=set_all_buttons_pr
+2=GtkMenu
+3=unknownqq
+4=formula
+5=ai:
+6=old_status
+7=fprintf
