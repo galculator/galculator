@@ -6,7 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.2.3\n"
-"POT-Creation-Date: 2004-05-23 17:20+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-07-03 22:48+0200\n"
 "PO-Revision-Date: 2004-06-11 18:43+0100\n"
 "Last-Translator: Michal Brzozowski <glum@poczta.fm>\n"
 "Language-Team: POLISH <glum@poczta.fm>\n"
@@ -129,48 +130,79 @@ msgstr "(%s) plik konfiguracyjny: pomijam nieznany wpis %s=%s. %s\n"
 
 #: src/config_file.c:223
 #, c-format
-msgid "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
-msgstr "(%s) plik konfiguracyjny: %s powinno mieć wartość TRUE lub FALSE. Używam wartości domyślnej. %s\n"
+msgid ""
+"[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
+msgstr ""
+"(%s) plik konfiguracyjny: %s powinno mieć wartość TRUE lub FALSE. Używam "
+"wartości domyślnej. %s\n"
 
 #: src/config_file.c:229
 #, c-format
-msgid "[%s] configuration file: failed to convert %s to a number properly. Have you changed your locales? %s\n"
-msgstr "(%s) plik konfiguracyjny: nie powiodła się konwersja %s na liczbę. Czyżbyś zmienił locale? %s\n"
+msgid ""
+"[%s] configuration file: failed to convert %s to a number properly. Have you "
+"changed your locales? %s\n"
+msgstr ""
+"(%s) plik konfiguracyjny: nie powiodła się konwersja %s na liczbę. Czyżbyś "
+"zmienił locale? %s\n"
 
 #: src/config_file.c:232
 #, c-format
-msgid "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr "(%s) plik konfiguracyjny: pomijam nieznany key_type w strukturze konfiguracji. %s\n"
+msgid ""
+"[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
+msgstr ""
+"(%s) plik konfiguracyjny: pomijam nieznany key_type w strukturze "
+"konfiguracji. %s\n"
 
 #: src/config_file.c:251
 #, c-format
-msgid "[%s] found unknown section %s in configuration file %s. Using preceding section.\n"
-msgstr "(%s) natrafiłem na nieznaną sekcję %s w pliku konfiguracyjnym %s. Użyję poprzedniej.\n"
+msgid ""
+"[%s] found unknown section %s in configuration file %s. Using preceding "
+"section.\n"
+msgstr ""
+"(%s) natrafiłem na nieznaną sekcję %s w pliku konfiguracyjnym %s. Użyję "
+"poprzedniej.\n"
 
 #: src/config_file.c:370
 #, c-format
-msgid "[%s] configuration file: couldn't open configuration file %s for reading. Nothing to worry about if you are starting %s for the first time. Using defaults.\n"
-msgstr "(%s) plik konfiguracyjny: nie mogę otworzyć do odczytu pliku konfiguracyjnego %s. Jeśli uruchamiasz %s po raz pierwszy, to nie ma się czym martwić. Użyję ustawień domyślnych.\n"
+msgid ""
+"[%s] configuration file: couldn't open configuration file %s for reading. "
+"Nothing to worry about if you are starting %s for the first time. Using "
+"defaults.\n"
+msgstr ""
+"(%s) plik konfiguracyjny: nie mogę otworzyć do odczytu pliku "
+"konfiguracyjnego %s. Jeśli uruchamiasz %s po raz pierwszy, to nie ma się "
+"czym martwić. Użyję ustawień domyślnych.\n"
 
 #: src/config_file.c:408
 #, c-format
-msgid "[%s] configuration file: strange boolean when writing. Skipping this key. %s\n"
-msgstr "(%s) plik konfiguracyjny: dziwna wartość logiczna przy zapisie. Pomijam ten klucz. %s\n"
+msgid ""
+"[%s] configuration file: strange boolean when writing. Skipping this key. %"
+"s\n"
+msgstr ""
+"(%s) plik konfiguracyjny: dziwna wartość logiczna przy zapisie. Pomijam ten "
+"klucz. %s\n"
 
 #: src/config_file.c:416
 #, c-format
-msgid "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure\". %s\n"
-msgstr "(%s) plik konfiguracyjny: pomijam nieznany \"key_type\" w \"config_structure\". %s\n"
+msgid ""
+"[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
+"\". %s\n"
+msgstr ""
+"(%s) plik konfiguracyjny: pomijam nieznany \"key_type\" w \"config_structure"
+"\". %s\n"
 
 #: src/config_file.c:439
 #, c-format
-msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr "(%s) plik konfiguracyjny: nie mogę zapisać pliku konfiguracyjnego %s.\n"
+msgid ""
+"[%s] configuration file: couldn't save/write to configuration file %s.\n"
+msgstr ""
+"(%s) plik konfiguracyjny: nie mogę zapisać pliku konfiguracyjnego %s.\n"
 
 #: src/display.c:567
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\". %s\n"
-msgstr "(%s) nieznana opcja wyświetlania w funkcji \"display_change_option\". %s\n"
+msgstr ""
+"(%s) nieznana opcja wyświetlania w funkcji \"display_change_option\". %s\n"
 
 #: src/general_functions.c:41
 msgid "unsupported inverse function"
@@ -198,7 +230,8 @@ msgstr "(%s) nie powiodła się konwersja %f w funkcji \"ftoax\". %s\n"
 #: src/general_functions.c:372
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr "(%s) nie udało się znaleźć widgetu %s w funkcji \"activate_menu_item\". %s\n"
+msgstr ""
+"(%s) nie udało się znaleźć widgetu %s w funkcji \"activate_menu_item\". %s\n"
 
 #: src/general_functions.c:400
 msgid "unknown number base"
@@ -206,38 +239,51 @@ msgstr "nieznana podstawa liczby"
 
 #: src/general_functions.c:401
 #, c-format
-msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
-msgstr "(%s) nieznana podstawa liczby w funkcji \"get_display_number_string\". %s\n"
+msgid ""
+"[%s] unknown number base in function \"get_display_number_string\". %s\n"
+msgstr ""
+"(%s) nieznana podstawa liczby w funkcji \"get_display_number_string\". %s\n"
 
 #: src/general_functions.c:422
 #, c-format
-msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
-msgstr "(%s) nieznana podstawa liczby w funkcji \"get_display_number_length\". %s\n"
+msgid ""
+"[%s] unknown number base in function \"get_display_number_length\". %s\n"
+msgstr ""
+"(%s) nieznana podstawa liczby w funkcji \"get_display_number_length\". %s\n"
 
 #: src/general_functions.c:531
 #, c-format
-msgid "[%s] failed to convert %s to a number properly in function \"string2double\". Have you changed your locales? %s\n"
-msgstr "(%s) nie powiodła się konwersja %s na liczbę w funkcji \"string2double\". Czyżbyś zmienił(a) locale? %s\n"
+msgid ""
+"[%s] failed to convert %s to a number properly in function \"string2double"
+"\". Have you changed your locales? %s\n"
+msgstr ""
+"(%s) nie powiodła się konwersja %s na liczbę w funkcji \"string2double\". "
+"Czyżbyś zmienił(a) locale? %s\n"
 
 #: src/general_functions.c:547
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr "(%s) nieznana podstawa liczby w funkcji \"string2double\". %s\n"
 
-#: src/general_functions.c:609
+#: src/general_functions.c:612
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr "(%s) nieznana jednostka miary kąta w funkcji \"x2rad\". %s\n"
 
-#: src/general_functions.c:624
+#: src/general_functions.c:627
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr "(%s) nieznana jednostka miary kąta w funkcji \"x2rad\". %s\n"
 
 #: src/ui.c:88
 #, c-format
-msgid "[%s] Couldn't load %s. This file is necessary to build galculator's user interface. Make sure you did a make install and the file is accessible!\n"
-msgstr "(%s) Nie mogę wczytać %s. Ten plik jest niezbędny aby zbudować interfejs użytkownika programu gcalculator. Upewnij się, że wykonałeś make install i że plik jest dostępny do odczytu!\n"
+msgid ""
+"[%s] Couldn't load %s. This file is necessary to build galculator's user "
+"interface. Make sure you did a make install and the file is accessible!\n"
+msgstr ""
+"(%s) Nie mogę wczytać %s. Ten plik jest niezbędny aby zbudować interfejs "
+"użytkownika programu gcalculator. Upewnij się, że wykonałeś make install i "
+"że plik jest dostępny do odczytu!\n"
 
 #: src/ui.c:401
 #, c-format
@@ -246,12 +292,12 @@ msgid ""
 "You might face problems when using %s! %s\n"
 ")"
 msgstr ""
-"(%s) rozmiar części ułamkowej w aktualnych ustawieniach regionalnych nie jest obsługiwany: >%s<\n"
+"(%s) rozmiar części ułamkowej w aktualnych ustawieniach regionalnych nie "
+"jest obsługiwany: >%s<\n"
 "Korzystanie z %s może sprawiać problemy! %s\n"
 ")"
 
-#: src/ui.c:783
-#: ui/main_frame.glade.h:11
+#: src/ui.c:783 ui/main_frame.glade.h:11
 msgid "Show _menu bar"
 msgstr "Pokaż _menu"
 
@@ -260,51 +306,36 @@ msgstr "Pokaż _menu"
 msgid "%s Preferences"
 msgstr "Ustawienia %s"
 
-#: src/ui.c:1013
-#: ui/scientific_buttons.glade.h:21
-#: ui/basic_buttons.glade.h:21
+#: src/ui.c:1013 ui/scientific_buttons.glade.h:21 ui/basic_buttons.glade.h:21
 msgid "="
 msgstr "="
 
-#: src/ui.c:1013
-#: src/ui.c:1025
-#: ui/scientific_buttons.glade.h:39
+#: src/ui.c:1013 src/ui.c:1025 ui/scientific_buttons.glade.h:39
 #: ui/basic_buttons.glade.h:28
 msgid "Enter"
 msgstr "Enter"
 
-#: src/ui.c:1015
-#: ui/scientific_buttons.glade.h:99
+#: src/ui.c:1015 ui/scientific_buttons.glade.h:99
 msgid "x^y"
 msgstr "x^y"
 
-#: src/ui.c:1015
-#: src/ui.c:1027
-#: ui/scientific_buttons.glade.h:71
+#: src/ui.c:1015 src/ui.c:1027 ui/scientific_buttons.glade.h:71
 msgid "Power"
 msgstr "Potęga"
 
-#: src/ui.c:1017
-#: ui/scientific_buttons.glade.h:3
-#: ui/basic_buttons.glade.h:3
+#: src/ui.c:1017 ui/scientific_buttons.glade.h:3 ui/basic_buttons.glade.h:3
 msgid "("
 msgstr "("
 
-#: src/ui.c:1017
-#: ui/scientific_buttons.glade.h:69
-#: ui/basic_buttons.glade.h:37
+#: src/ui.c:1017 ui/scientific_buttons.glade.h:69 ui/basic_buttons.glade.h:37
 msgid "Open Bracket"
 msgstr "nawias otwierający"
 
-#: src/ui.c:1019
-#: ui/scientific_buttons.glade.h:4
-#: ui/basic_buttons.glade.h:4
+#: src/ui.c:1019 ui/scientific_buttons.glade.h:4 ui/basic_buttons.glade.h:4
 msgid ")"
 msgstr ")"
 
-#: src/ui.c:1019
-#: ui/scientific_buttons.glade.h:30
-#: ui/basic_buttons.glade.h:24
+#: src/ui.c:1019 ui/scientific_buttons.glade.h:30 ui/basic_buttons.glade.h:24
 msgid "Close Bracket"
 msgstr "nawias zamykający"
 
@@ -334,13 +365,15 @@ msgstr "przesuń stos w dół"
 
 #: flex_parser.l:214
 #, c-format
-msgid "[%s] flex parser was called more than %i times. Do you know what you are doing? If not: %s\n"
-msgstr "(%s) parser flex został wywołany więcej niż %i razy. Jesteś pewien że wiesz co robisz? Jeśli nie: %s\n"
+msgid ""
+"[%s] flex parser was called more than %i times. Do you know what you are "
+"doing? If not: %s\n"
+msgstr ""
+"(%s) parser flex został wywołany więcej niż %i razy. Jesteś pewien że wiesz "
+"co robisz? Jeśli nie: %s\n"
 
-#: ui/main_frame.glade.h:1
-#: ui/scientific_buttons.glade.h:5
-#: ui/basic_buttons.glade.h:5
-#: ui/prefs.glade.h:3
+#: ui/main_frame.glade.h:1 ui/scientific_buttons.glade.h:5
+#: ui/basic_buttons.glade.h:5 ui/prefs.glade.h:3
 msgid "*"
 msgstr "*"
 
@@ -348,8 +381,7 @@ msgstr "*"
 msgid "Angle _units"
 msgstr "Jednostki _kąta"
 
-#: ui/main_frame.glade.h:3
-#: ui/prefs.glade.h:23
+#: ui/main_frame.glade.h:3 ui/prefs.glade.h:23
 msgid "Buttons"
 msgstr "Przyciski"
 
@@ -369,8 +401,7 @@ msgstr "_Wyświetlanie"
 msgid "Formula entry text field - enter string expression to compute here."
 msgstr "Pole wprowadzania formuły - wpisz treść obliczanego wyrażenia."
 
-#: ui/main_frame.glade.h:8
-#: ui/prefs.glade.h:31
+#: ui/main_frame.glade.h:8 ui/prefs.glade.h:31
 msgid "Functions"
 msgstr "Funkcje"
 
@@ -478,84 +509,68 @@ msgstr "Tryb _naukowy"
 msgid "_View"
 msgstr "_Widok"
 
-#: ui/scientific_buttons.glade.h:2
-#: ui/basic_buttons.glade.h:2
+#: ui/scientific_buttons.glade.h:2 ui/basic_buttons.glade.h:2
 #, no-c-format
 msgid "%"
 msgstr "%"
 
-#: ui/scientific_buttons.glade.h:6
-#: ui/basic_buttons.glade.h:6
+#: ui/scientific_buttons.glade.h:6 ui/basic_buttons.glade.h:6
 msgid "+"
 msgstr "+"
 
-#: ui/scientific_buttons.glade.h:7
-#: ui/basic_buttons.glade.h:7
+#: ui/scientific_buttons.glade.h:7 ui/basic_buttons.glade.h:7
 msgid "+/-"
 msgstr "+/-"
 
-#: ui/scientific_buttons.glade.h:8
-#: ui/basic_buttons.glade.h:8
+#: ui/scientific_buttons.glade.h:8 ui/basic_buttons.glade.h:8
 msgid "-"
 msgstr "-"
 
-#: ui/scientific_buttons.glade.h:9
-#: ui/basic_buttons.glade.h:9
+#: ui/scientific_buttons.glade.h:9 ui/basic_buttons.glade.h:9
 msgid "."
 msgstr "."
 
-#: ui/scientific_buttons.glade.h:10
-#: ui/basic_buttons.glade.h:10
+#: ui/scientific_buttons.glade.h:10 ui/basic_buttons.glade.h:10
 msgid "/"
 msgstr "/"
 
-#: ui/scientific_buttons.glade.h:11
-#: ui/basic_buttons.glade.h:11
+#: ui/scientific_buttons.glade.h:11 ui/basic_buttons.glade.h:11
 msgid "0"
 msgstr "0"
 
-#: ui/scientific_buttons.glade.h:12
-#: ui/basic_buttons.glade.h:12
+#: ui/scientific_buttons.glade.h:12 ui/basic_buttons.glade.h:12
 msgid "1"
 msgstr "1"
 
-#: ui/scientific_buttons.glade.h:13
-#: ui/basic_buttons.glade.h:13
+#: ui/scientific_buttons.glade.h:13 ui/basic_buttons.glade.h:13
 msgid "2"
 msgstr "2"
 
-#: ui/scientific_buttons.glade.h:14
-#: ui/basic_buttons.glade.h:14
+#: ui/scientific_buttons.glade.h:14 ui/basic_buttons.glade.h:14
 msgid "3"
 msgstr "3"
 
-#: ui/scientific_buttons.glade.h:15
-#: ui/basic_buttons.glade.h:15
+#: ui/scientific_buttons.glade.h:15 ui/basic_buttons.glade.h:15
 msgid "4"
 msgstr "4"
 
-#: ui/scientific_buttons.glade.h:16
-#: ui/basic_buttons.glade.h:16
+#: ui/scientific_buttons.glade.h:16 ui/basic_buttons.glade.h:16
 msgid "5"
 msgstr "5"
 
-#: ui/scientific_buttons.glade.h:17
-#: ui/basic_buttons.glade.h:17
+#: ui/scientific_buttons.glade.h:17 ui/basic_buttons.glade.h:17
 msgid "6"
 msgstr "6"
 
-#: ui/scientific_buttons.glade.h:18
-#: ui/basic_buttons.glade.h:18
+#: ui/scientific_buttons.glade.h:18 ui/basic_buttons.glade.h:18
 msgid "7"
 msgstr "7"
 
-#: ui/scientific_buttons.glade.h:19
-#: ui/basic_buttons.glade.h:19
+#: ui/scientific_buttons.glade.h:19 ui/basic_buttons.glade.h:19
 msgid "8"
 msgstr "8"
 
-#: ui/scientific_buttons.glade.h:20
-#: ui/basic_buttons.glade.h:20
+#: ui/scientific_buttons.glade.h:20 ui/basic_buttons.glade.h:20
 msgid "9"
 msgstr "9"
 
@@ -567,8 +582,7 @@ msgstr "A"
 msgid "AND"
 msgstr "AND"
 
-#: ui/scientific_buttons.glade.h:24
-#: ui/basic_buttons.glade.h:22
+#: ui/scientific_buttons.glade.h:24 ui/basic_buttons.glade.h:22
 msgid "Add current display value to memory"
 msgstr "Dodaj wyświetlaną wartość do pamięci"
 
@@ -580,8 +594,7 @@ msgstr "B"
 msgid "Bitwise complement"
 msgstr "Uzupełnienie bitowe"
 
-#: ui/scientific_buttons.glade.h:27
-#: ui/dispctrl_right.glade.h:4
+#: ui/scientific_buttons.glade.h:27 ui/dispctrl_right.glade.h:4
 #: ui/dispctrl_bottom.glade.h:4
 msgid "C"
 msgstr "C"
@@ -590,13 +603,11 @@ msgstr "C"
 msgid "CMP"
 msgstr "CMP"
 
-#: ui/scientific_buttons.glade.h:29
-#: ui/basic_buttons.glade.h:23
+#: ui/scientific_buttons.glade.h:29 ui/basic_buttons.glade.h:23
 msgid "Change sign"
 msgstr "Zmień znak"
 
-#: ui/scientific_buttons.glade.h:31
-#: ui/prefs.glade.h:26
+#: ui/scientific_buttons.glade.h:31 ui/prefs.glade.h:26
 msgid "Constants"
 msgstr "Stałe"
 
@@ -608,13 +619,11 @@ msgstr "Kosinus"
 msgid "D"
 msgstr "D"
 
-#: ui/scientific_buttons.glade.h:34
-#: ui/basic_buttons.glade.h:25
+#: ui/scientific_buttons.glade.h:34 ui/basic_buttons.glade.h:25
 msgid "Decimal point"
 msgstr "kropka dziesiętna"
 
-#: ui/scientific_buttons.glade.h:35
-#: ui/basic_buttons.glade.h:26
+#: ui/scientific_buttons.glade.h:35 ui/basic_buttons.glade.h:26
 msgid "Divide"
 msgstr "Dzielenie"
 
@@ -626,8 +635,7 @@ msgstr "E"
 msgid "EE"
 msgstr "EE"
 
-#: ui/scientific_buttons.glade.h:38
-#: ui/basic_buttons.glade.h:27
+#: ui/scientific_buttons.glade.h:38 ui/basic_buttons.glade.h:27
 msgid "Eight"
 msgstr "Osiem"
 
@@ -643,13 +651,11 @@ msgstr "F"
 msgid "Factorial"
 msgstr "Część ułamkowa"
 
-#: ui/scientific_buttons.glade.h:43
-#: ui/basic_buttons.glade.h:29
+#: ui/scientific_buttons.glade.h:43 ui/basic_buttons.glade.h:29
 msgid "Five"
 msgstr "Pięć"
 
-#: ui/scientific_buttons.glade.h:44
-#: ui/basic_buttons.glade.h:30
+#: ui/scientific_buttons.glade.h:44 ui/basic_buttons.glade.h:30
 msgid "Four"
 msgstr "Cztery"
 
@@ -709,8 +715,7 @@ msgstr "Logiczne LUB"
 msgid "Logical XOR"
 msgstr "Logiczne ALBO (exclusive-OR)"
 
-#: ui/scientific_buttons.glade.h:59
-#: ui/basic_buttons.glade.h:31
+#: ui/scientific_buttons.glade.h:59 ui/basic_buttons.glade.h:31
 msgid "M+"
 msgstr "M+"
 
@@ -718,13 +723,11 @@ msgstr "M+"
 msgid "MOD"
 msgstr "MOD"
 
-#: ui/scientific_buttons.glade.h:61
-#: ui/basic_buttons.glade.h:32
+#: ui/scientific_buttons.glade.h:61 ui/basic_buttons.glade.h:32
 msgid "MR"
 msgstr "MR"
 
-#: ui/scientific_buttons.glade.h:62
-#: ui/basic_buttons.glade.h:33
+#: ui/scientific_buttons.glade.h:62 ui/basic_buttons.glade.h:33
 msgid "MS"
 msgstr "MS"
 
@@ -732,8 +735,7 @@ msgstr "MS"
 msgid "Modulus"
 msgstr "Modulo"
 
-#: ui/scientific_buttons.glade.h:64
-#: ui/basic_buttons.glade.h:34
+#: ui/scientific_buttons.glade.h:64 ui/basic_buttons.glade.h:34
 msgid "Multiply"
 msgstr "Mnożenie"
 
@@ -741,8 +743,7 @@ msgstr "Mnożenie"
 msgid "Natural logarithm (base: e)"
 msgstr "Logarytm naturalny"
 
-#: ui/scientific_buttons.glade.h:66
-#: ui/basic_buttons.glade.h:35
+#: ui/scientific_buttons.glade.h:66 ui/basic_buttons.glade.h:35
 msgid "Nine"
 msgstr "Dziewięć"
 
@@ -750,28 +751,23 @@ msgstr "Dziewięć"
 msgid "OR"
 msgstr "OR"
 
-#: ui/scientific_buttons.glade.h:68
-#: ui/basic_buttons.glade.h:36
+#: ui/scientific_buttons.glade.h:68 ui/basic_buttons.glade.h:36
 msgid "One"
 msgstr "Jeden"
 
-#: ui/scientific_buttons.glade.h:70
-#: ui/basic_buttons.glade.h:38
+#: ui/scientific_buttons.glade.h:70 ui/basic_buttons.glade.h:38
 msgid "Percent"
 msgstr "Procent"
 
-#: ui/scientific_buttons.glade.h:72
-#: ui/basic_buttons.glade.h:39
+#: ui/scientific_buttons.glade.h:72 ui/basic_buttons.glade.h:39
 msgid "Read from memory"
 msgstr "Odczytaj z pamięci"
 
-#: ui/scientific_buttons.glade.h:73
-#: ui/basic_buttons.glade.h:40
+#: ui/scientific_buttons.glade.h:73 ui/basic_buttons.glade.h:40
 msgid "Save to memory"
 msgstr "Zapisz do pamięci"
 
-#: ui/scientific_buttons.glade.h:74
-#: ui/basic_buttons.glade.h:41
+#: ui/scientific_buttons.glade.h:74 ui/basic_buttons.glade.h:41
 msgid "Seven"
 msgstr "Siedem"
 
@@ -779,8 +775,7 @@ msgstr "Siedem"
 msgid "Sine"
 msgstr "Sinus"
 
-#: ui/scientific_buttons.glade.h:76
-#: ui/basic_buttons.glade.h:42
+#: ui/scientific_buttons.glade.h:76 ui/basic_buttons.glade.h:42
 msgid "Six"
 msgstr "Sześć"
 
@@ -788,18 +783,15 @@ msgstr "Sześć"
 msgid "Square"
 msgstr "Do kwadratu"
 
-#: ui/scientific_buttons.glade.h:78
-#: ui/basic_buttons.glade.h:43
+#: ui/scientific_buttons.glade.h:78 ui/basic_buttons.glade.h:43
 msgid "Square root"
 msgstr "Pierwiastek kwadratowy"
 
-#: ui/scientific_buttons.glade.h:79
-#: ui/basic_buttons.glade.h:44
+#: ui/scientific_buttons.glade.h:79 ui/basic_buttons.glade.h:44
 msgid "Subtract"
 msgstr "Odejmowanie"
 
-#: ui/scientific_buttons.glade.h:80
-#: ui/basic_buttons.glade.h:45
+#: ui/scientific_buttons.glade.h:80 ui/basic_buttons.glade.h:45
 msgid "Sum"
 msgstr "Suma"
 
@@ -807,13 +799,11 @@ msgstr "Suma"
 msgid "Tangent"
 msgstr "Tangens"
 
-#: ui/scientific_buttons.glade.h:82
-#: ui/basic_buttons.glade.h:46
+#: ui/scientific_buttons.glade.h:82 ui/basic_buttons.glade.h:46
 msgid "Three"
 msgstr "Trzy"
 
-#: ui/scientific_buttons.glade.h:83
-#: ui/basic_buttons.glade.h:47
+#: ui/scientific_buttons.glade.h:83 ui/basic_buttons.glade.h:47
 msgid "Two"
 msgstr "Dwa"
 
@@ -825,8 +815,7 @@ msgstr "Funkcje użytkownika"
 msgid "XOR"
 msgstr "XOR"
 
-#: ui/scientific_buttons.glade.h:86
-#: ui/basic_buttons.glade.h:48
+#: ui/scientific_buttons.glade.h:86 ui/basic_buttons.glade.h:48
 msgid "Zero"
 msgstr "Zero"
 
@@ -866,8 +855,7 @@ msgstr "n!"
 msgid "sin"
 msgstr "sin"
 
-#: ui/scientific_buttons.glade.h:96
-#: ui/basic_buttons.glade.h:49
+#: ui/scientific_buttons.glade.h:96 ui/basic_buttons.glade.h:49
 msgid "sqrt"
 msgstr "sqrt"
 
@@ -883,8 +871,7 @@ msgstr "x^2"
 msgid "A dialog that shows information about this program."
 msgstr "Okno z informacjami o programie."
 
-#: ui/about.glade.h:2
-#: ui/prefs.glade.h:25
+#: ui/about.glade.h:2 ui/prefs.glade.h:25
 msgid "Closes the dialog."
 msgstr "Zamknięcie okna."
 
@@ -900,13 +887,11 @@ msgstr "fill_me"
 msgid "A dialog that is used to change a color setting."
 msgstr "Dialog do zmiany ustawień kolorów."
 
-#: ui/color.glade.h:2
-#: ui/font.glade.h:2
+#: ui/color.glade.h:2 ui/font.glade.h:2
 msgid "Applies all changes and closes the dialog."
 msgstr "Uwzględnienie wszystkich zmian ustawień i zamknięcie okna."
 
-#: ui/color.glade.h:3
-#: ui/font.glade.h:4
+#: ui/color.glade.h:3 ui/font.glade.h:4
 msgid "Cancels all changes and closes the dialog."
 msgstr "Anulowanie wszelkich zmian ustawień i zamknięcie okna."
 
@@ -1150,28 +1135,22 @@ msgstr "nieograniczony rozmiar stosu"
 msgid "signed"
 msgstr "ze znakiem"
 
-#: ui/dispctrl_right.glade.h:1
-#: ui/dispctrl_bottom.glade.h:1
+#: ui/dispctrl_right.glade.h:1 ui/dispctrl_bottom.glade.h:1
 msgid "<-"
 msgstr "<-"
 
-#: ui/dispctrl_right.glade.h:2
-#: ui/dispctrl_bottom.glade.h:2
+#: ui/dispctrl_right.glade.h:2 ui/dispctrl_bottom.glade.h:2
 msgid "AC"
 msgstr "AC"
 
-#: ui/dispctrl_right.glade.h:3
-#: ui/dispctrl_bottom.glade.h:3
+#: ui/dispctrl_right.glade.h:3 ui/dispctrl_bottom.glade.h:3
 msgid "Backspace"
 msgstr "Cofnij"
 
-#: ui/dispctrl_right.glade.h:5
-#: ui/dispctrl_bottom.glade.h:5
+#: ui/dispctrl_right.glade.h:5 ui/dispctrl_bottom.glade.h:5
 msgid "Clear display"
 msgstr "Wyczyść wyświetlacz"
 
-#: ui/dispctrl_right.glade.h:6
-#: ui/dispctrl_bottom.glade.h:6
+#: ui/dispctrl_right.glade.h:6 ui/dispctrl_bottom.glade.h:6
 msgid "Reset calculator (clear all)"
 msgstr "Zresetuj kalkulator (wyczyść wszystko)"
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-23 17:20+0300\n"
+"POT-Creation-Date: 2004-07-03 22:48+0200\n"
 "PO-Revision-Date: 2004-04-04 11:53+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -271,12 +271,12 @@ msgstr ""
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr "[%s] 関数 \"string2double\" に不明な基数が渡されました。%s\n"
 
-#: src/general_functions.c:609
+#: src/general_functions.c:612
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr "[%s] 関数 \"x2rad\" に不明な角度の単位が渡されました。%s\n"
 
-#: src/general_functions.c:624
+#: src/general_functions.c:627
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr "[%s] 関数 \"rad2x\" に不明な角度の単位が渡されました。%s\n"

@@ -61,10 +61,6 @@ clean before build=false
 6=FALSE
 7=CURRENT_ALG
 
-[filelist]
-0=/home/sf/Devel/galculator/ChangeLog
-1=/home/sf/Devel/galculator/TODO
-
 [Project Tree]
 0=0
 1=0:0

@@ -25,7 +25,7 @@ dnl Check for (f)lex
 AM_PROG_LEX
 
 dnl Add the languages which your application supports here.
-ALL_LINGUAS="de fr ja pt_BR pl"
+ALL_LINGUAS="de fr ja pt_BR pl ro"
 AM_GLIB_GNU_GETTEXT
 
 dnl Use -Wall if we have gcc.

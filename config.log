@@ -389,7 +389,7 @@ configure:4785: $? = 0
 configure:4788: test -s conftest
 configure:4791: $? = 0
 configure:4963: checking for catalogs to be installed
-configure:4988: result:  de fr ja pt_BR pl
+configure:4988: result:  de fr ja pt_BR pl ro
 configure:5131: creating ./config.status
 
 ## ---------------------- ##
@@ -485,7 +485,7 @@ ACLOCAL='aclocal-1.4'
 AUTOCONF='autoconf'
 AUTOHEADER='autoheader'
 AUTOMAKE='automake-1.4'
-CATALOGS=' de.gmo fr.gmo ja.gmo pt_BR.gmo pl.gmo'
+CATALOGS=' de.gmo fr.gmo ja.gmo pt_BR.gmo pl.gmo ro.gmo'
 CATOBJEXT='.gmo'
 CC='gcc'
 CFLAGS='-g -O2 -Wall'
@@ -499,7 +499,7 @@ ECHO_T=''
 EGREP='grep -E'
 EXEEXT=''
 GETTEXT_PACKAGE='galculator'
-GMOFILES=' de.gmo fr.gmo ja.gmo pt_BR.gmo pl.gmo'
+GMOFILES=' de.gmo fr.gmo ja.gmo pt_BR.gmo pl.gmo ro.gmo'
 GMSGFMT='/usr/bin/msgfmt'
 INSTALL_DATA='${INSTALL} -m 644'
 INSTALL_PROGRAM='${INSTALL}'
@@ -550,7 +550,7 @@ PACKAGE_TARNAME=''
 PACKAGE_VERSION=''
 PATH_SEPARATOR=':'
 PKG_CONFIG='/usr/bin/pkg-config'
-POFILES=' de.po fr.po ja.po pt_BR.po pl.po'
+POFILES=' de.po fr.po ja.po pt_BR.po pl.po ro.po'
 POSUB='po'
 PO_IN_DATADIR_FALSE=''
 PO_IN_DATADIR_TRUE=''
