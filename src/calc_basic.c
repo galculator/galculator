@@ -250,7 +250,6 @@ double alg_add_token (ALG_OBJECT **alg, s_cb_token this_token)
 	static double	return_value;
 	s_alg_stack	*current_stack;
 	
-	current_stack = (s_alg_stack *) (*alg)->data;
 	switch (this_token.operation) {
 	case '(':
 		if (this_token.func == NULL) this_token.func = id;
@@ -258,6 +257,7 @@ double alg_add_token (ALG_OBJECT **alg, s_cb_token this_token)
 		break;
 	case ')':
 		if (g_slist_length (*alg) < 2) break;
+		current_stack = (s_alg_stack *) (*alg)->data;
 		alg_stack_append (current_stack, this_token);
 		return_value = current_stack->func (
 			alg_stack_pool (current_stack));
@@ -270,14 +270,23 @@ double alg_add_token (ALG_OBJECT **alg, s_cb_token this_token)
 		alg_stack_free (current_stack);
 		*alg = g_slist_delete_link (*alg, *alg);
 		break;
-	default:
+	case '=':
+		/* first close all open brackets */
+		while (g_slist_length (*alg) > 1) {
+			this_token.operation = ')';
+			this_token.number = alg_add_token (alg, this_token);
+		}
+		this_token.operation = '=';
+		current_stack = (s_alg_stack *) (*alg)->data;
 		alg_stack_append (current_stack, this_token);
 		return_value = alg_stack_pool (current_stack);
-		if (this_token.operation == '=') {
-			/* MAYBE HERE */
-			alg_free (*alg);
-			*alg = alg_init(alg_debug);
-		}
+		alg_free (*alg);
+		*alg = alg_init(alg_debug);
+		break;
+	default:
+		current_stack = (s_alg_stack *) (*alg)->data;
+		alg_stack_append (current_stack, this_token);
+		return_value = alg_stack_pool (current_stack);
 		break;
 	}
 	return return_value;

@@ -27,12 +27,6 @@ update shortcuts text file
 #########################
 #########################
 
-in general:
-
-paper tape display (history) and 
-
-	[wcalc]
-
 to be done:
 ~~~~~~~~~~~
 
@@ -44,11 +38,15 @@ undo last operation
 nice:
 ~~~~~
 
-backspace in form entry nimmt ganze ids weg (z.B. sqrt)
+paper tape display (history)
+
+backspace in form entry removes whole ids (z.B. sqrt)
 
 some rounding
 
-spaces for binary number base, "tausendertrennzeichen"
+spaces for binary number base, "tausendertrennzeichen" [sf.net fr #942283]
+
+enable 64 bit integers [sf.net fr #942283]
 
 complex numbers
 

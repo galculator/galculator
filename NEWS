@@ -1,3 +1,12 @@
+galculator 1.2.3
+	* several bugfixes:
+		- con and mr buttons push display value in RPN mode
+		- '=' closes now all open brackets in the end
+		- fixed "destroy" signal bug
+	* GUI:
+		- disable MR and M+ button until there is sth to display
+	* translation updates
+
 galculator 1.2.2
 	* several bugfixes:
 		- inv, hyp button in form mode release
