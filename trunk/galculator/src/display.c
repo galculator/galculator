@@ -773,7 +773,8 @@ void display_set_line (char *string, int line, char *tag)
 	/* at first clear the result field */
 	display_delete_line (buffer, line, &start);
 	
-	separator_string = string_add_separator(string, TRUE, 3, ' ', dec_point[0]);
+	separator_string = string_add_separator(string, get_sep(current_status.number), 
+		get_sep_length(current_status.number), get_sep_char(current_status.number), dec_point[0]);
 	/* DISPLAY RESULT MODIFIED */
 	gtk_text_buffer_insert_with_tags_by_name (buffer, &start, separator_string, -1, tag, NULL);
 	free (separator_string);
@@ -831,7 +832,7 @@ char *display_get_line (int line_nr)
 	
 	display_get_line_iters (buffer, line_nr, &start, &end);
 	/* DISPLAY RESULT GET */
-	return string_del_separator(gtk_text_buffer_get_text (buffer, &start, &end, TRUE), ' ');
+	return string_del_separator(gtk_text_buffer_get_text (buffer, &start, &end, TRUE), get_sep_char(current_status.number));
 }
 
 /* display_result_get. a simplfied call to display_result_get_line
@@ -923,4 +924,21 @@ void display_result_backspace ()
 		display_result_set (current_entry);
 		g_free (current_entry);
 	}
+}
+
+/* display_result_getset. kind of display result redraw. use this to get and
+ * set the display, it frees the return string of display_result_get()
+ */
+
+void display_result_getset ()
+{
+	char	*result;
+	char	**stack;
+	
+	result = display_result_get();
+	stack = display_stack_get_yzt();
+	display_result_set(result);
+	display_stack_set_yzt(stack);
+	g_free(result);
+	g_free(stack);
 }

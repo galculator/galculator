@@ -221,7 +221,11 @@ void set_checkbutton (GladeXML *xml, char *checkbutton_name, void *is_active)
 	
 	bool_var = is_active;
 	toggle_button = (GtkToggleButton *) glade_xml_get_widget (xml, checkbutton_name);	
-	if (toggle_button) gtk_toggle_button_set_active (toggle_button, *bool_var);
+	if (toggle_button) {
+		gtk_toggle_button_set_active (toggle_button, *bool_var);
+		/* they say there is no good reason. i say there is */
+		gtk_toggle_button_toggled (toggle_button);
+	}
 }
 
 void set_spinbutton (GladeXML *xml, char *spinbutton_name, void *value)
@@ -714,4 +718,81 @@ double rad2x (double rad)
 		fprintf (stderr, _("[%s] unknown angle base in function \"rad2x\". %s\n"), PROG_NAME, BUG_REPORT);
 	}
 	return rad;
+}
+
+gboolean get_sep (int number_base)
+{
+	switch (number_base) {
+	case CS_DEC:
+		return prefs.dec_sep;
+	case CS_HEX:
+		return prefs.hex_sep;
+	case CS_OCT:
+		return prefs.oct_sep;
+	case CS_BIN:
+		return prefs.bin_sep;
+	default:
+		fprintf (stderr, _("[%s] unknown number base in function \"get_sep\". %s\n"), PROG_NAME, BUG_REPORT);
+	}
+	return 0;
+}
+
+int get_sep_length (int number_base)
+{
+	switch (number_base) {
+	case CS_DEC:
+		return prefs.dec_sep_length;
+	case CS_HEX:
+		return prefs.hex_sep_length;
+	case CS_OCT:
+		return prefs.oct_sep_length;
+	case CS_BIN:
+		return prefs.bin_sep_length;
+	default:
+		fprintf (stderr, _("[%s] unknown number base in function \"get_sep_length\". %s\n"), PROG_NAME, BUG_REPORT);
+	}
+	return 0;
+}
+
+char get_sep_char (int number_base)
+{
+	switch (number_base) {
+	case CS_DEC:
+		return prefs.dec_sep_char[0];
+	case CS_HEX:
+		return prefs.hex_sep_char[0];
+	case CS_OCT:
+		return prefs.oct_sep_char[0];
+	case CS_BIN:
+		return prefs.bin_sep_char[0];
+	default:
+		fprintf (stderr, _("[%s] unknown number base in function \"get_sep_char\". %s\n"), PROG_NAME, BUG_REPORT);
+	}
+	return 0;
+}
+
+void prefs_sep_char_changed (GtkEditable *editable, char *prefs_sep, int number_base)
+{
+	char 	*sep, *result, **stack;
+	
+	sep = gtk_editable_get_chars (editable, 0, -1);
+	if (strlen(sep) > 0) {
+		if ((is_valid_number(number_base, *sep)) ||
+			((number_base == CS_DEC) && ((*sep == '-') ||
+			(*sep == 'e') || (*sep == dec_point[0]))))
+			gtk_editable_delete_text (editable, 0, -1);
+		else {
+			result = display_result_get();
+			stack = display_stack_get_yzt();
+			if (prefs_sep) g_free (prefs_sep);
+			prefs_sep = g_strdup(sep);
+			if (number_base == current_status.number) {
+				display_result_set(result);
+				display_stack_set_yzt(stack);
+			}
+			g_free (result);
+			g_free (stack);
+		}
+	}
+	g_free (sep);	
 }

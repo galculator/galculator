@@ -1,3 +1,17 @@
+########################################
+# 2004-10-21 galculator 1.2.4 released #
+########################################
+
+2004-10-19 Simon Floery <chimaira@users.sf.net>
+	* display.c, callbacks.c, general_functions.c: separator bugfixes
+
+2004-10-17 Simon Floery <chimaira@users.sf.net>
+	* config_file.c: strings in config file are now enclosed by "s
+	* display.c, callbacks.c: separator finetuning
+
+2004-10-16 Simon Floery <chimaira@users.sf.net>
+	* finalized GUI integration for separators
+
 2004-09-27 Simon Floery <chimaira@users.sf.net>
 	* bugfix in string_add_separator
 	* display_set_line is single display modifier in display.c
@@ -26,7 +40,7 @@
 	* added polish translation. sf.net #971335 (thanks to michal)
 
 ########################################
-# 2003-05-23 galculator 1.2.3 released #
+# 2004-05-23 galculator 1.2.3 released #
 ########################################
 
 2004-05-23 Simon Floery <chimaira@users.sf.net>
@@ -44,7 +58,7 @@
 	* updated ja.po and pt_BR.po
 
 ########################################
-# 2003-04-01 galculator 1.2.2 released #
+# 2004-04-01 galculator 1.2.2 released #
 ########################################
 
 2004-04-01 Simon Floery <chimaira@users.sf.net>
@@ -81,7 +95,7 @@
 	* pt_BR.po update
 
 ########################################
-# 2003-03-11 galculator 1.2.0 released #
+# 2004-03-11 galculator 1.2.0 released #
 ########################################
 
 2004-03-11 Simon Floery <chimaira@users.sf.net>

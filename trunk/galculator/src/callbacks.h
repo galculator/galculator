@@ -186,7 +186,56 @@ void on_prefs_bin_bits_value_changed (GtkSpinButton *spinbutton,
 void on_prefs_bin_signed_toggled (GtkToggleButton *togglebutton, 
 				gpointer user_data);
 
-void on_prefs_number_base_combo_changed (GtkCombo *combo, gpointer user_data);
+void on_prefs_dec_sep_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data);
+
+void on_prefs_hex_sep_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data);
+
+void on_prefs_oct_sep_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data);
+
+void on_prefs_bin_sep_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data);
+
+void on_prefs_bin_sep_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data);
+
+void on_prefs_dec_sep_length_value_changed (GtkSpinButton *spinbutton,
+					GtkScrollType arg1,
+					gpointer user_data);
+					
+void on_prefs_hex_sep_length_value_changed (GtkSpinButton *spinbutton,
+					GtkScrollType arg1,
+					gpointer user_data);
+
+void on_prefs_oct_sep_length_value_changed (GtkSpinButton *spinbutton,
+					GtkScrollType arg1,
+					gpointer user_data);
+
+void on_prefs_dec_sep_char_changed (GtkEditable *editable,
+                                            gpointer user_data);
+
+void on_prefs_hex_sep_char_changed (GtkEditable *editable,
+                                            gpointer user_data);
+					    
+void on_prefs_oct_sep_char_changed (GtkEditable *editable,
+                                            gpointer user_data);
+
+void on_prefs_bin_sep_char_changed (GtkEditable *editable,
+                                            gpointer user_data);
+
+void on_prefs_menu_dec_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
+			
+void on_prefs_menu_hex_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
+			
+void on_prefs_menu_oct_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
+			
+void on_prefs_menu_bin_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
 
 void const_list_selection_changed_cb (GtkTreeSelection *selection, 
 				gpointer data);

@@ -932,25 +932,7 @@ void on_prefs_rem_display_toggled (GtkToggleButton *togglebutton,
 	prefs.rem_display = gtk_toggle_button_get_active (togglebutton);
 	/* only is important when leaving galculator */
 }
-/*
-void on_prefs_def_number_changed (GtkOptionMenu *optionmenu,
-				gpointer user_data)
-{
-	prefs.def_number = gtk_option_menu_get_history (optionmenu);
-}
-										
-void on_prefs_def_angle_changed (GtkOptionMenu *optionmenu,
-				gpointer user_data)
-{
-	prefs.def_angle = gtk_option_menu_get_history (optionmenu);
-}
-										
-void on_prefs_def_notation_changed (GtkOptionMenu *optionmenu,
-				gpointer user_data)
-{
-	prefs.def_notation = gtk_option_menu_get_history (optionmenu);
-}
-*/
+
 void on_prefs_button_width_changed (GtkSpinButton *spinbutton,
 					GtkScrollType arg1,
 					gpointer user_data)
@@ -1446,40 +1428,136 @@ void on_prefs_bin_length_value_changed (GtkSpinButton *spinbutton,
 	prefs.bin_length = (int) gtk_spin_button_get_value (spinbutton);
 }
 
-void on_prefs_number_base_combo_changed (GtkCombo *combo, gpointer user_data) 
+void on_prefs_menu_dec_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-	int i;
-	GtkOptionMenu	*optionmenu;
-	i = (int) user_data;
-	printf ("welcome: %i %i\n", gtk_option_menu_get_history (optionmenu), i);
-	switch (gtk_option_menu_get_history (optionmenu)) {
-	case 0:
-		gtk_widget_show (glade_xml_get_widget (prefs_xml, "prefs_vbox_dec"));
-		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_hex"));
-		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_oct"));
-		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_bin"));
-		break;
-	case 1:
-		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_dec"));
-		gtk_widget_show (glade_xml_get_widget (prefs_xml, "prefs_vbox_hex"));
-		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_oct"));
-		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_bin"));
-		break;
-	case 2:
-		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_dec"));
-		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_hex"));
-		gtk_widget_show (glade_xml_get_widget (prefs_xml, "prefs_vbox_oct"));
-		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_bin"));
-		break;
-	case 3:
-		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_dec"));
-		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_hex"));
-		gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_oct"));
-		gtk_widget_show (glade_xml_get_widget (prefs_xml, "prefs_vbox_bin"));
-		break;
-	default:
-		error_message ("on_prefs_number_base_combo: unknown history index");
-	}
+	gtk_widget_show (glade_xml_get_widget (prefs_xml, "prefs_vbox_dec"));
+	gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_hex"));
+	gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_oct"));
+	gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_bin"));
+}
+			
+void on_prefs_menu_hex_activate (GtkMenuItem *menuitem, gpointer user_data)
+{
+	gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_dec"));
+	gtk_widget_show (glade_xml_get_widget (prefs_xml, "prefs_vbox_hex"));
+	gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_oct"));
+	gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_bin"));
+}
+			
+void on_prefs_menu_oct_activate (GtkMenuItem *menuitem, gpointer user_data)
+{
+	gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_dec"));
+	gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_hex"));
+	gtk_widget_show (glade_xml_get_widget (prefs_xml, "prefs_vbox_oct"));
+	gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_bin"));
+}
+			
+void on_prefs_menu_bin_activate (GtkMenuItem *menuitem, gpointer user_data)
+{
+	gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_dec"));
+	gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_hex"));
+	gtk_widget_hide (glade_xml_get_widget (prefs_xml, "prefs_vbox_oct"));
+	gtk_widget_show (glade_xml_get_widget (prefs_xml, "prefs_vbox_bin"));
+}
+
+void on_prefs_dec_sep_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data)
+{
+	prefs.dec_sep = gtk_toggle_button_get_active (togglebutton);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_dec_sep_char_label"), prefs.dec_sep);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_dec_sep_char"), prefs.dec_sep);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_dec_sep_length_label"), prefs.dec_sep);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_dec_sep_length"), prefs.dec_sep);
+	display_result_getset();
+}
+
+void on_prefs_hex_sep_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data)
+{
+	prefs.hex_sep = gtk_toggle_button_get_active (togglebutton);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_hex_sep_char_label"), prefs.hex_sep);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_hex_sep_char"), prefs.hex_sep);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_hex_sep_length_label"), prefs.hex_sep);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_hex_sep_length"), prefs.hex_sep);
+	display_result_getset();
+}
+
+void on_prefs_oct_sep_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data)
+{
+	prefs.oct_sep = gtk_toggle_button_get_active (togglebutton);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_oct_sep_char_label"), prefs.oct_sep);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_oct_sep_char"), prefs.oct_sep);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_oct_sep_length_label"), prefs.oct_sep);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_oct_sep_length"), prefs.oct_sep);
+	display_result_getset();
+}
+
+void on_prefs_bin_sep_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data)
+{
+	prefs.bin_sep = gtk_toggle_button_get_active (togglebutton);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_bin_sep_char_label"), prefs.bin_sep);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_bin_sep_char"), prefs.bin_sep);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_bin_sep_length_label"), prefs.bin_sep);
+	gtk_widget_set_sensitive (glade_xml_get_widget (prefs_xml, "prefs_bin_sep_length"), prefs.bin_sep);
+	display_result_getset();
+}
+
+void on_prefs_dec_sep_length_value_changed (GtkSpinButton *spinbutton,
+					GtkScrollType arg1,
+					gpointer user_data)
+{
+	prefs.dec_sep_length = (int) gtk_spin_button_get_value (spinbutton);
+	display_result_getset();
+}
+
+void on_prefs_hex_sep_length_value_changed (GtkSpinButton *spinbutton,
+					GtkScrollType arg1,
+					gpointer user_data)
+{
+	prefs.hex_sep_length = (int) gtk_spin_button_get_value (spinbutton);
+	display_result_getset();
+}
+
+void on_prefs_oct_sep_length_value_changed (GtkSpinButton *spinbutton,
+					GtkScrollType arg1,
+					gpointer user_data)
+{
+	prefs.oct_sep_length = (int) gtk_spin_button_get_value (spinbutton);
+	display_result_getset();
+}
+
+void on_prefs_bin_sep_length_value_changed (GtkSpinButton *spinbutton,
+					GtkScrollType arg1,
+					gpointer user_data)
+{
+	prefs.bin_sep_length = (int) gtk_spin_button_get_value (spinbutton);
+	display_result_getset();
+}
+
+void on_prefs_dec_sep_char_changed (GtkEditable *editable,
+                                            gpointer user_data)
+{
+	prefs_sep_char_changed (editable, prefs.dec_sep_char, CS_DEC);
+}
+
+void on_prefs_hex_sep_char_changed (GtkEditable *editable,
+                                            gpointer user_data)
+{
+	prefs_sep_char_changed (editable, prefs.hex_sep_char, CS_HEX);
+}
+
+void on_prefs_oct_sep_char_changed (GtkEditable *editable,
+                                            gpointer user_data)
+{
+	prefs_sep_char_changed (editable, prefs.oct_sep_char, CS_OCT);
+}
+
+void on_prefs_bin_sep_char_changed (GtkEditable *editable,
+                                            gpointer user_data)
+{
+	prefs_sep_char_changed (editable, prefs.bin_sep_char, CS_BIN);
 }
 
 void on_togglebutton_released (GtkToggleButton *togglebutton, 
