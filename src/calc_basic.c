@@ -353,7 +353,7 @@ GNode *calc_update_tree (GNode *current_node, s_calc_token current_token)
  * this code handles parenthesis tasks.
  * calc_tree_add_token returns the value one might to put on a display - the left child
  * of the current node.
- * return value is declared static for case LEVEL_UP.
+ * return value is declared static for in case of a LEVEL_UP.
  */
 double calc_tree_add_token (s_calc_token current_token)
 {

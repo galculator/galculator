@@ -6,12 +6,12 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=88
-1=5
-2=21
-3=316
-4=315
-5=11
+0=458
+1=69
+2=1137
+3=1
+4=22
+5=6
 6=226
 7=1
 8=1
@@ -38,6 +38,9 @@ filter.file.unmatch=*.so *.o *.a *.la
 filter.file.ignore.hidden=0
 filter.dir.ignore.hidden=0
 
+[filelist]
+0=/home/sf/Devel/galculator/src/calc_basic.c
+
 [replace_text]
 0=first_module
 1=display_result_get_double
@@ -49,11 +52,11 @@ filter.dir.ignore.hidden=0
 7=clicked
 
 [find_text]
-0=main
-1=select_bkg_color
-2=display
-3=display_lengths
-4=position_menu
-5=option
-6=save here
-7=save ehre
+0=sub_tree_stack
+1=glade_xml_new
+2=void glade_file_not_found (char *filename)
+3=main
+4=select_bkg_color
+5=display
+6=display_lengths
+7=position_menu

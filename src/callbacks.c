@@ -78,6 +78,7 @@ on_about_activate                     (GtkMenuItem     *menuitem,
 	GladeXML	*about_dialog_xml;
 	
 	about_dialog_xml = glade_xml_new (ABOUT_GLADE_FILE, "about_dialog", NULL);
+	if (about_dialog_xml == NULL) glade_file_not_found (ABOUT_GLADE_FILE);
 	glade_xml_signal_autoconnect(about_dialog_xml);
 	about_dialog = glade_xml_get_widget (about_dialog_xml, "about_dialog");
 	
@@ -413,6 +414,7 @@ on_preferences1_activate               (GtkMenuItem     *menuitem,
 	extern s_constant	*constant;
 	
 	prefs_xml = glade_xml_new(PREFS_GLADE_FILE, "prefs_dialog", NULL);
+	if (prefs_xml == NULL) glade_file_not_found (PREFS_GLADE_FILE);
 	glade_xml_signal_autoconnect(prefs_xml);
 	prefs_dialog = glade_xml_get_widget (prefs_xml, "prefs_dialog");;
 	

@@ -1,3 +1,8 @@
+2003-06-26 Simon Floery <simon.floery@gmx.at>
+
+	* src/display.c: fixed display_length bug (e.g. only one HEX char after
+	startup)
+
 2003-06-24 Simon Floery <simon.floery@gmx.at>
 
 	* added french translation (fr.po). thanks to seb128

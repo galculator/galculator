@@ -152,6 +152,10 @@ void display_init (GtkWidget *a_parent_widget)
 	activate_menu_item (notation_mod_labels[prefs.def_notation]);
 	activate_menu_item (number_mod_labels[prefs.def_number]);
 	activate_menu_item (angle_mod_labels[prefs.def_angle]);
+
+	display_lengths[CS_HEX] = prefs.hex_bits/4;
+	display_lengths[CS_OCT] = prefs.oct_bits/3;
+	display_lengths[CS_BIN] = prefs.bin_bits/1;
 }
 
 /*
