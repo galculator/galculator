@@ -6,7 +6,9 @@ a GTK 2 based scientific calculator
 For installation information see the INSTALL file.
 For hacking information see the calc_basic_internal file.
 
-RPMs: a spec file is included (galculator.spec). Thanks to Victor.
+RPMs: a spec file is included (galculator.spec). Thanks to Victor. Or
+download at http://dag.wieers.com/packages/galculator/ (thanks to Dag Wieers) 
 DEBs: galculator is DEBIAN/unstable. Thanks to seb128.
 
+http://galculator.sf.net
 simon floery (simon.floery@gmx.at)

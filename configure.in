@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT(configure.in)
-AM_INIT_AUTOMAKE([galculator], [1.0.9])
+AM_INIT_AUTOMAKE([galculator], [1.1.0])
 AM_MAINTAINER_MODE
 
 AM_CONFIG_HEADER(config.h)
@@ -22,7 +22,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Name of gettext package
 AC_SUBST(GETTEXT_PACKAGE)
 
 dnl Add the languages which your application supports here.
-ALL_LINGUAS="de fr"
+ALL_LINGUAS="de"
 AM_GLIB_GNU_GETTEXT
 
 dnl Use -Wall if we have gcc.

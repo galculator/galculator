@@ -6,11 +6,11 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=13
-1=50
-2=78
-3=1
-4=598
+0=1
+1=10
+2=31
+3=316
+4=315
 5=11
 6=226
 7=1
@@ -39,28 +39,27 @@ filter.file.ignore.hidden=0
 filter.dir.ignore.hidden=0
 
 [filelist]
-0=/home/sf/Devel/galculator/src/callbacks.c
-1=/home/sf/Devel/galculator/TODO
-2=/home/sf/Devel/galculator/src/main.c
-3=/home/sf/Devel/galculator/src/display.h
-4=/home/sf/Devel/galculator/src/display.c
+0=/home/sf/Devel/galculator/ChangeLog
+1=/home/sf/Devel/galculator/release notes
+2=/home/sf/Devel/galculator/TODO
+3=/home/sf/Devel/galculator/src/display.c
 
 [replace_text]
-0=display_result_get_double
-1=VERSION
-2=PACKAGE
-3=));
-4=signal="clicked"
-5=signal=\\"clicked
-6=clicked
-7="clicked"
+0=first_module
+1=display_result_get_double
+2=VERSION
+3=PACKAGE
+4=));
+5=signal="clicked"
+6=signal=\\"clicked
+7=clicked
 
 [find_text]
-0=set_angle
-1=display_result_get_as_double
-2=display_result_get_as
-3=tart
-4=mark_result_end
-5=this
-6=sensitive
-7=G_PI
+0=save here
+1=save ehre
+2=ue
+3=inconfig
+4=incofnig
+5=create_const
+6=leading_spaces
+7=delete

@@ -1,3 +1,14 @@
+galculator 1.1.0 - the first official release after 1.0. What's new?
+        * constants popup, user defined constants
+	* save to/read from and add to memory as much as you want
+	* i18n support (translators wanted)
+        * libglade
+        * X middle mouse button pasting
+        * and the bug fixes
+        * instant apply preferences dialog
+Galculator's homepage moved to galculator.sf.net. Go there for CVS, mailing
+list, bug tracker and of course for download of 1.1.0.
+
 galculator 1.0
 	useless bottons are greyed out
 	display modules cause window resizing problem solved

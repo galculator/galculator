@@ -55,7 +55,7 @@ s_active_buttons active_buttons[] = {\
 	{"button_d", {FALSE, TRUE, FALSE, FALSE}, {TRUE, TRUE}}, \
 	{"button_e", {FALSE, TRUE, FALSE, FALSE}, {TRUE, TRUE}}, \
 	{"button_f", {FALSE, TRUE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_const", {TRUE, FALSE, FALSE, FALSE}, {TRUE, TRUE}}, \
+	{"button_const", {TRUE, TRUE, TRUE, TRUE}, {TRUE, TRUE}}, \
 	{"button_ee", {TRUE, FALSE, FALSE, FALSE}, {TRUE, TRUE}}, \
 	{"button_sin", {TRUE, FALSE, FALSE, FALSE}, {TRUE, TRUE}}, \
 	{"button_cos", {TRUE, FALSE, FALSE, FALSE}, {TRUE, TRUE}}, \

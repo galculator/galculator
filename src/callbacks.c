@@ -897,7 +897,7 @@ on_ms_button_clicked             (GtkButton       *button,
 	extern s_array	memory;
 	
 	button_activation (button);
-	menu = create_memory_menu(memory, (GCallback)ms_menu_handler, "save here");
+	menu = create_memory_menu(memory, (GCallback)ms_menu_handler, _("save here"));
 	gtk_menu_popup ((GtkMenu *)menu, NULL, NULL, (GtkMenuPositionFunc) position_menu, 
 		button, 0, 0);
 }

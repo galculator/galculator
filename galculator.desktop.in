@@ -1,5 +1,5 @@
 [Desktop Entry]
-_Name=galculator
+Name=galculator
 _Comment=Scientific calculator
 Exec=/usr/bin/galculator
 Icon=gnome-calc2.png
