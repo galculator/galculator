@@ -6,15 +6,15 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=31
-1=957
-2=160
-3=1024
-4=270
-5=44
-6=30
-7=187
-8=475
+0=85
+1=2
+2=35
+3=1500
+4=213
+5=52
+6=276
+7=34
+8=33
 9=5
 10=22
 11=1
@@ -42,16 +42,14 @@ filter.dir.ignore.hidden=0
 clean before build=false
 
 [filelist]
-0=/home/sf/Devel/galculator/src/flex_parser.h
-1=/home/sf/Devel/galculator/src/ui.c
-2=/home/sf/Devel/galculator/src/config_file.c
+0=/home/sf/Devel/galculator/src/main.c
+1=/home/sf/Devel/galculator/ChangeLog
+2=/home/sf/Devel/galculator/src/flex_parser.h
 3=/home/sf/Devel/galculator/src/callbacks.c
-4=/home/sf/Devel/galculator/src/calc_basic.c
+4=/home/sf/Devel/galculator/src/flex_parser.l
 5=/home/sf/Devel/galculator/src/calc_basic.h
-6=/home/sf/Devel/galculator/ChangeLog
-7=/home/sf/Devel/galculator/src/flex_parser.l
-8=/home/sf/Devel/galculator/src/general_functions.c
-9=/home/sf/Devel/galculator/TODO
+6=/home/sf/Devel/galculator/src/calc_basic.c
+7=/home/sf/Devel/galculator/TODO
 
 [Project Tree]
 0=0
@@ -63,21 +61,21 @@ clean before build=false
 0=0
 
 [replace_text]
-0=rpn_stack_lift
-1=prefs
-2=cprefs
-3=current_status.rpn_have_result
-4=current_status.allow_arith_op
-5=current_status.calc_entry_start_new
-6=operation
-7=first_module
+0=bracket_counter
+1=this_bracket_counter
+2=alg_add_token (&
+3=rpn_stack_lift
+4=prefs
+5=cprefs
+6=current_status.rpn_have_result
+7=current_status.allow_arith_op
 
 [find_text]
-0=const
-1=token
-2=pars
-3=BEGIN(OP)
-4=string2double
-5=store
-6=on_prefs_cadd
-7=user_functions
+0=this_bracket_counter
+1=bracket_counter
+2=FALSE
+3=CURRENT_ALG
+4=alg_stack_free
+5=alg_add_token (
+6=alg_add
+7=stackstack

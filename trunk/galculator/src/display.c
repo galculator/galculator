@@ -780,7 +780,6 @@ void display_result_set_double (double value)
 {	
 	current_status.allow_arith_op = TRUE;
 	display_module_arith_label_update (' ');
-
 	display_set_line_double (value, display_result_line, "result");
 }
 

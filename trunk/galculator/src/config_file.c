@@ -167,14 +167,17 @@ static void config_file_get_default_consts (s_constant **consts)
 
 static void config_file_get_default_user_functions (s_user_function **this_user_funcs)
 {
-	*this_user_funcs = (s_user_function *) malloc (3 * sizeof (s_user_function));
-	(*this_user_funcs)[0].name = g_strdup ("f");
+	*this_user_funcs = (s_user_function *) malloc (4 * sizeof (s_user_function));
+	(*this_user_funcs)[0].name = g_strdup ("abs");
 	(*this_user_funcs)[0].variable = g_strdup ("x");
-	(*this_user_funcs)[0].expression = g_strdup_printf ("1-x");
-	(*this_user_funcs)[1].name = g_strdup ("cot");
+	(*this_user_funcs)[0].expression = g_strdup_printf ("sqrt(x^2)");
+	(*this_user_funcs)[1].name = g_strdup ("sign");
 	(*this_user_funcs)[1].variable = g_strdup ("x");
-	(*this_user_funcs)[1].expression = g_strdup_printf ("cos(x)/sin(x)");
-	(*this_user_funcs)[2].name = NULL;
+	(*this_user_funcs)[1].expression = g_strdup_printf ("x/abs(x)");	
+	(*this_user_funcs)[2].name = g_strdup ("cot");
+	(*this_user_funcs)[2].variable = g_strdup ("x");
+	(*this_user_funcs)[2].expression = g_strdup_printf ("cos(x)/sin(x)");
+	(*this_user_funcs)[3].name = NULL;
 }
 
 /*

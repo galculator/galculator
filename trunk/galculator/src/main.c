@@ -52,6 +52,7 @@ s_current_status 	current_status = {0, 0, 0, 0, FALSE, FALSE, TRUE};
 s_array			memory;
 s_constant 		*constant;
 s_user_function		*user_function;
+ALG_OBJECT		*main_alg;
 
 void print_usage ()
 {
@@ -95,7 +96,7 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 	 * procession.
 	 */
 	
-	if (formula_entry_is_active() && (event->type == GDK_KEY_PRESS)) {
+	if (formula_entry_is_active(grab_widget) && (event->type == GDK_KEY_PRESS)) {
 		if ((event->state == 0) || (event->state == GDK_SHIFT_MASK)) {
 			gtk_widget_event (glade_xml_get_widget (main_window_xml, "formula_entry"), (GdkEvent *)event);
 			return TRUE;
@@ -153,7 +154,7 @@ int main (int argc, char *argv[])
 				  
 	/* prepare calc_basic */
 
-	alg_init (0);
+	main_alg = alg_init (0);
 	rpn_init (prefs.stack_size, 0);
 
 	/* finally show what we put together. do this as late asap */

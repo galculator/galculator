@@ -34,8 +34,11 @@
 	#define BUG_REPORT	"Please submit a bugreport."
 #endif
 
-#define RPN_FINITE_STACK	3
-#define RPN_INFINITE_STACK	-1
+#define RPN_FINITE_STACK		3
+#define RPN_INFINITE_STACK		-1
+#define ALG_OBJECT			GSList
+
+#include <glib.h>
 
 enum {THIS_LEVEL, LEVEL_UP, LEVEL_DOWN};
 
@@ -61,12 +64,12 @@ typedef struct {
 	char		*operation;
 	int		size;
 } s_alg_stack;
-
+	
 double id (double x);
 
-double alg_add_token (s_cb_token this_token);
-void alg_init (int debug_level);
-void alg_free ();
+double alg_add_token (ALG_OBJECT **alg, s_cb_token this_token);
+ALG_OBJECT *alg_init (int debug_level);
+void alg_free (ALG_OBJECT *alg);
 
 void rpn_init (int size, int debug_level);
 void rpn_stack_set_array (double *values, int length);

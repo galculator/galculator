@@ -92,7 +92,7 @@ module.source.files=\
 	src/config_file.c\
 	src/ui.c\
 	src/parser.c\
-	src/flex_parser.lex
+	src/flex_parser.l
 
 module.pixmap.name=.
 module.pixmap.type=

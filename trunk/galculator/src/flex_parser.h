@@ -21,6 +21,9 @@
 #ifndef _FLEX_PARSER_H
 #define _FLEX_PARSER_H 1
 
+#define CURRENT_ALG_OBJECT 		(ALG_OBJECT **) &(alg_object_stack->data)
+#define FLEX_PARSER_NR_RECURSIONS	10
+
 enum {
 	FLEX_PARSER_NUMBER,
 	FLEX_PARSER_CONSTANT,
@@ -28,6 +31,11 @@ enum {
 	FLEX_PARSER_USER_FUNCTION
 };
 
-double flex_parser (const char *string);
+typedef struct {
+	double		value;
+	gboolean	error;
+} s_flex_parser_result;
+
+s_flex_parser_result flex_parser (const char *string);
 
 #endif /* flex_parser.h */
