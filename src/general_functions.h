@@ -79,4 +79,7 @@ gboolean formula_entry_is_active (GtkWidget *window_widget);
 
 s_flex_parser_result compute_user_function (char *expression, char *variable, char *value);
 
+double x2rad (double x);
+double rad2x (double x);
+
 #endif /* general_functions.h */

@@ -783,28 +783,6 @@ void display_result_set_double (double value)
 	display_set_line_double (value, display_result_line, "result");
 }
 
-/*
- * display_result_set_radiant - this function is used e.g. by trigonometric functions.
- *	pays attention to rad/deg/grad
- */
-
-void display_result_set_radiant (double value)
-{
-	switch (current_status.angle) {
-	case CS_DEG:
-		display_result_set_double (rad2deg(value)); 
-		break;
-	case CS_RAD:
-		display_result_set_double (value); 
-		break;
-	case CS_GRAD:
-		display_result_set_double (rad2grad(value));
-		break;
-	default:
-		fprintf (stderr, _("[%s] unknown angle base in function \"display_result_set_angle\". %s\n"), PROG_NAME, BUG_REPORT);
-	}
-}
-
 void display_result_set (char *string_value)
 {
 	GtkTextIter 		end;
@@ -868,43 +846,20 @@ double display_result_get_double ()
 	return ret_val;
 }	
 
-
-/*
- * display_result_get_angle - this function is used e.g. by trigonometric functions.
- *	pays attention to rad/deg/grad
- */
-
-double display_result_get_rad_angle ()
-{
-	double		value;
-	
-	value = display_result_get_double();
-	switch (current_status.angle)
-	{
-	case CS_DEG:
-		return deg2rad(value); 
-	case CS_RAD:
-		return value;
-	case CS_GRAD:
-		return grad2rad (value);
-	default:
-		fprintf (stderr, _("[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"), PROG_NAME, BUG_REPORT);
-	}
-	return -1;
-}
-
 void display_append_e (GtkToggleButton *button)
 {
 	GtkTextIter		end;
 
+	/* we have kind of a shortcut. we don't set to 0e+ but 1e+ */
 	if (current_status.number != CS_DEC) return;
-	if (current_status.calc_entry_start_new == FALSE) {
+	if ((current_status.calc_entry_start_new == FALSE) && 
+		(strcmp (display_result_get(), "0") != 0)) {
 		if (strstr (display_result_get(), "e+") == NULL) {
 			display_get_line_end_iter (buffer, display_result_line, &end);
 			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, "e+", -1, "result", NULL);
 		}
 	} else {
-		display_result_set ("0e+");
+		display_result_set ("1e+");
 		current_status.calc_entry_start_new = FALSE;
 	}
 	display_result_counter = get_display_number_length(current_status.number) - DISPLAY_RESULT_E_LENGTH;

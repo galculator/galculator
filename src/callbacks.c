@@ -245,43 +245,23 @@ on_function_button_clicked             (GtkToggleButton	*button,
 {
 	double		(*func[4])(double);
 	char 		**display_name;
-	gboolean	is_trigonometric;
-	GtkWidget	*tbutton;
 	
 	if (gtk_toggle_button_get_active(button) == FALSE) return;
 	button_activation (button);
 	if (current_status.notation == CS_FORMULA) {
 		display_name = (char **) g_object_get_data (G_OBJECT (button), "display_names");
 		ui_formula_entry_insert (display_name[current_status.fmod]);
+		if (current_status.fmod != 0) ui_relax_fmod_buttons();
 		return;
-	}	
-	memcpy (func, g_object_get_data (G_OBJECT (button), "func"), sizeof (func));
-	is_trigonometric = (gboolean) g_object_get_data (G_OBJECT (button), "is_trigonometric");
-	if (!func) error_message ("This button has no function associated with");
-	/* hyperbolic versions of trigonometric functions doesn't have to pay attention to
-		angle base. therefore do it like a normal function
-	 */
-	if (is_trigonometric && (BIT (current_status.fmod, CS_FMOD_FLAG_HYP) == 0)) {
-		if (BIT (current_status.fmod, CS_FMOD_FLAG_INV) == 0) {
-			display_result_set_double (\
-				func[current_status.fmod](display_result_get_rad_angle()));
-		} else {
-			display_result_set_radiant (\
-				func[current_status.fmod](display_result_get_double()));
-		}	
-	} else {
-		display_result_set_double (\
-			func[current_status.fmod](display_result_get_double()));
 	}
+	memcpy (func, g_object_get_data (G_OBJECT (button), "func"), sizeof (func));
+	if (!func) error_message ("This button has no function associated with");
+	display_result_set_double (
+		func[current_status.fmod](display_result_get_double()));
 	current_status.calc_entry_start_new = TRUE;	
 	if (current_status.notation == CS_RPN) 
 		current_status.rpn_stack_lift_enabled = TRUE;
-	if (current_status.fmod != 0) {
-		tbutton = glade_xml_get_widget (button_box_xml, "button_inv");
-		gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
-		tbutton = glade_xml_get_widget (button_box_xml, "button_hyp");
-		gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
-	}
+	if (current_status.fmod != 0) ui_relax_fmod_buttons();
 }
 
 /* tbutton_fmod - these are function modifiers such as INV (inverse) 

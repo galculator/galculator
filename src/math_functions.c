@@ -22,6 +22,7 @@
 #include <math.h>
 
 #include "math_functions.h"
+#include "general_functions.h"
 #include "galculator.h"
 
 #include <glib.h>		/* for G_PI etc */
@@ -96,4 +97,55 @@ double acosh (double x)
 double atanh (double x)
 {
 	return log ((1+x)/(1-x))/2;
+}
+
+/* sine wrapper. interprete and convert x according to current_status.angle
+ */
+
+double sin_wrapper (double x) 
+{
+	return sin(x2rad(x));
+}
+
+/* arcus sine wrapper. interprete and convert result according to 
+ * current_status.angle
+ */
+
+double asin_wrapper (double x) 
+{
+	return rad2x(asin(x));
+}
+
+/* cosine wrapper. interprete and convert x according to current_status.angle
+ */
+
+double cos_wrapper (double x) 
+{
+	return cos(x2rad(x));
+}
+
+/* arcus cosine wrapper. interprete and convert result according to 
+ * current_status.angle
+ */
+
+double acos_wrapper (double x) 
+{
+	return rad2x(acos(x));
+}
+
+/* tangens wrapper. interprete and convert x according to current_status.angle
+ */
+
+double tan_wrapper (double x) 
+{
+	return tan(x2rad(x));
+}
+
+/* arcus tangens wrapper. interprete and convert result according to 
+ * current_status.angle
+ */
+
+double atan_wrapper (double x) 
+{
+	return rad2x(atan(x));
 }

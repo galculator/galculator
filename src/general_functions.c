@@ -446,6 +446,7 @@ void gfunc_f1 (GtkToggleButton *button)
 		display_stack_set_yzt_double (stack);
 		free (stack);
 		current_status.rpn_stack_lift_enabled = TRUE;
+		current_status.calc_entry_start_new = TRUE;
 	}
 }
 
@@ -465,12 +466,13 @@ void gfunc_f2 (GtkToggleButton *button)
 		display_stack_set_yzt_double (stack);
 		free (stack);
 		current_status.rpn_stack_lift_enabled = TRUE;
+		current_status.calc_entry_start_new = TRUE;
 	}
 }
 
-/* push_rpn_result. The terminology used here originates from HP 15 Owner's
+/* rpn_stack_lift. The terminology used here originates from HP 15 Owner's
  * handbook. If a button doesn't terminate digit entry, it "starts" one.
- * Therefore those buttons have to push result on the stack, is stack lift is
+ * Therefore those buttons have to push result on the stack, if stack lift is
  * enabled (current_status.rpn_stack_lift_enabled).
  * Buttons not terminating digit entry are:
  *	0-9, A-F, ., EE, const, MR
@@ -592,4 +594,34 @@ s_flex_parser_result compute_user_function (char *expression, char *variable, ch
 	constant = (s_constant *) realloc (constant, (nr_constants + 1) * sizeof(s_constant));
 	constant[nr_constants].name = NULL;
 	return result;
+}
+
+double x2rad (double x)
+{
+	switch (current_status.angle){
+	case CS_DEG:
+		return deg2rad(x); 
+	case CS_RAD:
+		return x;
+	case CS_GRAD:
+		return grad2rad (x);
+	default:
+		fprintf (stderr, _("[%s] unknown angle base in function \"x2rad\". %s\n"), PROG_NAME, BUG_REPORT);
+	}
+	return x;
+}	
+
+double rad2x (double rad)
+{
+	switch (current_status.angle) {
+	case CS_DEG:
+		return rad2deg(rad);
+	case CS_RAD:
+		return rad;
+	case CS_GRAD:
+		return rad2grad(rad);
+	default:
+		fprintf (stderr, _("[%s] unknown angle base in function \"rad2x\". %s\n"), PROG_NAME, BUG_REPORT);
+	}
+	return rad;
 }

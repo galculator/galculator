@@ -1031,7 +1031,7 @@
 		  <property name="width_request">40</property>
 		  <property name="height_request">25</property>
 		  <property name="visible">True</property>
-		  <property name="tooltip" translatable="yes">Add</property>
+		  <property name="tooltip" translatable="yes">Sum</property>
 		  <property name="can_focus">True</property>
 		  <property name="label" translatable="yes">+</property>
 		  <property name="use_underline">True</property>

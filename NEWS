@@ -1,3 +1,12 @@
+galculator 1.2.2
+	* several bugfixes:
+		- inv, hyp button in form mode release
+		- rolldn, swapxy start new entry now
+		- angle units in formula entry mode
+		- add -> sum tooltip for translations
+	* "shortcut": [0] + [EE] gives "1e+" display
+	* updated translations
+
 galculator 1.2.1
 	* parser for formula entry mode implemented with flex
 	* formula entry enhancements (dec/hex/bin/oct, string operation ids, ..)
