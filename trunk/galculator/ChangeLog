@@ -1,3 +1,6 @@
+2204-07-01 Simon Floery <chimaira@users.sf.net>
+	* updated pt_BR.po
+
 2004-06-19 Simon Floery <chimaira@users.sf.net>
 	* src/general_functions.c: check for NULL pointers in 
 		formula_entry_is_active. fixes sf.net #971328.
@@ -113,8 +116,8 @@
 	* updated french and german translations
 	* fixed sf.net #820399 (added p,P shortcuts)
 
-2003-10-07 Simon Floery <chimaira@users.sf.net>	
 	* introduced display_result_changed. fixes sf.net bug #750519
+2003-10-07 Simon Floery <chimaira@users.sf.net>	
 
 2003-09-23 Simon Floery <chimaira@users.sf.net>
 	* agreed to and fixed sf.net bug #799417 (memory save, memory read and
