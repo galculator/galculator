@@ -55,14 +55,26 @@
 #define DEFAULT_VIS_LOGIC		TRUE
 #define DEFAULT_VIS_STANDARD		TRUE
 #define DEFAULT_MODE			BASIC_MODE
+#define DEFAULT_DEC_SEP			FALSE
+#define DEFAULT_DEC_SEP_LENGTH		3
+#define DEFAULT_DEC_SEP_CHAR		" "
 #define DEFAULT_HEX_BITS		32
 #define DEFAULT_HEX_SIGNED		TRUE
+#define DEFAULT_HEX_SEP			FALSE
+#define DEFAULT_HEX_SEP_LENGTH		4
+#define DEFAULT_HEX_SEP_CHAR		" "
 #define DEFAULT_OCT_BITS		32
 #define DEFAULT_OCT_SIGNED		TRUE
+#define DEFAULT_OCT_SEP			FALSE
+#define DEFAULT_OCT_SEP_LENGTH		3
+#define DEFAULT_OCT_SEP_CHAR		" "
 #define DEFAULT_BIN_BITS		16
 #define DEFAULT_BIN_SIGNED		TRUE
 #define DEFAULT_BIN_FIXED		FALSE
 #define DEFAULT_BIN_LENGTH		8
+#define DEFAULT_BIN_SEP			FALSE
+#define DEFAULT_BIN_SEP_LENGTH		4
+#define DEFAULT_BIN_SEP_CHAR		" "
 #define DEFAULT_NUMBER			CS_DEC
 #define DEFAULT_ANGLE			CS_RAD
 #define DEFAULT_NOTATION		CS_PAN
@@ -102,14 +114,26 @@ typedef struct {
 	/* 3rd pref page */
 	/* constants. handled different */
 	/* 4th pref page */
+	gboolean	dec_sep;
+	int		dec_sep_length;
+	char 		*dec_sep_char;
 	int		hex_bits;
 	gboolean	hex_signed;
+	gboolean	hex_sep;
+	int		hex_sep_length;
+	char 		*hex_sep_char;
 	int		oct_bits;
 	gboolean	oct_signed;
+	gboolean	oct_sep;
+	int		oct_sep_length;
+	char 		*oct_sep_char;
 	int		bin_bits;
 	gboolean	bin_signed;
 	gboolean	bin_fixed;
 	gboolean	bin_length;
+	gboolean	bin_sep;
+	int		bin_sep_length;
+	char 		*bin_sep_char;
 	/* 5th pref page */
 	int		def_number;		/* in accordance with enums in */
 	int		def_angle;		/* galculator.h */

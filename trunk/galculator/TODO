@@ -1,14 +1,15 @@
+1.2.4
+-----
+
+spaces for binary number base, "tausendertrennzeichen" [sf.net fr #942283]
+
 1.3.0
 -----
 
 number subsystem:
 	arbitrary precision arithmetic
-	
-enable 64 bit integers [sf.net fr #942283]
-
-some rounding
-
-spaces for binary number base, "tausendertrennzeichen" [sf.net fr #942283]
+	enable 64 bit integers [sf.net fr #942283]
+	some rounding
 
 =i18n====================================
 
