@@ -3590,7 +3590,7 @@ fi
 fi
 
 
-ALL_LINGUAS="de fr ja pt_BR pl"
+ALL_LINGUAS="de fr ja pt_BR pl ro"
 # On IRIX 5.3, sys/types and inttypes.h are conflicting.
 
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-23 17:20+0300\n"
+"POT-Creation-Date: 2004-07-03 22:48+0200\n"
 "PO-Revision-Date: 2003-05-26 14:24+0200\n"
 "Last-Translator: Simon Floery <chimaira@users.sf.net>\n"
 "Language-Team: German <de@li.org>\n"
@@ -278,12 +278,12 @@ msgstr ""
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr "[%s] unbekannte Zahlenbasis in der Funktion \"string2double\". %s\n"
 
-#: src/general_functions.c:609
+#: src/general_functions.c:612
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr "[%s] unbekannte Zahlenbasis in der Funktion \"x2rad\". %s\n"
 
-#: src/general_functions.c:624
+#: src/general_functions.c:627
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr "[%s] unbekannte Zahlenbasis in der Funktion \"rad2dx\". %s\n"
