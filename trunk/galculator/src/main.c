@@ -83,6 +83,7 @@ int main (int argc, char *argv[])
 	char		*dec_point_string, *config_file_name;
 	struct lconv 	*locale_settings;
 	GtkWidget 	*main_window;
+	
 	/*
 	 * gtk_init runs (among other things) setlocale (LC_ALL, ""). Therefore we
 	 * have to/can deal with i18n from this point.
@@ -130,9 +131,9 @@ You might face problems when using %s! %s\n)"), PACKAGE, locale_settings->decima
 
 	gtk_window_set_title ((GtkWindow *)main_window, PACKAGE);
 
-	/* usually, only Shift, CTRL and ALT modifiers are paid attention to by accelerator code.
-	 * add MOD2 (NUMLOCK allover the worl?) to the list. We have to do this for a working
-	 * keypad.
+	/* usually, only Shift, CTRL and ALT modifiers are paid attention to by 
+	 * accelerator code. add MOD2 (NUMLOCK allover the worl?) to the list. 
+	 * We have to do this for a working keypad.
 	 */
 	  
 	gtk_accelerator_set_default_mod_mask (gtk_accelerator_get_default_mod_mask () | GDK_MOD2_MASK); 
@@ -140,8 +141,8 @@ You might face problems when using %s! %s\n)"), PACKAGE, locale_settings->decima
 	/* update "decimal point" button to locale's decimal point */
 	
 	dec_point_string = g_strdup_printf ("%c", dec_point);
-	gtk_button_set_label ((GtkButton *) glade_xml_get_widget (main_window_xml, "button_point"), \
-		dec_point_string);
+	gtk_button_set_label ((GtkButton *) glade_xml_get_widget (main_window_xml, 
+		"button_point"), dec_point_string);
 	g_free (dec_point_string);
 							  
 	/* prepare calc_basic */

@@ -9,22 +9,20 @@ todo ASAP --> 1.1.1:
 		=> pan.glade (basic, scientific, user)
 		=> rpn.glade (basic, scientific, user) display stack for RPN
 		window resize + instant apply. 
-		GtkSizeGroup (also in prefs)
+		GtkSizeGroup (same in prefs)
 		ev MC, MX (memory exchange)
 		eigene M* button group?
 			
-	prefs: some checks on add/update
-		
-	kein disp module => keine letzte zeile
+	prefs: some checks on add/update?
 
 =calculator==============================
 
-	prozent: x % y: "x Prozent von y"
+	prozent: x % y: "x percent of y"
 
 =i18n====================================
 
 	udpate translations
-		
+
 =HIG=====================================
 
 	(http://developer.gnome.org/projects/gup/hig/):
@@ -38,7 +36,7 @@ todo ASAP --> 1.1.1:
 	chapter 7:
 	chapter 8: prefs dialog und GtkSizeGroup
 
-=sourceforge=============================
+=sourceforge/homepage====================
 
 
 =general=================================
@@ -72,5 +70,8 @@ spaces for binary number base, tausendertrennzeichen
 
 complex numbers
 
+not nice:
+~~~~~~~~~
+
 memory leaks:
-	* general_function.c: create_constants_menu dpointer!
+	* __fill in__

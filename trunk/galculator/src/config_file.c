@@ -189,7 +189,7 @@ int config_file_get_mode (char *line, char *filename, int old_mode)
 	if ((line[0] == '[') && (line[len - 1] == ']')) {
 		if (strcmp (line, SECTION_GENERAL) == 0) return GENERAL;
 		else if (strcmp (line, SECTION_CONSTANTS) == 0) return CONSTANTS;
-		else fprintf (stderr, _("[%s] found unknown section %s in\
+		else fprintf (stderr, _("[%s] found unknown section %s in \
 configuration file %s. Using preceding section.\n"), PACKAGE, line, filename);
 	}
 	return old_mode;

@@ -312,9 +312,9 @@ void display_delete_line (GtkTextBuffer *b, int line_index, GtkTextIter *iter)
 {
 	GtkTextIter start, end;
 	
+	if (gtk_text_buffer_get_line_count (b) <= line_index) return;
 	display_get_line_iters (b, line_index, &start, &end);
-	if (gtk_text_iter_get_line (&end) == line_index)
-		gtk_text_buffer_delete (buffer, &start, &end);
+	gtk_text_buffer_delete (buffer, &start, &end);
 	*iter = start;
 }
 
