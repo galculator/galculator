@@ -32,6 +32,7 @@ double error_unsupported_inv (double dummy);
 double error_unsupported_hyp (double dummy);
 void error_message (char *message);
 void clear ();
+void backspace ();
 void all_clear ();
 
 double axtof (char *bin_string, int base, int nr_bits, gboolean is_signed);

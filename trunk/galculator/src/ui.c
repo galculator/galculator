@@ -233,13 +233,16 @@ static void set_disp_ctrl_object_data ()
 	int	counter=0;
 	
 	s_gfunc_map map[] = {\
-		{"button_clr", "", clear},\
-		{"button_backspace", "", display_result_backspace},\
-		{"button_allclr", "", all_clear},\
+		{"button_clr", NULL, clear},\
+		{"button_backspace", NULL, backspace},\
+		{"button_allclr", NULL, all_clear},\
 		{NULL}\
 	};
 
 	while (map[counter].button_name != NULL) {
+		g_object_set_data (G_OBJECT (glade_xml_get_widget (
+			dispctrl_xml, map[counter].button_name)),
+			"display_string", map[counter].display_name);
 		g_object_set_data (G_OBJECT (glade_xml_get_widget (
 			dispctrl_xml, map[counter].button_name)),
 			"func", map[counter].func);
@@ -872,11 +875,21 @@ GtkWidget *ui_about_dialog_create()
 	return glade_xml_get_widget (about_dialog_xml, "about_dialog");
 }
 
+void ui_formula_entry_set (G_CONST_RETURN gchar *text)
+{
+	GtkWidget	*formula_entry;
+
+	if (text == NULL) return;
+	formula_entry = glade_xml_get_widget (main_window_xml, "formula_entry");
+	gtk_entry_set_text ((GtkEntry *) formula_entry, text);
+}
+
 void ui_formula_entry_insert (G_CONST_RETURN gchar *text)
 {
 	GtkWidget	*formula_entry;
 	int		position;
 	
+	if (text == NULL) return;
 	formula_entry = glade_xml_get_widget (main_window_xml, "formula_entry");
 	position = gtk_editable_get_position ((GtkEditable *) formula_entry);
 	gtk_editable_insert_text ((GtkEditable *) formula_entry, text, -1,
@@ -884,6 +897,16 @@ void ui_formula_entry_insert (G_CONST_RETURN gchar *text)
 	gtk_editable_set_position ((GtkEditable *) formula_entry, position);
 	
 }
+
+void ui_formula_entry_backspace ()
+{
+	GtkWidget	*formula_entry;
+	
+	formula_entry = glade_xml_get_widget (main_window_xml, "formula_entry");
+	gtk_editable_delete_text ((GtkEditable *) formula_entry, 
+		strlen(gtk_entry_get_text((GtkEntry *) formula_entry)) - 1, -1);
+}
+
 
 void ui_button_set_pan ()
 {

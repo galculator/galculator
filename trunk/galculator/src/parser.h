@@ -26,7 +26,7 @@ typedef struct {
 	double	(*function)(double);
 } s_string_func_pair;
 
-#define OPERATION_CHARS "+-*/^=()%"
+#define OPERATION_CHARS "+-*/^=()%m<>&|"
 
 double parse_string(const char *input_string);
 

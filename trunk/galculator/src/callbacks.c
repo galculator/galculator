@@ -315,9 +315,17 @@ on_gfunc_button_clicked                (GtkToggleButton       *button,
                                         gpointer         user_data)
 {
 	void	(*func)();
+	char 	*display_string;
 	
 	if (gtk_toggle_button_get_active(button) == FALSE) return;
 	button_activation (button);
+	if (current_status.notation == CS_FORMULA) {
+		display_string = g_object_get_data (G_OBJECT (button), "display_string");
+		if (display_string != NULL) {
+			ui_formula_entry_insert (display_string);
+			return;
+		}
+	}	
 	func = g_object_get_data (G_OBJECT (button), "func");
 	if (func) func(button);
 	else error_message ("This button has no function associated with");

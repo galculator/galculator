@@ -11,15 +11,15 @@
 	[DONE] negative numbers
 	[DONE] functions
 	[DONE] whitespaces
-	[ ] !
+	[DONE] !
 	[DONE] constants
-	[ ] AND, OR, MOD, LSH, ...
+	[DONE] AND, OR, MOD, LSH, ...
+	[DONE] ~ (CMP)
+	[ ] ((3))!
 
-[?] constant  dec point bug 
 [DONE] strtod - wenn im rest was drinnen, warnung
 
 [?] pref option? accelerator active for formula entry: key "s" gives "sin("
-
 
 =GUI======================================
 
@@ -60,6 +60,9 @@ to be done:
 9+9+9+9+9+9+9+
 
 undo last operation
+
+parser: [ ] char* operations
+	[ ] bin,hex,oct
 
 nice:
 ~~~~~
