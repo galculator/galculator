@@ -1,3 +1,12 @@
+2003-11-21 Simon Floery <chimaira@users.sf.net>
+	* patch: lower hex chars to upper chars (thanks to Remi)
+
+2003-11-15 Simon Floery <chimaira@users.sf.net>
+	* patch galculator.spec.in (thanks to Filippo)
+
+2003-11-14 Simon Floery <chimaira@users.sf.net>
+	* fixed sf.net #841527 (typo in de.po)
+
 ########################################
 # 2003-11-10 galculator 1.1.4 released #
 ########################################

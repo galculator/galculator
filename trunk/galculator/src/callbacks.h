@@ -233,3 +233,7 @@ void on_finite_stack_size_clicked (GtkRadioButton *rb,
 			
 void on_infinite_stack_size_clicked (GtkRadioButton *rb,
 			gpointer user_data);
+
+void on_main_window_button_press_event(GtkWidget *widget,
+						GdkEventButton *event,
+						gpointer user_data);

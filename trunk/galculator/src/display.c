@@ -847,8 +847,10 @@ void display_result_feed (char *string)
 	int	counter;
 	
 	for (counter = 0; counter < strlen(string); counter++) {
-		if (is_valid_number(current_status.number, string[counter])) \
-			display_result_add_digit (string[counter]);
+		if (is_valid_number(current_status.number, string[counter])) 
+			/* g_ascii_toupper to convert lower hex chars to upper */
+			display_result_add_digit (
+				g_ascii_toupper(string[counter]));
 	}
 	if (string[0] == '-') display_result_toggle_sign (NULL);
 }
