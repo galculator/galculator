@@ -1,4 +1,4 @@
-/*s
+/*
  *  display.c - code for this nifty display.
  *	part of galculator
  *  	(c) 2002-2003 Simon Floery (simon.floery@gmx.at)
@@ -34,20 +34,15 @@
 #include "config_file.h"
 #include "math_functions.h"
 #include "calc_basic.h"
+#include "ui.h"
 
-GtkTextView 		*view;
-GtkTextBuffer 		*buffer;
+static GtkTextView 	*view;
+static GtkTextBuffer 	*buffer;
 static int 		display_result_counter = 0;
-gboolean 		calc_entry_start_new;
-extern char		dec_point;
-extern s_preferences	prefs;
-extern s_current_status current_status;
 
-char	display_result[30];
-
-char	*number_mod_labels[5] = {" DEC ", " HEX ", " OCT ", " BIN ", NULL}, 
-	*angle_mod_labels[4] = {" DEG ", " RAD ", " GRAD ", NULL},
-	*notation_mod_labels[3] = {" ALG ", " RPN ", NULL};	
+static char	*number_mod_labels[5] = {" DEC ", " HEX ", " OCT ", " BIN ", NULL}, 
+		*angle_mod_labels[4] = {" DEG ", " RAD ", " GRAD ", NULL},
+		*notation_mod_labels[3] = {" ALG ", " RPN ", NULL};	
 
 int 	display_lengths[NR_NUMBER_BASES] = {12, 0, 0, 0};
 
@@ -56,18 +51,73 @@ int 	display_lengths[NR_NUMBER_BASES] = {12, 0, 0, 0};
  * and second display manipulation code.
  */
 
-/*
- * activate_menu_item - activates menu item with widget name item_name
+
+
+/* this code is taken from the GTK 2.0 tutorial: 
+ *		http://www.gtk.org/tutorial
  */
 
-void activate_menu_item (char *item_name)
+gboolean on_textview_button_press_event (GtkWidget *widget,
+						GdkEventButton *event,
+						gpointer user_data)
 {
-	extern GladeXML		*main_window_xml;
-	GtkMenuItem		*current_item;
+	static 			GdkAtom targets_atom = GDK_NONE;
+	int			x, y;
+	GtkTextIter		start, end;
+	char 			*selected_text;
 	
-	current_item = (GtkMenuItem *) glade_xml_get_widget (main_window_xml, \
-		g_strstrip (g_ascii_strdown (item_name, -1)));
-	gtk_menu_item_activate (current_item);
+	if (event->button == 1)	{
+		gtk_widget_get_pointer (widget, &x, &y);
+		gtk_text_view_get_iter_at_location (view, &start, x, y);
+		// we return if we are in the first line
+		if (gtk_text_iter_get_line (&start) != DISPLAY_MODULES_LINE) return FALSE;
+		// we return if its the end iterator
+		if (gtk_text_iter_is_end (&start) == TRUE) return FALSE;
+		end = start;
+		if (!gtk_text_iter_starts_word(&start)) gtk_text_iter_backward_word_start (&start);
+		if (!gtk_text_iter_ends_word(&end)) gtk_text_iter_forward_word_end (&end);
+		selected_text = gtk_text_buffer_get_text (buffer, &start, &end, FALSE);
+		// in a rare case, we get two options as selected_text
+		if (strchr (selected_text, ' ') != NULL) return FALSE;
+		/* rather a hack: last_arith is ignored as one char only gets selected as
+			a word with spaces (because of iter_[back|for]ward_..). So we have to
+			ignore the open brackets. */
+		if (strlen (selected_text) <= 2) return FALSE;
+	
+		activate_menu_item (selected_text);
+	}	
+	else if (event->button == 2) {
+		/* it's pasting selection time ...*/
+		/* Get the atom corresponding to the string "STRING" */
+		if (targets_atom == GDK_NONE) \
+			targets_atom = gdk_atom_intern ("STRING", FALSE);
+	
+		/* And request the "STRING" target for the primary selection */
+		gtk_selection_convert (widget, GDK_SELECTION_PRIMARY, targets_atom, \
+			GDK_CURRENT_TIME);
+	}		
+	return FALSE;
+}
+
+/* this code is taken from the GTK 2.0 tutorial: 
+ *		http://www.gtk.org/tutorial
+ */
+
+void on_textview_selection_received (GtkWidget *widget,
+					GtkSelectionData *data,
+					guint time,
+					gpointer user_data)
+{
+	/* **** IMPORTANT **** Check to see if retrieval succeeded  */
+	/* occurs if we just press the middle button with no active selection */
+	if (data->length < 0) return;
+	
+	/* Make sure we got the data in the expected form */
+	if (data->type != GDK_SELECTION_TYPE_STRING) return;
+	
+	display_result_feed (data->data);
+
+	return;
 }
 
 /*
@@ -112,9 +162,8 @@ void display_init (GtkWidget *a_parent_widget)
 	GtkTextTag		*tag;
 	PangoTabArray		*tab_array;
 	GtkTextTagTable		*tag_table;
-	extern GladeXML		*main_window_xml;
 	
-	calc_entry_start_new = FALSE;
+	current_status.calc_entry_start_new = FALSE;
 	view = (GtkTextView *) glade_xml_get_widget (main_window_xml, "textview");
 	gdk_color_parse (prefs.bkg_color, &color);
 	gtk_widget_modify_base ((GtkWidget *)view, GTK_STATE_NORMAL, &color);
@@ -139,7 +188,7 @@ void display_init (GtkWidget *a_parent_widget)
 	gtk_text_buffer_get_iter_at_line (buffer, &iter, DISPLAY_RESULT_LINE);
 	gtk_text_buffer_insert_with_tags_by_name (buffer, &iter, 
 		prefs.rem_value, -1, "result", NULL);
-	
+
 	display_update_modules ();
 
 	/* after creating the modules, we set the three base modules and the init
@@ -148,11 +197,12 @@ void display_init (GtkWidget *a_parent_widget)
 		we set the display to a maybe remembered value. Then, angle and number base
 		are done
 	*/
-	
+
 	activate_menu_item (notation_mod_labels[prefs.def_notation]);
+	display_result_set (prefs.rem_value);
 	activate_menu_item (number_mod_labels[prefs.def_number]);
 	activate_menu_item (angle_mod_labels[prefs.def_angle]);
-
+	
 	display_lengths[CS_HEX] = prefs.hex_bits/4;
 	display_lengths[CS_OCT] = prefs.oct_bits/3;
 	display_lengths[CS_BIN] = prefs.bin_bits/1;
@@ -170,7 +220,8 @@ void display_module_arith_label_update (char operation)
 	GtkTextIter	start, end;
 	static char 	current_char=' ';
 	
-	if (prefs.vis_arith == FALSE) return;
+	if ((prefs.vis_arith == FALSE) || (prefs.mode != SCIENTIFIC_MODE)) 
+		return;
 	if (strchr ("()", operation) != NULL) return;
 	
 	if ((this_mark = gtk_text_buffer_get_mark (buffer, DISPLAY_MARK_ARITH)) == NULL) \
@@ -221,7 +272,8 @@ int display_module_bracket_label_update (int option)
 			if (nr_brackets > 0) forward_count = 5 + log10(nr_brackets);
 			break;
 	}
-	if (prefs.vis_bracket == FALSE) return nr_brackets;
+	if ((prefs.vis_bracket == FALSE) || (prefs.mode != SCIENTIFIC_MODE)) 
+		return nr_brackets;
 	
 	if ((this_mark = gtk_text_buffer_get_mark (buffer, DISPLAY_MARK_BRACKET)) == NULL) \
 		return nr_brackets;
@@ -340,6 +392,8 @@ void display_update_modules ()
 	display_get_line_end_iter (buffer, DISPLAY_MODULES_LINE, &end);
 	gtk_text_buffer_delete (buffer, &start, &end);
 	
+	if (prefs.mode == BASIC_MODE) return;
+	
 	/* change number base */
 	if (prefs.vis_number == TRUE) {
 		if (first_module) 
@@ -448,19 +502,18 @@ void display_module_base_delete (char *mark_name, char **text)
 
 void display_change_option (int new_status, int opt_group)
 {
-	int					old_status;
-	double				display_value=0;
-	extern GladeXML		*main_window_xml;
+	int	old_status;
+	double	display_value=0;
 	
 	switch (opt_group) {
 		case DISPLAY_OPT_NUMBER:
-			update_active_buttons (main_window_xml, new_status, current_status.notation);
+			update_active_buttons (new_status, current_status.notation);
 			if (current_status.number == new_status) return;
 			display_value = display_result_get_double ();
 			old_status = current_status.number;
 			current_status.number = new_status;
 			display_result_set_double (display_value);
-			if (prefs.vis_number) {
+			if ((prefs.vis_number) && (prefs.mode == SCIENTIFIC_MODE)) {
 				display_module_base_delete (DISPLAY_MARK_NUMBER, number_mod_labels);
 				display_module_base_create (number_mod_labels, DISPLAY_MARK_NUMBER, current_status.number);
 			}
@@ -469,17 +522,17 @@ void display_change_option (int new_status, int opt_group)
 			if (current_status.angle == new_status) return;
 			old_status = current_status.angle;
 			current_status.angle = new_status;
-			if (prefs.vis_angle) {
+			if ((prefs.vis_angle) && (prefs.mode == SCIENTIFIC_MODE)){
 				display_module_base_delete (DISPLAY_MARK_ANGLE, angle_mod_labels);
 				display_module_base_create (angle_mod_labels, DISPLAY_MARK_ANGLE, current_status.angle);
 			}
 			break;
 		case DISPLAY_OPT_NOTATION:
-			update_active_buttons (main_window_xml, current_status.number, new_status);
+			update_active_buttons (current_status.number, new_status);
 			if (current_status.notation == new_status) return;
 			old_status = current_status.notation;
 			current_status.notation = new_status;
-			if (prefs.vis_notation) {
+			if ((prefs.vis_notation) && (prefs.mode == SCIENTIFIC_MODE)){
 				display_module_base_delete (DISPLAY_MARK_NOTATION, notation_mod_labels);
 				display_module_base_create (notation_mod_labels, DISPLAY_MARK_NOTATION, current_status.notation);
 			}
@@ -487,7 +540,7 @@ void display_change_option (int new_status, int opt_group)
 		default:
 			fprintf (stderr, _("[%s] unknown display option in function \"display_change_option\". %s\n"), PROG_NAME, BUG_REPORT);
 	}
-	calc_entry_start_new = TRUE;
+	current_status.calc_entry_start_new = TRUE;
 }
 
 /*
@@ -543,7 +596,6 @@ void display_update_tags ()
 void display_result_add_digit (char digit)
 {
 	char			digit_as_string[2];
-	extern gboolean		rpn_have_result;
 	GtkTextIter		end;
 	
 	/* put a ev. result onto the stack */
@@ -552,24 +604,24 @@ void display_result_add_digit (char digit)
 	   use on_function_button_clicked twice, there are two results on the stack
 	   where we don't expect the older one to be there. therefore doing it this way
 	*/
-	if ((current_status.notation == CS_RPN) && (rpn_have_result == TRUE)) {
+	if ((current_status.notation == CS_RPN) && (current_status.rpn_have_result == TRUE)) {
 		rpn_stack_push (display_result_get_double ());
-		rpn_have_result = FALSE;
+		current_status.rpn_have_result = FALSE;
 	}
 	
 	digit_as_string[0] = digit;
 	digit_as_string[1] = '\0';
 	
-	if (calc_entry_start_new == TRUE) {
+	if (current_status.calc_entry_start_new == TRUE) {
 		/* fool the following code */
 		display_result_set ("0");
-		calc_entry_start_new = FALSE;
+		current_status.calc_entry_start_new = FALSE;
 		display_result_counter = 1;
 	}
-	if (digit == dec_point) {
+	if (digit == dec_point[0]) {
 		/* don't manipulate display_result_counter here! */
 		if (strlen (display_result_get()) == 0) display_result_set ("0");
-		else if ((strchr (display_result_get(), dec_point) == NULL) && \
+		else if ((strchr (display_result_get(), dec_point[0]) == NULL) && \
 					(strchr (display_result_get(), 'e') == NULL)) {
 			display_get_line_end_iter (buffer, DISPLAY_RESULT_LINE, &end);
 			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, digit_as_string, \
@@ -596,9 +648,8 @@ void display_result_set_double (double value)
 {
 	GtkTextIter 		start;
 	char			*string_value;
-	extern gboolean		allow_arith_op;
 	
-	allow_arith_op = TRUE;
+	current_status.allow_arith_op = TRUE;
 	display_module_arith_label_update (' ');
 	
 	/* at first clear the result field */
@@ -617,6 +668,9 @@ void display_result_set_double (double value)
 			break;
 		case CS_BIN:
 			string_value = ftoax (value, 2, prefs.bin_bits, prefs.bin_signed);
+			if (prefs.bin_fixed == TRUE) 
+				string_value = add_leading_zeros (string_value, 
+					prefs.bin_length);
 			break;
 		default:
 			string_value = _("unknown number base");
@@ -652,30 +706,42 @@ void display_result_set_radiant (double value)
 void display_result_set (char *string_value)
 {
 	GtkTextIter 		end;
-	extern gboolean		allow_arith_op;
 	
-	allow_arith_op = TRUE;
+	current_status.allow_arith_op = TRUE;
 	display_module_arith_label_update (' ');
 	
 	/* at first clear the result field */
 	
 	display_delete_line (buffer, DISPLAY_RESULT_LINE, &end);
 	
-	/* here we call no kill_trailing_zeros. we set the result_field to what we entered */
+	/* here we call no kill_trailing_zeros. we set the result_field to 
+	 * what we entered 
+	 */
 	gtk_text_buffer_insert_with_tags_by_name (buffer, &end, string_value, \
 		-1, "result", NULL);
 	display_result_counter = strlen (string_value);
 	
 	/* this is some cosmetics. try to keep counter up2date */
-	if (strchr (string_value, dec_point) != NULL) display_result_counter--;
+	if (strchr (string_value, dec_point[0]) != NULL) display_result_counter--;
 	if (strchr (string_value, 'e') != NULL) {
 		display_result_counter -= (strchr(string_value, 'e') + sizeof(char) - string_value)/sizeof(char);
 		display_result_counter += display_lengths[current_status.number] - DISPLAY_RESULT_E_LENGTH - 1;
 	}
 }
 
+void display_result_feed (char *string)
+{
+	int	counter;
+	
+	for (counter = 0; counter < strlen(string); counter++) {
+		if (is_valid_number(current_status.number, string[counter])) \
+			display_result_add_digit (string[counter]);
+	}
+	if (string[0] == '-') display_result_toggle_sign ();
+}
 /*
- * display_get_entry. returns a pointer to the current entry text. should be freed with g_free.
+ * display_get_entry. returns a pointer to the current entry text. 
+ * should be freed with g_free.
  */
 
 char *display_result_get ()
@@ -693,13 +759,16 @@ double display_result_get_double ()
 			return atof(display_result_get());
 			break;
 		case CS_HEX:
-			return axtof(display_result_get(), 16, prefs.hex_bits, prefs.hex_signed);
+			return axtof(display_result_get(), 16, prefs.hex_bits, 
+				prefs.hex_signed);
 			break;
 		case CS_OCT:
-			return axtof(display_result_get(), 8, prefs.oct_bits, prefs.oct_signed);
+			return axtof(display_result_get(), 8, prefs.oct_bits, 
+				prefs.oct_signed);
 			break;
 		case CS_BIN:
-			return axtof(display_result_get(), 2, prefs.bin_bits, prefs.bin_signed);
+			return axtof(display_result_get(), 2, prefs.bin_bits, 
+				prefs.bin_signed);
 			break;
 		default:
 			fprintf (stderr, _("[%s] unknown number base in function \"display_result_get_double\". %s\n"), PROG_NAME, BUG_REPORT);
@@ -737,14 +806,14 @@ void display_append_e ()
 	GtkTextIter		end;
 	
 	if (current_status.number != CS_DEC) return;
-	if (calc_entry_start_new == FALSE) {
+	if (current_status.calc_entry_start_new == FALSE) {
 		if (strstr (display_result_get(), "e+") == NULL) {
 			display_get_line_end_iter (buffer, DISPLAY_RESULT_LINE, &end);
 			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, "e+", -1, "result", NULL);
 		}
 	} else {
 		display_result_set ("0e+");
-		calc_entry_start_new = FALSE;
+		current_status.calc_entry_start_new = FALSE;
 	}
 	display_result_counter = display_lengths[current_status.number] - DISPLAY_RESULT_E_LENGTH;
 }
@@ -786,8 +855,8 @@ void display_result_backspace ()
 {															
 	char	*current_entry;
 	
-	if (calc_entry_start_new == TRUE) {
-		calc_entry_start_new = FALSE;
+	if (current_status.calc_entry_start_new == TRUE) {
+		current_status.calc_entry_start_new = FALSE;
 		display_result_set ("0");
 	} else {
 		current_entry = display_result_get();

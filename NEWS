@@ -1,3 +1,10 @@
+galculator 1.1.2 - no big news. just some updates.
+	* complete rewrite of basic computation code. Be careful - though it has 
+	already been tested seriously!
+	* french translation (thanks to seb128)
+	* bug fixes: display_length (in HEX/OCT/BIN mode), working keypad in
+	preferences dialog, gcc-2.95, check for glade's XML files.
+
 galculator 1.1.1 - two releases within two days. uuuh! Never mind. Two quite 
 important bug fixes
 	* preferences dialog's font and color dialog work again

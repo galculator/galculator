@@ -31,7 +31,9 @@
 
 #define CONFIG_FILE_NAME ".galculator"
 
-#define MAIN_GLADE_FILE 	PACKAGE_GLADE_DIR "/main.glade"
+#define MAIN_GLADE_FILE 	PACKAGE_GLADE_DIR "/main_frame.glade"
+#define SCIENTIFIC_GLADE_FILE	PACKAGE_GLADE_DIR "/scientific_buttons.glade"
+#define BASIC_GLADE_FILE	PACKAGE_GLADE_DIR "/basic_buttons.glade"
 #define ABOUT_GLADE_FILE 	PACKAGE_GLADE_DIR "/about.glade"
 #define PREFS_GLADE_FILE 	PACKAGE_GLADE_DIR "/prefs.glade"
 #define FONT_GLADE_FILE 	PACKAGE_GLADE_DIR "/font.glade"
@@ -57,6 +59,10 @@
 	#define INFINITY 1.0 / 0.0
 #endif
 
+#ifndef PROG_NAME
+	#define PROG_NAME	PACKAGE
+#endif
+
 /* CS_xxxx define flags for current_status. */
 
 enum {
@@ -75,14 +81,21 @@ enum {
 };
 
 enum {
-	CS_PAN,		/* __P__seudo __A__lgebraic __N__otation */
-	CS_RPN,		/* reverse polish notation */
+	CS_PAN,			// __P__seudo __A__lgebraic __N__otation
+	CS_RPN,			// reverse polish notation
+	//CS_FORMULA,
 	NR_NOTATION_MODES
 };
 
 enum {
 	CS_FMOD_FLAG_INV,
 	CS_FMOD_FLAG_HYP
+};
+
+enum {
+	BASIC_MODE,
+	SCIENTIFIC_MODE,
+	NR_MODES
 };
 
 enum {
@@ -97,6 +110,9 @@ typedef struct {
 	unsigned char	angle:2;
 	unsigned char	notation:1;
 	unsigned char	fmod:2;
+	gboolean	calc_entry_start_new;
+	gboolean	rpn_have_result;
+	gboolean	allow_arith_op;
 } s_current_status;
 
 typedef struct {
@@ -126,12 +142,6 @@ typedef struct {
 } s_point;
 
 typedef struct {
-	char		*button_name;
-	gboolean	number_active[NR_NUMBER_BASES];
-	gboolean	notation_active[NR_NOTATION_MODES];
-} s_active_buttons;
-
-typedef struct {
 	char		*desc;
 	char		*name;
 	char		*value;
@@ -141,5 +151,11 @@ typedef struct {
 	double		*data;
 	int		len;
 } s_array;
+
+extern s_array		memory;
+#include "config_file.h"
+extern s_preferences	prefs;
+extern s_constant 	*constant;
+extern s_current_status	current_status;
 
 #endif /* galculator.h */

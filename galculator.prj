@@ -1,4 +1,4 @@
-# Anjuta Version 1.0.2 
+# Anjuta Version 1.1.97 
 Compatibility Level: 1 
 
 <PROJECT_DESCRIPTION_START>
@@ -23,18 +23,19 @@ a GTK 2 based scientific calculator
 
 props.file.type=project
 
-anjuta.version=1.0.2
+anjuta.version=1.1.97
 anjuta.compatibility.level=1
 
 project.name=galculator
 project.type=GTK
 project.target.type=EXECUTABLE
-project.version=1.0rc1
+project.version=1.1.2CVS
 project.author=Simon Floery
-project.source.target=of course the world best calculator
+project.source.target=dummytarget
 project.has.gettext=0
+project.gui.command=
 project.programming.language=C
-project.excluded.modules=	intl
+project.excluded.modules=intl
 
 project.config.extra.modules.before=
 project.config.extra.modules.after=
@@ -49,22 +50,25 @@ project.menu.need.terminal=0
 
 project.configure.options=
 anjuta.program.arguments=
+preferences.build.option.jobs=0
+preferences.build.option.silent=0
+preferences.build.option.autosave=0
+preferences.anjuta.make.options=-k
+preferences.make=make
+preferences.build.option.keep.going=1
+preferences.build.option.warn.undef=0
+preferences.autoformat.custom.style= -i8 -sc -bli0 -bl0 -cbi0 -ss
+preferences.autoformat.style=Style of Kangleipak
+preferences.indent.opening=0
+preferences.autoformat.disable=0
 preferences.indent.automatic=1
 preferences.use.tabs=1
-preferences.indent.opening=0
-preferences.indent.closing=0
-preferences.tabsize=8
 preferences.indent.size=8
-preferences.autoformat.style=Style of Kangleipak
-preferences.autoformat.custom.style= -i8 -sc -bli0 -bl0 -cbi0 -ss
-preferences.autoformat.disable=0
-preferences.debugger.command=gdb
-preferences.ui.designer=glade '$(project.name).glade'
-preferences.help.browser=devhelp -s '$(current.file.selection)'
+preferences.tabsize=8
+preferences.indent.closing=0
 
 module.include.name=.
 module.include.type=
-module.include.expanded=1
 module.include.files=\
 	src/display.h\
 	src/callbacks.h\
@@ -72,11 +76,11 @@ module.include.files=\
 	src/calc_basic.h\
 	src/galculator.h\
 	src/general_functions.h\
-	src/config_file.h
+	src/config_file.h\
+	src/ui.h
 
 module.source.name=.
 module.source.type=
-module.source.expanded=1
 module.source.files=\
 	src/display.c\
 	src/callbacks.c\
@@ -84,28 +88,25 @@ module.source.files=\
 	src/math_functions.c\
 	src/calc_basic.c\
 	src/general_functions.c\
-	src/config_file.c
+	src/config_file.c\
+	src/ui.c
 
 module.pixmap.name=.
 module.pixmap.type=
-module.pixmap.expanded=1
 module.pixmap.files=\
 	web/screenshot.jpg\
 	web/.xvpics/screenshot.jpg
 
 module.data.name=.
 module.data.type=
-module.data.expanded=0
 module.data.files=
 
 module.help.name=.
 module.help.type=
-module.help.expanded=0
 module.help.files=
 
 module.doc.name=.
 module.doc.type=
-module.doc.expanded=1
 module.doc.files=\
 	NEWS\
 	TODO\
@@ -115,7 +116,6 @@ module.doc.files=\
 	ChangeLog\
 	COPYING
 
-module.po.expanded=0
 module.po.files=
 
 compiler.options.supports=
@@ -127,11 +127,12 @@ compiler.options.libraries=
 compiler.options.libraries.selected=
 compiler.options.defines=\
 	HAVE_CONFIG_H
+compiler.options.defines.selected=
 compiler.options.warning.buttons=0 0 1 1 0 1 0 0 0 0 0 0 0 1 0 0 
 compiler.options.optimize.buttons=0 0 1 0 
 compiler.options.other.buttons=1 0 
 compiler.options.other.c.flags=
 compiler.options.other.l.flags=
 compiler.options.other.l.libs=
-project.source.paths=
 
+project.src.paths=

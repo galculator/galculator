@@ -42,6 +42,16 @@ typedef union {
 } u_number;
 
 typedef struct {
+	double		num;		// numerator
+	double		denum;		// denumerator
+} s_frac;
+
+typedef struct {
+	s_frac		real;
+	s_frac		imag;
+} s_complex;
+
+typedef struct {
 	u_number	number;
 	char		operation;
 } s_cb_token;

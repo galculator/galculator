@@ -23,22 +23,22 @@
 /* FILE */
 
 void
-on_number_button_clicked               (GtkButton       *button,
+on_number_button_clicked               (GtkToggleButton	*button,
                                         gpointer         user_data);
 void
-on_operation_button_clicked            (GtkButton       *button,
+on_operation_button_clicked            (GtkToggleButton	*button,
                                         gpointer         user_data);
 void
-on_function_button_clicked             (GtkButton       *button,
+on_function_button_clicked             (GtkToggleButton	*button,
                                         gpointer         user_data);
 void
-on_constant_button_clicked             (GtkButton       *button,
+on_constant_button_clicked             (GtkToggleButton	*button,
                                         gpointer         user_data);
 void
 on_tbutton_fmod_clicked                (GtkButton       *button,
 					gpointer	 user_data);
 void
-on_gfunc_button_clicked                (GtkButton       *button,
+on_gfunc_button_clicked                (GtkToggleButton	*button,
                                         gpointer         user_data);
 void
 on_about_ok_clicked                    (GtkButton       *button,
@@ -130,15 +130,6 @@ on_show_menubar1_activate              (GtkMenuItem     *menuitem,
 void
 on_prefs_custom_button_font_toggled    (GtkToggleButton *togglebutton,
                                         gpointer         user_data);
-
-gboolean on_textview_button_press_event (GtkWidget *widget,
-                                        GdkEventButton *event,
-                                        gpointer user_data);
-
-void on_textview_selection_received (GtkWidget *widget,
-                                            GtkSelectionData *data,
-                                            guint time,
-                                            gpointer user_data);
 						
 gboolean on_button_event(GtkWidget *widget, GdkEvent *event, gpointer user_data);
 
@@ -156,16 +147,7 @@ void on_prefs_vis_arith_toggled (GtkToggleButton *togglebutton,
 
 void on_prefs_vis_bracket_toggled (GtkToggleButton *togglebutton, 
 					gpointer user_data);
-
-void on_prefs_vis_funcs_toggled (GtkToggleButton *togglebutton, 
-					gpointer user_data);
-
-void on_prefs_vis_logic_toggled (GtkToggleButton *togglebutton, 
-					gpointer user_data);
-
-void on_prefs_vis_dispctrl_toggled (GtkToggleButton *togglebutton, 
-					gpointer user_data);
-					
+				
 void on_prefs_show_menu_toggled (GtkToggleButton *togglebutton, 
 					gpointer user_data);
 
@@ -209,3 +191,39 @@ void on_prefs_bin_bits_value_changed (GtkSpinButton *spinbutton,
 					
 void on_prefs_bin_signed_toggled (GtkToggleButton *togglebutton, 
 				gpointer user_data);
+
+void const_list_selection_changed_cb (GtkTreeSelection *selection, 
+				gpointer data);
+					
+void on_togglebutton_released (GtkToggleButton *togglebutton, 
+					gpointer user_data);
+					
+void on_display_control_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
+
+void on_logical_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
+
+void on_copy_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
+
+void on_basic_mode_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
+			
+void on_cut_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
+			
+void on_scientific_mode_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
+
+void on_paste_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
+
+void on_functions_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
+
+void on_standard_activate (GtkMenuItem     *menuitem,
+			gpointer         user_data);
+
+void on_main_window_check_resize (GtkContainer *container,
+			gpointer user_data);

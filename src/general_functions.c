@@ -33,40 +33,7 @@
 #include "display.h"
 #include "config_file.h"
 #include "callbacks.h"
-
-double			memory_value=0;
-extern GladeXML		*main_window_xml;
-GladeXML		*font_xml, *color_xml;
-
-// assume TRUE for all other bases/modes!
-
-s_active_buttons active_buttons[] = {\
-	{"button_2", {TRUE, TRUE, TRUE, FALSE}, {TRUE, TRUE}}, \
-	{"button_3", {TRUE, TRUE, TRUE, FALSE}, {TRUE, TRUE}}, \
-	{"button_4", {TRUE, TRUE, TRUE, FALSE}, {TRUE, TRUE}}, \
-	{"button_5", {TRUE, TRUE, TRUE, FALSE}, {TRUE, TRUE}}, \
-	{"button_6", {TRUE, TRUE, TRUE, FALSE}, {TRUE, TRUE}}, \
-	{"button_7", {TRUE, TRUE, TRUE, FALSE}, {TRUE, TRUE}}, \
-	{"button_8", {TRUE, TRUE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_9", {TRUE, TRUE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_a", {FALSE, TRUE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_b", {FALSE, TRUE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_c", {FALSE, TRUE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_d", {FALSE, TRUE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_e", {FALSE, TRUE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_f", {FALSE, TRUE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_const", {TRUE, TRUE, TRUE, TRUE}, {TRUE, TRUE}}, \
-	{"button_ee", {TRUE, FALSE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_sin", {TRUE, FALSE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_cos", {TRUE, FALSE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_tan", {TRUE, FALSE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_reci", {TRUE, FALSE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_point", {TRUE, FALSE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_sign", {TRUE, FALSE, FALSE, FALSE}, {TRUE, TRUE}}, \
-	{"button_paropen", {TRUE, TRUE, TRUE, TRUE}, {TRUE, FALSE}}, \
-	{"button_parclose", {TRUE, TRUE, TRUE, TRUE}, {TRUE, FALSE}}, \
-	{NULL}\
-};
+#include "ui.h"
 
 double error_unsupported_inv (double dummy)
 {
@@ -99,9 +66,6 @@ void clear ()
 
 void all_clear ()
 {
-	extern gboolean 		rpn_have_result;
-	extern s_current_status 	current_status;
-
 	clear();
 	if (current_status.notation == CS_PAN) {
 		alg_free();
@@ -110,70 +74,9 @@ void all_clear ()
 	else {
 		rpn_free();
 		rpn_init(0);
-		rpn_have_result=FALSE;
+		current_status.rpn_have_result=FALSE;
 	}
 	display_module_bracket_label_update (RESET);
-}
-
-/*
- * helper function for set_button_group_size
- */
-
-void set_table_child_size (gpointer data, gpointer user_data)
-{
-	s_point		*size;
-	GtkTableChild	*table_child;
-	
-	size = user_data;				/* dereference */
-	table_child = data;
-	gtk_widget_set_size_request (table_child->widget, size->x, size->y);
-}
-
-/*
- * run through all children of the given table and resize them (done by 
- * set_table_child_size)
- */
-
-void set_button_group_size (GladeXML *xml, char *table_name, int width, int height)
-{
-	GtkTable	*this_table;
-	s_point		size;
-	
-	size.x = width;
-	size.y = height;
-	this_table = (GtkTable *) glade_xml_get_widget (xml, table_name);
-	g_list_foreach (this_table->children, set_table_child_size, &size);
-	//gtk_window_resize ((GtkWindow *)gtk_widget_get_toplevel(a_parent_widget), 1, 1);
-}
-
-/*
- * the same as for set_button_group_size. helper function for set_button_group_font
- */
-
-void set_table_child_font (gpointer data, gpointer user_data)
-{
-	PangoFontDescription	*font;
-	GtkTableChild		*table_child;
-	
-	font = user_data;				/* dereference */
-	table_child = data;
-	/* ATTENTION: we don't want to change the button's font but the font of the button's label! */
-	gtk_widget_modify_font (gtk_bin_get_child ((GtkBin *)(table_child->widget)), font);
-}
-
-/*
- * new font for the labels of the buttons of the given table
- */ 
-
-void set_button_group_font (GladeXML *xml, char *table_name, char *font_string)
-{
-	GtkTable		*this_table;
-	PangoFontDescription	*pango_font;
-
-	pango_font = pango_font_description_from_string (font_string);
-	this_table = (GtkTable *) glade_xml_get_widget (xml, table_name);
-	g_list_foreach (this_table->children, set_table_child_font, pango_font);
-	pango_font_description_free(pango_font);
 }
 
 /* axtof: convert string to float 
@@ -252,6 +155,23 @@ char *ftoax (double x, int base, int nr_bits, gboolean is_signed)
 	return return_string;
 }
 
+char *add_leading_zeros (char *string, int multiple)
+{
+	char	*new_string;
+	int	length, offset, counter;
+	
+	length = strlen(string);
+	offset = (multiple - length%multiple)%multiple;
+	length += offset;
+	new_string = (char *) malloc ((length + 1) * sizeof(char));
+	for (counter = 0; counter < offset; counter++)
+		new_string[counter] = '0';
+	for (counter = offset; counter <= length; counter++)
+		new_string[counter] = string[counter-offset];
+	free (string);
+	return new_string;
+}
+
 /*
  * preference dialog sets. these are handler for the big configuration struct.
  */
@@ -280,10 +200,12 @@ void set_spinbutton (GladeXML *xml, char *spinbutton_name, void *value)
 {
 	GtkSpinButton	*spin_button;
 	int		*int_var;
+	double		d_var;
 	
 	int_var = value;
+	d_var = (double) *int_var;
 	spin_button = (GtkSpinButton *) glade_xml_get_widget (xml, spinbutton_name);
-	gtk_spin_button_set_value (spin_button, (double) *int_var);
+	//gtk_spin_button_set_value (spin_button, 1.0);
 }
 
 void set_optmenu (GladeXML *xml, char *optmenu_name, void *index)
@@ -341,100 +263,34 @@ char *gdk_color_to_string (GdkColor color)
 	return g_strdup_printf ("#%04X%04X%04X", color.red, color.green, color.blue);
 }
 
-GtkWidget *show_font_dialog (char *title, GtkButton *button)
-{
-	GtkWidget		*font_dialog;
-	
-	font_xml = glade_xml_new (FONT_GLADE_FILE, "font_dialog", NULL);
-	if (font_xml == NULL) glade_file_not_found (FONT_GLADE_FILE);
-	glade_xml_signal_autoconnect(font_xml);
-	font_dialog = glade_xml_get_widget (font_xml, "font_dialog");
-	
-	gtk_window_set_title ((GtkWindow *) font_dialog, title);
-	gtk_font_selection_dialog_set_font_name ((GtkFontSelectionDialog *) font_dialog, \
-		gtk_button_get_label (button));
-	gtk_widget_hide (((GtkFontSelectionDialog *)font_dialog)->apply_button);
-	gtk_widget_show (font_dialog);
-
-	return font_dialog;
-}
-
-GtkWidget *show_color_dialog (char *title, GtkButton *button)
-{
-	GtkWidget	*color_dialog, *da;
-	GdkColor	color;
-	GtkRcStyle	*style;
-	GtkBox		*box;
-	GtkBin		*vp;
-	
-	box = (GtkBox *)gtk_bin_get_child ((GtkBin *) button);
-	vp = (GtkBin *) (((GtkBoxChild *)g_list_nth_data (box->children, 1))->widget);
-	da = gtk_bin_get_child(vp);
-	
-	style = gtk_widget_get_modifier_style (da);
-	color = style->fg[GTK_STATE_NORMAL];
-	
-	color_xml = glade_xml_new (COLOR_GLADE_FILE, "color_dialog", NULL);
-	if (color_xml == NULL) glade_file_not_found (COLOR_GLADE_FILE);
-	glade_xml_signal_autoconnect(color_xml);
-	color_dialog = glade_xml_get_widget (color_xml, "color_dialog");
-	
-	gtk_window_set_title ((GtkWindow *) color_dialog, title);
-	gtk_color_selection_set_current_color ((GtkColorSelection *)((GtkColorSelectionDialog *)color_dialog)->colorsel, \
-		&color);
-	gtk_widget_hide (((GtkColorSelectionDialog *)color_dialog)->help_button);
-	gtk_widget_show (color_dialog);
-	return color_dialog;
-}
-
 /*
- * "apply" preference dialog.
+ * "apply"
  */
 
-void update_all (s_preferences prefs)
+void apply_preferences (s_preferences prefs)
 {
-	GtkCheckMenuItem	*show_menubar_item;
-	char			*button_font;
-	
+	GtkWidget	*menu_item;
+	char		*button_font;
+
 	display_update_tags ();
 	display_set_bkg_color (prefs.bkg_color);
-	
-	// don't forget the buttons right from the display
-	set_button_group_size (main_window_xml, "table_func", prefs.button_width, prefs.button_height);
-	set_button_group_size (main_window_xml, "table_bin", prefs.button_width, prefs.button_height);
-	set_button_group_size (main_window_xml, "table_standard", prefs.button_width, prefs.button_height);
-	set_button_group_size (main_window_xml, "table_dispctrl", prefs.button_width, prefs.button_height);
-	
+
+	set_all_buttons_size (prefs.button_width, prefs.button_height);
+
 	if (prefs.custom_button_font == TRUE) button_font = g_strdup (prefs.button_font);
 	else button_font = g_strdup ("");
-	set_button_group_font (main_window_xml, "table_func", button_font);
-	set_button_group_font (main_window_xml, "table_bin", button_font);	
-	set_button_group_font (main_window_xml, "table_standard", button_font);	
-	set_button_group_font (main_window_xml, "table_dispctrl", button_font);
-	
-	set_widget_visibility (main_window_xml, "table_bin", prefs.vis_logic);
-	set_widget_visibility (main_window_xml, "table_func", prefs.vis_funcs);
-	set_widget_visibility (main_window_xml, "table_dispctrl", prefs.vis_dispctrl);
-	
+	set_all_buttons_font (button_font);
+	g_free (button_font);
+
 	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
-	show_menubar_item = (GtkCheckMenuItem *) glade_xml_get_widget (main_window_xml, "show_menubar1");
-	gtk_check_menu_item_set_active (show_menubar_item, prefs.show_menu);
-	
-		// we need just a widget of the main window. take show_menubar_item as its there.
-	gtk_window_resize ((GtkWindow *)gtk_widget_get_toplevel((GtkWidget *)show_menubar_item), 1, 1);
-}
+	menu_item = glade_xml_get_widget (main_window_xml, "show_menubar1");
+	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
 
-/*
- * (un) hide a widget
- */ 
-
-void set_widget_visibility (GladeXML *xml, char *widget_name, gboolean visible)
-{
-	GtkWidget	*widget;
-	
-	widget = glade_xml_get_widget (xml, widget_name);
-	if (visible) gtk_widget_show_all (widget);
-	else gtk_widget_hide_all (widget);
+	if (prefs.mode == BASIC_MODE) menu_item = 
+		glade_xml_get_widget (main_window_xml, "basic_mode");
+	else if (prefs.mode == SCIENTIFIC_MODE) menu_item = 
+		glade_xml_get_widget (main_window_xml, "scientific_mode");
+	gtk_menu_item_activate ((GtkMenuItem *) menu_item);
 }
 
 /*
@@ -450,230 +306,24 @@ void gtk_widget_really_modify_fg (GtkWidget *widget, GdkColor color)
 	gtk_widget_modify_fg (widget, GTK_STATE_INSENSITIVE, &color);
 }
 
-void update_active_buttons (GladeXML *xml, int number_base, int notation_mode)
-{
-	int		counter=0;
-	GtkWidget	*current_button;
-	gboolean	state;
-	
-	while (active_buttons[counter].button_name != NULL) {
-		current_button = glade_xml_get_widget (xml, active_buttons[counter].button_name);
-		state = active_buttons[counter].number_active[number_base] & \
-			active_buttons[counter].notation_active[notation_mode];
-		gtk_widget_set_sensitive (current_button, state);
-		counter++;
-	}
-}
-
 gboolean is_valid_number (int number_base, char number)
 {
 	char *valid_numbers[4]={"1234567890", "1234567890abcdef", "12345670", "01"};
-	extern char dec_point;
 	
 	return ((strchr (valid_numbers[number_base], g_ascii_tolower (number)) != NULL) \
-		|| (number == dec_point));
+		|| (number == dec_point[0]));
 }
 
-gboolean button_deactivation (gpointer data)
-{
-	GtkButton 	*b;
-	
-	b = (GtkButton*) data;
-	_gtk_button_set_depressed (b, FALSE);
-	gtk_widget_set_state ((GtkWidget *) b, GTK_STATE_NORMAL);
-	return FALSE;	
-}
-
-void button_activation (GtkButton *b)
-{
-	gtk_widget_set_state ((GtkWidget *) b, GTK_STATE_ACTIVE);
-	_gtk_button_set_depressed (b, TRUE);
-	g_timeout_add (100, button_deactivation, (gpointer) b);
-}
-
-/* set_object_data - it is not possible to pass the user_data argument to a
- * signal handler with glade-2. In order to simplify the callbacks, we
- * set object's data to information used by the callbacks. e.g. the addition
- * button and the addition sign are associated here.
+/*
+ * activate_menu_item - activates menu item with widget name item_name
  */
 
-void set_object_data (GladeXML *xml)
+void activate_menu_item (char *item_name)
 {
-	int 		counter = 0;
-	gpointer	*func;
+	GtkMenuItem		*current_item;
 	
-	s_operation_map	operation_map[] = {\
-		{"button_pow", '^'},\
-		{"button_lsh", '<'},\
-		{"button_mod", '%'},\
-		{"button_and", '&'},\
-		{"button_or", '|'},\
-		{"button_xor", 'x'},\
-		{"button_enter", '='},\
-		{"button_plus", '+'},\
-		{"button_minus", '-'},\
-		{"button_mult", '*'},\
-		{"button_div", '/'},\
-		{"button_paropen", '('},\
-		{"button_parclose", ')'},\
-		{NULL}\
-	};
-	
-	s_gfunc_map gfunc_map[] = {\
-		{"button_sign", display_result_toggle_sign},\
-		{"button_backspace", display_result_backspace},\
-		{"button_ee", display_append_e},\
-		{"button_clr", clear},\
-		{"button_allclr", all_clear},\
-		{NULL}\
-	};
-	
-	s_function_map function_map[] = {\
-		{"button_sin", {sin, asin, sinh, sin}, TRUE},\
-		{"button_cos", {cos, acos, cosh, cos}, TRUE},\
-		{"button_tan", {tan, atan, tanh, tan}, TRUE},\
-		{"button_log", {log10, pow10y, log10, log10}, FALSE},\
-		{"button_ln", {log, exp, log, log}, FALSE},\
-		{"button_reci", {reciprocal, idx, reciprocal, reciprocal}, FALSE},\
-		{"button_sq", {powx2, sqrt, powx2, powx2}, FALSE},\
-		{"button_sqrt", {sqrt, powx2, sqrt, sqrt}, FALSE},\
-		{"button_fac", {factorial, factorial, factorial, factorial}, FALSE},\
-		{"button_cmp", {cmp, cmp, cmp, cmp}, FALSE},\
-		{NULL}\
-	};
-
-	while (operation_map[counter].button_name != NULL) {
-		g_object_set_data (G_OBJECT (glade_xml_get_widget (xml, 
-			operation_map[counter].button_name)),
-			"operation", GINT_TO_POINTER(operation_map[counter].operation));
-		counter++;
-	}
-	counter = 0;
-	
-	while (gfunc_map[counter].button_name != NULL) {
-		g_object_set_data (G_OBJECT (glade_xml_get_widget (xml, 
-			gfunc_map[counter].button_name)),
-			"func", gfunc_map[counter].func);
-		counter++;
-	};
-	counter = 0;
-	
-	while (function_map[counter].button_name != NULL) {
-		func = (void *) malloc (sizeof (function_map[counter].func));
-		memcpy (func, function_map[counter].func, sizeof (function_map[counter].func));
-		g_object_set_data (G_OBJECT (glade_xml_get_widget (xml, 
-			function_map[counter].button_name)),
-			"func", func);
-		g_object_set_data (G_OBJECT (glade_xml_get_widget (xml, 
-			function_map[counter].button_name)),
-			"is_trigonometric", GINT_TO_POINTER((int)function_map[counter].is_trigonometric));		
-		counter++;
-	};
-}
-
-/* menu code - e.g. used for the constant popup menu */
-
-void position_menu (GtkMenu *menu, gint *x, gint *y, gboolean *push_in, gpointer user_data)
-{
-	/* this code is taken from GTK 2.2.1 source, therefore credits go there.
-	 *  gtk+-2.0.6/gtk/gtkoptionmenu.c (function gtk_option_menu_position)
-	 * modified to fit our button menu widget.
-	 */
-	GtkWidget *child;
-	GtkWidget *widget;
-	GtkRequisition requisition;
-	GList *children;
-	gint screen_width;
-	gint menu_xpos;
-	gint menu_ypos;
-	gint menu_width;
-	
-	g_return_if_fail (GTK_IS_BUTTON (user_data));
-	
-	widget = GTK_WIDGET (user_data);
-	
-	gtk_widget_get_child_requisition (GTK_WIDGET (menu), &requisition);
-	menu_width = requisition.width;
-	
-	/* i guess we don't need the "active" stuff from the original positioning
-		code. we don't have any active items
-	 */
-	 
-	gdk_window_get_origin (widget->window, &menu_xpos, &menu_ypos);
-	
-	menu_xpos += widget->allocation.x;
-	menu_ypos += widget->allocation.y + widget->allocation.height / 2 - 2;
-	
-	children = GTK_MENU_SHELL(menu)->children;
-	while (children) {
-		child = children->data;
-		if (GTK_WIDGET_VISIBLE (child))	{
-			gtk_widget_get_child_requisition (child, &requisition);
-			menu_ypos -= requisition.height;
-		}
-		children = children->next;
-	}
-	
-	//screen_width = gdk_screen_get_width (gtk_widget_get_screen (widget));
-	screen_width = gdk_screen_width ();
-	
-	if (menu_xpos < 0) menu_xpos = 0;
-	else if ((menu_xpos + menu_width) > screen_width)
-		menu_xpos -= ((menu_xpos + menu_width) - screen_width);
-	
-	*x = menu_xpos;
-	*y = menu_ypos;
-	*push_in = TRUE;
-}
-
-GtkWidget *create_constants_menu (s_constant *constant, GCallback const_handler)
-{
-	GtkWidget	*menu, *child;
-	int		counter=0;
-	char		*label;
-	
-	menu = gtk_menu_new();
-	while (constant[counter].desc != NULL) {
-		label = g_strdup_printf ("%s: %s (%s)", constant[counter].name, constant[counter].value, constant[counter].desc);
-		child = gtk_menu_item_new_with_label(label);
-		g_free (label);
-		gtk_menu_shell_append ((GtkMenuShell *) menu, child);
-		gtk_widget_show (child);
-		g_signal_connect (G_OBJECT (child), "activate", const_handler, constant[counter].value);
-		counter++;
-	}
-	return menu;
-}
-
-GtkWidget *create_memory_menu (s_array memory, GCallback const_handler, char *last_item)
-{
-	GtkWidget	*menu, *child;
-	int		counter=0;
-	char		*label;
-	
-	menu = gtk_menu_new();
-	for (counter = 0; counter < memory.len; counter++) {
-		label = g_strdup_printf ("%f", memory.data[counter]);
-		child = gtk_menu_item_new_with_label(label);
-		g_free (label);
-		gtk_menu_shell_append ((GtkMenuShell *) menu, child);
-		gtk_widget_show (child);
-		g_signal_connect (G_OBJECT (child), "activate", const_handler, GINT_TO_POINTER(counter));
-	}
-	if (last_item != NULL) {
-		label = g_strdup (last_item);
-		child = gtk_menu_item_new_with_label(label);
-		g_free (label);
-		gtk_menu_shell_append ((GtkMenuShell *) menu, child);
-		gtk_widget_show (child);
-		g_signal_connect (G_OBJECT (child), "activate", const_handler, GINT_TO_POINTER(counter));
-	}
-	return menu;
-}
-
-void glade_file_not_found (char *filename)
-{
-	fprintf (stderr, _("[%s] Couldn't load %s. This file is necessary \
-to build galculator's user interface. Make sure you did a make install and the file \
-is accessible!\n"), PACKAGE, filename);
+	current_item = (GtkMenuItem *) glade_xml_get_widget (main_window_xml, \
+		g_strstrip (g_ascii_strdown (item_name, -1)));
+	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) current_item, FALSE);
+	gtk_menu_item_activate (current_item);
 }

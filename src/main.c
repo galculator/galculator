@@ -26,7 +26,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <locale.h>
 
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
@@ -37,14 +36,14 @@
 #include "display.h"
 #include "config_file.h"
 #include "general_functions.h"
+#include "ui.h"
 
 #define MASK_NUMLOCK GDK_MOD2_MASK
 
-GladeXML		*main_window_xml;
-char			dec_point=DEFAULT_DEC_POINT;
-extern s_preferences	prefs;
-s_current_status 	current_status = {0, 0, 0, 0};
+s_preferences		prefs;
+s_current_status 	current_status = {0, 0, 0, 0, FALSE, FALSE, TRUE};
 s_array			memory;
+s_constant 		*constant;
 
 void print_usage ()
 {
@@ -81,8 +80,7 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 	
 int main (int argc, char *argv[])
 {
-	char		*dec_point_string, *config_file_name;
-	struct lconv 	*locale_settings;
+	char		*config_file_name;
 	GtkWidget 	*main_window;
 	
 	/*
@@ -92,7 +90,7 @@ int main (int argc, char *argv[])
 	 */
 
 	gtk_init (&argc, &argv);
-
+	
 	bindtextdomain (PACKAGE, PACKAGE_LOCALE_DIR);
 	bind_textdomain_codeset (PACKAGE, "UTF-8");
 	textdomain (PACKAGE);
@@ -104,67 +102,46 @@ int main (int argc, char *argv[])
 
 	/* at first, get config file */
 	config_file_name = g_strdup_printf ("%s/%s", getenv ("HOME"), CONFIG_FILE_NAME);
-	config_file_read (config_file_name);
+	prefs = config_file_read (config_file_name);
+
+	constant = config_file_get_constants();
 	g_free (config_file_name);
 
-	/* as the following feature is out of scope of config_file.c, we do it here
-	 * handle "remember display value on exit" and newline
+	/* as the following feature is out of scope of config_file.c, we do it
+	 * here handle "remember display value on exit" and newline
 	 */
-	
 	if (prefs.rem_display == FALSE) {	
 		g_free (prefs.rem_value);
 		prefs.rem_value = g_strdup (DEFAULT_REM_VALUE);
 	}	
 
-	/* get locale's decimal point */
+	/* at first get the main frame */
 	
-	locale_settings = localeconv();
-	if (strlen (locale_settings->decimal_point) != 1) {
-		fprintf (stderr, _("[%s] length of decimal point (in locale) is not supported: >%s<\n\
-You might face problems when using %s! %s\n)"), PACKAGE, locale_settings->decimal_point, PROG_NAME, BUG_REPORT);
-	} else dec_point = locale_settings->decimal_point[0];
-	
-	main_window_xml = glade_xml_new (MAIN_GLADE_FILE, "main_window", NULL);
-	
-	if (main_window_xml == NULL) {
-		glade_file_not_found (MAIN_GLADE_FILE);
-		return EXIT_FAILURE;
-	}
-	
-	/* connect the signals in the interface */
-	glade_xml_signal_autoconnect(main_window_xml);
-	set_object_data (main_window_xml);
-	main_window = glade_xml_get_widget (main_window_xml, "main_window");
-
+	main_window = ui_main_window_create();
 	gtk_window_set_title ((GtkWindow *)main_window, PACKAGE);
 
+	ui_main_window_buttons_create(prefs.mode);
+	
 	/* usually, only Shift, CTRL and ALT modifiers are paid attention to by 
 	 * accelerator code. add MOD2 (NUMLOCK allover the worl?) to the list. 
 	 * We have to do this for a working keypad.
 	 */
 	  
 	gtk_accelerator_set_default_mod_mask (gtk_accelerator_get_default_mod_mask () | GDK_MOD2_MASK); 
-	
-	/* update "decimal point" button to locale's decimal point */
-	
-	dec_point_string = g_strdup_printf ("%c", dec_point);
-	gtk_button_set_label ((GtkButton *) glade_xml_get_widget (main_window_xml, 
-		"button_point"), dec_point_string);
-	g_free (dec_point_string);
-							  
+				  
 	/* prepare calc_basic */
 
 	alg_init (0);
 	rpn_init (0);
-	
+
 	/* finally show what we put together. do this as late asap */
 	gtk_widget_show (main_window);
 
 	/* main_windows has to be visible to get a nice and proper display */	
 	display_init (main_window);
-	
+
 	/* apply changes */
-	update_all (prefs);
+	apply_preferences (prefs);
 
 	memory.data = NULL;
 	memory.len = 0;

@@ -31,5 +31,8 @@ double rad2deg (double value);
 double rad2grad (double value);
 double deg2rad (double value);
 double grad2rad (double value);
+double asinh (double x);
+double acosh (double x);
+double atanh (double x);
 
 #endif /* math_functions.h */

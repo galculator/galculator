@@ -1455,7 +1455,7 @@ fi
 
 PACKAGE=galculator
 
-VERSION=1.1.2CVS
+VERSION=1.1.3CVS
 
 if test "`cd $srcdir && pwd`" != "`pwd`" && test -f $srcdir/config.status; then
   { { echo "$as_me:$LINENO: error: source directory already configured; run \"make distclean\" there first" >&5
@@ -3158,7 +3158,7 @@ _ACEOF
 
 
 
-ALL_LINGUAS="de fr"
+ALL_LINGUAS="de fr ja"
 # On IRIX 5.3, sys/types and inttypes.h are conflicting.
 
 
