@@ -241,8 +241,10 @@ know what you are doing? If not: %s\n"), PROG_NAME, FLEX_PARSER_NR_RECURSIONS, B
 	/* after finishing a buffer we insert a number, so state is OP?!?!? */
 	BEGIN(OP);
 	/* process result */
-	if (bracket_counter != bracket_level) return_result.error = TRUE; 
-	if (return_result.error == TRUE) bracket_counter = 0;
+	if (bracket_counter != bracket_level) {
+		return_result.error = TRUE;
+		bracket_counter = bracket_level;
+	}		
 	return_result.value = parser_token.number;
 	recursion_counter--;
 	return return_result;

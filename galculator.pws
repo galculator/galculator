@@ -6,13 +6,13 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=85
-1=2
+0=12
+1=85
 2=35
-3=1500
-4=213
-5=52
-6=276
+3=1504
+4=168
+5=23
+6=23
 7=34
 8=33
 9=5
@@ -42,14 +42,12 @@ filter.dir.ignore.hidden=0
 clean before build=false
 
 [filelist]
-0=/home/sf/Devel/galculator/src/main.c
-1=/home/sf/Devel/galculator/ChangeLog
+0=/home/sf/Devel/galculator/ChangeLog
+1=/home/sf/Devel/galculator/src/main.c
 2=/home/sf/Devel/galculator/src/flex_parser.h
 3=/home/sf/Devel/galculator/src/callbacks.c
 4=/home/sf/Devel/galculator/src/flex_parser.l
-5=/home/sf/Devel/galculator/src/calc_basic.h
-6=/home/sf/Devel/galculator/src/calc_basic.c
-7=/home/sf/Devel/galculator/TODO
+5=/home/sf/Devel/galculator/TODO
 
 [Project Tree]
 0=0
@@ -71,11 +69,11 @@ clean before build=false
 7=current_status.allow_arith_op
 
 [find_text]
-0=this_bracket_counter
-1=bracket_counter
-2=FALSE
-3=CURRENT_ALG
-4=alg_stack_free
-5=alg_add_token (
-6=alg_add
-7=stackstack
+0=msgstr ""
+1=fuzzy
+2=compute_user_function
+3=this_bracket_counter
+4=bracket_counter
+5=FALSE
+6=CURRENT_ALG
+7=alg_stack_free

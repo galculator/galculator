@@ -20,47 +20,76 @@ Formula Entry Mode
 Since version 1.2.0 galculator features a formula entry mode. This mode is one 
 more step towards a calculator accepting input as written on the paper. 
 galculator's formula entry mode aims to provide all the features of the 
-algebraic mode.
+algebraic mode (and even to go beyond ...).
 
 This part of galculator is developed actively. This section gives an overview 
 of the functions currently implemented and points out some restrictions.
 
-So far formula entry mode accepts only decimal numbers as input. All algebraic 
-operations and functions of the algebraic mode are supported. Operations can 
-only be specified by their one char long identifier, which is for example 
-displayed by the Arithmetic Operation display module. String operation 
-identifiers (e.g. AND, OR, XOR, MOD, LSH - use &, |, x, m, < instead) are not 
-yet supported.
+Formula entry mode accepts decimal numbers as input as well as hexadecimal, 
+binary and octal numbers. The latter three have to be entered with a prefix:
 
-Operation			Single char identifier	
+Number base	Prefix(es)	Example
+decimal		none		-3.1415
+hexadecimal	0x or 0h	0xAF
+binary		0b		0b1001
+octal		0o		0o777
+
+All algebraic operations and functions of the algebraic mode are supported. The 
+following table lists all available operations:
+
+Operation			identifier	
 +, -, *, /			+, -, *, /
 percent x%y (x percent of y)	%
 power x^y			^
-module (MOD)			m
-left shift (LSH)		<
-right shift (INV + LSH)		>
-AND				&
-OR				|
-XOR				x
+module (MOD)			mod, MOD
+left shift (LSH)		<<
+right shift (INV + LSH)		>>
+AND				&, and, AND
+OR				|, or, OR
+XOR				xor, XOR
 
-Factorial and complement are regarded as functions. All functions' argument 
-have to be enclosed by brackets. Therefore sin 3 is not possible yet and has to 
-be written as sin(3).
+Let's speak of factorial and complement as functions. Most functions' argument 
+has to be enclosed by brackets. Therefore sin 3 is not allowed and has to be 
+written as sin(3). User defined functions can be used in formula entry mode 
+without any restrictions!
 
 Function			Function identifier	Example
 Trigonometric functions: 
 Sine, Cosine, Tangent		sin, cos, tan		sin(0.5)
-their inverse 			asin, acos, atan	asin(0.5)
+their inverse			asin, acos, atan	asin(0.5)
 their hyperbolic variants	sinh, cosh, tanh	sinh(0.5)
 and the inverse of those	asinh, acosh, atanh	asinh(0.5)
 natural logarithm (base e)	ln			ln(3)
 logarithm (base 10)		log			log(3)
 square root			sqrt			sqrt(3)
-factorial			!			(3)! brackets mandatory
-complement			~			~(3) brackets mandatory
+factorial			!			(3)!, 3! brackets are 
+							optional
+complement			~			~(3) brackets are 
+							mandatory
 
 If formula entry mode's parser encounters an (syntax) error, the formula entry 
 text is turned red.
+
+User defined functions
+======================
+
+Since version 1.2.1 galculator also features user defined functions. They can 
+be called with the fun button next to the constant button and work like the 
+other function buttons like sin, cos, etc. (except that inverse and hyperbolic 
+are not supported). User functions can be defined in the Preferences dialog 
+(Functions page). The function name can be any string beginning with a letter. 
+So far, only a single variable is allowed. Expression gives the string 
+expression of the function with respect to the specified variable:
+
+Function		Name	Variable	Expression
+f(x)=1-x		f	x		1-x
+
+User defined functions can depend on other user functions:
+
+Function		Name	Variable	Expression
+g(x)=1/(1-x)=1/f(x)	g	x		1/f(x)
+
+User functions can also be called from formula entry mode.
 
 Shortcuts
 =========
