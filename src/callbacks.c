@@ -402,16 +402,9 @@ on_ordinary_activate                  (GtkMenuItem     *menuitem,
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
 	display_change_option (CS_PAN, DISPLAY_OPT_NOTATION);
 	set_widget_visibility (main_window_xml, "formula_entry_hbox", FALSE);
-	rpn_free ();
-	all_clear ();
-	set_button_label_and_tooltip (button_box_xml, "button_enter", 
-		_("="), _("Enter"));
-	set_button_label_and_tooltip (button_box_xml, "button_pow", 
-		_("x^y"), _("Power"));
-	set_button_label_and_tooltip (button_box_xml, "button_f1", 
-		_("("), _("Open Bracket"));
-	set_button_label_and_tooltip (button_box_xml, "button_f2", 
-		_(")"), _("Close Bracket"));
+	rpn_free();
+	all_clear();
+	ui_button_set_pan();
 	display_stack_remove();
 	update_dispctrl();
 	/* pixel above/below display result line */
@@ -425,16 +418,9 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
 	display_change_option (CS_RPN, DISPLAY_OPT_NOTATION);
 	set_widget_visibility (main_window_xml, "formula_entry_hbox", FALSE);
-	alg_free ();
-	all_clear ();
-	set_button_label_and_tooltip (button_box_xml, "button_enter", 
-		_("ENT"), _("Enter"));
-	set_button_label_and_tooltip (button_box_xml, "button_pow", 
-		_("y^x"), _("Power"));
-	set_button_label_and_tooltip (button_box_xml, "button_f1", 
-		_("x<>y"), _("swap current number with top of stack"));
-	set_button_label_and_tooltip (button_box_xml, "button_f2", 
-		_("roll"), _("roll down stack"));
+	alg_free();
+	all_clear();
+	ui_button_set_rpn();
 	/* stack is created by all_clear */
 	update_dispctrl();
 	/* pixel above/below display result line */
@@ -448,6 +434,7 @@ on_form_activate 			(GtkMenuItem     *menuitem,
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
 	display_change_option (CS_FORMULA, DISPLAY_OPT_NOTATION);
 	all_clear();
+	ui_button_set_pan();
 	update_dispctrl();
 	set_widget_visibility (main_window_xml, "formula_entry_hbox", TRUE);	
 }
@@ -860,8 +847,14 @@ void
 on_show_menubar1_activate              (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
+	GtkWidget	*menu_item;
+	
 	prefs.show_menu = gtk_check_menu_item_get_active ((GtkCheckMenuItem *) menuitem);;
 	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
+	/* in case this cb is called by the right button mouse click menu */
+	menu_item = glade_xml_get_widget (main_window_xml, "show_menubar1");
+	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
+
 }
 
 void
@@ -1292,19 +1285,20 @@ void on_infinite_stack_size_clicked (GtkRadioButton *rb, gpointer user_data)
 	rpn_stack_set_size (prefs.stack_size);
 }
 
-void on_main_window_button_press_event(GtkWidget *widget,
-						GdkEventButton *event,
-						gpointer user_data)
+gboolean on_button_press_event (GtkWidget *widget, GdkEventButton *event, gpointer user_data)
 {
-	printf ("Hallo\n");
+	GtkWidget	*menu;
+	
+	if (event->button != 3) return FALSE;
+	menu = ui_right_mouse_menu_create ();
+	gtk_menu_popup ((GtkMenu *) menu, NULL, NULL, NULL, NULL, 3, event->time);
+	return FALSE;
 }
 
-gboolean on_button_press_event (GtkWidget *widget,
-						GdkEventButton *event,
-						gpointer user_data)
+void on_formula_entry_activate (GtkEntry *entry,
+                                            gpointer user_data)
 {
-	printf ("Hallo22\n");
-	return FALSE;
+	printf ("parse: %s\n", gtk_entry_get_text (entry));
 }
 
 

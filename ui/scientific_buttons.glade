@@ -273,9 +273,6 @@
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
-		  <accessibility>
-		    <atkproperty name="AtkObject::accessible_description" translatable="yes">User defined functions</atkproperty>
-		  </accessibility>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Tue, 17 Sep 2002 09:13:28 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
 		  <accelerator key="u" modifiers="GDK_MOD1_MASK" signal="clicked"/>

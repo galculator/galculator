@@ -79,11 +79,26 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 		(event->keyval != GDK_KP_6) && (event->keyval != GDK_KP_Right) &&
 		(event->keyval != GDK_KP_8) && (event->keyval != GDK_KP_Up) &&
 		(event->keyval != GDK_KP_0) && (event->keyval != GDK_KP_Insert)) ||
-		(strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(grab_widget)), 
+		(strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(grab_widget)),
 			"main_window") != 0))
 			event->state &= ~GDK_MOD2_MASK;
 	
+	/* another problem: we have keyboard accelerators which are simple
+	 * keypresses, e.g. "1", "2" but also "s" for the sin button. if the
+	 * formula entry is active and user types a "s", user expects a s to
+	 * be appended. moreover the same for special keys like backspace etc.
+	 * unfortunately, accelerators have higher priority and can't be somehow
+	 * blocked (they can? tell me!). therefore if formula_entry is active
+	 * and it's a "simple" key press (is this the best solution?), then emit
+	 * the signal directly and return TRUE to prevent any further 
+	 * procession.
+	 */
+	
 	if (formula_entry_is_active() && (event->type == GDK_KEY_PRESS)) {
+		if ((event->state == 0) || (event->state == GDK_SHIFT_MASK)) {
+			gtk_widget_event (glade_xml_get_widget (main_window_xml, "formula_entry"), (GdkEvent *)event);
+			return TRUE;
+		}
 	}
 	
 	return FALSE;

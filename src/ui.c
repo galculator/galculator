@@ -40,6 +40,9 @@ char		dec_point[2];
 GtkListStore	*store;
 
 static void set_disp_ctrl_object_data ();
+static void set_all_dispctrl_buttons_property (GFunc func, gpointer data);
+static void set_all_normal_buttons_property (GFunc func, gpointer data);
+static void set_table_child_callback (gpointer data, gpointer user_data);
 
 /* active_buttons. bit mask, in which modes the corresponding button is active.
  * assume TRUE for all other bases/modes!
@@ -207,9 +210,9 @@ static void set_basic_object_data ()
 	};
 	
 	s_gfunc_map gfunc_map[] = {
-		{"button_sign", display_result_toggle_sign},
-		{"button_f1", gfunc_f1},	/* paropen or swapxy */
-		{"button_f2", gfunc_f2},	/* parclose or rolldn */
+		{"button_sign", "-", display_result_toggle_sign},
+		{"button_f1", "(", gfunc_f1},	/* paropen or swapxy */
+		{"button_f2", ")", gfunc_f2},	/* parclose or rolldn */
 		{NULL}
 	};
 	
@@ -230,9 +233,9 @@ static void set_disp_ctrl_object_data ()
 	int	counter=0;
 	
 	s_gfunc_map map[] = {\
-		{"button_clr", clear},\
-		{"button_backspace", display_result_backspace},\
-		{"button_allclr", all_clear},\
+		{"button_clr", "", clear},\
+		{"button_backspace", "", display_result_backspace},\
+		{"button_allclr", "", all_clear},\
 		{NULL}\
 	};
 
@@ -303,6 +306,7 @@ GtkWidget *ui_main_window_create ()
 void ui_main_window_set_dispctrl (int location)
 {
 	GtkWidget	*table_dispctrl, *box;
+	s_signal_cb	signal_cb;
 	
 	/* destroy any existing display controls */
 	if (dispctrl_xml) {
@@ -337,6 +341,12 @@ void ui_main_window_set_dispctrl (int location)
 			error_message ("Unknown mode in \"ui_main_window_set_dispctrl\"");
 	}
 	set_disp_ctrl_object_data ();
+
+	/* finally we connect that signal handler */
+	
+	signal_cb.detailed_signal = g_strdup ("button_press_event");
+	signal_cb.callback = (GCallback) on_button_press_event;
+	set_all_dispctrl_buttons_property (set_table_child_callback, (gpointer) &signal_cb);
 }
 
 /* ui_main_window_buttons_destroy. removes the scientific resp basic mode 
@@ -363,6 +373,7 @@ void ui_main_window_buttons_create (int mode)
 {
 	GtkWidget	*box;
 	struct lconv 	*locale_settings;
+	s_signal_cb	signal_cb;
 	
 	if (mode == BASIC_MODE) {
 		button_box_xml = glade_file_open (BASIC_GLADE_FILE, "button_box", TRUE);
@@ -378,6 +389,10 @@ void ui_main_window_buttons_create (int mode)
 		set_scientific_object_data (button_box_xml);
 	} else error_message ("Unknown mode in \"ui_main_window_buttons_create\"");
 	
+	signal_cb.detailed_signal = g_strdup ("button_press_event");
+	signal_cb.callback = (GCallback) on_button_press_event;
+	set_all_normal_buttons_property (set_table_child_callback, (gpointer) &signal_cb);
+	
 	/* update "decimal point" button to locale's decimal point */
 	dec_point[0] = DEFAULT_DEC_POINT;
 	locale_settings = localeconv();
@@ -389,6 +404,21 @@ is not supported: >%s<\nYou might face problems when using %s! %s\n)"),
 	dec_point[1] = '\0';
 	gtk_button_set_label ((GtkButton *) glade_xml_get_widget (
 		button_box_xml, "button_point"), dec_point);
+}
+
+/* set_table_child_callback. Function argument for set_all_*_buttons_property.
+ * sets the size.
+ */
+
+static void set_table_child_callback (gpointer data, gpointer user_data)
+{
+	s_signal_cb	*signal_cb;
+	GtkTableChild	*table_child;
+	
+	table_child = data;
+	signal_cb = user_data;
+	g_signal_connect (table_child->widget, signal_cb->detailed_signal, 
+		signal_cb->callback, NULL);
 }
 
 /* set_table_child_size. Function argument for set_all_buttons_property.
@@ -428,10 +458,11 @@ static void set_table_child_font (gpointer data, gpointer user_data)
 	/* else do nothing */
 }
 
-/* set_all_buttons_property. calls func with argument data for every button.
+/* set_all_dispctrl_buttons_property. calls func with argument data for 
+ * every button of the display control section.
  */
 
-static void set_all_buttons_property (GFunc func, gpointer data)
+static void set_all_dispctrl_buttons_property (GFunc func, gpointer data)
 {
 	GtkTable	*table;
 
@@ -443,6 +474,15 @@ static void set_all_buttons_property (GFunc func, gpointer data)
 	if (GTK_IS_TABLE (((GtkTableChild *)table->children->data)->widget))
 		table = (GtkTable *) ((GtkTableChild *)table->children->data)->widget;
 	g_list_foreach (table->children, func, data);
+}
+
+/* set_all_dispctrl_buttons_property. calls func with argument data for 
+ * every button of the "calculator" section.
+ */
+
+static void set_all_normal_buttons_property (GFunc func, gpointer data)
+{
+	GtkTable	*table;
 	
 	/* now depending on mode the remaining buttons */
 	if (prefs.mode == BASIC_MODE) {
@@ -462,7 +502,15 @@ static void set_all_buttons_property (GFunc func, gpointer data)
 		g_list_foreach (table->children, func, data);
 	}
 	else error_message ("Unknown mode in \"set_all_buttons_property\"");
+}
 
+/* set_all_buttons_property. calls func with argument data for every button.
+ */
+
+static void set_all_buttons_property (GFunc func, gpointer data)
+{
+	set_all_dispctrl_buttons_property (func, data);
+	set_all_normal_buttons_property (func, data);
 }
 
 /* set_all_buttons_size. gateway for set_all_buttons_property.
@@ -566,7 +614,6 @@ GtkWidget *ui_font_dialog_create (char *title, GtkButton *button)
 
 	return font_dialog;
 }
-
 
 GtkWidget *ui_color_dialog_create (char *title, GtkButton *button)
 {
@@ -700,6 +747,21 @@ GtkWidget *ui_memory_menu_create (s_array memory, GCallback const_handler, char 
 	return menu;
 }
 
+GtkWidget *ui_right_mouse_menu_create ()
+{
+	GtkWidget	*menu, *menu_item;
+	
+	menu = gtk_menu_new();
+	
+	menu_item = gtk_check_menu_item_new_with_mnemonic (_("Show _menu bar"));
+	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
+	gtk_menu_shell_append ((GtkMenuShell *) menu, menu_item);
+	gtk_widget_show (menu_item);
+	g_signal_connect (G_OBJECT (menu_item), "activate", (GCallback) on_show_menubar1_activate, NULL);
+	
+	return menu;
+}
+
 GtkWidget *ui_pref_dialog_create ()
 {
 	int			counter=0;
@@ -821,4 +883,28 @@ void ui_formula_entry_insert (G_CONST_RETURN gchar *text)
                                              &position);
 	gtk_editable_set_position ((GtkEditable *) formula_entry, position);
 	
+}
+
+void ui_button_set_pan ()
+{
+	set_button_label_and_tooltip (button_box_xml, "button_enter", 
+		_("="), _("Enter"));
+	set_button_label_and_tooltip (button_box_xml, "button_pow", 
+		_("x^y"), _("Power"));
+	set_button_label_and_tooltip (button_box_xml, "button_f1", 
+		_("("), _("Open Bracket"));
+	set_button_label_and_tooltip (button_box_xml, "button_f2", 
+		_(")"), _("Close Bracket"));
+}
+
+void ui_button_set_rpn ()
+{
+	set_button_label_and_tooltip (button_box_xml, "button_enter", 
+		_("ENT"), _("Enter"));
+	set_button_label_and_tooltip (button_box_xml, "button_pow", 
+		_("y^x"), _("Power"));
+	set_button_label_and_tooltip (button_box_xml, "button_f1", 
+		_("x<>y"), _("swap current number with top of stack"));
+	set_button_label_and_tooltip (button_box_xml, "button_f2", 
+		_("roll"), _("roll down stack"));	
 }
