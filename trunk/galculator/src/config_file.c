@@ -169,7 +169,7 @@ static void config_file_get_default_consts (s_constant **consts)
 void config_file_set_prefs (char *key, char *value)
 {
 	int		*int_var, counter=0, old_counter=0;
-	char 		**string_var;
+	char 		**string_var, *end_ptr;
 	gboolean	*bool_var;
 	void		*this_var;
 	
@@ -204,7 +204,9 @@ void config_file_set_prefs (char *key, char *value)
 			break;
 		case INTEGER:
 			int_var = this_var;
-			*int_var = (int) g_ascii_strtod (value, NULL);
+			*int_var = (int) g_ascii_strtod (value, &end_ptr);
+			if (*end_ptr != '\0')
+				fprintf (stderr, _("[%s] configuration file: failed to convert %s to a number properly. Have you changed your locales? %s\n"), PACKAGE, value, BUG_REPORT);
 			break;
 		default:
 			fprintf (stderr, _("[%s] configuration file: ignoring unknown key_type in config structure. %s\n"), PACKAGE, BUG_REPORT);

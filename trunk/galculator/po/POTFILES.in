@@ -7,6 +7,7 @@ src/config_file.c
 src/display.c
 src/general_functions.c
 src/ui.c
+src/parser.c
 ui/main_frame.glade
 ui/scientific_buttons.glade
 ui/basic_buttons.glade

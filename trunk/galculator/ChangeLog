@@ -1,5 +1,11 @@
+2004-02-18 Simon Floery <chimaira@users.sf.net>
+	* improved parser: functions, whitespaces, constants
+
+2004-02-17 Simon Floery <chimaira@users.sf.net>
+	* check end_ptr in strtods.
+
 2004-02-02 Simon Floery <chimaira@users.sf.net>
-	* basic implemenation of a parser for formula entr mode
+	* basic implemenation of a parser for formula entry mode
 
 2004-02-01 Simon Floery <chimaira@users.sf.net>
 	* right mouse button click brings popup menu to control "Show menu bar"

@@ -505,9 +505,15 @@ void remember_display_values()
 
 double string2double (char *string)
 {
+	char 	*end_ptr;
+	double	ret_val;
+	
 	switch (current_status.number) {
 		case CS_DEC:
-			return atof(string);
+			ret_val = strtod(string, &end_ptr);
+			if (*end_ptr != '\0')
+				fprintf (stderr, _("[%s] failed to convert %s to a number properly in function \"string2double\". Have you changed your locales? %s\n"), PACKAGE, string, BUG_REPORT);
+			return ret_val;
 			break;
 		case CS_HEX:
 			return axtof(string, 16, prefs.hex_bits, 
@@ -522,7 +528,7 @@ double string2double (char *string)
 				prefs.bin_signed);
 			break;
 		default:
-			fprintf (stderr, _("[%s] unknown number base in function \"display_result_get_double\". %s\n"), PROG_NAME, BUG_REPORT);
+			fprintf (stderr, _("[%s] unknown number base in function \"string2double\". %s\n"), PROG_NAME, BUG_REPORT);
 	}
 	return 0;
 }
