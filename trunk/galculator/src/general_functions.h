@@ -34,11 +34,10 @@ void error_message (char *message);
 void clear ();
 void all_clear ();
 
-void set_button_group_size (GladeXML *xml, char *table_name, int width, int height);
-void set_button_group_font (GladeXML *xml, char *table_name, char *font_string);
-
 double axtof (char *bin_string, int base, int nr_bits, gboolean is_signed);
 char *ftoax (double x, int base, int nr_bits, gboolean is_signedh);
+
+char *add_leading_zeros (char *string, int multiple);
 
 gboolean da_expose_event_cb(GtkWidget *widget, GdkEventExpose *event, gpointer data);
 
@@ -49,26 +48,13 @@ void set_optmenu (GladeXML *xml, char *optmenu_name, void *index);
 void set_button_color (GladeXML *xml, char *button_name, void *color_string);
 
 char *gdk_color_to_string (GdkColor color);
-GtkWidget *show_font_dialog (char *title, GtkButton *button);
-GtkWidget *show_color_dialog (char *title, GtkButton *button);
 
-void update_all (s_preferences prefs);
-void set_widget_visibility (GladeXML *xml, char *widget_name, gboolean visible);
+void apply_preferences (s_preferences prefs);
 
 void gtk_widget_really_modify_fg (GtkWidget *widget, GdkColor color);
 
-void update_active_buttons (GladeXML *xml, int number_base, int notation_mode);
-
 gboolean is_valid_number (int number_base, char number);
-void button_activation (GtkButton *b);
-gboolean button_deactivation (gpointer data);
 
-void set_object_data (GladeXML *xml);
-
-void position_menu (GtkMenu *menu, gint *x, gint *y, gboolean *push_in, gpointer user_data);
-GtkWidget *create_constants_menu (s_constant *constant, GCallback const_handler);
-GtkWidget *create_memory_menu (s_array memory, GCallback const_handler, char *last_item);
-
-void glade_file_not_found (char *filename);
+void activate_menu_item (char *item_name);
 
 #endif /* general_functions.h */

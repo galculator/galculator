@@ -1,57 +1,56 @@
-# German translations for galculator package.
-# Copyright (C) 2003 THE galculator'S COPYRIGHT HOLDER
+# galculator ja.po.
+# Copyright (C) 2003 Free Software Foundation, Inc.
 # This file is distributed under the same license as the galculator package.
-# Simon Floery <simon.floery@gmx.at>, 2003.
+# Takeshi AIHANA <aihana@gnome.gr.jp>, 2003.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: galculator 1.01\n"
+"Project-Id-Version: galculator 1.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-07-03 17:34+0200\n"
-"PO-Revision-Date: 2003-05-26 14:24+0200\n"
-"Last-Translator: Simon Floery <simon.floery@gmx.at>\n"
-"Language-Team: German <de@li.org>\n"
+"POT-Creation-Date: 2003-07-10 07:53+0900\n"
+"PO-Revision-Date: 2003-07-09 21:20+0900\n"
+"Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: galculator.desktop.in.h:1
 msgid "Scientific calculator"
-msgstr "Wissenschaftlicher Taschenrechner"
+msgstr "科学計算向け電卓"
 
 #: src/callbacks.c:38
 msgid "Select result font"
-msgstr "Schriftauswahl"
+msgstr "計算結果用フォントの選択"
 
 #: src/callbacks.c:39
 msgid "Select module font"
-msgstr "Schriftauswahl"
+msgstr "モジュール用フォントの選択"
 
 #: src/callbacks.c:40
 msgid "Select active module color"
-msgstr "Farbe eines inaktiven Moduls"
+msgstr "アクティブなモジュールの色の選択"
 
 #: src/callbacks.c:41
 msgid "Select inactive module color"
-msgstr "Farbe eines inaktiven Moduls"
+msgstr "アクティブではないモジュールの色の選択"
 
 #: src/callbacks.c:42
 msgid "Select result font color"
-msgstr "Schriftfarbe des Resultats"
+msgstr "計算結果用フォントの色の選択"
 
 #: src/callbacks.c:43
 msgid "Select background color"
-msgstr "Hintergrundfarbe"
+msgstr "背景色の選択"
 
 #: src/callbacks.c:44
 msgid "Select button font"
-msgstr "eigene Schrift für Tasten"
+msgstr "ボタン用フォントの選択"
 
 #: src/callbacks.c:85
 #, c-format
 msgid "About %s"
-msgstr "Info zu %s"
+msgstr "%s について"
 
 #: src/callbacks.c:88
 #, c-format
@@ -62,18 +61,18 @@ msgid ""
 "(c) 2002-2003 by Simon Floery (simon.floery@gmx.at)"
 msgstr ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-"<span size=\"large\">ein wissenschaftlicher Taschenrechner (GTK 2)</span>\n"
+"<span size=\"large\">GTK+ 2 版の科学計算用の電卓</span>\n"
 "\n"
 "(c) 2002-2003 by Simon Floery (simon.floery@gmx.at)"
 
 #: src/callbacks.c:183
 #, c-format
 msgid "[%s] on_operation_button_clicked: unknown status. %s\n"
-msgstr "[%s] on_operation_button_clicked: unbekannter status. %s\n"
+msgstr "[%s] on_operation_button_clicked: 不明なステータス %s です。\n"
 
 #: src/callbacks.c:272
 msgid "unknown function modifier (INV/HYP)"
-msgstr "unbekannte Funktionsart (INV/HYP)"
+msgstr "不明な関数の修飾子 (INV/HYP)"
 
 #: src/callbacks.c:377
 msgid "ENT"
@@ -82,21 +81,21 @@ msgstr "ENT"
 #: src/callbacks.c:423
 #, c-format
 msgid "%s Preferences"
-msgstr "%s Einstellungen"
+msgstr "%s の設定"
 
 #: src/callbacks.c:565
 #, c-format
 msgid "[%s] Color Dialog (%s) not found. %s\n"
-msgstr "[%s] Farbdialog (%s) nicht gefunden. %s\n"
+msgstr "[%s] 色選択ダイアログ (%s) が見つかりませんでした。%s\n"
 
 #: src/callbacks.c:612
 #, c-format
 msgid "[%s] Font Dialog (%s) not found. %s\n"
-msgstr "[%s] Schriftartendialog (%s) nicht gefunden. %s\n"
+msgstr "[%s] フォント選択ダイアログ (%s) が見つかりませんでした。%s\n"
 
 #: src/callbacks.c:905
 msgid "save here"
-msgstr "speichere hier"
+msgstr "ここに保存する"
 
 #: src/main.c:51
 #, c-format
@@ -115,12 +114,12 @@ msgstr ""
 "\n"
 "%s v%s, (c) 2002-2003 Simon Floery\n"
 "\n"
-"Verwendung: %s [Optionen]\n"
+"用法: %s [オプション]\n"
 "\n"
-"Optionen:\n"
-"(GTK Optionen)\n"
-" -h, --help\t\tzeigt diese Hilfe an\n"
-" -v, --version\t\tInformationen zur aktuellen Version\n"
+"オプション:\n"
+"(GTK+ のオプション)\n"
+" -h, --help\t\tこのメッセージを表示する\n"
+" -v, --version\t\tバージョン情報を表示する\n"
 "\n"
 
 #: src/main.c:123
@@ -130,28 +129,28 @@ msgid ""
 "You might face problems when using %s! %s\n"
 ")"
 msgstr ""
-"[%s] Die Länge des Dezimalpunktes (in locale) wird nicht unterstützt: >%s<\n"
-"Es könnte Probleme beim Ausführen von %s geben! %s\n"
+"[%s] (お使いのロケールでの) 小数点の位置はサポートしていません: >%s<\n"
+"%s を使用すると問題が発生するかもしれません！ %s\n"
 ")"
 
 #: src/galculator.h:51
 msgid "Please submit a bugreport."
-msgstr "Bitte erstelle einen Bugreport."
+msgstr "バグの報告をして下さい。"
 
 #: src/calc_basic.c:139
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
-msgstr "[%s] %c - Unbekanntes Operationszeichen. %s\n"
+msgstr "[%s] %c - 不明な操作文字です。%s\n"
 
 #: src/calc_basic.c:144
 #, c-format
 msgid "[%s] computing: %f %c %f = %f\n"
-msgstr "[%s] berechne: %f %c %f = %f\n"
+msgstr "[%s] 計算中: %f %c %f = %f\n"
 
 #: src/calc_basic.c:268 src/calc_basic.c:291
 #, c-format
 msgid "[%s] RPN stack size is %i.\n"
-msgstr "[%s] Die Grösse des RPN stacks ist %i.\n"
+msgstr "[%s] RPN スタック・サイズは %i です。\n"
 
 #: src/config_file.c:135
 msgid "Pi"
@@ -163,7 +162,7 @@ msgstr "pi"
 
 #: src/config_file.c:138
 msgid "Euler's Number"
-msgstr "Eulersche Zahl"
+msgstr "Euler's Number"
 
 #: src/config_file.c:139
 msgid "e"
@@ -172,23 +171,22 @@ msgstr "e"
 #: src/config_file.c:168
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
-msgstr "[%s] configurtion file: ignoriere unbekannten Eintrag %s=%s. %s\n"
+msgstr "[%s] 設定ファイル: 不明なエントリ %s=%s を無視します。%s\n"
 
 #: src/config_file.c:184
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
 msgstr ""
-"[%s] configuration file: %s muss TRUE oder FALSE sein. Es wird der default "
-"Wert verwendet. %s\n"
+"[%s] 設定ファイル: %s は TRUE または FALSE にして下さい。デフォルト値を使用し"
+"ます。%s\n"
 
 #: src/config_file.c:191
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
 msgstr ""
-"[%s] configuration file: ignoriere unbekannten key_type in config structure. "
-"%s\n"
+"[%s] 設定ファイル: config 構造体の中にある不明な key_type を無視します。%s\n"
 
 #: src/config_file.c:209
 #, c-format
@@ -196,8 +194,8 @@ msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
 msgstr ""
-"[%s] Der unbekannte Abschnitt %s wurde in der Konfigurationsdatei %s "
-"gefunden. Setze mit vorherigem Abschnitt fort.\n"
+"[%s] 不明なセクション %s が設定ファイル %s の中にあります。前のセクションを使"
+"用します。\n"
 
 #: src/config_file.c:288
 #, c-format
@@ -206,9 +204,8 @@ msgid ""
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
 msgstr ""
-"[%s] configuration file: konnte die Konfigurationsdatei %s nicht zum Lesen "
-"öffnen. Das stellt kein Problem das, wenn %s zum ersten Mal gestartet wird. "
-"Es werdendie Standard-Einstellungen verwendet.\n"
+"[%s] 設定ファイル: 設定ファイル %s を読み込めません。初めて %s を起動した場合"
+"は何も心配ありません。デフォルト値を使用します。\n"
 
 #: src/config_file.c:321
 #, c-format
@@ -216,8 +213,8 @@ msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
 "s\n"
 msgstr ""
-"[%s] configuration file: Überspringe aktuellen (eventuell problematischen) "
-"Schlüssel. %s\n"
+"[%s] 設定ファイル: 書き込む際におかしな論理値がありました。このキーをスキップ"
+"します。%s\n"
 
 #: src/config_file.c:329
 #, c-format
@@ -225,79 +222,73 @@ msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
 "\". %s\n"
 msgstr ""
-"[%s] configuration file: ignoriere unbekannten \"key_type\" in "
-"\"config_structure\". %s\n"
+"[%s] 設定ファイル: \"config_structure\" の中にある不明な \"key_type\" を無視"
+"します。%s\n"
 
 #: src/config_file.c:344
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
 msgstr ""
-"[%s] configuration file: Die Einstellungen konnten nicht gespeichert werden %"
-"s.\n"
+"[%s] 設定ファイル: 設定ファイル %s へ保存または書き込むことができませんでし"
+"た。\n"
 
 #: src/display.c:488
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\". %s\n"
 msgstr ""
-"[%s] unbekannte Display Option in der Funktion \"display_change_option\". %"
+"[%s] 関数 \"display_change_option\" に不明な表示オプションが渡されました。%"
 "s\n"
 
 #: src/display.c:622
 msgid "unknown number base"
-msgstr "unbekannte Zahlenbasis"
+msgstr "基数が不明です"
 
 #: src/display.c:623
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"display_result_set_double\". %s\n"
 msgstr ""
-"[%s] unbekannte Zahlenbasis in der Funktion \"display_result_set_double\". %"
-"s\n"
+"[%s] 関数 \"display_result_set_double\" に不明な基数が渡されました。%s\n"
 
 #: src/display.c:648
 #, c-format
 msgid "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
 msgstr ""
-"[%s] unbekannte Winkeleinheit in der Funktion \"display_result_set_angle\". %"
-"s\n"
+"[%s] 関数 \"display_result_set_angle\" に不明なベース角度が渡されました。%s\n"
 
 #: src/display.c:705
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"display_result_get_double\". %s\n"
 msgstr ""
-"[%s] unbekannte Zahlenbasis in der Funktion \"display_result_get_double\". %"
-"s\n"
+"[%s] 関数 \"display_result_get_double\" に不明な基数が渡されました。%s\n"
 
 #: src/display.c:730
 #, c-format
 msgid ""
 "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
 msgstr ""
-"[%s] unbekannte Winkeleinheit in der Funktion \"display_result_get_rad_angle"
-"\". %s\n"
+"[%s] 関数 \"display_result_get_rad_angle\" に不明なベース角度が渡されまし"
+"た。%s\n"
 
 #: src/general_functions.c:73
 msgid "unsupported inverse function"
-msgstr "nicht unterstÃŒtzte inverse Funktion"
+msgstr "サポートしていない反転関数"
 
 #: src/general_functions.c:79
 msgid "unsupported hyperbolic function"
-msgstr "nicht unterstÃŒtzte hyperbolische Funktion"
+msgstr "サポートしていない双曲線関数"
 
 #: src/general_functions.c:197
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr ""
-"[%s] das Zeichen %c konnte von der Funktion \"axtof\" nicht umgewandelt "
-"werden. %s\n"
+msgstr "[%s] 関数 \"axtof\" で文字 %c の変換に失敗しました。%s\n"
 
 #: src/general_functions.c:249
 #, c-format
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
-msgstr ""
-"[%s] %f konnte von der Funktion \"ftoax\" nicht umgewandelt werden. %s\n"
+msgstr "[%s] 関数 \"ftoax\" で数値 %f の変換に失敗しました。%s\n"
 
 #: src/general_functions.c:676
 #, c-format
@@ -305,9 +296,9 @@ msgid ""
 "[%s] Couldn't load %s. This file is necessary to build galculator's user "
 "interface. Make sure you did a make install and the file is accessible!\n"
 msgstr ""
-"[%s] %s konnte nicht geladen werden. Diese Datei ist notwendig, um "
-"galculatorsgraphische Oberfläche zu erstellen. Wurde ein make install "
-"durchgeführt undkann auf die Datei zugegriffen werden?\n"
+"[%s] %s を読み込めませんでした。このファイルは galculator のユーザ・インタ"
+"フェースを構築するために必要です。正しくインストールされたか、さらにそのファ"
+"イルの権限をそれぞれ確認して下さい！\n"
 
 #: ui/main.glade.h:2
 #, no-c-format
@@ -408,19 +399,19 @@ msgstr "AC"
 
 #: ui/main.glade.h:26
 msgid "AND"
-msgstr "UND"
+msgstr "AND"
 
 #: ui/main.glade.h:27
 msgid "Add current display value to memory"
-msgstr "Addiere aktuellen Wert zum Speicher"
+msgstr "現在表示されている値をメモリに追加します"
 
 #: ui/main.glade.h:28
 msgid "Adds the current display value to memory."
-msgstr "Addiert den aktuellen Wert zum Speicher."
+msgstr "現在表示されている値をメモリに追加します"
 
 #: ui/main.glade.h:29
 msgid "Angle _units"
-msgstr "_Winkeleinheit"
+msgstr "角度の単位(U)"
 
 #: ui/main.glade.h:30
 msgid "B"
@@ -428,11 +419,11 @@ msgstr "B"
 
 #: ui/main.glade.h:31
 msgid "Backspace"
-msgstr "Backspace"
+msgstr "バックスペース [BS]"
 
 #: ui/main.glade.h:32
 msgid "Bitwise complement"
-msgstr "bitweise Negierung"
+msgstr "補数をビット単位で計算します"
 
 #: ui/main.glade.h:33
 msgid "C"
@@ -444,88 +435,87 @@ msgstr "CMP"
 
 #: ui/main.glade.h:35
 msgid "Calculates the complete equation and displays the result."
-msgstr "Startet die Berechnung und zeigt das Ergebnis an."
+msgstr "完全な等号を計算してその結果を表示します"
 
 #: ui/main.glade.h:36
 msgid "Change sign"
-msgstr "Vorzeichenwechsel"
+msgstr "符号を切り替えます"
 
 #: ui/main.glade.h:37
 msgid "Changes the sign of the current display value."
-msgstr "Wechselt das Vorzeichen des aktuellen Displaywertes."
+msgstr "現在表示している値の符号を切り替えます"
 
 #: ui/main.glade.h:38 ui/prefs.glade.h:25
 msgid "Clear"
-msgstr "Löschen"
+msgstr "クリア"
 
 #: ui/main.glade.h:39
 msgid "Clear all"
-msgstr "Alles lÃ¶schen"
+msgstr "全てクリア"
 
 #: ui/main.glade.h:40
 msgid "Clear display"
-msgstr "LÃ¶scht das Display"
+msgstr "表示内容をクリアします"
 
 #: ui/main.glade.h:41
 msgid "Clears the display."
-msgstr "LÃ¶scht das Display"
+msgstr "表示内容をクリアします"
 
 #: ui/main.glade.h:42
 msgid "Close paren"
-msgstr "Schliesst die Klammer"
+msgstr "閉じカッコ"
 
 #: ui/main.glade.h:43
 msgid "Computes the cosine."
-msgstr "Berechnet den Cosinus."
+msgstr "余弦 (cosine) を計算します"
 
 #: ui/main.glade.h:44
 msgid "Computes the factorial."
-msgstr "Berechnet das Faktorielle."
+msgstr "階乗を計算します"
 
 #: ui/main.glade.h:45
 msgid "Computes the logarithm (with base 10)."
-msgstr "Berechnet den Logarithmus (zur Basis 10)."
+msgstr "(10 を底とした) 対数を計算します"
 
 #: ui/main.glade.h:46
 msgid "Computes the natural logarithm (with base of Euler's number)."
-msgstr ""
-"Berechnet den natÃŒrlichen Logarithmus (zur Basis e - der Eulerschen Zahl)."
+msgstr "(オイラー定数を底とした) 自然対数を計算します"
 
 #: ui/main.glade.h:47
 msgid "Computes the power."
-msgstr "Berechnet die Potenz."
+msgstr "累乗を計算します"
 
 #: ui/main.glade.h:48
 msgid "Computes the reciprocal."
-msgstr "Berechnet den Reziprokwert."
+msgstr "逆数を計算します"
 
 #: ui/main.glade.h:49
 msgid "Computes the sine."
-msgstr "Berechnet den Sinus"
+msgstr "正弦 (sine) を計算します"
 
 #: ui/main.glade.h:50
 msgid "Computes the square root."
-msgstr "Berechnet die Quadratwurzel."
+msgstr "平方根を計算します"
 
 #: ui/main.glade.h:51
 msgid "Computes the square."
-msgstr "Quadriert."
+msgstr "二乗を計算します"
 
 #: ui/main.glade.h:52
 msgid "Computes the tangent."
-msgstr "Berechnet den Tangens."
+msgstr "正接 (tangent) を計算します"
 
 #: ui/main.glade.h:53 ui/prefs.glade.h:27
 msgid "Constants"
-msgstr "Konstanten"
+msgstr "定数"
 
 #: ui/main.glade.h:54
 msgid "Contains the main display."
-msgstr "EnthÃ€lt das Display."
+msgstr "メイン表示を含みます"
 
 #: ui/main.glade.h:55
 msgid "Cosine"
-msgstr "Cosinus"
+msgstr "余弦 (cos) を計算します"
 
 #: ui/main.glade.h:56
 msgid "D"
@@ -533,15 +523,15 @@ msgstr "D"
 
 #: ui/main.glade.h:57
 msgid "D_egrees"
-msgstr "Grad"
+msgstr "度(_E)"
 
 #: ui/main.glade.h:58
 msgid "Decimal point"
-msgstr "Dezimalpunkt"
+msgstr "小数点を付与します"
 
 #: ui/main.glade.h:59
 msgid "Divide"
-msgstr "Dividieren"
+msgstr "除算します"
 
 #: ui/main.glade.h:60
 msgid "E"
@@ -553,119 +543,119 @@ msgstr "EE"
 
 #: ui/main.glade.h:62
 msgid "Enter"
-msgstr "Eingabe"
+msgstr "Enter"
 
 #: ui/main.glade.h:63
 msgid "Enter exponent (base: 10)"
-msgstr "Exponenteneingabe (Basis 10)"
+msgstr "指数 (底: 10) を指定します"
 
 #: ui/main.glade.h:64
 msgid "Enters a closing paren."
-msgstr "Klammer zu"
+msgstr "閉じカッコを入力します"
 
 #: ui/main.glade.h:65
 msgid "Enters an opening paren."
-msgstr "Klammer auf"
+msgstr "開きカッコを入力します"
 
 #: ui/main.glade.h:66
 msgid "Enters the bitwise complement operator."
-msgstr "bitweise Negierung"
+msgstr "ビット列の補数演算子を入力します"
 
 #: ui/main.glade.h:67
 msgid "Enters the decimal point."
-msgstr "Dezimalpunkt"
+msgstr "小数点を指定します"
 
 #: ui/main.glade.h:68
 msgid "Enters the digit 2."
-msgstr "die Zahl 2."
+msgstr "数値の２を入力します"
 
 #: ui/main.glade.h:69
 msgid "Enters the digit 3."
-msgstr "die Zahl 3."
+msgstr "数値の３を入力します"
 
 #: ui/main.glade.h:70
 msgid "Enters the digit 4."
-msgstr "die Zahl 4."
+msgstr "数値の４を入力します"
 
 #: ui/main.glade.h:71
 msgid "Enters the digit 5."
-msgstr "die Zahl 5."
+msgstr "数値の５を入力します"
 
 #: ui/main.glade.h:72
 msgid "Enters the digit 6."
-msgstr "die Zahl 6."
+msgstr "数値の６を入力します"
 
 #: ui/main.glade.h:73
 msgid "Enters the digit 7."
-msgstr "die Zahl 7."
+msgstr "数値の７を入力します"
 
 #: ui/main.glade.h:74
 msgid "Enters the digit 8."
-msgstr "die Zahl 8."
+msgstr "数値の８を入力します"
 
 #: ui/main.glade.h:75
 msgid "Enters the digit 9."
-msgstr "die Zahl 9."
+msgstr "数値の９を入力します"
 
 #: ui/main.glade.h:76
 msgid "Enters the division operator."
-msgstr "Divisionszeichen"
+msgstr "除算の演算子を入力します"
 
 #: ui/main.glade.h:77
 msgid "Enters the hexadecimal digit A."
-msgstr "die Hexadezimalzahl A."
+msgstr "16進の数値のＡを入力します"
 
 #: ui/main.glade.h:78
 msgid "Enters the hexadecimal digit B."
-msgstr "die Hexadezimalzahl B."
+msgstr "16進の数値のＢを入力します"
 
 #: ui/main.glade.h:79
 msgid "Enters the hexadecimal digit C."
-msgstr "die Hexadezimalzahl C."
+msgstr "16 進の数値のＣを入力します"
 
 #: ui/main.glade.h:80
 msgid "Enters the hexadecimal digit D."
-msgstr "die Hexadezimalzahl D."
+msgstr "16進の数値のＤを入力します"
 
 #: ui/main.glade.h:81
 msgid "Enters the hexadecimal digit E."
-msgstr "die Hexadezimalzahl E."
+msgstr "16進の数値のＥを入力します"
 
 #: ui/main.glade.h:82
 msgid "Enters the hexadecimal digit F."
-msgstr "die Hexadezimalzahl F."
+msgstr "16進の数値のＦを入力します"
 
 #: ui/main.glade.h:83
 msgid "Enters the left-shift operator."
-msgstr "Linksschiebe Operator"
+msgstr "左シフトの演算子を入力します"
 
 #: ui/main.glade.h:84
 msgid "Enters the logical AND operator."
-msgstr "UND Verknüpfung"
+msgstr "論理和 (AND) の演算子を入力します"
 
 #: ui/main.glade.h:85
 msgid "Enters the logical OR operator."
-msgstr "ODER Verknüpfung"
+msgstr "論理積 (OR) の演算子を入力します"
 
 #: ui/main.glade.h:86
 msgid "Enters the logical exclusive OR operator."
-msgstr "Exklusiv-ODER Verknüpfung"
+msgstr "排他的論理積 (XOR) の演算子を入力します"
 
 #: ui/main.glade.h:87
 msgid "Enters the minus operator."
-msgstr "Minuszeichen"
+msgstr "減算の演算子を入力します"
 
 #: ui/main.glade.h:88
 msgid "Enters the modulus operator."
-msgstr "Modulozeichen"
+msgstr "絶対値の演算子を入力します"
 
 #: ui/main.glade.h:89
 msgid "Enters the multiplication operator."
-msgstr "Multiplikationszeichen."
+msgstr "乗算の演算子を入力します"
 
 #: ui/main.glade.h:90
 msgid "Enters the plus operator."
-msgstr "Additionszeichen."
+msgstr "加算の演算子を入力します"
 
 #: ui/main.glade.h:91
 msgid "F"
@@ -673,39 +663,39 @@ msgstr "F"
 
 #: ui/main.glade.h:92
 msgid "Factorial"
-msgstr "Faktorielle"
+msgstr "階乗を計算します"
 
 #: ui/main.glade.h:93
 msgid "Hexadecimal 0xA"
-msgstr "Hexadezimal 0xA"
+msgstr "16進数の 0xA を入力します"
 
 #: ui/main.glade.h:94
 msgid "Hexadecimal 0xB"
-msgstr "Hexadezimal 0xB"
+msgstr "16進数の 0xB を入力します"
 
 #: ui/main.glade.h:95
 msgid "Hexadecimal 0xC"
-msgstr "Hexadezimal 0xC"
+msgstr "16進数の 0xC を入力します"
 
 #: ui/main.glade.h:96
 msgid "Hexadecimal 0xD"
-msgstr "Hexadezimal 0xD"
+msgstr "16進数の 0xD を入力します"
 
 #: ui/main.glade.h:97
 msgid "Hexadecimal 0xE"
-msgstr "Hexadezimal 0xE"
+msgstr "16進数の 0xE を入力します"
 
 #: ui/main.glade.h:98
 msgid "Hexadecimal 0xF"
-msgstr "Hexadezimal 0xF"
+msgstr "16進数の 0xF を入力します"
 
 #: ui/main.glade.h:99
 msgid "Hyperbolic mode"
-msgstr "Hyperbolischer Modus"
+msgstr "双曲線モードにします"
 
 #: ui/main.glade.h:100
 msgid "Inverse mode"
-msgstr "Inverser Modus"
+msgstr "反転モードにします"
 
 #: ui/main.glade.h:101
 msgid "LSH"
@@ -713,23 +703,23 @@ msgstr "LSH"
 
 #: ui/main.glade.h:102
 msgid "Left shift"
-msgstr "Schiebung nach links"
+msgstr "左にシフトします"
 
 #: ui/main.glade.h:103
 msgid "Logarithm (base: 10)"
-msgstr "Logarithmus (Basis 10)"
+msgstr "対数 (底: 10) を計算します"
 
 #: ui/main.glade.h:104
 msgid "Logical AND"
-msgstr "Logisches UND"
+msgstr "論理和 (AND) を計算します"
 
 #: ui/main.glade.h:105
 msgid "Logical OR"
-msgstr "Logisches ODER"
+msgstr "論理積 (OR) を計算します"
 
 #: ui/main.glade.h:106
 msgid "Logical XOR"
-msgstr "Logisches Exklusiv-ODER"
+msgstr "排他的論理積 (XOR) を計算します"
 
 #: ui/main.glade.h:107
 msgid "M+"
@@ -749,123 +739,123 @@ msgstr "MS"
 
 #: ui/main.glade.h:111
 msgid "Main display"
-msgstr "Display"
+msgstr "メイン表示器"
 
 #: ui/main.glade.h:112
 msgid "Memory add"
-msgstr "Addiere zu Speicher"
+msgstr "メモリ追加"
 
 #: ui/main.glade.h:113
 msgid "Memory read"
-msgstr "Lese Speicher"
+msgstr "メモリ読み込み"
 
 #: ui/main.glade.h:114
 msgid "Memory save"
-msgstr "Schreibe in Speicher"
+msgstr "メモリ保存"
 
 #: ui/main.glade.h:115
 msgid "Minus"
-msgstr "Minus"
+msgstr "減算します"
 
 #: ui/main.glade.h:116
 msgid "Modulus"
-msgstr "Modulo"
+msgstr "絶対値を計算します"
 
 #: ui/main.glade.h:117
 msgid "Multiply"
-msgstr "Multiplikation"
+msgstr "乗算します"
 
 #: ui/main.glade.h:118
 msgid "Natural logarithm (base: e)"
-msgstr "Natürlicher Logarithmus"
+msgstr "自然対数 (底: e) を計算します"
 
 #: ui/main.glade.h:119
 msgid "Notation _modes"
-msgstr "Notations_modus"
+msgstr "表記モード(_M)"
 
 #: ui/main.glade.h:120
 msgid "OR"
-msgstr "ODER"
+msgstr "OR"
 
 #: ui/main.glade.h:121
 msgid "Open paren"
-msgstr "Klammer auf"
+msgstr "開きカッコ"
 
 #: ui/main.glade.h:122
 msgid "Plus"
-msgstr "Addition"
+msgstr "加算します"
 
 #: ui/main.glade.h:123
 msgid "Power"
-msgstr "Potenz"
+msgstr "累乗を計算します"
 
 #: ui/main.glade.h:124
 msgid "Read from memory"
-msgstr "Lese vom Speicher"
+msgstr "メモリから読み込みます"
 
 #: ui/main.glade.h:125
 msgid "Reads the value saved in memory."
-msgstr "Lese den Wert im Speicher"
+msgstr "メモリに保存した値を読み込みます"
 
 #: ui/main.glade.h:126
 msgid "Reciprocal"
-msgstr "Reziprokwert"
+msgstr "逆数を計算します"
 
 #: ui/main.glade.h:127
 msgid "Removes the last digit from the display."
-msgstr "Lösche das letzte Zeichen am Display."
+msgstr "表示している内容から最後の数値を削除します"
 
 #: ui/main.glade.h:128
 msgid "Reset calculator (clear all)"
-msgstr "Setze Taschenrechner zurück (Lösche alles)"
+msgstr "電卓をリセット (全てクリア) します"
 
 #: ui/main.glade.h:129
 msgid "Resets the calculator."
-msgstr "Setze den Taschenrechner zurück."
+msgstr "電卓をリセットします"
 
 #: ui/main.glade.h:130
 msgid "Save to memory"
-msgstr "Schreibe den Speicher"
+msgstr "メモリに保存します"
 
 #: ui/main.glade.h:131
 msgid "Saves the current display value into memory."
-msgstr "Schreibt aktuellen Wert in den Speicher."
+msgstr "現在表示している値をメモリに保存します"
 
 #: ui/main.glade.h:132
 msgid "Set display into \"enter exponent\" mode (base of 10)."
-msgstr "Wechsle in \"Exponenteneingabe-Modus\" (Basis 10)."
+msgstr "\"指数入力\" モード (底は 10) に表示を切り替えます"
 
 #: ui/main.glade.h:133
 msgid "Sine"
-msgstr "Sinus"
+msgstr "正弦 (sin) を計算します"
 
 #: ui/main.glade.h:134
 msgid "Square"
-msgstr "Quadrat"
+msgstr "二乗を計算します"
 
 #: ui/main.glade.h:135
 msgid "Square root"
-msgstr "Quadratwurzel"
+msgstr "平方根を計算します"
 
 #: ui/main.glade.h:136
 msgid "Switches to hyperbolic mode."
-msgstr "Wechselt in hyperbolischen Modus."
+msgstr "双曲線モードに切り替えます"
 
 #: ui/main.glade.h:137
 msgid "Switches to inverse mode."
-msgstr "Wechselt in inversen Modus."
+msgstr "反転モードに切り替えます"
 
 #: ui/main.glade.h:138
 msgid "Tangent"
-msgstr "Tangens"
+msgstr "正接 (tan) を計算します"
 
 #: ui/main.glade.h:139
 msgid "The main display."
-msgstr "Display."
+msgstr "メイン表示です"
 
 #: ui/main.glade.h:140
 msgid "The main program window."
-msgstr "Fenster des Hauptprogrammes."
+msgstr "メイン・プログラムのウィンドウです"
 
 #: ui/main.glade.h:141
 msgid "XOR"
@@ -873,75 +863,75 @@ msgstr "XOR"
 
 #: ui/main.glade.h:142
 msgid "_About..."
-msgstr "_Info..."
+msgstr "情報(_A)..."
 
 #: ui/main.glade.h:143
 msgid "_Algebraic"
-msgstr "_Algebraisch"
+msgstr "代数記法(_A)"
 
 #: ui/main.glade.h:144
 msgid "_Binary"
-msgstr "_Binär"
+msgstr "2進数(_B)"
 
 #: ui/main.glade.h:145
 msgid "_Decimal"
-msgstr "_Dezimal"
+msgstr "10進数(_D)"
 
 #: ui/main.glade.h:146
 msgid "_File"
-msgstr "_Datei"
+msgstr "ファイル(_F)"
 
 #: ui/main.glade.h:147
 msgid "_Gradians"
-msgstr "_Neugrad"
+msgstr "グラジエント(_G)"
 
 #: ui/main.glade.h:148
 msgid "_Help"
-msgstr "_Hilfe"
+msgstr "ヘルプ(_H)"
 
 #: ui/main.glade.h:149
 msgid "_Hexadecimal"
-msgstr "_Hexadezimal"
+msgstr "16進数(_H)"
 
 #: ui/main.glade.h:150
 msgid "_Number bases"
-msgstr "_Zahlenbasis"
+msgstr "基数(_N)"
 
 #: ui/main.glade.h:151
 msgid "_Octal"
-msgstr "_Oktal"
+msgstr "8進数(_O)"
 
 #: ui/main.glade.h:152
 msgid "_Preferences..."
-msgstr "_Einstellungen"
+msgstr "設定(_P)..."
 
 #: ui/main.glade.h:153
 msgid "_Quit"
-msgstr "_Beenden"
+msgstr "終了(_Q)"
 
 #: ui/main.glade.h:154
 msgid "_Radians"
-msgstr "_Radiant"
+msgstr "ラジアン(_R)"
 
 #: ui/main.glade.h:155
 msgid "_Reverse Polish (RPN)"
-msgstr "_Reverse Polish (RPN)"
+msgstr "逆ポーランド記法(RPN)(_R)"
 
 #: ui/main.glade.h:156
 msgid "_Settings"
-msgstr "_Einstellungen"
+msgstr "設定(_S)"
 
 #: ui/main.glade.h:157
 msgid "_Show menu bar"
-msgstr "Menü _sichtbar"
+msgstr "メニュー・バーの表示(_S)"
 
 #: ui/main.glade.h:158
 msgid "con"
-msgstr "kon"
+msgstr "con"
 
 #: ui/main.glade.h:159
 msgid "constants"
-msgstr "Konstanten"
+msgstr "constants"
 
 #: ui/main.glade.h:160
 msgid "cos"
@@ -949,7 +939,7 @@ msgstr "cos"
 
 #: ui/main.glade.h:161
 msgid "gives a menu to select constants from"
-msgstr "öffnet ein Menü zur Auswahl von Konstanten"
+msgstr "定数を選択するメニューを表示します"
 
 #: ui/main.glade.h:162
 msgid "hyp"
@@ -993,15 +983,15 @@ msgstr "x^y"
 
 #: ui/about.glade.h:1
 msgid "A dialog that shows information about this program."
-msgstr "Ein Dialogfenster mit Informationen zu diesem Programm."
+msgstr "このプログラムについての情報を表示するダイアログです"
 
 #: ui/about.glade.h:2 ui/prefs.glade.h:26
 msgid "Closes the dialog."
-msgstr "Schliesst das Dialogfenster."
+msgstr "ダイアログを閉じます"
 
 #: ui/about.glade.h:3
 msgid "Shows information about the program."
-msgstr "Zeigt Information zum Programm an."
+msgstr "プログラムの情報を表示します"
 
 #: ui/about.glade.h:4
 msgid "fill_me"
@@ -1009,47 +999,47 @@ msgstr "fill_me"
 
 #: ui/color.glade.h:1
 msgid "A dialog that is used to change a color setting."
-msgstr "Ein Dialogfenster zum Ändern von Farbeinstellungen."
+msgstr "色の設定を変更する際に使用するダイアログです"
 
 #: ui/color.glade.h:2 ui/font.glade.h:2
 msgid "Applies all changes and closes the dialog."
-msgstr "Äbernimmt die Änderungen und schliesst das Dialogfenster."
+msgstr "全ての変更を適用してダイアログを閉じます"
 
 #: ui/color.glade.h:3 ui/font.glade.h:4
 msgid "Cancels all changes and closes the dialog."
-msgstr "Vergisst alle Änderungen und schliesst das Dialogfenster."
+msgstr "全ての変更をキャンセルしてダイアログを閉じます"
 
 #: ui/color.glade.h:4
 msgid "Contains various widgets to select a color value."
-msgstr "Enthält mehrere \"widgets\" zur Farbauswahl."
+msgstr "色の値を選択するためのいろいろなウィジットを含んでいます"
 
 #: ui/color.glade.h:5
 msgid "Select Color"
-msgstr "Farbenwahl"
+msgstr "色の選択"
 
 #: ui/color.glade.h:6
 msgid "Shows some help about the dialog."
-msgstr "Zeiht Hilfe zum Dialogfenster an."
+msgstr "ダイアログについてのヘルプを表示します"
 
 #: ui/font.glade.h:1
 msgid "A dialog that is used to change a font setting."
-msgstr "Ein Dialogfenster zum Ändern von Schrifteinstellungen."
+msgstr "フォント設定を変更する際に使用するダイアログです"
 
 #: ui/font.glade.h:3
 msgid "Applies all changes."
-msgstr "Übernimmt alle Änderungen."
+msgstr "全ての変更を適用します"
 
 #: ui/font.glade.h:5
 msgid "Displays various fonts and font sizes to select from."
-msgstr "Gibt verschiedene Schriftarten und Schriftgrössen zur Auswahl."
+msgstr "設定するいろいろなフォントとフォント・サイズを表示します"
 
 #: ui/font.glade.h:6
 msgid "Select Font"
-msgstr "Schriftauswahl"
+msgstr "フォントの選択"
 
 #: ui/font.glade.h:7
 msgid "decimal PI 3.14159265359"
-msgstr "dezimal PI 3.14159265359"
+msgstr "decimal PI 3.14159265359"
 
 #: ui/prefs.glade.h:1
 msgid "    "
@@ -1057,267 +1047,224 @@ msgstr "    "
 
 #: ui/prefs.glade.h:3
 msgid "<b>Appearance</b>"
-msgstr "<b>Erscheinungsbild</b>"
+msgstr "<b>外観</b>"
 
 #: ui/prefs.glade.h:4
 msgid "<b>Binary</b>"
-msgstr "<b>Binär</b>"
+msgstr "<b>2進</b>"
 
 #: ui/prefs.glade.h:5
 msgid "<b>Dimension</b>"
-msgstr "<b>Grösse</b>"
+msgstr "<b>大きさ</b>"
 
 #: ui/prefs.glade.h:6
 msgid "<b>Font</b>"
-msgstr "<b>Schrift</b>"
+msgstr "<b>フォント</b>"
 
 #: ui/prefs.glade.h:7
 msgid "<b>Hexadecimal</b>"
-msgstr "<b>Hexadezimal</b>"
+msgstr "<b>16進</b>"
 
 #: ui/prefs.glade.h:8
 msgid "<b>Modules Visibility</b>"
-msgstr "<b>Sichtbare Module</b>"
+msgstr "<b>表示するモジュール</b>"
 
 #: ui/prefs.glade.h:9
 msgid "<b>Octal</b>"
-msgstr "<b>Oktal</b>"
+msgstr "<b>8進</b>"
 
 #: ui/prefs.glade.h:10
 msgid "<b>Startup</b>"
-msgstr "<b>Programmstart</b>"
+msgstr "<b>起動時の設定</b>"
 
 #: ui/prefs.glade.h:11
 msgid "<b>User defined constants:</b>"
-msgstr "<b>Benutzerdefinierte Konstanten:</b>"
+msgstr "<b>ユーザ定義の定数:</b>"
 
 #: ui/prefs.glade.h:12
 msgid "<b>Visibility</b>"
-msgstr "<b>Sichtbarkeit</b>"
+msgstr "<b>表示</b>"
 
 #: ui/prefs.glade.h:13
 msgid "A dialog that is used to change preferences settings."
-msgstr "Ein Dialogfenster zum Ändern von Einstellungen."
+msgstr "設定を変更する際に使用するダイアログです"
 
 #: ui/prefs.glade.h:14
 msgid "Active module color:"
-msgstr "Farbe aktives Modul:"
+msgstr "利用可能なモジュールの色:"
 
 #: ui/prefs.glade.h:15
 msgid "Add"
-msgstr "Hinzufügen"
+msgstr "追加"
 
 #: ui/prefs.glade.h:16
 msgid "Algebraic"
-msgstr "Algebraisch"
+msgstr "代数記法"
 
 #: ui/prefs.glade.h:17
 msgid "Angle base units"
-msgstr "Winkeleinheit"
+msgstr "ベース角度の単位"
 
 #: ui/prefs.glade.h:18
 msgid "Arithmetic operation"
-msgstr "Arithmetische Operation"
+msgstr "算術演算子"
 
 #: ui/prefs.glade.h:19
 msgid "Background color:"
-msgstr "Hintergrundfarbe:"
+msgstr "背景色:"
 
 #: ui/prefs.glade.h:20
 msgid "Binary"
-msgstr "Binär"
+msgstr "2進"
 
 #: ui/prefs.glade.h:21
 msgid "Button font:"
-msgstr "Schrift der Tasten:"
+msgstr "ボタンのフォント:"
 
 #: ui/prefs.glade.h:22
 msgid "Button height:"
-msgstr "Tastenhöhe:"
+msgstr "ボタンの高さ:"
 
 #: ui/prefs.glade.h:23
 msgid "Button width:"
-msgstr "Tastenbreite:"
+msgstr "ボタンの幅:"
 
 #: ui/prefs.glade.h:24
 msgid "Buttons"
-msgstr "Tasten"
+msgstr "ボタン"
 
 #: ui/prefs.glade.h:28
 msgid "Decimal"
-msgstr "Dezimal"
+msgstr "10進"
 
 #: ui/prefs.glade.h:29
 msgid "Default angle unit:"
-msgstr "Winkeleinheit:"
+msgstr "デフォルトの角度の単位:"
 
 #: ui/prefs.glade.h:30
 msgid "Default notation mode:"
-msgstr "Notationsmodus:"
+msgstr "デフォルトの記法モード:"
 
 #: ui/prefs.glade.h:31
 msgid "Default number base:"
-msgstr "Zahlenbasis:"
+msgstr "デフォルトの基数:"
 
 #: ui/prefs.glade.h:32
 msgid "Degrees"
-msgstr "Grad"
+msgstr "度"
 
 #: ui/prefs.glade.h:33
 msgid "Delete"
-msgstr "Entfernen"
+msgstr "削除"
 
 #: ui/prefs.glade.h:34
 msgid "Description:"
-msgstr "Beschreibung:"
+msgstr "説明:"
 
 #: ui/prefs.glade.h:35
 msgid "Display"
-msgstr "Display"
+msgstr "表示"
 
 #: ui/prefs.glade.h:36
 msgid "Display control buttons (C, AC, <-)"
-msgstr "Display Kontrolltasten (C, AC, <-)"
+msgstr "制御ボタン (C, AC, <-) を表示する"
 
 #: ui/prefs.glade.h:37
 msgid "Function buttons (sin, cos, etc.)"
-msgstr "Funktionstasten (sin, cos, etc.)"
+msgstr "関数 (sin, cos, 等) のボタンを表示する"
 
 #: ui/prefs.glade.h:38
 msgid "Gradians"
-msgstr "Neugrad"
+msgstr "グラジェント"
 
 #: ui/prefs.glade.h:39
 msgid "Hexadecimal"
-msgstr "Hexadezimal"
+msgstr "16進"
 
 #: ui/prefs.glade.h:40
 msgid "Inactive module color:"
-msgstr "Farbe inaktives Modul:"
+msgstr "利用不可のモジュールの色:"
 
 #: ui/prefs.glade.h:41
 msgid "Logic buttons (AND, OR, etc.)"
-msgstr "Logische Tasten (UND, ODER, etc.)"
+msgstr "論理演算子 (AND, OR, 等) を表示する"
 
 #: ui/prefs.glade.h:42
 msgid "Miscellaneous"
-msgstr "Diverses"
+msgstr "その他"
 
 #: ui/prefs.glade.h:43
 msgid "Module font:"
-msgstr "Schrift der Module:"
+msgstr "モジュールのフォント:"
 
 #: ui/prefs.glade.h:44
 msgid "Name:"
-msgstr "Name:"
+msgstr "名前:"
 
 #: ui/prefs.glade.h:45
 msgid "Notation"
-msgstr "Notation"
+msgstr "記法"
 
 #: ui/prefs.glade.h:46
 msgid "Number base units"
-msgstr "Zahlenbasis"
+msgstr "基数の単位"
 
 #: ui/prefs.glade.h:47
 msgid "Number of Bits: "
-msgstr "Anzahl an Bits: "
+msgstr "ビット数: "
 
 #: ui/prefs.glade.h:48
 msgid "Numbers"
-msgstr "Zahlen"
+msgstr "数値"
 
 #: ui/prefs.glade.h:49
 msgid "Octal"
-msgstr "Oktal"
+msgstr "8進"
 
 #: ui/prefs.glade.h:50
 msgid "Open brackets"
-msgstr "Offene Klammern"
+msgstr "開いているカッコ"
 
 #: ui/prefs.glade.h:51
 msgid "Radians"
-msgstr "Radiant"
+msgstr "ラジアン"
 
 #: ui/prefs.glade.h:52
 msgid "Remember display value on exit"
-msgstr "Speichere Displaywert beim Beenden"
+msgstr "終了時点で表示している値を記憶しておく"
 
 #: ui/prefs.glade.h:53
 msgid "Result font color:"
-msgstr "Schriftfarbe des Resultats:"
+msgstr "計算結果のフォントの色:"
 
 #: ui/prefs.glade.h:54
 msgid "Result font:"
-msgstr "Schrift des Resultats:"
+msgstr "計算結果のフォント:"
 
 #: ui/prefs.glade.h:55
 msgid "Reverse Polish (RPN)"
-msgstr "Reverse Polish (RPN)"
+msgstr "逆ポーランド記法 (RPN)"
 
 #: ui/prefs.glade.h:56
 msgid "Show menu bar"
-msgstr "Menü sichtbar"
+msgstr "メニュー・バーを表示する"
 
 #: ui/prefs.glade.h:57
 msgid "Update"
-msgstr "Aktualisieren"
+msgstr "更新"
 
 #: ui/prefs.glade.h:58
 msgid "Use custom button font"
-msgstr "Verwende eigene Schrift"
+msgstr "ボタンのフォントをカスタマイズする"
 
 #: ui/prefs.glade.h:59
 msgid "Value:"
-msgstr "Wert:"
+msgstr "値:"
 
 #: ui/prefs.glade.h:60
 msgid "galculator - Preferences"
-msgstr "galculator - Einstellungen"
+msgstr "galculator - 設定"
 
 #: ui/prefs.glade.h:61
 msgid "signed"
-msgstr "vorzeichenbehaftet"
-
-#~ msgid " "
-#~ msgstr " "
-
-#~ msgid "button1"
-#~ msgstr "button1"
-
-#~ msgid "button5"
-#~ msgstr "button5"
-
-#~ msgid "button7"
-#~ msgstr "button7"
-
-#~ msgid ""
-#~ "[%s] unknown number base in function \"display_result_get_as_double\". %"
-#~ "s\n"
-#~ msgstr ""
-#~ "[%s] unbekannte Zahlenbasis in der Funktion \"display_result_get_as_double"
-#~ "\". %s\n"
-
-#~ msgid "Enters Euler's number."
-#~ msgstr "Eulersche Zahl."
-
-#~ msgid "Enters the constant Pi."
-#~ msgstr "Pi"
-
-#~ msgid "unknown operation mapping"
-#~ msgstr "unbekannte OperationsverknÃŒpfung"
-
-#~ msgid "unknown button <-> function relation"
-#~ msgstr "unbekannte Taste <-> Funktion Relation"
-
-#~ msgid "unknown button <-> constant relation"
-#~ msgstr "unbekannte Taste <-> Konstante Relation"
-
-#~ msgid "unknown button <-> gfunc relation"
-#~ msgstr "unbekannte Taste <-> gfunc relation"
-
-#~ msgid "Enters the digit 0."
-#~ msgstr "die Zahl 0."
-
-#~ msgid "Enters the digit 1."
-#~ msgstr "die Zahl 1."
+msgstr "符号付き"

@@ -48,25 +48,29 @@
 #define DEFAULT_BUTTON_WIDTH 		40
 #define DEFAULT_BUTTON_HEIGHT 		25
 #define DEFAULT_VIS_FUNCS		TRUE
-#define DEFAULT_VIS_LOGIC		TRUE
 #define DEFAULT_VIS_DISPCTRL		TRUE
+#define DEFAULT_VIS_LOGIC		TRUE
+#define DEFAULT_VIS_STANDARD		TRUE
+#define DEFAULT_MODE			BASIC_MODE
 #define DEFAULT_HEX_BITS		32
 #define DEFAULT_HEX_SIGNED		TRUE
 #define DEFAULT_OCT_BITS		32
 #define DEFAULT_OCT_SIGNED		TRUE
 #define DEFAULT_BIN_BITS		16
 #define DEFAULT_BIN_SIGNED		TRUE
+#define DEFAULT_BIN_FIXED		FALSE
+#define DEFAULT_BIN_LENGTH		8
 #define DEFAULT_NUMBER			CS_DEC
 #define DEFAULT_ANGLE			CS_RAD
 #define DEFAULT_NOTATION		CS_PAN
 #define DEFAULT_REM_DISPLAY		FALSE
-#define	DEFAULT_REM_VALUE		"0"			// must not end with a newline!
+#define	DEFAULT_REM_VALUE		"0"	// must not end with a newline!
 #define DEFAULT_SHOW_MENU		TRUE
 
 typedef struct {
 	// 1st pref page
 	char 		*bkg_color;		// gdk_color_parse
-	char		*result_font; 	// pango_font_description_from_string
+	char		*result_font; 		// pango_font_description_from_string
 	char 		*result_color;
 	char		*mod_font;
 	char 		*act_mod_color;
@@ -84,6 +88,8 @@ typedef struct {
 	gboolean	vis_funcs;
 	gboolean	vis_logic;
 	gboolean	vis_dispctrl;
+	gboolean	vis_standard;
+	int		mode;
 	// 3rd pref page
 	// constants. handled different
 	// 4th pref page
@@ -93,6 +99,8 @@ typedef struct {
 	gboolean	oct_signed;
 	int		bin_bits;
 	gboolean	bin_signed;
+	gboolean	bin_fixed;
+	gboolean	bin_length;
 	// 5th pref page
 	int		def_number;		// in accordance with enums in
 	int		def_angle;		// galculator.h
@@ -125,7 +133,8 @@ enum {
 	CONSTANTS
 };
 
-void config_file_read (char *filename);
+s_preferences config_file_read (char *filename);
 void config_file_write (char *filename, s_preferences this_prefs);
-
+s_prefs_entry *config_file_get_prefs_list();
+s_constant *config_file_get_constants();
 #endif /* config_file.h */

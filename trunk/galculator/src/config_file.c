@@ -39,7 +39,7 @@
 #include "general_functions.h"
 
 s_preferences prefs;
-s_prefs_entry prefs_list[32] = {
+static s_prefs_entry prefs_list[35] = {
 	{"display_bkg_color", &(prefs.bkg_color), STRING, "prefs_bkg_color", set_button_color},
 	{"display_result_font", &(prefs.result_font), STRING, "prefs_result_font", set_button_label},
 	{"display_result_color", &(prefs.result_color), STRING, "prefs_result_color", set_button_color},
@@ -55,15 +55,19 @@ s_prefs_entry prefs_list[32] = {
 	{"button_font", &(prefs.button_font), STRING, "prefs_button_font", set_button_label},
 	{"button_width", &(prefs.button_width), INTEGER, "prefs_button_width", set_spinbutton},
 	{"button_height", &(prefs.button_height), INTEGER, "prefs_button_height", set_spinbutton},
-	{"function_button_group", &(prefs.vis_funcs), BOOLEAN, "prefs_vis_funcs", set_checkbutton},
-	{"logic_button_group", &(prefs.vis_logic), BOOLEAN, "prefs_vis_logic", set_checkbutton},
-	{"dispctrl_button_group", &(prefs.vis_dispctrl), BOOLEAN, "prefs_vis_dispctrl", set_checkbutton},
+	{"function_button_group", &(prefs.vis_funcs), BOOLEAN, NULL, NULL},
+	{"dispctrl_button_group", &(prefs.vis_dispctrl), BOOLEAN, NULL, NULL},
+	{"logic_button_group", &(prefs.vis_logic), BOOLEAN, NULL, NULL},
+	{"standard_button_group", &(prefs.vis_standard), BOOLEAN, NULL, NULL},
+	{"mode", &(prefs.mode), INTEGER, NULL, NULL},
 	{"hex_bits", &(prefs.hex_bits), INTEGER, "prefs_hex_bits", set_spinbutton},
 	{"hex_signed", &(prefs.hex_signed), BOOLEAN, "prefs_hex_signed", set_checkbutton},
 	{"oct_bits", &(prefs.oct_bits), INTEGER, "prefs_oct_bits", set_spinbutton},
 	{"oct_signed", &(prefs.oct_signed), BOOLEAN, "prefs_oct_signed", set_checkbutton},
 	{"bin_bits", &(prefs.bin_bits), INTEGER, "prefs_bin_bits", set_spinbutton},
-	{"bin_signed", &(prefs.bin_signed), BOOLEAN, "prefs_bin_signed", set_checkbutton},	
+	{"bin_signed", &(prefs.bin_signed), BOOLEAN, "prefs_bin_signed", set_checkbutton},
+	{"bin_fixed", &(prefs.bin_fixed), BOOLEAN, "prefs_bin_fixed", set_checkbutton},
+	{"bin_length", &(prefs.bin_length), INTEGER, "prefs_bin_length", set_spinbutton},
 	{"default_number_base", &(prefs.def_number), INTEGER, "prefs_def_number", set_optmenu},
 	{"default_angle_base", &(prefs.def_angle), INTEGER, "prefs_def_angle", set_optmenu},
 	{"default_notation_mode", &(prefs.def_notation), INTEGER, "prefs_def_notation", set_optmenu},
@@ -72,9 +76,8 @@ s_prefs_entry prefs_list[32] = {
 	{"show_menu_bar", &(prefs.show_menu), BOOLEAN, "prefs_show_menu", set_checkbutton},
 	{NULL, NULL, 0, NULL, NULL}
 };
-s_constant *constant;
-
-char *prefs_list_old_entries[2] = {"show_status_bar", NULL};
+static char *prefs_list_old_entries[2] = {"show_status_bar", NULL};
+static s_constant *constant;
 
 /*
  * config_file_get_default_prefs - initialize ALL members of the given s_preferences
@@ -101,8 +104,10 @@ static void config_file_get_default_prefs (s_preferences *this_prefs)
 	this_prefs->button_width = DEFAULT_BUTTON_WIDTH;
 	this_prefs->button_height = DEFAULT_BUTTON_HEIGHT;
 	this_prefs->vis_funcs = DEFAULT_VIS_FUNCS;
-	this_prefs->vis_logic = DEFAULT_VIS_LOGIC;
 	this_prefs->vis_dispctrl = DEFAULT_VIS_DISPCTRL;
+	this_prefs->vis_logic = DEFAULT_VIS_LOGIC;
+	this_prefs->vis_standard = DEFAULT_VIS_STANDARD;
+	this_prefs->mode = DEFAULT_MODE;
 	
 	// 3rd pref page
 	// constants - handled different
@@ -114,6 +119,8 @@ static void config_file_get_default_prefs (s_preferences *this_prefs)
 	this_prefs->oct_signed = DEFAULT_OCT_SIGNED;
 	this_prefs->bin_bits = DEFAULT_BIN_BITS;
 	this_prefs->bin_signed = DEFAULT_BIN_SIGNED;
+	this_prefs->bin_fixed = DEFAULT_BIN_FIXED;
+	this_prefs->bin_length = DEFAULT_BIN_LENGTH;
 
 	// 5rd pref page
 	this_prefs->def_number = DEFAULT_NUMBER;
@@ -250,7 +257,7 @@ void config_file_set_constants (char *line)
  *	constants. of there is the section headline, nothing is added.
  */
 
-void config_file_read (char *filename)
+s_preferences config_file_read (char *filename)
 {
 	char		line[MAX_FILE_LINE_LENGTH], *key, *value;
 	FILE		*this_file;
@@ -288,6 +295,7 @@ void config_file_read (char *filename)
 	else fprintf (stderr, _("[%s] configuration file: couldn't open configuration file %s for reading. \
 Nothing to worry about if you are starting %s for the first time. Using defaults.\n"), PACKAGE, filename, PACKAGE);
 	if (have_const_section == FALSE) config_file_get_default_consts (&constant);
+	return prefs;
 }
 
 /*
@@ -304,7 +312,8 @@ void config_file_write (char *filename, s_preferences this_prefs)
 	FILE		*this_file;
 	
 	this_file = fopen (filename, "w+");
-	
+	// overwrite local prefs memory with supplied prefs. probably ugly.
+	prefs = this_prefs;
 	if (this_file != NULL) {
 		fprintf (this_file, "\n%s\n\n", SECTION_GENERAL);
 		while (prefs_list[counter].key != NULL) {
@@ -342,4 +351,14 @@ void config_file_write (char *filename, s_preferences this_prefs)
 		fclose (this_file);
 	}	
 	else fprintf (stderr, _("[%s] configuration file: couldn't save/write to configuration file %s.\n"), PACKAGE, filename);
+}
+
+s_prefs_entry *config_file_get_prefs_list()
+{
+	return prefs_list;
+}
+
+s_constant *config_file_get_constants()
+{
+	return constant;
 }

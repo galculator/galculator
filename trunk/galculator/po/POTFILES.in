@@ -6,7 +6,10 @@ src/calc_basic.c
 src/config_file.c
 src/display.c
 src/general_functions.c
-ui/main.glade
+src/ui.c
+ui/main_frame.glade
+ui/scientific_buttons.glade
+ui/basic_buttons.glade
 ui/about.glade
 ui/color.glade
 ui/font.glade

@@ -52,9 +52,18 @@ enum {
 	NOP
 };
 
+extern gboolean calc_entry_start_new;
+
 /* general */
 
-void activate_menu_item (char *item_name);
+
+gboolean on_textview_button_press_event (GtkWidget *widget,
+                                        GdkEventButton *event,
+                                        gpointer user_data);
+void on_textview_selection_received (GtkWidget *widget,
+                                            GtkSelectionData *data,
+                                            guint time,
+                                            gpointer user_data);
 void display_init (GtkWidget *a_parent_widget);
 void display_update_modules ();
 void display_option_label_set (GtkLabel *label);
@@ -72,6 +81,7 @@ void display_result_add_digit (char digit);
 void display_result_set (char *string_value);
 void display_result_set_double (double value);
 void display_result_set_radiant (double value);
+void display_result_feed (char *string);
 char *display_result_get ();
 double display_result_get_double ();
 double display_result_get_rad_angle ();

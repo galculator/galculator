@@ -1,3 +1,29 @@
+2003-08-18 Simon Floery <simon.floery@gmx.at>
+	* src/callbacks.c: fixed token.func bug (closes DBTS #205126)
+	* GUI updates (y^x in RPN, change font for "popup buttons")
+	* src/display.c: fixed order of init notation and rem_value (closes
+	sf.net #778572)
+
+2003-07-25 Simon Floery <simon.floery@gmx.at>
+	* added basic mode
+	* updates to scientific mode
+
+2003-07-17 Simon Floery <simon.floery@gmx.at>
+	* asinh, acosh, atanh
+
+2003-07-04 Simon Floery <simon.floery@gmx.at>
+	* src/callbacks.c: GtkSizeGroup for preferences dialog
+	* fix length to multiple of k in binary mode (fill with zeros)
+	(closes sf.net fr #760390)
+	* src/calc_basic.c: percent operation
+
+########################################
+# 2003-07-06 galculator 1.1.2 released #
+########################################
+
+2003-07-05 Simon Floery <simon.floery@gmx.at>
+	* updated french translation (thanks to seb128)
+
 2003-07-02 Simon Floery <simon.floery@gmx.at>
 	* src/calc_basic.c: complete rewrite
 

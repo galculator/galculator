@@ -1,27 +1,30 @@
-todo ASAP --> 1.1.2:
+todo ASAP --> 1.1.3:
 ~~~~~~~~~~~~~~~~~~~~
+
+basicify/scientify
+
+dispctrl for basic mode (also adapt dispctrl in on_scientific_mode_activate!)
+
+remove translatables from *.glade!
+
+angle, number and notation on a switch to basic:
+two current_states: own for basic, one for scientific (solves number base, ...)?
+
+[OK] double on stack for brackets (the 2 bug reports: 0.23-(1))
+[OK] set_table_child_font - update for m+ etc
+[OK] y^x in RPN mode
+[OK] set_menu_[check | radio] on startup
+[OK] remember display value
+[OK] current_status = def* on startup
+
+---- bug reports
+	* reply to sf.net rpn/angle prefs save report
+	* fix constants and stack
+	* libglade?
 
 =GUI======================================
 
-	GUI element to bring menu back
-	
-	seperate RPN and PAN GUIs
-		=> pan.glade (basic, scientific, user)
-		=> rpn.glade (basic, scientific, user) display stack for RPN
-		window resize + instant apply. 
-		GtkSizeGroup (same in prefs)
-		ev MC, MX (memory exchange)
-		eigene M* button group?
-			
-	prefs: some checks on add/update?
-	
-	fixed binary length (sf fr #760390)
-	
-	is display_length out of date?
-
-=calculator==============================
-
-	prozent: x % y: "x percent of y"
+	GUI element to bring menu back?
 
 =i18n====================================
 
@@ -32,13 +35,12 @@ todo ASAP --> 1.1.2:
 	(http://developer.gnome.org/projects/gup/hig/):
 	chapter 2: DONE
 	chapter 3: window/dialog title DONE
-				instant apply (only a close button) DONE
-				default button in every window (enter press)
+		default button in every window (enter press) DONE
 	chapter 4: 
 	chapter 5: menu view for button groups
 	chapter 6:
 	chapter 7:
-	chapter 8: prefs dialog und GtkSizeGroup
+	chapter 8: GtkSizeGroup
 
 =sourceforge/homepage====================
 
@@ -50,9 +52,17 @@ update shortcuts text file
 #########################
 #########################
 
+1.1.4
+	improved rpn mode (display stack for RPN (x,y,z,t and infinite))
+	save stack
+	
+1.1.5
+	formula mode
+	entry is no own mode but an addon for both modes!
+
 1.2.0:
 
-paper tape display (history) and formula entry mode
+paper tape display (history) and formula entry mode and functions
 	[wcalc]
 
 to be done:
@@ -68,9 +78,7 @@ user defined functions (parse string simply in formular mode)
 save session (display value, number/angle/not, etc) (defaults and user. directory
 with several config files)
 
-some rounding
-
-implement inverse of hyperbolic
+some rounding (is display_length out of date?)
 
 spaces for binary number base, tausendertrennzeichen
 
@@ -80,4 +88,4 @@ not nice:
 ~~~~~~~~~
 
 memory leaks:
-	* __fill in__
+	* __fill_in__

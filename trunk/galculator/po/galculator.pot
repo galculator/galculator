@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-06-23 22:14+0200\n"
+"POT-Creation-Date: 2003-07-03 17:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,12 +48,12 @@ msgstr ""
 msgid "Select button font"
 msgstr ""
 
-#: src/callbacks.c:84
+#: src/callbacks.c:85
 #, c-format
 msgid "About %s"
 msgstr ""
 
-#: src/callbacks.c:87
+#: src/callbacks.c:88
 #, c-format
 msgid ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
@@ -62,35 +62,35 @@ msgid ""
 "(c) 2002-2003 by Simon Floery (simon.floery@gmx.at)"
 msgstr ""
 
-#: src/callbacks.c:181
+#: src/callbacks.c:183
 #, c-format
 msgid "[%s] on_operation_button_clicked: unknown status. %s\n"
 msgstr ""
 
-#: src/callbacks.c:270
+#: src/callbacks.c:272
 msgid "unknown function modifier (INV/HYP)"
 msgstr ""
 
-#: src/callbacks.c:375
+#: src/callbacks.c:377
 msgid "ENT"
 msgstr ""
 
-#: src/callbacks.c:420
+#: src/callbacks.c:423
 #, c-format
 msgid "%s Preferences"
 msgstr ""
 
-#: src/callbacks.c:562
+#: src/callbacks.c:565
 #, c-format
 msgid "[%s] Color Dialog (%s) not found. %s\n"
 msgstr ""
 
-#: src/callbacks.c:609
+#: src/callbacks.c:612
 #, c-format
 msgid "[%s] Font Dialog (%s) not found. %s\n"
 msgstr ""
 
-#: src/callbacks.c:902
+#: src/callbacks.c:905
 msgid "save here"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/main.c:122
+#: src/main.c:123
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -121,17 +121,17 @@ msgstr ""
 msgid "Please submit a bugreport."
 msgstr ""
 
-#: src/calc_basic.c:243
+#: src/calc_basic.c:139
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr ""
 
-#: src/calc_basic.c:246
+#: src/calc_basic.c:144
 #, c-format
 msgid "[%s] computing: %f %c %f = %f\n"
 msgstr ""
 
-#: src/calc_basic.c:507 src/calc_basic.c:526
+#: src/calc_basic.c:268 src/calc_basic.c:291
 #, c-format
 msgid "[%s] RPN stack size is %i.\n"
 msgstr ""
@@ -204,33 +204,33 @@ msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
 msgstr ""
 
-#: src/display.c:484
+#: src/display.c:488
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\". %s\n"
 msgstr ""
 
-#: src/display.c:618
+#: src/display.c:622
 msgid "unknown number base"
 msgstr ""
 
-#: src/display.c:619
+#: src/display.c:623
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"display_result_set_double\". %s\n"
 msgstr ""
 
-#: src/display.c:644
+#: src/display.c:648
 #, c-format
 msgid "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
 msgstr ""
 
-#: src/display.c:701
+#: src/display.c:705
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"display_result_get_double\". %s\n"
 msgstr ""
 
-#: src/display.c:726
+#: src/display.c:730
 #, c-format
 msgid ""
 "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
@@ -244,14 +244,21 @@ msgstr ""
 msgid "unsupported hyperbolic function"
 msgstr ""
 
-#: src/general_functions.c:193
+#: src/general_functions.c:197
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:245
+#: src/general_functions.c:249
 #, c-format
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
+msgstr ""
+
+#: src/general_functions.c:676
+#, c-format
+msgid ""
+"[%s] Couldn't load %s. This file is necessary to build galculator's user "
+"interface. Make sure you did a make install and the file is accessible!\n"
 msgstr ""
 
 #: ui/main.glade.h:2
@@ -267,7 +274,7 @@ msgstr ""
 msgid ")"
 msgstr ""
 
-#: ui/main.glade.h:5 ui/prefs.glade.h:3
+#: ui/main.glade.h:5 ui/prefs.glade.h:2
 msgid "*"
 msgstr ""
 
@@ -399,7 +406,7 @@ msgstr ""
 msgid "Changes the sign of the current display value."
 msgstr ""
 
-#: ui/main.glade.h:38 ui/prefs.glade.h:26
+#: ui/main.glade.h:38 ui/prefs.glade.h:25
 msgid "Clear"
 msgstr ""
 
@@ -459,7 +466,7 @@ msgstr ""
 msgid "Computes the tangent."
 msgstr ""
 
-#: ui/main.glade.h:53 ui/prefs.glade.h:28
+#: ui/main.glade.h:53 ui/prefs.glade.h:27
 msgid "Constants"
 msgstr ""
 
@@ -939,7 +946,7 @@ msgstr ""
 msgid "A dialog that shows information about this program."
 msgstr ""
 
-#: ui/about.glade.h:2 ui/prefs.glade.h:27
+#: ui/about.glade.h:2 ui/prefs.glade.h:26
 msgid "Closes the dialog."
 msgstr ""
 
@@ -996,245 +1003,229 @@ msgid "decimal PI 3.14159265359"
 msgstr ""
 
 #: ui/prefs.glade.h:1
-msgid " "
-msgstr ""
-
-#: ui/prefs.glade.h:2
 msgid "    "
 msgstr ""
 
-#: ui/prefs.glade.h:4
+#: ui/prefs.glade.h:3
 msgid "<b>Appearance</b>"
 msgstr ""
 
-#: ui/prefs.glade.h:5
+#: ui/prefs.glade.h:4
 msgid "<b>Binary</b>"
 msgstr ""
 
-#: ui/prefs.glade.h:6
+#: ui/prefs.glade.h:5
 msgid "<b>Dimension</b>"
 msgstr ""
 
-#: ui/prefs.glade.h:7
+#: ui/prefs.glade.h:6
 msgid "<b>Font</b>"
 msgstr ""
 
-#: ui/prefs.glade.h:8
+#: ui/prefs.glade.h:7
 msgid "<b>Hexadecimal</b>"
 msgstr ""
 
-#: ui/prefs.glade.h:9
+#: ui/prefs.glade.h:8
 msgid "<b>Modules Visibility</b>"
 msgstr ""
 
-#: ui/prefs.glade.h:10
+#: ui/prefs.glade.h:9
 msgid "<b>Octal</b>"
 msgstr ""
 
-#: ui/prefs.glade.h:11
+#: ui/prefs.glade.h:10
 msgid "<b>Startup</b>"
 msgstr ""
 
-#: ui/prefs.glade.h:12
+#: ui/prefs.glade.h:11
 msgid "<b>User defined constants:</b>"
 msgstr ""
 
-#: ui/prefs.glade.h:13
+#: ui/prefs.glade.h:12
 msgid "<b>Visibility</b>"
 msgstr ""
 
-#: ui/prefs.glade.h:14
+#: ui/prefs.glade.h:13
 msgid "A dialog that is used to change preferences settings."
 msgstr ""
 
-#: ui/prefs.glade.h:15
+#: ui/prefs.glade.h:14
 msgid "Active module color:"
 msgstr ""
 
-#: ui/prefs.glade.h:16
+#: ui/prefs.glade.h:15
 msgid "Add"
 msgstr ""
 
-#: ui/prefs.glade.h:17
+#: ui/prefs.glade.h:16
 msgid "Algebraic"
 msgstr ""
 
-#: ui/prefs.glade.h:18
+#: ui/prefs.glade.h:17
 msgid "Angle base units"
 msgstr ""
 
-#: ui/prefs.glade.h:19
+#: ui/prefs.glade.h:18
 msgid "Arithmetic operation"
 msgstr ""
 
-#: ui/prefs.glade.h:20
+#: ui/prefs.glade.h:19
 msgid "Background color:"
 msgstr ""
 
-#: ui/prefs.glade.h:21
+#: ui/prefs.glade.h:20
 msgid "Binary"
 msgstr ""
 
-#: ui/prefs.glade.h:22
+#: ui/prefs.glade.h:21
 msgid "Button font:"
 msgstr ""
 
-#: ui/prefs.glade.h:23
+#: ui/prefs.glade.h:22
 msgid "Button height:"
 msgstr ""
 
-#: ui/prefs.glade.h:24
+#: ui/prefs.glade.h:23
 msgid "Button width:"
 msgstr ""
 
-#: ui/prefs.glade.h:25
+#: ui/prefs.glade.h:24
 msgid "Buttons"
 msgstr ""
 
-#: ui/prefs.glade.h:29
+#: ui/prefs.glade.h:28
 msgid "Decimal"
 msgstr ""
 
-#: ui/prefs.glade.h:30
+#: ui/prefs.glade.h:29
 msgid "Default angle unit:"
 msgstr ""
 
-#: ui/prefs.glade.h:31
+#: ui/prefs.glade.h:30
 msgid "Default notation mode:"
 msgstr ""
 
-#: ui/prefs.glade.h:32
+#: ui/prefs.glade.h:31
 msgid "Default number base:"
 msgstr ""
 
-#: ui/prefs.glade.h:33
+#: ui/prefs.glade.h:32
 msgid "Degrees"
 msgstr ""
 
-#: ui/prefs.glade.h:34
+#: ui/prefs.glade.h:33
 msgid "Delete"
 msgstr ""
 
-#: ui/prefs.glade.h:35
+#: ui/prefs.glade.h:34
 msgid "Description:"
 msgstr ""
 
-#: ui/prefs.glade.h:36
+#: ui/prefs.glade.h:35
 msgid "Display"
 msgstr ""
 
-#: ui/prefs.glade.h:37
+#: ui/prefs.glade.h:36
 msgid "Display control buttons (C, AC, <-)"
 msgstr ""
 
-#: ui/prefs.glade.h:38
+#: ui/prefs.glade.h:37
 msgid "Function buttons (sin, cos, etc.)"
 msgstr ""
 
-#: ui/prefs.glade.h:39
+#: ui/prefs.glade.h:38
 msgid "Gradians"
 msgstr ""
 
-#: ui/prefs.glade.h:40
+#: ui/prefs.glade.h:39
 msgid "Hexadecimal"
 msgstr ""
 
-#: ui/prefs.glade.h:41
+#: ui/prefs.glade.h:40
 msgid "Inactive module color:"
 msgstr ""
 
-#: ui/prefs.glade.h:42
+#: ui/prefs.glade.h:41
 msgid "Logic buttons (AND, OR, etc.)"
 msgstr ""
 
-#: ui/prefs.glade.h:43
+#: ui/prefs.glade.h:42
 msgid "Miscellaneous"
 msgstr ""
 
-#: ui/prefs.glade.h:44
+#: ui/prefs.glade.h:43
 msgid "Module font:"
 msgstr ""
 
-#: ui/prefs.glade.h:45
+#: ui/prefs.glade.h:44
 msgid "Name:"
 msgstr ""
 
-#: ui/prefs.glade.h:46
+#: ui/prefs.glade.h:45
 msgid "Notation"
 msgstr ""
 
-#: ui/prefs.glade.h:47
+#: ui/prefs.glade.h:46
 msgid "Number base units"
 msgstr ""
 
-#: ui/prefs.glade.h:48
+#: ui/prefs.glade.h:47
 msgid "Number of Bits: "
 msgstr ""
 
-#: ui/prefs.glade.h:49
+#: ui/prefs.glade.h:48
 msgid "Numbers"
 msgstr ""
 
-#: ui/prefs.glade.h:50
+#: ui/prefs.glade.h:49
 msgid "Octal"
 msgstr ""
 
-#: ui/prefs.glade.h:51
+#: ui/prefs.glade.h:50
 msgid "Open brackets"
 msgstr ""
 
-#: ui/prefs.glade.h:52
+#: ui/prefs.glade.h:51
 msgid "Radians"
 msgstr ""
 
-#: ui/prefs.glade.h:53
+#: ui/prefs.glade.h:52
 msgid "Remember display value on exit"
 msgstr ""
 
-#: ui/prefs.glade.h:54
+#: ui/prefs.glade.h:53
 msgid "Result font color:"
 msgstr ""
 
-#: ui/prefs.glade.h:55
+#: ui/prefs.glade.h:54
 msgid "Result font:"
 msgstr ""
 
-#: ui/prefs.glade.h:56
+#: ui/prefs.glade.h:55
 msgid "Reverse Polish (RPN)"
 msgstr ""
 
-#: ui/prefs.glade.h:57
+#: ui/prefs.glade.h:56
 msgid "Show menu bar"
 msgstr ""
 
-#: ui/prefs.glade.h:58
+#: ui/prefs.glade.h:57
 msgid "Update"
 msgstr ""
 
-#: ui/prefs.glade.h:59
+#: ui/prefs.glade.h:58
 msgid "Use custom button font"
 msgstr ""
 
-#: ui/prefs.glade.h:60
+#: ui/prefs.glade.h:59
 msgid "Value:"
 msgstr ""
 
-#: ui/prefs.glade.h:61
-msgid "button1"
-msgstr ""
-
-#: ui/prefs.glade.h:62
-msgid "button5"
-msgstr ""
-
-#: ui/prefs.glade.h:63
-msgid "button7"
-msgstr ""
-
-#: ui/prefs.glade.h:64
+#: ui/prefs.glade.h:60
 msgid "galculator - Preferences"
 msgstr ""
 
-#: ui/prefs.glade.h:65
+#: ui/prefs.glade.h:61
 msgid "signed"
 msgstr ""

@@ -82,3 +82,18 @@ double grad2rad (double value)
 {
 	return (value/200)*G_PI;
 }
+
+double asinh (double x)
+{
+	return log (x + sqrt(x*x+1));
+}
+
+double acosh (double x)
+{
+	return log (x + sqrt(x*x-1));
+}
+
+double atanh (double x)
+{
+	return log ((1+x)/(1-x))/2;
+}

@@ -42,7 +42,7 @@
 #define gettext_noop(String) String
 #define N_(String) gettext_noop (String)
 
-char 	*operator_precedence[] = {"=)", "+-&|x", "*/<>%", "^", "(", NULL};
+char 	*operator_precedence[] = {"=)", "+-&|x", "*/<>%", "^", "(", "%", NULL};
 char 	*right_associative = "^";
 
 s_alg_stack	*current_stack=NULL;
@@ -54,10 +54,16 @@ int		alg_debug = 0, rpn_debug = 0;
  * GENERAL STUFF
  */
 
+/* id. The identity function. This is used as stack function, if none was given.
+ */
+
 double id (double x)
 {
 	return x;
 }
+
+/* debug_input. debug code: enter tokens on stdin.
+ */
 
 void debug_input ()
 {
@@ -72,8 +78,7 @@ void debug_input ()
 	printf ("\t\tdisplay value: %f\n", alg_add_token (current_token));
 }
 
-/*
- * reduce. op1 is before op2 in the computation.
+/* reduce. op1 is before op2 in the computation.
  */
 
 static int reduce (char op1, char op2)
@@ -93,6 +98,9 @@ static int reduce (char op1, char op2)
 		return FALSE;
 	else return TRUE;
 }
+
+/* compute_expression. here, the real copmputation is done.
+ */
 
 static double compute_expression (double left_hand, 
 				char operator, 
@@ -123,7 +131,7 @@ static double compute_expression (double left_hand,
 	case '>':
 		result = ldexp (left_hand, ((int) floor(right_hand))*(-1));
 		break;
-	case '%':
+	case 'm':
 		result = fmod (left_hand, right_hand);
 		break;
 	case '&':
@@ -134,6 +142,9 @@ static double compute_expression (double left_hand,
 		break;
 	case 'x':
 		result = (long long int)left_hand ^ (long long int) right_hand;
+		break;
+	case '%':
+		result = left_hand * right_hand/100;
 		break;
 	default: 
 		if (alg_debug+rpn_debug > 0) fprintf (stderr, _("[%s] %c - unknown operation \
@@ -150,6 +161,10 @@ character. %s\n"), PROG_NAME, operator, BUG_REPORT);
  * (PSEUDO)ALGEBRAIC MODE
  */
 
+/* alg_stack_new. we are working with stacks. every bracket layer is a single 
+ * stack. this function creates a new stack.
+ */
+
 static s_alg_stack *alg_stack_new (s_cb_token this_token)
 {
 	s_alg_stack	*new_stack;
@@ -162,6 +177,10 @@ static s_alg_stack *alg_stack_new (s_cb_token this_token)
 	return new_stack;	
 }
 
+/* alg_stack_append. simply appends token (number and operation) to stack.
+ * that's all (no computation etc!).
+ */
+
 static void alg_stack_append (s_alg_stack *stack, s_cb_token token)
 {
 	stack->size++;
@@ -172,6 +191,10 @@ static void alg_stack_append (s_alg_stack *stack, s_cb_token token)
 		stack->size * sizeof(char));
 	stack->operation[stack->size-1] = token.operation;
 }
+
+/* alg_stack_pool. do as many computation as possible with respect to
+ * precedence. here, reduce from above is used.
+ */
 
 static double alg_stack_pool (s_alg_stack *stack)
 {
@@ -197,12 +220,18 @@ static double alg_stack_pool (s_alg_stack *stack)
 	return stack->number[stack->size-1];
 }
 
+/* alg_stack_free. the stack destructor.
+ */
+
 static void alg_stack_free (s_alg_stack *stack)
 {
 	free (stack->number);
 	free (stack->operation);
 	free (stack);
 }
+
+/* alg_add_token. call this from outside. 
+ */
 
 double alg_add_token (s_cb_token this_token)
 {
@@ -227,10 +256,17 @@ double alg_add_token (s_cb_token this_token)
 	default:
 		alg_stack_append (current_stack, this_token);
 		return_value = alg_stack_pool (current_stack);
+		if (this_token.operation == '=') {
+			alg_free();
+			alg_init(alg_debug);
+		}
 		break;
 	}
 	return return_value;
 }
+
+/* alg_init. use this from outside to initialize everything
+ */
 
 void alg_init (int debug_level)
 {
@@ -241,6 +277,9 @@ void alg_init (int debug_level)
 	token.number.func = id;
 	current_stack = alg_stack_new(token);	
 }
+
+/* alg_free. call this from outside to clean up properly
+ */
 
 void alg_free ()
 {
