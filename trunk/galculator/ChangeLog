@@ -1,3 +1,11 @@
+2003-09-18 Simon Floery <chimaira@users.sf.net>
+	* src/display.c: display stack
+	
+2003-09-11 Simon Floery <chimaira@users.sf.net>
+	* ui/prefs.galde: added (in)finite RPN stack option, naturally updates
+	to config code, etc.
+	* applied patches (c cleanups, IBM compiler) by albert. Thanks!
+
 2003-09-09 Simon Floery <chimaira@users.sf.net>
 	* src/calc_basic.c: finite/infinite stack, swap x y, rolldown stack
 

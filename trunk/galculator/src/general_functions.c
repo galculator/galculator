@@ -73,7 +73,7 @@ void all_clear ()
 	}
 	else {
 		rpn_free();
-		rpn_init(4, 0);
+		rpn_init(3, 0);
 		current_status.rpn_have_result = FALSE;
 	}
 	display_module_bracket_label_update (RESET);
@@ -160,7 +160,7 @@ char *add_leading_zeros (char *string, int multiple)
 	char	*new_string;
 	int	length, offset, counter;
 	
-	// I don't want "0" to become "000000000" or whatever
+	/* I don't want "0" to become "000000000" or whatever */
 	if (strcmp (string, "0") == 0) return string;
 	length = strlen(string);
 	offset = (multiple - length%multiple)%multiple;
@@ -204,7 +204,7 @@ void set_spinbutton (GladeXML *xml, char *spinbutton_name, void *value)
 	int		*int_var;
 	
 	int_var = value;
-	//d_var = (double) *int_var;
+	/*d_var = (double) *int_var;*/
 	spin_button = (GtkSpinButton *) glade_xml_get_widget (xml, spinbutton_name);
 	gtk_spin_button_set_value (spin_button, *int_var);
 }
@@ -243,7 +243,7 @@ void set_button_color (GladeXML *xml, char *button_name, void *color_string)
 	char 		**string_var;
 	GdkColor	color;
 
-	// dereference
+	/* dereference */
 	string_var = color_string;
 	gdk_color_parse (*string_var, &color);
 	
@@ -252,6 +252,19 @@ void set_button_color (GladeXML *xml, char *button_name, void *color_string)
 	gtk_widget_modify_fg (da, 0, &color);
 	
 	g_signal_connect (G_OBJECT (da), "expose_event", G_CALLBACK (da_expose_event_cb), NULL);
+}
+
+void set_stacksize (GladeXML *xml, char *name, void *stack_size)
+{
+	int		*size;
+	GtkToggleButton	*tb;
+	
+	/* name is NULL */
+	size = stack_size;
+	if (*size == 3)
+		tb = (GtkToggleButton *) glade_xml_get_widget (xml, "finite_stack_size");
+	else tb = (GtkToggleButton *) glade_xml_get_widget (xml, "infinite_stack_size");
+	gtk_toggle_button_set_active (tb, TRUE);
 }
 
 /*
@@ -331,4 +344,56 @@ void activate_menu_item (char *item_name)
 	 */
 	gtk_menu_item_activate ((GtkMenuItem *) menu_item);
 
+}
+
+/* get_number_string - converts value to a string, with repect to base. returned
+ *	string should be freed.
+ */
+
+char *get_display_number_string (double value, int base)
+{
+	char 	*string_value;
+	
+	switch (base) {
+		case CS_DEC:
+			string_value = g_strdup_printf ("%.*g", get_display_number_length(current_status.number), value);
+			break;
+		case CS_HEX:
+			string_value = ftoax (value, 16, prefs.hex_bits, prefs.hex_signed);
+			break;
+		case CS_OCT:
+			string_value = ftoax (value, 8, prefs.oct_bits, prefs.oct_signed);
+			break;
+		case CS_BIN:
+			string_value = ftoax (value, 2, prefs.bin_bits, prefs.bin_signed);
+			if (prefs.bin_fixed == TRUE) 
+				string_value = add_leading_zeros (string_value, 
+					prefs.bin_length);
+			break;
+		default:
+			string_value = _("unknown number base");
+			fprintf (stderr, _("[%s] unknown number base in function \"get_display_number_string\". %s\n"), PROG_NAME, BUG_REPORT);
+	}
+	return string_value;
+}
+
+/* get_display_number_length - returns the maximum length of a number in current
+ * 	mode.
+ */
+
+int get_display_number_length (int base)
+{
+	switch (base) {
+		case CS_DEC:
+			return DISPLAY_RESULT_PRECISION;
+		case CS_HEX:
+			return prefs.hex_bits/4;
+		case CS_OCT:
+			return prefs.oct_bits/3;
+		case CS_BIN:
+			return prefs.bin_bits/1;
+		default:
+			fprintf (stderr, _("[%s] unknown number base in function \"get_display_number_length\". %s\n"), PROG_NAME, BUG_REPORT);
+			return 0;
+		}
 }

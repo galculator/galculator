@@ -94,7 +94,7 @@ static int reduce (char op1, char op2)
 		counter++;
 	}
 	if (p1 < p2) return FALSE;
-	// associativity only makes sense for same operations
+	/* associativity only makes sense for same operations */
 	else if ((op1 == op2) && (strchr (right_associative, op1) != NULL)) 
 		return FALSE;
 	else return TRUE;
@@ -298,14 +298,14 @@ void alg_free ()
 void rpn_init (int size, int debug_level)
 {
 	rpn_stack = g_array_new (FALSE, FALSE, sizeof(double));
-	rpn_stack_size = 3;//size;
-	rpn_debug = 2;//debug_level;
+	rpn_stack_size = size;
+	rpn_debug = debug_level;
 }
 
-/* rpn_stack_debug_print. printf stack to stderr
+/* debug_rpn_stack_print. printf stack to stderr
  */
 
-void rpn_stack_debug_print ()
+void debug_rpn_stack_print ()
 {
 	int 	counter;
 	double	*stack;
@@ -327,7 +327,7 @@ void rpn_stack_push (double number)
 		rpn_stack = g_array_remove_index (rpn_stack, rpn_stack_size);
 	if (rpn_debug > 0) fprintf (stderr, "[%s] RPN stack size is %i.\n", 
 		PROG_NAME, (int)rpn_stack->len);
-	if (rpn_debug > 1) rpn_stack_debug_print();
+	if (rpn_debug > 1) debug_rpn_stack_print();
 }
 
 /* rpn_stack_operation. does some operation. This is also the place where the
@@ -349,7 +349,7 @@ double rpn_stack_operation (s_cb_token current_token)
 		left_hand = g_array_index (rpn_stack, double, 0);
 		last_on_stack = g_array_index (rpn_stack, double, rpn_stack_size-1);
 		rpn_stack = g_array_remove_index (rpn_stack, 0);
-		// last register is kept, if stack size is finite
+		/* last register is kept, if stack size is finite */
 		if (((int) rpn_stack->len == rpn_stack_size-1) && (rpn_stack_size > 0))
 			rpn_stack = g_array_append_val (rpn_stack, last_on_stack);
 	}
@@ -358,7 +358,7 @@ double rpn_stack_operation (s_cb_token current_token)
 		current_token.number.value);
 	if (rpn_debug > 0) fprintf (stderr, "[%s] RPN stack size is %i.\n", 
 		PROG_NAME, (int)rpn_stack->len);
-	if (rpn_debug > 1) rpn_stack_debug_print();
+	if (rpn_debug > 1) debug_rpn_stack_print();
 	return return_value;
 }
 
@@ -382,7 +382,7 @@ void rpn_stack_swapxy ()
 	}
 	if (rpn_debug > 0) fprintf (stderr, "[%s] RPN stack size is %i.\n", 
 		PROG_NAME, (int)rpn_stack->len);
-	if (rpn_debug > 1) rpn_stack_debug_print();
+	if (rpn_debug > 1) debug_rpn_stack_print();
 }
 
 /* rpn_stack_rolldown. y->x, z->y, ..., x->t

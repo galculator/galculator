@@ -33,12 +33,6 @@
 #define DISPLAY_MODULES_DELIM 		"   "
 
 enum {
-	DISPLAY_RESULT_LINE,
-	DISPLAY_MODULES_LINE,
-	DISPLAY_NR_LINES
-};
-
-enum {
 	DISPLAY_OPT_NUMBER,
 	DISPLAY_OPT_ANGLE,
 	DISPLAY_OPT_NOTATION
@@ -91,5 +85,10 @@ double display_result_get_rad_angle ();
 void display_append_e ();
 void display_result_toggle_sign ();
 void display_result_backspace ();
+
+void display_set_line_double (double value, int line, char *tag);
+void display_stack_create ();
+void display_stack_remove ();
+void display_stack_set_xyzt (double *stack);
 
 #endif /* display.h */

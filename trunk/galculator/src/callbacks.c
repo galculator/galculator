@@ -52,11 +52,11 @@ void
 on_quit_activate                      (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
-	// remember display's value
+	/* remember display's value */
 	if (prefs.rem_value) g_free (prefs.rem_value);
 	prefs.rem_value = display_result_get();
 	if (prefs.mode == SCIENTIFIC_MODE) {
-		// save number and angle mode only in scientific mode.
+		/* save number and angle mode only in scientific mode. */
 		prefs.def_number = current_status.number;
 		prefs.def_angle = current_status.angle;
 	}
@@ -117,7 +117,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,
                                         gpointer         user_data)
 {
 	s_cb_token		current_token;
-	double			return_value;
+	double			return_value, *stack;
 	GtkWidget		*tbutton;
 	
 	if (gtk_toggle_button_get_active(button) == FALSE) return;
@@ -127,7 +127,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,
 	if (current_token.operation != '(') 
 		current_token.number.value = display_result_get_double ();
 	else current_token.number.func = NULL;	
-	// do inverse left shift is a right shift
+	/* do inverse left shift is a right shift */
 	if ((current_token.operation == '<') && \
 		(BIT (current_status.fmod, CS_FMOD_FLAG_INV) == 1)) {
 			tbutton = glade_xml_get_widget (button_box_xml, "button_inv");
@@ -172,10 +172,16 @@ on_operation_button_clicked            (GtkToggleButton       *button,
 		switch (current_token.operation) {
 		case '=':
 			rpn_stack_push (current_token.number.value);
+			stack = rpn_stack_get (3);
+			display_stack_set_xyzt (stack);
+			free (stack);
 			current_status.rpn_have_result = FALSE;
 			break;
 		default:
 			display_result_set_double (rpn_stack_operation (current_token));
+			stack = rpn_stack_get (3);
+			display_stack_set_xyzt (stack);
+			free (stack);
 			current_status.rpn_have_result = TRUE;
 		}
 	} else error_message ("on_operation_button_clicked: unknown status");
@@ -183,9 +189,9 @@ on_operation_button_clicked            (GtkToggleButton       *button,
 	current_status.calc_entry_start_new = TRUE;
 }
 
-/* this callback is called if a button for a function manipulating the current entry directly
- * is clicked. the array function_list knows the relation between button label and function to
- * call.
+/* this callback is called if a button for a function manipulating the current 
+ * entry directly is clicked. the array function_list knows the relation between 
+ * button label and function to call.
  */
 
 void
@@ -286,7 +292,7 @@ on_dec_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	//printf ("dec\n");
+	/*printf ("dec\n");*/
 	display_change_option (CS_DEC, DISPLAY_OPT_NUMBER);
 }
 
@@ -296,7 +302,7 @@ on_hex_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	//printf ("hex\n");
+	/*printf ("hex\n");*/
 	display_change_option (CS_HEX, DISPLAY_OPT_NUMBER);
 }
 
@@ -306,7 +312,7 @@ on_oct_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	//printf ("oct\n");
+	/*printf ("oct\n");*/
 	display_change_option (CS_OCT, DISPLAY_OPT_NUMBER);
 }
 
@@ -316,7 +322,7 @@ on_bin_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	//printf ("bin\n");
+	/*printf ("bin\n");*/
 	display_change_option (CS_BIN, DISPLAY_OPT_NUMBER);
 }
 
@@ -326,7 +332,7 @@ on_deg_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	//printf ("deg\n");
+	/*printf ("deg\n");*/
 	display_change_option (CS_DEG, DISPLAY_OPT_ANGLE);
 }
 
@@ -336,7 +342,7 @@ on_rad_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	//printf ("rad\n");
+	/*printf ("rad\n");*/
 	display_change_option (CS_RAD, DISPLAY_OPT_ANGLE);
 }
 
@@ -346,7 +352,7 @@ on_grad_activate                      (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	//printf ("grad\n");
+	/*printf ("grad\n");*/
 	display_change_option (CS_GRAD, DISPLAY_OPT_ANGLE);
 }
 
@@ -358,7 +364,7 @@ on_ordinary_activate                  (GtkMenuItem     *menuitem,
 	GtkWidget	*w;
 	
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
-	//printf ("pan\n");
+	/*printf ("pan\n");*/
 	display_change_option (CS_PAN, DISPLAY_OPT_NOTATION);
 	rpn_free ();
 	all_clear ();
@@ -366,6 +372,7 @@ on_ordinary_activate                  (GtkMenuItem     *menuitem,
 	if (w) gtk_button_set_label ((GtkButton *)w, _("="));
 	w = glade_xml_get_widget (button_box_xml, "button_pow");
 	if (w) gtk_button_set_label ((GtkButton *)w, _("x^y"));
+	display_stack_remove();
 }
 
 
@@ -376,7 +383,7 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
 	GtkWidget	*w;
 	
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
-	//printf ("rpn\n");
+	/*printf ("rpn\n");*/
 	display_change_option (CS_RPN, DISPLAY_OPT_NOTATION);
 	alg_free ();
 	all_clear ();
@@ -384,6 +391,7 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
 	if (w) gtk_button_set_label ((GtkButton *)w, _("ENT"));
 	w = glade_xml_get_widget (button_box_xml, "button_pow");
 	if (w) gtk_button_set_label ((GtkButton *)w, _("y^x"));
+	display_stack_create();
 }
 
 void
@@ -438,7 +446,7 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 	
 	if (((GtkCheckMenuItem *) menuitem)->active == FALSE) return;
 	if (prefs.mode == SCIENTIFIC_MODE) {
-		// remember number and angle. notation is active in basic mode
+		/* remember number and angle. notation is active in basic mode */
 		prefs.def_number = current_status.number;
 		prefs.def_angle = current_status.angle;
 	}
@@ -839,7 +847,7 @@ void on_prefs_rem_display_toggled (GtkToggleButton *togglebutton,
 				gpointer user_data)
 {
 	prefs.rem_display = gtk_toggle_button_get_active (togglebutton);
-	// only is important when leaving galculator
+	/* only is important when leaving galculator */
 }
 /*
 void on_prefs_def_number_changed (GtkOptionMenu *optionmenu,
@@ -1107,11 +1115,8 @@ void on_prefs_cupdate_clicked (GtkButton *button, gpointer user_data)
 void on_prefs_hex_bits_value_changed (GtkSpinButton *spinbutton,
 					GtkScrollType arg1,
 					gpointer user_data)
-{
-	extern int 	display_lengths[NR_NUMBER_BASES];
-	
+{	
 	prefs.hex_bits = (int) gtk_spin_button_get_value (spinbutton);
-	display_lengths[CS_HEX] = prefs.hex_bits/4;
 }
 
 void on_prefs_hex_signed_toggled (GtkToggleButton *togglebutton, 
@@ -1124,10 +1129,7 @@ void on_prefs_oct_bits_value_changed (GtkSpinButton *spinbutton,
 					GtkScrollType arg1,
 					gpointer user_data)
 {
-	extern int 	display_lengths[NR_NUMBER_BASES];
-	
 	prefs.oct_bits = (int) gtk_spin_button_get_value (spinbutton);
-	display_lengths[CS_OCT] = prefs.oct_bits/3;
 }
 
 void on_prefs_oct_signed_toggled (GtkToggleButton *togglebutton, 
@@ -1140,10 +1142,7 @@ void on_prefs_bin_bits_value_changed (GtkSpinButton *spinbutton,
 					GtkScrollType arg1,
 					gpointer user_data)
 {
-	extern int 	display_lengths[NR_NUMBER_BASES];
-	
 	prefs.bin_bits = (int) gtk_spin_button_get_value (spinbutton);
-	display_lengths[CS_BIN] = prefs.bin_bits/1;
 }
 
 
@@ -1181,7 +1180,7 @@ void on_main_window_check_resize (GtkContainer *container,
 {
 	static gboolean		itsme=FALSE;
 	
-	// is there a nicer way to to this?
+	/* is there a nicer way to to this? */
 	if (itsme) {
 		itsme = FALSE;
 		return;
@@ -1190,5 +1189,13 @@ void on_main_window_check_resize (GtkContainer *container,
 	itsme = TRUE;
 }
 
+void on_finite_stack_size_clicked (GtkRadioButton *rb, gpointer user_data)
+{
+	prefs.stack_size = 4;
+}
 
+void on_infinite_stack_size_clicked (GtkRadioButton *rb, gpointer user_data)
+{
+	prefs.stack_size = -1;
+}
 /* END */

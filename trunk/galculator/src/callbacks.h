@@ -227,3 +227,9 @@ void on_standard_activate (GtkMenuItem     *menuitem,
 
 void on_main_window_check_resize (GtkContainer *container,
 			gpointer user_data);
+
+void on_finite_stack_size_clicked (GtkRadioButton *rb,
+			gpointer user_data);
+			
+void on_infinite_stack_size_clicked (GtkRadioButton *rb,
+			gpointer user_data);

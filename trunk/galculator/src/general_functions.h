@@ -46,6 +46,7 @@ void set_checkbutton (GladeXML *xml, char *checkbutton_name, void *checked);
 void set_spinbutton (GladeXML *xml, char *spinbutton_name, void *value);
 void set_optmenu (GladeXML *xml, char *optmenu_name, void *index);
 void set_button_color (GladeXML *xml, char *button_name, void *color_string);
+void set_stacksize (GladeXML *xml, char *name, void *stack_size);
 
 char *gdk_color_to_string (GdkColor color);
 
@@ -57,4 +58,6 @@ gboolean is_valid_number (int number_base, char number);
 
 void activate_menu_item (char *item_name);
 
+char *get_display_number_string (double value, int base);
+int get_display_number_length (int base);
 #endif /* general_functions.h */

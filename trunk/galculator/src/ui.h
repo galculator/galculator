@@ -26,7 +26,7 @@ extern GladeXML		*dispctrl_xml;
 extern GtkListStore	*store;
 extern char		dec_point[2];
 
-// active_buttons flags
+/* active_buttons flags */
 #define AB_DEC 1 << CS_DEC
 #define AB_HEX 1 << CS_HEX
 #define AB_OCT 1 << CS_OCT

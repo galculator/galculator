@@ -35,6 +35,8 @@
 #define DEFAULT_BKG_COLOR		"#e6edbd"
 #define DEFAULT_RESULT_FONT		"Sans Bold 26"
 #define	DEFAULT_RESULT_COLOR 		"black"
+#define DEFAULT_STACK_FONT		"Sans Bold 11"
+#define DEFAULT_STACK_COLOR		"black"
 #define DEFAULT_MOD_FONT		"Sans Bold 9"
 #define DEFAULT_ACT_MOD_COLOR		"black"
 #define DEFAULT_INACT_MOD_COLOR		"grey"
@@ -63,15 +65,18 @@
 #define DEFAULT_NUMBER			CS_DEC
 #define DEFAULT_ANGLE			CS_RAD
 #define DEFAULT_NOTATION		CS_PAN
+#define DEFAULT_STACK_SIZE		3
 #define DEFAULT_REM_DISPLAY		FALSE
-#define	DEFAULT_REM_VALUE		"0"	// must not end with a newline!
+#define	DEFAULT_REM_VALUE		"0"	/* must not end with a newline! */
 #define DEFAULT_SHOW_MENU		TRUE
 
 typedef struct {
-	// 1st pref page
-	char 		*bkg_color;		// gdk_color_parse
-	char		*result_font; 		// pango_font_description_from_string
+	/* 1st pref page */
+	char 		*bkg_color;		/* gdk_color_parse */
+	char		*result_font; 		/* pango_font_description_from_string */
 	char 		*result_color;
+	char		*stack_font;
+	char		*stack_color;
 	char		*mod_font;
 	char 		*act_mod_color;
 	char 		*inact_mod_color;
@@ -80,9 +85,9 @@ typedef struct {
 	gboolean	vis_notation;
 	gboolean	vis_arith;
 	gboolean	vis_bracket;
-	// 2nd pref page
+	/* 2nd pref page */
 	gboolean	custom_button_font;
-	char 		*button_font;		// buttons
+	char 		*button_font;		/* buttons */
 	int		button_width;
 	int		button_height;
 	gboolean	vis_funcs;
@@ -90,9 +95,9 @@ typedef struct {
 	gboolean	vis_dispctrl;
 	gboolean	vis_standard;
 	int		mode;
-	// 3rd pref page
-	// constants. handled different
-	// 4th pref page
+	/* 3rd pref page */
+	/* constants. handled different */
+	/* 4th pref page */
 	int		hex_bits;
 	gboolean	hex_signed;
 	int		oct_bits;
@@ -101,17 +106,18 @@ typedef struct {
 	gboolean	bin_signed;
 	gboolean	bin_fixed;
 	gboolean	bin_length;
-	// 5th pref page
-	int		def_number;		// in accordance with enums in
-	int		def_angle;		// galculator.h
+	/* 5th pref page */
+	int		def_number;		/* in accordance with enums in */
+	int		def_angle;		/* galculator.h */
 	int		def_notation;
+	int		stack_size;
 	gboolean	rem_display;
-	char		*rem_value;		// done as string
+	char		*rem_value;		/* done as string */
 	gboolean	show_menu;
 } s_preferences;
 
-// default value ?
-// update_handler
+/* default value ? */
+/* update_handler */
 
 typedef struct {
 	char 	*key;

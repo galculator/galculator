@@ -10,8 +10,11 @@ RPN stack:
 RPN new buttons/operations:
 	x<>y ... swap x and y
 	rolldn ... roll down the stack: x->t->z->y->x
-	
+
+RPN and memory
+
 ---bug reports
+	= <-> ENT in RPN startup
 
 =GUI======================================
 
@@ -57,17 +60,16 @@ to be done:
 
 9+9+9+9+9+9+9+
 
+undo last operation
+
 nice:
 ~~~~~
 
 user defined functions (parse string simply in formular mode)
 
-save session (display value, number/angle/not, etc) (defaults and user. directory
-with several config files)
+some rounding
 
-some rounding (is display_length out of date?)
-
-spaces for binary number base, tausendertrennzeichen
+spaces for binary number base, "tausendertrennzeichen"
 
 complex numbers
 
