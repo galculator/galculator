@@ -6,8 +6,8 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=186
-1=1312
+0=3
+1=22
 2=1
 3=1
 4=204
@@ -42,14 +42,8 @@ filter.dir.ignore.hidden=0
 clean before build=false
 
 [filelist]
-0=/home/sf/Devel/galculator/src/main.c
-1=/home/sf/Devel/galculator/src/callbacks.c
-2=/home/sf/Devel/galculator/src/calc_basic.h
-3=/home/sf/Devel/galculator/src/galculator.h
-4=/home/sf/Devel/galculator/src/parser.c
-5=/home/sf/Devel/galculator/src/parser.h
-6=/home/sf/Devel/galculator/ChangeLog
-7=/home/sf/Devel/galculator/TODO
+0=/home/sf/Devel/galculator/ChangeLog
+1=/home/sf/Devel/galculator/TODO
 
 [Project Tree]
 0=0
@@ -71,11 +65,11 @@ clean before build=false
 7=display_result_get_double
 
 [find_text]
-0=BALA
-1=really_mod
-2=parse
-3=current_status
-4=strtod
-5=parse:
-6=compute_expression
-7=current_token
+0=msgstr ""
+1=fuzzy
+2=BALA
+3=really_mod
+4=parse
+5=current_status
+6=strtod
+7=parse:

@@ -6,10 +6,66 @@ a GTK 2 based scientific calculator
 For installation information see the INSTALL file.
 For a list of shortcuts, see doc/shortcuts
 There is a short man page (man galculator)
+Information on Formula Entry mode can be found below.
+In general, galculator's homepage galculator.sf.net is the most reliable
+and up2date source of information.
 
 RPMs: a spec file is included (galculator.spec). Thanks to Victor. Or
 download at http://dag.wieers.com/packages/galculator/ (thanks to Dag Wieers) 
 DEBs: galculator is in DEBIAN/unstable. Thanks to seb128.
+
+Formula Entry Mode
+==================
+
+Since version 1.2.0 galculator features a formula entry mode. This mode is one 
+more step towards a calculator accepting input as written on the paper. 
+galculator's formula entry mode aims to provide all the features of the 
+algebraic mode.
+
+This part of galculator is developed actively. This section gives an overview 
+of the functions currently implemented and points out some restrictions.
+
+So far formula entry mode accepts only decimal numbers as input. All algebraic 
+operations and functions of the algebraic mode are supported. Operations can 
+only be specified by their one char long identifier, which is for example 
+displayed by the Arithmetic Operation display module. String operation 
+identifiers (e.g. AND, OR, XOR, MOD, LSH - use &, |, x, m, < instead) are not 
+yet supported.
+
+Operation			Single char identifier	
++, -, *, /			+, -, *, /
+percent x%y (x percent of y)	%
+power x^y			^
+module (MOD)			m
+left shift (LSH)		<
+right shift (INV + LSH)		>
+AND				&
+OR				|
+XOR				x
+
+Factorial and complement are regarded as functions. All functions' argument 
+have to be enclosed by brackets. Therefore sin 3 is not possible yet and has to 
+be written as sin(3).
+
+Function			Function identifier	Example
+Trigonometric functions: 
+Sine, Cosine, Tangent		sin, cos, tan		sin(0.5)
+their inverse 			asin, acos, atan	asin(0.5)
+their hyperbolic variants	sinh, cosh, tanh	sinh(0.5)
+and the inverse of those	asinh, acosh, atanh	asinh(0.5)
+natural logarithm (base e)	ln			ln(3)
+logarithm (base 10)		log			log(3)
+square root			sqrt			sqrt(3)
+factorial			!			(3)! brackets mandatory
+complement			~			~(3) brackets mandatory
+
+If formula entry mode's parser encounters an (syntax) error, the formula entry 
+text is turned red.
+
+Shortcuts
+=========
+
+doc/shortcuts
 
 http://galculator.sf.net
 simon floery (chimaira@users.sf.net)

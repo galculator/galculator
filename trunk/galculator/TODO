@@ -1,25 +1,10 @@
-1.2.0
-~~~~~
+1.2.1
+-----
 
-[DONE] tooltips in RPN mode
+formula entry mode and functions 
 
-[DONE] formula mode - in GUI
-
-[DONE] right button mouse click gives popup for bringing back menu
-
-[DONE] parser
-	[DONE] negative numbers
-	[DONE] functions
-	[DONE] whitespaces
-	[DONE] !
-	[DONE] constants
-	[DONE] AND, OR, MOD, LSH, ...
-	[DONE] ~ (CMP)
-	[DONE] ((3))!
-
-[DONE] strtod - wenn im rest was drinnen, warnung
-
-parser info von documentation.html in README
+parser: [ ] char* operations
+	[ ] bin,hex,oct
 
 =GUI======================================
 
@@ -49,13 +34,6 @@ update shortcuts text file
 
 #########################
 #########################
-
-1.2.1
-
-formula entry mode and functions 
-
-parser: [ ] char* operations
-	[ ] bin,hex,oct
 
 in general:
 
