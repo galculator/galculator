@@ -66,4 +66,9 @@ void gfunc_f2 (GtkToggleButton *button);
 
 void display_result_changed ();
 
+void remember_display_values();
+
+double string2double (char *string);
+
+void update_dispctrl();
 #endif /* general_functions.h */

@@ -191,17 +191,13 @@ void display_init (GtkWidget *a_parent_widget)
 	
 	gtk_text_buffer_get_iter_at_line (buffer, &iter, display_result_line);
 	gtk_text_buffer_insert_with_tags_by_name (buffer, &iter, 
-		prefs.rem_value, -1, "result", NULL);
+		CLEARED_DISPLAY, -1, "result", NULL);
 
 	display_update_modules ();
 
-	display_result_set (prefs.rem_value);
-	
 	/* number, angle and notation are now set in src/callbacks.c::
 	 * on_scientific_mode_activate resp on_basic_mode_activate.
 	 */
-
-	 
 }
 
 /*
@@ -529,15 +525,19 @@ void display_change_option (int new_status, int opt_group)
 {
 	int	old_status;
 	double	display_value=0;
+	double 	*stack;
 	
 	switch (opt_group) {
 		case DISPLAY_OPT_NUMBER:
 			update_active_buttons (new_status, current_status.notation);
 			if (current_status.number == new_status) return;
 			display_value = display_result_get_double ();
+			stack = display_stack_get_yzt_double ();
 			old_status = current_status.number;
 			current_status.number = new_status;
 			display_result_set_double (display_value);
+			display_stack_set_yzt_double (stack);
+			g_free (stack);
 			if ((prefs.vis_number) && (prefs.mode == SCIENTIFIC_MODE)) {
 				display_module_base_delete (DISPLAY_MARK_NUMBER, number_mod_labels);
 				display_module_base_create (number_mod_labels, DISPLAY_MARK_NUMBER, current_status.number);
@@ -690,17 +690,71 @@ void display_stack_remove ()
 	display_result_line = 0;
 }
 
-/* stack must be a 3 dimensional array
- *
+/* 
+ * display_stack_set_yzt_double - stack must be a 3 dimensional array. stack in
+ *	calc_basic IS NOT modified.
  */
 
-void display_stack_set_yzt (double *stack)
+void display_stack_set_yzt_double (double *stack)
 {
 	int		counter;
 
 	for (counter = 0; counter < display_result_line; counter++)
 		display_set_line_double (stack[counter], 
 			display_result_line - counter - 1, "stack");
+}
+
+/* 
+ * display_stack_set_yzt_double - stack in calc_basic IS NOT modified.
+ */
+
+void display_stack_set_yzt (char **stack)
+{
+	int		counter;
+	GtkTextIter	start;
+	
+	for (counter = 0; counter < display_result_line; counter++) {
+		display_delete_line (buffer, counter, &start);
+		gtk_text_buffer_insert_with_tags_by_name (buffer, &start, 
+			stack[display_result_line - counter - 1], -1, "stack", NULL);
+	}
+}
+
+/*
+ * display_stack_get_yzt - returns an three-sized char array with 1:1 copies
+ *	of the current displayed stack.
+ */
+
+char **display_stack_get_yzt ()
+{
+	char 		**stack;
+	GtkTextIter 	start, end;
+	int 		counter;
+	
+	stack = (char **) malloc (3* sizeof (char *));
+	for (counter = 0; counter < 3; counter++) {
+		display_get_line_iters (buffer, display_result_line - counter - 1, &start, &end);
+		stack[counter] = gtk_text_buffer_get_text (buffer, &start, &end, TRUE);
+	}
+	return stack;
+}
+
+/*
+ * display_stack_get_yzt_double - returns the string array of display_stack_get_yzt
+ * 	as double array.
+ */
+
+double *display_stack_get_yzt_double ()
+{
+	char 	**string_stack;
+	double	*double_stack;
+	int	counter;
+	
+	double_stack = (double *) malloc (display_result_line * sizeof(double));
+	string_stack = display_stack_get_yzt();
+	for (counter = 0; counter < display_result_line; counter++)
+		double_stack[counter] = string2double (string_stack[counter]);
+	return double_stack;
 }
 
 void display_set_line_double (double value, int line, char *tag)
@@ -713,7 +767,8 @@ void display_set_line_double (double value, int line, char *tag)
 	
 	string_value = get_display_number_string (value, current_status.number);
 	gtk_text_buffer_insert_with_tags_by_name (buffer, &start, string_value, -1, tag, NULL);
-	display_result_counter = strlen (string_value);
+	if (line == display_result_line) 
+		display_result_counter = strlen (string_value);
 	g_free (string_value);
 }
 
@@ -807,26 +862,14 @@ char *display_result_get ()
 
 double display_result_get_double ()
 {
-	switch (current_status.number) {
-		case CS_DEC:
-			return atof(display_result_get());
-			break;
-		case CS_HEX:
-			return axtof(display_result_get(), 16, prefs.hex_bits, 
-				prefs.hex_signed);
-			break;
-		case CS_OCT:
-			return axtof(display_result_get(), 8, prefs.oct_bits, 
-				prefs.oct_signed);
-			break;
-		case CS_BIN:
-			return axtof(display_result_get(), 2, prefs.bin_bits, 
-				prefs.bin_signed);
-			break;
-		default:
-			fprintf (stderr, _("[%s] unknown number base in function \"display_result_get_double\". %s\n"), PROG_NAME, BUG_REPORT);
-	}
-	return 0;
+	char 	*result_string;
+	double	ret_val;
+	
+	result_string = display_result_get();
+	ret_val = string2double (result_string);
+	g_free (result_string);
+		
+	return ret_val;
 }	
 
 

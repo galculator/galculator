@@ -73,6 +73,7 @@ void alg_init (int debug_level);
 void alg_free ();
 
 void rpn_init (int size, int debug_level);
+void rpn_stack_set_array (double *values, int length);
 void rpn_stack_push (double number);
 double rpn_stack_operation (s_cb_token current_token);
 double rpn_stack_rolldown (double x);

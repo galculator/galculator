@@ -114,14 +114,6 @@ int main (int argc, char *argv[])
 	constant = config_file_get_constants();
 	g_free (config_file_name);
 
-	/* as the following feature is out of scope of config_file.c, we do it
-	 * here handle "remember display value on exit" and newline
-	 */
-	if (prefs.rem_display == FALSE) {	
-		g_free (prefs.rem_value);
-		prefs.rem_value = g_strdup (DEFAULT_REM_VALUE);
-	}	
-
 	/* at first get the main frame */
 	
 	main_window = ui_main_window_create();
@@ -149,6 +141,8 @@ int main (int argc, char *argv[])
 	
 	/* apply changes */
 	apply_preferences (prefs);
+
+	remember_display_values ();
 
 	memory.data = NULL;
 	memory.len = 0;

@@ -384,6 +384,7 @@ double rpn_stack_swapxy (double x)
 }
 
 /* rpn_stack_rolldown. y->x, z->y, ..., x->t
+ * return value ret_val is new result.
  */
 
 double rpn_stack_rolldown (double x)
@@ -391,6 +392,7 @@ double rpn_stack_rolldown (double x)
 	double	*a, ret_val;
 	int	counter;
 	
+	if (rpn_stack_size <= 0) return x;
 	ret_val = 0.;
 	/* in the following case we have to fill up with zeros. thus this is
 	 * done virtually in rpn_stack_get.

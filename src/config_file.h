@@ -67,7 +67,10 @@
 #define DEFAULT_NOTATION		CS_PAN
 #define DEFAULT_STACK_SIZE		3
 #define DEFAULT_REM_DISPLAY		FALSE
-#define	DEFAULT_REM_VALUE		"0"	/* must not end with a newline! */
+#define	DEFAULT_REM_VALUEX		"0"	/* must not end with a newline! */
+#define	DEFAULT_REM_VALUEY		"0"
+#define	DEFAULT_REM_VALUEZ		"0"
+#define	DEFAULT_REM_VALUET		"0"
 #define DEFAULT_SHOW_MENU		TRUE
 
 typedef struct {
@@ -112,7 +115,10 @@ typedef struct {
 	int		def_notation;
 	int		stack_size;
 	gboolean	rem_display;
-	char		*rem_value;		/* done as string */
+	char		*rem_valuex;		/* done as string */
+	char		*rem_valuey;
+	char		*rem_valuez;
+	char		*rem_valuet;
 	gboolean	show_menu;
 } s_preferences;
 

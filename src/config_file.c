@@ -39,7 +39,7 @@
 #include "general_functions.h"
 
 s_preferences prefs;
-static s_prefs_entry prefs_list[38] = {
+static s_prefs_entry prefs_list[41] = {
 	{"display_bkg_color", &(prefs.bkg_color), STRING, "prefs_bkg_color", set_button_color},
 	{"display_result_font", &(prefs.result_font), STRING, "prefs_result_font", set_button_label},
 	{"display_result_color", &(prefs.result_color), STRING, "prefs_result_color", set_button_color},
@@ -49,7 +49,7 @@ static s_prefs_entry prefs_list[38] = {
 	{"display_module_active_color", &(prefs.act_mod_color), STRING, "prefs_act_mod_color", set_button_color},
 	{"display_module_inactive_color", &(prefs.inact_mod_color), STRING, "prefs_inact_mod_color", set_button_color},
 	{"display_module_number", &(prefs.vis_number), BOOLEAN, "prefs_vis_number", set_checkbutton},
-	{"display_module_angle", &(prefs.vis_angle), BOOLEAN, "prefs_vis_angle", set_checkbutton},
+/*10.*/	{"display_module_angle", &(prefs.vis_angle), BOOLEAN, "prefs_vis_angle", set_checkbutton},
 	{"display_module_notation", &(prefs.vis_notation), BOOLEAN, "prefs_vis_notation", set_checkbutton},
 	{"display_module_arith", &(prefs.vis_arith), BOOLEAN, "prefs_vis_arith", set_checkbutton},
 	{"display_module_open", &(prefs.vis_bracket), BOOLEAN, "prefs_vis_bracket", set_checkbutton},
@@ -59,7 +59,7 @@ static s_prefs_entry prefs_list[38] = {
 	{"button_height", &(prefs.button_height), INTEGER, "prefs_button_height", set_spinbutton},
 	{"function_button_group", &(prefs.vis_funcs), BOOLEAN, NULL, NULL},
 	{"dispctrl_button_group", &(prefs.vis_dispctrl), BOOLEAN, NULL, NULL},
-	{"logic_button_group", &(prefs.vis_logic), BOOLEAN, NULL, NULL},
+/*20.*/	{"logic_button_group", &(prefs.vis_logic), BOOLEAN, NULL, NULL},
 	{"standard_button_group", &(prefs.vis_standard), BOOLEAN, NULL, NULL},
 	{"mode", &(prefs.mode), INTEGER, NULL, NULL},
 	{"hex_bits", &(prefs.hex_bits), INTEGER, "prefs_hex_bits", set_spinbutton},
@@ -69,17 +69,20 @@ static s_prefs_entry prefs_list[38] = {
 	{"bin_bits", &(prefs.bin_bits), INTEGER, "prefs_bin_bits", set_spinbutton},
 	{"bin_signed", &(prefs.bin_signed), BOOLEAN, "prefs_bin_signed", set_checkbutton},
 	{"bin_fixed", &(prefs.bin_fixed), BOOLEAN, "prefs_bin_fixed", set_checkbutton},
-	{"bin_length", &(prefs.bin_length), INTEGER, "prefs_bin_length", set_spinbutton},
+/*30.*/	{"bin_length", &(prefs.bin_length), INTEGER, "prefs_bin_length", set_spinbutton},
 	{"default_number_base", &(prefs.def_number), INTEGER, NULL, NULL},
 	{"default_angle_base", &(prefs.def_angle), INTEGER, NULL, NULL},
 	{"default_notation_mode", &(prefs.def_notation), INTEGER, NULL, NULL},
 	{"stack_size", &(prefs.stack_size), INTEGER, NULL, set_stacksize},
 	{"remembers_display", &(prefs.rem_display), BOOLEAN, "prefs_rem_display", set_checkbutton},
-	{"remembered_value", &(prefs.rem_value), STRING, NULL, NULL},
-	{"show_menu_bar", &(prefs.show_menu), BOOLEAN, "prefs_show_menu", set_checkbutton},
+	{"remembered_valuex", &(prefs.rem_valuex), STRING, NULL, NULL},
+	{"remembered_valuey", &(prefs.rem_valuey), STRING, NULL, NULL},
+	{"remembered_valuez", &(prefs.rem_valuez), STRING, NULL, NULL},
+	{"remembered_valuet", &(prefs.rem_valuet), STRING, NULL, NULL},
+/*40.*/	{"show_menu_bar", &(prefs.show_menu), BOOLEAN, "prefs_show_menu", set_checkbutton},
 	{NULL, NULL, 0, NULL, NULL}
 };
-static char *prefs_list_old_entries[2] = {"show_status_bar", NULL};
+static char *prefs_list_old_entries[3] = {"show_status_bar", "remembered_value", NULL};
 static s_constant *cf_constant;
 
 /*
@@ -133,7 +136,10 @@ static void config_file_get_default_prefs (s_preferences *this_prefs)
 	this_prefs->def_angle = DEFAULT_ANGLE;
 	this_prefs->def_notation = DEFAULT_NOTATION;
 	this_prefs->rem_display = DEFAULT_REM_DISPLAY;
-	this_prefs->rem_value = g_strdup (DEFAULT_REM_VALUE);
+	this_prefs->rem_valuex = g_strdup (DEFAULT_REM_VALUEX);
+	this_prefs->rem_valuey = g_strdup (DEFAULT_REM_VALUEY);
+	this_prefs->rem_valuez = g_strdup (DEFAULT_REM_VALUEZ);
+	this_prefs->rem_valuet = g_strdup (DEFAULT_REM_VALUET);
 	this_prefs->show_menu = DEFAULT_SHOW_MENU;
 }
 
