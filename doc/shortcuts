@@ -18,8 +18,8 @@ Arithmetic operations:
 |	OR
 x, X	XOR (^ is used for power)
 ~	CMP
-(	(
-)	)
+(	( - in RPN mode x<>y
+)	) - in RPN mode rolldn
 .,	. (decimal point)
 +	addition
 -	subtraction
@@ -51,6 +51,7 @@ q, Q	sQuare (x^2)
 r, R	sqRt
 l, L	Log
 n, N	lN
+^, p, P power (x^y)
 
 Display control:
 

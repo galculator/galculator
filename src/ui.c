@@ -300,32 +300,35 @@ void ui_main_window_set_dispctrl (int location)
 	/* destroy any existing display controls */
 	if (dispctrl_xml) {
 		table_dispctrl = glade_xml_get_widget (dispctrl_xml, "table_dispctrl");
-		if (table_dispctrl) gtk_widget_destroy (table_dispctrl);
+		if (table_dispctrl) gtk_widget_destroy (table_dispctrl); 
 		g_free (dispctrl_xml);
 	}	
-	/* now create the one at location */
-	if (location == DISPCTRL_BOTTOM) {
-		box = glade_xml_get_widget (main_window_xml, "window_vbox");
-		dispctrl_xml = glade_file_open (DISPCTRL_BOTTOM_GLADE_FILE, 
-			"table_dispctrl", TRUE);
-		ui_pack_from_xml (box, 2, dispctrl_xml, "table_dispctrl", 
-			"button_clr", TRUE, TRUE);
-	} else if (location == DISPCTRL_RIGHT) {
-		printf ("2\n");
-		box = glade_xml_get_widget (main_window_xml, "display_hbox");
-		dispctrl_xml = glade_file_open (DISPCTRL_RIGHT_GLADE_FILE, 
-			"table_dispctrl", TRUE);
-		ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl",
-			"button_clr", FALSE, FALSE);
-	} else if (location == DISPCTRL_RIGHTV) {
-		printf ("3\n");
-		box = glade_xml_get_widget (main_window_xml, "display_hbox");
-		dispctrl_xml = glade_file_open (DISPCTRL_RIGHTV_GLADE_FILE, 
-			"table_dispctrl", TRUE);
-		ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl",
-			"button_clr", FALSE, FALSE);
-	} else if (location != DISPCTRL_NONE) 
-		error_message ("Unknown mode in \"ui_main_window_set_dispctrl\"");
+	/* now create the new one at location */
+	switch(location) {
+		case DISPCTRL_BOTTOM:
+			box = glade_xml_get_widget (main_window_xml, "window_vbox");
+			dispctrl_xml = glade_file_open (DISPCTRL_BOTTOM_GLADE_FILE, 
+				"table_dispctrl", TRUE);
+			ui_pack_from_xml (box, 2, dispctrl_xml, "table_dispctrl", 
+				"button_clr", TRUE, TRUE);
+			break;
+		case DISPCTRL_RIGHT:
+			box = glade_xml_get_widget (main_window_xml, "display_hbox");
+			dispctrl_xml = glade_file_open (DISPCTRL_RIGHT_GLADE_FILE, 
+				"table_dispctrl", TRUE);
+			ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl",
+				"button_clr", FALSE, FALSE);
+			break;
+		case DISPCTRL_RIGHTV:
+			box = glade_xml_get_widget (main_window_xml, "display_hbox");
+			dispctrl_xml = glade_file_open (DISPCTRL_RIGHTV_GLADE_FILE, 
+				"table_dispctrl", TRUE);
+			ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl",
+				"button_clr", FALSE, FALSE);
+			break;
+		default:
+			error_message ("Unknown mode in \"ui_main_window_set_dispctrl\"");
+	}
 	set_disp_ctrl_object_data ();
 }
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.1.3CVS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-10-07 20:02+0300\n"
+"POT-Creation-Date: 2003-11-11 00:26+0200\n"
 "PO-Revision-Date: 2003-08-31 00:45+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -57,12 +57,12 @@ msgstr "背景色の選択"
 msgid "Select button font"
 msgstr "ボタン用フォントの選択"
 
-#: src/callbacks.c:81
+#: src/callbacks.c:97
 #, c-format
 msgid "About %s"
 msgstr "%s について"
 
-#: src/callbacks.c:84
+#: src/callbacks.c:100
 #, c-format
 msgid ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
@@ -75,42 +75,42 @@ msgstr ""
 "\n"
 "(c) 2002-2003 by Simon Floery (chimaira@users.sf.net)"
 
-#: src/callbacks.c:379 ui/scientific_buttons.glade.h:21
+#: src/callbacks.c:395 ui/scientific_buttons.glade.h:21
 #: ui/basic_buttons.glade.h:21
 msgid "="
 msgstr "="
 
-#: src/callbacks.c:381 ui/scientific_buttons.glade.h:99
+#: src/callbacks.c:397 ui/scientific_buttons.glade.h:99
 msgid "x^y"
 msgstr "x^y"
 
-#: src/callbacks.c:383 ui/scientific_buttons.glade.h:3
+#: src/callbacks.c:399 ui/scientific_buttons.glade.h:3
 #: ui/basic_buttons.glade.h:3
 msgid "("
 msgstr "("
 
-#: src/callbacks.c:385 ui/scientific_buttons.glade.h:4
+#: src/callbacks.c:401 ui/scientific_buttons.glade.h:4
 #: ui/basic_buttons.glade.h:4
 msgid ")"
 msgstr ")"
 
-#: src/callbacks.c:401
+#: src/callbacks.c:420
 msgid "ENT"
 msgstr "ENT"
 
-#: src/callbacks.c:403
+#: src/callbacks.c:422
 msgid "y^x"
 msgstr "y^x"
 
-#: src/callbacks.c:405
+#: src/callbacks.c:424
 msgid "x<>y"
 msgstr ""
 
-#: src/callbacks.c:407
+#: src/callbacks.c:426
 msgid "roll"
 msgstr ""
 
-#: src/callbacks.c:956
+#: src/callbacks.c:978
 msgid "save here"
 msgstr "ここに保存する"
 
@@ -139,7 +139,7 @@ msgstr ""
 " -v, --version\t\tバージョン情報を表示する\n"
 "\n"
 
-#: src/galculator.h:55
+#: src/galculator.h:58
 msgid "Please submit a bugreport."
 msgstr "バグの報告をして下さい。"
 
@@ -148,28 +148,28 @@ msgstr "バグの報告をして下さい。"
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr "[%s] %c - 不明な操作文字です。%s\n"
 
-#: src/config_file.c:148
+#: src/config_file.c:154
 msgid "Pi"
 msgstr "Pi"
 
-#: src/config_file.c:149
+#: src/config_file.c:155
 msgid "pi"
 msgstr "pi"
 
-#: src/config_file.c:151
+#: src/config_file.c:157
 msgid "Euler's Number"
 msgstr "Euler's Number"
 
-#: src/config_file.c:152
+#: src/config_file.c:158
 msgid "e"
 msgstr "e"
 
-#: src/config_file.c:181
+#: src/config_file.c:187
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
 msgstr "[%s] 設定ファイル: 不明なエントリ %s=%s を無視します。%s\n"
 
-#: src/config_file.c:197
+#: src/config_file.c:203
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
@@ -177,14 +177,14 @@ msgstr ""
 "[%s] 設定ファイル: %s は TRUE または FALSE にして下さい。デフォルト値を使用し"
 "ます。%s\n"
 
-#: src/config_file.c:204
+#: src/config_file.c:210
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
 msgstr ""
 "[%s] 設定ファイル: config 構造体の中にある不明な key_type を無視します。%s\n"
 
-#: src/config_file.c:222
+#: src/config_file.c:228
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
@@ -193,7 +193,7 @@ msgstr ""
 "[%s] 不明なセクション %s が設定ファイル %s の中にあります。前のセクションを使"
 "用します。\n"
 
-#: src/config_file.c:301
+#: src/config_file.c:307
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
@@ -203,7 +203,7 @@ msgstr ""
 "[%s] 設定ファイル: 設定ファイル %s を読み込めません。初めて %s を起動した場合"
 "は何も心配ありません。デフォルト値を使用します。\n"
 
-#: src/config_file.c:336
+#: src/config_file.c:342
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
@@ -212,7 +212,7 @@ msgstr ""
 "[%s] 設定ファイル: 書き込む際におかしな論理値がありました。このキーをスキップ"
 "します。%s\n"
 
-#: src/config_file.c:344
+#: src/config_file.c:350
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
@@ -221,7 +221,7 @@ msgstr ""
 "[%s] 設定ファイル: \"config_structure\" の中にある不明な \"key_type\" を無視"
 "します。%s\n"
 
-#: src/config_file.c:359
+#: src/config_file.c:365
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
@@ -229,27 +229,20 @@ msgstr ""
 "[%s] 設定ファイル: 設定ファイル %s へ保存または書き込むことができませんでし"
 "た。\n"
 
-#: src/display.c:566
+#: src/display.c:571
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\". %s\n"
 msgstr ""
 "[%s] 関数 \"display_change_option\" に不明な表示オプションが渡されました。%"
 "s\n"
 
-#: src/display.c:753
+#: src/display.c:813
 #, c-format
 msgid "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
 msgstr ""
 "[%s] 関数 \"display_result_set_angle\" に不明なベース角度が渡されました。%s\n"
 
-#: src/display.c:827
-#, c-format
-msgid ""
-"[%s] unknown number base in function \"display_result_get_double\". %s\n"
-msgstr ""
-"[%s] 関数 \"display_result_get_double\" に不明な基数が渡されました。%s\n"
-
-#: src/display.c:852
+#: src/display.c:900
 #, c-format
 msgid ""
 "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
@@ -293,6 +286,13 @@ msgid ""
 msgstr ""
 "[%s] 関数 \"display_result_set_double\" に不明な基数が渡されました。%s\n"
 
+#: src/general_functions.c:515
+#, c-format
+msgid ""
+"[%s] unknown number base in function \"display_result_get_double\". %s\n"
+msgstr ""
+"[%s] 関数 \"display_result_get_double\" に不明な基数が渡されました。%s\n"
+
 #: src/ui.c:85
 #, c-format
 msgid ""
@@ -303,7 +303,7 @@ msgstr ""
 "フェースを構築するために必要です。正しくインストールされたか、さらにそのファ"
 "イルの権限をそれぞれ確認して下さい！\n"
 
-#: src/ui.c:367
+#: src/ui.c:378
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -314,7 +314,7 @@ msgstr ""
 "%s を使用すると問題が発生するかもしれません！ %s\n"
 ")"
 
-#: src/ui.c:688
+#: src/ui.c:699
 #, c-format
 msgid "%s Preferences"
 msgstr "%s の設定"

@@ -1,5 +1,12 @@
-2003-11-19 Simon Floery <chimaira@users.sf.net>
+########################################
+# 2003-11-10 galculator 1.1.4 released #
+########################################
+
+2003-11-09 Simon Floery <chimaira@users.sf.net>
 	* RPN stack is remembered. several fixes
+	* fixed DBTS #219390 (fixed de.po)
+	* updated french and german translations
+	* fixed sf.net #820399 (added p,P shortcuts)
 
 2003-10-07 Simon Floery <chimaira@users.sf.net>
 	* introduced display_result_changed. fixes sf.net bug #750519
