@@ -1,3 +1,7 @@
+2003-09-23 Simon Floery <chimaira@users.sf.net>
+	* agreed to and fixed sf.net bug #799417 (memory save, memory read and
+	constant retrieve start new calc entry)
+
 2003-09-20 Simon Floery <chimaira@users.sf.net>
 	* sf.net bug #798511 fixed
 
