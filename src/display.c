@@ -150,7 +150,7 @@ void display_create_text_tags ()
 	gtk_text_buffer_create_tag (buffer, "stack", 
 		"font", prefs.stack_font,
 		"foreground", prefs.stack_color,
-		"justification", GTK_JUSTIFY_RIGHT, 
+		"justification", GTK_JUSTIFY_LEFT, 
 		NULL);
 }
 
