@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: galculator 1.2.0CVS\n"
+"Project-Id-Version: galculator 1.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-20 19:20+0200\n"
-"PO-Revision-Date: 2004-02-29 23:29+0900\n"
+"POT-Creation-Date: 2004-03-21 23:35+0900\n"
+"PO-Revision-Date: 2004-03-21 23:35+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -412,7 +412,7 @@ msgstr "コントロール"
 
 #: ui/main_frame.glade.h:7
 msgid "Formula entry text field - enter string expression to compute here."
-msgstr ""
+msgstr "公式のエントリ - ここに計算式を入力して下さい"
 
 #: ui/main_frame.glade.h:8 ui/prefs.glade.h:31
 msgid "Functions"
@@ -990,9 +990,8 @@ msgid "<b>User defined constants:</b>"
 msgstr "<b>ユーザ定義の定数:</b>"
 
 #: ui/prefs.glade.h:14
-#, fuzzy
 msgid "<b>User defined functions:</b>"
-msgstr "ユーザ定義の関数"
+msgstr "<b>ユーザ定義の関数:</b>"
 
 #: ui/prefs.glade.h:15
 msgid "<b>Visibility</b>"
@@ -1040,7 +1039,7 @@ msgstr "表示"
 
 #: ui/prefs.glade.h:30
 msgid "Expression:"
-msgstr ""
+msgstr "式:"
 
 #: ui/prefs.glade.h:32
 msgid "General"
@@ -1123,9 +1122,8 @@ msgid "Value:"
 msgstr "値:"
 
 #: ui/prefs.glade.h:52
-#, fuzzy
 msgid "Variable:"
-msgstr "値:"
+msgstr "変数:"
 
 #: ui/prefs.glade.h:53
 msgid "finite stack size (x, y, z, t)"

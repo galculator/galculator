@@ -34,5 +34,11 @@ double grad2rad (double value);
 double asinh (double x);
 double acosh (double x);
 double atanh (double x);
+double sin_wrapper (double x);
+double asin_wrapper (double x);
+double cos_wrapper (double x);
+double acos_wrapper (double x);
+double tan_wrapper (double x);
+double atan_wrapper (double x);
 
 #endif /* math_functions.h */

@@ -36,9 +36,10 @@
 
 #define RPN_FINITE_STACK		3
 #define RPN_INFINITE_STACK		-1
-#define ALG_OBJECT			GSList
 
 #include <glib.h>
+
+typedef GSList ALG_OBJECT;
 
 enum {THIS_LEVEL, LEVEL_UP, LEVEL_DOWN};
 

@@ -1,6 +1,5 @@
-1.2.1
+1.2.3
 -----
-
 
 =i18n====================================
 
@@ -44,6 +43,8 @@ undo last operation
 
 nice:
 ~~~~~
+
+backspace in form entry nimmt ganze ids weg (z.B. sqrt)
 
 some rounding
 

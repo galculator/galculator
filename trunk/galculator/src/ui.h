@@ -73,6 +73,7 @@ void ui_formula_entry_backspace ();
 void ui_formula_entry_state ();
 void ui_button_set_pan ();
 void ui_button_set_rpn ();
+void ui_relax_fmod_buttons ();
 void position_menu (GtkMenu *menu, 
 		gint *x, 
 		gint *y, 

@@ -140,7 +140,6 @@ typedef struct {
 	/* for simplicity we put the display_names not in an array */
 	char		*display_names[4];
 	double		(*func[4])(double);
-	gboolean	is_trigonometric;
 } s_function_map;
 
 typedef struct {

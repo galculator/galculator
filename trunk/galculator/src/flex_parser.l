@@ -102,16 +102,16 @@ static int 		bracket_counter=0;
 	/* 
 	 * FUNCTIONS
 	 */
-sin{SPACES}"("		flex_parser_submit_func_token (sin);
-asin{SPACES}"("		flex_parser_submit_func_token (asin);
+sin{SPACES}"("		flex_parser_submit_func_token (sin_wrapper);
+asin{SPACES}"("		flex_parser_submit_func_token (asin_wrapper);
 sinh{SPACES}"("		flex_parser_submit_func_token (sinh);
 asinh{SPACES}"("	flex_parser_submit_func_token (asinh);
-cos{SPACES}"("		flex_parser_submit_func_token (cos);
-acos{SPACES}"("		flex_parser_submit_func_token (acos);
+cos{SPACES}"("		flex_parser_submit_func_token (cos_wrapper);
+acos{SPACES}"("		flex_parser_submit_func_token (acos_wrapper);
 cosh{SPACES}"("		flex_parser_submit_func_token (cosh);
 acosh{SPACES}"("	flex_parser_submit_func_token (acosh);
-tan{SPACES}"("		flex_parser_submit_func_token (tan);
-atan{SPACES}"("		flex_parser_submit_func_token (atan);
+tan{SPACES}"("		flex_parser_submit_func_token (tan_wrapper);
+atan{SPACES}"("		flex_parser_submit_func_token (atan_wrapper);
 tanh{SPACES}"("		flex_parser_submit_func_token (tanh);
 atanh{SPACES}"("	flex_parser_submit_func_token (atanh);
 sqrt{SPACES}"("		flex_parser_submit_func_token (sqrt);

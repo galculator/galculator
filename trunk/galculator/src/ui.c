@@ -134,9 +134,7 @@ static void apply_object_data (s_operation_map operation_map[],
 		object = G_OBJECT (glade_xml_get_widget (button_box_xml, 
 			function_map[counter].button_name));
 		g_object_set_data (object, "display_names", function_map[counter].display_names);
-		g_object_set_data (object, "func", func);
-		g_object_set_data (object, "is_trigonometric", 
-			GINT_TO_POINTER((int)function_map[counter].is_trigonometric));		
+		g_object_set_data (object, "func", func);	
 		counter++;
 	};
 }
@@ -176,15 +174,15 @@ static void set_scientific_object_data ()
 	/* declare this one static as we need the display_names throughout */
 	
 	static s_function_map function_map[] = {
-		{"button_sin", {"sin(", "asin(", "sinh(", "asinh("}, {sin, asin, sinh, asinh}, TRUE},
-		{"button_cos", {"cos(", "acos(", "cosh(", "acosh("}, {cos, acos, cosh, acosh}, TRUE},
-		{"button_tan", {"tan(", "atan(", "tanh(", "atanh("}, {tan, atan, tanh, atanh}, TRUE},
-		{"button_log", {"log(", "10^", "log(", "log("}, {log10, pow10y, log10, log10}, FALSE},
-		{"button_ln", {"ln(", "e^", "ln(", "ln("}, {log, exp, log, log}, FALSE},
-		{"button_sq", {"^2", "sqrt(", "^2", "^2"}, {powx2, sqrt, powx2, powx2}, FALSE},
-		{"button_sqrt", {"sqrt(", "^2", "sqrt(", "sqrt("}, {sqrt, powx2, sqrt, sqrt}, FALSE},
-		{"button_fac", {"!", "!", "!", "!"}, {factorial, factorial, factorial, factorial}, FALSE},
-		{"button_cmp", {"~", "~", "~", "~"}, {cmp, cmp, cmp, cmp}, FALSE},
+		{"button_sin", {"sin(", "asin(", "sinh(", "asinh("}, {sin_wrapper, asin_wrapper, sinh, asinh}},
+		{"button_cos", {"cos(", "acos(", "cosh(", "acosh("}, {cos_wrapper, acos_wrapper, cosh, acosh}},
+		{"button_tan", {"tan(", "atan(", "tanh(", "atanh("}, {tan_wrapper, atan_wrapper, tanh, atanh}},
+		{"button_log", {"log(", "10^", "log(", "log("}, {log10, pow10y, log10, log10}},
+		{"button_ln", {"ln(", "e^", "ln(", "ln("}, {log, exp, log, log}},
+		{"button_sq", {"^2", "sqrt(", "^2", "^2"}, {powx2, sqrt, powx2, powx2}},
+		{"button_sqrt", {"sqrt(", "^2", "sqrt(", "sqrt("}, {sqrt, powx2, sqrt, sqrt}},
+		{"button_fac", {"!", "!", "!", "!"}, {factorial, factorial, factorial, factorial}},
+		{"button_cmp", {"~", "~", "~", "~"}, {cmp, cmp, cmp, cmp}},
 		{NULL}
 	};
 
@@ -217,7 +215,7 @@ static void set_basic_object_data ()
 	};
 	
 	s_function_map function_map[] = {
-		{"button_sqrt", {"sqrt", "^2", "sqrt", "sqrt"}, {sqrt, powx2, sqrt, sqrt}, FALSE},
+		{"button_sqrt", {"sqrt", "^2", "sqrt", "sqrt"}, {sqrt, powx2, sqrt, sqrt}},
 		{NULL}
 	};
 	
@@ -1026,4 +1024,14 @@ void ui_button_set_rpn ()
 		_("x<>y"), _("swap current number with top of stack"));
 	set_button_label_and_tooltip (button_box_xml, "button_f2", 
 		_("roll"), _("roll down stack"));	
+}
+
+void ui_relax_fmod_buttons ()
+{
+	GtkWidget	*tbutton;
+	
+	tbutton = glade_xml_get_widget (button_box_xml, "button_inv");
+	gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
+	tbutton = glade_xml_get_widget (button_box_xml, "button_hyp");
+	gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
 }

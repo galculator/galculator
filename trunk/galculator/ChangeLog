@@ -1,3 +1,19 @@
+########################################
+# 2003-04-01 galculator 1.2.2 released #
+########################################
+
+2004-04-01 Simon Floery <chimaira@users.sf.net>
+	* bugfix: inv, hyp button in form mode release (thanks to christian)
+	* bugfix: rolldn, swapxy start new entry now (thanks to christian)
+	* 0e+ -> 1e+ shortcut
+	* bugfix: angle units in formula entry mode (thanks to andrew)
+	* bugfix: add -> sum tooltip for translations (thanks to takeshi)
+	* updated ja.po
+
+########################################
+# 2003-03-20 galculator 1.2.1 released #
+########################################
+
 2004-03-20 Simon Floery <chimaira@users.sf.net>
 	* enable nested calls of flex_parser
 	* fixed default user defined functions

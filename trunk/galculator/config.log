@@ -61,7 +61,7 @@ configure:1681: found /usr/bin/gcc
 configure:1691: result: gcc
 configure:1935: checking for C compiler version
 configure:1938: gcc --version </dev/null >&5
-gcc (GCC) 3.3.3 (Debian 20040314)
+gcc (GCC) 3.3.3 (Debian 20040321)
 Copyright (C) 2003 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -71,7 +71,7 @@ configure:1943: gcc -v </dev/null >&5
 Reading specs from /usr/lib/gcc-lib/i486-linux/3.3.3/specs
 Configured with: ../src/configure -v --enable-languages=c,c++,java,f77,pascal,objc,ada,treelang --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-gxx-include-dir=/usr/include/c++/3.3 --enable-shared --with-system-zlib --enable-nls --without-included-gettext --enable-__cxa_atexit --enable-clocale=gnu --enable-debug --enable-java-gc=boehm --enable-java-awt=xlib,gtk --enable-objc-gc i486-linux
 Thread model: posix
-gcc version 3.3.3 (Debian 20040314)
+gcc version 3.3.3 (Debian 20040321)
 configure:1946: $? = 0
 configure:1948: gcc -V </dev/null >&5
 gcc: `-V' option must have argument
@@ -142,7 +142,7 @@ configure: failed program was:
 | #define PACKAGE_STRING ""
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE "galculator"
-| #define VERSION "1.2.1"
+| #define VERSION "1.2.2CVS"
 | /* end confdefs.h.  */
 | 
 | /* Override any gcc2 internal prototype to avoid an error.  */
@@ -175,7 +175,7 @@ configure: failed program was:
 | #define PACKAGE_STRING ""
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE "galculator"
-| #define VERSION "1.2.1"
+| #define VERSION "1.2.2CVS"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
 configure:2875: result: gcc -E
@@ -193,7 +193,7 @@ configure: failed program was:
 | #define PACKAGE_STRING ""
 | #define PACKAGE_BUGREPORT ""
 | #define PACKAGE "galculator"
-| #define VERSION "1.2.1"
+| #define VERSION "1.2.2CVS"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
 configure:2987: checking for egrep
@@ -414,6 +414,7 @@ config.status:762: creating po/Makefile.in
 config.status:762: creating ui/Makefile
 config.status:762: creating doc/Makefile
 config.status:828: creating config.h
+config.status:950: config.h is unchanged
 config.status:1108: executing default-1 commands
 config.status:1108: executing default-2 commands
 config.status:1108: executing default-3 commands
@@ -557,7 +558,7 @@ PO_IN_DATADIR_TRUE=''
 SET_MAKE=''
 SHELL='/bin/sh'
 USE_NLS='yes'
-VERSION='1.2.1'
+VERSION='1.2.2CVS'
 XGETTEXT='/usr/bin/xgettext'
 ac_ct_CC='gcc'
 bindir='${exec_prefix}/bin'
@@ -606,7 +607,7 @@ target_alias=''
 #define PACKAGE_TARNAME ""
 #define PACKAGE_VERSION ""
 #define STDC_HEADERS 1
-#define VERSION "1.2.1"
+#define VERSION "1.2.2CVS"
 #define YYTEXT_POINTER 1
 
 configure: exit 0
