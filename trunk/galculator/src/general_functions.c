@@ -567,12 +567,15 @@ void set_button_label_and_tooltip (GladeXML *xml, char *button_name,
 
 gboolean formula_entry_is_active (GtkWidget *window_widget)
 {
-	GtkWidget	*active_widget, *main_window;
+	GtkWidget	*active_widget=NULL, *main_window=NULL;
 	
 	main_window = glade_xml_get_widget (main_window_xml, "main_window");
-	active_widget = gtk_window_get_focus ((GtkWindow *)main_window);
-	return (!strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(window_widget)),"main_window") & 
-		!strcmp (gtk_widget_get_name (active_widget), "formula_entry"));
+	if (main_window != NULL)
+		active_widget = gtk_window_get_focus ((GtkWindow *)main_window);
+	if (active_widget != NULL)
+		return !strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(window_widget)),"main_window") &
+			!strcmp (gtk_widget_get_name (active_widget), "formula_entry");
+	return FALSE;
 }
 
 s_flex_parser_result compute_user_function (char *expression, char *variable, char *value)
