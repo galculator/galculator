@@ -854,7 +854,7 @@ void display_append_e (GtkToggleButton *button)
 	if (current_status.number != CS_DEC) return;
 	if ((current_status.calc_entry_start_new == FALSE) && 
 		(strcmp (display_result_get(), "0") != 0)) {
-		if (strstr (display_result_get(), "e+") == NULL) {
+		if (strstr (display_result_get(), "e") == NULL) {
 			display_get_line_end_iter (buffer, display_result_line, &end);
 			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, "e+", -1, "result", NULL);
 		}

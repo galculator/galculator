@@ -8,7 +8,7 @@
 	* 0e+ -> 1e+ shortcut
 	* bugfix: angle units in formula entry mode (thanks to andrew)
 	* bugfix: add -> sum tooltip for translations (thanks to takeshi)
-	* updated ja.po
+	* updated ja.po, de.po
 
 ########################################
 # 2003-03-20 galculator 1.2.1 released #
