@@ -50,7 +50,7 @@ static s_prefs_entry prefs_list[53] = {
 	{"display_module_active_color", &(prefs.act_mod_color), STRING, "prefs_act_mod_color", set_button_color},
 	{"display_module_inactive_color", &(prefs.inact_mod_color), STRING, "prefs_inact_mod_color", set_button_color},
 	{"display_module_number", &(prefs.vis_number), BOOLEAN, "prefs_vis_number", set_checkbutton},
-/*10.*/	{"display_module_angle", &(prefs.vis_angle), BOOLEAN, "prefs_vis_angle", set_checkbutton},
+/*10*/	{"display_module_angle", &(prefs.vis_angle), BOOLEAN, "prefs_vis_angle", set_checkbutton},
 	{"display_module_notation", &(prefs.vis_notation), BOOLEAN, "prefs_vis_notation", set_checkbutton},
 	{"display_module_arith", &(prefs.vis_arith), BOOLEAN, "prefs_vis_arith", set_checkbutton},
 	{"display_module_open", &(prefs.vis_bracket), BOOLEAN, "prefs_vis_bracket", set_checkbutton},
@@ -60,7 +60,7 @@ static s_prefs_entry prefs_list[53] = {
 	{"button_height", &(prefs.button_height), INTEGER, "prefs_button_height", set_spinbutton},
 	{"function_button_group", &(prefs.vis_funcs), BOOLEAN, NULL, NULL},
 	{"dispctrl_button_group", &(prefs.vis_dispctrl), BOOLEAN, NULL, NULL},
-/*20.*/	{"logic_button_group", &(prefs.vis_logic), BOOLEAN, NULL, NULL},
+/*20*/	{"logic_button_group", &(prefs.vis_logic), BOOLEAN, NULL, NULL},
 	{"standard_button_group", &(prefs.vis_standard), BOOLEAN, NULL, NULL},
 	{"mode", &(prefs.mode), INTEGER, NULL, NULL},
 	{"dec_sep", &(prefs.dec_sep), BOOLEAN, "prefs_dec_sep", set_checkbutton},
@@ -239,6 +239,14 @@ void config_file_set_prefs (char *key, char *value)
 		case STRING:
 			string_var = this_var;
 			g_free (*string_var);
+			/* version 1.2.4 introduced strings enbodied by pairs of
+			 * \"'s. So remove those if they exist.
+			 */
+			if ((value[0] == '\"') && (value[strlen(value)-1] == '\"'))
+			{
+				value++;
+				value[strlen(value)-1]='\0';
+			}
 			*string_var = g_strdup (value);
 			break;
 		case BOOLEAN:
@@ -424,7 +432,7 @@ void config_file_write (char *filename, s_preferences this_prefs, s_constant *th
 			switch (prefs_list[counter].key_type) {
 				case STRING:
 					string_var = this_var;
-					line = g_strdup_printf ("%s=%s\n", prefs_list[counter].key, *string_var);
+					line = g_strdup_printf ("%s=\"%s\"\n", prefs_list[counter].key, *string_var);
 					break;
 				case BOOLEAN:
 					bool_var = this_var;

@@ -1,3 +1,10 @@
+galculator 1.2.4
+	* introducing thousands separators
+	* several bugfixes:
+		- check for NULL pointers in formula_entry_is_active
+		- display code
+	* new and updated translations
+
 galculator 1.2.3
 	* several bugfixes:
 		- con and mr buttons push display value in RPN mode

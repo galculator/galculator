@@ -923,17 +923,7 @@ GtkWidget *ui_pref_dialog_create ()
 		glade_xml_get_widget (prefs_xml, "prefs_func_delete_button"));
 	gtk_size_group_add_widget (sgroup,
 		glade_xml_get_widget (prefs_xml, "prefs_func_clear_button"));
-	
-	sgroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-	gtk_size_group_add_widget (sgroup, 
-		glade_xml_get_widget (prefs_xml, "prefs_hex_bits_label"));
-	gtk_size_group_add_widget (sgroup,
-		glade_xml_get_widget (prefs_xml, "prefs_oct_bits_label"));
-	gtk_size_group_add_widget (sgroup,
-		glade_xml_get_widget (prefs_xml, "prefs_bin_bits_label"));
-	gtk_size_group_add_widget (sgroup,
-		glade_xml_get_widget (prefs_xml, "prefs_bin_fixed"));
-	
+
 	gtk_widget_show (prefs_dialog);
 	return prefs_dialog;
 }

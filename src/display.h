@@ -84,6 +84,7 @@ double display_result_get_double ();
 void display_append_e (GtkToggleButton *button);
 void display_result_toggle_sign (GtkToggleButton *button);
 void display_result_backspace ();
+void display_result_getset ();
 
 void display_set_line_double (double value, int line, char *tag);
 void display_set_line (char *string, int line, char *tag);

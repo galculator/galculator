@@ -91,6 +91,52 @@ g(x)=1/(1-x)=1/f(x)	g	x		1/f(x)
 
 User functions can also be called from formula entry mode.
 
+Some random notes
+=================
+
+Left shifting is done with the LSH button.
+3 << 4 	"shift 3 four times to the left" 	3 LSH 4 =
+As a right shift is somehow the inverse of a left shift, right shifting is done 
+by first activating INV and than clicking the LSH button:
+
+23 >> 5 	"shift 23 five times to the right" 	23 INV LSH 5
+
+You can change number base, angle base and the notation mode by simply clicking 
+on the corresponding module in the display's second line. If changing from e.g. 
+decimal number base to binary mode results in an "inf" value on the display, 
+the initial value was too big. Due to the limited display length every mode 
+has its own limits:
+
+decimal		IEEE floating point numbers
+hexadecimal	-2147483648 .. 2147483647 (0h80000000 .. 0h7FFFFFFF)
+octal		-34359738368 .. 34359738367 (0o400000000000 .. 0o377777777777)
+decimal		-32768 .. 32767 (0b1000000000000000 .. 0b111111111111111)
+
+If computing in hexadecimal, octal or binary mode, inf means that an overflow 
+has happened.
+
+If in hexadecimal, octal or binary signed mode, a negative number won't be 
+represented with a leading minus but as 2's complement with respect to the 
+chosen variable length.
+
+It is not possible to close unwanted braces straightforward. 1+((()) won't 
+reduce the stack of open braces, there will remain three open braces. It is 
+difficult to tell a "compute as soon as possible" calculator what an empty pair 
+of braces means: in 1+() the empty braces mean 0 (1+0=1) but in 1*() the empty 
+braces mean 1 (1*1=1). Therefore you have to enter a corresponding number in 
+order to close braces at the moment, e.g. 1+((0)) will do.
+
+The percent operation works as "x percent of y". So if there is 37 on the 
+display and you press the percent button and enter 123, you get as result 
+37% of 123.
+
+If you press the [EE] button the display will never become 0e+ but 1e+ instead.
+
+There is a simple plausability check for the character choosen as thousand's
+separator: it must not be a number in the configured number base and for
+a decimal number base neither decimal point nor "e" (exponent identifier
+string) nor "-" (minus).
+
 Shortcuts
 =========
 

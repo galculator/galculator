@@ -86,4 +86,10 @@ s_flex_parser_result compute_user_function (char *expression, char *variable, ch
 double x2rad (double x);
 double rad2x (double x);
 
+gboolean get_sep (int number_base);
+int get_sep_length (int number_base);
+char get_sep_char (int number_base);
+
+void prefs_sep_char_changed (GtkEditable *editable, char *prefs_sep, int number_base);
+
 #endif /* general_functions.h */

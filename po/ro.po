@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-03 22:48+0200\n"
+"POT-Creation-Date: 2004-10-20 19:56+0200\n"
 "PO-Revision-Date: 2004-06-15 01:50+0200\n"
 "Last-Translator:Florin Cosma <cosma_florin@yahoo.com>\n"
 "Language-Team: \n"
@@ -74,7 +74,7 @@ msgstr ""
 "\n"
 "Drept de autor 2002-2003 pentru Simon Floery (chimaira@users.sf.net)"
 
-#: src/callbacks.c:1075
+#: src/callbacks.c:1056
 msgid "save here"
 msgstr "salveaza aici"
 
@@ -112,28 +112,28 @@ msgstr "Te rog trimite un raport despre eroare"
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr "[%s] %c - caracter operaþie necunoscut. %s\n"
 
-#: src/config_file.c:155
+#: src/config_file.c:180
 msgid "Pi"
 msgstr "Pi"
 
-#: src/config_file.c:156
+#: src/config_file.c:181
 msgid "pi"
 msgstr "pi"
 
-#: src/config_file.c:158
+#: src/config_file.c:183
 msgid "Euler's Number"
 msgstr "Constanta lui Euler"
 
-#: src/config_file.c:159
+#: src/config_file.c:184
 msgid "e"
 msgstr "e"
 
-#: src/config_file.c:207
+#: src/config_file.c:232
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
 msgstr "[%s] fiºier de configuraþie: ignora intrarea necunoscuta %s=%s. %s\n"
 
-#: src/config_file.c:223
+#: src/config_file.c:256
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
@@ -141,14 +141,14 @@ msgstr ""
 "[%s] fiºier de configuraþie: %s trebuie sa fie TRUE sau FALSE. Se "
 "utilizaeaza valoarea implicita. %s\n"
 
-#: src/config_file.c:229
+#: src/config_file.c:262
 #, c-format
 msgid ""
 "[%s] configuration file: failed to convert %s to a number properly. Have you "
 "changed your locales? %s\n"
 msgstr ""
 
-#: src/config_file.c:232
+#: src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
@@ -156,7 +156,7 @@ msgstr ""
 "[%s] fiºier de configuraþie: se ignora tipul de cheie necunoscuta in "
 "structura de configurare. %s\n"
 
-#: src/config_file.c:251
+#: src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
@@ -165,7 +165,7 @@ msgstr ""
 "[%s] sa gasit o secþiune necunoscuta %s in fiºierul de configuraþie %s.Se "
 "utilizeaza secþiunea precedenta.\n"
 
-#: src/config_file.c:370
+#: src/config_file.c:403
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
@@ -176,7 +176,7 @@ msgstr ""
 "pentru citire. Nu este o eroare daca utilizati %s pentru prima data. Se "
 "utilizeaza setarile implicite.\n"
 
-#: src/config_file.c:408
+#: src/config_file.c:441
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
@@ -185,7 +185,7 @@ msgstr ""
 "[%s] fiºier de configuraþie: eroare la scriere. Se renunþa la aceasta cheie. "
 "%s\n"
 
-#: src/config_file.c:416
+#: src/config_file.c:449
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
@@ -194,7 +194,7 @@ msgstr ""
 "[%s] fiºier de configuraþie: se ignora \"tipul de cheie\" necunoscuta in "
 "\"structura de configurare\". %s\n"
 
-#: src/config_file.c:439
+#: src/config_file.c:472
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
@@ -202,7 +202,7 @@ msgstr ""
 "[%s] fiºier de configuraþie: eroare la scrierea in fiºierul de configuraþiei "
 "%s.\n"
 
-#: src/display.c:567
+#: src/display.c:568
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\". %s\n"
 msgstr ""
@@ -235,16 +235,16 @@ msgstr ""
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr "[%s] Ã©chec de la conversion de %f dans la fonction \"ftoax\". %s\n"
 
-#: src/general_functions.c:372
+#: src/general_functions.c:387
 #, fuzzy, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr "[%s] Ã©chec de la conversion de %f dans la fonction \"ftoax\". %s\n"
 
-#: src/general_functions.c:400
+#: src/general_functions.c:415
 msgid "unknown number base"
 msgstr "baza de numerotaþie necunoscuta"
 
-#: src/general_functions.c:401
+#: src/general_functions.c:416
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
@@ -252,7 +252,7 @@ msgstr ""
 "[%s] base de numÃ©rotation inconnue dans la fonction "
 "'get_display_number_string'. %s\n"
 
-#: src/general_functions.c:422
+#: src/general_functions.c:437
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
@@ -260,31 +260,52 @@ msgstr ""
 "[%s] base de numÃ©rotation inconnue dans la fonction "
 "'get_display_number_length. %s\n"
 
-#: src/general_functions.c:531
+#: src/general_functions.c:546
 #, c-format
 msgid ""
 "[%s] failed to convert %s to a number properly in function \"string2double"
 "\". Have you changed your locales? %s\n"
 msgstr ""
 
-#: src/general_functions.c:547
+#: src/general_functions.c:562
 #, fuzzy, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr ""
 "[%s] base de numÃ©rotation inconnue dans la fonction "
 "\"display_result_get_double\". %s\n"
 
-#: src/general_functions.c:612
+#: src/general_functions.c:703
 #, fuzzy, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr ""
 "[%s] tip de unghi necunoscut in funcþia \"display_result_set_angle\". %s\n"
 
-#: src/general_functions.c:627
+#: src/general_functions.c:718
 #, fuzzy, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr ""
 "[%s] tip de unghi necunoscut in funcþia \"display_result_set_angle\". %s\n"
+
+#: src/general_functions.c:735
+#, fuzzy, c-format
+msgid "[%s] unknown number base in function \"get_sep\". %s\n"
+msgstr ""
+"[%s] base de numÃ©rotation inconnue dans la fonction "
+"\"display_result_get_double\". %s\n"
+
+#: src/general_functions.c:752
+#, fuzzy, c-format
+msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
+msgstr ""
+"[%s] base de numÃ©rotation inconnue dans la fonction "
+"'get_display_number_length. %s\n"
+
+#: src/general_functions.c:769
+#, fuzzy, c-format
+msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
+msgstr ""
+"[%s] base de numÃ©rotation inconnue dans la fonction "
+"'get_display_number_length. %s\n"
 
 #: src/ui.c:88
 #, c-format
@@ -318,60 +339,60 @@ msgstr "Afiseaza bara de meniu"
 msgid "%s Preferences"
 msgstr "Preferinþele  %s"
 
-#: src/ui.c:1013 ui/scientific_buttons.glade.h:21 ui/basic_buttons.glade.h:21
+#: src/ui.c:1003 ui/scientific_buttons.glade.h:21 ui/basic_buttons.glade.h:21
 msgid "="
 msgstr "="
 
-#: src/ui.c:1013 src/ui.c:1025 ui/scientific_buttons.glade.h:39
+#: src/ui.c:1003 src/ui.c:1015 ui/scientific_buttons.glade.h:39
 #: ui/basic_buttons.glade.h:28
 msgid "Enter"
 msgstr "Egal"
 
-#: src/ui.c:1015 ui/scientific_buttons.glade.h:99
+#: src/ui.c:1005 ui/scientific_buttons.glade.h:99
 msgid "x^y"
 msgstr "x^y"
 
-#: src/ui.c:1015 src/ui.c:1027 ui/scientific_buttons.glade.h:71
+#: src/ui.c:1005 src/ui.c:1017 ui/scientific_buttons.glade.h:71
 msgid "Power"
 msgstr "Putere"
 
-#: src/ui.c:1017 ui/scientific_buttons.glade.h:3 ui/basic_buttons.glade.h:3
+#: src/ui.c:1007 ui/scientific_buttons.glade.h:3 ui/basic_buttons.glade.h:3
 msgid "("
 msgstr "("
 
-#: src/ui.c:1017 ui/scientific_buttons.glade.h:69 ui/basic_buttons.glade.h:37
+#: src/ui.c:1007 ui/scientific_buttons.glade.h:69 ui/basic_buttons.glade.h:37
 msgid "Open Bracket"
 msgstr "Deschide paranteze"
 
-#: src/ui.c:1019 ui/scientific_buttons.glade.h:4 ui/basic_buttons.glade.h:4
+#: src/ui.c:1009 ui/scientific_buttons.glade.h:4 ui/basic_buttons.glade.h:4
 msgid ")"
 msgstr ")"
 
-#: src/ui.c:1019 ui/scientific_buttons.glade.h:30 ui/basic_buttons.glade.h:24
+#: src/ui.c:1009 ui/scientific_buttons.glade.h:30 ui/basic_buttons.glade.h:24
 msgid "Close Bracket"
 msgstr "Inchide parantezele"
 
-#: src/ui.c:1025
+#: src/ui.c:1015
 msgid "ENT"
 msgstr "ENT"
 
-#: src/ui.c:1027
+#: src/ui.c:1017
 msgid "y^x"
 msgstr "y^x"
 
-#: src/ui.c:1029
+#: src/ui.c:1019
 msgid "x<>y"
 msgstr "x<>y"
 
-#: src/ui.c:1029
+#: src/ui.c:1019
 msgid "swap current number with top of stack"
 msgstr ""
 
-#: src/ui.c:1031
+#: src/ui.c:1021
 msgid "roll"
 msgstr "roll"
 
-#: src/ui.c:1031
+#: src/ui.c:1021
 msgid "roll down stack"
 msgstr ""
 
@@ -391,7 +412,7 @@ msgstr "*"
 msgid "Angle _units"
 msgstr "Unitaþile unghiurilor"
 
-#: ui/main_frame.glade.h:3 ui/prefs.glade.h:23
+#: ui/main_frame.glade.h:3 ui/prefs.glade.h:25
 msgid "Buttons"
 msgstr "Butoane"
 
@@ -411,7 +432,7 @@ msgstr "Controleaza afiºajul"
 msgid "Formula entry text field - enter string expression to compute here."
 msgstr ""
 
-#: ui/main_frame.glade.h:8 ui/prefs.glade.h:31
+#: ui/main_frame.glade.h:8 ui/prefs.glade.h:36
 msgid "Functions"
 msgstr "Funcþii"
 
@@ -617,7 +638,7 @@ msgstr "CMP"
 msgid "Change sign"
 msgstr "Schimba semnul"
 
-#: ui/scientific_buttons.glade.h:31 ui/prefs.glade.h:26
+#: ui/scientific_buttons.glade.h:31 ui/prefs.glade.h:29
 msgid "Constants"
 msgstr "Constante"
 
@@ -881,7 +902,7 @@ msgstr "X^2"
 msgid "A dialog that shows information about this program."
 msgstr "O fereastra de dialog ce afiºeaza informaþii despre program"
 
-#: ui/about.glade.h:2 ui/prefs.glade.h:25
+#: ui/about.glade.h:2 ui/prefs.glade.h:27
 msgid "Closes the dialog."
 msgstr "Inchide fereastra."
 
@@ -950,202 +971,254 @@ msgid "<b>Appearance</b>"
 msgstr "<b>Aspect</b>"
 
 #: ui/prefs.glade.h:5
-msgid "<b>Binary</b>"
+#, fuzzy
+msgid "<b>Binary Settings</b>"
 msgstr "<b>Binar</b>"
 
 #: ui/prefs.glade.h:6
-msgid "<b>Dimension</b>"
+#, fuzzy
+msgid "<b>Decimal Settings</b>"
 msgstr "<b>Dimensiune</b>"
 
 #: ui/prefs.glade.h:7
+msgid "<b>Dimension</b>"
+msgstr "<b>Dimensiune</b>"
+
+#: ui/prefs.glade.h:8
 msgid "<b>Font</b>"
 msgstr "<b>Font</b>"
 
-#: ui/prefs.glade.h:8
-msgid "<b>Hexadecimal</b>"
+#: ui/prefs.glade.h:9
+#, fuzzy
+msgid "<b>Hexadecimal Settings</b>"
 msgstr "<b>Hexazecimal</b>"
 
-#: ui/prefs.glade.h:9
+#: ui/prefs.glade.h:10
 msgid "<b>Modules Visibility</b>"
 msgstr "<b>Module vizibile</b>"
 
-#: ui/prefs.glade.h:10
-msgid "<b>Octal</b>"
+#: ui/prefs.glade.h:11
+#, fuzzy
+msgid "<b>Octal Settings</b>"
 msgstr "<b>Octal</b>"
 
-#: ui/prefs.glade.h:11
+#: ui/prefs.glade.h:12
 msgid "<b>RPN</b>"
 msgstr "<b>RPN</b>"
 
-#: ui/prefs.glade.h:12
+#: ui/prefs.glade.h:13
 msgid "<b>Startup</b>"
 msgstr "<b>Pornire</b>"
 
-#: ui/prefs.glade.h:13
+#: ui/prefs.glade.h:14
 msgid "<b>User defined constants:</b>"
 msgstr "<b>Constante definite de utilizator:</b>"
 
-#: ui/prefs.glade.h:14
+#: ui/prefs.glade.h:15
 #, fuzzy
 msgid "<b>User defined functions:</b>"
 msgstr "Funcþie definita de utilizator"
 
-#: ui/prefs.glade.h:15
+#: ui/prefs.glade.h:16
 msgid "<b>Visibility</b>"
 msgstr "<b>Vizibile</b>"
 
-#: ui/prefs.glade.h:16
+#: ui/prefs.glade.h:17
 msgid "A dialog that is used to change preferences settings."
 msgstr "O fereastra de dialog pentru setarea preferintelor."
 
-#: ui/prefs.glade.h:17
+#: ui/prefs.glade.h:18
 msgid "Active module color:"
 msgstr "Culoarea modulului activ."
 
-#: ui/prefs.glade.h:18
+#: ui/prefs.glade.h:19
 msgid "Add"
 msgstr "Adunare"
 
-#: ui/prefs.glade.h:19
+#: ui/prefs.glade.h:20
 msgid "Angle base units"
 msgstr "Unitatea de masura pentru unghiuri"
 
-#: ui/prefs.glade.h:20
+#: ui/prefs.glade.h:21
 msgid "Arithmetic operation"
 msgstr "Operatie aritmetica"
 
-#: ui/prefs.glade.h:21
+#: ui/prefs.glade.h:22
 msgid "Background color:"
 msgstr "Culoarea fundalului:"
 
-#: ui/prefs.glade.h:22
+#: ui/prefs.glade.h:23
+#, fuzzy
+msgid "Binary"
+msgstr "_Binar"
+
+#: ui/prefs.glade.h:24
 msgid "Button font:"
 msgstr "Fontul pentru butoane:"
 
-#: ui/prefs.glade.h:24
+#: ui/prefs.glade.h:26
 msgid "Clear"
 msgstr "Anuleaza"
 
-#: ui/prefs.glade.h:27
+#: ui/prefs.glade.h:28
+#, fuzzy
+msgid "Configure number base: "
+msgstr "baza de numerotaþie necunoscuta"
+
+#: ui/prefs.glade.h:30
+#, fuzzy
+msgid "Decimal"
+msgstr "_Zecimal"
+
+#: ui/prefs.glade.h:31
 msgid "Delete"
 msgstr "Sterge"
 
-#: ui/prefs.glade.h:28
+#: ui/prefs.glade.h:32
 msgid "Description:"
 msgstr "Descriere"
 
-#: ui/prefs.glade.h:29
+#: ui/prefs.glade.h:33
 msgid "Display"
 msgstr "Afiºaj"
 
-#: ui/prefs.glade.h:30
+#: ui/prefs.glade.h:34
 msgid "Expression:"
 msgstr ""
 
-#: ui/prefs.glade.h:32
+#: ui/prefs.glade.h:35
+#, fuzzy
+msgid "Fix length to a multiple of"
+msgstr "fixeaza lungimea ca un multiplu de"
+
+#: ui/prefs.glade.h:37
 msgid "General"
 msgstr "General"
 
-#: ui/prefs.glade.h:33
+#: ui/prefs.glade.h:38
+#, fuzzy
+msgid "Hexadecimal"
+msgstr "_Hexazecimal"
+
+#: ui/prefs.glade.h:39
 msgid "Inactive module color:"
 msgstr "Culoarea modulului inactiv"
 
-#: ui/prefs.glade.h:34
+#: ui/prefs.glade.h:40
 msgid "Minimal button height:"
 msgstr "Inalþimea minima a butonului:"
 
-#: ui/prefs.glade.h:35
+#: ui/prefs.glade.h:41
 msgid "Minimal button width:"
 msgstr "Laþimea minima a butonului:"
 
-#: ui/prefs.glade.h:36
+#: ui/prefs.glade.h:42
 msgid "Module font:"
 msgstr "Fontul modulului:"
 
-#: ui/prefs.glade.h:37
+#: ui/prefs.glade.h:43
 msgid "Name:"
 msgstr "Nume:"
 
-#: ui/prefs.glade.h:38
+#: ui/prefs.glade.h:44
 msgid "Notation"
 msgstr "Notaþie"
 
-#: ui/prefs.glade.h:39
+#: ui/prefs.glade.h:45
 msgid "Number base units"
 msgstr "Baza de numerotaþie"
 
-#: ui/prefs.glade.h:40
-msgid "Number of Bits: "
+#: ui/prefs.glade.h:46
+#, fuzzy
+msgid "Number of bits: "
 msgstr "Numarul de biþi:"
 
-#: ui/prefs.glade.h:41
+#: ui/prefs.glade.h:47
 msgid "Numbers"
 msgstr "Numere"
 
-#: ui/prefs.glade.h:42
+#: ui/prefs.glade.h:48
+#, fuzzy
+msgid "Octal"
+msgstr "_Octal"
+
+#: ui/prefs.glade.h:49
 msgid "Open brackets"
 msgstr "Deschide paranteze"
 
-#: ui/prefs.glade.h:43
+#: ui/prefs.glade.h:50
 msgid "RPN stack color:"
 msgstr "Culoarea fontului stivei RPN:"
 
-#: ui/prefs.glade.h:44
+#: ui/prefs.glade.h:51
 msgid "RPN stack font:"
 msgstr "Fontul stivei RPN:"
 
-#: ui/prefs.glade.h:45
+#: ui/prefs.glade.h:52
 msgid "Remember display value on exit"
 msgstr "Memoreaza valoarea afiºajului la ieºire"
 
-#: ui/prefs.glade.h:46
+#: ui/prefs.glade.h:53
 msgid "Result font color:"
 msgstr "Culoarea fontului pentru rezultat:"
 
-#: ui/prefs.glade.h:47
+#: ui/prefs.glade.h:54
 msgid "Result font:"
 msgstr "Fontul pentru rezultat:"
 
-#: ui/prefs.glade.h:48
+#: ui/prefs.glade.h:55
+msgid "Separator block length:"
+msgstr ""
+
+#: ui/prefs.glade.h:56
+msgid "Separator character:"
+msgstr ""
+
+#: ui/prefs.glade.h:57
 msgid "Show menu bar"
 msgstr "Afiseaza bara de meniu"
 
-#: ui/prefs.glade.h:49
+#: ui/prefs.glade.h:58
+msgid "Show separator"
+msgstr ""
+
+#: ui/prefs.glade.h:59
+msgid "Show thousands separator"
+msgstr ""
+
+#: ui/prefs.glade.h:60
+#, fuzzy
+msgid "Signed"
+msgstr "cu semn"
+
+#: ui/prefs.glade.h:61
 msgid "Update"
 msgstr "Actualizeaza"
 
-#: ui/prefs.glade.h:50
+#: ui/prefs.glade.h:62
 msgid "Use custom button font"
 msgstr "Utilizeaza un font anume pentru butoane"
 
-#: ui/prefs.glade.h:51
+#: ui/prefs.glade.h:63
 msgid "Value:"
 msgstr "Valoare:"
 
-#: ui/prefs.glade.h:52
+#: ui/prefs.glade.h:64
 #, fuzzy
 msgid "Variable:"
 msgstr "Valoare:"
 
-#: ui/prefs.glade.h:53
+#: ui/prefs.glade.h:65
 msgid "finite stack size (x, y, z, t)"
 msgstr "stiva de lungime finita (x, y, z, t)"
 
-#: ui/prefs.glade.h:54
-msgid "fix length to a multiple of"
-msgstr "fixeaza lungimea ca un multiplu de"
-
-#: ui/prefs.glade.h:55
+#: ui/prefs.glade.h:66
 msgid "galculator - Preferences"
 msgstr "galculator - Preferinþe"
 
-#: ui/prefs.glade.h:56
+#: ui/prefs.glade.h:67
 msgid "infinite stack size"
 msgstr "stiva infinita"
-
-#: ui/prefs.glade.h:57
-msgid "signed"
-msgstr "cu semn"
 
 #: ui/dispctrl_right.glade.h:1 ui/dispctrl_bottom.glade.h:1
 msgid "<-"
