@@ -114,7 +114,7 @@ INCLUDES =  	-DPACKAGE_LOCALE_DIR=\""$(datadir)/locale"\" 	-DPACKAGE_GLADE_DIR=\
 
 bin_PROGRAMS = galculator
 
-galculator_SOURCES =  	main.c galculator.h 	math_functions.c math_functions.h 	display.c display.h 	general_functions.c general_functions.h 	calc_basic.c calc_basic.h 	config_file.c config_file.h 	callbacks.c callbacks.h 	ui.c ui.h 	parser.c parser.h 	flex_parser.l
+galculator_SOURCES =  	main.c galculator.h 	math_functions.c math_functions.h 	display.c display.h 	general_functions.c general_functions.h 	calc_basic.c calc_basic.h 	config_file.c config_file.h 	callbacks.c callbacks.h 	ui.c ui.h 	flex_parser.l
 
 
 galculator_LDADD = @PACKAGE_LIBS@
@@ -130,7 +130,7 @@ LDFLAGS = @LDFLAGS@
 LIBS = @LIBS@
 galculator_OBJECTS =  main.o math_functions.o display.o \
 general_functions.o calc_basic.o config_file.o callbacks.o ui.o \
-parser.o flex_parser.o
+flex_parser.o
 galculator_DEPENDENCIES = 
 galculator_LDFLAGS = 
 LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
@@ -148,7 +148,7 @@ TAR = tar
 GZIP_ENV = --best
 DEP_FILES =  .deps/calc_basic.P .deps/callbacks.P .deps/config_file.P \
 .deps/display.P .deps/flex_parser.P .deps/general_functions.P \
-.deps/main.P .deps/math_functions.P .deps/parser.P .deps/ui.P
+.deps/main.P .deps/math_functions.P .deps/ui.P
 SOURCES = $(galculator_SOURCES)
 OBJECTS = $(galculator_OBJECTS)
 

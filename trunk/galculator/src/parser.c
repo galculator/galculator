@@ -37,6 +37,8 @@
 #include "math_functions.h"
 #include "flex_parser.h"
 
+#error "outdated. use flex_parser instead"
+
 static gboolean error;
 
 /* is_operation. determines on behalf of current and previous character if 

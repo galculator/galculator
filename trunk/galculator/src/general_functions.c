@@ -502,24 +502,26 @@ void remember_display_values()
 			stack[2] = prefs.rem_valuet;
 			display_stack_set_yzt (stack);
 			/* for the stack we have to update calc_basic */
-			rpn_stack_push (string2double(stack[2]));
-			rpn_stack_push (string2double(stack[1]));
-			rpn_stack_push (string2double(stack[0]));
+			rpn_stack_push (string2double(stack[2], current_status.number));
+			rpn_stack_push (string2double(stack[1], current_status.number));
+			rpn_stack_push (string2double(stack[0], current_status.number));
 		}
 	}
 }
 
 /*
  * string2double - this function makes a string to double conversion with 
- * 	respect to internal calculator settings. it uses axtof.
+ * 	respect to supplied number base. if number base < 0 we try to 
+ *	determine from string which should have then a 0? prefix.
+ *	it uses axtof.
  */
 
-double string2double (char *string)
+double string2double (char *string, int number_base)
 {
 	char 	*end_ptr;
 	double	ret_val;
 	
-	switch (current_status.number) {
+	switch (number_base) {
 		case CS_DEC:
 			ret_val = strtod(string, &end_ptr);
 			if (*end_ptr != '\0')

@@ -39,11 +39,6 @@
 
 enum {THIS_LEVEL, LEVEL_UP, LEVEL_DOWN};
 
-typedef union {
-	double		value;
-	double		(*func)(double);
-} u_number;
-
 typedef struct {
 	double		num;		/* numerator */
 	double		denum;		/* denumerator */
@@ -55,7 +50,8 @@ typedef struct {
 } s_complex;
 
 typedef struct {
-	u_number	number;
+	double		number;
+	double		(*func)(double);
 	char		operation;
 } s_cb_token;
 

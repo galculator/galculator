@@ -28,6 +28,6 @@ enum {
 	FLEX_PARSER_USER_FUNCTION
 };
 
-void flex_parser (char *string);
+double flex_parser (char *string);
 
 #endif /* flex_parser.h */

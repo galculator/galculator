@@ -3,11 +3,7 @@
 
 FLEX
 
-formula entry mode and functions: add x temporarily as constant:
-	[ ] parser?
-
-parser: [ ] char* operations
-	[ ] bin,hex,oct
+ufuncs
 	
 =i18n====================================
 
