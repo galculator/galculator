@@ -7,7 +7,7 @@
 
 [DONE] right button mouse click gives popup for bringing back menu
 
-[ ] parser
+[DONE] parser
 	[DONE] negative numbers
 	[DONE] functions
 	[DONE] whitespaces
@@ -19,7 +19,7 @@
 
 [DONE] strtod - wenn im rest was drinnen, warnung
 
-[?] pref option? accelerator active for formula entry: key "s" gives "sin("
+parser info von documentation.html in README
 
 =GUI======================================
 
@@ -49,8 +49,17 @@ update shortcuts text file
 
 #########################
 #########################
-	
-paper tape display (history) and formula entry mode and functions 
+
+1.2.1
+
+formula entry mode and functions 
+
+parser: [ ] char* operations
+	[ ] bin,hex,oct
+
+in general:
+
+paper tape display (history) and 
 
 	[wcalc]
 
@@ -61,8 +70,6 @@ to be done:
 
 undo last operation
 
-parser: [ ] char* operations
-	[ ] bin,hex,oct
 
 nice:
 ~~~~~
