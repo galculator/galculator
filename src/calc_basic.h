@@ -42,8 +42,8 @@ typedef union {
 } u_number;
 
 typedef struct {
-	double		num;		// numerator
-	double		denum;		// denumerator
+	double		num;		/* numerator */
+	double		denum;		/* denumerator */
 } s_frac;
 
 typedef struct {

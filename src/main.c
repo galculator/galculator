@@ -34,6 +34,13 @@
 #include "general_functions.h"
 #include "ui.h"
 
+/* i18n */
+
+#include <libintl.h>
+#define _(String) gettext (String)
+#define gettext_noop(String) String
+#define N_(String) gettext_noop (String)
+
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 #include <glade/glade.h>
@@ -66,7 +73,7 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 	 * keypad's 0,2,4,6,8 won't work in gtkentry etc. (e.g. found in prefs)
 	 */
 	
-	//fprintf (stderr, "[%s] key snooper (1): %i %i %s\n", PROG_NAME, event->state, event->keyval, gdk_keyval_name (event->keyval));
+	/*fprintf (stderr, "[%s] key snooper (1): %i %i %s\n", PROG_NAME, event->state, event->keyval, gdk_keyval_name (event->keyval));*/
 	if (((event->keyval != GDK_KP_2) && (event->keyval != GDK_KP_Down) &&
 		(event->keyval != GDK_KP_4) && (event->keyval != GDK_KP_Left) &&
 		(event->keyval != GDK_KP_6) && (event->keyval != GDK_KP_Right) &&
@@ -146,7 +153,7 @@ int main (int argc, char *argv[])
 	memory.data = NULL;
 	memory.len = 0;
 
-	// see function key_snooper for details
+	/* see function key_snooper for details */
 	gtk_key_snooper_install (key_snooper, NULL);
 	
 	gtk_window_resize ((GtkWindow *)main_window, 1, 1);

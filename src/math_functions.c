@@ -48,7 +48,7 @@ double powx2 (double x)
 
 double factorial (double n)
 {
-	// to avoid useless factorial computation of big numbers
+	/* to avoid useless factorial computation of big numbers */
 	if (n > 200) return INFINITY;
 	if (n > 1) return n*factorial (n-1);
 	else return 1;

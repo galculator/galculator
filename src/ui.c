@@ -252,9 +252,9 @@ static void ui_pack_from_xml (GtkWidget *box,
 	GtkWidget	*child_widget, *accel_child_widget;
 	GtkAccelGroup	*accel_group;
 	
-	// at first connect signal handlers
+	/* at first connect signal handlers */
 	glade_xml_signal_autoconnect (child_xml);
-	// next, get the "root" child
+	/* next, get the "root" child */
 	child_widget = glade_xml_get_widget (child_xml, child_name);
 	/* we have to add the accel_group of child to the main_window in order
 	 * to get working accelerators.
@@ -295,13 +295,13 @@ void ui_main_window_set_dispctrl (int location)
 {
 	GtkWidget	*table_dispctrl, *box;
 	
-	// destroy any existing display controls
+	/* destroy any existing display controls */
 	if (dispctrl_xml) {
 		table_dispctrl = glade_xml_get_widget (dispctrl_xml, "table_dispctrl");
 		if (table_dispctrl) gtk_widget_destroy (table_dispctrl);
 		g_free (dispctrl_xml);
 	}	
-	// now create the one at location
+	/* now create the one at location */
 	if (location == DISPCTRL_BOTTOM) {
 		box = glade_xml_get_widget (main_window_xml, "window_vbox");
 		dispctrl_xml = glade_file_open (DISPCTRL_BOTTOM_GLADE_FILE, 
@@ -405,7 +405,7 @@ static void set_table_child_font (gpointer data, gpointer user_data)
 	 */
 	if (GTK_IS_BOX (w)) w = ((GtkBoxChild *)((((GtkBox *)w)->children)->data))->widget;
 	if (GTK_IS_LABEL(w)) gtk_widget_modify_font (w, font);
-	// else do nothing
+	/* else do nothing */
 }
 
 /* set_all_buttons_property. calls func with argument data for every button.
@@ -418,7 +418,7 @@ static void set_all_buttons_property (GFunc func, gpointer data)
 	/* at first the display control table. always there; somehor */
 	table = (GtkTable *) glade_xml_get_widget (dispctrl_xml, 
 		"table_dispctrl");
-	// dispctrl_right has an extra table for cosmetic reasons.
+	/* dispctrl_right has an extra table for cosmetic reasons. */
 	if (GTK_IS_TABLE (((GtkTableChild *)table->children->data)->widget))
 		table = (GtkTable *) ((GtkTableChild *)table->children->data)->widget;
 	g_list_foreach (table->children, func, data);
@@ -607,7 +607,7 @@ void position_menu (GtkMenu *menu,
 		children = children->next;
 	}
 	
-	//screen_width = gdk_screen_get_width (gtk_widget_get_screen (widget));
+	/*screen_width = gdk_screen_get_width (gtk_widget_get_screen (widget));*/
 	screen_width = gdk_screen_width ();
 	
 	if (menu_xpos < 0) menu_xpos = 0;
@@ -684,7 +684,7 @@ GtkWidget *ui_pref_dialog_create ()
 	
 	gtk_window_set_title ((GtkWindow *)prefs_dialog, \
 		g_strdup_printf (_("%s Preferences"), PACKAGE));
-	// preferences -> gui
+	/* preferences -> gui */
 	prefs_list = config_file_get_prefs_list();
 	while (prefs_list[counter].key != NULL) {
 		if (prefs_list[counter].set_handler != NULL) {
@@ -704,7 +704,7 @@ GtkWidget *ui_pref_dialog_create ()
 	w = glade_xml_get_widget (prefs_xml, "prefs_bin_length");
 	gtk_widget_set_sensitive (w, prefs.bin_fixed);
 
-	// make user defined constants list.
+	/* make user defined constants list. */
 	
 	store = gtk_list_store_new (NR_CONST_COLUMNS, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
 	counter = 0;

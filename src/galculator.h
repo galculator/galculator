@@ -50,7 +50,7 @@
 #define gettext_noop(String) String
 #define N_(String) gettext_noop (String)
 
-// also change this in calc_basic.h
+/* also change this in calc_basic.h */
 #ifndef BUG_REPORT
 	#define BUG_REPORT	_("Please submit a bugreport.")
 #endif
@@ -83,9 +83,9 @@ enum {
 };
 
 enum {
-	CS_PAN,			// _P_seudo _A_lgebraic _N_otation
-	CS_RPN,			// reverse polish notation
-	//CS_FORMULA,
+	CS_PAN,			/* _P_seudo _A_lgebraic _N_otation */
+	CS_RPN,			/* reverse polish notation */
+	/*CS_FORMULA,*/
 	NR_NOTATION_MODES
 };
 
@@ -115,10 +115,10 @@ enum {
 };
 
 typedef struct {
-	unsigned char	number:2;
-	unsigned char	angle:2;
-	unsigned char	notation:1;
-	unsigned char	fmod:2;
+	unsigned	number:2;
+	unsigned	angle:2;
+	unsigned	notation:1;
+	unsigned	fmod:2;
 	gboolean	calc_entry_start_new;
 	gboolean	rpn_have_result;
 	gboolean	allow_arith_op;

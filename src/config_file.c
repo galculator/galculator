@@ -39,10 +39,12 @@
 #include "general_functions.h"
 
 s_preferences prefs;
-static s_prefs_entry prefs_list[35] = {
+static s_prefs_entry prefs_list[38] = {
 	{"display_bkg_color", &(prefs.bkg_color), STRING, "prefs_bkg_color", set_button_color},
 	{"display_result_font", &(prefs.result_font), STRING, "prefs_result_font", set_button_label},
 	{"display_result_color", &(prefs.result_color), STRING, "prefs_result_color", set_button_color},
+	{"display_stack_font", &(prefs.stack_font), STRING, "prefs_stack_font", set_button_label},
+	{"display_stack_color", &(prefs.stack_color), STRING, "prefs_stack_color", set_button_color},
 	{"display_module_font", &(prefs.mod_font), STRING, "prefs_mod_font", set_button_label},
 	{"display_module_active_color", &(prefs.act_mod_color), STRING, "prefs_act_mod_color", set_button_color},
 	{"display_module_inactive_color", &(prefs.inact_mod_color), STRING, "prefs_inact_mod_color", set_button_color},
@@ -71,13 +73,14 @@ static s_prefs_entry prefs_list[35] = {
 	{"default_number_base", &(prefs.def_number), INTEGER, NULL, NULL},
 	{"default_angle_base", &(prefs.def_angle), INTEGER, NULL, NULL},
 	{"default_notation_mode", &(prefs.def_notation), INTEGER, NULL, NULL},
+	{"stack_size", &(prefs.stack_size), INTEGER, NULL, set_stacksize},
 	{"remembers_display", &(prefs.rem_display), BOOLEAN, "prefs_rem_display", set_checkbutton},
 	{"remembered_value", &(prefs.rem_value), STRING, NULL, NULL},
 	{"show_menu_bar", &(prefs.show_menu), BOOLEAN, "prefs_show_menu", set_checkbutton},
 	{NULL, NULL, 0, NULL, NULL}
 };
 static char *prefs_list_old_entries[2] = {"show_status_bar", NULL};
-static s_constant *constant;
+static s_constant *cf_constant;
 
 /*
  * config_file_get_default_prefs - initialize ALL members of the given s_preferences
@@ -85,10 +88,12 @@ static s_constant *constant;
  */
 static void config_file_get_default_prefs (s_preferences *this_prefs)
 {
-	// 1st pref page
+	/* 1st pref page */
 	this_prefs->bkg_color = g_strdup (DEFAULT_BKG_COLOR);
 	this_prefs->result_font = g_strdup (DEFAULT_RESULT_FONT);
 	this_prefs->result_color = g_strdup (DEFAULT_RESULT_COLOR);
+	this_prefs->stack_font = g_strdup (DEFAULT_STACK_FONT);
+	this_prefs->stack_color = g_strdup (DEFAULT_STACK_COLOR);
 	this_prefs->mod_font = g_strdup (DEFAULT_MOD_FONT);
 	this_prefs->act_mod_color = g_strdup (DEFAULT_ACT_MOD_COLOR);
 	this_prefs->inact_mod_color = g_strdup (DEFAULT_INACT_MOD_COLOR);
@@ -98,7 +103,7 @@ static void config_file_get_default_prefs (s_preferences *this_prefs)
 	this_prefs->vis_arith = DEFAULT_VIS_ARITH;
 	this_prefs->vis_bracket = DEFAULT_VIS_BRACKET;
 	
-	// 2nd pref page
+	/* 2nd pref page */
 	this_prefs->custom_button_font = DEFAULT_CUSTOM_BUTTON_FONT;
 	this_prefs->button_font = g_strdup (DEFAULT_BUTTON_FONT);
 	this_prefs->button_width = DEFAULT_BUTTON_WIDTH;
@@ -109,10 +114,10 @@ static void config_file_get_default_prefs (s_preferences *this_prefs)
 	this_prefs->vis_standard = DEFAULT_VIS_STANDARD;
 	this_prefs->mode = DEFAULT_MODE;
 	
-	// 3rd pref page
-	// constants - handled different
+	/* 3rd pref page */
+	/* constants - handled different */
 	
-	// 4th pref page
+	/* 4th pref page */
 	this_prefs->hex_bits = DEFAULT_HEX_BITS;
 	this_prefs->hex_signed = DEFAULT_HEX_SIGNED;
 	this_prefs->oct_bits = DEFAULT_OCT_BITS;
@@ -122,7 +127,8 @@ static void config_file_get_default_prefs (s_preferences *this_prefs)
 	this_prefs->bin_fixed = DEFAULT_BIN_FIXED;
 	this_prefs->bin_length = DEFAULT_BIN_LENGTH;
 
-	// 5rd pref page
+	/* 5rd pref page */
+	this_prefs->stack_size = DEFAULT_STACK_SIZE;
 	this_prefs->def_number = DEFAULT_NUMBER;
 	this_prefs->def_angle = DEFAULT_ANGLE;
 	this_prefs->def_notation = DEFAULT_NOTATION;
@@ -229,26 +235,26 @@ void config_file_set_constants (char *line)
 	static int	nr_consts=0;
 	
 	desc = line;
-	name = index (line, ':');
+	name = strchr (line, ':');
 	if (name == NULL) return;
 	*name = '\0';
 	name++;
-	value = index (name, '=');
+	value = strchr (name, '=');
 	if (value == NULL) return;
 	*value = '\0';
 	value++;
 	desc = g_strstrip(desc);
 	name = g_strstrip(name);
 	value = g_strstrip(value);
-	// allowing desc and name to be ""
+	/* allowing desc and name to be "" */
 	if (strlen(value) == 0) return;
 	nr_consts++;
-	constant = (s_constant *) realloc (constant, (nr_consts + 1) * sizeof(s_constant));
-	constant[nr_consts-1].desc = g_strdup (desc);
-	constant[nr_consts-1].name = g_strdup (name);
-	constant[nr_consts-1].value = g_strdup (value);
-	// keep it NULL terminated
-	constant[nr_consts].desc = NULL;
+	cf_constant = (s_constant *) realloc (cf_constant, (nr_consts + 1) * sizeof(s_constant));
+	cf_constant[nr_consts-1].desc = g_strdup (desc);
+	cf_constant[nr_consts-1].name = g_strdup (name);
+	cf_constant[nr_consts-1].value = g_strdup (value);
+	/* keep it NULL terminated */
+	cf_constant[nr_consts].desc = NULL;
 }
 
 /*
@@ -266,8 +272,8 @@ s_preferences config_file_read (char *filename)
 	
 	this_file = fopen (filename, "r");
 	config_file_get_default_prefs (&prefs);
-	constant = (s_constant *) malloc (sizeof(s_constant));
-	constant->desc = NULL;
+	cf_constant = (s_constant *) malloc (sizeof(s_constant));
+	cf_constant->desc = NULL;
 	if (this_file != NULL) {
 		while (fgets (line, MAX_FILE_LINE_LENGTH, this_file) != NULL) {
 			if (line[0] != '#') {
@@ -275,7 +281,7 @@ s_preferences config_file_read (char *filename)
 				switch (mode) {
 				case GENERAL:
 					key = line;
-					value = index (line, '=');
+					value = strchr (line, '=');
 					if (value == NULL) break;
 					*value = '\0';
 					value++;
@@ -294,7 +300,7 @@ s_preferences config_file_read (char *filename)
 	}
 	else fprintf (stderr, _("[%s] configuration file: couldn't open configuration file %s for reading. \
 Nothing to worry about if you are starting %s for the first time. Using defaults.\n"), PACKAGE, filename, PACKAGE);
-	if (have_const_section == FALSE) config_file_get_default_consts (&constant);
+	if (have_const_section == FALSE) config_file_get_default_consts (&cf_constant);
 	return prefs;
 }
 
@@ -312,7 +318,7 @@ void config_file_write (char *filename, s_preferences this_prefs)
 	FILE		*this_file;
 	
 	this_file = fopen (filename, "w+");
-	// overwrite local prefs memory with supplied prefs. probably ugly.
+	/* overwrite local prefs memory with supplied prefs. probably ugly. */
 	prefs = this_prefs;
 	if (this_file != NULL) {
 		fprintf (this_file, "\n%s\n\n", SECTION_GENERAL);
@@ -343,9 +349,9 @@ void config_file_write (char *filename, s_preferences this_prefs)
 		}
 		counter = 0;
 		fprintf (this_file, "\n%s\n\n", SECTION_CONSTANTS);
-		while (constant[counter].desc != NULL) {
-			fprintf (this_file, "%s:%s=%s\n", constant[counter].desc, 
-				constant[counter].name, constant[counter].value);
+		while (cf_constant[counter].desc != NULL) {
+			fprintf (this_file, "%s:%s=%s\n", cf_constant[counter].desc, 
+				cf_constant[counter].name, cf_constant[counter].value);
 			counter++;
 		}
 		fclose (this_file);
@@ -360,5 +366,5 @@ s_prefs_entry *config_file_get_prefs_list()
 
 s_constant *config_file_get_constants()
 {
-	return constant;
+	return cf_constant;
 }
