@@ -530,30 +530,29 @@ on_color_ok_button_clicked             (GtkButton       *button,
 	title = gtk_window_get_title ((GtkWindow *) color_dialog);
 	gtk_color_selection_get_current_color ((GtkColorSelection *)(((GtkColorSelectionDialog *) color_dialog)->colorsel), \
 		&color);
-	gtk_widget_destroy (color_dialog);
-	/* possibilities: background color, result color, act/inactive option color */
-	if (strstr (title, SELECT_BKG_COLOR) != NULL)
+	
+	if (strcmp (title, SELECT_BKG_COLOR) == 0)
 	{
 		da = glade_xml_get_widget (prefs_xml, "prefs_bkg_color");
 		if (prefs.bkg_color != NULL) g_free (prefs.bkg_color);
 		prefs.bkg_color = gdk_color_to_string(color);
 		display_set_bkg_color (prefs.bkg_color);
 	}
-	else if (strstr (title, SELECT_RESULT_FONT_COLOR) != NULL)
+	else if (strcmp (title, SELECT_RESULT_FONT_COLOR) == 0)
 	{
 		da = glade_xml_get_widget (prefs_xml, "prefs_result_color");
 		if (prefs.result_color != NULL) g_free (prefs.result_color);
 		prefs.result_color = gdk_color_to_string(color);
 		display_update_tags();
 	}
-	else if (strstr (title, SELECT_ACT_MOD_COLOR) != NULL)
+	else if (strcmp (title, SELECT_ACT_MOD_COLOR) == 0)
 	{
 		da = glade_xml_get_widget (prefs_xml, "prefs_act_mod_color");
 		if (prefs.act_mod_color != NULL) g_free (prefs.act_mod_color);
 		prefs.act_mod_color = gdk_color_to_string(color);
 		display_update_tags();
 	}
-	else if (strstr (title, SELECT_INACT_MOD_COLOR) != NULL)
+	else if (strcmp (title, SELECT_INACT_MOD_COLOR) == 0)
 	{
 		da = glade_xml_get_widget (prefs_xml, "prefs_inact_mod_color");
 		if (prefs.inact_mod_color != NULL) g_free (prefs.inact_mod_color);
@@ -563,6 +562,8 @@ on_color_ok_button_clicked             (GtkButton       *button,
 	else fprintf (stderr, _("[%s] Color Dialog (%s) not found. %s\n"), PACKAGE, title, BUG_REPORT);
 
 	gtk_widget_really_modify_fg (da, color);
+	
+	gtk_widget_destroy (color_dialog);
 }
 
 
@@ -577,23 +578,22 @@ on_font_ok_button_clicked              (GtkButton       *button,
 
 	title = gtk_window_get_title ((GtkWindow *) font_dialog);
 	font_name = gtk_font_selection_dialog_get_font_name ((GtkFontSelectionDialog *)font_dialog);
-	gtk_widget_destroy (font_dialog);
-	/*possibilities: result font, option font, button font */
-	if (strstr (title, SELECT_RESULT_FONT) != NULL)
+	
+	if (strcmp (title, SELECT_RESULT_FONT) == 0)
 	{
 		font_button = (GtkButton *) glade_xml_get_widget (prefs_xml, "prefs_result_font");
 		if (prefs.result_font != NULL) g_free (prefs.result_font);
 		prefs.result_font = g_strdup(font_name);
 		display_update_tags();
 	}
-	else if (strstr (title, SELECT_MODULE_FONT) != NULL)
+	else if (strcmp (title, SELECT_MODULE_FONT) == 0)
 	{
 		font_button = (GtkButton *) glade_xml_get_widget (prefs_xml, "prefs_mod_font");
 		if (prefs.mod_font != NULL) g_free (prefs.mod_font);
 		prefs.mod_font = g_strdup(font_name);
 		display_update_tags();
 	}
-	else if (strstr (title, SELECT_BUTTON_FONT) != NULL)
+	else if (strcmp (title, SELECT_BUTTON_FONT) == 0)
 	{
 		font_button = (GtkButton *) glade_xml_get_widget (prefs_xml, "prefs_button_font");
 		if (prefs.button_font != NULL) g_free (prefs.button_font);
@@ -607,6 +607,8 @@ on_font_ok_button_clicked              (GtkButton       *button,
 		g_free (button_font);
 	}
 	else fprintf (stderr, _("[%s] Font Dialog (%s) not found. %s\n"), PACKAGE, title, BUG_REPORT);
+	
+	gtk_widget_destroy (font_dialog);
 	
 	gtk_button_set_label (font_button, font_name);
 }
@@ -784,7 +786,7 @@ void on_prefs_vis_bracket_toggled (GtkToggleButton *togglebutton,
 }
 
 void on_prefs_vis_funcs_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data)
+					gpointer user_data)
 {
 	extern GladeXML	*main_window_xml;
 	
@@ -793,7 +795,7 @@ void on_prefs_vis_funcs_toggled (GtkToggleButton *togglebutton,
 }
 
 void on_prefs_vis_logic_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data)
+					gpointer user_data)
 {
 	extern GladeXML	*main_window_xml;
 	
@@ -802,7 +804,7 @@ void on_prefs_vis_logic_toggled (GtkToggleButton *togglebutton,
 }
 
 void on_prefs_vis_dispctrl_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data)
+					gpointer user_data)
 {
 	extern GladeXML	*main_window_xml;
 	
@@ -812,7 +814,7 @@ void on_prefs_vis_dispctrl_toggled (GtkToggleButton *togglebutton,
 }
 
 void on_prefs_show_menu_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data)
+					gpointer user_data)
 {
 	extern GladeXML			*main_window_xml;
 	GtkCheckMenuItem		*show_menubar_item;
@@ -849,8 +851,8 @@ void on_prefs_def_notation_changed (GtkOptionMenu *optionmenu,
 }
 
 void on_prefs_button_width_changed (GtkSpinButton *spinbutton,
-											GtkScrollType arg1,
-											gpointer user_data)
+					GtkScrollType arg1,
+					gpointer user_data)
 {
 	extern GladeXML			*main_window_xml;
 	
@@ -1090,4 +1092,54 @@ void on_prefs_cupdate_clicked (GtkButton *button, gpointer user_data)
 		
 	
 }
+
+void on_prefs_hex_bits_value_changed (GtkSpinButton *spinbutton,
+					GtkScrollType arg1,
+					gpointer user_data)
+{
+	extern int 	display_lengths[NR_NUMBER_BASES];
+	
+	prefs.hex_bits = (int) gtk_spin_button_get_value (spinbutton);
+	display_lengths[CS_HEX] = prefs.hex_bits/4;
+}
+
+void on_prefs_hex_signed_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data)
+{
+	prefs.hex_signed = gtk_toggle_button_get_active (togglebutton);
+}
+
+void on_prefs_oct_bits_value_changed (GtkSpinButton *spinbutton,
+					GtkScrollType arg1,
+					gpointer user_data)
+{
+	extern int 	display_lengths[NR_NUMBER_BASES];
+	
+	prefs.oct_bits = (int) gtk_spin_button_get_value (spinbutton);
+	display_lengths[CS_OCT] = prefs.oct_bits/3;
+}
+
+void on_prefs_oct_signed_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data)
+{
+	prefs.oct_signed = gtk_toggle_button_get_active (togglebutton);
+}
+
+void on_prefs_bin_bits_value_changed (GtkSpinButton *spinbutton,
+					GtkScrollType arg1,
+					gpointer user_data)
+{
+	extern int 	display_lengths[NR_NUMBER_BASES];
+	
+	prefs.bin_bits = (int) gtk_spin_button_get_value (spinbutton);
+	display_lengths[CS_BIN] = prefs.bin_bits/1;
+}
+
+
+void on_prefs_bin_signed_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data)
+{
+	prefs.bin_signed = gtk_toggle_button_get_active (togglebutton);
+}
+
 /* END */

@@ -37,8 +37,8 @@ void all_clear ();
 void set_button_group_size (GladeXML *xml, char *table_name, int width, int height);
 void set_button_group_font (GladeXML *xml, char *table_name, char *font_string);
 
-double axtof (char *bin_string, int base, int dlength);
-char *ftoax (double x, int base, int dlength);
+double axtof (char *bin_string, int base, int nr_bits, gboolean is_signed);
+char *ftoax (double x, int base, int nr_bits, gboolean is_signedh);
 
 gboolean da_expose_event_cb(GtkWidget *widget, GdkEventExpose *event, gpointer data);
 

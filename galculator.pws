@@ -6,8 +6,8 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=1
-1=10
+0=178
+1=569
 2=31
 3=316
 4=315
@@ -38,12 +38,6 @@ filter.file.unmatch=*.so *.o *.a *.la
 filter.file.ignore.hidden=0
 filter.dir.ignore.hidden=0
 
-[filelist]
-0=/home/sf/Devel/galculator/ChangeLog
-1=/home/sf/Devel/galculator/release notes
-2=/home/sf/Devel/galculator/TODO
-3=/home/sf/Devel/galculator/src/display.c
-
 [replace_text]
 0=first_module
 1=display_result_get_double
@@ -55,11 +49,11 @@ filter.dir.ignore.hidden=0
 7=clicked
 
 [find_text]
-0=save here
-1=save ehre
-2=ue
-3=inconfig
-4=incofnig
-5=create_const
-6=leading_spaces
-7=delete
+0=select_bkg_color
+1=display
+2=display_lengths
+3=position_menu
+4=option
+5=save here
+6=save ehre
+7=ue

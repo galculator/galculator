@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-06-22 12:25+0200\n"
+"POT-Creation-Date: 2003-06-23 22:14+0200\n"
 "PO-Revision-Date: 2003-05-26 14:24+0200\n"
 "Last-Translator: Simon Floery <simon.floery@gmx.at>\n"
 "Language-Team: German <de@li.org>\n"
@@ -62,8 +62,7 @@ msgid ""
 "(c) 2002-2003 by Simon Floery (simon.floery@gmx.at)"
 msgstr ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-"<span size=\"large\">ein auf GTK 2 basierender wissenschaftlicher "
-"Taschenrechner</span>\n"
+"<span size=\"large\">ein wissenschaftlicher Taschenrechner (GTK 2)</span>\n"
 "\n"
 "(c) 2002-2003 by Simon Floery (simon.floery@gmx.at)"
 
@@ -85,7 +84,7 @@ msgstr "ENT"
 msgid "%s Preferences"
 msgstr "%s Einstellungen"
 
-#: src/callbacks.c:563
+#: src/callbacks.c:562
 #, c-format
 msgid "[%s] Color Dialog (%s) not found. %s\n"
 msgstr "[%s] Farbdialog (%s) nicht gefunden. %s\n"
@@ -95,7 +94,7 @@ msgstr "[%s] Farbdialog (%s) nicht gefunden. %s\n"
 msgid "[%s] Font Dialog (%s) not found. %s\n"
 msgstr "[%s] Schriftartendialog (%s) nicht gefunden. %s\n"
 
-#: src/callbacks.c:900
+#: src/callbacks.c:902
 msgid "save here"
 msgstr "speichere hier"
 
@@ -154,28 +153,28 @@ msgstr "[%s] berechne: %f %c %f = %f\n"
 msgid "[%s] RPN stack size is %i.\n"
 msgstr "[%s] Die Grösse des RPN stacks ist %i.\n"
 
-#: src/config_file.c:118
+#: src/config_file.c:135
 msgid "Pi"
 msgstr "Pi"
 
-#: src/config_file.c:119
+#: src/config_file.c:136
 msgid "pi"
 msgstr "pi"
 
-#: src/config_file.c:121
+#: src/config_file.c:138
 msgid "Euler's Number"
 msgstr "Eulersche Zahl"
 
-#: src/config_file.c:122
+#: src/config_file.c:139
 msgid "e"
 msgstr "e"
 
-#: src/config_file.c:151
+#: src/config_file.c:168
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
 msgstr "[%s] configurtion file: ignoriere unbekannten Eintrag %s=%s. %s\n"
 
-#: src/config_file.c:167
+#: src/config_file.c:184
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
@@ -183,7 +182,7 @@ msgstr ""
 "[%s] configuration file: %s muss TRUE oder FALSE sein. Es wird der default "
 "Wert verwendet. %s\n"
 
-#: src/config_file.c:174
+#: src/config_file.c:191
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
@@ -191,7 +190,7 @@ msgstr ""
 "[%s] configuration file: ignoriere unbekannten key_type in config structure. "
 "%s\n"
 
-#: src/config_file.c:192
+#: src/config_file.c:209
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
@@ -200,7 +199,7 @@ msgstr ""
 "[%s] Der unbekannte Abschnitt %s wurde in der Konfigurationsdatei %s "
 "gefunden. Setze mit vorherigem Abschnitt fort.\n"
 
-#: src/config_file.c:271
+#: src/config_file.c:288
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
@@ -211,7 +210,7 @@ msgstr ""
 "öffnen. Das stellt kein Problem das, wenn %s zum ersten Mal gestartet wird. "
 "Es werdendie Standard-Einstellungen verwendet.\n"
 
-#: src/config_file.c:304
+#: src/config_file.c:321
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
@@ -219,7 +218,7 @@ msgid ""
 msgstr ""
 "[%s] configuration file: Der aktuelle SchlÃŒssel ist problematisch. %s\n"
 
-#: src/config_file.c:312
+#: src/config_file.c:329
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
@@ -228,7 +227,7 @@ msgstr ""
 "[%s] configuration file: ignoriere unbekannten \"key_type\" in "
 "\"config_structure\". %s\n"
 
-#: src/config_file.c:327
+#: src/config_file.c:344
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
@@ -286,7 +285,7 @@ msgstr "nicht unterstÃŒtzte inverse Funktion"
 msgid "unsupported hyperbolic function"
 msgstr "nicht unterstÃŒtzte hyperbolische Funktion"
 
-#: src/general_functions.c:192
+#: src/general_functions.c:193
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
@@ -444,7 +443,7 @@ msgstr "Vorzeichenwechsel"
 msgid "Changes the sign of the current display value."
 msgstr "Wechselt das Vorzeichen des aktuellen Displaywertes."
 
-#: ui/main.glade.h:38 ui/prefs.glade.h:23
+#: ui/main.glade.h:38 ui/prefs.glade.h:26
 msgid "Clear"
 msgstr "Löschen"
 
@@ -505,7 +504,7 @@ msgstr "Quadriert."
 msgid "Computes the tangent."
 msgstr "Berechnet den Tangens."
 
-#: ui/main.glade.h:53 ui/prefs.glade.h:25
+#: ui/main.glade.h:53 ui/prefs.glade.h:28
 msgid "Constants"
 msgstr "Konstanten"
 
@@ -985,7 +984,7 @@ msgstr "x^y"
 msgid "A dialog that shows information about this program."
 msgstr "Ein Dialogfenster mit Informationen zu diesem Programm."
 
-#: ui/about.glade.h:2 ui/prefs.glade.h:24
+#: ui/about.glade.h:2 ui/prefs.glade.h:27
 msgid "Closes the dialog."
 msgstr "Schliesst das Dialogfenster."
 
@@ -1054,212 +1053,236 @@ msgid "<b>Appearance</b>"
 msgstr "<b>Erscheinungsbild</b>"
 
 #: ui/prefs.glade.h:5
+msgid "<b>Binary</b>"
+msgstr "<b>Binär</b>"
+
+#: ui/prefs.glade.h:6
 msgid "<b>Dimension</b>"
 msgstr "<b>Grösse</b>"
 
-#: ui/prefs.glade.h:6
+#: ui/prefs.glade.h:7
 msgid "<b>Font</b>"
 msgstr "<b>Schrift</b>"
 
-#: ui/prefs.glade.h:7
+#: ui/prefs.glade.h:8
+msgid "<b>Hexadecimal</b>"
+msgstr "<b>Hexadezimal</b>"
+
+#: ui/prefs.glade.h:9
 msgid "<b>Modules Visibility</b>"
 msgstr "<b>Sichtbare Module</b>"
 
-#: ui/prefs.glade.h:8
+#: ui/prefs.glade.h:10
+msgid "<b>Octal</b>"
+msgstr "<b>Oktal</b>"
+
+#: ui/prefs.glade.h:11
 msgid "<b>Startup</b>"
 msgstr "<b>Programmstart</b>"
 
-#: ui/prefs.glade.h:9
+#: ui/prefs.glade.h:12
 msgid "<b>User defined constants:</b>"
 msgstr "<b>Benutzerdefinierte Konstanten:</b>"
 
-#: ui/prefs.glade.h:10
+#: ui/prefs.glade.h:13
 msgid "<b>Visibility</b>"
 msgstr "<b>Sichtbarkeit</b>"
 
-#: ui/prefs.glade.h:11
+#: ui/prefs.glade.h:14
 msgid "A dialog that is used to change preferences settings."
 msgstr "Ein Dialogfenster zum Ändern von Einstellungen."
 
-#: ui/prefs.glade.h:12
+#: ui/prefs.glade.h:15
 msgid "Active module color:"
 msgstr "Farbe aktives Modul:"
 
-#: ui/prefs.glade.h:13
+#: ui/prefs.glade.h:16
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: ui/prefs.glade.h:14
+#: ui/prefs.glade.h:17
 msgid "Algebraic"
 msgstr "Algebraisch"
 
-#: ui/prefs.glade.h:15
+#: ui/prefs.glade.h:18
 msgid "Angle base units"
 msgstr "Winkeleinheit"
 
-#: ui/prefs.glade.h:16
+#: ui/prefs.glade.h:19
 msgid "Arithmetic operation"
 msgstr "Arithmetische Operation"
 
-#: ui/prefs.glade.h:17
+#: ui/prefs.glade.h:20
 msgid "Background color:"
 msgstr "Hintergrundfarbe:"
 
-#: ui/prefs.glade.h:18
+#: ui/prefs.glade.h:21
 msgid "Binary"
 msgstr "Binär"
 
-#: ui/prefs.glade.h:19
+#: ui/prefs.glade.h:22
 msgid "Button font:"
 msgstr "Schrift der Tasten:"
 
-#: ui/prefs.glade.h:20
+#: ui/prefs.glade.h:23
 msgid "Button height:"
 msgstr "Tastenhöhe:"
 
-#: ui/prefs.glade.h:21
+#: ui/prefs.glade.h:24
 msgid "Button width:"
 msgstr "Tastenbreite:"
 
-#: ui/prefs.glade.h:22
+#: ui/prefs.glade.h:25
 msgid "Buttons"
 msgstr "Tasten"
 
-#: ui/prefs.glade.h:26
+#: ui/prefs.glade.h:29
 msgid "Decimal"
 msgstr "Dezimal"
 
-#: ui/prefs.glade.h:27
+#: ui/prefs.glade.h:30
 msgid "Default angle unit:"
 msgstr "Winkeleinheit:"
 
-#: ui/prefs.glade.h:28
+#: ui/prefs.glade.h:31
 msgid "Default notation mode:"
 msgstr "Notationsmodus:"
 
-#: ui/prefs.glade.h:29
+#: ui/prefs.glade.h:32
 msgid "Default number base:"
 msgstr "Zahlenbasis:"
 
-#: ui/prefs.glade.h:30
+#: ui/prefs.glade.h:33
 msgid "Degrees"
 msgstr "Grad"
 
-#: ui/prefs.glade.h:31
+#: ui/prefs.glade.h:34
 msgid "Delete"
 msgstr "Entfernen"
 
-#: ui/prefs.glade.h:32
+#: ui/prefs.glade.h:35
 msgid "Description:"
 msgstr "Beschreibung:"
 
-#: ui/prefs.glade.h:33
+#: ui/prefs.glade.h:36
 msgid "Display"
 msgstr "Display"
 
-#: ui/prefs.glade.h:34
+#: ui/prefs.glade.h:37
 msgid "Display control buttons (C, AC, <-)"
 msgstr "Display Kontrolltasten (C, AC, <-)"
 
-#: ui/prefs.glade.h:35
+#: ui/prefs.glade.h:38
 msgid "Function buttons (sin, cos, etc.)"
 msgstr "Funktionstasten (sin, cos, etc.)"
 
-#: ui/prefs.glade.h:36
+#: ui/prefs.glade.h:39
 msgid "Gradians"
 msgstr "Neugrad"
 
-#: ui/prefs.glade.h:37
+#: ui/prefs.glade.h:40
 msgid "Hexadecimal"
 msgstr "Hexadezimal"
 
-#: ui/prefs.glade.h:38
+#: ui/prefs.glade.h:41
 msgid "Inactive module color:"
 msgstr "Farbe inaktives Modul:"
 
-#: ui/prefs.glade.h:39
+#: ui/prefs.glade.h:42
 msgid "Logic buttons (AND, OR, etc.)"
 msgstr "Logische Tasten (UND, ODER, etc.)"
 
-#: ui/prefs.glade.h:40
+#: ui/prefs.glade.h:43
 msgid "Miscellaneous"
 msgstr "Diverses"
 
-#: ui/prefs.glade.h:41
+#: ui/prefs.glade.h:44
 msgid "Module font:"
 msgstr "Schrift der Module:"
 
-#: ui/prefs.glade.h:42
+#: ui/prefs.glade.h:45
 msgid "Name:"
 msgstr "Name:"
 
-#: ui/prefs.glade.h:43
+#: ui/prefs.glade.h:46
 msgid "Notation"
 msgstr "Notation"
 
-#: ui/prefs.glade.h:44
+#: ui/prefs.glade.h:47
 msgid "Number base units"
 msgstr "Zahlenbasis"
 
-#: ui/prefs.glade.h:45
+#: ui/prefs.glade.h:48
+msgid "Number of Bits: "
+msgstr "Anzahl an Bits: "
+
+#: ui/prefs.glade.h:49
+msgid "Numbers"
+msgstr "Zahlen"
+
+#: ui/prefs.glade.h:50
 msgid "Octal"
 msgstr "Oktal"
 
-#: ui/prefs.glade.h:46
+#: ui/prefs.glade.h:51
 msgid "Open brackets"
 msgstr "Offene Klammern"
 
-#: ui/prefs.glade.h:47
+#: ui/prefs.glade.h:52
 msgid "Radians"
 msgstr "Radiant"
 
-#: ui/prefs.glade.h:48
+#: ui/prefs.glade.h:53
 msgid "Remember display value on exit"
 msgstr "Speichere Displaywert beim Beenden"
 
-#: ui/prefs.glade.h:49
+#: ui/prefs.glade.h:54
 msgid "Result font color:"
 msgstr "Schriftfarbe des Resultats:"
 
-#: ui/prefs.glade.h:50
+#: ui/prefs.glade.h:55
 msgid "Result font:"
 msgstr "Schrift des Resultats:"
 
-#: ui/prefs.glade.h:51
+#: ui/prefs.glade.h:56
 msgid "Reverse Polish (RPN)"
 msgstr "Reverse Polish (RPN)"
 
-#: ui/prefs.glade.h:52
+#: ui/prefs.glade.h:57
 msgid "Show menu bar"
 msgstr "Menü sichtbar"
 
-#: ui/prefs.glade.h:53
+#: ui/prefs.glade.h:58
 msgid "Update"
 msgstr "Aktualisieren"
 
-#: ui/prefs.glade.h:54
+#: ui/prefs.glade.h:59
 msgid "Use custom button font"
 msgstr "Verwende eigene Schrift"
 
-#: ui/prefs.glade.h:55
+#: ui/prefs.glade.h:60
 msgid "Value:"
 msgstr "Wert:"
 
-#: ui/prefs.glade.h:56
+#: ui/prefs.glade.h:61
 msgid "button1"
 msgstr "button1"
 
-#: ui/prefs.glade.h:57
+#: ui/prefs.glade.h:62
 msgid "button5"
 msgstr "button5"
 
-#: ui/prefs.glade.h:58
+#: ui/prefs.glade.h:63
 msgid "button7"
 msgstr "button7"
 
-#: ui/prefs.glade.h:59
+#: ui/prefs.glade.h:64
 msgid "galculator - Preferences"
 msgstr "galculator - Einstellungen"
+
+#: ui/prefs.glade.h:65
+msgid "signed"
+msgstr "vorzeichenbehaftet"
 
 #~ msgid ""
 #~ "[%s] unknown number base in function \"display_result_get_as_double\". %"

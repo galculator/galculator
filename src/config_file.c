@@ -21,7 +21,7 @@
 /* to add a new preference, add it to 
 	- s_preferences in config_file.h
 	- to config_file_get_default_prefs
-	- to struct prefs_list
+	- to struct prefs_list (increase array size!)
 */
 
 #include <stdio.h>
@@ -39,7 +39,7 @@
 #include "general_functions.h"
 
 s_preferences prefs;
-s_prefs_entry prefs_list[26] = {
+s_prefs_entry prefs_list[32] = {
 	{"display_bkg_color", &(prefs.bkg_color), STRING, "prefs_bkg_color", set_button_color},
 	{"display_result_font", &(prefs.result_font), STRING, "prefs_result_font", set_button_label},
 	{"display_result_color", &(prefs.result_color), STRING, "prefs_result_color", set_button_color},
@@ -58,6 +58,12 @@ s_prefs_entry prefs_list[26] = {
 	{"function_button_group", &(prefs.vis_funcs), BOOLEAN, "prefs_vis_funcs", set_checkbutton},
 	{"logic_button_group", &(prefs.vis_logic), BOOLEAN, "prefs_vis_logic", set_checkbutton},
 	{"dispctrl_button_group", &(prefs.vis_dispctrl), BOOLEAN, "prefs_vis_dispctrl", set_checkbutton},
+	{"hex_bits", &(prefs.hex_bits), INTEGER, "prefs_hex_bits", set_spinbutton},
+	{"hex_signed", &(prefs.hex_signed), BOOLEAN, "prefs_hex_signed", set_checkbutton},
+	{"oct_bits", &(prefs.oct_bits), INTEGER, "prefs_oct_bits", set_spinbutton},
+	{"oct_signed", &(prefs.oct_signed), BOOLEAN, "prefs_oct_signed", set_checkbutton},
+	{"bin_bits", &(prefs.bin_bits), INTEGER, "prefs_bin_bits", set_spinbutton},
+	{"bin_signed", &(prefs.bin_signed), BOOLEAN, "prefs_bin_signed", set_checkbutton},	
 	{"default_number_base", &(prefs.def_number), INTEGER, "prefs_def_number", set_optmenu},
 	{"default_angle_base", &(prefs.def_angle), INTEGER, "prefs_def_angle", set_optmenu},
 	{"default_notation_mode", &(prefs.def_notation), INTEGER, "prefs_def_notation", set_optmenu},
@@ -99,6 +105,17 @@ static void config_file_get_default_prefs (s_preferences *this_prefs)
 	this_prefs->vis_dispctrl = DEFAULT_VIS_DISPCTRL;
 	
 	// 3rd pref page
+	// constants - handled different
+	
+	// 4th pref page
+	this_prefs->hex_bits = DEFAULT_HEX_BITS;
+	this_prefs->hex_signed = DEFAULT_HEX_SIGNED;
+	this_prefs->oct_bits = DEFAULT_OCT_BITS;
+	this_prefs->oct_signed = DEFAULT_OCT_SIGNED;
+	this_prefs->bin_bits = DEFAULT_BIN_BITS;
+	this_prefs->bin_signed = DEFAULT_BIN_SIGNED;
+
+	// 5rd pref page
 	this_prefs->def_number = DEFAULT_NUMBER;
 	this_prefs->def_angle = DEFAULT_ANGLE;
 	this_prefs->def_notation = DEFAULT_NOTATION;

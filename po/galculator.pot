@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-06-22 12:25+0200\n"
+"POT-Creation-Date: 2003-06-23 22:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,7 @@ msgstr ""
 msgid "%s Preferences"
 msgstr ""
 
-#: src/callbacks.c:563
+#: src/callbacks.c:562
 #, c-format
 msgid "[%s] Color Dialog (%s) not found. %s\n"
 msgstr ""
@@ -90,7 +90,7 @@ msgstr ""
 msgid "[%s] Font Dialog (%s) not found. %s\n"
 msgstr ""
 
-#: src/callbacks.c:900
+#: src/callbacks.c:902
 msgid "save here"
 msgstr ""
 
@@ -136,47 +136,47 @@ msgstr ""
 msgid "[%s] RPN stack size is %i.\n"
 msgstr ""
 
-#: src/config_file.c:118
+#: src/config_file.c:135
 msgid "Pi"
 msgstr ""
 
-#: src/config_file.c:119
+#: src/config_file.c:136
 msgid "pi"
 msgstr ""
 
-#: src/config_file.c:121
+#: src/config_file.c:138
 msgid "Euler's Number"
 msgstr ""
 
-#: src/config_file.c:122
+#: src/config_file.c:139
 msgid "e"
 msgstr ""
 
-#: src/config_file.c:151
+#: src/config_file.c:168
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
 msgstr ""
 
-#: src/config_file.c:167
+#: src/config_file.c:184
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
 msgstr ""
 
-#: src/config_file.c:174
+#: src/config_file.c:191
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
 msgstr ""
 
-#: src/config_file.c:192
+#: src/config_file.c:209
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
 msgstr ""
 
-#: src/config_file.c:271
+#: src/config_file.c:288
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
@@ -184,21 +184,21 @@ msgid ""
 "defaults.\n"
 msgstr ""
 
-#: src/config_file.c:304
+#: src/config_file.c:321
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
 "s\n"
 msgstr ""
 
-#: src/config_file.c:312
+#: src/config_file.c:329
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
 "\". %s\n"
 msgstr ""
 
-#: src/config_file.c:327
+#: src/config_file.c:344
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
@@ -244,7 +244,7 @@ msgstr ""
 msgid "unsupported hyperbolic function"
 msgstr ""
 
-#: src/general_functions.c:192
+#: src/general_functions.c:193
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
@@ -399,7 +399,7 @@ msgstr ""
 msgid "Changes the sign of the current display value."
 msgstr ""
 
-#: ui/main.glade.h:38 ui/prefs.glade.h:23
+#: ui/main.glade.h:38 ui/prefs.glade.h:26
 msgid "Clear"
 msgstr ""
 
@@ -459,7 +459,7 @@ msgstr ""
 msgid "Computes the tangent."
 msgstr ""
 
-#: ui/main.glade.h:53 ui/prefs.glade.h:25
+#: ui/main.glade.h:53 ui/prefs.glade.h:28
 msgid "Constants"
 msgstr ""
 
@@ -939,7 +939,7 @@ msgstr ""
 msgid "A dialog that shows information about this program."
 msgstr ""
 
-#: ui/about.glade.h:2 ui/prefs.glade.h:24
+#: ui/about.glade.h:2 ui/prefs.glade.h:27
 msgid "Closes the dialog."
 msgstr ""
 
@@ -1008,209 +1008,233 @@ msgid "<b>Appearance</b>"
 msgstr ""
 
 #: ui/prefs.glade.h:5
-msgid "<b>Dimension</b>"
+msgid "<b>Binary</b>"
 msgstr ""
 
 #: ui/prefs.glade.h:6
-msgid "<b>Font</b>"
+msgid "<b>Dimension</b>"
 msgstr ""
 
 #: ui/prefs.glade.h:7
-msgid "<b>Modules Visibility</b>"
+msgid "<b>Font</b>"
 msgstr ""
 
 #: ui/prefs.glade.h:8
-msgid "<b>Startup</b>"
+msgid "<b>Hexadecimal</b>"
 msgstr ""
 
 #: ui/prefs.glade.h:9
-msgid "<b>User defined constants:</b>"
+msgid "<b>Modules Visibility</b>"
 msgstr ""
 
 #: ui/prefs.glade.h:10
-msgid "<b>Visibility</b>"
+msgid "<b>Octal</b>"
 msgstr ""
 
 #: ui/prefs.glade.h:11
-msgid "A dialog that is used to change preferences settings."
+msgid "<b>Startup</b>"
 msgstr ""
 
 #: ui/prefs.glade.h:12
-msgid "Active module color:"
+msgid "<b>User defined constants:</b>"
 msgstr ""
 
 #: ui/prefs.glade.h:13
-msgid "Add"
+msgid "<b>Visibility</b>"
 msgstr ""
 
 #: ui/prefs.glade.h:14
-msgid "Algebraic"
+msgid "A dialog that is used to change preferences settings."
 msgstr ""
 
 #: ui/prefs.glade.h:15
-msgid "Angle base units"
+msgid "Active module color:"
 msgstr ""
 
 #: ui/prefs.glade.h:16
-msgid "Arithmetic operation"
+msgid "Add"
 msgstr ""
 
 #: ui/prefs.glade.h:17
-msgid "Background color:"
+msgid "Algebraic"
 msgstr ""
 
 #: ui/prefs.glade.h:18
-msgid "Binary"
+msgid "Angle base units"
 msgstr ""
 
 #: ui/prefs.glade.h:19
-msgid "Button font:"
+msgid "Arithmetic operation"
 msgstr ""
 
 #: ui/prefs.glade.h:20
-msgid "Button height:"
+msgid "Background color:"
 msgstr ""
 
 #: ui/prefs.glade.h:21
-msgid "Button width:"
+msgid "Binary"
 msgstr ""
 
 #: ui/prefs.glade.h:22
+msgid "Button font:"
+msgstr ""
+
+#: ui/prefs.glade.h:23
+msgid "Button height:"
+msgstr ""
+
+#: ui/prefs.glade.h:24
+msgid "Button width:"
+msgstr ""
+
+#: ui/prefs.glade.h:25
 msgid "Buttons"
 msgstr ""
 
-#: ui/prefs.glade.h:26
+#: ui/prefs.glade.h:29
 msgid "Decimal"
 msgstr ""
 
-#: ui/prefs.glade.h:27
+#: ui/prefs.glade.h:30
 msgid "Default angle unit:"
 msgstr ""
 
-#: ui/prefs.glade.h:28
+#: ui/prefs.glade.h:31
 msgid "Default notation mode:"
 msgstr ""
 
-#: ui/prefs.glade.h:29
+#: ui/prefs.glade.h:32
 msgid "Default number base:"
 msgstr ""
 
-#: ui/prefs.glade.h:30
+#: ui/prefs.glade.h:33
 msgid "Degrees"
 msgstr ""
 
-#: ui/prefs.glade.h:31
+#: ui/prefs.glade.h:34
 msgid "Delete"
 msgstr ""
 
-#: ui/prefs.glade.h:32
+#: ui/prefs.glade.h:35
 msgid "Description:"
 msgstr ""
 
-#: ui/prefs.glade.h:33
+#: ui/prefs.glade.h:36
 msgid "Display"
 msgstr ""
 
-#: ui/prefs.glade.h:34
+#: ui/prefs.glade.h:37
 msgid "Display control buttons (C, AC, <-)"
 msgstr ""
 
-#: ui/prefs.glade.h:35
+#: ui/prefs.glade.h:38
 msgid "Function buttons (sin, cos, etc.)"
 msgstr ""
 
-#: ui/prefs.glade.h:36
+#: ui/prefs.glade.h:39
 msgid "Gradians"
 msgstr ""
 
-#: ui/prefs.glade.h:37
+#: ui/prefs.glade.h:40
 msgid "Hexadecimal"
 msgstr ""
 
-#: ui/prefs.glade.h:38
+#: ui/prefs.glade.h:41
 msgid "Inactive module color:"
 msgstr ""
 
-#: ui/prefs.glade.h:39
+#: ui/prefs.glade.h:42
 msgid "Logic buttons (AND, OR, etc.)"
 msgstr ""
 
-#: ui/prefs.glade.h:40
+#: ui/prefs.glade.h:43
 msgid "Miscellaneous"
 msgstr ""
 
-#: ui/prefs.glade.h:41
+#: ui/prefs.glade.h:44
 msgid "Module font:"
 msgstr ""
 
-#: ui/prefs.glade.h:42
+#: ui/prefs.glade.h:45
 msgid "Name:"
 msgstr ""
 
-#: ui/prefs.glade.h:43
+#: ui/prefs.glade.h:46
 msgid "Notation"
 msgstr ""
 
-#: ui/prefs.glade.h:44
+#: ui/prefs.glade.h:47
 msgid "Number base units"
 msgstr ""
 
-#: ui/prefs.glade.h:45
-msgid "Octal"
-msgstr ""
-
-#: ui/prefs.glade.h:46
-msgid "Open brackets"
-msgstr ""
-
-#: ui/prefs.glade.h:47
-msgid "Radians"
-msgstr ""
-
 #: ui/prefs.glade.h:48
-msgid "Remember display value on exit"
+msgid "Number of Bits: "
 msgstr ""
 
 #: ui/prefs.glade.h:49
-msgid "Result font color:"
+msgid "Numbers"
 msgstr ""
 
 #: ui/prefs.glade.h:50
-msgid "Result font:"
+msgid "Octal"
 msgstr ""
 
 #: ui/prefs.glade.h:51
-msgid "Reverse Polish (RPN)"
+msgid "Open brackets"
 msgstr ""
 
 #: ui/prefs.glade.h:52
-msgid "Show menu bar"
+msgid "Radians"
 msgstr ""
 
 #: ui/prefs.glade.h:53
-msgid "Update"
+msgid "Remember display value on exit"
 msgstr ""
 
 #: ui/prefs.glade.h:54
-msgid "Use custom button font"
+msgid "Result font color:"
 msgstr ""
 
 #: ui/prefs.glade.h:55
-msgid "Value:"
+msgid "Result font:"
 msgstr ""
 
 #: ui/prefs.glade.h:56
-msgid "button1"
+msgid "Reverse Polish (RPN)"
 msgstr ""
 
 #: ui/prefs.glade.h:57
-msgid "button5"
+msgid "Show menu bar"
 msgstr ""
 
 #: ui/prefs.glade.h:58
-msgid "button7"
+msgid "Update"
 msgstr ""
 
 #: ui/prefs.glade.h:59
+msgid "Use custom button font"
+msgstr ""
+
+#: ui/prefs.glade.h:60
+msgid "Value:"
+msgstr ""
+
+#: ui/prefs.glade.h:61
+msgid "button1"
+msgstr ""
+
+#: ui/prefs.glade.h:62
+msgid "button5"
+msgstr ""
+
+#: ui/prefs.glade.h:63
+msgid "button7"
+msgstr ""
+
+#: ui/prefs.glade.h:64
 msgid "galculator - Preferences"
+msgstr ""
+
+#: ui/prefs.glade.h:65
+msgid "signed"
 msgstr ""

@@ -36,7 +36,7 @@ on_constant_button_clicked             (GtkButton       *button,
                                         gpointer         user_data);
 void
 on_tbutton_fmod_clicked                (GtkButton       *button,
-										gpointer		 user_data);
+					gpointer	 user_data);
 void
 on_gfunc_button_clicked                (GtkButton       *button,
                                         gpointer         user_data);
@@ -139,52 +139,73 @@ void on_textview_selection_received (GtkWidget *widget,
                                             GtkSelectionData *data,
                                             guint time,
                                             gpointer user_data);
-											
+						
 gboolean on_button_event(GtkWidget *widget, GdkEvent *event, gpointer user_data);
 
 void on_prefs_vis_number_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data);
-										
+					gpointer user_data);
+					
 void on_prefs_vis_angle_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data);
+					gpointer user_data);
 
 void on_prefs_vis_notation_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data);
+					gpointer user_data);
 
 void on_prefs_vis_arith_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data);
+					gpointer user_data);
 
 void on_prefs_vis_bracket_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data);
+					gpointer user_data);
 
 void on_prefs_vis_funcs_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data);
+					gpointer user_data);
 
 void on_prefs_vis_logic_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data);
+					gpointer user_data);
 
 void on_prefs_vis_dispctrl_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data);
-										
+					gpointer user_data);
+					
 void on_prefs_show_menu_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data);
+					gpointer user_data);
 
 void on_prefs_rem_display_toggled (GtkToggleButton *togglebutton, 
-										gpointer user_data);
-										
+					gpointer user_data);
+					
 void on_prefs_def_number_changed (GtkOptionMenu *optionmenu,
-										gpointer user_data);
-										
+					gpointer user_data);
+					
 void on_prefs_def_angle_changed (GtkOptionMenu *optionmenu,
-										gpointer user_data);
-										
+					gpointer user_data);
+					
 void on_prefs_def_notation_changed (GtkOptionMenu *optionmenu,
-										gpointer user_data);
-										
+					gpointer user_data);
+					
 void on_prefs_button_width_changed (GtkSpinButton *spinbutton,
-										GtkScrollType arg1,
-										gpointer user_data);
+					GtkScrollType arg1,
+					gpointer user_data);
 
 void on_prefs_button_height_changed (GtkSpinButton *spinbutton,
-										GtkScrollType arg1,
-										gpointer user_data);
+					GtkScrollType arg1,
+					gpointer user_data);
+
+void on_prefs_hex_bits_value_changed (GtkSpinButton *spinbutton, 
+					GtkScrollType arg1, 
+					gpointer user_data);
+					
+void on_prefs_hex_signed_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data);
+					
+void on_prefs_oct_bits_value_changed (GtkSpinButton *spinbutton, 
+					GtkScrollType arg1, 
+					gpointer user_data);
+					
+void on_prefs_oct_signed_toggled (GtkToggleButton *togglebutton, 
+					gpointer user_data);
+					
+void on_prefs_bin_bits_value_changed (GtkSpinButton *spinbutton, 
+					GtkScrollType arg1, 
+					gpointer user_data);
+					
+void on_prefs_bin_signed_toggled (GtkToggleButton *togglebutton, 
+				gpointer user_data);

@@ -49,7 +49,7 @@ char	*number_mod_labels[5] = {" DEC ", " HEX ", " OCT ", " BIN ", NULL},
 	*angle_mod_labels[4] = {" DEG ", " RAD ", " GRAD ", NULL},
 	*notation_mod_labels[3] = {" ALG ", " RPN ", NULL};	
 
-int 	display_lengths[NR_NUMBER_BASES] = {12, 8, 12, 16};
+int 	display_lengths[NR_NUMBER_BASES] = {12, 0, 0, 0};
 
 /*
  * display.c mainly consists of two parts: first display setup code
@@ -571,9 +571,9 @@ void display_result_add_digit (char digit)
 			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, digit_as_string, \
 				-1, "result", NULL);
 		}
-	} else if (display_result_counter < display_lengths[current_status.number]) {
+	} else {
 		if (strcmp (display_result_get(), "0") == 0) display_result_set (digit_as_string);
-		else {
+		else if (display_result_counter < display_lengths[current_status.number]) {
 			display_get_line_end_iter (buffer, DISPLAY_RESULT_LINE, &end);
 			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, digit_as_string, \
 				-1, "result", NULL);
@@ -606,13 +606,13 @@ void display_result_set_double (double value)
 			string_value = g_strdup_printf ("%.*g", display_lengths[current_status.number], value);
 			break;
 		case CS_HEX:
-			string_value = ftoax (value, 16, display_lengths[current_status.number]);
+			string_value = ftoax (value, 16, prefs.hex_bits, prefs.hex_signed);
 			break;
 		case CS_OCT:
-			string_value = ftoax (value, 8, display_lengths[current_status.number]);
+			string_value = ftoax (value, 8, prefs.oct_bits, prefs.oct_signed);
 			break;
 		case CS_BIN:
-			string_value = ftoax (value, 2, display_lengths[current_status.number]);
+			string_value = ftoax (value, 2, prefs.bin_bits, prefs.bin_signed);
 			break;
 		default:
 			string_value = _("unknown number base");
@@ -689,13 +689,13 @@ double display_result_get_double ()
 			return atof(display_result_get());
 			break;
 		case CS_HEX:
-			return axtof(display_result_get(), 16, display_lengths[current_status.number]);
+			return axtof(display_result_get(), 16, prefs.hex_bits, prefs.hex_signed);
 			break;
 		case CS_OCT:
-			return axtof(display_result_get(), 8, display_lengths[current_status.number]);
+			return axtof(display_result_get(), 8, prefs.oct_bits, prefs.oct_signed);
 			break;
 		case CS_BIN:
-			return axtof(display_result_get(), 2, display_lengths[current_status.number]);
+			return axtof(display_result_get(), 2, prefs.bin_bits, prefs.bin_signed);
 			break;
 		default:
 			fprintf (stderr, _("[%s] unknown number base in function \"display_result_get_double\". %s\n"), PROG_NAME, BUG_REPORT);

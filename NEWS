@@ -1,3 +1,13 @@
+galculator 1.1.1 - two releases within two days. uuuh! Never mind. Two quite 
+important bug fixes
+	* preferences dialog's font and color dialog work again
+	* again, GTK 2.0 is enough to build
+and a cool new feature
+	* configurable variable type (number of bits and [un]signed) in HEX/OCT/BIN 
+	mode. Enjoy converting your unsigned 7-bit binary to a 13-bit signed 
+	hexadecimal.
+are reason enough for an update.
+
 galculator 1.1.0 - the first official release after 1.0. What's new?
         * constants popup, user defined constants
 	* save to/read from and add to memory as much as you want
