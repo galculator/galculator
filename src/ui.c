@@ -372,7 +372,7 @@ void ui_main_window_buttons_destroy ()
 
 void ui_main_window_buttons_create (int mode)
 {
-	GtkWidget	*box;
+	GtkWidget	*box, *button;
 	struct lconv 	*locale_settings;
 	s_signal_cb	signal_cb;
 	
@@ -405,6 +405,11 @@ is not supported: >%s<\nYou might face problems when using %s! %s\n)"),
 	dec_point[1] = '\0';
 	gtk_button_set_label ((GtkButton *) glade_xml_get_widget (
 		button_box_xml, "button_point"), dec_point);
+	/* disable mr and m+ button if there is nothing to display */
+	button = glade_xml_get_widget (button_box_xml, "button_MR");
+	gtk_widget_set_sensitive (button, memory.len > 0);
+	button = glade_xml_get_widget (button_box_xml, "button_Mplus");
+	gtk_widget_set_sensitive (button, memory.len > 0);
 }
 
 /* set_table_child_callback. Function argument for set_all_*_buttons_property.

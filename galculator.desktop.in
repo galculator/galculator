@@ -1,9 +1,10 @@
 [Desktop Entry]
-Name=galculator
-_Comment=Scientific calculator
-Exec=/usr/bin/galculator
+Name=Galculator
+_Comment=Perform simple and scientific calculations
+Exec=galculator
 Icon=gnome-calc2.png
 Terminal=false
 Type=Application
 Categories=Application;Utility;
+StartupNotify=true
 Encoding=UTF-8
