@@ -1521,7 +1521,7 @@ glib_DEFUN([GLIB_WITH_NLS],
 # on various variables needed by the Makefile.in.in installed by 
 # glib-gettextize.
 dnl
-glib_DEFUN(GLIB_GNU_GETTEXT,
+glib_DEFUN([GLIB_GNU_GETTEXT],
   [AC_REQUIRE([AC_PROG_CC])dnl
    AC_REQUIRE([AC_HEADER_STDC])dnl
    
@@ -1598,7 +1598,7 @@ glib_DEFUN(GLIB_GNU_GETTEXT,
 # -------------------------------
 # Define VARIABLE to the location where catalog files will
 # be installed by po/Makefile.
-glib_DEFUN(GLIB_DEFINE_LOCALEDIR,
+glib_DEFUN([GLIB_DEFINE_LOCALEDIR],
 [glib_REQUIRE([GLIB_GNU_GETTEXT])dnl
 glib_save_prefix="$prefix"
 glib_save_exec_prefix="$exec_prefix"
@@ -1619,7 +1619,7 @@ dnl
 dnl Now the definitions that aclocal will find
 dnl
 ifdef(glib_configure_in,[],[
-AC_DEFUN(AM_GLIB_GNU_GETTEXT,[GLIB_GNU_GETTEXT($@)])
-AC_DEFUN(AM_GLIB_DEFINE_LOCALEDIR,[GLIB_DEFINE_LOCALEDIR($@)])
+AC_DEFUN([AM_GLIB_GNU_GETTEXT],[GLIB_GNU_GETTEXT($@)])
+AC_DEFUN([AM_GLIB_DEFINE_LOCALEDIR],[GLIB_DEFINE_LOCALEDIR($@)])
 ])dnl
 

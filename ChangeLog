@@ -1,3 +1,9 @@
+2004-06-19 Simon Floery <chimaira@users.sf.net>
+	* src/general_functions.c: check for NULL pointers in 
+		formula_entry_is_active. fixes sf.net #971328.
+		(thanks to michal)
+	* added polish translation. sf.net #971335 (thanks to michal)
+
 ########################################
 # 2003-05-23 galculator 1.2.3 released #
 ########################################
