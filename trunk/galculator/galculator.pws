@@ -6,8 +6,8 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=182
-1=375
+0=6
+1=285
 2=5
 3=1056
 4=13
@@ -62,12 +62,8 @@ clean before build=false
 7=CURRENT_ALG
 
 [filelist]
-0=/home/sf/Devel/galculator/src/galculator.h
-1=/home/sf/Devel/galculator/src/ui.c
-2=/home/sf/Devel/galculator/galculator.desktop.in
-3=/home/sf/Devel/galculator/src/callbacks.c
-4=/home/sf/Devel/galculator/ChangeLog
-5=/home/sf/Devel/galculator/src/calc_basic.c
+0=/home/sf/Devel/galculator/TODO
+1=/home/sf/Devel/galculator/src/calc_basic.c
 
 [Project Tree]
 0=0

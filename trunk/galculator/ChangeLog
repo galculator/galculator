@@ -1,3 +1,12 @@
+########################################
+# 2003-05-23 galculator 1.2.3 released #
+########################################
+
+2004-05-23 Simon Floery <chimaira@users.sf.net>
+	* src/callback.c: CON and MR buttons push display value all the time
+		(thanks to christian)
+	* src/calc_basic.c: '=' closes now all open brackets
+	
 2004-05-22 Simon Floery <chimaira@users.sf.net>
 	* ui/main_frame.glade: fixed "destroy" signal bug (thanks to andrew)
 	* galculator.desktop.in: updates (thanks to dag)

@@ -10,16 +10,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-01 10:43+0300\n"
+"POT-Creation-Date: 2004-05-23 17:20+0300\n"
 "PO-Revision-Date: 2004-04-11 17:14-0400\n"
 "Last-Translator: Francisco Petrucio <fpetrucio@mat.ufal.br>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-15\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: galculator.desktop.in.h:1
-msgid "Scientific calculator"
+#, fuzzy
+msgid "Perform simple and scientific calculations"
 msgstr "Calculadora Científica"
 
 #: src/callbacks.c:40
@@ -76,7 +77,7 @@ msgstr ""
 "\n"
 "(c) 2002-2003 por Simon Floery (chimaira@users.sf.net)"
 
-#: src/callbacks.c:1062
+#: src/callbacks.c:1075
 msgid "save here"
 msgstr "guarda aqui"
 
@@ -308,69 +309,69 @@ msgstr ""
 "Você poderá enfrentar problemas ao usar %s! %s\n"
 ")"
 
-#: src/ui.c:778 ui/main_frame.glade.h:11
+#: src/ui.c:783 ui/main_frame.glade.h:11
 msgid "Show _menu bar"
 msgstr "_Mostra a barra de menu"
 
-#: src/ui.c:806
+#: src/ui.c:811
 #, c-format
 msgid "%s Preferences"
 msgstr "%s Preferências"
 
-#: src/ui.c:1008 ui/scientific_buttons.glade.h:21 ui/basic_buttons.glade.h:21
+#: src/ui.c:1013 ui/scientific_buttons.glade.h:21 ui/basic_buttons.glade.h:21
 msgid "="
 msgstr "="
 
-#: src/ui.c:1008 src/ui.c:1020 ui/scientific_buttons.glade.h:39
+#: src/ui.c:1013 src/ui.c:1025 ui/scientific_buttons.glade.h:39
 #: ui/basic_buttons.glade.h:28
 msgid "Enter"
 msgstr "Calcula"
 
-#: src/ui.c:1010 ui/scientific_buttons.glade.h:99
+#: src/ui.c:1015 ui/scientific_buttons.glade.h:99
 msgid "x^y"
 msgstr "x^y"
 
-#: src/ui.c:1010 src/ui.c:1022 ui/scientific_buttons.glade.h:71
+#: src/ui.c:1015 src/ui.c:1027 ui/scientific_buttons.glade.h:71
 msgid "Power"
 msgstr "Potência"
 
-#: src/ui.c:1012 ui/scientific_buttons.glade.h:3 ui/basic_buttons.glade.h:3
+#: src/ui.c:1017 ui/scientific_buttons.glade.h:3 ui/basic_buttons.glade.h:3
 msgid "("
 msgstr "("
 
-#: src/ui.c:1012 ui/scientific_buttons.glade.h:69 ui/basic_buttons.glade.h:37
+#: src/ui.c:1017 ui/scientific_buttons.glade.h:69 ui/basic_buttons.glade.h:37
 msgid "Open Bracket"
 msgstr "Abre parêntese"
 
-#: src/ui.c:1014 ui/scientific_buttons.glade.h:4 ui/basic_buttons.glade.h:4
+#: src/ui.c:1019 ui/scientific_buttons.glade.h:4 ui/basic_buttons.glade.h:4
 msgid ")"
 msgstr ")"
 
-#: src/ui.c:1014 ui/scientific_buttons.glade.h:30 ui/basic_buttons.glade.h:24
+#: src/ui.c:1019 ui/scientific_buttons.glade.h:30 ui/basic_buttons.glade.h:24
 msgid "Close Bracket"
 msgstr "Fecha parêntese"
 
-#: src/ui.c:1020
+#: src/ui.c:1025
 msgid "ENT"
 msgstr "ENT"
 
-#: src/ui.c:1022
+#: src/ui.c:1027
 msgid "y^x"
 msgstr "y^x"
 
-#: src/ui.c:1024
+#: src/ui.c:1029
 msgid "x<>y"
 msgstr "x<>y"
 
-#: src/ui.c:1024
+#: src/ui.c:1029
 msgid "swap current number with top of stack"
 msgstr "Troca o número corrente com o topo da pilha"
 
-#: src/ui.c:1026
+#: src/ui.c:1031
 msgid "roll"
 msgstr "roll"
 
-#: src/ui.c:1026
+#: src/ui.c:1031
 msgid "roll down stack"
 msgstr "Rola pilha pra baixo"
 
@@ -1167,8 +1168,8 @@ msgstr "Reinicializa a calculadora (limpa tudo)"
 #~ msgid ""
 #~ "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
 #~ msgstr ""
-#~ "[%s] base trigonomÃ©trica desconhecida na funÃ§Ã£o \"display_result_set_angle"
-#~ "\". %s\n"
+#~ "[%s] base trigonomÃ©trica desconhecida na funÃ§Ã£o "
+#~ "\"display_result_set_angle\". %s\n"
 
 #~ msgid ""
 #~ "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
@@ -1178,4 +1179,3 @@ msgstr "Reinicializa a calculadora (limpa tudo)"
 
 #~ msgid "_Show menu bar"
 #~ msgstr "_Mostrar barra do menu"
-

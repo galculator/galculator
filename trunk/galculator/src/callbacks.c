@@ -1012,6 +1012,8 @@ void constants_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 {
 	char		*const_value;
 	
+	/* push current display value */
+	current_status.rpn_stack_lift_enabled = TRUE;
 	rpn_stack_lift();
 	const_value = user_data;
 	display_result_set (const_value);
@@ -1078,7 +1080,9 @@ on_ms_button_clicked (GtkToggleButton       *button,
 void mr_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 {
 	int		index;
-	
+
+	/* current display value on stack */
+	current_status.rpn_stack_lift_enabled = TRUE;
 	rpn_stack_lift();
 	index = GPOINTER_TO_INT(user_data);
 	display_result_set_double(memory.data[index]);

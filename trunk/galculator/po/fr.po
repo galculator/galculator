@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-01 10:43+0300\n"
+"POT-Creation-Date: 2004-05-23 17:20+0300\n"
 "PO-Revision-Date: 2003-10-08 01:50+0200\n"
 "Last-Translator:\n"
 "Language-Team: \n"
@@ -16,7 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: galculator.desktop.in.h:1
-msgid "Scientific calculator"
+#, fuzzy
+msgid "Perform simple and scientific calculations"
 msgstr "Calculatrice Scientifique"
 
 #: src/callbacks.c:40
@@ -73,7 +74,7 @@ msgstr ""
 "\n"
 "© 2002-2003 par Simon Floery (chimaira@users.sf.net)"
 
-#: src/callbacks.c:1062
+#: src/callbacks.c:1075
 msgid "save here"
 msgstr "sauvegarder ici"
 
@@ -308,70 +309,70 @@ msgstr ""
 "Vous devriez régler le problème en utilisant %s! %s\n"
 ")"
 
-#: src/ui.c:778 ui/main_frame.glade.h:11
+#: src/ui.c:783 ui/main_frame.glade.h:11
 #, fuzzy
 msgid "Show _menu bar"
 msgstr "Afficher la barre de menu"
 
-#: src/ui.c:806
+#: src/ui.c:811
 #, c-format
 msgid "%s Preferences"
 msgstr "Préférences de %s"
 
-#: src/ui.c:1008 ui/scientific_buttons.glade.h:21 ui/basic_buttons.glade.h:21
+#: src/ui.c:1013 ui/scientific_buttons.glade.h:21 ui/basic_buttons.glade.h:21
 msgid "="
 msgstr "="
 
-#: src/ui.c:1008 src/ui.c:1020 ui/scientific_buttons.glade.h:39
+#: src/ui.c:1013 src/ui.c:1025 ui/scientific_buttons.glade.h:39
 #: ui/basic_buttons.glade.h:28
 msgid "Enter"
 msgstr "Entrée"
 
-#: src/ui.c:1010 ui/scientific_buttons.glade.h:99
+#: src/ui.c:1015 ui/scientific_buttons.glade.h:99
 msgid "x^y"
 msgstr "x^y"
 
-#: src/ui.c:1010 src/ui.c:1022 ui/scientific_buttons.glade.h:71
+#: src/ui.c:1015 src/ui.c:1027 ui/scientific_buttons.glade.h:71
 msgid "Power"
 msgstr "Puissance"
 
-#: src/ui.c:1012 ui/scientific_buttons.glade.h:3 ui/basic_buttons.glade.h:3
+#: src/ui.c:1017 ui/scientific_buttons.glade.h:3 ui/basic_buttons.glade.h:3
 msgid "("
 msgstr "("
 
-#: src/ui.c:1012 ui/scientific_buttons.glade.h:69 ui/basic_buttons.glade.h:37
+#: src/ui.c:1017 ui/scientific_buttons.glade.h:69 ui/basic_buttons.glade.h:37
 msgid "Open Bracket"
 msgstr "Ouvrir la parenthèse"
 
-#: src/ui.c:1014 ui/scientific_buttons.glade.h:4 ui/basic_buttons.glade.h:4
+#: src/ui.c:1019 ui/scientific_buttons.glade.h:4 ui/basic_buttons.glade.h:4
 msgid ")"
 msgstr ")"
 
-#: src/ui.c:1014 ui/scientific_buttons.glade.h:30 ui/basic_buttons.glade.h:24
+#: src/ui.c:1019 ui/scientific_buttons.glade.h:30 ui/basic_buttons.glade.h:24
 msgid "Close Bracket"
 msgstr "Fermer la parenthèse"
 
-#: src/ui.c:1020
+#: src/ui.c:1025
 msgid "ENT"
 msgstr "ENT"
 
-#: src/ui.c:1022
+#: src/ui.c:1027
 msgid "y^x"
 msgstr "y^x"
 
-#: src/ui.c:1024
+#: src/ui.c:1029
 msgid "x<>y"
 msgstr "x<>y"
 
-#: src/ui.c:1024
+#: src/ui.c:1029
 msgid "swap current number with top of stack"
 msgstr ""
 
-#: src/ui.c:1026
+#: src/ui.c:1031
 msgid "roll"
 msgstr "roll"
 
-#: src/ui.c:1026
+#: src/ui.c:1031
 msgid "roll down stack"
 msgstr ""
 
