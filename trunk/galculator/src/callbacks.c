@@ -167,7 +167,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 	current_token.operation = (int) g_object_get_data (G_OBJECT (button), "operation");
 	/* current number, get it from the display! */
 	current_token.number = display_result_get_double ();
-	current_token.func = NULL;	
+	current_token.func = NULL;
 	/* do inverse left shift is a right shift */
 	if ((current_token.operation == '<') && \
 		(BIT (current_status.fmod, CS_FMOD_FLAG_INV) == 1)) {
@@ -188,7 +188,6 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 		 * in general, a closing bracket is only useful if there were opening
 		 *	brackets.
 		 */
-		
 		if (((current_token.operation == '(') || current_status.allow_arith_op) && \
 			((current_token.operation != ')') || (display_module_bracket_label_update (GET) > 0))) {
 			return_value = alg_add_token (&main_alg, current_token);

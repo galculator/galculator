@@ -194,6 +194,7 @@ void display_init (GtkWidget *a_parent_widget)
 	gtk_text_view_set_tabs (view, tab_array);
 	pango_tab_array_free (tab_array);
 	
+	/* DISPLAY RESULT MODIFIED */
 	gtk_text_buffer_get_iter_at_line (buffer, &iter, display_result_line);
 	gtk_text_buffer_insert_with_tags_by_name (buffer, &iter, 
 		CLEARED_DISPLAY, -1, "result", NULL);
@@ -649,6 +650,7 @@ void display_result_add_digit (char digit)
 		if (strlen (display_result_get()) == 0) display_result_set ("0");
 		else if ((strchr (display_result_get(), dec_point[0]) == NULL) && \
 					(strchr (display_result_get(), 'e') == NULL)) {
+			/* DISPLAY RESULT MODIFIED */
 			display_get_line_end_iter (buffer, display_result_line, &end);
 			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, digit_as_string, \
 				-1, "result", NULL);
@@ -656,6 +658,7 @@ void display_result_add_digit (char digit)
 	} else {
 		if (strcmp (display_result_get(), "0") == 0) display_result_set (digit_as_string);
 		else if (display_result_counter < get_display_number_length(current_status.number)) {
+			/* DISPLAY RESULT MODIFIED */
 			display_get_line_end_iter (buffer, display_result_line, &end);
 			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, digit_as_string, \
 				-1, "result", NULL);
@@ -714,6 +717,7 @@ void display_stack_set_yzt (char **stack)
 	
 	for (counter = 0; counter < display_result_line; counter++) {
 		display_delete_line (buffer, counter, &start);
+		/* DISPLAY RESULT MODIFIED */
 		gtk_text_buffer_insert_with_tags_by_name (buffer, &start, 
 			stack[display_result_line - counter - 1], -1, "stack", NULL);
 	}
@@ -733,6 +737,7 @@ char **display_stack_get_yzt ()
 	stack = (char **) malloc (3* sizeof (char *));
 	for (counter = 0; counter < 3; counter++) {
 		display_get_line_iters (buffer, display_result_line - counter - 1, &start, &end);
+		/* DISPLAY RESULT GET */
 		stack[counter] = gtk_text_buffer_get_text (buffer, &start, &end, TRUE);
 	}
 	return stack;
@@ -758,14 +763,17 @@ double *display_stack_get_yzt_double ()
 
 void display_set_line_double (double value, int line, char *tag)
 {
-	char 		*string_value;
+	char 		*string_value, *separator_string;
 	GtkTextIter	start;
 
 	/* at first clear the result field */
 	display_delete_line (buffer, line, &start);
 	
 	string_value = get_display_number_string (value, current_status.number);
-	gtk_text_buffer_insert_with_tags_by_name (buffer, &start, string_value, -1, tag, NULL);
+	/* DISPLAY RESULT MODIFIED */
+	separator_string = string_add_separator(string_value, TRUE, 3, ' ', '.');
+	gtk_text_buffer_insert_with_tags_by_name (buffer, &start, separator_string, -1, tag, NULL);
+	free (separator_string);
 	if (line == display_result_line) 
 		display_result_counter = strlen (string_value);
 	g_free (string_value);
@@ -797,6 +805,7 @@ void display_result_set (char *string_value)
 	/* here we call no kill_trailing_zeros. we set the result_field to 
 	 * what we entered 
 	 */
+	/* DISPLAY RESULT MODIFIED */
 	gtk_text_buffer_insert_with_tags_by_name (buffer, &end, string_value, \
 		-1, "result", NULL);
 	display_result_counter = strlen (string_value);
@@ -831,6 +840,7 @@ char *display_result_get ()
 	GtkTextIter 	start, end;
 	
 	display_get_line_iters (buffer, display_result_line, &start, &end);
+	/* DISPLAY RESULT GET */
 	return gtk_text_buffer_get_text (buffer, &start, &end, TRUE);
 }
 
@@ -855,6 +865,7 @@ void display_append_e (GtkToggleButton *button)
 	if ((current_status.calc_entry_start_new == FALSE) && 
 		(strcmp (display_result_get(), "0") != 0)) {
 		if (strstr (display_result_get(), "e") == NULL) {
+			/* DISPLAY RESULT MODIFIED */
 			display_get_line_end_iter (buffer, display_result_line, &end);
 			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, "e+", -1, "result", NULL);
 		}
@@ -873,6 +884,7 @@ void display_result_toggle_sign (GtkToggleButton *button)
 	if (current_status.number != CS_DEC) return;
 	/* we could call display_result_get but we need start iterator later on anyway */
 	display_get_line_iters (buffer, display_result_line, &start, &end);
+	/* DISPLAY RESULT GET */
 	result_field = gtk_text_buffer_get_text (buffer, &start, &end, TRUE);
 	/* if there is no e? we toggle the leading sign, otherwise the sign after e */
 	if ((e_pointer = strchr (result_field, 'e')) == NULL) {

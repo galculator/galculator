@@ -1,3 +1,9 @@
+2004-09-11 Simon Floery <chimaira@users.sf.net>
+	* string_add_separator, string_del_separator
+
+2004-07-11 Simon Floery <chimaira@users.sf.net>
+	* added Romanian translation (thanks to cosma)
+
 2204-07-01 Simon Floery <chimaira@users.sf.net>
 	* updated pt_BR.po
 
