@@ -36,6 +36,8 @@
 #include "galculator.h"
 #include "math_functions.h"
 
+static gboolean error;
+
 /* is_operation. determines on behalf of current and previous character if 
  * current one is an operation.
  */
@@ -54,7 +56,7 @@ static gboolean is_operation (char operation_char, char last_char)
  * length.
  */
 
-int remove_whitespaces (char *string)
+static int remove_whitespaces (char *string)
 {
 	int 	string_counter=0, new_string_counter=0;
 	
@@ -75,27 +77,28 @@ int remove_whitespaces (char *string)
  * therefore this special case handling.
  */
 
-void factorial_preprocessing (char *string, int string_length)
+static void factorial_preprocessing (char *string, int string_length)
 {
 	int 		counter, inner_counter, fac_counter=0, *bracket_counter=NULL;
 	
 	for (counter = string_length-1; counter >= 0; counter--) {
 		if (string[counter] == '!') {
+			string[counter + fac_counter] = string[counter];
 			fac_counter++;
 			bracket_counter = (int *) realloc (bracket_counter, fac_counter * sizeof(int));
 			bracket_counter[fac_counter-1] = 0;
 		}
-		if (fac_counter > 0) {
+		else if (fac_counter > 0) {
+			string[counter + fac_counter] = string[counter];
 			if (string[counter] == ')')
 				for (inner_counter = 0; inner_counter < fac_counter; inner_counter++)
 					bracket_counter[inner_counter]++;
-			string[counter + bracket_counter[0]] = string[counter];
 			if (string[counter] == '(')
 				for (inner_counter = 0; inner_counter < fac_counter; inner_counter++)
 					bracket_counter[inner_counter]--;
 			if ((bracket_counter[fac_counter-1] == 0) && (string[counter] != '!')) {
-				string[counter+bracket_counter[0]] = '!';
 				fac_counter--;
+				string[counter + fac_counter] = '!';
 				bracket_counter = (int *) realloc (bracket_counter, fac_counter * sizeof(int));
 			}
 		}
@@ -174,8 +177,10 @@ static u_number identify_number (char *string, char current_operation, double de
 			return_value.value = strtod (constant_string, &endptr);
 		/* and last if it is a number */
 		else return_value.value = strtod (string, &endptr);
-		if ((endptr) && (*endptr != '\0')) 
-			fprintf (stderr, "error [id_nr] : %s\n", string);
+		if ((endptr) && (*endptr != '\0')) {
+			/*fprintf (stderr, "error [id_nr] : %s\n", string);*/
+			error = TRUE;
+		}
 	}
 	return return_value;
 }
@@ -184,18 +189,19 @@ static u_number identify_number (char *string, char current_operation, double de
  * to get the result.
  */
 
-double parse_string(const char *input_string)
+s_parser_result parse_string(const char *input_string)
 {
 	int 		counter, string_length;
 	char 		*number, *string, last_char=0;
 	s_cb_token	current_token;
-	double 		result=0.;
+	s_parser_result	this;
 	
+	error = FALSE;
+	this.result = 0.;
 	string = g_strdup_printf ("%s=", input_string);
 	string_length = remove_whitespaces (string);
-	printf ("..%s\n", string);
 	factorial_preprocessing (string, string_length);
-	printf ("..%s\n", string);
+	/* printf ("parsing: %s\n", string); */
 	number = string;
 	for (counter = 0; counter < string_length; counter++) {
 		/* current character is an operation BUT not a minus sign 
@@ -206,15 +212,16 @@ double parse_string(const char *input_string)
 			last_char = string[counter];
 			string[counter] = '\0';
 			current_token.number = identify_number (number, 
-				current_token.operation, result);
-			result = alg_add_token (current_token);
+				current_token.operation, this.result);
+			this.result = alg_add_token (current_token);
 			number = &(string[counter + 1]);
 		} else {
 			last_char = string[counter];
 		}
 	}
 	g_free (string);
-	return result;
+	this.error = error;
+	return this;
 }
 
 /*

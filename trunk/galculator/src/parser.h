@@ -26,8 +26,13 @@ typedef struct {
 	double	(*function)(double);
 } s_string_func_pair;
 
-#define OPERATION_CHARS "+-*/^=()%m<>&|"
+typedef struct {
+	double		result;
+	gboolean	error;
+} s_parser_result;
 
-double parse_string(const char *input_string);
+#define OPERATION_CHARS "+-*/^=()%m<>&|x"
+
+s_parser_result parse_string(const char *input_string);
 
 #endif	/* parser.h */

@@ -15,7 +15,7 @@
 	[DONE] constants
 	[DONE] AND, OR, MOD, LSH, ...
 	[DONE] ~ (CMP)
-	[ ] ((3))!
+	[DONE] ((3))!
 
 [DONE] strtod - wenn im rest was drinnen, warnung
 

@@ -234,3 +234,5 @@ gboolean on_button_press_event (GtkWidget *widget,
 
 void on_formula_entry_activate (GtkEntry *entry,
                                             gpointer user_data);
+					    
+void on_formula_entry_changed (GtkEditable *editable, gpointer user_data);

@@ -64,9 +64,11 @@ GtkWidget *ui_memory_menu_create (s_array memory,
 				GCallback const_handler, 
 				char *last_item);
 GtkWidget *ui_right_mouse_menu_create ();
+void ui_formula_entry_activate ();
 void ui_formula_entry_set (G_CONST_RETURN gchar *text);
 void ui_formula_entry_insert (G_CONST_RETURN gchar *text);
 void ui_formula_entry_backspace ();
+void ui_formula_entry_state ();
 void ui_button_set_pan ();
 void ui_button_set_rpn ();
 void position_menu (GtkMenu *menu, 

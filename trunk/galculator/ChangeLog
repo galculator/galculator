@@ -1,3 +1,7 @@
+2004-02-27 Simon Floery <chimaira@users.sf.net>
+	* formula entry turns red on syntax error
+	* parser improvements
+
 2004-02-26 Simon Floery <chimaira@users.sf.net>
 	* improved parser: factorial, complement
 
