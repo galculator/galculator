@@ -191,7 +191,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 		
 		if (((current_token.operation == '(') || current_status.allow_arith_op) && \
 			((current_token.operation != ')') || (display_module_bracket_label_update (GET) > 0))) {
-			return_value = alg_add_token (current_token);
+			return_value = alg_add_token (&main_alg, current_token);
 			display_result_set_double (return_value);
 			display_module_arith_label_update (current_token.operation);
 			
@@ -418,7 +418,7 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
 	display_change_option (CS_RPN, DISPLAY_OPT_NOTATION);
 	set_widget_visibility (main_window_xml, "formula_entry_hbox", FALSE);
-	alg_free();
+	alg_free(main_alg);
 	all_clear();
 	ui_button_set_rpn();
 	/* stack is created by all_clear */
@@ -994,23 +994,21 @@ void on_prefs_button_height_changed (GtkSpinButton *spinbutton,
 
 void user_functions_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 {
-	int 	index, nr_constants;
+	int 			index;
+	s_flex_parser_result	result;
 	
 	index = (int) user_data;
-	
-	nr_constants = 0;
-	while (constant[nr_constants].name != NULL) nr_constants++;
-	constant = (s_constant *) realloc (constant, (nr_constants + 2) * sizeof(s_constant));
-	constant[nr_constants + 1].name = NULL;
-	
-	constant[nr_constants].name = user_function[index].variable;
-	constant[nr_constants].value = display_result_get();
-	constant[nr_constants].desc = NULL;
-	
-	display_result_set_double (flex_parser(user_function[index].expression));
-	
-	constant = (s_constant *) realloc (constant, (nr_constants + 1) * sizeof(s_constant));
-	constant[nr_constants].name = NULL;
+	result = compute_user_function (
+		user_function[index].expression, user_function[index].variable,
+		display_result_get());
+	if (!result.error) {
+		display_result_set_double (result.value);
+		current_status.calc_entry_start_new = TRUE;	
+		if (current_status.notation == CS_RPN) 
+			current_status.rpn_stack_lift_enabled = TRUE;
+	} else fprintf (stderr, "[%s] User function %s(%s)=%s returned with an error.\
+Please check the expression string.\n", PROG_NAME, user_function[index].name, 
+user_function[index].variable, user_function[index].expression); 
 }
 
 void
@@ -1498,13 +1496,11 @@ gboolean on_button_press_event (GtkWidget *widget, GdkEventButton *event, gpoint
 
 void on_formula_entry_activate (GtkEntry *entry, gpointer user_data)
 {
-	/*s_parser_result		parser;
+	s_flex_parser_result 	result;
 	
-	parser = parse_string (gtk_entry_get_text (entry));
-	ui_formula_entry_state (parser.error);
-	if (!parser.error) display_result_set_double (parser.result);
-	*/
-	display_result_set_double (flex_parser(gtk_entry_get_text(entry)));
+	result = flex_parser(gtk_entry_get_text(entry));
+	ui_formula_entry_state (result.error);
+	if (!result.error) display_result_set_double (result.value);
 }
 
 void on_formula_entry_changed (GtkEditable *editable, gpointer user_data)

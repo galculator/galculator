@@ -26,10 +26,7 @@ typedef struct {
 	double	(*function)(double);
 } s_string_func_pair;
 
-typedef struct {
-	double		result;
-	gboolean	error;
-} s_parser_result;
+
 
 #define OPERATION_CHARS "+-*/^=()%m<>&|x"
 

@@ -22,6 +22,7 @@
 #define _GENERAL_FUNCTIONS_H 1
 
 #include "config_file.h"
+#include "flex_parser.h"
 
 #include <glade/glade.h>
 
@@ -74,6 +75,8 @@ double string2double (char *string, int number_base);
 void set_button_label_and_tooltip (GladeXML *xml, char *button_name, 
 	char *label, char *tooltip);
 	
-gboolean formula_entry_is_active ();
+gboolean formula_entry_is_active (GtkWidget *window_widget);
+
+s_flex_parser_result compute_user_function (char *expression, char *variable, char *value);
 
 #endif /* general_functions.h */

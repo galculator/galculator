@@ -186,5 +186,7 @@ extern s_preferences	prefs;
 extern s_constant 	*constant;
 extern s_user_function	*user_function;
 extern s_current_status	current_status;
+#include "calc_basic.h"
+extern ALG_OBJECT	*main_alg;
 
 #endif /* galculator.h */

@@ -31,6 +31,7 @@
 #include "config_file.h"
 #include "callbacks.h"
 #include "ui.h"
+#include "flex_parser.h"
 
 #include <gtk/gtk.h>
 #include <glade/glade.h>
@@ -80,8 +81,8 @@ void all_clear ()
 	clear();
 	switch (current_status.notation) {
 		case CS_PAN:
-			alg_free();
-			alg_init(0);
+			alg_free(main_alg);
+			main_alg = alg_init(0);
 			break;
 		case CS_RPN:
 			rpn_free();
@@ -92,7 +93,7 @@ void all_clear ()
 			current_status.rpn_stack_lift_enabled = FALSE;
 			break;
 		case CS_FORMULA:
-			alg_free();
+			alg_free(main_alg);
 			rpn_free();
 			display_stack_remove();
 			break;
@@ -562,11 +563,33 @@ void set_button_label_and_tooltip (GladeXML *xml, char *button_name,
 	}
 }
 
-gboolean formula_entry_is_active ()
+gboolean formula_entry_is_active (GtkWidget *window_widget)
 {
 	GtkWidget	*active_widget, *main_window;
 	
 	main_window = glade_xml_get_widget (main_window_xml, "main_window");
 	active_widget = gtk_window_get_focus ((GtkWindow *)main_window);
-	return !strcmp (gtk_widget_get_name (active_widget), "formula_entry");
+	return (!strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(window_widget)),"main_window") & 
+		!strcmp (gtk_widget_get_name (active_widget), "formula_entry"));
+}
+
+s_flex_parser_result compute_user_function (char *expression, char *variable, char *value)
+{
+	int			nr_constants;
+	s_flex_parser_result	result;
+	
+	nr_constants = 0;
+	while (constant[nr_constants].name != NULL) nr_constants++;
+	constant = (s_constant *) realloc (constant, (nr_constants + 2) * sizeof(s_constant));
+	constant[nr_constants + 1].name = NULL;
+	
+	constant[nr_constants].name = variable;
+	constant[nr_constants].value = value;
+	constant[nr_constants].desc = NULL;
+	
+	result = flex_parser(expression);
+	
+	constant = (s_constant *) realloc (constant, (nr_constants + 1) * sizeof(s_constant));
+	constant[nr_constants].name = NULL;
+	return result;
 }

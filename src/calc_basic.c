@@ -45,9 +45,7 @@
 static char 	*operator_precedence[] = {"=)", "+-&|x", "*/<>%", "^", "(", "%", NULL};
 static char 	*right_associative = "^";
 
-static s_alg_stack	*current_stack=NULL;
 static GArray		*rpn_stack;
-static GPtrArray	*stackstack;
 static int		rpn_stack_size;
 static int		alg_debug = 0, rpn_debug = 0;
 
@@ -65,7 +63,7 @@ double id (double x)
 
 /* debug_input. debug code: enter tokens on stdin.
  */
-
+/*
 void debug_input ()
 {
 	char		input[20];
@@ -78,7 +76,7 @@ void debug_input ()
 	current_token.func = NULL;
 	printf ("\t\tdisplay value: %f\n", alg_add_token (current_token));
 }
-
+*/
 /* reduce. TRUE if op1 comes before op2 in a computation.
  */
 
@@ -221,31 +219,45 @@ static double alg_stack_pool (s_alg_stack *stack)
 	return stack->number[stack->size-1];
 }
 
-/* alg_stack_free. the stack destructor.
+/* alg_stack_free. the stack destructor. 
  */
 
 static void alg_stack_free (s_alg_stack *stack)
 {
-	free (stack->number);
-	free (stack->operation);
-	free (stack);
+	if (!stack) {
+		if (!stack->number) free (stack->number);
+		if (!stack->operation) free (stack->operation);
+		free (stack);
+	}
+}
+
+/* alg_stack_free_gfunc. wrapper for alg_stack_free for g_slist_foreach.
+ */
+
+static void alg_stack_free_gfunc (gpointer data, gpointer user_data)
+{
+	s_alg_stack	*stack;
+	
+	stack = data;
+	alg_stack_free (stack);
 }
 
 /* alg_add_token. call this from outside. 
  */
 
-double alg_add_token (s_cb_token this_token)
+double alg_add_token (ALG_OBJECT **alg, s_cb_token this_token)
 {
 	static double	return_value;
+	s_alg_stack	*current_stack;
 	
+	current_stack = (s_alg_stack *) (*alg)->data;
 	switch (this_token.operation) {
 	case '(':
-		g_ptr_array_add (stackstack, current_stack);
 		if (this_token.func == NULL) this_token.func = id;
-		current_stack = alg_stack_new (this_token);
+		*alg = g_slist_prepend (*alg, alg_stack_new (this_token));
 		break;
 	case ')':
-		if (stackstack->len < 1) break;
+		if (g_slist_length (*alg) < 2) break;
 		alg_stack_append (current_stack, this_token);
 		return_value = current_stack->func (
 			alg_stack_pool (current_stack));
@@ -256,15 +268,14 @@ double alg_add_token (s_cb_token this_token)
 		if (this_token.func != NULL)
 			return_value = this_token.func(return_value);
 		alg_stack_free (current_stack);
-		current_stack = g_ptr_array_remove_index (stackstack, 
-			stackstack->len - 1);
+		*alg = g_slist_delete_link (*alg, *alg);
 		break;
 	default:
 		alg_stack_append (current_stack, this_token);
 		return_value = alg_stack_pool (current_stack);
 		if (this_token.operation == '=') {
-			alg_free();
-			alg_init(alg_debug);
+			alg_free (*alg);
+			*alg = alg_init(alg_debug);
 		}
 		break;
 	}
@@ -274,23 +285,25 @@ double alg_add_token (s_cb_token this_token)
 /* alg_init. use this from outside to initialize everything
  */
 
-void alg_init (int debug_level)
+ALG_OBJECT *alg_init (int debug_level)
 {
 	s_cb_token	token;
 	
 	alg_debug = debug_level;
-	stackstack = g_ptr_array_new ();
 	token.func = id;
-	current_stack = alg_stack_new(token);	
+	return g_slist_prepend (NULL, alg_stack_new(token));
 }
 
 /* alg_free. call this from outside to clean up properly
  */
 
-void alg_free ()
+void alg_free (ALG_OBJECT *alg)
 {
-	if (!current_stack) alg_stack_free (current_stack);
-	if (!stackstack) g_ptr_array_free (stackstack, TRUE);
+	if (!alg) {
+		g_slist_foreach (alg, alg_stack_free_gfunc, NULL);
+		g_slist_free (alg);
+		alg = NULL;
+	}
 }
 
 /*
