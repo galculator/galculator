@@ -67,6 +67,7 @@ PACKAGE, VERSION, PACKAGE);
 
 int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 {
+	GtkWidget	*formula_entry;
 	/* the problem: key acceleration in gtk2 works a bit strange. I do not
 	 * understand it completely. The following is in part the result of a
 	 * long trial and error process. If you can explain why it works, please
@@ -96,9 +97,10 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 	 * procession.
 	 */
 	
-	if (formula_entry_is_active(grab_widget) && (event->type == GDK_KEY_PRESS)) {
+	if (((formula_entry = formula_entry_is_active(grab_widget)) != NULL) && 
+		(event->type == GDK_KEY_PRESS)) {
 		if ((event->state == 0) || (event->state == GDK_SHIFT_MASK)) {
-			gtk_widget_event (glade_xml_get_widget (main_window_xml, "formula_entry"), (GdkEvent *)event);
+			gtk_widget_event (formula_entry, (GdkEvent *)event);
 			return TRUE;
 		}
 	}

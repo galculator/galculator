@@ -79,7 +79,8 @@ char *string_del_separator (char *string, char separator);
 void set_button_label_and_tooltip (GladeXML *xml, char *button_name, 
 	char *label, char *tooltip);
 	
-gboolean formula_entry_is_active (GtkWidget *window_widget);
+GtkWidget *formula_entry_is_active (GtkWidget *window_widget);
+GtkWidget *formula_entry_is_active_no_toplevel_check ();
 
 s_flex_parser_result compute_user_function (char *expression, char *variable, char *value);
 
