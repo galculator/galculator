@@ -34,29 +34,34 @@
 	#define BUG_REPORT	"Please submit a bugreport."
 #endif
 
-enum {LEFT_CHILD, RIGHT_CHILD};
-
 enum {THIS_LEVEL, LEVEL_UP, LEVEL_DOWN};
 
 typedef union {
 	double		value;
-	double		(*function)(double);
+	double		(*func)(double);
 } u_number;
 
 typedef struct {
-//	u_number	number;
-	double		number;
-	char		operator;
-} s_calc_token;
+	u_number	number;
+	char		operation;
+} s_cb_token;
 
-void calc_tree_init (int debug_level);
-void calc_tree_free ();
-void calc_tree_free_stack ();
-double calc_tree_add_token (s_calc_token current_token);
+typedef struct {
+	double		(*func)(double);
+	double		*number;
+	char		*operation;
+	int		size;
+} s_alg_stack;
 
-void calc_rpn_init (int debug_level);
-void calc_rpn_free ();
-void calc_rpn_stack_add (double number);
-double calc_rpn_stack_operation (s_calc_token current_token);
+double id (double x);
+
+double alg_add_token (s_cb_token this_token);
+void alg_init (int debug_level);
+void alg_free ();
+
+void rpn_init (int debug_level);
+void rpn_stack_push (double number);
+double rpn_stack_operation (s_cb_token current_token);
+void rpn_free ();
 
 #endif /* calc_basic.h */

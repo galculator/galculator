@@ -553,7 +553,7 @@ void display_result_add_digit (char digit)
 	   where we don't expect the older one to be there. therefore doing it this way
 	*/
 	if ((current_status.notation == CS_RPN) && (rpn_have_result == TRUE)) {
-		calc_rpn_stack_add (display_result_get_double ());
+		rpn_stack_push (display_result_get_double ());
 		rpn_have_result = FALSE;
 	}
 	

@@ -52,7 +52,8 @@ update shortcuts text file
 
 1.2.0:
 
-paper tape display and formula entry mode
+paper tape display (history) and formula entry mode
+	[wcalc]
 
 to be done:
 ~~~~~~~~~~~
@@ -61,6 +62,8 @@ to be done:
 
 nice:
 ~~~~~
+
+user defined functions (parse string simply in formular mode)
 
 save session (display value, number/angle/not, etc) (defaults and user. directory
 with several config files)

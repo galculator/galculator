@@ -121,18 +121,19 @@ void
 on_operation_button_clicked            (GtkButton       *button,
                                         gpointer         user_data)
 {
-	s_calc_token		current_token;
+	s_cb_token		current_token;
 	extern gboolean		calc_entry_start_new;
 	double			return_value;
 	
 	button_activation (button);
 	/* current number, get it from the display! */
-	current_token.number = display_result_get_double ();
-	current_token.operator = (int) g_object_get_data (G_OBJECT (button), "operation");
+	current_token.number.func = NULL;
+	current_token.number.value = display_result_get_double ();
+	current_token.operation = (int) g_object_get_data (G_OBJECT (button), "operation");
 	// do inverse left shift is a right shift
-	if ((current_token.operator == '<') && \
+	if ((current_token.operation == '<') && \
 		(BIT (current_status.fmod, CS_FMOD_FLAG_INV) == 1)) {
-			current_token.operator = '>';
+			current_token.operation = '>';
 			if (inv_button != NULL) gtk_toggle_button_set_active (inv_button, FALSE);
 	}
 	
@@ -149,14 +150,14 @@ on_operation_button_clicked            (GtkButton       *button,
 		 *	brackets.
 		 */
 		
-		if (((current_token.operator == '(') || allow_arith_op) && \
-			((current_token.operator != ')') || (display_module_bracket_label_update (GET) > 0))) {
-			return_value = calc_tree_add_token (current_token);
+		if (((current_token.operation == '(') || allow_arith_op) && \
+			((current_token.operation != ')') || (display_module_bracket_label_update (GET) > 0))) {
+			return_value = alg_add_token (current_token);
 			display_result_set_double (return_value);
-			display_module_arith_label_update (current_token.operator);
+			display_module_arith_label_update (current_token.operation);
 			
 			/* setting of allow_arith_op. the missing breaks are wanted */
-			switch (current_token.operator) {
+			switch (current_token.operation) {
 				case '=':
 					display_module_bracket_label_update (RESET);
 					break;
@@ -170,13 +171,13 @@ on_operation_button_clicked            (GtkButton       *button,
 			}
 		}
 	} else if (current_status.notation == CS_RPN) {
-		switch (current_token.operator) {
+		switch (current_token.operation) {
 		case '=':
-			calc_rpn_stack_add (current_token.number);
+			rpn_stack_push (current_token.number.value);
 			rpn_have_result = FALSE;
 			break;
 		default:
-			display_result_set_double (calc_rpn_stack_operation (current_token));
+			display_result_set_double (rpn_stack_operation (current_token));
 			rpn_have_result = TRUE;
 		}
 	} else fprintf (stderr, _("[%s] on_operation_button_clicked: unknown status. %s\n"), PROG_NAME, BUG_REPORT);
@@ -354,7 +355,7 @@ on_ordinary_activate                  (GtkMenuItem     *menuitem,
 	
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
 	display_change_option (CS_PAN, DISPLAY_OPT_NOTATION);
-	calc_rpn_free ();
+	rpn_free ();
 	all_clear ();
 	button = (GtkButton *) glade_xml_get_widget (main_window_xml, "button_enter");
 	gtk_button_set_label (button, "=");
@@ -370,7 +371,7 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
 	
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
 	display_change_option (CS_RPN, DISPLAY_OPT_NOTATION);
-	calc_tree_free ();
+	alg_free ();
 	all_clear ();
 	button = (GtkButton *) glade_xml_get_widget (main_window_xml, "button_enter");
 	gtk_button_set_label (button, _("ENT"));
