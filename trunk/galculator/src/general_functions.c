@@ -186,7 +186,8 @@ char *add_leading_zeros (char *string, int multiple)
 	int	length, offset, counter;
 	
 	/* I don't want "0" to become "000000000" or whatever */
-	if (strcmp (string, "0") == 0) return string;
+	if (strcmp (string, "0") == 0) return g_strdup(string);
+	if (strcmp (string, MY_INFINITY_STRING) == 0) return g_strdup(string);
 	length = strlen(string);
 	offset = (multiple - length%multiple)%multiple;
 	length += offset;
@@ -407,7 +408,7 @@ char *get_display_number_string (double value, int base)
 					prefs.bin_length);
 			break;
 		default:
-			string_value = _("unknown number base");
+			string_value = g_strdup(_("unknown number base"));
 			fprintf (stderr, _("[%s] unknown number base in function \"get_display_number_string\". %s\n"), PROG_NAME, BUG_REPORT);
 	}
 	return string_value;
@@ -573,7 +574,8 @@ char *string_add_separator (char* string, gboolean separate, int block_length, c
 	int	int_length=0, frac_length=0, counter=0, new_counter=0, offset;
 	char 	*new_string;
 	
-	if (!separate) return string;
+	
+	if (!separate) return g_strdup(string);
 	/* at first, get length of parts pre- and succeeding the decimal point */
 	while ((string[int_length] != '\0') && (string[int_length] != dpoint))
 		int_length++;
@@ -581,10 +583,13 @@ char *string_add_separator (char* string, gboolean separate, int block_length, c
 		while (string[int_length + frac_length + 1] != '\0') frac_length++;
 	/* then allocate memory for new string holding separators */
 	new_string = (char *) malloc ((strlen(string) + (int_length-1)/block_length +
-		(frac_length-1)/block_length) * sizeof(char));
+		(frac_length-1)/block_length + 1) * sizeof(char));
 	/* then copy from string to new_string and insert separators */
 	while ((string[counter] != '\0') && (string[counter] != dpoint)) {
-		if ((counter > 0) && ((int_length % block_length) == (counter % block_length))) {
+		/* > ( == ) is horrible, yes, but somehow cool. avoids space
+		 * between sign char '-' and leading digit
+		 */
+		if ((counter > (*string == '-')) && ((int_length % block_length) == (counter % block_length))) {
 			new_string[new_counter] = separator;
 			new_counter++;
 		}

@@ -6,16 +6,16 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=182
-1=1
-2=1
-3=124
-4=145
-5=52
-6=574
-7=774
+0=191
+1=73
+2=99
+3=5
+4=598
+5=730
+6=15
+7=1450
 8=12
-9=15
+9=8
 10=22
 11=1
 
@@ -62,16 +62,14 @@ clean before build=false
 7=CURRENT_ALG
 
 [filelist]
-0=/home/sf/Devel/galculator/src/main.c
-1=/home/sf/Devel/galculator/src/ui.h
-2=/home/sf/Devel/galculator/src/ui.c
-3=/home/sf/Devel/galculator/src/config_file.h
-4=/home/sf/Devel/galculator/src/config_file.c
-5=/home/sf/Devel/galculator/src/general_functions.h
-6=/home/sf/Devel/galculator/src/general_functions.c
-7=/home/sf/Devel/galculator/src/display.c
-8=/home/sf/Devel/galculator/TODO
-9=/home/sf/Devel/galculator/ChangeLog
+0=/home/sf/Devel/galculator/src/callbacks.h
+1=/home/sf/Devel/galculator/src/config_file.c
+2=/home/sf/Devel/galculator/src/display.h
+3=/home/sf/Devel/galculator/ChangeLog
+4=/home/sf/Devel/galculator/src/general_functions.c
+5=/home/sf/Devel/galculator/src/display.c
+6=/home/sf/Devel/galculator/TODO
+7=/home/sf/Devel/galculator/src/callbacks.c
 
 [Project Tree]
 0=0
