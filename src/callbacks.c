@@ -175,14 +175,16 @@ on_operation_button_clicked            (GtkToggleButton       *button,
 		case '=':
 			rpn_stack_push (current_token.number.value);
 			stack = rpn_stack_get (RPN_FINITE_STACK);
-			display_stack_set_xyzt (stack);
+			display_stack_set_yzt (stack);
 			free (stack);
 			current_status.rpn_have_result = FALSE;
+			/* display line isn't cleared! */
 			break;
 		default:
+			current_status.rpn_have_result = FALSE;
 			display_result_set_double (rpn_stack_operation (current_token));
 			stack = rpn_stack_get (RPN_FINITE_STACK);
-			display_stack_set_xyzt (stack);
+			display_stack_set_yzt (stack);
 			free (stack);
 			current_status.rpn_have_result = TRUE;
 		}
@@ -240,6 +242,7 @@ void constants_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	char		*const_value;
 	
 	const_value = user_data;
+	current_status.rpn_have_result = TRUE;
 	display_result_set (const_value);
 	current_status.rpn_have_result = TRUE;
 	current_status.calc_entry_start_new = TRUE;

@@ -9,7 +9,7 @@ There is a short man page (man galculator)
 
 RPMs: a spec file is included (galculator.spec). Thanks to Victor. Or
 download at http://dag.wieers.com/packages/galculator/ (thanks to Dag Wieers) 
-DEBs: galculator is DEBIAN/unstable. Thanks to seb128.
+DEBs: galculator is in DEBIAN/unstable. Thanks to seb128.
 
 http://galculator.sf.net
 simon floery (chimaira@users.sf.net)

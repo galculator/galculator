@@ -420,7 +420,7 @@ void gfunc_f1 (GtkToggleButton *button)
 		display_result_set_double (rpn_stack_swapxy(
 			display_result_get_double()));
 		stack = rpn_stack_get (RPN_FINITE_STACK);
-		display_stack_set_xyzt (stack);
+		display_stack_set_yzt (stack);
 		free (stack);
 	}
 }
@@ -438,7 +438,30 @@ void gfunc_f2 (GtkToggleButton *button)
 		display_result_set_double (rpn_stack_rolldown(
 			display_result_get_double()));
 				stack = rpn_stack_get (RPN_FINITE_STACK);
-		display_stack_set_xyzt (stack);
+		display_stack_set_yzt (stack);
 		free (stack);
+	}
+}
+
+/*
+ *
+ */
+
+void display_result_changed ()
+{
+	double	*stack;
+	
+	/* put a ev. result onto the stack */
+	/* an alternative idea would be to do this immediately after getting a result
+	   in calc_basic's rpn routines or in on_function_button_clicked. but if we
+	   use on_function_button_clicked twice, there are two results on the stack
+	   where we don't expect the older one to be there. therefore doing it this way
+	*/
+	if ((current_status.notation == CS_RPN) && (current_status.rpn_have_result == TRUE)) {
+		rpn_stack_push (display_result_get_double ());
+		stack = rpn_stack_get (RPN_FINITE_STACK);
+		display_stack_set_yzt (stack);
+		free (stack);
+		current_status.rpn_have_result = FALSE;
 	}
 }
