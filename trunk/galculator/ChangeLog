@@ -1,9 +1,12 @@
+2003-06-18  Simon Floery <simon.floery@gmx.at>
+
+	* changed Changelog format
+	* src/display.c: removed mark_result_[start | end] in order to remove
+	newline if there are no modules.
+	* src/callbacks.c: X selection pasting works again
+
 09-06-2003 constants popup, user defined constants
 	memory popups
-
-  -  -2003 galculator 1.0 released
-==================================
-
 03-06-2003 improved keypad support
 26-05-2003 i18n
 12-05-2003 instant apply pref dialog (plus additional HIGs)
