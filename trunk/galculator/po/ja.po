@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: galculator 1.1.2\n"
+"Project-Id-Version: galculator 1.1.3CVS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-08-25 19:09+0200\n"
-"PO-Revision-Date: 2003-07-09 21:20+0900\n"
+"POT-Creation-Date: 2003-08-31 00:46+0900\n"
+"PO-Revision-Date: 2003-08-31 00:45+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -79,7 +79,7 @@ msgstr "ENT"
 
 #: src/callbacks.c:386
 msgid "y^x"
-msgstr ""
+msgstr "y^x"
 
 #: src/callbacks.c:900
 msgid "save here"
@@ -293,26 +293,23 @@ msgstr "ボタン"
 
 #: ui/main_frame.glade.h:3
 msgid "Cu_t Display Value"
-msgstr ""
+msgstr "表示値の切り取り(_T)"
 
 #: ui/main_frame.glade.h:4
 msgid "D_egrees"
 msgstr "度(_E)"
 
 #: ui/main_frame.glade.h:5
-#, fuzzy
 msgid "Display Control"
-msgstr "表示"
+msgstr "コントロール"
 
 #: ui/main_frame.glade.h:6
-#, fuzzy
 msgid "Functions"
-msgstr "ボタン"
+msgstr "関数"
 
 #: ui/main_frame.glade.h:7
-#, fuzzy
 msgid "Logical"
-msgstr "論理積 (OR) を計算します"
+msgstr "論理演算"
 
 #: ui/main_frame.glade.h:8
 msgid "Notation _modes"
@@ -320,7 +317,7 @@ msgstr "表記モード(_M)"
 
 #: ui/main_frame.glade.h:9
 msgid "Standard"
-msgstr ""
+msgstr "標準"
 
 #: ui/main_frame.glade.h:10
 msgid "The main program window."
@@ -336,7 +333,7 @@ msgstr "代数記法(_A)"
 
 #: ui/main_frame.glade.h:13
 msgid "_Basic Mode"
-msgstr ""
+msgstr "基本モード(_B)"
 
 #: ui/main_frame.glade.h:14
 msgid "_Binary"
@@ -344,20 +341,19 @@ msgstr "2進数(_B)"
 
 #: ui/main_frame.glade.h:15
 msgid "_Calculator"
-msgstr ""
+msgstr "計算機(_C)"
 
 #: ui/main_frame.glade.h:16
 msgid "_Copy Display Value"
-msgstr ""
+msgstr "表示値のコピー(_C)"
 
 #: ui/main_frame.glade.h:17
 msgid "_Decimal"
 msgstr "10進数(_D)"
 
 #: ui/main_frame.glade.h:18
-#, fuzzy
 msgid "_Edit"
-msgstr "終了(_Q)"
+msgstr "編集(_E)"
 
 #: ui/main_frame.glade.h:19
 msgid "_File"
@@ -385,7 +381,7 @@ msgstr "8進数(_O)"
 
 #: ui/main_frame.glade.h:25
 msgid "_Paste As Display Value"
-msgstr ""
+msgstr "表示値へ貼り付け(_P)"
 
 #: ui/main_frame.glade.h:26
 msgid "_Preferences..."
@@ -404,18 +400,16 @@ msgid "_Reverse Polish (RPN)"
 msgstr "逆ポーランド記法(RPN)(_R)"
 
 #: ui/main_frame.glade.h:30
-#, fuzzy
 msgid "_Scientific Mode"
-msgstr "科学計算向け電卓"
+msgstr "科学計算モード(_S)"
 
 #: ui/main_frame.glade.h:31
 msgid "_Show menu bar"
 msgstr "メニュー・バーの表示(_S)"
 
 #: ui/main_frame.glade.h:32
-#, fuzzy
 msgid "_View"
-msgstr "ファイル(_F)"
+msgstr "表示(_V)"
 
 #: ui/scientific_buttons.glade.h:2 ui/basic_buttons.glade.h:2
 #, no-c-format
@@ -506,11 +500,11 @@ msgstr "AND"
 #: ui/scientific_buttons.glade.h:24 ui/basic_buttons.glade.h:20
 #: ui/prefs.glade.h:15
 msgid "Add"
-msgstr "追加"
+msgstr "加算します"
 
 #: ui/scientific_buttons.glade.h:25 ui/basic_buttons.glade.h:21
 msgid "Add current display value to memory"
-msgstr "現在表示されている値をメモリに追加します"
+msgstr "現在表示されている値とメモリの値を加算します"
 
 #: ui/scientific_buttons.glade.h:26
 msgid "B"
@@ -534,7 +528,6 @@ msgid "Change sign"
 msgstr "符号を切り替えます"
 
 #: ui/scientific_buttons.glade.h:31 ui/basic_buttons.glade.h:23
-#, fuzzy
 msgid "Close Bracket"
 msgstr "閉じカッコ"
 
@@ -568,11 +561,11 @@ msgstr "EE"
 
 #: ui/scientific_buttons.glade.h:39 ui/basic_buttons.glade.h:26
 msgid "Eight"
-msgstr ""
+msgstr "数値の８"
 
 #: ui/scientific_buttons.glade.h:40 ui/basic_buttons.glade.h:27
 msgid "Enter"
-msgstr "Enter"
+msgstr "計算結果を算出します"
 
 #: ui/scientific_buttons.glade.h:41
 msgid "Enter exponent (base: 10)"
@@ -587,13 +580,12 @@ msgid "Factorial"
 msgstr "階乗を計算します"
 
 #: ui/scientific_buttons.glade.h:44 ui/basic_buttons.glade.h:28
-#, fuzzy
 msgid "Five"
-msgstr "ファイル(_F)"
+msgstr "数値の５"
 
 #: ui/scientific_buttons.glade.h:45 ui/basic_buttons.glade.h:29
 msgid "Four"
-msgstr ""
+msgstr "数値の４"
 
 #: ui/scientific_buttons.glade.h:46
 msgid "Hexadecimal 0xA"
@@ -680,9 +672,8 @@ msgid "Natural logarithm (base: e)"
 msgstr "自然対数 (底: e) を計算します"
 
 #: ui/scientific_buttons.glade.h:67 ui/basic_buttons.glade.h:34
-#, fuzzy
 msgid "Nine"
-msgstr "正弦 (sin) を計算します"
+msgstr "数値の９"
 
 #: ui/scientific_buttons.glade.h:68
 msgid "OR"
@@ -690,16 +681,15 @@ msgstr "OR"
 
 #: ui/scientific_buttons.glade.h:69 ui/basic_buttons.glade.h:35
 msgid "One"
-msgstr ""
+msgstr "数値の１"
 
 #: ui/scientific_buttons.glade.h:70 ui/basic_buttons.glade.h:36
-#, fuzzy
 msgid "Open Bracket"
-msgstr "開いているカッコ"
+msgstr "開きカッコ"
 
 #: ui/scientific_buttons.glade.h:71 ui/basic_buttons.glade.h:37
 msgid "Percent"
-msgstr ""
+msgstr "百分率 (%) を計算します"
 
 #: ui/scientific_buttons.glade.h:72
 msgid "Power"
@@ -715,7 +705,7 @@ msgstr "メモリに保存します"
 
 #: ui/scientific_buttons.glade.h:75 ui/basic_buttons.glade.h:40
 msgid "Seven"
-msgstr ""
+msgstr "数値の７"
 
 #: ui/scientific_buttons.glade.h:76
 msgid "Sine"
@@ -723,7 +713,7 @@ msgstr "正弦 (sin) を計算します"
 
 #: ui/scientific_buttons.glade.h:77 ui/basic_buttons.glade.h:41
 msgid "Six"
-msgstr ""
+msgstr "数値の６"
 
 #: ui/scientific_buttons.glade.h:78
 msgid "Square"
@@ -735,7 +725,7 @@ msgstr "平方根を計算します"
 
 #: ui/scientific_buttons.glade.h:80 ui/basic_buttons.glade.h:43
 msgid "Subtract"
-msgstr ""
+msgstr "減算します"
 
 #: ui/scientific_buttons.glade.h:81
 msgid "Tangent"
@@ -743,16 +733,15 @@ msgstr "正接 (tan) を計算します"
 
 #: ui/scientific_buttons.glade.h:82 ui/basic_buttons.glade.h:44
 msgid "Three"
-msgstr ""
+msgstr "数値の３"
 
 #: ui/scientific_buttons.glade.h:83 ui/basic_buttons.glade.h:45
 msgid "Two"
-msgstr ""
+msgstr "数値の２"
 
 #: ui/scientific_buttons.glade.h:84
-#, fuzzy
 msgid "User defined functions"
-msgstr "<b>ユーザ定義の定数:</b>"
+msgstr "ユーザ定義の関数"
 
 #: ui/scientific_buttons.glade.h:85
 msgid "XOR"
@@ -760,11 +749,11 @@ msgstr "XOR"
 
 #: ui/scientific_buttons.glade.h:86 ui/basic_buttons.glade.h:46
 msgid "Zero"
-msgstr ""
+msgstr "数値の０"
 
 #: ui/scientific_buttons.glade.h:87
 msgid "con"
-msgstr "con"
+msgstr "定数"
 
 #: ui/scientific_buttons.glade.h:88
 msgid "cos"
@@ -772,7 +761,7 @@ msgstr "cos"
 
 #: ui/scientific_buttons.glade.h:89
 msgid "fun"
-msgstr ""
+msgstr "関数"
 
 #: ui/scientific_buttons.glade.h:90
 msgid "hyp"
@@ -956,21 +945,19 @@ msgstr "表示"
 
 #: ui/prefs.glade.h:27
 msgid "General"
-msgstr ""
+msgstr "全般"
 
 #: ui/prefs.glade.h:28
 msgid "Inactive module color:"
 msgstr "利用不可のモジュールの色:"
 
 #: ui/prefs.glade.h:29
-#, fuzzy
 msgid "Minimal button height:"
-msgstr "ボタンの高さ:"
+msgstr "ボタンの高さ (最小値):"
 
 #: ui/prefs.glade.h:30
-#, fuzzy
 msgid "Minimal button width:"
-msgstr "ボタンの幅:"
+msgstr "ボタンの幅 (最小値):"
 
 #: ui/prefs.glade.h:31
 msgid "Module font:"
@@ -1030,7 +1017,7 @@ msgstr "値:"
 
 #: ui/prefs.glade.h:45
 msgid "fix length to a multiple of"
-msgstr ""
+msgstr "固定長の乗算"
 
 #: ui/prefs.glade.h:46
 msgid "galculator - Preferences"
@@ -1059,258 +1046,3 @@ msgstr "表示内容をクリアします"
 #: ui/dispctrl_right.glade.h:6 ui/dispctrl_bottom.glade.h:6
 msgid "Reset calculator (clear all)"
 msgstr "電卓をリセット (全てクリア) します"
-
-#~ msgid "[%s] on_operation_button_clicked: unknown status. %s\n"
-#~ msgstr "[%s] on_operation_button_clicked: 不明なステータス %s です。\n"
-
-#~ msgid "unknown function modifier (INV/HYP)"
-#~ msgstr "不明な関数の修飾子 (INV/HYP)"
-
-#~ msgid "[%s] Color Dialog (%s) not found. %s\n"
-#~ msgstr "[%s] 色選択ダイアログ (%s) が見つかりませんでした。%s\n"
-
-#~ msgid "[%s] Font Dialog (%s) not found. %s\n"
-#~ msgstr "[%s] フォント選択ダイアログ (%s) が見つかりませんでした。%s\n"
-
-#~ msgid "[%s] computing: %f %c %f = %f\n"
-#~ msgstr "[%s] 計算中: %f %c %f = %f\n"
-
-#~ msgid "[%s] RPN stack size is %i.\n"
-#~ msgstr "[%s] RPN スタック・サイズは %i です。\n"
-
-#~ msgid "1/x"
-#~ msgstr "1/x"
-
-#~ msgid "Adds the current display value to memory."
-#~ msgstr "現在表示されている値をメモリに追加します"
-
-#~ msgid "Calculates the complete equation and displays the result."
-#~ msgstr "完全な等号を計算してその結果を表示します"
-
-#~ msgid "Changes the sign of the current display value."
-#~ msgstr "現在表示している値の符号を切り替えます"
-
-#~ msgid "Clear all"
-#~ msgstr "全てクリア"
-
-#~ msgid "Clears the display."
-#~ msgstr "表示内容をクリアします"
-
-#~ msgid "Computes the cosine."
-#~ msgstr "余弦 (cosine) を計算します"
-
-#~ msgid "Computes the factorial."
-#~ msgstr "階乗を計算します"
-
-#~ msgid "Computes the logarithm (with base 10)."
-#~ msgstr "(10 を底とした) 対数を計算します"
-
-#~ msgid "Computes the natural logarithm (with base of Euler's number)."
-#~ msgstr "(オイラー定数を底とした) 自然対数を計算します"
-
-#~ msgid "Computes the power."
-#~ msgstr "累乗を計算します"
-
-#~ msgid "Computes the reciprocal."
-#~ msgstr "逆数を計算します"
-
-#~ msgid "Computes the sine."
-#~ msgstr "正弦 (sine) を計算します"
-
-#~ msgid "Computes the square root."
-#~ msgstr "平方根を計算します"
-
-#~ msgid "Computes the square."
-#~ msgstr "二乗を計算します"
-
-#~ msgid "Computes the tangent."
-#~ msgstr "正接 (tangent) を計算します"
-
-#~ msgid "Contains the main display."
-#~ msgstr "メイン表示を含みます"
-
-#~ msgid "Enters a closing paren."
-#~ msgstr "閉じカッコを入力します"
-
-#~ msgid "Enters an opening paren."
-#~ msgstr "開きカッコを入力します"
-
-#~ msgid "Enters the bitwise complement operator."
-#~ msgstr "ビット列の補数演算子を入力します"
-
-#~ msgid "Enters the decimal point."
-#~ msgstr "小数点を指定します"
-
-#~ msgid "Enters the digit 2."
-#~ msgstr "数値の２を入力します"
-
-#~ msgid "Enters the digit 3."
-#~ msgstr "数値の３を入力します"
-
-#~ msgid "Enters the digit 4."
-#~ msgstr "数値の４を入力します"
-
-#~ msgid "Enters the digit 5."
-#~ msgstr "数値の５を入力します"
-
-#~ msgid "Enters the digit 6."
-#~ msgstr "数値の６を入力します"
-
-#~ msgid "Enters the digit 7."
-#~ msgstr "数値の７を入力します"
-
-#~ msgid "Enters the digit 8."
-#~ msgstr "数値の８を入力します"
-
-#~ msgid "Enters the digit 9."
-#~ msgstr "数値の９を入力します"
-
-#~ msgid "Enters the division operator."
-#~ msgstr "除算の演算子を入力します"
-
-#~ msgid "Enters the hexadecimal digit A."
-#~ msgstr "16進の数値のＡを入力します"
-
-#~ msgid "Enters the hexadecimal digit B."
-#~ msgstr "16進の数値のＢを入力します"
-
-#~ msgid "Enters the hexadecimal digit C."
-#~ msgstr "16 進の数値のＣを入力します"
-
-#~ msgid "Enters the hexadecimal digit D."
-#~ msgstr "16進の数値のＤを入力します"
-
-#~ msgid "Enters the hexadecimal digit E."
-#~ msgstr "16進の数値のＥを入力します"
-
-#~ msgid "Enters the hexadecimal digit F."
-#~ msgstr "16進の数値のＦを入力します"
-
-#~ msgid "Enters the left-shift operator."
-#~ msgstr "左シフトの演算子を入力します"
-
-#~ msgid "Enters the logical AND operator."
-#~ msgstr "論理和 (AND) の演算子を入力します"
-
-#~ msgid "Enters the logical OR operator."
-#~ msgstr "論理積 (OR) の演算子を入力します"
-
-#~ msgid "Enters the logical exclusive OR operator."
-#~ msgstr "排他的論理積 (XOR) の演算子を入力します"
-
-#~ msgid "Enters the minus operator."
-#~ msgstr "減算の演算子を入力します"
-
-#~ msgid "Enters the modulus operator."
-#~ msgstr "絶対値の演算子を入力します"
-
-#~ msgid "Enters the multiplication operator."
-#~ msgstr "乗算の演算子を入力します"
-
-#~ msgid "Enters the plus operator."
-#~ msgstr "加算の演算子を入力します"
-
-#~ msgid "Main display"
-#~ msgstr "メイン表示器"
-
-#~ msgid "Memory add"
-#~ msgstr "メモリ追加"
-
-#~ msgid "Memory read"
-#~ msgstr "メモリ読み込み"
-
-#~ msgid "Memory save"
-#~ msgstr "メモリ保存"
-
-#~ msgid "Minus"
-#~ msgstr "減算します"
-
-#~ msgid "Open paren"
-#~ msgstr "開きカッコ"
-
-#~ msgid "Plus"
-#~ msgstr "加算します"
-
-#~ msgid "Reads the value saved in memory."
-#~ msgstr "メモリに保存した値を読み込みます"
-
-#~ msgid "Reciprocal"
-#~ msgstr "逆数を計算します"
-
-#~ msgid "Removes the last digit from the display."
-#~ msgstr "表示している内容から最後の数値を削除します"
-
-#~ msgid "Resets the calculator."
-#~ msgstr "電卓をリセットします"
-
-#~ msgid "Saves the current display value into memory."
-#~ msgstr "現在表示している値をメモリに保存します"
-
-#~ msgid "Set display into \"enter exponent\" mode (base of 10)."
-#~ msgstr "\"指数入力\" モード (底は 10) に表示を切り替えます"
-
-#~ msgid "Switches to hyperbolic mode."
-#~ msgstr "双曲線モードに切り替えます"
-
-#~ msgid "Switches to inverse mode."
-#~ msgstr "反転モードに切り替えます"
-
-#~ msgid "The main display."
-#~ msgstr "メイン表示です"
-
-#~ msgid "_Settings"
-#~ msgstr "設定(_S)"
-
-#~ msgid "constants"
-#~ msgstr "constants"
-
-#~ msgid "gives a menu to select constants from"
-#~ msgstr "定数を選択するメニューを表示します"
-
-#~ msgid "Algebraic"
-#~ msgstr "代数記法"
-
-#~ msgid "Binary"
-#~ msgstr "2進"
-
-#~ msgid "Decimal"
-#~ msgstr "10進"
-
-#~ msgid "Default angle unit:"
-#~ msgstr "デフォルトの角度の単位:"
-
-#~ msgid "Default notation mode:"
-#~ msgstr "デフォルトの記法モード:"
-
-#~ msgid "Default number base:"
-#~ msgstr "デフォルトの基数:"
-
-#~ msgid "Degrees"
-#~ msgstr "度"
-
-#~ msgid "Display control buttons (C, AC, <-)"
-#~ msgstr "制御ボタン (C, AC, <-) を表示する"
-
-#~ msgid "Function buttons (sin, cos, etc.)"
-#~ msgstr "関数 (sin, cos, 等) のボタンを表示する"
-
-#~ msgid "Gradians"
-#~ msgstr "グラジェント"
-
-#~ msgid "Hexadecimal"
-#~ msgstr "16進"
-
-#~ msgid "Logic buttons (AND, OR, etc.)"
-#~ msgstr "論理演算子 (AND, OR, 等) を表示する"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "その他"
-
-#~ msgid "Octal"
-#~ msgstr "8進"
-
-#~ msgid "Radians"
-#~ msgstr "ラジアン"
-
-#~ msgid "Reverse Polish (RPN)"
-#~ msgstr "逆ポーランド記法 (RPN)"

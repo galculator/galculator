@@ -1,9 +1,16 @@
 1.1.4
 ~~~~~
 
-improved rpn mode (display stack for RPN (x,y,z,t and infinite))
-save stack
+RPN stack:
+	x, y, z, t mode
+	infinite mode
+	save it
+	display it
 
+RPN new buttons:
+	x<>y ... swap x and y
+	rolldn ... roll down the stack: x->t->z->y->x
+	
 ---bug reports
 
 =GUI======================================
