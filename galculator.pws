@@ -6,9 +6,9 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=6
-1=285
-2=5
+0=1
+1=34
+2=16
 3=1056
 4=13
 5=285
@@ -63,7 +63,6 @@ clean before build=false
 
 [filelist]
 0=/home/sf/Devel/galculator/TODO
-1=/home/sf/Devel/galculator/src/calc_basic.c
 
 [Project Tree]
 0=0
