@@ -3,25 +3,18 @@
 
 [DONE] tooltips in RPN mode
 
-[ ] formula mode - entry is no own mode but an addon for both modes? YES
+[DONE] formula mode - in GUI
 
-	text entry: if text entry active, input only occurs here
-		if not active, usual procedure but with recording in text entry
-		
-	UPDATE: entry has to be a new mode as it is impossible to integrate the
-		entry with the existing modes: e.g. entry is active. we click
-		the 5 and then the sin button: entry is "5sin" while it should
-		be "sin5". problem is that functions operate on current display.
-	
-	UPDATE: own mode but as now. every button click is only routed to the
-		text entry.
+[ ] parser
+	[ ]	!
+	[ ]	sign
+	[ ]	better exit in error case
+
+[?] pref option? accelerator active for formula entry: key "s" gives "sin("
 
 [ ] right button mouse click gives popup for bringing back menu
+	Show/Hide Menu
 
-parser:
-[ ]	!
-[ ]	sign
-[ ]	better exit in error case
 
 =GUI======================================
 

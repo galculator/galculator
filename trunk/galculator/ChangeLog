@@ -1,3 +1,9 @@
+2003-02-01 Simon Floery <chimaira@users.sf.net>
+	* right button mouse click popup menu to control "Show menu bar"
+
+2003-01-31 Simon Floery <chimaira@users.sf.net>
+	* GUI integration of formula entry mode
+
 2003-12-31 Simon Floery <chimaira@users.sf.net>
 	* fixed DBTS #220857 (tooltips in RPN mode)
 

@@ -228,10 +228,9 @@ void on_finite_stack_size_clicked (GtkRadioButton *rb,
 void on_infinite_stack_size_clicked (GtkRadioButton *rb,
 			gpointer user_data);
 
-void on_main_window_button_press_event(GtkWidget *widget,
-						GdkEventButton *event,
-						gpointer user_data);
-
 gboolean on_button_press_event (GtkWidget *widget,
 						GdkEventButton *event,
 						gpointer user_data);
+
+void on_formula_entry_activate (GtkEntry *entry,
+                                            gpointer user_data);
