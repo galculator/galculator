@@ -274,6 +274,7 @@ double alg_add_token (ALG_OBJECT **alg, s_cb_token this_token)
 		alg_stack_append (current_stack, this_token);
 		return_value = alg_stack_pool (current_stack);
 		if (this_token.operation == '=') {
+			/* MAYBE HERE */
 			alg_free (*alg);
 			*alg = alg_init(alg_debug);
 		}

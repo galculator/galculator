@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: galculator 1.2.1\n"
+"Project-Id-Version: galculator HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-01 10:43+0300\n"
-"PO-Revision-Date: 2004-03-21 23:35+0900\n"
+"POT-Creation-Date: 2004-04-04 11:53+0900\n"
+"PO-Revision-Date: 2004-04-04 11:53+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -271,14 +271,14 @@ msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr "[%s] 関数 \"string2double\" に不明な基数が渡されました。%s\n"
 
 #: src/general_functions.c:609
-#, fuzzy, c-format
+#, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
-msgstr "[%s] 関数 \"string2double\" に不明な基数が渡されました。%s\n"
+msgstr "[%s] 関数 \"x2rad\" に不明な角度の単位が渡されました。%s\n"
 
 #: src/general_functions.c:624
-#, fuzzy, c-format
+#, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
-msgstr "[%s] 関数 \"string2double\" に不明な基数が渡されました。%s\n"
+msgstr "[%s] 関数 \"rad2x\" に不明な角度の単位が渡されました。%s\n"
 
 #: src/ui.c:88
 #, c-format
@@ -366,13 +366,6 @@ msgstr "roll"
 #: src/ui.c:1026
 msgid "roll down stack"
 msgstr "スタックを下げます"
-
-#: flex_parser.l:214
-#, c-format
-msgid ""
-"[%s] flex parser was called more than %i times. Do you know what you are "
-"doing? If not: %s\n"
-msgstr ""
 
 #: ui/main_frame.glade.h:1 ui/scientific_buttons.glade.h:5
 #: ui/basic_buttons.glade.h:5 ui/prefs.glade.h:3
@@ -795,7 +788,7 @@ msgstr "減算"
 
 #: ui/scientific_buttons.glade.h:80 ui/basic_buttons.glade.h:45
 msgid "Sum"
-msgstr ""
+msgstr "加算"
 
 #: ui/scientific_buttons.glade.h:81
 msgid "Tangent"
@@ -995,7 +988,7 @@ msgstr "利用可能なモジュールの色:"
 
 #: ui/prefs.glade.h:18
 msgid "Add"
-msgstr "加算"
+msgstr "追加"
 
 #: ui/prefs.glade.h:19
 msgid "Angle base units"
@@ -1156,15 +1149,3 @@ msgstr "表示内容をクリアします"
 #: ui/dispctrl_right.glade.h:6 ui/dispctrl_bottom.glade.h:6
 msgid "Reset calculator (clear all)"
 msgstr "電卓をリセット (全てクリア) します"
-
-#~ msgid ""
-#~ "[%s] unknown angle base in function \"display_result_set_angle\". %s\n"
-#~ msgstr ""
-#~ "[%s] 関数 \"display_result_set_angle\" に不明なベース角度が渡されました。%"
-#~ "s\n"
-
-#~ msgid ""
-#~ "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
-#~ msgstr ""
-#~ "[%s] 関数 \"display_result_get_rad_angle\" に不明なベース角度が渡されまし"
-#~ "た。%s\n"

@@ -1039,6 +1039,7 @@ on_constant_button_clicked (GtkToggleButton       *button,
 
 void ms_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 {
+	GtkWidget	*button;
 	int		index;
 	
 	index = GPOINTER_TO_INT(user_data);
@@ -1048,6 +1049,16 @@ void ms_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 		memory.len++;
 	}
 	memory.data[index] = display_result_get_double();
+	
+	/* at startup, mr and m+ button are disabled as there is nothing
+	 * to show. now, as there is sth, enable them. see also 
+	 * ui.c::ui_main_window_buttons_create
+	 */
+	button = glade_xml_get_widget (button_box_xml, "button_MR");
+	gtk_widget_set_sensitive (button, TRUE);
+	button = glade_xml_get_widget (button_box_xml, "button_Mplus");
+	gtk_widget_set_sensitive (button, TRUE);
+	
 	current_status.calc_entry_start_new = TRUE;
 }
 
