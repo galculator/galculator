@@ -20,6 +20,7 @@
  
 /* to add a new preference, add it to 
 	- s_preferences in config_file.h
+	- #define DEFAULTS in config_file.h
 	- to config_file_get_default_prefs
 	- to struct prefs_list (increase array size!)
 */
@@ -39,7 +40,7 @@
 #include "general_functions.h"
 
 s_preferences prefs;
-static s_prefs_entry prefs_list[41] = {
+static s_prefs_entry prefs_list[53] = {
 	{"display_bkg_color", &(prefs.bkg_color), STRING, "prefs_bkg_color", set_button_color},
 	{"display_result_font", &(prefs.result_font), STRING, "prefs_result_font", set_button_label},
 	{"display_result_color", &(prefs.result_color), STRING, "prefs_result_color", set_button_color},
@@ -62,14 +63,26 @@ static s_prefs_entry prefs_list[41] = {
 /*20.*/	{"logic_button_group", &(prefs.vis_logic), BOOLEAN, NULL, NULL},
 	{"standard_button_group", &(prefs.vis_standard), BOOLEAN, NULL, NULL},
 	{"mode", &(prefs.mode), INTEGER, NULL, NULL},
+	{"dec_sep", &(prefs.dec_sep), BOOLEAN, "prefs_dec_sep", set_checkbutton},
+	{"dec_sep_length", &(prefs.dec_sep_length), INTEGER, "prefs_dec_sep_length", set_spinbutton},
+	{"dec_sep_char", &(prefs.dec_sep_char), STRING, "prefs_dec_sep_char", set_entry},
 	{"hex_bits", &(prefs.hex_bits), INTEGER, "prefs_hex_bits", set_spinbutton},
 	{"hex_signed", &(prefs.hex_signed), BOOLEAN, "prefs_hex_signed", set_checkbutton},
+	{"hex_sep", &(prefs.hex_sep), BOOLEAN, "prefs_hex_sep", set_checkbutton},
+	{"hex_sep_length", &(prefs.hex_sep_length), INTEGER, "prefs_hex_sep_length", set_spinbutton},
+/*30*/	{"hex_sep_char", &(prefs.hex_sep_char), STRING, "prefs_hex_sep_char", set_entry},
 	{"oct_bits", &(prefs.oct_bits), INTEGER, "prefs_oct_bits", set_spinbutton},
 	{"oct_signed", &(prefs.oct_signed), BOOLEAN, "prefs_oct_signed", set_checkbutton},
+	{"oct_sep", &(prefs.oct_sep), BOOLEAN, "prefs_oct_sep", set_checkbutton},
+	{"oct_sep_length", &(prefs.oct_sep_length), INTEGER, "prefs_oct_sep_length", set_spinbutton},
+	{"oct_sep_char", &(prefs.oct_sep_char), STRING, "prefs_oct_sep_char", set_entry},
 	{"bin_bits", &(prefs.bin_bits), INTEGER, "prefs_bin_bits", set_spinbutton},
 	{"bin_signed", &(prefs.bin_signed), BOOLEAN, "prefs_bin_signed", set_checkbutton},
 	{"bin_fixed", &(prefs.bin_fixed), BOOLEAN, "prefs_bin_fixed", set_checkbutton},
-/*30.*/	{"bin_length", &(prefs.bin_length), INTEGER, "prefs_bin_length", set_spinbutton},
+	{"bin_length", &(prefs.bin_length), INTEGER, "prefs_bin_length", set_spinbutton},
+/*40*/	{"bin_sep", &(prefs.bin_sep), BOOLEAN, "prefs_bin_sep", set_checkbutton},
+	{"bin_sep_length", &(prefs.bin_sep_length), INTEGER, "prefs_bin_sep_length", set_spinbutton},
+	{"bin_sep_char", &(prefs.bin_sep_char), STRING, "prefs_bin_sep_char", set_entry},
 	{"default_number_base", &(prefs.def_number), INTEGER, NULL, NULL},
 	{"default_angle_base", &(prefs.def_angle), INTEGER, NULL, NULL},
 	{"default_notation_mode", &(prefs.def_notation), INTEGER, NULL, NULL},
@@ -77,9 +90,9 @@ static s_prefs_entry prefs_list[41] = {
 	{"remembers_display", &(prefs.rem_display), BOOLEAN, "prefs_rem_display", set_checkbutton},
 	{"remembered_valuex", &(prefs.rem_valuex), STRING, NULL, NULL},
 	{"remembered_valuey", &(prefs.rem_valuey), STRING, NULL, NULL},
-	{"remembered_valuez", &(prefs.rem_valuez), STRING, NULL, NULL},
+/*50*/	{"remembered_valuez", &(prefs.rem_valuez), STRING, NULL, NULL},
 	{"remembered_valuet", &(prefs.rem_valuet), STRING, NULL, NULL},
-/*40.*/	{"show_menu_bar", &(prefs.show_menu), BOOLEAN, "prefs_show_menu", set_checkbutton},
+	{"show_menu_bar", &(prefs.show_menu), BOOLEAN, "prefs_show_menu", set_checkbutton},
 	{NULL, NULL, 0, NULL, NULL}
 };
 static char *prefs_list_old_entries[3] = {"show_status_bar", "remembered_value", NULL};
@@ -122,14 +135,26 @@ static void config_file_get_default_prefs (s_preferences *this_prefs)
 	/* constants - handled different */
 	
 	/* 4th pref page */
+	this_prefs->dec_sep = DEFAULT_DEC_SEP;
+	this_prefs->dec_sep_char = g_strdup (DEFAULT_DEC_SEP_CHAR);
+	this_prefs->dec_sep_length = DEFAULT_DEC_SEP_LENGTH;
 	this_prefs->hex_bits = DEFAULT_HEX_BITS;
 	this_prefs->hex_signed = DEFAULT_HEX_SIGNED;
+	this_prefs->hex_sep = DEFAULT_HEX_SEP;
+	this_prefs->hex_sep_char = g_strdup (DEFAULT_HEX_SEP_CHAR);
+	this_prefs->hex_sep_length = DEFAULT_HEX_SEP_LENGTH;
 	this_prefs->oct_bits = DEFAULT_OCT_BITS;
 	this_prefs->oct_signed = DEFAULT_OCT_SIGNED;
+	this_prefs->oct_sep = DEFAULT_OCT_SEP;
+	this_prefs->oct_sep_char = g_strdup (DEFAULT_OCT_SEP_CHAR);
+	this_prefs->oct_sep_length = DEFAULT_OCT_SEP_LENGTH;
 	this_prefs->bin_bits = DEFAULT_BIN_BITS;
 	this_prefs->bin_signed = DEFAULT_BIN_SIGNED;
 	this_prefs->bin_fixed = DEFAULT_BIN_FIXED;
 	this_prefs->bin_length = DEFAULT_BIN_LENGTH;
+	this_prefs->bin_sep = DEFAULT_BIN_SEP;
+	this_prefs->bin_sep_char = g_strdup (DEFAULT_BIN_SEP_CHAR);
+	this_prefs->bin_sep_length = DEFAULT_BIN_SEP_LENGTH;
 
 	/* 5rd pref page */
 	this_prefs->stack_size = DEFAULT_STACK_SIZE;

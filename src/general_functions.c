@@ -292,6 +292,16 @@ void set_stacksize (GladeXML *xml, char *name, void *stack_size)
 	gtk_toggle_button_set_active (tb, TRUE);
 }
 
+void set_entry (GladeXML *xml, char *entry_name, void *entry_text)
+{
+	GtkEntry	*entry;
+	char 		**string_var;
+	
+	string_var = entry_text;	
+	entry = (GtkEntry *) glade_xml_get_widget (xml, entry_name);
+	if (entry) gtk_entry_set_text (entry, *string_var);	
+}
+
 /*
  * convert given GdkColor to a string so that gdk_color_parse gives the 
  * same color again.
@@ -558,7 +568,7 @@ double string2double (char *string, int number_base)
  * we do not free string here as it might be used later on!
  */
 
-char *string_separator (char* string, gboolean separate, int block_length, char separator, char dpoint)
+char *string_add_separator (char* string, gboolean separate, int block_length, char separator, char dpoint)
 {
 	int	int_length=0, frac_length=0, counter=0, new_counter=0, offset;
 	char 	*new_string;

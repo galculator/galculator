@@ -10,6 +10,11 @@
   <property name="modal">False</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
   <property name="has_separator">True</property>
   <accessibility>
     <atkproperty name="AtkObject::accessible_description" translatable="yes">A dialog that is used to change preferences settings.</atkproperty>
@@ -41,6 +46,7 @@
 	      <property name="label">gtk-close</property>
 	      <property name="use_stock">True</property>
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
+	      <property name="focus_on_click">True</property>
 	      <property name="response_id">-7</property>
 	      <accessibility>
 		<atkproperty name="AtkObject::accessible_description" translatable="yes">Closes the dialog.</atkproperty>
@@ -170,6 +176,7 @@
 			      <property name="label" translatable="yes"></property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <signal name="clicked" handler="on_prefs_result_font_clicked" last_modification_time="Sat, 22 Feb 2003 14:45:49 GMT"/>
 			    </widget>
 			    <packing>
@@ -210,6 +217,7 @@
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <signal name="clicked" handler="on_prefs_inact_mod_color_clicked" last_modification_time="Sat, 22 Feb 2003 14:46:11 GMT"/>
 
 			      <child>
@@ -297,6 +305,7 @@
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <signal name="clicked" handler="on_prefs_act_mod_color_clicked" last_modification_time="Sat, 22 Feb 2003 14:46:06 GMT"/>
 
 			      <child>
@@ -384,6 +393,7 @@
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <signal name="clicked" handler="on_prefs_result_color_clicked" last_modification_time="Sat, 22 Feb 2003 14:45:53 GMT"/>
 
 			      <child>
@@ -471,6 +481,7 @@
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <signal name="clicked" handler="on_prefs_bkg_color_clicked" last_modification_time="Mon, 23 Jun 2003 20:12:08 GMT"/>
 
 			      <child>
@@ -560,6 +571,7 @@
 			      <property name="label" translatable="yes"></property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <signal name="clicked" handler="on_prefs_mod_font_clicked" last_modification_time="Sat, 22 Feb 2003 14:46:00 GMT"/>
 			    </widget>
 			    <packing>
@@ -699,6 +711,7 @@
 			      <property name="label" translatable="yes"></property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <signal name="clicked" handler="on_prefs_stack_font_clicked" last_modification_time="Thu, 18 Sep 2003 19:13:10 GMT"/>
 			    </widget>
 			    <packing>
@@ -740,6 +753,7 @@
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <signal name="clicked" handler="on_prefs_stack_color_clicked" last_modification_time="Thu, 18 Sep 2003 19:13:02 GMT"/>
 
 			      <child>
@@ -913,6 +927,7 @@
 			      <property name="label" translatable="yes">Angle base units</property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <property name="active">False</property>
 			      <property name="inconsistent">False</property>
 			      <property name="draw_indicator">True</property>
@@ -935,6 +950,7 @@
 			      <property name="label" translatable="yes">Notation</property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <property name="active">False</property>
 			      <property name="inconsistent">False</property>
 			      <property name="draw_indicator">True</property>
@@ -957,6 +973,7 @@
 			      <property name="label" translatable="yes">Arithmetic operation</property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <property name="active">False</property>
 			      <property name="inconsistent">False</property>
 			      <property name="draw_indicator">True</property>
@@ -979,6 +996,7 @@
 			      <property name="label" translatable="yes">Open brackets</property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <property name="active">False</property>
 			      <property name="inconsistent">False</property>
 			      <property name="draw_indicator">True</property>
@@ -1001,6 +1019,7 @@
 			      <property name="label" translatable="yes">Number base units</property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <property name="active">False</property>
 			      <property name="inconsistent">False</property>
 			      <property name="draw_indicator">True</property>
@@ -1136,6 +1155,7 @@
 			      <property name="label" translatable="yes">Use custom button font</property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <property name="active">False</property>
 			      <property name="inconsistent">False</property>
 			      <property name="draw_indicator">True</property>
@@ -1182,6 +1202,7 @@
 				  <property name="label" translatable="yes"></property>
 				  <property name="use_underline">True</property>
 				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
 				  <signal name="clicked" handler="on_prefs_button_font_clicked" last_modification_time="Sun, 20 Apr 2003 21:16:57 GMT"/>
 				</widget>
 				<packing>
@@ -1698,6 +1719,7 @@
 				  <property name="label" translatable="yes">Add</property>
 				  <property name="use_underline">True</property>
 				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
 				  <signal name="clicked" handler="on_prefs_cadd_clicked" last_modification_time="Mon, 09 Jun 2003 23:00:21 GMT"/>
 				</widget>
 				<packing>
@@ -1714,6 +1736,7 @@
 				  <property name="label" translatable="yes">Update</property>
 				  <property name="use_underline">True</property>
 				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
 				  <signal name="clicked" handler="on_prefs_cupdate_clicked" last_modification_time="Mon, 09 Jun 2003 23:00:33 GMT"/>
 				</widget>
 				<packing>
@@ -1730,6 +1753,7 @@
 				  <property name="label" translatable="yes">Delete</property>
 				  <property name="use_underline">True</property>
 				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
 				  <signal name="clicked" handler="on_prefs_cdelete_clicked" last_modification_time="Mon, 09 Jun 2003 23:00:43 GMT"/>
 				</widget>
 				<packing>
@@ -1746,6 +1770,7 @@
 				  <property name="label" translatable="yes">Clear</property>
 				  <property name="use_underline">True</property>
 				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
 				  <signal name="clicked" handler="on_prefs_cclear_clicked" last_modification_time="Mon, 09 Jun 2003 23:01:02 GMT"/>
 				</widget>
 				<packing>
@@ -2073,6 +2098,7 @@
 				  <property name="label" translatable="yes">Add</property>
 				  <property name="use_underline">True</property>
 				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
 				  <signal name="clicked" handler="on_prefs_ufadd_clicked" last_modification_time="Sun, 14 Mar 2004 19:09:38 GMT"/>
 				</widget>
 				<packing>
@@ -2089,6 +2115,7 @@
 				  <property name="label" translatable="yes">Update</property>
 				  <property name="use_underline">True</property>
 				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
 				  <signal name="clicked" handler="on_prefs_ufupdate_clicked" last_modification_time="Sun, 14 Mar 2004 19:09:44 GMT"/>
 				</widget>
 				<packing>
@@ -2105,6 +2132,7 @@
 				  <property name="label" translatable="yes">Delete</property>
 				  <property name="use_underline">True</property>
 				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
 				  <signal name="clicked" handler="on_prefs_ufdelete_clicked" last_modification_time="Sun, 14 Mar 2004 19:09:50 GMT"/>
 				</widget>
 				<packing>
@@ -2121,6 +2149,7 @@
 				  <property name="label" translatable="yes">Clear</property>
 				  <property name="use_underline">True</property>
 				  <property name="relief">GTK_RELIEF_NORMAL</property>
+				  <property name="focus_on_click">True</property>
 				  <signal name="clicked" handler="on_prefs_ufclear_clicked" last_modification_time="Sun, 14 Mar 2004 19:09:57 GMT"/>
 				</widget>
 				<packing>
@@ -2261,9 +2290,10 @@
 			    <widget class="GtkCheckButton" id="prefs_hex_signed">
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
-			      <property name="label" translatable="yes">signed</property>
+			      <property name="label" translatable="yes">Signed</property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <property name="active">False</property>
 			      <property name="inconsistent">False</property>
 			      <property name="draw_indicator">True</property>
@@ -2304,7 +2334,7 @@
 			  <child>
 			    <widget class="GtkLabel" id="prefs_hex_bits_label">
 			      <property name="visible">True</property>
-			      <property name="label" translatable="yes">Number of Bits: </property>
+			      <property name="label" translatable="yes">Number of bits: </property>
 			      <property name="use_underline">False</property>
 			      <property name="use_markup">False</property>
 			      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -2413,9 +2443,10 @@
 			    <widget class="GtkCheckButton" id="prefs_oct_signed">
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
-			      <property name="label" translatable="yes">signed</property>
+			      <property name="label" translatable="yes">Signed</property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <property name="active">False</property>
 			      <property name="inconsistent">False</property>
 			      <property name="draw_indicator">True</property>
@@ -2456,7 +2487,7 @@
 			  <child>
 			    <widget class="GtkLabel" id="prefs_oct_bits_label">
 			      <property name="visible">True</property>
-			      <property name="label" translatable="yes">Number of Bits: </property>
+			      <property name="label" translatable="yes">Number of bits: </property>
 			      <property name="use_underline">False</property>
 			      <property name="use_markup">False</property>
 			      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -2584,34 +2615,13 @@
 			  </child>
 
 			  <child>
-			    <widget class="GtkCheckButton" id="prefs_bin_fixed">
-			      <property name="visible">True</property>
-			      <property name="can_focus">True</property>
-			      <property name="label" translatable="yes">fix length to a multiple of</property>
-			      <property name="use_underline">True</property>
-			      <property name="relief">GTK_RELIEF_NORMAL</property>
-			      <property name="active">False</property>
-			      <property name="inconsistent">False</property>
-			      <property name="draw_indicator">True</property>
-			      <signal name="toggled" handler="on_prefs_bin_fixed_toggled" last_modification_time="Fri, 04 Jul 2003 17:38:05 GMT"/>
-			    </widget>
-			    <packing>
-			      <property name="left_attach">0</property>
-			      <property name="right_attach">1</property>
-			      <property name="top_attach">2</property>
-			      <property name="bottom_attach">3</property>
-			      <property name="x_options"></property>
-			      <property name="y_options"></property>
-			    </packing>
-			  </child>
-
-			  <child>
 			    <widget class="GtkCheckButton" id="prefs_bin_signed">
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
-			      <property name="label" translatable="yes">signed</property>
+			      <property name="label" translatable="yes">Signed</property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <property name="active">False</property>
 			      <property name="inconsistent">False</property>
 			      <property name="draw_indicator">True</property>
@@ -2623,30 +2633,6 @@
 			      <property name="top_attach">1</property>
 			      <property name="bottom_attach">2</property>
 			      <property name="x_options">fill</property>
-			      <property name="y_options"></property>
-			    </packing>
-			  </child>
-
-			  <child>
-			    <widget class="GtkLabel" id="prefs_bin_bits_label">
-			      <property name="visible">True</property>
-			      <property name="label" translatable="yes">Number of Bits: </property>
-			      <property name="use_underline">False</property>
-			      <property name="use_markup">False</property>
-			      <property name="justify">GTK_JUSTIFY_LEFT</property>
-			      <property name="wrap">False</property>
-			      <property name="selectable">False</property>
-			      <property name="xalign">0</property>
-			      <property name="yalign">0.5</property>
-			      <property name="xpad">0</property>
-			      <property name="ypad">0</property>
-			    </widget>
-			    <packing>
-			      <property name="left_attach">0</property>
-			      <property name="right_attach">1</property>
-			      <property name="top_attach">0</property>
-			      <property name="bottom_attach">1</property>
-			      <property name="x_options"></property>
 			      <property name="y_options"></property>
 			    </packing>
 			  </child>
@@ -2669,6 +2655,53 @@
 			      <property name="right_attach">2</property>
 			      <property name="top_attach">0</property>
 			      <property name="bottom_attach">1</property>
+			      <property name="y_options"></property>
+			    </packing>
+			  </child>
+
+			  <child>
+			    <widget class="GtkLabel" id="label90">
+			      <property name="visible">True</property>
+			      <property name="label" translatable="yes">Number of bits: </property>
+			      <property name="use_underline">False</property>
+			      <property name="use_markup">False</property>
+			      <property name="justify">GTK_JUSTIFY_LEFT</property>
+			      <property name="wrap">False</property>
+			      <property name="selectable">False</property>
+			      <property name="xalign">0</property>
+			      <property name="yalign">0.5</property>
+			      <property name="xpad">0</property>
+			      <property name="ypad">0</property>
+			    </widget>
+			    <packing>
+			      <property name="left_attach">0</property>
+			      <property name="right_attach">1</property>
+			      <property name="top_attach">0</property>
+			      <property name="bottom_attach">1</property>
+			      <property name="x_options">fill</property>
+			      <property name="y_options"></property>
+			    </packing>
+			  </child>
+
+			  <child>
+			    <widget class="GtkCheckButton" id="prefs_bin_fixed">
+			      <property name="visible">True</property>
+			      <property name="can_focus">True</property>
+			      <property name="label" translatable="yes">Fix length to a multiple of</property>
+			      <property name="use_underline">True</property>
+			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
+			      <property name="active">False</property>
+			      <property name="inconsistent">False</property>
+			      <property name="draw_indicator">True</property>
+			      <signal name="toggled" handler="on_prefs_bin_fixed_toggled" last_modification_time="Fri, 04 Jul 2003 17:38:05 GMT"/>
+			    </widget>
+			    <packing>
+			      <property name="left_attach">0</property>
+			      <property name="right_attach">1</property>
+			      <property name="top_attach">2</property>
+			      <property name="bottom_attach">3</property>
+			      <property name="x_options">fill</property>
 			      <property name="y_options"></property>
 			    </packing>
 			  </child>
@@ -2793,6 +2826,7 @@
 			      <property name="label" translatable="yes">finite stack size (x, y, z, t)</property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <property name="active">False</property>
 			      <property name="inconsistent">False</property>
 			      <property name="draw_indicator">True</property>
@@ -2812,6 +2846,7 @@
 			      <property name="label" translatable="yes">infinite stack size</property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <property name="active">False</property>
 			      <property name="inconsistent">False</property>
 			      <property name="draw_indicator">True</property>
@@ -2916,6 +2951,7 @@
 			      <property name="label" translatable="yes">Remember display value on exit</property>
 			      <property name="use_underline">True</property>
 			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
 			      <property name="active">False</property>
 			      <property name="inconsistent">False</property>
 			      <property name="draw_indicator">True</property>
@@ -3013,6 +3049,7 @@
 			  <property name="label" translatable="yes">Show menu bar</property>
 			  <property name="use_underline">True</property>
 			  <property name="relief">GTK_RELIEF_NORMAL</property>
+			  <property name="focus_on_click">True</property>
 			  <property name="active">False</property>
 			  <property name="inconsistent">False</property>
 			  <property name="draw_indicator">True</property>

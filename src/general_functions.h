@@ -49,6 +49,7 @@ void set_spinbutton (GladeXML *xml, char *spinbutton_name, void *value);
 void set_optmenu (GladeXML *xml, char *optmenu_name, void *index);
 void set_button_color (GladeXML *xml, char *button_name, void *color_string);
 void set_stacksize (GladeXML *xml, char *name, void *stack_size);
+void set_entry (GladeXML *xml, char *entry_name, void *entry_text);
 
 char *gdk_color_to_string (GdkColor color);
 

@@ -771,9 +771,10 @@ void display_set_line_double (double value, int line, char *tag)
 	
 	string_value = get_display_number_string (value, current_status.number);
 	/* DISPLAY RESULT MODIFIED */
-	separator_string = string_add_separator(string_value, TRUE, 3, ' ', '.');
+/*	separator_string = string_add_separator(string_value, TRUE, 3, ' ', '.');
 	gtk_text_buffer_insert_with_tags_by_name (buffer, &start, separator_string, -1, tag, NULL);
 	free (separator_string);
+*/	gtk_text_buffer_insert_with_tags_by_name (buffer, &start, string_value, -1, tag, NULL);
 	if (line == display_result_line) 
 		display_result_counter = strlen (string_value);
 	g_free (string_value);
