@@ -115,7 +115,7 @@ int main (int argc, char *argv[])
 	
 	/*
 	 * gtk_init runs (among other things) setlocale (LC_ALL, ""). Therefore we
-	 * have to/can deal with i18n from this point.
+	 * have to/can deal with i18n only from this point.
 	 * call gtk_init before getopts to get gtk options stripped (--display etc)
 	 */
 
@@ -148,10 +148,10 @@ int main (int argc, char *argv[])
 	ui_main_window_buttons_create(prefs.mode);
 	
 	/* usually, only Shift, CTRL and ALT modifiers are paid attention to by 
-	 * accelerator code. add MOD2 (NUMLOCK allover the worl?) to the list. 
+	 * accelerator code. add MOD2 (NUMLOCK allover the world?) to the list. 
 	 * We have to do this for a working keypad.
 	 */
-	  
+
 	gtk_accelerator_set_default_mod_mask (gtk_accelerator_get_default_mod_mask () | GDK_MOD2_MASK); 
 				  
 	/* prepare calc_basic */

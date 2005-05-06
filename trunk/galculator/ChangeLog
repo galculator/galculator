@@ -1,3 +1,14 @@
+2005-05-06 Simon Floery <chimaira@users.sf.net>
+	* ui/scientific_buttons.glade: hex buttons with shift modifiers
+
+2005-05-05 Simon Floery <chimaira@users.sf.net>
+	* src/Makefile.am: added galculator_LDFLAGS = -export-dynamic
+		(thanks to Jim)
+
+2004-11-09 Simon Floery <chimaira@users.sf.net>
+	* configure.in: removed perl XML::Parser dependancy (thanks to
+		Christian)
+
 2004-11-07 Simon Floery <chimaira@users.sf.net>
 	* callbacks.c: on_paste_activate CTRL-V in formula entry (small bugfix)
 	* updated ja.po
