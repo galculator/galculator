@@ -647,6 +647,7 @@
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
 		  <accelerator key="c" modifiers="0" signal="clicked"/>
 		  <accelerator key="C" modifiers="0" signal="clicked"/>
+		  <accelerator key="c" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">1</property>
@@ -673,6 +674,7 @@
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
 		  <accelerator key="d" modifiers="0" signal="clicked"/>
 		  <accelerator key="D" modifiers="0" signal="clicked"/>
+		  <accelerator key="d" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">1</property>
@@ -699,6 +701,7 @@
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
 		  <accelerator key="e" modifiers="0" signal="clicked"/>
 		  <accelerator key="E" modifiers="0" signal="clicked"/>
+		  <accelerator key="e" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">1</property>
@@ -725,6 +728,7 @@
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
 		  <accelerator key="f" modifiers="0" signal="clicked"/>
 		  <accelerator key="F" modifiers="0" signal="clicked"/>
+		  <accelerator key="f" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">1</property>
@@ -751,6 +755,7 @@
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
 		  <accelerator key="b" modifiers="0" signal="clicked"/>
 		  <accelerator key="B" modifiers="0" signal="clicked"/>
+		  <accelerator key="b" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">1</property>
@@ -777,6 +782,7 @@
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
 		  <accelerator key="a" modifiers="0" signal="clicked"/>
 		  <accelerator key="A" modifiers="0" signal="clicked"/>
+		  <accelerator key="a" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">0</property>

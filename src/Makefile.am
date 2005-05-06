@@ -22,3 +22,5 @@ galculator_SOURCES = \
 
 galculator_LDADD = @PACKAGE_LIBS@
 
+galculator_LDFLAGS = -export-dynamic
+
