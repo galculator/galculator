@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-20 19:56+0200\n"
+"POT-Creation-Date: 2005-05-07 10:20+0200\n"
 "PO-Revision-Date: 2003-10-08 01:50+0200\n"
 "Last-Translator:\n"
 "Language-Team: \n"
@@ -74,7 +74,7 @@ msgstr ""
 "\n"
 "© 2002-2003 par Simon Floery (chimaira@users.sf.net)"
 
-#: src/callbacks.c:1056
+#: src/callbacks.c:1066
 msgid "save here"
 msgstr "sauvegarder ici"
 
@@ -223,27 +223,27 @@ msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
 msgstr ""
 "[%s] Type d'angle inconnu dans la fonction \"display_result_set_angle\". %s\n"
 
-#: src/general_functions.c:125
-#, c-format
+#: src/general_functions.c:127
+#, fuzzy, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
 "[%s] échec de la conversion du caractère %c dans la fonction \"axtof\". %s\n"
 
-#: src/general_functions.c:177
+#: src/general_functions.c:181
 #, c-format
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr "[%s] échec de la conversion de %f dans la fonction \"ftoax\". %s\n"
 
-#: src/general_functions.c:387
+#: src/general_functions.c:391
 #, fuzzy, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr "[%s] échec de la conversion de %f dans la fonction \"ftoax\". %s\n"
 
-#: src/general_functions.c:415
+#: src/general_functions.c:419
 msgid "unknown number base"
 msgstr "base de numérotation inconnue"
 
-#: src/general_functions.c:416
+#: src/general_functions.c:420
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
@@ -251,7 +251,7 @@ msgstr ""
 "[%s] base de numérotation inconnue dans la fonction "
 "'get_display_number_string'. %s\n"
 
-#: src/general_functions.c:437
+#: src/general_functions.c:441
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
@@ -259,49 +259,49 @@ msgstr ""
 "[%s] base de numérotation inconnue dans la fonction "
 "'get_display_number_length. %s\n"
 
-#: src/general_functions.c:546
+#: src/general_functions.c:550
 #, c-format
 msgid ""
 "[%s] failed to convert %s to a number properly in function \"string2double"
 "\". Have you changed your locales? %s\n"
 msgstr ""
 
-#: src/general_functions.c:562
+#: src/general_functions.c:566
 #, fuzzy, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr ""
 "[%s] base de numérotation inconnue dans la fonction "
 "\"display_result_get_double\". %s\n"
 
-#: src/general_functions.c:703
+#: src/general_functions.c:725
 #, fuzzy, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr ""
 "[%s] base de numérotation inconnue dans la fonction "
 "\"display_result_get_double\". %s\n"
 
-#: src/general_functions.c:718
+#: src/general_functions.c:740
 #, fuzzy, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr ""
 "[%s] base de numérotation inconnue dans la fonction "
 "\"display_result_get_double\". %s\n"
 
-#: src/general_functions.c:735
+#: src/general_functions.c:757
 #, fuzzy, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr ""
 "[%s] base de numérotation inconnue dans la fonction "
 "\"display_result_get_double\". %s\n"
 
-#: src/general_functions.c:752
+#: src/general_functions.c:774
 #, fuzzy, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
 msgstr ""
 "[%s] base de numérotation inconnue dans la fonction "
 "'get_display_number_length. %s\n"
 
-#: src/general_functions.c:769
+#: src/general_functions.c:791
 #, fuzzy, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
 msgstr ""

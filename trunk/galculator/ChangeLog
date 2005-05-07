@@ -1,3 +1,7 @@
+########################################
+# 2005-05-09 galculator 1.2.5 released #
+########################################
+
 2005-05-06 Simon Floery <chimaira@users.sf.net>
 	* ui/scientific_buttons.glade: hex buttons with shift modifiers
 

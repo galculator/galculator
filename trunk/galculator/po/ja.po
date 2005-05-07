@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-25 09:02+0900\n"
+"POT-Creation-Date: 2005-05-07 10:20+0200\n"
 "PO-Revision-Date: 2004-10-25 09:01+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -73,7 +73,7 @@ msgstr ""
 "\n"
 "(c) 2002-2004 by Simon Floery (chimaira@users.sf.net)"
 
-#: src/callbacks.c:1056
+#: src/callbacks.c:1066
 msgid "save here"
 msgstr "ここに保存する"
 
@@ -221,42 +221,42 @@ msgstr "サポートしていない双曲線関数"
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
 msgstr "[%s] 関数 \"all_clear\" の中で不明な記法モードです。%s\n"
 
-#: src/general_functions.c:125
-#, c-format
+#: src/general_functions.c:127
+#, fuzzy, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr "[%s] 関数 \"axtof\" で文字 %c の変換に失敗しました。%s\n"
 
-#: src/general_functions.c:177
+#: src/general_functions.c:181
 #, c-format
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr "[%s] 関数 \"ftoax\" で数値 %f の変換に失敗しました。%s\n"
 
-#: src/general_functions.c:387
+#: src/general_functions.c:391
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr ""
 "[%s] 関数 \"activation_menu_item\" でウィジット %s が見つかりませんでした。%"
 "s\n"
 
-#: src/general_functions.c:415
+#: src/general_functions.c:419
 msgid "unknown number base"
 msgstr "基数が不明です"
 
-#: src/general_functions.c:416
+#: src/general_functions.c:420
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
 msgstr ""
 "[%s] 関数 \"get_display_number_string\" に不明な基数が渡されました。%s\n"
 
-#: src/general_functions.c:437
+#: src/general_functions.c:441
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
 msgstr ""
 "[%s] 関数 \"get_display_number_length\" に不明な基数が渡されました。%s\n"
 
-#: src/general_functions.c:546
+#: src/general_functions.c:550
 #, c-format
 msgid ""
 "[%s] failed to convert %s to a number properly in function \"string2double"
@@ -265,32 +265,32 @@ msgstr ""
 "[%s] 関数 \"string2double\" の中で %s を適切な数値に変換できませんでした。ロ"
 "ケールを変更しました？ %s\n"
 
-#: src/general_functions.c:562
+#: src/general_functions.c:566
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr "[%s] 関数 \"string2double\" に不明な基数が渡されました。%s\n"
 
-#: src/general_functions.c:703
+#: src/general_functions.c:725
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr "[%s] 関数 \"x2rad\" に不明な角度の単位が渡されました。%s\n"
 
-#: src/general_functions.c:718
+#: src/general_functions.c:740
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr "[%s] 関数 \"rad2x\" に不明な角度の単位が渡されました。%s\n"
 
-#: src/general_functions.c:735
+#: src/general_functions.c:757
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr "[%s] 関数 \"get_sep\" に不明な基数が渡されました。%s\n"
 
-#: src/general_functions.c:752
+#: src/general_functions.c:774
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
 msgstr "[%s] 関数 \"get_sep_length\" に不明な基数が渡されました。%s\n"
 
-#: src/general_functions.c:769
+#: src/general_functions.c:791
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
 msgstr "[%s] 関数 \"get_sep_char\" に不明な基数が渡されました。%s\n"
@@ -381,6 +381,13 @@ msgstr "roll"
 #: src/ui.c:1021
 msgid "roll down stack"
 msgstr "スタックを下げます"
+
+#: flex_parser.l:214
+#, c-format
+msgid ""
+"[%s] flex parser was called more than %i times. Do you know what you are "
+"doing? If not: %s\n"
+msgstr ""
 
 #: ui/main_frame.glade.h:1 ui/scientific_buttons.glade.h:5
 #: ui/basic_buttons.glade.h:5 ui/prefs.glade.h:3
