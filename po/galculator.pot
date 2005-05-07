@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-20 19:56+0200\n"
+"POT-Creation-Date: 2005-05-07 10:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgid ""
 "(c) 2002-2004 by Simon Floery (chimaira@users.sf.net)"
 msgstr ""
 
-#: src/callbacks.c:1056
+#: src/callbacks.c:1066
 msgid "save here"
 msgstr ""
 
@@ -191,70 +191,70 @@ msgstr ""
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:125
+#: src/general_functions.c:127
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:177
+#: src/general_functions.c:181
 #, c-format
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:387
+#: src/general_functions.c:391
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:415
+#: src/general_functions.c:419
 msgid "unknown number base"
 msgstr ""
 
-#: src/general_functions.c:416
+#: src/general_functions.c:420
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:437
+#: src/general_functions.c:441
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:546
+#: src/general_functions.c:550
 #, c-format
 msgid ""
 "[%s] failed to convert %s to a number properly in function \"string2double"
 "\". Have you changed your locales? %s\n"
 msgstr ""
 
-#: src/general_functions.c:562
+#: src/general_functions.c:566
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:703
+#: src/general_functions.c:725
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:718
+#: src/general_functions.c:740
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:735
+#: src/general_functions.c:757
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:752
+#: src/general_functions.c:774
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:769
+#: src/general_functions.c:791
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
 msgstr ""

@@ -124,7 +124,7 @@ double axtof (char *bin_string, int base, int nr_bits, gboolean is_signed)
 			return_value += (lower_bin_string[counter] - '0') * pow (base, strlen (lower_bin_string) - 1 - counter);
 		else if (lower_bin_string[counter] - 'a' < 10) \
 			return_value += (lower_bin_string[counter] - 'a' + 10) * pow (base, strlen (lower_bin_string) - 1 - counter);
-		else fprintf (stderr, _("[%s] failed to convert char %c (%i) in function \"axtof\". %s\n"), PROG_NAME, lower_bin_string[counter], lower_bin_string[counter], BUG_REPORT);
+		else fprintf (stderr, _("[%s] failed to convert char %c in function \"axtof\". %s\n"), PROG_NAME, lower_bin_string[counter], lower_bin_string[counter], BUG_REPORT);
 	}
 	
 	g_free (lower_bin_string);

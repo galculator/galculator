@@ -1,5 +1,8 @@
 galculator 1.2.5
-
+	* bugfixes to formula mode entry, GUI
+	* updated build process (libglade problems, dependencies)
+	* updated translations
+	
 galculator 1.2.4
 	* introducing thousands separators
 	* several bugfixes:
