@@ -59,10 +59,21 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 host_alias = @host_alias@
 host_triplet = @host@
+AR = @AR@
+AS = @AS@
 CATALOGS = @CATALOGS@
 CATOBJEXT = @CATOBJEXT@
 CC = @CC@
+CXX = @CXX@
+CXXCPP = @CXXCPP@
 DATADIRNAME = @DATADIRNAME@
+DLLTOOL = @DLLTOOL@
+ECHO = @ECHO@
+EGREP = @EGREP@
+EXEEXT = @EXEEXT@
+F77 = @F77@
+GCJ = @GCJ@
+GCJFLAGS = @GCJFLAGS@
 GETTEXT_PACKAGE = @GETTEXT_PACKAGE@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
@@ -96,10 +107,14 @@ INTLTOOL_XML_NOMERGE_RULE = @INTLTOOL_XML_NOMERGE_RULE@
 INTLTOOL_XML_RULE = @INTLTOOL_XML_RULE@
 LEX = @LEX@
 LIB = @LIB@
+LIBTOOL = @LIBTOOL@
+LN_S = @LN_S@
 LTLIB = @LTLIB@
 MAINT = @MAINT@
 MAKEINFO = @MAKEINFO@
 MKINSTALLDIRS = @MKINSTALLDIRS@
+OBJDUMP = @OBJDUMP@
+OBJEXT = @OBJEXT@
 PACKAGE = @PACKAGE@
 PACKAGE_CFLAGS = @PACKAGE_CFLAGS@
 PACKAGE_LIBS = @PACKAGE_LIBS@
@@ -108,6 +123,9 @@ POFILES = @POFILES@
 POSUB = @POSUB@
 PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
 PO_IN_DATADIR_TRUE = @PO_IN_DATADIR_TRUE@
+RANLIB = @RANLIB@
+RC = @RC@
+STRIP = @STRIP@
 USE_NLS = @USE_NLS@
 VERSION = @VERSION@
 mkdir_p = @mkdir_p@
@@ -133,7 +151,7 @@ DATA =  $(desktop_DATA)
 DIST_COMMON =  README ./stamp-h.in ABOUT-NLS AUTHORS COPYING ChangeLog \
 INSTALL Makefile.am Makefile.in NEWS THANKS TODO aclocal.m4 \
 config.guess config.h.in config.sub configure configure.in \
-galculator.spec.in install-sh missing mkinstalldirs
+galculator.spec.in install-sh ltmain.sh missing mkinstalldirs
 
 
 DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
@@ -408,6 +426,7 @@ clean-am:  clean-hdr clean-tags clean-generic mostlyclean-am
 clean: clean-recursive
 
 distclean-am:  distclean-hdr distclean-tags distclean-generic clean-am
+	-rm -f libtool
 
 distclean: distclean-recursive
 	-rm -f config.status

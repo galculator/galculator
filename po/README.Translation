@@ -1,5 +1,6 @@
 xgettext -f POTFILES.in -k=_ -o package.pot
-	creates a new package.pot
+	creates a new package.pot. please not that file galculator.pot exists
+	and that you don't need this step therefore. resume with:
 
 msginit -l ll
 	with ll language code (e.g. de) sets up ll.po file
@@ -8,6 +9,7 @@ edit this ll.po file
 
 this ll.po must be in UTF-8!?
 
-make update-po for merging etc. look out for FUZZY entries etc
+make update-po 
+	for merging etc. look out for FUZZY entries etc
 
 search at google for "locale id" to look up language codes
