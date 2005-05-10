@@ -6,9 +6,9 @@ RunInTerminal=true
 ShowLocals=true
 
 [filenumbers]
-0=52
-1=135
-2=7
+0=12
+1=4
+2=44
 3=7
 4=3
 5=3
@@ -60,6 +60,9 @@ clean before build=false
 5=bracket_counter
 6=FALSE
 7=CURRENT_ALG
+
+[filelist]
+0=/home/sf/Devel/galculator/TODO
 
 [Project Tree]
 0=0
