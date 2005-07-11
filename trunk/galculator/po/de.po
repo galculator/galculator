@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-07 10:20+0200\n"
+"POT-Creation-Date: 2005-07-11 20:41+0200\n"
 "PO-Revision-Date: 2003-05-26 14:24+0200\n"
 "Last-Translator: Simon Floery <chimaira@users.sf.net>\n"
 "Language-Team: German <de@li.org>\n"
@@ -62,12 +62,12 @@ msgid "About %s"
 msgstr "Info zu %s"
 
 #: src/callbacks.c:101
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
 "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
 "\n"
-"(c) 2002-2004 by Simon Floery (chimaira@users.sf.net)"
+"(c) 2002-2005 by Simon Floery (chimaira@users.sf.net)"
 msgstr ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
 "<span size=\"large\">ein wissenschaftlicher Taschenrechner (GTK 2)</span>\n"
@@ -79,10 +79,10 @@ msgid "save here"
 msgstr "speichere hier"
 
 #: src/main.c:59
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2004 Simon Floery\n"
+"%s v%s, (c) 2002-2005 Simon Floery\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -364,7 +364,7 @@ msgstr ")"
 
 #: src/ui.c:1009 ui/scientific_buttons.glade.h:30 ui/basic_buttons.glade.h:24
 msgid "Close Bracket"
-msgstr "Schliesst die Klammer"
+msgstr "Schließt die Klammer"
 
 #: src/ui.c:1015
 msgid "ENT"
@@ -399,7 +399,7 @@ msgid ""
 msgstr "[%s] flex parser wurde mehr als %i Mal aufgerufen. %s\n"
 
 #: ui/main_frame.glade.h:1 ui/scientific_buttons.glade.h:5
-#: ui/basic_buttons.glade.h:5 ui/prefs.glade.h:3
+#: ui/basic_buttons.glade.h:5
 msgid "*"
 msgstr "*"
 
@@ -407,7 +407,7 @@ msgstr "*"
 msgid "Angle _units"
 msgstr "_Winkeleinheit"
 
-#: ui/main_frame.glade.h:3 ui/prefs.glade.h:25
+#: ui/main_frame.glade.h:3 ui/prefs.glade.h:24
 msgid "Buttons"
 msgstr "Tasten"
 
@@ -429,7 +429,7 @@ msgstr ""
 "Textfeld für die Formeleingabe: Die zu berechnende Zeichenfolge wird hier "
 "eingegeben."
 
-#: ui/main_frame.glade.h:8 ui/prefs.glade.h:36
+#: ui/main_frame.glade.h:8 ui/prefs.glade.h:35
 msgid "Functions"
 msgstr "Funktionen"
 
@@ -635,7 +635,7 @@ msgstr "CMP"
 msgid "Change sign"
 msgstr "Vorzeichenwechsel"
 
-#: ui/scientific_buttons.glade.h:31 ui/prefs.glade.h:29
+#: ui/scientific_buttons.glade.h:31 ui/prefs.glade.h:28
 msgid "Constants"
 msgstr "Konstanten"
 
@@ -899,9 +899,9 @@ msgstr "x^2"
 msgid "A dialog that shows information about this program."
 msgstr "Ein Dialogfenster mit Informationen zu diesem Programm."
 
-#: ui/about.glade.h:2 ui/prefs.glade.h:27
+#: ui/about.glade.h:2 ui/prefs.glade.h:26
 msgid "Closes the dialog."
-msgstr "Schliesst das Dialogfenster."
+msgstr "Schließt das Dialogfenster."
 
 #: ui/about.glade.h:3
 msgid "Shows information about the program."
@@ -917,11 +917,11 @@ msgstr "Ein Dialogfenster zum Ändern von Farbeinstellungen."
 
 #: ui/color.glade.h:2 ui/font.glade.h:2
 msgid "Applies all changes and closes the dialog."
-msgstr "Äbernimmt die Änderungen und schliesst das Dialogfenster."
+msgstr "Äbernimmt die Änderungen und schließt das Dialogfenster."
 
 #: ui/color.glade.h:3 ui/font.glade.h:4
 msgid "Cancels all changes and closes the dialog."
-msgstr "Vergisst alle Änderungen und schliesst das Dialogfenster."
+msgstr "Vergisst alle Änderungen und schließt das Dialogfenster."
 
 #: ui/color.glade.h:4
 msgid "Contains various widgets to select a color value."
@@ -945,7 +945,7 @@ msgstr "Übernimmt alle Änderungen."
 
 #: ui/font.glade.h:5
 msgid "Displays various fonts and font sizes to select from."
-msgstr "Gibt verschiedene Schriftarten und Schriftgrössen zur Auswahl."
+msgstr "Gibt verschiedene Schriftarten und Schriftgrößen zur Auswahl."
 
 #: ui/font.glade.h:6
 msgid "Select Font"
@@ -963,243 +963,243 @@ msgstr " "
 msgid "    "
 msgstr "    "
 
-#: ui/prefs.glade.h:4
+#: ui/prefs.glade.h:3
 msgid "<b>Appearance</b>"
 msgstr "<b>Erscheinungsbild</b>"
 
-#: ui/prefs.glade.h:5
+#: ui/prefs.glade.h:4
 msgid "<b>Binary Settings</b>"
 msgstr "<b>Binäre Einstellungen</b>"
 
-#: ui/prefs.glade.h:6
+#: ui/prefs.glade.h:5
 msgid "<b>Decimal Settings</b>"
 msgstr "<b>Dezimale Einstellungen</b>"
 
-#: ui/prefs.glade.h:7
+#: ui/prefs.glade.h:6
 msgid "<b>Dimension</b>"
-msgstr "<b>Grösse</b>"
+msgstr "<b>Größe</b>"
 
-#: ui/prefs.glade.h:8
+#: ui/prefs.glade.h:7
 msgid "<b>Font</b>"
 msgstr "<b>Schrift</b>"
 
-#: ui/prefs.glade.h:9
+#: ui/prefs.glade.h:8
 msgid "<b>Hexadecimal Settings</b>"
 msgstr "<b>Hexadezimale Einstellungen</b>"
 
-#: ui/prefs.glade.h:10
+#: ui/prefs.glade.h:9
 msgid "<b>Modules Visibility</b>"
 msgstr "<b>Sichtbare Module</b>"
 
-#: ui/prefs.glade.h:11
+#: ui/prefs.glade.h:10
 msgid "<b>Octal Settings</b>"
 msgstr "<b>Oktale Einstellungen</b>"
 
-#: ui/prefs.glade.h:12
+#: ui/prefs.glade.h:11
 msgid "<b>RPN</b>"
 msgstr "<b>RPN</b>"
 
-#: ui/prefs.glade.h:13
+#: ui/prefs.glade.h:12
 msgid "<b>Startup</b>"
 msgstr "<b>Programmstart</b>"
 
-#: ui/prefs.glade.h:14
+#: ui/prefs.glade.h:13
 msgid "<b>User defined constants:</b>"
 msgstr "<b>Benutzerdefinierte Konstanten:</b>"
 
-#: ui/prefs.glade.h:15
+#: ui/prefs.glade.h:14
 msgid "<b>User defined functions:</b>"
 msgstr "<b>Benutzerdefinierte Funktionen</b>"
 
-#: ui/prefs.glade.h:16
+#: ui/prefs.glade.h:15
 msgid "<b>Visibility</b>"
 msgstr "<b>Sichtbarkeit</b>"
 
-#: ui/prefs.glade.h:17
+#: ui/prefs.glade.h:16
 msgid "A dialog that is used to change preferences settings."
 msgstr "Ein Dialogfenster zum Ändern von Einstellungen."
 
-#: ui/prefs.glade.h:18
+#: ui/prefs.glade.h:17
 msgid "Active module color:"
 msgstr "Farbe aktives Modul:"
 
-#: ui/prefs.glade.h:19
+#: ui/prefs.glade.h:18
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: ui/prefs.glade.h:20
+#: ui/prefs.glade.h:19
 msgid "Angle base units"
 msgstr "Winkeleinheit"
 
-#: ui/prefs.glade.h:21
+#: ui/prefs.glade.h:20
 msgid "Arithmetic operation"
 msgstr "Arithmetische Operation"
 
-#: ui/prefs.glade.h:22
+#: ui/prefs.glade.h:21
 msgid "Background color:"
 msgstr "Hintergrundfarbe:"
 
-#: ui/prefs.glade.h:23
+#: ui/prefs.glade.h:22
 msgid "Binary"
 msgstr "Binär"
 
-#: ui/prefs.glade.h:24
+#: ui/prefs.glade.h:23
 msgid "Button font:"
 msgstr "Schrift der Tasten:"
 
-#: ui/prefs.glade.h:26
+#: ui/prefs.glade.h:25
 msgid "Clear"
 msgstr "Löschen"
 
-#: ui/prefs.glade.h:28
+#: ui/prefs.glade.h:27
 msgid "Configure number base: "
 msgstr "Konfiguriere Zahlenbasis:"
 
-#: ui/prefs.glade.h:30
+#: ui/prefs.glade.h:29
 msgid "Decimal"
 msgstr "Dezimal"
 
-#: ui/prefs.glade.h:31
+#: ui/prefs.glade.h:30
 msgid "Delete"
 msgstr "Entfernen"
 
-#: ui/prefs.glade.h:32
+#: ui/prefs.glade.h:31
 msgid "Description:"
 msgstr "Beschreibung:"
 
-#: ui/prefs.glade.h:33
+#: ui/prefs.glade.h:32
 msgid "Display"
 msgstr "Display"
 
-#: ui/prefs.glade.h:34
+#: ui/prefs.glade.h:33
 msgid "Expression:"
 msgstr "Formelausdruck:"
 
-#: ui/prefs.glade.h:35
+#: ui/prefs.glade.h:34
 msgid "Fix length to a multiple of"
 msgstr "Fixiere Länge auf ein Vielfaches von"
 
-#: ui/prefs.glade.h:37
+#: ui/prefs.glade.h:36
 msgid "General"
 msgstr "Allgemein"
 
-#: ui/prefs.glade.h:38
+#: ui/prefs.glade.h:37
 msgid "Hexadecimal"
 msgstr "Hexadezimal"
 
-#: ui/prefs.glade.h:39
+#: ui/prefs.glade.h:38
 msgid "Inactive module color:"
 msgstr "Farbe inaktives Modul:"
 
-#: ui/prefs.glade.h:40
+#: ui/prefs.glade.h:39
 msgid "Minimal button height:"
 msgstr "Minimale Tastenhöhe:"
 
-#: ui/prefs.glade.h:41
+#: ui/prefs.glade.h:40
 msgid "Minimal button width:"
 msgstr "Minimale Tastenbreite:"
 
-#: ui/prefs.glade.h:42
+#: ui/prefs.glade.h:41
 msgid "Module font:"
 msgstr "Schrift der Module:"
 
-#: ui/prefs.glade.h:43
+#: ui/prefs.glade.h:42
 msgid "Name:"
 msgstr "Name:"
 
-#: ui/prefs.glade.h:44
+#: ui/prefs.glade.h:43
 msgid "Notation"
 msgstr "Notation"
 
-#: ui/prefs.glade.h:45
+#: ui/prefs.glade.h:44
 msgid "Number base units"
 msgstr "Zahlenbasis"
 
-#: ui/prefs.glade.h:46
+#: ui/prefs.glade.h:45
 msgid "Number of bits: "
 msgstr "Anzahl an Bits: "
 
-#: ui/prefs.glade.h:47
+#: ui/prefs.glade.h:46
 msgid "Numbers"
 msgstr "Zahlen"
 
-#: ui/prefs.glade.h:48
+#: ui/prefs.glade.h:47
 msgid "Octal"
 msgstr "Oktal"
 
-#: ui/prefs.glade.h:49
+#: ui/prefs.glade.h:48
 msgid "Open brackets"
 msgstr "Offene Klammern"
 
-#: ui/prefs.glade.h:50
+#: ui/prefs.glade.h:49
 msgid "RPN stack color:"
 msgstr "Farbe des Stacks:"
 
-#: ui/prefs.glade.h:51
+#: ui/prefs.glade.h:50
 msgid "RPN stack font:"
 msgstr "Schrift des Stacks:"
 
-#: ui/prefs.glade.h:52
+#: ui/prefs.glade.h:51
 msgid "Remember display value on exit"
 msgstr "Speichere Displaywert beim Beenden"
 
-#: ui/prefs.glade.h:53
+#: ui/prefs.glade.h:52
 msgid "Result font color:"
 msgstr "Schriftfarbe des Resultats:"
 
-#: ui/prefs.glade.h:54
+#: ui/prefs.glade.h:53
 msgid "Result font:"
 msgstr "Schrift des Resultats:"
 
-#: ui/prefs.glade.h:55
+#: ui/prefs.glade.h:54
 msgid "Separator block length:"
 msgstr "Blocklänge Trennzeichen:"
 
-#: ui/prefs.glade.h:56
+#: ui/prefs.glade.h:55
 msgid "Separator character:"
 msgstr "Trennzeichen:"
 
-#: ui/prefs.glade.h:57
+#: ui/prefs.glade.h:56
 msgid "Show menu bar"
 msgstr "Menü sichtbar"
 
-#: ui/prefs.glade.h:58
+#: ui/prefs.glade.h:57
 msgid "Show separator"
 msgstr "Anzeige des Trennzeichens"
 
-#: ui/prefs.glade.h:59
+#: ui/prefs.glade.h:58
 msgid "Show thousands separator"
 msgstr "Anzeige des Tausendertrennzeichens"
 
-#: ui/prefs.glade.h:60
+#: ui/prefs.glade.h:59
 msgid "Signed"
 msgstr "vorzeichenbehaftet"
 
-#: ui/prefs.glade.h:61
+#: ui/prefs.glade.h:60
 msgid "Update"
 msgstr "Aktualisieren"
 
-#: ui/prefs.glade.h:62
+#: ui/prefs.glade.h:61
 msgid "Use custom button font"
 msgstr "Verwende eigene Schrift"
 
-#: ui/prefs.glade.h:63
+#: ui/prefs.glade.h:62
 msgid "Value:"
 msgstr "Wert:"
 
-#: ui/prefs.glade.h:64
+#: ui/prefs.glade.h:63
 msgid "Variable:"
 msgstr "Unbekannte:"
 
-#: ui/prefs.glade.h:65
+#: ui/prefs.glade.h:64
 msgid "finite stack size (x, y, z, t)"
 msgstr "endlicher Stack (x, y, z, t)"
 
-#: ui/prefs.glade.h:66
+#: ui/prefs.glade.h:65
 msgid "galculator - Preferences"
 msgstr "galculator - Einstellungen"
 
-#: ui/prefs.glade.h:67
+#: ui/prefs.glade.h:66
 msgid "infinite stack size"
 msgstr "unendlicher Stack"
 
@@ -1254,7 +1254,7 @@ msgstr "Setze Taschenrechner zurück (Lösche alles)"
 #~ msgstr "[%s] berechne: %f %c %f = %f\n"
 
 #~ msgid "[%s] RPN stack size is %i.\n"
-#~ msgstr "[%s] Die Grösse des RPN stacks ist %i.\n"
+#~ msgstr "[%s] Die Größe des RPN stacks ist %i.\n"
 
 #~ msgid "1/x"
 #~ msgstr "1/x"

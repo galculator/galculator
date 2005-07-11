@@ -1,3 +1,14 @@
+2005-07-11 Simon Floery <chimaira@users.sf.net>
+	* updated German translation (thanks to Jens)
+	* added Slovakian translation (thanks to Peter)
+
+2005-07-08 Simon Floery <chimaira@users.sf.net>
+	* gcc4 compatibility
+
+2005-05-10 Simon Floery <chimaira@users.sf.net>
+	* configure.in: added libtool to build process
+	* src/*.[ch]: 2004 replaced by 2005
+
 ########################################
 # 2005-05-09 galculator 1.2.5 released #
 ########################################
