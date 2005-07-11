@@ -1645,7 +1645,7 @@
 				  <property name="max_length">0</property>
 				  <property name="text" translatable="yes"></property>
 				  <property name="has_frame">True</property>
-				  <property name="invisible_char" translatable="yes">*</property>
+				  <property name="invisible_char">*</property>
 				  <property name="activates_default">False</property>
 				</widget>
 				<packing>
@@ -1666,7 +1666,7 @@
 				  <property name="max_length">0</property>
 				  <property name="text" translatable="yes"></property>
 				  <property name="has_frame">True</property>
-				  <property name="invisible_char" translatable="yes">*</property>
+				  <property name="invisible_char">*</property>
 				  <property name="activates_default">False</property>
 				</widget>
 				<packing>
@@ -1687,7 +1687,7 @@
 				  <property name="max_length">0</property>
 				  <property name="text" translatable="yes"></property>
 				  <property name="has_frame">True</property>
-				  <property name="invisible_char" translatable="yes">*</property>
+				  <property name="invisible_char">*</property>
 				  <property name="activates_default">False</property>
 				</widget>
 				<packing>
@@ -2024,7 +2024,7 @@
 				  <property name="max_length">0</property>
 				  <property name="text" translatable="yes"></property>
 				  <property name="has_frame">True</property>
-				  <property name="invisible_char" translatable="yes">*</property>
+				  <property name="invisible_char">*</property>
 				  <property name="activates_default">False</property>
 				</widget>
 				<packing>
@@ -2045,7 +2045,7 @@
 				  <property name="max_length">0</property>
 				  <property name="text" translatable="yes"></property>
 				  <property name="has_frame">True</property>
-				  <property name="invisible_char" translatable="yes">*</property>
+				  <property name="invisible_char">*</property>
 				  <property name="activates_default">False</property>
 				</widget>
 				<packing>
@@ -2066,7 +2066,7 @@
 				  <property name="max_length">0</property>
 				  <property name="text" translatable="yes"></property>
 				  <property name="has_frame">True</property>
-				  <property name="invisible_char" translatable="yes">*</property>
+				  <property name="invisible_char">*</property>
 				  <property name="activates_default">False</property>
 				</widget>
 				<packing>
@@ -2450,7 +2450,7 @@
 			      <property name="max_length">1</property>
 			      <property name="text" translatable="yes"> </property>
 			      <property name="has_frame">True</property>
-			      <property name="invisible_char" translatable="yes">*</property>
+			      <property name="invisible_char">*</property>
 			      <property name="activates_default">False</property>
 			      <property name="width_chars">1</property>
 			      <signal name="changed" handler="on_prefs_dec_sep_char_changed" last_modification_time="Sat, 16 Oct 2004 15:07:06 GMT"/>
@@ -2694,7 +2694,7 @@
 			      <property name="max_length">1</property>
 			      <property name="text" translatable="yes"> </property>
 			      <property name="has_frame">True</property>
-			      <property name="invisible_char" translatable="yes">*</property>
+			      <property name="invisible_char">*</property>
 			      <property name="activates_default">False</property>
 			      <property name="width_chars">1</property>
 			      <signal name="changed" handler="on_prefs_hex_sep_char_changed" last_modification_time="Sat, 16 Oct 2004 15:23:25 GMT"/>
@@ -2962,7 +2962,7 @@
 			      <property name="max_length">1</property>
 			      <property name="text" translatable="yes"> </property>
 			      <property name="has_frame">True</property>
-			      <property name="invisible_char" translatable="yes">*</property>
+			      <property name="invisible_char">*</property>
 			      <property name="activates_default">False</property>
 			      <property name="width_chars">1</property>
 			      <signal name="changed" handler="on_prefs_oct_sep_char_changed" last_modification_time="Sat, 16 Oct 2004 15:23:30 GMT"/>
@@ -3299,7 +3299,7 @@
 			      <property name="max_length">1</property>
 			      <property name="text" translatable="yes"> </property>
 			      <property name="has_frame">True</property>
-			      <property name="invisible_char" translatable="yes">*</property>
+			      <property name="invisible_char">*</property>
 			      <property name="activates_default">False</property>
 			      <property name="width_chars">1</property>
 			      <signal name="changed" handler="on_prefs_bin_sep_char_changed" last_modification_time="Sat, 16 Oct 2004 15:23:36 GMT"/>

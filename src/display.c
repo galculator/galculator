@@ -1,7 +1,7 @@
 /*
  *  display.c - code for this nifty display.
  *	part of galculator
- *  	(c) 2002-2004 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -114,7 +114,7 @@ void on_textview_selection_received (GtkWidget *widget,
 	/* Make sure we got the data in the expected form */
 	if (data->type != GDK_SELECTION_TYPE_STRING) return;
 
-	display_result_feed (data->data);
+	display_result_feed ((char *)data->data);
 
 	return;
 }

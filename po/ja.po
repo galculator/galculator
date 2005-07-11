@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-07 10:20+0200\n"
+"POT-Creation-Date: 2005-07-11 20:41+0200\n"
 "PO-Revision-Date: 2004-10-25 09:01+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -61,12 +61,12 @@ msgid "About %s"
 msgstr "%s について"
 
 #: src/callbacks.c:101
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
 "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
 "\n"
-"(c) 2002-2004 by Simon Floery (chimaira@users.sf.net)"
+"(c) 2002-2005 by Simon Floery (chimaira@users.sf.net)"
 msgstr ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
 "<span size=\"large\">GTK+ 2 版の科学計算用の電卓です。</span>\n"
@@ -78,10 +78,10 @@ msgid "save here"
 msgstr "ここに保存する"
 
 #: src/main.c:59
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2004 Simon Floery\n"
+"%s v%s, (c) 2002-2005 Simon Floery\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -390,7 +390,7 @@ msgid ""
 msgstr ""
 
 #: ui/main_frame.glade.h:1 ui/scientific_buttons.glade.h:5
-#: ui/basic_buttons.glade.h:5 ui/prefs.glade.h:3
+#: ui/basic_buttons.glade.h:5
 msgid "*"
 msgstr "*"
 
@@ -398,7 +398,7 @@ msgstr "*"
 msgid "Angle _units"
 msgstr "角度の単位(U)"
 
-#: ui/main_frame.glade.h:3 ui/prefs.glade.h:25
+#: ui/main_frame.glade.h:3 ui/prefs.glade.h:24
 msgid "Buttons"
 msgstr "ボタン"
 
@@ -418,7 +418,7 @@ msgstr "コントロール"
 msgid "Formula entry text field - enter string expression to compute here."
 msgstr "公式のエントリ - ここに計算式を入力して下さい"
 
-#: ui/main_frame.glade.h:8 ui/prefs.glade.h:36
+#: ui/main_frame.glade.h:8 ui/prefs.glade.h:35
 msgid "Functions"
 msgstr "関数"
 
@@ -624,7 +624,7 @@ msgstr "CMP"
 msgid "Change sign"
 msgstr "符号を切り替えます"
 
-#: ui/scientific_buttons.glade.h:31 ui/prefs.glade.h:29
+#: ui/scientific_buttons.glade.h:31 ui/prefs.glade.h:28
 msgid "Constants"
 msgstr "定数"
 
@@ -888,7 +888,7 @@ msgstr "x^2"
 msgid "A dialog that shows information about this program."
 msgstr "このプログラムについての情報を表示するダイアログです"
 
-#: ui/about.glade.h:2 ui/prefs.glade.h:27
+#: ui/about.glade.h:2 ui/prefs.glade.h:26
 msgid "Closes the dialog."
 msgstr "ダイアログを閉じます"
 
@@ -952,243 +952,243 @@ msgstr " "
 msgid "    "
 msgstr "    "
 
-#: ui/prefs.glade.h:4
+#: ui/prefs.glade.h:3
 msgid "<b>Appearance</b>"
 msgstr "<b>外観</b>"
 
-#: ui/prefs.glade.h:5
+#: ui/prefs.glade.h:4
 msgid "<b>Binary Settings</b>"
 msgstr "<b>2進数の設定</b>"
 
-#: ui/prefs.glade.h:6
+#: ui/prefs.glade.h:5
 msgid "<b>Decimal Settings</b>"
 msgstr "<b>10進数の設定</b>"
 
-#: ui/prefs.glade.h:7
+#: ui/prefs.glade.h:6
 msgid "<b>Dimension</b>"
 msgstr "<b>大きさ</b>"
 
-#: ui/prefs.glade.h:8
+#: ui/prefs.glade.h:7
 msgid "<b>Font</b>"
 msgstr "<b>フォント</b>"
 
-#: ui/prefs.glade.h:9
+#: ui/prefs.glade.h:8
 msgid "<b>Hexadecimal Settings</b>"
 msgstr "<b>16進数の設定</b>"
 
-#: ui/prefs.glade.h:10
+#: ui/prefs.glade.h:9
 msgid "<b>Modules Visibility</b>"
 msgstr "<b>表示するモジュール</b>"
 
-#: ui/prefs.glade.h:11
+#: ui/prefs.glade.h:10
 msgid "<b>Octal Settings</b>"
 msgstr "<b>8進数の設定</b>"
 
-#: ui/prefs.glade.h:12
+#: ui/prefs.glade.h:11
 msgid "<b>RPN</b>"
 msgstr "<b>RPN (逆ポーランド記法)</b>"
 
-#: ui/prefs.glade.h:13
+#: ui/prefs.glade.h:12
 msgid "<b>Startup</b>"
 msgstr "<b>起動時の設定</b>"
 
-#: ui/prefs.glade.h:14
+#: ui/prefs.glade.h:13
 msgid "<b>User defined constants:</b>"
 msgstr "<b>ユーザ定義の定数:</b>"
 
-#: ui/prefs.glade.h:15
+#: ui/prefs.glade.h:14
 msgid "<b>User defined functions:</b>"
 msgstr "<b>ユーザ定義の関数:</b>"
 
-#: ui/prefs.glade.h:16
+#: ui/prefs.glade.h:15
 msgid "<b>Visibility</b>"
 msgstr "<b>表示</b>"
 
-#: ui/prefs.glade.h:17
+#: ui/prefs.glade.h:16
 msgid "A dialog that is used to change preferences settings."
 msgstr "設定を変更する際に使用するダイアログです"
 
-#: ui/prefs.glade.h:18
+#: ui/prefs.glade.h:17
 msgid "Active module color:"
 msgstr "利用可能なモジュールの色:"
 
-#: ui/prefs.glade.h:19
+#: ui/prefs.glade.h:18
 msgid "Add"
 msgstr "追加"
 
-#: ui/prefs.glade.h:20
+#: ui/prefs.glade.h:19
 msgid "Angle base units"
 msgstr "ベース角度の単位"
 
-#: ui/prefs.glade.h:21
+#: ui/prefs.glade.h:20
 msgid "Arithmetic operation"
 msgstr "算術演算子"
 
-#: ui/prefs.glade.h:22
+#: ui/prefs.glade.h:21
 msgid "Background color:"
 msgstr "背景色:"
 
-#: ui/prefs.glade.h:23
+#: ui/prefs.glade.h:22
 msgid "Binary"
 msgstr "2進数"
 
-#: ui/prefs.glade.h:24
+#: ui/prefs.glade.h:23
 msgid "Button font:"
 msgstr "ボタンのフォント:"
 
-#: ui/prefs.glade.h:26
+#: ui/prefs.glade.h:25
 msgid "Clear"
 msgstr "クリア"
 
-#: ui/prefs.glade.h:28
+#: ui/prefs.glade.h:27
 msgid "Configure number base: "
 msgstr "基数の設定: "
 
-#: ui/prefs.glade.h:30
+#: ui/prefs.glade.h:29
 msgid "Decimal"
 msgstr "10進数"
 
-#: ui/prefs.glade.h:31
+#: ui/prefs.glade.h:30
 msgid "Delete"
 msgstr "削除"
 
-#: ui/prefs.glade.h:32
+#: ui/prefs.glade.h:31
 msgid "Description:"
 msgstr "説明:"
 
-#: ui/prefs.glade.h:33
+#: ui/prefs.glade.h:32
 msgid "Display"
 msgstr "表示"
 
-#: ui/prefs.glade.h:34
+#: ui/prefs.glade.h:33
 msgid "Expression:"
 msgstr "式:"
 
-#: ui/prefs.glade.h:35
+#: ui/prefs.glade.h:34
 msgid "Fix length to a multiple of"
 msgstr "次の固定サイズで乗算する: "
 
-#: ui/prefs.glade.h:37
+#: ui/prefs.glade.h:36
 msgid "General"
 msgstr "全般"
 
-#: ui/prefs.glade.h:38
+#: ui/prefs.glade.h:37
 msgid "Hexadecimal"
 msgstr "16進数"
 
-#: ui/prefs.glade.h:39
+#: ui/prefs.glade.h:38
 msgid "Inactive module color:"
 msgstr "利用不可のモジュールの色:"
 
-#: ui/prefs.glade.h:40
+#: ui/prefs.glade.h:39
 msgid "Minimal button height:"
 msgstr "ボタンの高さ (最小値):"
 
-#: ui/prefs.glade.h:41
+#: ui/prefs.glade.h:40
 msgid "Minimal button width:"
 msgstr "ボタンの幅 (最小値):"
 
-#: ui/prefs.glade.h:42
+#: ui/prefs.glade.h:41
 msgid "Module font:"
 msgstr "モジュールのフォント:"
 
-#: ui/prefs.glade.h:43
+#: ui/prefs.glade.h:42
 msgid "Name:"
 msgstr "名前:"
 
-#: ui/prefs.glade.h:44
+#: ui/prefs.glade.h:43
 msgid "Notation"
 msgstr "記法"
 
-#: ui/prefs.glade.h:45
+#: ui/prefs.glade.h:44
 msgid "Number base units"
 msgstr "基数の単位"
 
-#: ui/prefs.glade.h:46
+#: ui/prefs.glade.h:45
 msgid "Number of bits: "
 msgstr "ビット数: "
 
-#: ui/prefs.glade.h:47
+#: ui/prefs.glade.h:46
 msgid "Numbers"
 msgstr "数値"
 
-#: ui/prefs.glade.h:48
+#: ui/prefs.glade.h:47
 msgid "Octal"
 msgstr "8進数"
 
-#: ui/prefs.glade.h:49
+#: ui/prefs.glade.h:48
 msgid "Open brackets"
 msgstr "開いているカッコ"
 
-#: ui/prefs.glade.h:50
+#: ui/prefs.glade.h:49
 msgid "RPN stack color:"
 msgstr "RPN スタックの色:"
 
-#: ui/prefs.glade.h:51
+#: ui/prefs.glade.h:50
 msgid "RPN stack font:"
 msgstr "RPN スタックのフォント:"
 
-#: ui/prefs.glade.h:52
+#: ui/prefs.glade.h:51
 msgid "Remember display value on exit"
 msgstr "終了時点で表示している値を記憶しておく"
 
-#: ui/prefs.glade.h:53
+#: ui/prefs.glade.h:52
 msgid "Result font color:"
 msgstr "計算結果のフォントの色:"
 
-#: ui/prefs.glade.h:54
+#: ui/prefs.glade.h:53
 msgid "Result font:"
 msgstr "計算結果のフォント:"
 
-#: ui/prefs.glade.h:55
+#: ui/prefs.glade.h:54
 msgid "Separator block length:"
 msgstr "区切る桁数:"
 
-#: ui/prefs.glade.h:56
+#: ui/prefs.glade.h:55
 msgid "Separator character:"
 msgstr "区切り記号:"
 
-#: ui/prefs.glade.h:57
+#: ui/prefs.glade.h:56
 msgid "Show menu bar"
 msgstr "メニュー・バーを表示する"
 
-#: ui/prefs.glade.h:58
+#: ui/prefs.glade.h:57
 msgid "Show separator"
 msgstr "区切り記号を表示する"
 
-#: ui/prefs.glade.h:59
+#: ui/prefs.glade.h:58
 msgid "Show thousands separator"
 msgstr "1000 桁毎に区切り記号を表示する"
 
-#: ui/prefs.glade.h:60
+#: ui/prefs.glade.h:59
 msgid "Signed"
 msgstr "符号付き"
 
-#: ui/prefs.glade.h:61
+#: ui/prefs.glade.h:60
 msgid "Update"
 msgstr "更新"
 
-#: ui/prefs.glade.h:62
+#: ui/prefs.glade.h:61
 msgid "Use custom button font"
 msgstr "ボタンのフォントをカスタマイズする"
 
-#: ui/prefs.glade.h:63
+#: ui/prefs.glade.h:62
 msgid "Value:"
 msgstr "値:"
 
-#: ui/prefs.glade.h:64
+#: ui/prefs.glade.h:63
 msgid "Variable:"
 msgstr "変数:"
 
-#: ui/prefs.glade.h:65
+#: ui/prefs.glade.h:64
 msgid "finite stack size (x, y, z, t)"
 msgstr "スタック・サイズを有限にする (x, y, z, t)"
 
-#: ui/prefs.glade.h:66
+#: ui/prefs.glade.h:65
 msgid "galculator - Preferences"
 msgstr "galculator - 設定"
 
-#: ui/prefs.glade.h:67
+#: ui/prefs.glade.h:66
 msgid "infinite stack size"
 msgstr "スタック・サイズを無限にする"
 

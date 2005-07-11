@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.2.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-07 10:20+0200\n"
+"POT-Creation-Date: 2005-07-11 20:41+0200\n"
 "PO-Revision-Date: 2004-06-11 18:43+0100\n"
 "Last-Translator: Michal Brzozowski <glum@poczta.fm>\n"
 "Language-Team: POLISH <glum@poczta.fm>\n"
@@ -66,7 +66,7 @@ msgid ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
 "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
 "\n"
-"(c) 2002-2004 by Simon Floery (chimaira@users.sf.net)"
+"(c) 2002-2005 by Simon Floery (chimaira@users.sf.net)"
 msgstr ""
 
 #: src/callbacks.c:1066
@@ -74,10 +74,10 @@ msgid "save here"
 msgstr "zapisz tutaj"
 
 #: src/main.c:59
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2004 Simon Floery\n"
+"%s v%s, (c) 2002-2005 Simon Floery\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -390,7 +390,7 @@ msgstr ""
 "co robisz? Jeśli nie: %s\n"
 
 #: ui/main_frame.glade.h:1 ui/scientific_buttons.glade.h:5
-#: ui/basic_buttons.glade.h:5 ui/prefs.glade.h:3
+#: ui/basic_buttons.glade.h:5
 msgid "*"
 msgstr "*"
 
@@ -398,7 +398,7 @@ msgstr "*"
 msgid "Angle _units"
 msgstr "Jednostki _kąta"
 
-#: ui/main_frame.glade.h:3 ui/prefs.glade.h:25
+#: ui/main_frame.glade.h:3 ui/prefs.glade.h:24
 msgid "Buttons"
 msgstr "Przyciski"
 
@@ -418,7 +418,7 @@ msgstr "_Wyświetlanie"
 msgid "Formula entry text field - enter string expression to compute here."
 msgstr "Pole wprowadzania formuły - wpisz treść obliczanego wyrażenia."
 
-#: ui/main_frame.glade.h:8 ui/prefs.glade.h:36
+#: ui/main_frame.glade.h:8 ui/prefs.glade.h:35
 msgid "Functions"
 msgstr "Funkcje"
 
@@ -624,7 +624,7 @@ msgstr "CMP"
 msgid "Change sign"
 msgstr "Zmień znak"
 
-#: ui/scientific_buttons.glade.h:31 ui/prefs.glade.h:29
+#: ui/scientific_buttons.glade.h:31 ui/prefs.glade.h:28
 msgid "Constants"
 msgstr "Stałe"
 
@@ -888,7 +888,7 @@ msgstr "x^2"
 msgid "A dialog that shows information about this program."
 msgstr "Okno z informacjami o programie."
 
-#: ui/about.glade.h:2 ui/prefs.glade.h:27
+#: ui/about.glade.h:2 ui/prefs.glade.h:26
 msgid "Closes the dialog."
 msgstr "Zamknięcie okna."
 
@@ -952,255 +952,255 @@ msgstr ""
 msgid "    "
 msgstr ""
 
-#: ui/prefs.glade.h:4
+#: ui/prefs.glade.h:3
 msgid "<b>Appearance</b>"
 msgstr "<b>Wygląd</b>"
 
-#: ui/prefs.glade.h:5
+#: ui/prefs.glade.h:4
 #, fuzzy
 msgid "<b>Binary Settings</b>"
 msgstr "<b>Binarny</b>"
 
-#: ui/prefs.glade.h:6
+#: ui/prefs.glade.h:5
 #, fuzzy
 msgid "<b>Decimal Settings</b>"
 msgstr "<b>Wymiary</b>"
 
-#: ui/prefs.glade.h:7
+#: ui/prefs.glade.h:6
 msgid "<b>Dimension</b>"
 msgstr "<b>Wymiary</b>"
 
-#: ui/prefs.glade.h:8
+#: ui/prefs.glade.h:7
 msgid "<b>Font</b>"
 msgstr "<b>Czcionka</b>"
 
-#: ui/prefs.glade.h:9
+#: ui/prefs.glade.h:8
 #, fuzzy
 msgid "<b>Hexadecimal Settings</b>"
 msgstr "<b>Szesnastkowy</b>"
 
-#: ui/prefs.glade.h:10
+#: ui/prefs.glade.h:9
 msgid "<b>Modules Visibility</b>"
 msgstr "<b>Widoczność modułów</b>"
 
-#: ui/prefs.glade.h:11
+#: ui/prefs.glade.h:10
 #, fuzzy
 msgid "<b>Octal Settings</b>"
 msgstr "<b>Ósemkowy</b>"
 
-#: ui/prefs.glade.h:12
+#: ui/prefs.glade.h:11
 msgid "<b>RPN</b>"
 msgstr "<b>ONP</b>"
 
-#: ui/prefs.glade.h:13
+#: ui/prefs.glade.h:12
 msgid "<b>Startup</b>"
 msgstr "<b>Uruchamianie</b>"
 
-#: ui/prefs.glade.h:14
+#: ui/prefs.glade.h:13
 msgid "<b>User defined constants:</b>"
 msgstr "<b>Stałe zdefiniowane przez użytkownika</b>"
 
-#: ui/prefs.glade.h:15
+#: ui/prefs.glade.h:14
 msgid "<b>User defined functions:</b>"
 msgstr "<b>Funkcje zdefiniowane przez użytkownika</b>"
 
-#: ui/prefs.glade.h:16
+#: ui/prefs.glade.h:15
 msgid "<b>Visibility</b>"
 msgstr "<b>Widoczność</b>"
 
-#: ui/prefs.glade.h:17
+#: ui/prefs.glade.h:16
 msgid "A dialog that is used to change preferences settings."
 msgstr "Dialog do zmiany ustawień."
 
-#: ui/prefs.glade.h:18
+#: ui/prefs.glade.h:17
 msgid "Active module color:"
 msgstr "Kolor aktywnego modułu:"
 
-#: ui/prefs.glade.h:19
+#: ui/prefs.glade.h:18
 msgid "Add"
 msgstr "Dodawanie"
 
-#: ui/prefs.glade.h:20
+#: ui/prefs.glade.h:19
 msgid "Angle base units"
 msgstr "Jednostki miary kąta"
 
-#: ui/prefs.glade.h:21
+#: ui/prefs.glade.h:20
 msgid "Arithmetic operation"
 msgstr "Operacja arytmetyczna"
 
-#: ui/prefs.glade.h:22
+#: ui/prefs.glade.h:21
 msgid "Background color:"
 msgstr "Kolor tła:"
 
-#: ui/prefs.glade.h:23
+#: ui/prefs.glade.h:22
 #, fuzzy
 msgid "Binary"
 msgstr "_Binarna"
 
-#: ui/prefs.glade.h:24
+#: ui/prefs.glade.h:23
 msgid "Button font:"
 msgstr "Kolor przycisku:"
 
-#: ui/prefs.glade.h:26
+#: ui/prefs.glade.h:25
 msgid "Clear"
 msgstr "Wyczyść"
 
-#: ui/prefs.glade.h:28
+#: ui/prefs.glade.h:27
 #, fuzzy
 msgid "Configure number base: "
 msgstr "nieznana podstawa liczby"
 
-#: ui/prefs.glade.h:30
+#: ui/prefs.glade.h:29
 #, fuzzy
 msgid "Decimal"
 msgstr "_Dziesiętna"
 
-#: ui/prefs.glade.h:31
+#: ui/prefs.glade.h:30
 msgid "Delete"
 msgstr "Skasuj"
 
-#: ui/prefs.glade.h:32
+#: ui/prefs.glade.h:31
 msgid "Description:"
 msgstr "Opis:"
 
-#: ui/prefs.glade.h:33
+#: ui/prefs.glade.h:32
 msgid "Display"
 msgstr "Wyświetl"
 
-#: ui/prefs.glade.h:34
+#: ui/prefs.glade.h:33
 msgid "Expression:"
 msgstr "Wyrażenie:"
 
-#: ui/prefs.glade.h:35
+#: ui/prefs.glade.h:34
 #, fuzzy
 msgid "Fix length to a multiple of"
 msgstr "sprowadź rozmiar do wielokrotności"
 
-#: ui/prefs.glade.h:37
+#: ui/prefs.glade.h:36
 msgid "General"
 msgstr "Ogólne"
 
-#: ui/prefs.glade.h:38
+#: ui/prefs.glade.h:37
 #, fuzzy
 msgid "Hexadecimal"
 msgstr "_Szesnastkowa"
 
-#: ui/prefs.glade.h:39
+#: ui/prefs.glade.h:38
 msgid "Inactive module color:"
 msgstr "Kolor nieaktywnego modułu"
 
-#: ui/prefs.glade.h:40
+#: ui/prefs.glade.h:39
 msgid "Minimal button height:"
 msgstr "Minimalna wysokość przycisku:"
 
-#: ui/prefs.glade.h:41
+#: ui/prefs.glade.h:40
 msgid "Minimal button width:"
 msgstr "Minimalna szerokość przycisku:"
 
-#: ui/prefs.glade.h:42
+#: ui/prefs.glade.h:41
 msgid "Module font:"
 msgstr "Czcionka modułu:"
 
-#: ui/prefs.glade.h:43
+#: ui/prefs.glade.h:42
 msgid "Name:"
 msgstr "Nazwa:"
 
-#: ui/prefs.glade.h:44
+#: ui/prefs.glade.h:43
 msgid "Notation"
 msgstr "Notacja"
 
-#: ui/prefs.glade.h:45
+#: ui/prefs.glade.h:44
 msgid "Number base units"
 msgstr "Podstawa liczenia"
 
-#: ui/prefs.glade.h:46
+#: ui/prefs.glade.h:45
 #, fuzzy
 msgid "Number of bits: "
 msgstr "Ilość bitów:"
 
-#: ui/prefs.glade.h:47
+#: ui/prefs.glade.h:46
 msgid "Numbers"
 msgstr "Liczby"
 
-#: ui/prefs.glade.h:48
+#: ui/prefs.glade.h:47
 #, fuzzy
 msgid "Octal"
 msgstr "_Ósemkowa"
 
-#: ui/prefs.glade.h:49
+#: ui/prefs.glade.h:48
 msgid "Open brackets"
 msgstr "Otwarte nawiasy"
 
-#: ui/prefs.glade.h:50
+#: ui/prefs.glade.h:49
 msgid "RPN stack color:"
 msgstr "Kolor stosu ONP:"
 
-#: ui/prefs.glade.h:51
+#: ui/prefs.glade.h:50
 msgid "RPN stack font:"
 msgstr "Czcionka stosu ONP:"
 
-#: ui/prefs.glade.h:52
+#: ui/prefs.glade.h:51
 msgid "Remember display value on exit"
 msgstr "Wychodząc zapamiętaj wyświetlaną wartość"
 
-#: ui/prefs.glade.h:53
+#: ui/prefs.glade.h:52
 msgid "Result font color:"
 msgstr "Kolor wyniku:"
 
-#: ui/prefs.glade.h:54
+#: ui/prefs.glade.h:53
 msgid "Result font:"
 msgstr "Czcionka wyniku:"
 
-#: ui/prefs.glade.h:55
+#: ui/prefs.glade.h:54
 msgid "Separator block length:"
 msgstr ""
 
-#: ui/prefs.glade.h:56
+#: ui/prefs.glade.h:55
 msgid "Separator character:"
 msgstr ""
 
-#: ui/prefs.glade.h:57
+#: ui/prefs.glade.h:56
 msgid "Show menu bar"
 msgstr "Wyświetl pasek menu"
 
-#: ui/prefs.glade.h:58
+#: ui/prefs.glade.h:57
 msgid "Show separator"
 msgstr ""
 
-#: ui/prefs.glade.h:59
+#: ui/prefs.glade.h:58
 msgid "Show thousands separator"
 msgstr ""
 
-#: ui/prefs.glade.h:60
+#: ui/prefs.glade.h:59
 #, fuzzy
 msgid "Signed"
 msgstr "ze znakiem"
 
-#: ui/prefs.glade.h:61
+#: ui/prefs.glade.h:60
 msgid "Update"
 msgstr "Aktualizuj"
 
-#: ui/prefs.glade.h:62
+#: ui/prefs.glade.h:61
 msgid "Use custom button font"
 msgstr "Użyj niestandardowej czcionki dla przycisków"
 
-#: ui/prefs.glade.h:63
+#: ui/prefs.glade.h:62
 msgid "Value:"
 msgstr "Wartość:"
 
-#: ui/prefs.glade.h:64
+#: ui/prefs.glade.h:63
 msgid "Variable:"
 msgstr "Zmienna:"
 
-#: ui/prefs.glade.h:65
+#: ui/prefs.glade.h:64
 msgid "finite stack size (x, y, z, t)"
 msgstr "skończony rozmiar stosu (x, y, z, t)"
 
-#: ui/prefs.glade.h:66
+#: ui/prefs.glade.h:65
 msgid "galculator - Preferences"
 msgstr "galculator - Ustawienia"
 
-#: ui/prefs.glade.h:67
+#: ui/prefs.glade.h:66
 msgid "infinite stack size"
 msgstr "nieograniczony rozmiar stosu"
 
