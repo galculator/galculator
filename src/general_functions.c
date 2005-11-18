@@ -20,6 +20,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include <string.h>
 #include <math.h>
 
@@ -48,10 +49,17 @@ double error_unsupported_hyp (double dummy)
 	return dummy;
 }
 
-void error_message (char *message)
+void error_message (char *format_string, ...)
 {	
-	fprintf (stderr, "[%s] %s. %s\n", PROG_NAME, message, BUG_REPORT);
+	va_list ap;
+	
+	fprintf (stderr, "[%s] ", PROG_NAME);
+	va_start(ap, format_string);
+	vfprintf (stderr, format_string, ap);
+	va_end(ap);
+	fprintf (stderr, ". %s\n", BUG_REPORT);
 }
+	
 
 /* the last entered number is removed. it is impossible to remove the last operation:
  * this would be a quite difficult taks, as every possible computation is done asap.
@@ -328,27 +336,41 @@ char *gdk_color_to_string (GdkColor color)
 void apply_preferences (s_preferences prefs)
 {
 	GtkWidget	*menu_item;
-	char		*button_font;
+	//char		*button_font;
 
-	display_update_tags ();
-	display_set_bkg_color (prefs.bkg_color);
-	
+	/* not view specific */
 	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
 	menu_item = glade_xml_get_widget (main_window_xml, "show_menubar1");
 	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
 
-	if (prefs.mode == BASIC_MODE) menu_item = 
-		glade_xml_get_widget (main_window_xml, "basic_mode");
-	else if (prefs.mode == SCIENTIFIC_MODE) menu_item = 
-		glade_xml_get_widget (main_window_xml, "scientific_mode");
+	switch (prefs.mode) {
+	case BASIC_MODE:
+		menu_item = 
+			glade_xml_get_widget (main_window_xml, "basic_mode");
+		break;
+	case SCIENTIFIC_MODE:
+		menu_item = 
+			glade_xml_get_widget (main_window_xml, "scientific_mode");
+		break;
+	case NG_MODE:
+		menu_item = 
+			glade_xml_get_widget (main_window_xml, "ng_mode");
+		break;
+	default:
+		error_message ("Unknown mode %i in \"apply_preferences\"", prefs.mode);
+	}
 	gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+	
+	/* view specific */
+	//display_update_tags ();
+	//display_set_bkg_color (prefs.bkg_color);
+	
+	//set_all_buttons_size (prefs.button_width, prefs.button_height);
 
-	set_all_buttons_size (prefs.button_width, prefs.button_height);
-
-	if (prefs.custom_button_font == TRUE) button_font = g_strdup (prefs.button_font);
-	else button_font = g_strdup ("");
-	set_all_buttons_font (button_font);
-	g_free (button_font);
+	//if (prefs.custom_button_font == TRUE) button_font = g_strdup (prefs.button_font);
+	//else button_font = g_strdup ("");
+	//set_all_buttons_font (button_font);
+	//g_free (button_font);
 }
 
 /*

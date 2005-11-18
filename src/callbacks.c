@@ -63,6 +63,9 @@ on_quit_activate                      (GtkMenuItem     *menuitem,
 		prefs.def_number = current_status.number;
 		prefs.def_angle = current_status.angle;
 	}
+	error_message ("no remember display atm. fix this");
+	gtk_main_quit();
+	return;
 	if (prefs.rem_valuex) g_free (prefs.rem_valuex);
 	prefs.rem_valuex = display_result_get();
 	if (current_status.notation == CS_RPN) {
@@ -381,7 +384,7 @@ on_ordinary_activate                  (GtkMenuItem     *menuitem,
 {
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
 	display_change_option (CS_PAN, DISPLAY_OPT_NOTATION);
-	set_widget_visibility (main_window_xml, "formula_entry_hbox", FALSE);
+	set_widget_visibility (view_xml, "formula_entry_hbox", FALSE);
 	rpn_free();
 	all_clear();
 	ui_button_set_pan();
@@ -397,7 +400,8 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
 {
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
 	display_change_option (CS_RPN, DISPLAY_OPT_NOTATION);
-	set_widget_visibility (main_window_xml, "formula_entry_hbox", FALSE);
+	
+	set_widget_visibility (view_xml, "formula_entry_hbox", FALSE);
 	alg_free(main_alg);
 	all_clear();
 	ui_button_set_rpn();
@@ -416,7 +420,7 @@ on_form_activate 			(GtkMenuItem     *menuitem,
 	all_clear();
 	ui_button_set_pan();
 	update_dispctrl();
-	set_widget_visibility (main_window_xml, "formula_entry_hbox", TRUE);	
+	set_widget_visibility (view_xml, "formula_entry_hbox", TRUE);	
 }
 
 void
@@ -477,12 +481,14 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 	}
 	prefs.mode = BASIC_MODE;
 	
+	ui_ng_view_destroy ();
+	ui_classic_view_create ();
 	ui_main_window_buttons_destroy ();
 	ui_main_window_buttons_create (prefs.mode);
 	update_dispctrl();
 	
 	display_update_modules();
-
+	
 	/* In basic mode:
 	 *	- number base is always decimal.
 	 *	- ignore angle, as there are no angle operations in basic mode.
@@ -490,7 +496,7 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 	 */	
 	display_module_number_activate (CS_DEC);
 	display_module_notation_activate (current_status.notation);
-	
+
 	menu_item = glade_xml_get_widget (main_window_xml, "display_control");
 	if (((GtkCheckMenuItem *) menu_item)->active == prefs.vis_dispctrl)
 			gtk_menu_item_activate ((GtkMenuItem *) menu_item);
@@ -518,9 +524,11 @@ on_scientific_mode_activate (GtkMenuItem *menuitem,
 	if (((GtkCheckMenuItem *) menuitem)->active == FALSE) return;
 	prefs.mode = SCIENTIFIC_MODE;
 
+	ui_ng_view_destroy ();
+	ui_classic_view_create ();
 	ui_main_window_buttons_destroy ();
 	ui_main_window_buttons_create (prefs.mode);
-
+	
 	display_update_modules();
 	display_module_number_activate (prefs.def_number);
 	display_module_angle_activate (prefs.def_angle);
@@ -561,6 +569,17 @@ on_scientific_mode_activate (GtkMenuItem *menuitem,
 	gtk_widget_set_sensitive (menu_item, TRUE);
 	menu_item = glade_xml_get_widget (main_window_xml, "angle_units");
 	gtk_widget_set_sensitive (menu_item, TRUE);
+}	
+
+void
+on_ng_mode_activate (GtkMenuItem *menuitem,
+				gpointer user_data)
+{
+	if (((GtkCheckMenuItem *) menuitem)->active == FALSE) return;
+	prefs.mode = NG_MODE;
+
+	ui_classic_view_destroy();
+	ui_ng_view_create ();
 }	
 
 void

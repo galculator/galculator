@@ -35,9 +35,9 @@
 #include <glade/glade.h>
 
 GladeXML	*main_window_xml, *dispctrl_xml, *button_box_xml, *prefs_xml, 
-		*about_dialog_xml;
+		*about_dialog_xml, *view_xml;
 char		dec_point[2];
-GtkListStore	*prefs_constant_store, *prefs_user_function_store;
+GtkListStore	*prefs_constant_store, *prefs_user_function_store, *ng_store;
 
 static void set_disp_ctrl_object_data ();
 static void set_all_dispctrl_buttons_property (GFunc func, gpointer data);
@@ -262,8 +262,9 @@ static void ui_pack_from_xml (GtkWidget *box,
 				gboolean expand,
 				gboolean fill)
 {
-	GtkWidget	*child_widget, *accel_child_widget;
-	GtkAccelGroup	*accel_group;
+	GtkWidget	*child_widget=NULL, *accel_child_widget=NULL;
+	GtkAccelGroup	*accel_group=NULL;
+	GList		*accel_list=NULL;
 	
 	/* at first connect signal handlers */
 	glade_xml_signal_autoconnect (child_xml);
@@ -273,12 +274,13 @@ static void ui_pack_from_xml (GtkWidget *box,
 	 * to get working accelerators.
 	 */
 	accel_child_widget = glade_xml_get_widget (child_xml, accel_child_name);
-
-	accel_group = gtk_accel_group_from_accel_closure ((GClosure *) 
-		(gtk_widget_list_accel_closures (accel_child_widget))->data);
-	
-	gtk_window_add_accel_group ((GtkWindow *) gtk_widget_get_toplevel (box),
-		accel_group);
+	if (!accel_child_widget)
+		error_message ("Couldn't find widget \"%s\" in \"ui_pack_from_xml\"", accel_child_name);
+	accel_list = gtk_widget_list_accel_closures (accel_child_widget);
+	if (accel_list)
+		accel_group = gtk_accel_group_from_accel_closure ((GClosure *) accel_list->data);
+	if (accel_group)
+		gtk_window_add_accel_group ((GtkWindow *) gtk_widget_get_toplevel (box), accel_group);
 
 	gtk_box_pack_start ((GtkBox *) box, child_widget, expand, fill, 0);
 	gtk_box_reorder_child ((GtkBox *) box, child_widget, index);
@@ -316,30 +318,31 @@ void ui_main_window_set_dispctrl (int location)
 		g_free (dispctrl_xml);
 	}	
 	/* now create the new one at location */
+
 	switch(location) {
 		case DISPCTRL_BOTTOM:
-			box = glade_xml_get_widget (main_window_xml, "window_vbox");
+			box = glade_xml_get_widget (view_xml, "display_vbox");
 			dispctrl_xml = glade_file_open (DISPCTRL_BOTTOM_GLADE_FILE, 
 				"table_dispctrl", TRUE);
-			ui_pack_from_xml (box, 2, dispctrl_xml, "table_dispctrl", 
+			ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl", 
 				"button_clr", TRUE, TRUE);
 			break;
 		case DISPCTRL_RIGHT:
-			box = glade_xml_get_widget (main_window_xml, "display_hbox");
+			box = glade_xml_get_widget (view_xml, "display_hbox");
 			dispctrl_xml = glade_file_open (DISPCTRL_RIGHT_GLADE_FILE, 
 				"table_dispctrl", TRUE);
 			ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl",
 				"button_clr", FALSE, FALSE);
 			break;
 		case DISPCTRL_RIGHTV:
-			box = glade_xml_get_widget (main_window_xml, "display_hbox");
+			box = glade_xml_get_widget (view_xml, "display_hbox");
 			dispctrl_xml = glade_file_open (DISPCTRL_RIGHTV_GLADE_FILE, 
 				"table_dispctrl", TRUE);
 			ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl",
 				"button_clr", FALSE, FALSE);
 			break;
 		default:
-			error_message ("Unknown mode in \"ui_main_window_set_dispctrl\"");
+			error_message ("Unknown location %i in \"ui_main_window_set_dispctrl\"", location);
 	}
 	set_disp_ctrl_object_data ();
 
@@ -357,13 +360,10 @@ void ui_main_window_set_dispctrl (int location)
 void ui_main_window_buttons_destroy ()
 {
 	GtkWidget	*box;
-	GList		*children;
 	
-	box = glade_xml_get_widget (main_window_xml, "window_vbox");
-	children = gtk_container_get_children ((GtkContainer *)box);
-	children = g_list_last (children);
-	if (children->data != NULL) gtk_widget_destroy (children->data);
-	g_list_free (children);
+	if (!button_box_xml) return;
+	box = glade_xml_get_widget (button_box_xml, "button_box");
+	if (box) gtk_widget_destroy (box);
 }
 
 /* ui_main_window_buttons_create. fills main_window with calculator's buttons,
@@ -376,19 +376,26 @@ void ui_main_window_buttons_create (int mode)
 	struct lconv 	*locale_settings;
 	s_signal_cb	signal_cb;
 	
-	if (mode == BASIC_MODE) {
+	switch (mode) {
+	case BASIC_MODE:
 		button_box_xml = glade_file_open (BASIC_GLADE_FILE, "button_box", TRUE);
-		box = glade_xml_get_widget (main_window_xml, "window_vbox");
-		ui_pack_from_xml (box, 4, button_box_xml, "button_box", 
+		box = glade_xml_get_widget (view_xml, "classic_view_vbox");
+		ui_pack_from_xml (box, 2, button_box_xml, "button_box", 
 			"button_1", TRUE, TRUE);
 		set_basic_object_data (button_box_xml);
-	} else if (mode == SCIENTIFIC_MODE) {
+		break;
+	case SCIENTIFIC_MODE:
 		button_box_xml = glade_file_open (SCIENTIFIC_GLADE_FILE, "button_box", TRUE);
-		box = glade_xml_get_widget (main_window_xml, "window_vbox");
-		ui_pack_from_xml (box, 4, button_box_xml, "button_box", 
+		box = glade_xml_get_widget (view_xml, "classic_view_vbox");
+		ui_pack_from_xml (box, 2, button_box_xml, "button_box", 
 			"button_1", TRUE, TRUE);
 		set_scientific_object_data (button_box_xml);
-	} else error_message ("Unknown mode in \"ui_main_window_buttons_create\"");
+		break;
+	case NG_MODE:
+		return;
+	default:
+		error_message ("Unknown mode in \"ui_main_window_buttons_create\"");
+	}
 
 	signal_cb.detailed_signal = g_strdup ("button_press_event");
 	signal_cb.callback = (GCallback) on_button_press_event;
@@ -410,6 +417,10 @@ is not supported: >%s<\nYou might face problems when using %s! %s\n)"),
 	gtk_widget_set_sensitive (button, memory.len > 0);
 	button = glade_xml_get_widget (button_box_xml, "button_Mplus");
 	gtk_widget_set_sensitive (button, memory.len > 0);
+	
+	/* apply button specific prefs */
+	set_all_normal_buttons_size (prefs.button_width, prefs.button_height);
+	set_all_normal_buttons_font (prefs.custom_button_font ? prefs.button_font : "");
 }
 
 /* set_table_child_callback. Function argument for set_all_*_buttons_property.
@@ -475,7 +486,6 @@ static void set_all_dispctrl_buttons_property (GFunc func, gpointer data)
 	/* at first the display control table. always there; somehow */
 	table = (GtkTable *) glade_xml_get_widget (dispctrl_xml, 
 		"table_dispctrl");
-	
 	/* dispctrl_right has an extra table for cosmetic reasons. */
 	if (GTK_IS_TABLE (((GtkTableChild *)table->children->data)->widget))
 		table = (GtkTable *) ((GtkTableChild *)table->children->data)->widget;
@@ -491,12 +501,13 @@ static void set_all_normal_buttons_property (GFunc func, gpointer data)
 	GtkTable	*table;
 	
 	/* now depending on mode the remaining buttons */
-	if (prefs.mode == BASIC_MODE) {
+	switch (prefs.mode) {
+	case BASIC_MODE:
 		table = (GtkTable *) glade_xml_get_widget (button_box_xml, 
 			"table_buttons");
 		g_list_foreach (table->children, func, data);
-	
-	} else if (prefs.mode == SCIENTIFIC_MODE) {
+		break;
+	case SCIENTIFIC_MODE:
 		table = (GtkTable *) glade_xml_get_widget (button_box_xml, 
 			"table_standard_buttons");
 		g_list_foreach (table->children, func, data);
@@ -506,8 +517,13 @@ static void set_all_normal_buttons_property (GFunc func, gpointer data)
 		table = (GtkTable *) glade_xml_get_widget (button_box_xml, 
 			"table_func_buttons");
 		g_list_foreach (table->children, func, data);
+		break;
+	case NG_MODE:
+		/* do nothing - no buttons */
+		break;
+	default:
+		error_message ("Unknown mode %i in \"set_all_normal_buttons_property\"", prefs.mode);
 	}
-	else error_message ("Unknown mode in \"set_all_buttons_property\"");
 }
 
 /* set_all_buttons_property. calls func with argument data for every button.
@@ -531,6 +547,30 @@ void set_all_buttons_size (int width, int height)
 	set_all_buttons_property (set_table_child_size, (gpointer) &size);
 }
 
+/* set_all_nomral_buttons_size. gateway for set_all_normal_buttons_property.
+ */
+
+void set_all_normal_buttons_size (int width, int height)
+{
+	GtkRequisition	size;
+	
+	size.width = width;
+	size.height = height;
+	set_all_normal_buttons_property (set_table_child_size, (gpointer) &size);
+}
+
+/* set_all_dispctrl_buttons_size. gateway for set_all_dispctrl_buttons_property.
+ */
+
+void set_all_dispctrl_buttons_size (int width, int height)
+{
+	GtkRequisition	size;
+	
+	size.width = width;
+	size.height = height;
+	set_all_dispctrl_buttons_property (set_table_child_size, (gpointer) &size);
+}
+
 /* set_all_buttons_font. gateway for set_all_buttons_property.
  */
 
@@ -540,6 +580,28 @@ void set_all_buttons_font (char *font_string)
 
 	pango_font = pango_font_description_from_string (font_string);
 	set_all_buttons_property (set_table_child_font, pango_font);
+}
+
+/* set_all_normal_buttons_font. gateway for set_all_buttons_property.
+ */
+
+void set_all_normal_buttons_font (char *font_string)
+{
+	PangoFontDescription	*pango_font;
+
+	pango_font = pango_font_description_from_string (font_string);
+	set_all_normal_buttons_property (set_table_child_font, pango_font);
+}
+
+/* set_all_dispctrl_buttons_font. gateway for set_all_buttons_property.
+ */
+
+void set_all_dispctrl_buttons_font (char *font_string)
+{
+	PangoFontDescription	*pango_font;
+
+	pango_font = pango_font_description_from_string (font_string);
+	set_all_dispctrl_buttons_property (set_table_child_font, pango_font);
 }
 
 gboolean button_deactivation (gpointer data)
@@ -588,6 +650,9 @@ void update_dispctrl()
 	else ui_main_window_set_dispctrl (DISPCTRL_RIGHT);
 	set_widget_visibility (dispctrl_xml, "table_dispctrl", 
 		prefs.vis_dispctrl);
+	set_all_dispctrl_buttons_size (prefs.button_width, prefs.button_height);
+	set_all_dispctrl_buttons_font (prefs.custom_button_font ? prefs.button_font : "");
+
 }
 
 /*
@@ -599,6 +664,10 @@ void set_widget_visibility (GladeXML *xml, char *widget_name, gboolean visible)
 	GtkWidget	*widget;
 	
 	widget = glade_xml_get_widget (xml, widget_name);
+	if (!widget) {
+		error_message ("Couldn't find widget \"%s\" in \"set_widget_visibility\"", widget_name);
+		return;
+	}
 	if (visible) gtk_widget_show_all (widget);
 	else gtk_widget_hide_all (widget);
 }
@@ -940,7 +1009,7 @@ void ui_formula_entry_activate ()
 {
 	GtkWidget	*formula_entry;
 	
-	formula_entry = glade_xml_get_widget (main_window_xml, "formula_entry");
+	formula_entry = glade_xml_get_widget (view_xml, "formula_entry");
 	gtk_widget_activate(formula_entry);
 }
 
@@ -949,7 +1018,7 @@ void ui_formula_entry_set (G_CONST_RETURN gchar *text)
 	GtkWidget	*formula_entry;
 
 	if (text == NULL) return;
-	formula_entry = glade_xml_get_widget (main_window_xml, "formula_entry");
+	formula_entry = glade_xml_get_widget (view_xml, "formula_entry");
 	gtk_entry_set_text ((GtkEntry *) formula_entry, text);
 }
 
@@ -959,7 +1028,7 @@ void ui_formula_entry_insert (G_CONST_RETURN gchar *text)
 	int		position;
 	
 	if (text == NULL) return;
-	formula_entry = glade_xml_get_widget (main_window_xml, "formula_entry");
+	formula_entry = glade_xml_get_widget (view_xml, "formula_entry");
 	position = gtk_editable_get_position ((GtkEditable *) formula_entry);
 	gtk_editable_insert_text ((GtkEditable *) formula_entry, text, -1,
                                              &position);
@@ -970,7 +1039,7 @@ void ui_formula_entry_backspace ()
 {
 	GtkWidget	*formula_entry;
 	
-	formula_entry = glade_xml_get_widget (main_window_xml, "formula_entry");
+	formula_entry = glade_xml_get_widget (view_xml, "formula_entry");
 	gtk_editable_delete_text ((GtkEditable *) formula_entry, 
 		strlen(gtk_entry_get_text((GtkEntry *) formula_entry)) - 1, -1);
 }
@@ -984,7 +1053,7 @@ void ui_formula_entry_state (gboolean error)
 	GtkWidget		*formula_entry;
 	GdkColor		*color=NULL;
 	
-	formula_entry = glade_xml_get_widget (main_window_xml, "formula_entry");
+	formula_entry = glade_xml_get_widget (view_xml, "formula_entry");
 	if (error) {
 		color = (GdkColor *) malloc(sizeof(GdkColor));
 		gdk_color_parse ("red", color);
@@ -1029,4 +1098,82 @@ void ui_relax_fmod_buttons ()
 	gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
 	tbutton = glade_xml_get_widget (button_box_xml, "button_hyp");
 	gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
+}
+
+void ui_classic_view_create()
+{
+	GtkWidget	*classic_view_vbox, *box;
+	
+	/* at first, check if there is already a classic view */
+	if (view_xml) {
+		classic_view_vbox = glade_xml_get_widget (view_xml, "classic_view_vbox");
+		if (classic_view_vbox) return;
+	}
+	
+	/* if not, build one */
+	view_xml = glade_file_open (CLASSIC_VIEW_GLADE_FILE, "classic_view_vbox", TRUE);
+	box = glade_xml_get_widget (main_window_xml, "window_vbox");
+	ui_pack_from_xml (box, 1, view_xml, "classic_view_vbox", "textview", TRUE, TRUE);
+	display_init ();
+	
+	remember_display_values ();
+}
+
+void ui_classic_view_destroy()
+{
+	GtkWidget	*classic_view_vbox;
+	
+	if (!view_xml) return;
+	classic_view_vbox = glade_xml_get_widget (view_xml, "classic_view_vbox");
+	if (classic_view_vbox) gtk_widget_destroy (classic_view_vbox);
+}
+
+
+void ui_ng_view_create()
+{
+	GtkWidget		*ng_view_vbox, *box, *tree_view;
+	GtkTreeIter   		iter;
+	GtkCellRenderer 	*renderer;
+	GtkTreeViewColumn 	*column;
+	GdkColor		*even_row_color, *odd_row_color;
+
+	/* at first, check if there is already a ng view */
+	if (view_xml) {
+		ng_view_vbox = glade_xml_get_widget (view_xml, "ng_view_vbox");
+		if (ng_view_vbox) return;
+	}
+	
+	/* if not, build one */
+	view_xml = glade_file_open (NG_VIEW_GLADE_FILE, "ng_view_vbox", TRUE);
+	box = glade_xml_get_widget (main_window_xml, "window_vbox");
+	ui_pack_from_xml (box, 1, view_xml, "ng_view_vbox", "ng_treeview", TRUE, TRUE);
+	
+	ng_store = gtk_list_store_new (4, G_TYPE_STRING, G_TYPE_FLOAT, G_TYPE_INT, G_TYPE_BOOLEAN);
+	tree_view = glade_xml_get_widget (view_xml, "ng_treeview");
+	gtk_list_store_append (ng_store, &iter);
+	gtk_list_store_set (ng_store, &iter, 0, "1+1+2*sin(2.222)", 1, 0.0, 2, -1, 3, TRUE, -1);
+	gtk_list_store_append (ng_store, &iter);
+	gtk_list_store_set (ng_store, &iter, 0, "dummy", 1, 0.0, 2, 0, -1);
+	gtk_list_store_append (ng_store, &iter);
+	gtk_list_store_set (ng_store, &iter, 0, "<b>12312.322323</b>", 1, 0.5, 2, -1, 3, TRUE, -1);
+	gtk_list_store_append (ng_store, &iter);
+	gtk_list_store_set (ng_store, &iter, 0, "3/2", 1, 0.0, 2, -1, 3, TRUE, -1);
+	gtk_list_store_append (ng_store, &iter);
+	gtk_list_store_set (ng_store, &iter, 0, NULL, 1, 0.0, 2, 1, 3, FALSE, -1);
+	gtk_list_store_append (ng_store, &iter);
+	gtk_list_store_set (ng_store, &iter, 0, "<b>1.5</b>", 1, 1.0, 2, -1, 3, TRUE, -1);
+	gtk_tree_view_set_model ((GtkTreeView *) tree_view, GTK_TREE_MODEL (ng_store));
+	renderer = gtk_cell_renderer_text_new ();
+	column = gtk_tree_view_column_new_with_attributes ("Result Display", renderer, "markup", 0, "xalign", 1, "height", 2, "visible", 3, NULL);
+	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
+	
+}
+
+void ui_ng_view_destroy()
+{
+	GtkWidget	*ng_view_vbox;
+	
+	if (!view_xml) return;
+	ng_view_vbox = glade_xml_get_widget (view_xml, "ng_view_vbox");
+	if (ng_view_vbox) gtk_widget_destroy (ng_view_vbox);
 }

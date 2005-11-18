@@ -130,7 +130,6 @@ RC = @RC@
 STRIP = @STRIP@
 USE_NLS = @USE_NLS@
 VERSION = @VERSION@
-mkdir_p = @mkdir_p@
 
 man_MANS = galculator.1
 

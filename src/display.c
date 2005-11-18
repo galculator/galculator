@@ -161,7 +161,7 @@ void display_create_text_tags ()
  * display_init. Call this function before any other function of this file.
  */
 
-void display_init (GtkWidget *a_parent_widget)
+void display_init ()
 {
 	GdkColor		color;
 	int			char_width;
@@ -172,13 +172,12 @@ void display_init (GtkWidget *a_parent_widget)
 	GtkTextTagTable		*tag_table;
 	
 	current_status.calc_entry_start_new = FALSE;
-	view = (GtkTextView *) glade_xml_get_widget (main_window_xml, "textview");
+	view = (GtkTextView *) glade_xml_get_widget (view_xml, "textview");
 	gdk_color_parse (prefs.bkg_color, &color);
 	gtk_widget_modify_base ((GtkWidget *)view, GTK_STATE_NORMAL, &color);
 	
 	buffer = gtk_text_view_get_buffer (view);
 	display_create_text_tags ();
-
 	/* compute the approx char/digit width and create a tab stops */
 	tag_table = gtk_text_buffer_get_tag_table (buffer);
 	tag = gtk_text_tag_table_lookup (tag_table, "active_module");
@@ -204,6 +203,10 @@ void display_init (GtkWidget *a_parent_widget)
 	/* number, angle and notation are now set in src/callbacks.c::
 	 * on_scientific_mode_activate resp on_basic_mode_activate.
 	 */
+	
+	/* was in general_functions::apply_preferences before, now go here*/	
+	display_update_tags ();
+	display_set_bkg_color (prefs.bkg_color);
 }
 
 /*

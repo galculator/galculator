@@ -128,7 +128,6 @@ RC = @RC@
 STRIP = @STRIP@
 USE_NLS = @USE_NLS@
 VERSION = @VERSION@
-mkdir_p = @mkdir_p@
 
 desktopdir = $(datadir)/applications
 desktop_in_files = galculator.desktop.in

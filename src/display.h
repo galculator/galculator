@@ -58,7 +58,7 @@ void on_textview_selection_received (GtkWidget *widget,
                                             GtkSelectionData *data,
                                             guint time,
                                             gpointer user_data);
-void display_init (GtkWidget *a_parent_widget);
+void display_init ();
 void display_update_modules ();
 void display_option_label_set (GtkLabel *label);
 void display_option_label_unset (GtkLabel *label);

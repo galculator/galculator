@@ -1,0 +1,888 @@
+# Spanish translations for galculator package.
+# Copyright (C) 2005 THE galculator'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the galculator package.
+# eduardo osorio armenta <eduardo.osorio.armenta@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: galculator 1.2.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-05-09 16:08-0500\n"
+"PO-Revision-Date: 2005-05-09 16:17-0500\n"
+"Last-Translator: eduardo osorio armenta <eduardo.osorio.armenta@gmail.com>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ui/main_frame.glade:14
+msgid "The main program window."
+msgstr "La ventana principal del programa"
+
+#: ui/main_frame.glade:37
+msgid "_File"
+msgstr "Archivo"
+
+#: ui/main_frame.glade:46
+msgid "_Quit"
+msgstr "Salir"
+
+#: ui/main_frame.glade:72
+msgid "_Edit"
+msgstr "_Editar"
+
+#: ui/main_frame.glade:81
+msgid "Cu_t Display Value"
+msgstr "Cor_tar Valor Desplegado"
+
+#: ui/main_frame.glade:103
+msgid "_Copy Display Value"
+msgstr "_Copiar Valor Desplegado"
+
+#: ui/main_frame.glade:125
+msgid "_Paste As Display Value"
+msgstr "_Pegar Como Valor Desplegado"
+
+#: ui/main_frame.glade:153
+msgid "_Preferences..."
+msgstr "_Preferencias..."
+
+#: ui/main_frame.glade:179
+msgid "_View"
+msgstr "_Vista"
+
+#: ui/main_frame.glade:188
+msgid "_Basic Mode"
+msgstr "Modo _Basico"
+
+#: ui/main_frame.glade:198
+msgid "_Scientific Mode"
+msgstr "Modo _Scientífico"
+
+#: ui/main_frame.glade:215 ui/prefs.glade:1441
+msgid "Buttons"
+msgstr "Botones"
+
+#: ui/main_frame.glade:224
+msgid "Display Control"
+msgstr "Desplegar Control"
+
+#: ui/main_frame.glade:234 ui/prefs.glade:2199
+msgid "Functions"
+msgstr "Funciones"
+
+#: ui/main_frame.glade:244
+msgid "Logical"
+msgstr "Lógico"
+
+#: ui/main_frame.glade:254
+msgid "Standard"
+msgstr "Estandard"
+
+#: ui/main_frame.glade:274
+msgid "Show _menu bar"
+msgstr "Mostrar barra _menu"
+
+#: ui/main_frame.glade:289
+msgid "_Calculator"
+msgstr "_Calculadora"
+
+#: ui/main_frame.glade:298
+msgid "_Number bases"
+msgstr "_Número bases"
+
+#: ui/main_frame.glade:307
+msgid "_Decimal"
+msgstr "_Decimal"
+
+#: ui/main_frame.glade:318
+msgid "_Hexadecimal"
+msgstr "_Hexadecimal"
+
+#: ui/main_frame.glade:330
+msgid "_Octal"
+msgstr "_Octal"
+
+#: ui/main_frame.glade:342
+msgid "_Binary"
+msgstr "_Binario"
+
+#: ui/main_frame.glade:358
+msgid "Angle _units"
+msgstr "Ángulo _unidades"
+
+#: ui/main_frame.glade:367
+msgid "D_egrees"
+msgstr "Grados"
+
+#: ui/main_frame.glade:378
+msgid "_Radians"
+msgstr "_Radianes"
+
+#: ui/main_frame.glade:390
+msgid "_Gradians"
+msgstr "_Gradianes"
+
+#: ui/main_frame.glade:406
+msgid "Notation _modes"
+msgstr "Notación _modos"
+
+#: ui/main_frame.glade:415
+msgid "_Algebraic"
+msgstr "_Algebraico"
+
+#: ui/main_frame.glade:426
+msgid "_Reverse Polish (RPN)"
+msgstr "_Reverse Polish (RPN)"
+
+#: ui/main_frame.glade:438
+msgid "_Formula Entry"
+msgstr "Captura de _Formula"
+
+#: ui/main_frame.glade:458
+msgid "_Help"
+msgstr "_Ayuda"
+
+#: ui/main_frame.glade:467
+msgid "_About..."
+msgstr "_Acerca.."
+
+#: ui/main_frame.glade:551
+msgid "Formula entry text field - enter string expression to compute here."
+msgstr "Captura de Fórmula campo de texto - "
+
+#: ui/main_frame.glade:558 ui/scientific_buttons.glade:1157
+#: ui/basic_buttons.glade:335 ui/prefs.glade:1648 ui/prefs.glade:1669
+#: ui/prefs.glade:1690 ui/prefs.glade:2027 ui/prefs.glade:2048
+#: ui/prefs.glade:2069 ui/prefs.glade:2453 ui/prefs.glade:2697
+#: ui/prefs.glade:2965 ui/prefs.glade:3302
+msgid "*"
+msgstr "*"
+
+#: ui/scientific_buttons.glade:50
+msgid "Tangent"
+msgstr "Tangente"
+
+#: ui/scientific_buttons.glade:52
+msgid "tan"
+msgstr "tan"
+
+#: ui/scientific_buttons.glade:76
+msgid "Natural logarithm (base: e)"
+msgstr "Logaritmo Natural (base: e)"
+
+#: ui/scientific_buttons.glade:78
+msgid "ln"
+msgstr "ln"
+
+#: ui/scientific_buttons.glade:102 ui/basic_buttons.glade:745
+msgid "Square root"
+msgstr ""
+
+#: ui/scientific_buttons.glade:104 ui/basic_buttons.glade:747
+msgid "sqrt"
+msgstr ""
+
+#: ui/scientific_buttons.glade:128
+msgid "Factorial"
+msgstr ""
+
+#: ui/scientific_buttons.glade:130
+msgid "n!"
+msgstr ""
+
+#: ui/scientific_buttons.glade:154
+msgid "Enter exponent (base: 10)"
+msgstr ""
+
+#: ui/scientific_buttons.glade:156
+msgid "EE"
+msgstr ""
+
+#: ui/scientific_buttons.glade:179
+msgid "Cosine"
+msgstr ""
+
+#: ui/scientific_buttons.glade:181
+msgid "cos"
+msgstr ""
+
+#: ui/scientific_buttons.glade:205
+msgid "Logarithm (base: 10)"
+msgstr ""
+
+#: ui/scientific_buttons.glade:207
+msgid "log"
+msgstr ""
+
+#: ui/scientific_buttons.glade:231
+msgid "Square"
+msgstr ""
+
+#: ui/scientific_buttons.glade:233
+msgid "x^2"
+msgstr ""
+
+#: ui/scientific_buttons.glade:257
+msgid "Power"
+msgstr ""
+
+#: ui/scientific_buttons.glade:259
+msgid "x^y"
+msgstr ""
+
+#: ui/scientific_buttons.glade:284
+msgid "User defined functions"
+msgstr ""
+
+#: ui/scientific_buttons.glade:302
+msgid "fun"
+msgstr ""
+
+#: ui/scientific_buttons.glade:352 ui/prefs.glade:1820
+msgid "Constants"
+msgstr ""
+
+#: ui/scientific_buttons.glade:370
+msgid "con"
+msgstr ""
+
+#: ui/scientific_buttons.glade:420 ui/basic_buttons.glade:771
+msgid "Percent"
+msgstr ""
+
+#: ui/scientific_buttons.glade:422 ui/basic_buttons.glade:773
+msgid "%"
+msgstr ""
+
+#: ui/scientific_buttons.glade:445
+msgid "Inverse mode"
+msgstr ""
+
+#: ui/scientific_buttons.glade:447
+msgid "inv"
+msgstr ""
+
+#: ui/scientific_buttons.glade:470
+msgid "Hyperbolic mode"
+msgstr ""
+
+#: ui/scientific_buttons.glade:472
+msgid "hyp"
+msgstr ""
+
+#: ui/scientific_buttons.glade:495
+msgid "Sine"
+msgstr ""
+
+#: ui/scientific_buttons.glade:497
+msgid "sin"
+msgstr ""
+
+#: ui/scientific_buttons.glade:537
+msgid "Logical AND"
+msgstr ""
+
+#: ui/scientific_buttons.glade:539
+msgid "AND"
+msgstr ""
+
+#: ui/scientific_buttons.glade:562
+msgid "Logical OR"
+msgstr ""
+
+#: ui/scientific_buttons.glade:564
+msgid "OR"
+msgstr ""
+
+#: ui/scientific_buttons.glade:587
+msgid "Logical XOR"
+msgstr ""
+
+#: ui/scientific_buttons.glade:589
+msgid "XOR"
+msgstr ""
+
+#: ui/scientific_buttons.glade:613
+msgid "Bitwise complement"
+msgstr ""
+
+#: ui/scientific_buttons.glade:615
+msgid "CMP"
+msgstr ""
+
+#: ui/scientific_buttons.glade:638
+msgid "Hexadecimal 0xC"
+msgstr ""
+
+#: ui/scientific_buttons.glade:640 ui/dispctrl_right.glade:41
+#: ui/dispctrl_bottom.glade:81
+msgid "C"
+msgstr ""
+
+#: ui/scientific_buttons.glade:665
+msgid "Hexadecimal 0xD"
+msgstr ""
+
+#: ui/scientific_buttons.glade:667
+msgid "D"
+msgstr ""
+
+#: ui/scientific_buttons.glade:692
+msgid "Hexadecimal 0xE"
+msgstr ""
+
+#: ui/scientific_buttons.glade:694
+msgid "E"
+msgstr ""
+
+#: ui/scientific_buttons.glade:719
+msgid "Hexadecimal 0xF"
+msgstr ""
+
+#: ui/scientific_buttons.glade:721
+msgid "F"
+msgstr ""
+
+#: ui/scientific_buttons.glade:746
+msgid "Hexadecimal 0xB"
+msgstr ""
+
+#: ui/scientific_buttons.glade:748
+msgid "B"
+msgstr ""
+
+#: ui/scientific_buttons.glade:773
+msgid "Hexadecimal 0xA"
+msgstr ""
+
+#: ui/scientific_buttons.glade:775
+msgid "A"
+msgstr ""
+
+#: ui/scientific_buttons.glade:816 ui/basic_buttons.glade:45
+msgid "Seven"
+msgstr ""
+
+#: ui/scientific_buttons.glade:818 ui/basic_buttons.glade:47
+msgid "7"
+msgstr ""
+
+#: ui/scientific_buttons.glade:843 ui/basic_buttons.glade:72
+msgid "Eight"
+msgstr ""
+
+#: ui/scientific_buttons.glade:845 ui/basic_buttons.glade:74
+msgid "8"
+msgstr ""
+
+#: ui/scientific_buttons.glade:869 ui/basic_buttons.glade:98
+msgid "Nine"
+msgstr ""
+
+#: ui/scientific_buttons.glade:871 ui/basic_buttons.glade:100
+msgid "9"
+msgstr ""
+
+#: ui/scientific_buttons.glade:896 ui/basic_buttons.glade:125
+msgid "Divide"
+msgstr ""
+
+#: ui/scientific_buttons.glade:898 ui/basic_buttons.glade:127
+msgid "/"
+msgstr ""
+
+#: ui/scientific_buttons.glade:922
+msgid "Modulus"
+msgstr ""
+
+#: ui/scientific_buttons.glade:924
+msgid "MOD"
+msgstr ""
+
+#: ui/scientific_buttons.glade:948 ui/basic_buttons.glade:151
+msgid "Four"
+msgstr ""
+
+#: ui/scientific_buttons.glade:950 ui/basic_buttons.glade:153
+msgid "4"
+msgstr ""
+
+#: ui/scientific_buttons.glade:974 ui/basic_buttons.glade:177
+msgid "Five"
+msgstr ""
+
+#: ui/scientific_buttons.glade:976 ui/basic_buttons.glade:179
+msgid "5"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1001 ui/basic_buttons.glade:204
+msgid "Six"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1003 ui/basic_buttons.glade:206
+msgid "6"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1027 ui/basic_buttons.glade:230
+msgid "Three"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1029 ui/basic_buttons.glade:232
+msgid "3"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1054 ui/basic_buttons.glade:257
+msgid "Subtract"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1056 ui/basic_buttons.glade:259
+msgid "-"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1080 ui/basic_buttons.glade:283
+msgid "Sum"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1082 ui/basic_buttons.glade:285
+msgid "+"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1106
+msgid "Left shift"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1108
+msgid "LSH"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1131 ui/basic_buttons.glade:309
+msgid "Change sign"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1133 ui/basic_buttons.glade:311
+msgid "+/-"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1155 ui/basic_buttons.glade:333
+msgid "Multiply"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1182 ui/basic_buttons.glade:360
+msgid "Add current display value to memory"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1201 ui/basic_buttons.glade:378
+msgid "M+"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1252 ui/basic_buttons.glade:429
+msgid "Read from memory"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1271 ui/basic_buttons.glade:447
+msgid "MR"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1321 ui/basic_buttons.glade:497
+msgid "Save to memory"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1340 ui/basic_buttons.glade:515
+msgid "MS"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1390 ui/basic_buttons.glade:565
+msgid "Close Bracket"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1392 ui/basic_buttons.glade:567
+msgid ")"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1415 ui/basic_buttons.glade:590
+msgid "Open Bracket"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1417 ui/basic_buttons.glade:592
+msgid "("
+msgstr ""
+
+#: ui/scientific_buttons.glade:1440 ui/basic_buttons.glade:615
+msgid "Zero"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1442 ui/basic_buttons.glade:617
+msgid "0"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1466 ui/basic_buttons.glade:641
+msgid "Decimal point"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1468 ui/basic_buttons.glade:643
+msgid "."
+msgstr ""
+
+#: ui/scientific_buttons.glade:1492 ui/basic_buttons.glade:667
+msgid "One"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1494 ui/basic_buttons.glade:669
+msgid "1"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1517 ui/basic_buttons.glade:692
+msgid "Two"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1519 ui/basic_buttons.glade:694
+msgid "2"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1543 ui/basic_buttons.glade:718
+msgid "Enter"
+msgstr ""
+
+#: ui/scientific_buttons.glade:1545 ui/basic_buttons.glade:720
+msgid "="
+msgstr ""
+
+#: ui/about.glade:15
+msgid "A dialog that shows information about this program."
+msgstr ""
+
+#: ui/about.glade:45 ui/prefs.glade:52
+msgid "Closes the dialog."
+msgstr ""
+
+#: ui/about.glade:63
+msgid "fill_me"
+msgstr ""
+
+#: ui/about.glade:74
+msgid "Shows information about the program."
+msgstr ""
+
+#: ui/color.glade:7
+msgid "Select Color"
+msgstr ""
+
+#: ui/color.glade:14
+msgid "A dialog that is used to change a color setting."
+msgstr ""
+
+#: ui/color.glade:24 ui/font.glade:25
+msgid "Cancels all changes and closes the dialog."
+msgstr ""
+
+#: ui/color.glade:38 ui/font.glade:52
+msgid "Applies all changes and closes the dialog."
+msgstr ""
+
+#: ui/color.glade:52
+msgid "Shows some help about the dialog."
+msgstr ""
+
+#: ui/color.glade:64
+msgid "Contains various widgets to select a color value."
+msgstr ""
+
+#: ui/font.glade:8
+msgid "Select Font"
+msgstr ""
+
+#: ui/font.glade:15
+msgid "A dialog that is used to change a font setting."
+msgstr ""
+
+#: ui/font.glade:39
+msgid "Applies all changes."
+msgstr ""
+
+#: ui/font.glade:63
+msgid "decimal PI 3.14159265359"
+msgstr ""
+
+#: ui/font.glade:65
+msgid "Displays various fonts and font sizes to select from."
+msgstr ""
+
+#: ui/prefs.glade:7
+msgid "galculator - Preferences"
+msgstr ""
+
+#: ui/prefs.glade:20
+msgid "A dialog that is used to change preferences settings."
+msgstr ""
+
+#: ui/prefs.glade:94
+msgid "<b>Appearance</b>"
+msgstr ""
+
+#: ui/prefs.glade:121 ui/prefs.glade:896 ui/prefs.glade:1127
+#: ui/prefs.glade:1279 ui/prefs.glade:1500 ui/prefs.glade:1879
+#: ui/prefs.glade:2346 ui/prefs.glade:2545 ui/prefs.glade:2813
+#: ui/prefs.glade:3081 ui/prefs.glade:3427 ui/prefs.glade:3549
+#: ui/prefs.glade:3656
+msgid "    "
+msgstr ""
+
+#: ui/prefs.glade:151
+msgid "Result font:"
+msgstr ""
+
+#: ui/prefs.glade:194
+msgid "Inactive module color:"
+msgstr ""
+
+#: ui/prefs.glade:232 ui/prefs.glade:273 ui/prefs.glade:320 ui/prefs.glade:361
+#: ui/prefs.glade:408 ui/prefs.glade:449 ui/prefs.glade:496 ui/prefs.glade:537
+#: ui/prefs.glade:768 ui/prefs.glade:809 ui/prefs.glade:2451
+#: ui/prefs.glade:2695 ui/prefs.glade:2963 ui/prefs.glade:3300
+msgid " "
+msgstr ""
+
+#: ui/prefs.glade:590
+msgid "Active module color:"
+msgstr ""
+
+#: ui/prefs.glade:614
+msgid "Result font color:"
+msgstr ""
+
+#: ui/prefs.glade:638
+msgid "Background color:"
+msgstr ""
+
+#: ui/prefs.glade:662
+msgid "Module font:"
+msgstr ""
+
+#: ui/prefs.glade:686
+msgid "RPN stack font:"
+msgstr ""
+
+#: ui/prefs.glade:730
+msgid "RPN stack color:"
+msgstr ""
+
+#: ui/prefs.glade:869
+msgid "<b>Modules Visibility</b>"
+msgstr ""
+
+#: ui/prefs.glade:927
+msgid "Angle base units"
+msgstr ""
+
+#: ui/prefs.glade:950
+msgid "Notation"
+msgstr ""
+
+#: ui/prefs.glade:973
+msgid "Arithmetic operation"
+msgstr ""
+
+#: ui/prefs.glade:996
+msgid "Open brackets"
+msgstr ""
+
+#: ui/prefs.glade:1019
+msgid "Number base units"
+msgstr ""
+
+#: ui/prefs.glade:1068
+msgid "Display"
+msgstr ""
+
+#: ui/prefs.glade:1100
+msgid "<b>Font</b>"
+msgstr ""
+
+#: ui/prefs.glade:1155
+msgid "Use custom button font"
+msgstr ""
+
+#: ui/prefs.glade:1180
+msgid "Button font:"
+msgstr ""
+
+#: ui/prefs.glade:1252
+msgid "<b>Dimension</b>"
+msgstr ""
+
+#: ui/prefs.glade:1312
+msgid "Minimal button width:"
+msgstr ""
+
+#: ui/prefs.glade:1366
+msgid "Minimal button height:"
+msgstr ""
+
+#: ui/prefs.glade:1473
+msgid "<b>User defined constants:</b>"
+msgstr ""
+
+#: ui/prefs.glade:1570 ui/prefs.glade:1949
+msgid "Name:"
+msgstr ""
+
+#: ui/prefs.glade:1594
+msgid "Value:"
+msgstr ""
+
+#: ui/prefs.glade:1618
+msgid "Description:"
+msgstr ""
+
+#: ui/prefs.glade:1719 ui/prefs.glade:2098
+msgid "Add"
+msgstr ""
+
+#: ui/prefs.glade:1736 ui/prefs.glade:2115
+msgid "Update"
+msgstr ""
+
+#: ui/prefs.glade:1753 ui/prefs.glade:2132
+msgid "Delete"
+msgstr ""
+
+#: ui/prefs.glade:1770 ui/prefs.glade:2149
+msgid "Clear"
+msgstr ""
+
+#: ui/prefs.glade:1852
+msgid "<b>User defined functions:</b>"
+msgstr ""
+
+#: ui/prefs.glade:1973
+msgid "Variable:"
+msgstr ""
+
+#: ui/prefs.glade:1997
+msgid "Expression:"
+msgstr ""
+
+#: ui/prefs.glade:2231
+msgid "Configure number base: "
+msgstr ""
+
+#: ui/prefs.glade:2261
+msgid "Decimal"
+msgstr ""
+
+#: ui/prefs.glade:2270
+msgid "Hexadecimal"
+msgstr ""
+
+#: ui/prefs.glade:2279
+msgid "Octal"
+msgstr ""
+
+#: ui/prefs.glade:2288
+msgid "Binary"
+msgstr ""
+
+#: ui/prefs.glade:2319
+msgid "<b>Decimal Settings</b>"
+msgstr ""
+
+#: ui/prefs.glade:2377
+msgid "Show thousands separator"
+msgstr ""
+
+#: ui/prefs.glade:2399 ui/prefs.glade:2643 ui/prefs.glade:2911
+#: ui/prefs.glade:3248
+msgid "Separator character:"
+msgstr ""
+
+#: ui/prefs.glade:2423 ui/prefs.glade:2667 ui/prefs.glade:2935
+#: ui/prefs.glade:3272
+msgid "Separator block length:"
+msgstr ""
+
+#: ui/prefs.glade:2518
+msgid "<b>Hexadecimal Settings</b>"
+msgstr ""
+
+#: ui/prefs.glade:2576 ui/prefs.glade:2844 ui/prefs.glade:3134
+msgid "Signed"
+msgstr ""
+
+#: ui/prefs.glade:2621 ui/prefs.glade:2889 ui/prefs.glade:3226
+msgid "Show separator"
+msgstr ""
+
+#: ui/prefs.glade:2736 ui/prefs.glade:3004 ui/prefs.glade:3178
+msgid "Number of bits: "
+msgstr ""
+
+#: ui/prefs.glade:2786
+msgid "<b>Octal Settings</b>"
+msgstr ""
+
+#: ui/prefs.glade:3054
+msgid "<b>Binary Settings</b>"
+msgstr ""
+
+#: ui/prefs.glade:3203
+msgid "Fix length to a multiple of"
+msgstr ""
+
+#: ui/prefs.glade:3368
+msgid "Numbers"
+msgstr "Números"
+
+#: ui/prefs.glade:3400
+msgid "<b>RPN</b>"
+msgstr "<b>RPN</b>"
+
+#: ui/prefs.glade:3455
+msgid "finite stack size (x, y, z, t)"
+msgstr "tamaño de pila finito (x, y, z, t)"
+
+#: ui/prefs.glade:3475
+msgid "infinite stack size"
+msgstr "tamaño de pila infinito"
+
+#: ui/prefs.glade:3522
+msgid "<b>Startup</b>"
+msgstr "<b>Inicio</b>"
+
+#: ui/prefs.glade:3580
+msgid "Remember display value on exit"
+msgstr "Recordar valor desplegado al salir "
+
+#: ui/prefs.glade:3629
+msgid "<b>Visibility</b>"
+msgstr "<b>Visibilidad</b>"
+
+#: ui/prefs.glade:3678
+msgid "Show menu bar"
+msgstr "Mostrar barra de menú"
+
+#: ui/prefs.glade:3717
+msgid "General"
+msgstr "General"
+
+#: ui/dispctrl_right.glade:39 ui/dispctrl_bottom.glade:79
+msgid "Clear display"
+msgstr "Limpiar pantalla"
+
+#: ui/dispctrl_right.glade:66 ui/dispctrl_bottom.glade:53
+msgid "Backspace"
+msgstr "Retroceder"
+
+#: ui/dispctrl_right.glade:68 ui/dispctrl_bottom.glade:55
+msgid "<-"
+msgstr "<-"
+
+#: ui/dispctrl_right.glade:92 ui/dispctrl_bottom.glade:106
+msgid "Reset calculator (clear all)"
+msgstr "Restaurar calculadora (limpiar todo)"
+
+#: ui/dispctrl_right.glade:94 ui/dispctrl_bottom.glade:108
+msgid "AC"
+msgstr ""
+

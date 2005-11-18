@@ -31,7 +31,7 @@
 void statusbar_init (GtkWidget *a_parent_widget);
 double error_unsupported_inv (double dummy);
 double error_unsupported_hyp (double dummy);
-void error_message (char *message);
+void error_message (char *format_string, ...);
 void clear ();
 void backspace ();
 void all_clear ();

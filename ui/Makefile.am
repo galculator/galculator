@@ -11,7 +11,9 @@ glade_DATA = about.glade \
 		basic_buttons.glade \
 		dispctrl_bottom.glade \
 		dispctrl_right.glade \
-		dispctrl_right_vertical.glade
+		dispctrl_right_vertical.glade \
+		classic_view.glade \
+		ng_view.glade
 
 EXTRA_DIST = $(glade_DATA)
 
