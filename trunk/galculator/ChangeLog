@@ -1,3 +1,10 @@
+2005-11-18 Simon Floery <chimaira@users.sf.net>
+	* ng_view gets on its way
+
+2005-11-17 Simon Floery <chimaira@users.sf.net>
+	* added es_MX translation (thanks to eduardo)
+	* reorganize set prefs code, seperate code into classic_view
+
 2005-07-11 Simon Floery <chimaira@users.sf.net>
 	* updated German translation (thanks to Jens)
 	* added Slovakian translation (thanks to Peter)

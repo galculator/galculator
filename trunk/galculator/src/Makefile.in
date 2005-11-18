@@ -131,7 +131,6 @@ RC = @RC@
 STRIP = @STRIP@
 USE_NLS = @USE_NLS@
 VERSION = @VERSION@
-mkdir_p = @mkdir_p@
 
 INCLUDES =  	-DPACKAGE_LOCALE_DIR=\""$(datadir)/locale"\" 	-DPACKAGE_GLADE_DIR=\""$(datadir)/galculator/glade"\" 	@PACKAGE_CFLAGS@
 

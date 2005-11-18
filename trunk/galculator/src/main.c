@@ -145,7 +145,7 @@ int main (int argc, char *argv[])
 	main_window = ui_main_window_create();
 	gtk_window_set_title ((GtkWindow *)main_window, PACKAGE);
 
-	ui_main_window_buttons_create(prefs.mode);
+	// ui_main_window_buttons_create(prefs.mode);
 	
 	/* usually, only Shift, CTRL and ALT modifiers are paid attention to by 
 	 * accelerator code. add MOD2 (NUMLOCK allover the world?) to the list. 
@@ -161,14 +161,12 @@ int main (int argc, char *argv[])
 
 	/* finally show what we put together. do this as late asap */
 	gtk_widget_show (main_window);
-
+	
 	/* main_windows has to be visible to get a nice and proper display */	
-	display_init (main_window);
+	//display_init (main_window);
 	
 	/* apply changes */
 	apply_preferences (prefs);
-
-	remember_display_values ();
 
 	memory.data = NULL;
 	memory.len = 0;

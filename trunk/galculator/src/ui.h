@@ -23,6 +23,7 @@ extern GladeXML 	*button_box_xml;
 extern GladeXML 	*prefs_xml;
 extern GladeXML 	*about_dialog_xml;
 extern GladeXML		*dispctrl_xml;
+extern GladeXML		*view_xml;
 extern GtkListStore	*prefs_constant_store, *prefs_user_function_store;
 extern char		dec_point[2];
 
@@ -49,7 +50,11 @@ void ui_main_window_buttons_destroy ();
 void ui_main_window_buttons_create (int mode);
 void set_all_buttons_callback (gpointer *data);
 void set_all_buttons_size (int width, int height);
+void set_all_normal_buttons_size (int width, int height);
+void set_all_dispctrl_buttons_size (int width, int height);
 void set_all_buttons_font (char *font_string);
+void set_all_normal_buttons_font (char *font_string);
+void set_all_dispctrl_buttons_font (char *font_string);
 void update_active_buttons (int number_base, int notation_mode);
 void update_dispctrl ();
 void button_activation (GtkToggleButton *b);
@@ -80,3 +85,8 @@ void position_menu (GtkMenu *menu,
 		gboolean *push_in, 
 		gpointer user_data);
 void set_widget_visibility (GladeXML *xml, char *widget_name, gboolean visible);
+
+void ui_classic_view_create();
+void ui_classic_view_destroy();
+void ui_ng_view_create();
+void ui_ng_view_destroy();

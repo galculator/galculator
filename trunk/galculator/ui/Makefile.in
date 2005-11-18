@@ -128,11 +128,10 @@ RC = @RC@
 STRIP = @STRIP@
 USE_NLS = @USE_NLS@
 VERSION = @VERSION@
-mkdir_p = @mkdir_p@
 
 gladedir = $(datadir)/galculator/glade
 
-glade_DATA = about.glade 		color.glade 		font.glade 		prefs.glade 		main_frame.glade 		scientific_buttons.glade 		basic_buttons.glade 		dispctrl_bottom.glade 		dispctrl_right.glade 		dispctrl_right_vertical.glade
+glade_DATA = about.glade 		color.glade 		font.glade 		prefs.glade 		main_frame.glade 		scientific_buttons.glade 		basic_buttons.glade 		dispctrl_bottom.glade 		dispctrl_right.glade 		dispctrl_right_vertical.glade 		classic_view.glade 		ng_view.glade
 
 
 EXTRA_DIST = $(glade_DATA)
