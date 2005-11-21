@@ -37,7 +37,7 @@
 GladeXML	*main_window_xml, *dispctrl_xml, *button_box_xml, *prefs_xml, 
 		*about_dialog_xml, *view_xml;
 char		dec_point[2];
-GtkListStore	*prefs_constant_store, *prefs_user_function_store, *ng_store;
+GtkListStore	*prefs_constant_store, *prefs_user_function_store;
 
 static void set_disp_ctrl_object_data ();
 static void set_all_dispctrl_buttons_property (GFunc func, gpointer data);
@@ -1128,14 +1128,13 @@ void ui_classic_view_destroy()
 	if (classic_view_vbox) gtk_widget_destroy (classic_view_vbox);
 }
 
-
 void ui_ng_view_create()
 {
 	GtkWidget		*ng_view_vbox, *box, *tree_view;
-	GtkTreeIter   		iter;
 	GtkCellRenderer 	*renderer;
 	GtkTreeViewColumn 	*column;
-	GdkColor		*even_row_color, *odd_row_color;
+	GtkListStore		*ng_store;
+	GtkTreeSelection	*select;
 
 	/* at first, check if there is already a ng view */
 	if (view_xml) {
@@ -1148,25 +1147,21 @@ void ui_ng_view_create()
 	box = glade_xml_get_widget (main_window_xml, "window_vbox");
 	ui_pack_from_xml (box, 1, view_xml, "ng_view_vbox", "ng_treeview", TRUE, TRUE);
 	
-	ng_store = gtk_list_store_new (4, G_TYPE_STRING, G_TYPE_FLOAT, G_TYPE_INT, G_TYPE_BOOLEAN);
+	/* markup / xalign / foreground */
+	ng_store = gtk_list_store_new (3, G_TYPE_STRING, G_TYPE_FLOAT, G_TYPE_STRING);
 	tree_view = glade_xml_get_widget (view_xml, "ng_treeview");
-	gtk_list_store_append (ng_store, &iter);
-	gtk_list_store_set (ng_store, &iter, 0, "1+1+2*sin(2.222)", 1, 0.0, 2, -1, 3, TRUE, -1);
-	gtk_list_store_append (ng_store, &iter);
-	gtk_list_store_set (ng_store, &iter, 0, "dummy", 1, 0.0, 2, 0, -1);
-	gtk_list_store_append (ng_store, &iter);
-	gtk_list_store_set (ng_store, &iter, 0, "<b>12312.322323</b>", 1, 0.5, 2, -1, 3, TRUE, -1);
-	gtk_list_store_append (ng_store, &iter);
-	gtk_list_store_set (ng_store, &iter, 0, "3/2", 1, 0.0, 2, -1, 3, TRUE, -1);
-	gtk_list_store_append (ng_store, &iter);
-	gtk_list_store_set (ng_store, &iter, 0, NULL, 1, 0.0, 2, 1, 3, FALSE, -1);
-	gtk_list_store_append (ng_store, &iter);
-	gtk_list_store_set (ng_store, &iter, 0, "<b>1.5</b>", 1, 1.0, 2, -1, 3, TRUE, -1);
 	gtk_tree_view_set_model ((GtkTreeView *) tree_view, GTK_TREE_MODEL (ng_store));
+	
 	renderer = gtk_cell_renderer_text_new ();
-	column = gtk_tree_view_column_new_with_attributes ("Result Display", renderer, "markup", 0, "xalign", 1, "height", 2, "visible", 3, NULL);
+	column = gtk_tree_view_column_new_with_attributes ("Result Display", renderer, "markup", 0, "xalign", 1, "foreground", 2, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
 	
+	select = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
+	gtk_tree_selection_set_mode (select, GTK_SELECTION_SINGLE);
+	g_signal_connect (G_OBJECT (select), "changed",
+                  G_CALLBACK (ng_tree_view_selection_changed_cb),
+                  NULL);
+
 }
 
 void ui_ng_view_destroy()
