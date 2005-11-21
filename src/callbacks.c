@@ -1600,6 +1600,8 @@ void on_main_window_check_resize (GtkContainer *container,
 {
 	static gboolean		itsme=FALSE;
 	
+	/* only in classic views this function may take effect */
+	if (prefs.mode == NG_MODE) return;
 	/* is there a nicer way to to this? */
 	if (itsme) {
 		itsme = FALSE;
@@ -1663,6 +1665,7 @@ void on_ng_entry_activate (GtkWidget *activated_widget, gpointer user_data)
 	/* result.error result.value */
 	result = flex_parser(gtk_entry_get_text(entry));
 	
+	/* add to tree view */
 	tree_view = GTK_TREE_VIEW(glade_xml_get_widget (view_xml, "ng_treeview"));
 	ng_store = GTK_LIST_STORE(gtk_tree_view_get_model(tree_view));
 	gtk_list_store_append (ng_store, &iter);
@@ -1679,25 +1682,38 @@ void on_ng_entry_activate (GtkWidget *activated_widget, gpointer user_data)
 	v_adjustment = gtk_tree_view_get_vadjustment (tree_view);
 	gtk_adjustment_set_value(v_adjustment, v_adjustment->upper);
 	
+	/* clear entry */
+	gtk_entry_set_text (entry, "");
 }
 
-void ng_tree_view_selection_changed_cb (GtkTreeSelection *selection, 
-					gpointer data)
+gboolean ng_tree_view_selection_changed_cb (GtkWidget *widget,
+                                            GdkEventButton *event,
+                                            gpointer user_data)
 {
-	GtkTreeModel 	*model;
-	char 		*string;
-	GtkWidget	*entry;
-	GtkTreeIter 	current_list_iter;
-	int		position;
+	GtkTreeModel 		*model;
+	char 			*string, *stripped_string;
+	GtkWidget		*entry;
+	GtkTreeIter 		current_list_iter;
+	int			position;
+	GtkTreeSelection	*select;
 	
-        if (gtk_tree_selection_get_selected (selection, &model, &current_list_iter))
-        {
-                gtk_tree_model_get (model, &current_list_iter, 0, &string, -1);
-		entry = glade_xml_get_widget (view_xml, "ng_entry");
-		position = gtk_editable_get_position (GTK_EDITABLE(entry));
-		gtk_editable_insert_text (GTK_EDITABLE (entry), string, strlen(string), &position);
-		g_free (string);
-        }
+	if ((event->type == GDK_2BUTTON_PRESS) && (event->button == 1)) {
+		select = gtk_tree_view_get_selection (GTK_TREE_VIEW (widget));
+		if (gtk_tree_selection_get_selected (select, &model, &current_list_iter)) {
+			gtk_tree_model_get (model, &current_list_iter, 0, &string, -1);
+			stripped_string = g_strdup(string);
+			pango_parse_markup (string, -1, 0, NULL, &stripped_string, NULL, NULL);
+			g_free (string);
+			entry = glade_xml_get_widget (view_xml, "ng_entry");
+			position = gtk_editable_get_position (GTK_EDITABLE(entry));
+			gtk_editable_insert_text (GTK_EDITABLE (entry), stripped_string, strlen(stripped_string), &position);
+			/* set position after currently inserted text */
+			gtk_editable_set_position (GTK_EDITABLE(entry), position);
+			g_free (stripped_string);
+		}
+	}
+	/* return FALSE to let other process this signal, too */
+	return FALSE;
 }
 
 /* END */

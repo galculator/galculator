@@ -1158,7 +1158,7 @@ void ui_ng_view_create()
 	
 	select = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
 	gtk_tree_selection_set_mode (select, GTK_SELECTION_SINGLE);
-	g_signal_connect (G_OBJECT (select), "changed",
+	g_signal_connect (G_OBJECT (tree_view), "button-press-event",
                   G_CALLBACK (ng_tree_view_selection_changed_cb),
                   NULL);
 

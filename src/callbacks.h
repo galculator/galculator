@@ -301,5 +301,6 @@ void on_ng_mode_activate (GtkMenuItem     *menuitem,
 void on_ng_entry_activate (GtkWidget *activated_widget, 
 			gpointer user_data);
 			
-void ng_tree_view_selection_changed_cb (GtkTreeSelection *selection, 
-					gpointer data);
+gboolean ng_tree_view_selection_changed_cb (GtkWidget *widget,
+                                            GdkEventButton *event,
+                                            gpointer user_data);
