@@ -1645,4 +1645,59 @@ void on_formula_entry_changed (GtkEditable *editable, gpointer user_data)
 	ui_formula_entry_state(FALSE);
 }
 
+void on_ng_entry_activate (GtkWidget *activated_widget, gpointer user_data)
+{
+	s_flex_parser_result 	result;
+	GtkEntry		*entry;
+	GtkTreeView		*tree_view;
+	GtkListStore		*ng_store;
+	GtkTreeIter   		iter;
+	char			*result_string, *markup_result_string;
+	GtkAdjustment		*v_adjustment;
+	
+	if (!GTK_IS_ENTRY(activated_widget))
+		entry = GTK_ENTRY(glade_xml_get_widget (view_xml, "ng_entry"));
+	else
+		entry = GTK_ENTRY(activated_widget);
+	
+	/* result.error result.value */
+	result = flex_parser(gtk_entry_get_text(entry));
+	
+	tree_view = GTK_TREE_VIEW(glade_xml_get_widget (view_xml, "ng_treeview"));
+	ng_store = GTK_LIST_STORE(gtk_tree_view_get_model(tree_view));
+	gtk_list_store_append (ng_store, &iter);
+	gtk_list_store_set (ng_store, &iter, 0, gtk_entry_get_text(entry), 1, 0.0, 2, NULL, -1);
+	gtk_list_store_append (ng_store, &iter);
+	result_string = get_display_number_string(result.value, CS_DEC);
+	markup_result_string = g_strdup_printf ("<b>%s</b>", result_string);
+	g_free(result_string);
+	if (result.error)
+		gtk_list_store_set (ng_store, &iter, 0, "Syntax Error", 1, 1.0, 2, "red", -1);
+	else
+		gtk_list_store_set (ng_store, &iter, 0, markup_result_string, 1, 1.0, 2, NULL, -1);
+	g_free(markup_result_string);
+	v_adjustment = gtk_tree_view_get_vadjustment (tree_view);
+	gtk_adjustment_set_value(v_adjustment, v_adjustment->upper);
+	
+}
+
+void ng_tree_view_selection_changed_cb (GtkTreeSelection *selection, 
+					gpointer data)
+{
+	GtkTreeModel 	*model;
+	char 		*string;
+	GtkWidget	*entry;
+	GtkTreeIter 	current_list_iter;
+	int		position;
+	
+        if (gtk_tree_selection_get_selected (selection, &model, &current_list_iter))
+        {
+                gtk_tree_model_get (model, &current_list_iter, 0, &string, -1);
+		entry = glade_xml_get_widget (view_xml, "ng_entry");
+		position = gtk_editable_get_position (GTK_EDITABLE(entry));
+		gtk_editable_insert_text (GTK_EDITABLE (entry), string, strlen(string), &position);
+		g_free (string);
+        }
+}
+
 /* END */

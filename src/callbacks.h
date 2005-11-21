@@ -297,3 +297,9 @@ void user_function_list_selection_changed_cb (GtkTreeSelection *selection,
 
 void on_ng_mode_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data);
+
+void on_ng_entry_activate (GtkWidget *activated_widget, 
+			gpointer user_data);
+			
+void ng_tree_view_selection_changed_cb (GtkTreeSelection *selection, 
+					gpointer data);
