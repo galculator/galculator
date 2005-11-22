@@ -526,11 +526,12 @@ void display_module_base_delete (char *mark_name, char **text)
 
 
 /*
- * display_change_option - changes CURRENT_STATUS (!) and updates the display. 
+ * display_change_option - updates the display in case of number/angle/notation
+ * changes. we need old_status to get display value in correct base.
  * The last function in the signal handling cascade of changing base etc.
  */
 
-void display_change_option (int new_status, int opt_group)
+void display_change_option (int old_status, int new_status, int opt_group)
 {
 	double	display_value=0;
 	double 	*stack;
@@ -538,39 +539,32 @@ void display_change_option (int new_status, int opt_group)
 	switch (opt_group) {
 		case DISPLAY_OPT_NUMBER:
 			update_active_buttons (new_status, current_status.notation);
-			if (current_status.number == new_status) return;
-			display_value = display_result_get_double ();
-			stack = display_stack_get_yzt_double ();
-			current_status.number = new_status;
-			display_result_set_double (display_value);
-			display_stack_set_yzt_double (stack);
+			display_value = display_result_get_double (old_status);
+			stack = display_stack_get_yzt_double (old_status);
+			display_result_set_double (display_value, new_status);
+			display_stack_set_yzt_double (stack, new_status);
 			g_free (stack);
 			if ((prefs.vis_number) && (prefs.mode == SCIENTIFIC_MODE)) {
 				display_module_base_delete (DISPLAY_MARK_NUMBER, number_mod_labels);
-				display_module_base_create (number_mod_labels, DISPLAY_MARK_NUMBER, current_status.number);
+				display_module_base_create (number_mod_labels, DISPLAY_MARK_NUMBER, new_status);
 			}
 			break;
 		case DISPLAY_OPT_ANGLE:
-			if (current_status.angle == new_status) return;
-			current_status.angle = new_status;
 			if ((prefs.vis_angle) && (prefs.mode == SCIENTIFIC_MODE)){
 				display_module_base_delete (DISPLAY_MARK_ANGLE, angle_mod_labels);
-				display_module_base_create (angle_mod_labels, DISPLAY_MARK_ANGLE, current_status.angle);
+				display_module_base_create (angle_mod_labels, DISPLAY_MARK_ANGLE, new_status);
 			}
 			break;
 		case DISPLAY_OPT_NOTATION:
 			update_active_buttons (current_status.number, new_status);
-			if (current_status.notation == new_status) return;
-			current_status.notation = new_status;
 			if ((prefs.vis_notation) && (prefs.mode == SCIENTIFIC_MODE)){
 				display_module_base_delete (DISPLAY_MARK_NOTATION, notation_mod_labels);
-				display_module_base_create (notation_mod_labels, DISPLAY_MARK_NOTATION, current_status.notation);
+				display_module_base_create (notation_mod_labels, DISPLAY_MARK_NOTATION, new_status);
 			}
 			break;
 		default:
-			fprintf (stderr, _("[%s] unknown display option in function \"display_change_option\". %s\n"), PROG_NAME, BUG_REPORT);
+			error_message (_("[%s] unknown display option in function \"display_change_option\""));
 	}
-	current_status.calc_entry_start_new = TRUE;
 }
 
 /*
@@ -697,13 +691,13 @@ void display_stack_remove ()
  *	calc_basic IS NOT modified.
  */
 
-void display_stack_set_yzt_double (double *stack)
+void display_stack_set_yzt_double (double *stack, int number_base_status)
 {
 	int		counter;
 
 	for (counter = 0; counter < display_result_line; counter++)
 		display_set_line_double (stack[counter], 
-			display_result_line - counter - 1, "stack");
+			display_result_line - counter - 1, "stack", number_base_status);
 }
 
 /* 
@@ -746,7 +740,7 @@ char **display_stack_get_yzt ()
  * 	as double array.
  */
 
-double *display_stack_get_yzt_double ()
+double *display_stack_get_yzt_double (int number_base_status)
 {
 	char 	**string_stack;
 	double	*double_stack;
@@ -755,11 +749,11 @@ double *display_stack_get_yzt_double ()
 	double_stack = (double *) malloc (display_result_line * sizeof(double));
 	string_stack = display_stack_get_yzt();
 	for (counter = 0; counter < display_result_line; counter++)
-		double_stack[counter] = string2double (string_stack[counter], current_status.number);
+		double_stack[counter] = string2double (string_stack[counter], number_base_status);
 	return double_stack;
 }
 
-void display_set_line_double (double value, int line, char *tag)
+void display_set_line_double (double value, int line, char *tag, int number_base_status)
 {
 	char		*string_value;
 	
@@ -797,11 +791,11 @@ void display_set_line (char *string, int line, char *tag)
  *	the float value is manipulated (rounded, ...)
  */
 
-void display_result_set_double (double value)
+void display_result_set_double (double value, int number_base_status)
 {	
 	current_status.allow_arith_op = TRUE;
 	display_module_arith_label_update (' ');
-	display_set_line_double (value, display_result_line, "result");
+	display_set_line_double (value, display_result_line, "result", number_base_status);
 }
 
 void display_result_set (char *string_value)
@@ -849,13 +843,13 @@ char *display_result_get ()
 /* display_result_get_double. a display_result_get plus conversion to double
  */
 
-double display_result_get_double ()
+double display_result_get_double (int number_base_status)
 {
 	char 	*result_string;
 	double	ret_val;
 	
 	result_string = display_result_get();
-	ret_val = string2double (result_string, current_status.number);
+	ret_val = string2double (result_string, number_base_status);
 	g_free (result_string);
 		
 	return ret_val;

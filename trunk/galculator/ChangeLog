@@ -1,4 +1,8 @@
 2005-11-21 Simon Floery <chimaira@users.sf.net>
+	* ng_view gets some basic number base and angle base functionality
+	* ng_view updates menus
+
+2005-11-21 Simon Floery <chimaira@users.sf.net>
 	* ng_view gets some tuning
 
 2005-11-19 Simon Floery <chimaira@users.sf.net>

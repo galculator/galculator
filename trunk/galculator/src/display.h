@@ -62,7 +62,7 @@ void display_init ();
 void display_update_modules ();
 void display_option_label_set (GtkLabel *label);
 void display_option_label_unset (GtkLabel *label);
-void display_change_option (int new_status, int new_group);
+void display_change_option (int old_status, int new_status, int opt_group);
 void display_option_cb (GtkWidget *widget, GdkEventButton *event, gpointer label_text);
 void display_set_bkg_color (char *color_string);
 void display_update_tags ();
@@ -76,24 +76,24 @@ void display_module_notation_activate (int mode);
 
 void display_result_add_digit (char digit);
 void display_result_set (char *string_value);
-void display_result_set_double (double value);
+void display_result_set_double (double value, int number_base_status);
 void display_result_feed (char *string);
 char *display_get_line (int line_nr);
 char *display_result_get ();
-double display_result_get_double ();
+double display_result_get_double (int number_base_status);
 void display_append_e (GtkToggleButton *button);
 void display_result_toggle_sign (GtkToggleButton *button);
 void display_result_backspace ();
 void display_result_getset ();
 
-void display_set_line_double (double value, int line, char *tag);
+void display_set_line_double (double value, int line, char *tag, int number_base_status);
 void display_set_line (char *string, int line, char *tag);
 
 void display_stack_create ();
 void display_stack_remove ();
 void display_stack_set_yzt (char **stack);
-void display_stack_set_yzt_double (double *stack);
+void display_stack_set_yzt_double (double *stack, int number_base_status);
 char **display_stack_get_yzt ();
-double *display_stack_get_yzt_double ();
+double *display_stack_get_yzt_double (int number_base_status);
 
 #endif /* display.h */
