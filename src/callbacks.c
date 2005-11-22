@@ -58,31 +58,31 @@ on_quit_activate                      (GtkMenuItem     *menuitem,
 	char 	**stack;
 	
 	/* remember some things */
-	if (prefs.mode == SCIENTIFIC_MODE) {
+	if (prefs.mode != BASIC_MODE) {
 		/* save number and angle mode only in scientific mode. */
 		prefs.def_number = current_status.number;
 		prefs.def_angle = current_status.angle;
 	}
-	error_message ("no remember display atm. fix this");
-	gtk_main_quit();
-	return;
-	if (prefs.rem_valuex) g_free (prefs.rem_valuex);
-	prefs.rem_valuex = display_result_get();
-	if (current_status.notation == CS_RPN) {
-		if (prefs.rem_valuey) g_free (prefs.rem_valuey);
-		if (prefs.rem_valuez) g_free (prefs.rem_valuez);
-		if (prefs.rem_valuet) g_free (prefs.rem_valuet);
-		/* we only save the visible stack */
-		stack = display_stack_get_yzt();
-		prefs.rem_valuey = g_strdup(stack[0]);
-		g_free (stack[0]);
-		prefs.rem_valuez = g_strdup(stack[1]);
-		g_free (stack[1]);
-		prefs.rem_valuet = g_strdup(stack[2]);
-		g_free (stack[2]);
-		g_free (stack);
+	/* if we have the classic view display we remember the display values */
+	if (prefs.mode != NG_MODE) {
+		if (prefs.rem_valuex) g_free (prefs.rem_valuex);
+		prefs.rem_valuex = display_result_get();
+		if (current_status.notation == CS_RPN) {
+			if (prefs.rem_valuey) g_free (prefs.rem_valuey);
+			if (prefs.rem_valuez) g_free (prefs.rem_valuez);
+			if (prefs.rem_valuet) g_free (prefs.rem_valuet);
+			/* we only save the visible stack */
+			stack = display_stack_get_yzt();
+			prefs.rem_valuey = g_strdup(stack[0]);
+			g_free (stack[0]);
+			prefs.rem_valuez = g_strdup(stack[1]);
+			g_free (stack[1]);
+			prefs.rem_valuet = g_strdup(stack[2]);
+			g_free (stack[2]);
+			g_free (stack);
+		}
+		prefs.def_notation = current_status.notation;
 	}
-	prefs.def_notation = current_status.notation;
 	gtk_main_quit();
 }
 
@@ -170,7 +170,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 	
 	current_token.operation = (int) g_object_get_data (G_OBJECT (button), "operation");
 	/* current number, get it from the display! */
-	current_token.number = display_result_get_double ();
+	current_token.number = display_result_get_double (current_status.number);
 	current_token.func = NULL;
 	/* do inverse left shift is a right shift */
 	if ((current_token.operation == '<') && \
@@ -195,7 +195,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 		if (((current_token.operation == '(') || current_status.allow_arith_op) && \
 			((current_token.operation != ')') || (display_module_bracket_label_update (GET) > 0))) {
 			return_value = alg_add_token (&main_alg, current_token);
-			display_result_set_double (return_value);
+			display_result_set_double (return_value, current_status.number);
 			display_module_arith_label_update (current_token.operation);
 			
 			/* setting of allow_arith_op. the missing breaks are wanted */
@@ -217,16 +217,16 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 		case '=':
 			rpn_stack_push (current_token.number);
 			stack = rpn_stack_get (RPN_FINITE_STACK);
-			display_stack_set_yzt_double (stack);
+			display_stack_set_yzt_double (stack, current_status.number);
 			free (stack);
 			/* ENT is a stack lift disabling button */
 			current_status.rpn_stack_lift_enabled = FALSE;
 			/* display line isn't cleared! */
 			break;
 		default:
-			display_result_set_double (rpn_stack_operation (current_token));
+			display_result_set_double (rpn_stack_operation (current_token), current_status.number);
 			stack = rpn_stack_get (RPN_FINITE_STACK);
-			display_stack_set_yzt_double (stack);
+			display_stack_set_yzt_double (stack, current_status.number);
 			free (stack);
 			/* all other operations are stack lift enabling */
 			current_status.rpn_stack_lift_enabled = TRUE;
@@ -260,7 +260,7 @@ on_function_button_clicked             (GtkToggleButton	*button,
 	memcpy (func, g_object_get_data (G_OBJECT (button), "func"), sizeof (func));
 	if (!func) error_message ("This button has no function associated with");
 	display_result_set_double (
-		func[current_status.fmod](display_result_get_double()));
+		func[current_status.fmod](display_result_get_double(current_status.number)), current_status.number);
 	current_status.calc_entry_start_new = TRUE;	
 	if (current_status.notation == CS_RPN) 
 		current_status.rpn_stack_lift_enabled = TRUE;
@@ -314,8 +314,7 @@ on_dec_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	/*printf ("dec\n");*/
-	display_change_option (CS_DEC, DISPLAY_OPT_NUMBER);
+	change_option (CS_DEC, DISPLAY_OPT_NUMBER);
 }
 
 
@@ -324,8 +323,7 @@ on_hex_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	/*printf ("hex\n");*/
-	display_change_option (CS_HEX, DISPLAY_OPT_NUMBER);
+	change_option (CS_HEX, DISPLAY_OPT_NUMBER);
 }
 
 
@@ -334,8 +332,7 @@ on_oct_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	/*printf ("oct\n");*/
-	display_change_option (CS_OCT, DISPLAY_OPT_NUMBER);
+	change_option (CS_OCT, DISPLAY_OPT_NUMBER);
 }
 
 
@@ -344,8 +341,7 @@ on_bin_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	/*printf ("bin\n");*/
-	display_change_option (CS_BIN, DISPLAY_OPT_NUMBER);
+	change_option (CS_BIN, DISPLAY_OPT_NUMBER);
 }
 
 
@@ -354,8 +350,7 @@ on_deg_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	/*printf ("deg\n");*/
-	display_change_option (CS_DEG, DISPLAY_OPT_ANGLE);
+	change_option (CS_DEG, DISPLAY_OPT_ANGLE);
 }
 
 
@@ -364,8 +359,7 @@ on_rad_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	/*printf ("rad\n");*/
-	display_change_option (CS_RAD, DISPLAY_OPT_ANGLE);
+	change_option (CS_RAD, DISPLAY_OPT_ANGLE);
 }
 
 
@@ -374,8 +368,7 @@ on_grad_activate                      (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
-	/*printf ("grad\n");*/
-	display_change_option (CS_GRAD, DISPLAY_OPT_ANGLE);
+	change_option (CS_GRAD, DISPLAY_OPT_ANGLE);
 }
 
 void
@@ -383,7 +376,7 @@ on_ordinary_activate                  (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
-	display_change_option (CS_PAN, DISPLAY_OPT_NOTATION);
+	change_option (CS_PAN, DISPLAY_OPT_NOTATION);
 	set_widget_visibility (view_xml, "formula_entry_hbox", FALSE);
 	rpn_free();
 	all_clear();
@@ -399,7 +392,7 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
-	display_change_option (CS_RPN, DISPLAY_OPT_NOTATION);
+	change_option (CS_RPN, DISPLAY_OPT_NOTATION);
 	
 	set_widget_visibility (view_xml, "formula_entry_hbox", FALSE);
 	alg_free(main_alg);
@@ -416,7 +409,7 @@ on_form_activate 			(GtkMenuItem     *menuitem,
 					gpointer         user_data)
 {
 	if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
-	display_change_option (CS_FORMULA, DISPLAY_OPT_NOTATION);
+	change_option (CS_FORMULA, DISPLAY_OPT_NOTATION);
 	all_clear();
 	ui_button_set_pan();
 	update_dispctrl();
@@ -427,6 +420,7 @@ void
 on_display_control_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
+	if (prefs.mode == NG_MODE) return;
 	prefs.vis_dispctrl = 
 		gtk_check_menu_item_get_active((GtkCheckMenuItem *) menuitem);
 	set_widget_visibility (dispctrl_xml, "table_dispctrl", 
@@ -438,6 +432,7 @@ on_logical_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
 	if (prefs.mode == BASIC_MODE) return;
+	if (prefs.mode == NG_MODE) return;
 
 	prefs.vis_logic = 
 		gtk_check_menu_item_get_active((GtkCheckMenuItem *) menuitem);
@@ -450,6 +445,7 @@ on_functions_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
 	if (prefs.mode == BASIC_MODE) return;
+	if (prefs.mode == NG_MODE) return;
 	prefs.vis_funcs = 
 		gtk_check_menu_item_get_active((GtkCheckMenuItem *) menuitem);
 	set_widget_visibility (button_box_xml, "table_func_buttons",
@@ -461,6 +457,7 @@ on_standard_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
 	if (prefs.mode == BASIC_MODE) return;
+	if (prefs.mode == NG_MODE) return;
 	prefs.vis_standard = 
 		gtk_check_menu_item_get_active((GtkCheckMenuItem *) menuitem);
 	set_widget_visibility (button_box_xml, "table_standard_buttons",
@@ -513,6 +510,10 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 	gtk_widget_set_sensitive (menu_item, FALSE);
 	menu_item = glade_xml_get_widget (main_window_xml, "angle_units");
 	gtk_widget_set_sensitive (menu_item, FALSE);
+	menu_item = glade_xml_get_widget (main_window_xml, "buttons1");
+	gtk_widget_set_sensitive (menu_item, TRUE);
+	menu_item = glade_xml_get_widget (main_window_xml, "notation");
+	gtk_widget_set_sensitive (menu_item, TRUE);
 }
 
 void
@@ -569,23 +570,36 @@ on_scientific_mode_activate (GtkMenuItem *menuitem,
 	gtk_widget_set_sensitive (menu_item, TRUE);
 	menu_item = glade_xml_get_widget (main_window_xml, "angle_units");
 	gtk_widget_set_sensitive (menu_item, TRUE);
+	menu_item = glade_xml_get_widget (main_window_xml, "buttons1");
+	gtk_widget_set_sensitive (menu_item, TRUE);
+	menu_item = glade_xml_get_widget (main_window_xml, "notation");
+	gtk_widget_set_sensitive (menu_item, TRUE);
 }	
 
 void
 on_ng_mode_activate (GtkMenuItem *menuitem,
 				gpointer user_data)
 {
+	GtkWidget	*menu_item;
+	
 	if (((GtkCheckMenuItem *) menuitem)->active == FALSE) return;
 	prefs.mode = NG_MODE;
 
 	ui_classic_view_destroy();
 	ui_ng_view_create ();
+	
+	/* update menus */
+	menu_item = glade_xml_get_widget (main_window_xml, "buttons1");
+	gtk_widget_set_sensitive (menu_item, FALSE);
+	menu_item = glade_xml_get_widget (main_window_xml, "notation");
+	gtk_widget_set_sensitive (menu_item, FALSE);
 }	
 
 void
 on_cut_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
+	if (prefs.mode == NG_MODE) return;
 	gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_CLIPBOARD), 
 		display_result_get(), -1);
 	clear ();
@@ -598,6 +612,7 @@ on_paste_activate (GtkMenuItem     *menuitem,
 	GtkWidget	*formula_entry;
 	char		*cp_text;
 	
+	if (prefs.mode == NG_MODE) return;
 	cp_text = gtk_clipboard_wait_for_text (gtk_clipboard_get (GDK_SELECTION_CLIPBOARD));
 	if (cp_text) {
 		if ((formula_entry = formula_entry_is_active_no_toplevel_check ()) != NULL) {
@@ -612,6 +627,7 @@ void
 on_copy_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
+	if (prefs.mode == NG_MODE) return;
 	gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_CLIPBOARD), 
 		display_result_get(), -1);
 }
@@ -992,7 +1008,7 @@ void user_functions_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 		user_function[index].expression, user_function[index].variable,
 		display_result_get());
 	if (!result.error) {
-		display_result_set_double (result.value);
+		display_result_set_double (result.value, current_status.number);
 		current_status.calc_entry_start_new = TRUE;	
 		if (current_status.notation == CS_RPN) 
 			current_status.rpn_stack_lift_enabled = TRUE;
@@ -1060,7 +1076,7 @@ void ms_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 		memory.data = (double *) realloc (memory.data, (index + 1) * sizeof(double));
 		memory.len++;
 	}
-	memory.data[index] = display_result_get_double();
+	memory.data[index] = display_result_get_double(current_status.number);
 	
 	/* at startup, mr and m+ button are disabled as there is nothing
 	 * to show. now, as there is sth, enable them. see also 
@@ -1095,7 +1111,7 @@ void mr_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	current_status.rpn_stack_lift_enabled = TRUE;
 	rpn_stack_lift();
 	index = GPOINTER_TO_INT(user_data);
-	display_result_set_double(memory.data[index]);
+	display_result_set_double(memory.data[index], current_status.number);
 	current_status.rpn_stack_lift_enabled = TRUE;
 	current_status.calc_entry_start_new = TRUE;
 }
@@ -1119,7 +1135,7 @@ void mplus_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	int		index;
 	
 	index = GPOINTER_TO_INT(user_data);
-	memory.data[index] += display_result_get_double();
+	memory.data[index] += display_result_get_double(current_status.number);
 }
 
 void
@@ -1173,8 +1189,8 @@ void mx_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	
 	index = GPOINTER_TO_INT(user_data);
 	temp = memory.data[index];
-	memory.data[index] = display_result_get_double();
-	display_result_set_double (temp);
+	memory.data[index] = display_result_get_double(current_status.number);
+	display_result_set_double (temp, current_status.number);
 }
 
 void
@@ -1639,7 +1655,7 @@ void on_formula_entry_activate (GtkEntry *entry, gpointer user_data)
 	
 	result = flex_parser(gtk_entry_get_text(entry));
 	ui_formula_entry_state (result.error);
-	if (!result.error) display_result_set_double (result.value);
+	if (!result.error) display_result_set_double (result.value, current_status.number);
 }
 
 void on_formula_entry_changed (GtkEditable *editable, gpointer user_data)
@@ -1671,7 +1687,7 @@ void on_ng_entry_activate (GtkWidget *activated_widget, gpointer user_data)
 	gtk_list_store_append (ng_store, &iter);
 	gtk_list_store_set (ng_store, &iter, 0, gtk_entry_get_text(entry), 1, 0.0, 2, NULL, -1);
 	gtk_list_store_append (ng_store, &iter);
-	result_string = get_display_number_string(result.value, CS_DEC);
+	result_string = get_display_number_string(result.value, current_status.number);
 	markup_result_string = g_strdup_printf ("<b>%s</b>", result_string);
 	g_free(result_string);
 	if (result.error)

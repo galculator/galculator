@@ -482,9 +482,9 @@ void gfunc_f1 (GtkToggleButton *button)
 		on_operation_button_clicked (button, NULL);
 	else {
 		display_result_set_double (rpn_stack_swapxy(
-			display_result_get_double()));
+			display_result_get_double(current_status.number)), current_status.number);
 		stack = rpn_stack_get (RPN_FINITE_STACK);
-		display_stack_set_yzt_double (stack);
+		display_stack_set_yzt_double (stack, current_status.number);
 		free (stack);
 		current_status.rpn_stack_lift_enabled = TRUE;
 		current_status.calc_entry_start_new = TRUE;
@@ -502,9 +502,9 @@ void gfunc_f2 (GtkToggleButton *button)
 		on_operation_button_clicked (button, NULL);
 	else {
 		display_result_set_double (rpn_stack_rolldown(
-			display_result_get_double()));
+			display_result_get_double(current_status.number)), current_status.number);
 				stack = rpn_stack_get (RPN_FINITE_STACK);
-		display_stack_set_yzt_double (stack);
+		display_stack_set_yzt_double (stack, current_status.number);
 		free (stack);
 		current_status.rpn_stack_lift_enabled = TRUE;
 		current_status.calc_entry_start_new = TRUE;
@@ -525,9 +525,9 @@ void rpn_stack_lift ()
 	
 	if ((current_status.notation == CS_RPN) && 
 		(current_status.rpn_stack_lift_enabled == TRUE)) {
-		rpn_stack_push (display_result_get_double ());
+		rpn_stack_push (display_result_get_double (current_status.number));
 		stack = rpn_stack_get (RPN_FINITE_STACK);
-		display_stack_set_yzt_double (stack);
+		display_stack_set_yzt_double (stack, current_status.number);
 		free (stack);
 		current_status.rpn_stack_lift_enabled = FALSE;
 	}
@@ -839,4 +839,39 @@ void prefs_sep_char_changed (GtkEditable *editable, char *prefs_sep, int number_
 		}
 	}
 	g_free (sep);	
+}
+
+/*
+ * change_option - changes CURRENT_STATUS (!) and updates the display in classic
+ * view. The last but one function in the signal handling cascade of changing 
+ * base etc.
+ */
+
+void change_option (int new_status, int opt_group)
+{
+	int	old_status;
+	
+	switch (opt_group) {
+		case DISPLAY_OPT_NUMBER:
+			old_status = current_status.number;
+			if (old_status == new_status) return;
+			current_status.number = new_status;
+			if (prefs.mode != NG_MODE) display_change_option (old_status, new_status, DISPLAY_OPT_NUMBER);
+			break;
+		case DISPLAY_OPT_ANGLE:
+			old_status = current_status.angle;
+			if (old_status == new_status) return;
+			current_status.angle = new_status;
+			if (prefs.mode != NG_MODE) display_change_option (old_status, new_status, DISPLAY_OPT_ANGLE);
+			break;
+		case DISPLAY_OPT_NOTATION:
+			old_status = current_status.notation;
+			if (old_status == new_status) return;
+			current_status.notation = new_status;
+			if (prefs.mode != NG_MODE) display_change_option (old_status, new_status, DISPLAY_OPT_NOTATION);
+			break;
+		default:
+			error_message (_("unknown display option in function \"change_option\""));
+	}
+	current_status.calc_entry_start_new = TRUE;
 }

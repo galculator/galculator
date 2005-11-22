@@ -19,8 +19,6 @@
   <accessibility>
     <atkproperty name="AtkObject::accessible_description" translatable="yes">The main program window.</atkproperty>
   </accessibility>
-  <signal name="destroy" handler="on_quit_activate" last_modification_time="Sat, 22 May 2004 16:54:39 GMT"/>
-  <signal name="check_resize" handler="on_main_window_check_resize" last_modification_time="Fri, 25 Jul 2003 18:49:40 GMT"/>
 
   <child>
     <widget class="GtkVBox" id="ng_view_vbox">

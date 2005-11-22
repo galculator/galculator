@@ -93,4 +93,6 @@ char get_sep_char (int number_base);
 
 void prefs_sep_char_changed (GtkEditable *editable, char *prefs_sep, int number_base);
 
+void change_option (int new_status, int opt_group);
+
 #endif /* general_functions.h */
