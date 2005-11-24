@@ -64,7 +64,7 @@ on_quit_activate                      (GtkMenuItem     *menuitem,
 		prefs.def_angle = current_status.angle;
 	}
 	/* if we have the classic view display we remember the display values */
-	if (prefs.mode != NG_MODE) {
+	if (prefs.mode != PAPER_MODE) {
 		if (prefs.rem_valuex) g_free (prefs.rem_valuex);
 		prefs.rem_valuex = display_result_get();
 		if (current_status.notation == CS_RPN) {
@@ -420,7 +420,7 @@ void
 on_display_control_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
-	if (prefs.mode == NG_MODE) return;
+	if (prefs.mode == PAPER_MODE) return;
 	prefs.vis_dispctrl = 
 		gtk_check_menu_item_get_active((GtkCheckMenuItem *) menuitem);
 	set_widget_visibility (dispctrl_xml, "table_dispctrl", 
@@ -432,7 +432,7 @@ on_logical_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
 	if (prefs.mode == BASIC_MODE) return;
-	if (prefs.mode == NG_MODE) return;
+	if (prefs.mode == PAPER_MODE) return;
 
 	prefs.vis_logic = 
 		gtk_check_menu_item_get_active((GtkCheckMenuItem *) menuitem);
@@ -445,7 +445,7 @@ on_functions_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
 	if (prefs.mode == BASIC_MODE) return;
-	if (prefs.mode == NG_MODE) return;
+	if (prefs.mode == PAPER_MODE) return;
 	prefs.vis_funcs = 
 		gtk_check_menu_item_get_active((GtkCheckMenuItem *) menuitem);
 	set_widget_visibility (button_box_xml, "table_func_buttons",
@@ -457,7 +457,7 @@ on_standard_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
 	if (prefs.mode == BASIC_MODE) return;
-	if (prefs.mode == NG_MODE) return;
+	if (prefs.mode == PAPER_MODE) return;
 	prefs.vis_standard = 
 		gtk_check_menu_item_get_active((GtkCheckMenuItem *) menuitem);
 	set_widget_visibility (button_box_xml, "table_standard_buttons",
@@ -478,7 +478,7 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 	}
 	prefs.mode = BASIC_MODE;
 	
-	ui_ng_view_destroy ();
+	ui_paper_view_destroy ();
 	ui_classic_view_create ();
 	ui_main_window_buttons_destroy ();
 	ui_main_window_buttons_create (prefs.mode);
@@ -525,7 +525,7 @@ on_scientific_mode_activate (GtkMenuItem *menuitem,
 	if (((GtkCheckMenuItem *) menuitem)->active == FALSE) return;
 	prefs.mode = SCIENTIFIC_MODE;
 
-	ui_ng_view_destroy ();
+	ui_paper_view_destroy ();
 	ui_classic_view_create ();
 	ui_main_window_buttons_destroy ();
 	ui_main_window_buttons_create (prefs.mode);
@@ -577,16 +577,22 @@ on_scientific_mode_activate (GtkMenuItem *menuitem,
 }	
 
 void
-on_ng_mode_activate (GtkMenuItem *menuitem,
+on_paper_mode_activate (GtkMenuItem *menuitem,
 				gpointer user_data)
 {
 	GtkWidget	*menu_item;
 	
 	if (((GtkCheckMenuItem *) menuitem)->active == FALSE) return;
-	prefs.mode = NG_MODE;
+	prefs.mode = PAPER_MODE;
 
 	ui_classic_view_destroy();
-	ui_ng_view_create ();
+	ui_paper_view_create ();
+	
+	/* this is to get the radio menu items right. display* naming is 
+	 * misleading though ...
+	 */
+	display_module_number_activate (prefs.def_number);
+	display_module_angle_activate (prefs.def_angle);
 	
 	/* update menus */
 	menu_item = glade_xml_get_widget (main_window_xml, "buttons1");
@@ -599,7 +605,7 @@ void
 on_cut_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
-	if (prefs.mode == NG_MODE) return;
+	if (prefs.mode == PAPER_MODE) return;
 	gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_CLIPBOARD), 
 		display_result_get(), -1);
 	clear ();
@@ -612,7 +618,7 @@ on_paste_activate (GtkMenuItem     *menuitem,
 	GtkWidget	*formula_entry;
 	char		*cp_text;
 	
-	if (prefs.mode == NG_MODE) return;
+	if (prefs.mode == PAPER_MODE) return;
 	cp_text = gtk_clipboard_wait_for_text (gtk_clipboard_get (GDK_SELECTION_CLIPBOARD));
 	if (cp_text) {
 		if ((formula_entry = formula_entry_is_active_no_toplevel_check ()) != NULL) {
@@ -627,7 +633,7 @@ void
 on_copy_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data)
 {
-	if (prefs.mode == NG_MODE) return;
+	if (prefs.mode == PAPER_MODE) return;
 	gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_CLIPBOARD), 
 		display_result_get(), -1);
 }
@@ -1617,7 +1623,7 @@ void on_main_window_check_resize (GtkContainer *container,
 	static gboolean		itsme=FALSE;
 	
 	/* only in classic views this function may take effect */
-	if (prefs.mode == NG_MODE) return;
+	if (prefs.mode == PAPER_MODE) return;
 	/* is there a nicer way to to this? */
 	if (itsme) {
 		itsme = FALSE;
@@ -1663,18 +1669,18 @@ void on_formula_entry_changed (GtkEditable *editable, gpointer user_data)
 	ui_formula_entry_state(FALSE);
 }
 
-void on_ng_entry_activate (GtkWidget *activated_widget, gpointer user_data)
+void on_paper_entry_activate (GtkWidget *activated_widget, gpointer user_data)
 {
 	s_flex_parser_result 	result;
 	GtkEntry		*entry;
 	GtkTreeView		*tree_view;
-	GtkListStore		*ng_store;
+	GtkListStore		*paper_store;
 	GtkTreeIter   		iter;
 	char			*result_string, *markup_result_string;
 	GtkAdjustment		*v_adjustment;
 	
 	if (!GTK_IS_ENTRY(activated_widget))
-		entry = GTK_ENTRY(glade_xml_get_widget (view_xml, "ng_entry"));
+		entry = GTK_ENTRY(glade_xml_get_widget (view_xml, "paper_entry"));
 	else
 		entry = GTK_ENTRY(activated_widget);
 	
@@ -1682,18 +1688,18 @@ void on_ng_entry_activate (GtkWidget *activated_widget, gpointer user_data)
 	result = flex_parser(gtk_entry_get_text(entry));
 	
 	/* add to tree view */
-	tree_view = GTK_TREE_VIEW(glade_xml_get_widget (view_xml, "ng_treeview"));
-	ng_store = GTK_LIST_STORE(gtk_tree_view_get_model(tree_view));
-	gtk_list_store_append (ng_store, &iter);
-	gtk_list_store_set (ng_store, &iter, 0, gtk_entry_get_text(entry), 1, 0.0, 2, NULL, -1);
-	gtk_list_store_append (ng_store, &iter);
+	tree_view = GTK_TREE_VIEW(glade_xml_get_widget (view_xml, "paper_treeview"));
+	paper_store = GTK_LIST_STORE(gtk_tree_view_get_model(tree_view));
+	gtk_list_store_append (paper_store, &iter);
+	gtk_list_store_set (paper_store, &iter, 0, gtk_entry_get_text(entry), 1, 0.0, 2, NULL, -1);
+	gtk_list_store_append (paper_store, &iter);
 	result_string = get_display_number_string(result.value, current_status.number);
 	markup_result_string = g_strdup_printf ("<b>%s</b>", result_string);
 	g_free(result_string);
 	if (result.error)
-		gtk_list_store_set (ng_store, &iter, 0, "Syntax Error", 1, 1.0, 2, "red", -1);
+		gtk_list_store_set (paper_store, &iter, 0, "Syntax Error", 1, 1.0, 2, "red", -1);
 	else
-		gtk_list_store_set (ng_store, &iter, 0, markup_result_string, 1, 1.0, 2, NULL, -1);
+		gtk_list_store_set (paper_store, &iter, 0, markup_result_string, 1, 1.0, 2, NULL, -1);
 	g_free(markup_result_string);
 	v_adjustment = gtk_tree_view_get_vadjustment (tree_view);
 	gtk_adjustment_set_value(v_adjustment, v_adjustment->upper);
@@ -1702,7 +1708,7 @@ void on_ng_entry_activate (GtkWidget *activated_widget, gpointer user_data)
 	gtk_entry_set_text (entry, "");
 }
 
-gboolean ng_tree_view_selection_changed_cb (GtkWidget *widget,
+gboolean paper_tree_view_selection_changed_cb (GtkWidget *widget,
                                             GdkEventButton *event,
                                             gpointer user_data)
 {
@@ -1720,7 +1726,7 @@ gboolean ng_tree_view_selection_changed_cb (GtkWidget *widget,
 			stripped_string = g_strdup(string);
 			pango_parse_markup (string, -1, 0, NULL, &stripped_string, NULL, NULL);
 			g_free (string);
-			entry = glade_xml_get_widget (view_xml, "ng_entry");
+			entry = glade_xml_get_widget (view_xml, "paper_entry");
 			position = gtk_editable_get_position (GTK_EDITABLE(entry));
 			gtk_editable_insert_text (GTK_EDITABLE (entry), stripped_string, strlen(stripped_string), &position);
 			/* set position after currently inserted text */

@@ -295,12 +295,12 @@ on_user_function_button_clicked (GtkToggleButton       *button,
 void user_function_list_selection_changed_cb (GtkTreeSelection *selection, 
 					gpointer data);
 
-void on_ng_mode_activate (GtkMenuItem     *menuitem,
+void on_paper_mode_activate (GtkMenuItem     *menuitem,
 			gpointer         user_data);
 
-void on_ng_entry_activate (GtkWidget *activated_widget, 
+void on_paper_entry_activate (GtkWidget *activated_widget, 
 			gpointer user_data);
 			
-gboolean ng_tree_view_selection_changed_cb (GtkWidget *widget,
+gboolean paper_tree_view_selection_changed_cb (GtkWidget *widget,
                                             GdkEventButton *event,
                                             gpointer user_data);

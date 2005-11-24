@@ -1,3 +1,7 @@
+2005-11-24 Simon Floery <chimaira@users.sf.net>
+	* ng_view updates radio box based menus
+	* "ng mode" -> "paper mode"
+
 2005-11-21 Simon Floery <chimaira@users.sf.net>
 	* ng_view gets some basic number base and angle base functionality
 	* ng_view updates menus

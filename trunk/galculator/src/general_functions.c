@@ -352,9 +352,9 @@ void apply_preferences (s_preferences prefs)
 		menu_item = 
 			glade_xml_get_widget (main_window_xml, "scientific_mode");
 		break;
-	case NG_MODE:
+	case PAPER_MODE:
 		menu_item = 
-			glade_xml_get_widget (main_window_xml, "ng_mode");
+			glade_xml_get_widget (main_window_xml, "paper_mode");
 		break;
 	default:
 		error_message ("Unknown mode %i in \"apply_preferences\"", prefs.mode);
@@ -723,6 +723,8 @@ s_flex_parser_result compute_user_function (char *expression, char *variable, ch
 	constant = (s_constant *) realloc (constant, (nr_constants + 2) * sizeof(s_constant));
 	constant[nr_constants + 1].name = NULL;
 	
+	fprintf (stderr, "--> %s\n", variable);
+	
 	constant[nr_constants].name = variable;
 	constant[nr_constants].value = value;
 	constant[nr_constants].desc = NULL;
@@ -856,19 +858,19 @@ void change_option (int new_status, int opt_group)
 			old_status = current_status.number;
 			if (old_status == new_status) return;
 			current_status.number = new_status;
-			if (prefs.mode != NG_MODE) display_change_option (old_status, new_status, DISPLAY_OPT_NUMBER);
+			if (prefs.mode != PAPER_MODE) display_change_option (old_status, new_status, DISPLAY_OPT_NUMBER);
 			break;
 		case DISPLAY_OPT_ANGLE:
 			old_status = current_status.angle;
 			if (old_status == new_status) return;
 			current_status.angle = new_status;
-			if (prefs.mode != NG_MODE) display_change_option (old_status, new_status, DISPLAY_OPT_ANGLE);
+			if (prefs.mode != PAPER_MODE) display_change_option (old_status, new_status, DISPLAY_OPT_ANGLE);
 			break;
 		case DISPLAY_OPT_NOTATION:
 			old_status = current_status.notation;
 			if (old_status == new_status) return;
 			current_status.notation = new_status;
-			if (prefs.mode != NG_MODE) display_change_option (old_status, new_status, DISPLAY_OPT_NOTATION);
+			if (prefs.mode != PAPER_MODE) display_change_option (old_status, new_status, DISPLAY_OPT_NOTATION);
 			break;
 		default:
 			error_message (_("unknown display option in function \"change_option\""));

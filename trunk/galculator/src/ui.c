@@ -391,7 +391,7 @@ void ui_main_window_buttons_create (int mode)
 			"button_1", TRUE, TRUE);
 		set_scientific_object_data (button_box_xml);
 		break;
-	case NG_MODE:
+	case PAPER_MODE:
 		return;
 	default:
 		error_message ("Unknown mode in \"ui_main_window_buttons_create\"");
@@ -518,7 +518,7 @@ static void set_all_normal_buttons_property (GFunc func, gpointer data)
 			"table_func_buttons");
 		g_list_foreach (table->children, func, data);
 		break;
-	case NG_MODE:
+	case PAPER_MODE:
 		/* do nothing - no buttons */
 		break;
 	default:
@@ -1128,29 +1128,29 @@ void ui_classic_view_destroy()
 	if (classic_view_vbox) gtk_widget_destroy (classic_view_vbox);
 }
 
-void ui_ng_view_create()
+void ui_paper_view_create()
 {
-	GtkWidget		*ng_view_vbox, *box, *tree_view;
+	GtkWidget		*paper_view_vbox, *box, *tree_view;
 	GtkCellRenderer 	*renderer;
 	GtkTreeViewColumn 	*column;
-	GtkListStore		*ng_store;
+	GtkListStore		*paper_store;
 	GtkTreeSelection	*select;
 
 	/* at first, check if there is already a ng view */
 	if (view_xml) {
-		ng_view_vbox = glade_xml_get_widget (view_xml, "ng_view_vbox");
-		if (ng_view_vbox) return;
+		paper_view_vbox = glade_xml_get_widget (view_xml, "paper_view_vbox");
+		if (paper_view_vbox) return;
 	}
 	
 	/* if not, build one */
-	view_xml = glade_file_open (NG_VIEW_GLADE_FILE, "ng_view_vbox", TRUE);
+	view_xml = glade_file_open (PAPER_VIEW_GLADE_FILE, "paper_view_vbox", TRUE);
 	box = glade_xml_get_widget (main_window_xml, "window_vbox");
-	ui_pack_from_xml (box, 1, view_xml, "ng_view_vbox", "ng_treeview", TRUE, TRUE);
+	ui_pack_from_xml (box, 1, view_xml, "paper_view_vbox", "paper_treeview", TRUE, TRUE);
 	
 	/* markup / xalign / foreground */
-	ng_store = gtk_list_store_new (3, G_TYPE_STRING, G_TYPE_FLOAT, G_TYPE_STRING);
-	tree_view = glade_xml_get_widget (view_xml, "ng_treeview");
-	gtk_tree_view_set_model ((GtkTreeView *) tree_view, GTK_TREE_MODEL (ng_store));
+	paper_store = gtk_list_store_new (3, G_TYPE_STRING, G_TYPE_FLOAT, G_TYPE_STRING);
+	tree_view = glade_xml_get_widget (view_xml, "paper_treeview");
+	gtk_tree_view_set_model ((GtkTreeView *) tree_view, GTK_TREE_MODEL (paper_store));
 	
 	renderer = gtk_cell_renderer_text_new ();
 	column = gtk_tree_view_column_new_with_attributes ("Result Display", renderer, "markup", 0, "xalign", 1, "foreground", 2, NULL);
@@ -1159,16 +1159,16 @@ void ui_ng_view_create()
 	select = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
 	gtk_tree_selection_set_mode (select, GTK_SELECTION_SINGLE);
 	g_signal_connect (G_OBJECT (tree_view), "button-press-event",
-                  G_CALLBACK (ng_tree_view_selection_changed_cb),
+                  G_CALLBACK (paper_tree_view_selection_changed_cb),
                   NULL);
 
 }
 
-void ui_ng_view_destroy()
+void ui_paper_view_destroy()
 {
-	GtkWidget	*ng_view_vbox;
+	GtkWidget	*paper_view_vbox;
 	
 	if (!view_xml) return;
-	ng_view_vbox = glade_xml_get_widget (view_xml, "ng_view_vbox");
-	if (ng_view_vbox) gtk_widget_destroy (ng_view_vbox);
+	paper_view_vbox = glade_xml_get_widget (view_xml, "paper_view_vbox");
+	if (paper_view_vbox) gtk_widget_destroy (paper_view_vbox);
 }

@@ -41,7 +41,7 @@
 #define FONT_GLADE_FILE 		PACKAGE_GLADE_DIR "/font.glade"
 #define COLOR_GLADE_FILE 		PACKAGE_GLADE_DIR "/color.glade"
 #define CLASSIC_VIEW_GLADE_FILE		PACKAGE_GLADE_DIR "/classic_view.glade"
-#define NG_VIEW_GLADE_FILE		PACKAGE_GLADE_DIR "/ng_view.glade"
+#define PAPER_VIEW_GLADE_FILE		PACKAGE_GLADE_DIR "/paper_view.glade"
 #define DISPCTRL_RIGHT_GLADE_FILE	PACKAGE_GLADE_DIR "/dispctrl_right.glade"
 #define DISPCTRL_RIGHTV_GLADE_FILE	PACKAGE_GLADE_DIR "/dispctrl_right_vertical.glade"
 #define DISPCTRL_BOTTOM_GLADE_FILE	PACKAGE_GLADE_DIR "/dispctrl_bottom.glade"
@@ -102,7 +102,7 @@ enum {
 enum {
 	BASIC_MODE,
 	SCIENTIFIC_MODE,
-	NG_MODE,
+	PAPER_MODE,
 	NR_MODES
 };
 
