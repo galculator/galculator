@@ -57,7 +57,7 @@
 			  <accelerator key="q" modifiers="GDK_CONTROL_MASK" signal="activate"/>
 
 			  <child internal-child="image">
-			    <widget class="GtkImage" id="image259">
+			    <widget class="GtkImage" id="image271">
 			      <property name="visible">True</property>
 			      <property name="stock">gtk-quit</property>
 			      <property name="icon_size">1</property>
@@ -92,7 +92,7 @@
 			  <accelerator key="x" modifiers="GDK_CONTROL_MASK" signal="activate"/>
 
 			  <child internal-child="image">
-			    <widget class="GtkImage" id="image260">
+			    <widget class="GtkImage" id="image272">
 			      <property name="visible">True</property>
 			      <property name="stock">gtk-cut</property>
 			      <property name="icon_size">1</property>
@@ -114,7 +114,7 @@
 			  <accelerator key="c" modifiers="GDK_CONTROL_MASK" signal="activate"/>
 
 			  <child internal-child="image">
-			    <widget class="GtkImage" id="image261">
+			    <widget class="GtkImage" id="image273">
 			      <property name="visible">True</property>
 			      <property name="stock">gtk-copy</property>
 			      <property name="icon_size">1</property>
@@ -136,7 +136,7 @@
 			  <accelerator key="v" modifiers="GDK_CONTROL_MASK" signal="activate"/>
 
 			  <child internal-child="image">
-			    <widget class="GtkImage" id="image262">
+			    <widget class="GtkImage" id="image274">
 			      <property name="visible">True</property>
 			      <property name="stock">gtk-paste</property>
 			      <property name="icon_size">1</property>
@@ -164,7 +164,7 @@
 			  <accelerator key="P" modifiers="GDK_CONTROL_MASK" signal="activate"/>
 
 			  <child internal-child="image">
-			    <widget class="GtkImage" id="image263">
+			    <widget class="GtkImage" id="image275">
 			      <property name="visible">True</property>
 			      <property name="stock">gtk-preferences</property>
 			      <property name="icon_size">1</property>
@@ -195,7 +195,7 @@
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">_Basic Mode</property>
 			  <property name="use_underline">True</property>
-			  <property name="active">True</property>
+			  <property name="active">False</property>
 			  <signal name="activate" handler="on_basic_mode_activate" last_modification_time="Sat, 05 Jul 2003 11:32:05 GMT"/>
 			</widget>
 		      </child>
@@ -212,13 +212,13 @@
 		      </child>
 
 		      <child>
-			<widget class="GtkRadioMenuItem" id="ng_mode">
+			<widget class="GtkRadioMenuItem" id="paper_mode">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">_NG Mode</property>
+			  <property name="label" translatable="yes">_Paper Mode</property>
 			  <property name="use_underline">True</property>
 			  <property name="active">False</property>
 			  <property name="group">basic_mode</property>
-			  <signal name="activate" handler="on_ng_mode_activate" last_modification_time="Thu, 17 Nov 2005 09:23:00 GMT"/>
+			  <signal name="activate" handler="on_paper_mode_activate" last_modification_time="Thu, 17 Nov 2005 09:23:00 GMT"/>
 			</widget>
 		      </child>
 
@@ -360,7 +360,7 @@
 				  <property name="visible">True</property>
 				  <property name="label" translatable="yes">_Binary</property>
 				  <property name="use_underline">True</property>
-				  <property name="active">True</property>
+				  <property name="active">False</property>
 				  <property name="group">dec</property>
 				  <signal name="activate" handler="on_bin_activate" last_modification_time="Fri, 25 Oct 2002 20:58:56 GMT"/>
 				  <accelerator key="B" modifiers="GDK_CONTROL_MASK" signal="activate"/>
@@ -408,7 +408,7 @@
 				  <property name="visible">True</property>
 				  <property name="label" translatable="yes">_Gradians</property>
 				  <property name="use_underline">True</property>
-				  <property name="active">True</property>
+				  <property name="active">False</property>
 				  <property name="group">deg</property>
 				  <signal name="activate" handler="on_grad_activate" last_modification_time="Fri, 25 Oct 2002 20:58:56 GMT"/>
 				  <accelerator key="G" modifiers="GDK_CONTROL_MASK" signal="activate"/>
@@ -456,7 +456,7 @@
 				  <property name="visible">True</property>
 				  <property name="label" translatable="yes">_Formula Entry</property>
 				  <property name="use_underline">True</property>
-				  <property name="active">True</property>
+				  <property name="active">False</property>
 				  <property name="group">alg</property>
 				  <signal name="activate" handler="on_form_activate" last_modification_time="Thu, 29 Jan 2004 09:13:38 GMT"/>
 				  <accelerator key="F" modifiers="GDK_CONTROL_MASK" signal="activate"/>

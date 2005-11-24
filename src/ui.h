@@ -88,5 +88,5 @@ void set_widget_visibility (GladeXML *xml, char *widget_name, gboolean visible);
 
 void ui_classic_view_create();
 void ui_classic_view_destroy();
-void ui_ng_view_create();
-void ui_ng_view_destroy();
+void ui_paper_view_create();
+void ui_paper_view_destroy();
