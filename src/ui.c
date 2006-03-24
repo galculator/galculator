@@ -1,7 +1,7 @@
 /*
  *  ui.c - general user interface code.
  *	part of galculator
- *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2006 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
-
+ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -315,7 +315,8 @@ void ui_main_window_set_dispctrl (int location)
 	if (dispctrl_xml) {
 		table_dispctrl = glade_xml_get_widget (dispctrl_xml, "table_dispctrl");
 		if (table_dispctrl) gtk_widget_destroy (table_dispctrl); 
-		g_free (dispctrl_xml);
+		g_object_unref (G_OBJECT(dispctrl_xml));
+		dispctrl_xml = NULL;
 	}	
 	/* now create the new one at location */
 
@@ -370,6 +371,18 @@ void ui_main_window_buttons_destroy ()
  * paying respect to current mode. dispctrl buttons need to be done extra.
  */
 
+gboolean findme (GtkAccelKey *key, GClosure *closure, gpointer data)
+{
+	GClosure	*c;
+	
+	c = (GClosure*) data;
+	if (closure == c) {
+		printf ("juchu\n");
+		printf ("ACC: %s\n", gtk_accelerator_get_label(key->accel_key, key->accel_mods));
+	}
+	return FALSE;
+}
+
 void ui_main_window_buttons_create (int mode)
 {
 	GtkWidget	*box, *button;
@@ -378,6 +391,7 @@ void ui_main_window_buttons_create (int mode)
 	
 	switch (mode) {
 	case BASIC_MODE:
+		if (button_box_xml) g_object_unref (G_OBJECT(button_box_xml));
 		button_box_xml = glade_file_open (BASIC_GLADE_FILE, "button_box", TRUE);
 		box = glade_xml_get_widget (view_xml, "classic_view_vbox");
 		ui_pack_from_xml (box, 2, button_box_xml, "button_box", 
@@ -385,6 +399,7 @@ void ui_main_window_buttons_create (int mode)
 		set_basic_object_data (button_box_xml);
 		break;
 	case SCIENTIFIC_MODE:
+		if (button_box_xml) g_object_unref (G_OBJECT(button_box_xml));
 		button_box_xml = glade_file_open (SCIENTIFIC_GLADE_FILE, "button_box", TRUE);
 		box = glade_xml_get_widget (view_xml, "classic_view_vbox");
 		ui_pack_from_xml (box, 2, button_box_xml, "button_box", 
@@ -421,6 +436,17 @@ is not supported: >%s<\nYou might face problems when using %s! %s\n)"),
 	/* apply button specific prefs */
 	set_all_normal_buttons_size (prefs.button_width, prefs.button_height);
 	set_all_normal_buttons_font (prefs.custom_button_font ? prefs.button_font : "");
+	
+	GList 		*l;
+	GtkAccelGroup	*ag;
+	GtkTooltipsData *td;
+	
+	button = glade_xml_get_widget (button_box_xml, "button_1");
+	l = gtk_widget_list_accel_closures (button);
+	ag = gtk_accel_group_from_accel_closure(l->data);
+	td = gtk_tooltips_data_get(button);
+	printf ("%s\n", td->tip_text);
+	gtk_accel_group_find(ag, (GtkAccelGroupFindFunc)findme, l->data);
 }
 
 /* set_table_child_callback. Function argument for set_all_*_buttons_property.

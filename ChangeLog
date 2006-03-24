@@ -1,3 +1,11 @@
+
+2006-03-22 Simon Floery <chimaira@users.sf.net>
+	* src/ui.c: use g_object_unref instead of g_free to unref glade_xml
+		(fixes Debian BTS #358064 and sf.net 1442849)
+	* src/*: sed -i 's/2004/2006/g' *
+	* released version 1.2.5.1 based on status of code at 1.2.5 with
+		above two changes.
+
 2005-11-24 Simon Floery <chimaira@users.sf.net>
 	* ng_view updates radio box based menus
 	* "ng mode" -> "paper mode"
