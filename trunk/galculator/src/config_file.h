@@ -38,7 +38,7 @@
 #define	DEFAULT_RESULT_COLOR 		"black"
 #define DEFAULT_STACK_FONT		"Sans Bold 11"
 #define DEFAULT_STACK_COLOR		"black"
-#define DEFAULT_MOD_FONT		"Sans Bold 9"
+#define DEFAULT_MOD_FONT		"Sans Bold 8"
 #define DEFAULT_ACT_MOD_COLOR		"black"
 #define DEFAULT_INACT_MOD_COLOR		"grey"
 #define	DEFAULT_VIS_NUMBER		TRUE

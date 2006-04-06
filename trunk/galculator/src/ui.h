@@ -50,6 +50,8 @@ void ui_main_window_buttons_destroy ();
 void ui_main_window_buttons_create (int mode);
 void set_all_buttons_callback (gpointer *data);
 void set_all_buttons_size (int width, int height);
+void set_all_normal_buttons_tip ();
+void set_all_dispctrl_buttons_tip ();
 void set_all_normal_buttons_size (int width, int height);
 void set_all_dispctrl_buttons_size (int width, int height);
 void set_all_buttons_font (char *font_string);
@@ -61,8 +63,6 @@ void button_activation (GtkToggleButton *b);
 gboolean button_deactivation (gpointer data);
 GtkWidget *ui_pref_dialog_create ();
 GtkWidget *ui_about_dialog_create();
-GtkWidget *ui_font_dialog_create (char *title, GtkButton *button);
-GtkWidget *ui_color_dialog_create (char *title, GtkButton *button);
 GtkWidget *ui_user_functions_menu_create (s_user_function *user_function, 
 				GCallback user_function_handler);
 GtkWidget *ui_constants_menu_create (s_constant *constant, 

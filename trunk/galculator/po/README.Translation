@@ -13,3 +13,6 @@ make update-po
 	for merging etc. look out for FUZZY entries etc
 
 search at google for "locale id" to look up language codes
+
+no empty newline in POTFILES.in!!!!!
+

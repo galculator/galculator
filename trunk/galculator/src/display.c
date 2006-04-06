@@ -417,6 +417,7 @@ void display_update_modules ()
 	GtkTextIter	start, end;
 	gboolean	first_module = TRUE;
 	
+	if (prefs.mode == PAPER_MODE) return;
 	
 	display_get_line_end_iter (buffer, display_result_line, &start);
 	display_get_line_end_iter (buffer, display_result_line+1, &end);
@@ -575,8 +576,9 @@ void display_set_bkg_color (char *color_string)
 {
 	GdkColor	color;
 	
+	if (prefs.mode == PAPER_MODE) return;
 	gdk_color_parse (color_string, &color);
-	gtk_widget_modify_base ((GtkWidget *)view, GTK_STATE_NORMAL, &color);
+	if (view) gtk_widget_modify_base ((GtkWidget *)view, GTK_STATE_NORMAL, &color);
 }
 
 /*
@@ -590,6 +592,7 @@ void display_update_tags ()
 	GtkTextTagTable		*tag_table;
 	GtkTextTag 		*tag;
 	
+	if (prefs.mode == PAPER_MODE) return;
 	/* remove all tags from tag_table, so we can define the new tags */
 	tag_table = gtk_text_buffer_get_tag_table (buffer);
 	tag = gtk_text_tag_table_lookup (tag_table, "result");
@@ -932,6 +935,7 @@ void display_result_getset ()
 	char	*result;
 	char	**stack;
 	
+	if (prefs.mode == PAPER_MODE) return;
 	result = display_result_get();
 	stack = display_stack_get_yzt();
 	display_result_set(result);

@@ -43,7 +43,7 @@ char *add_leading_zeros (char *string, int multiple);
 
 gboolean da_expose_event_cb(GtkWidget *widget, GdkEventExpose *event, gpointer data);
 
-void set_button_label (GladeXML *xml, char *button_name, void *new_label);
+void set_button_font (GladeXML *xml, char *button_name, void *new_label);
 void set_checkbutton (GladeXML *xml, char *checkbutton_name, void *checked);
 void set_spinbutton (GladeXML *xml, char *spinbutton_name, void *value);
 void set_optmenu (GladeXML *xml, char *optmenu_name, void *index);

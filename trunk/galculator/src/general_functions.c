@@ -216,14 +216,14 @@ char *add_leading_zeros (char *string, int multiple)
  * preference dialog sets. these are handler for the big configuration struct.
  */
 
-void set_button_label (GladeXML *xml, char *button_name, void *new_label)
+void set_button_font (GladeXML *xml, char *button_name, void *new_label)
 {
 	GtkButton	*button;
 	char 		**string_var;
 	
 	string_var = new_label;	
 	button = (GtkButton *) glade_xml_get_widget (xml, button_name);
-	if (button) gtk_button_set_label (button, *string_var);	
+	if (button) gtk_font_button_set_font_name (GTK_FONT_BUTTON(button), *string_var);	
 }
 
 void set_checkbutton (GladeXML *xml, char *checkbutton_name, void *is_active)
@@ -262,38 +262,20 @@ void set_optmenu (GladeXML *xml, char *optmenu_name, void *index)
 }
 
 /*
- * The callback fills the given widget with a rectangle in its foreground color.
- */
-
-gboolean da_expose_event_cb(GtkWidget *widget, GdkEventExpose *event, gpointer data)
-{
-	gdk_draw_rectangle (widget->window, widget->style->fg_gc[0], TRUE, 0, 0,\
-		widget->parent->allocation.width, widget->parent->allocation.height);
-	return TRUE;
-}
-
-/*
- * assembling my own colored button. as gnomecolorpicker is in libgnomeui, i do
- * it myself. remove the current label widget in button and put there a 
- * gtkdrawingarea. the drawing is done in da_expose_event_cb. The color is
- * set via widget->style->"fgs"
+ *
  */
 
 void set_button_color (GladeXML *xml, char *button_name, void *color_string)
 {
-	GtkWidget	*da;
+	GtkWidget	*button;
 	char 		**string_var;
 	GdkColor	color;
 
 	/* dereference */
 	string_var = color_string;
 	gdk_color_parse (*string_var, &color);
-	
-	da = glade_xml_get_widget (xml, button_name);
-
-	gtk_widget_modify_fg (da, 0, &color);
-	
-	g_signal_connect (G_OBJECT (da), "expose_event", G_CALLBACK (da_expose_event_cb), NULL);
+	button = glade_xml_get_widget (xml, button_name);
+	if (button) gtk_color_button_set_color (GTK_COLOR_BUTTON(button), &color);
 }
 
 void set_stacksize (GladeXML *xml, char *name, void *stack_size)

@@ -352,6 +352,7 @@ void ui_main_window_set_dispctrl (int location)
 	signal_cb.detailed_signal = g_strdup ("button_press_event");
 	signal_cb.callback = (GCallback) on_button_press_event;
 	set_all_dispctrl_buttons_property (set_table_child_callback, (gpointer) &signal_cb);
+	set_all_dispctrl_buttons_tip();
 }
 
 /* ui_main_window_buttons_destroy. removes the scientific resp basic mode 
@@ -370,18 +371,6 @@ void ui_main_window_buttons_destroy ()
 /* ui_main_window_buttons_create. fills main_window with calculator's buttons,
  * paying respect to current mode. dispctrl buttons need to be done extra.
  */
-
-gboolean findme (GtkAccelKey *key, GClosure *closure, gpointer data)
-{
-	GClosure	*c;
-	
-	c = (GClosure*) data;
-	if (closure == c) {
-		printf ("juchu\n");
-		printf ("ACC: %s\n", gtk_accelerator_get_label(key->accel_key, key->accel_mods));
-	}
-	return FALSE;
-}
 
 void ui_main_window_buttons_create (int mode)
 {
@@ -436,17 +425,7 @@ is not supported: >%s<\nYou might face problems when using %s! %s\n)"),
 	/* apply button specific prefs */
 	set_all_normal_buttons_size (prefs.button_width, prefs.button_height);
 	set_all_normal_buttons_font (prefs.custom_button_font ? prefs.button_font : "");
-	
-	GList 		*l;
-	GtkAccelGroup	*ag;
-	GtkTooltipsData *td;
-	
-	button = glade_xml_get_widget (button_box_xml, "button_1");
-	l = gtk_widget_list_accel_closures (button);
-	ag = gtk_accel_group_from_accel_closure(l->data);
-	td = gtk_tooltips_data_get(button);
-	printf ("%s\n", td->tip_text);
-	gtk_accel_group_find(ag, (GtkAccelGroupFindFunc)findme, l->data);
+	set_all_normal_buttons_tip ();
 }
 
 /* set_table_child_callback. Function argument for set_all_*_buttons_property.
@@ -501,6 +480,54 @@ static void set_table_child_font (gpointer data, gpointer user_data)
 	/* else do nothing */
 }
 
+gboolean set_table_child_tip_accel_finder (GtkAccelKey *key, GClosure *closure, gpointer data)
+{
+	gpointer	*d;
+	GClosure	*c;
+	GtkTooltipsData *tip_data;
+	gchar		*tt, *al;
+	
+	d = (gpointer *) data;
+	c = (GClosure *) d[0];
+	tip_data = (GtkTooltipsData *) d[1];
+	if (closure == c) {
+		tt = tip_data->tip_text;
+		al = gtk_accelerator_get_label(key->accel_key, key->accel_mods);
+		tip_data->tip_text = g_strdup_printf("%s    %s", tt, al);
+		g_free(tt);
+		g_free(al);
+		return TRUE;
+	}
+	return FALSE;
+}
+
+
+static void set_table_child_tip_accel (gpointer data, gpointer user_data)
+{
+	GtkTableChild	*tc;
+	GtkWidget	*button;
+	GList 		*closure_list;
+	GtkAccelGroup	*accel_group;
+	GtkTooltipsData *tip_data;
+	gpointer	d[2];
+	
+	tc = data;
+	button = tc->widget;
+	/* get all accelerators (== closures) connected to this button */
+	closure_list = gtk_widget_list_accel_closures (button);
+	if (!closure_list) return;
+	if (!closure_list->data) return;
+	/* we head for first closure */
+	accel_group = gtk_accel_group_from_accel_closure(closure_list->data);
+	if (!accel_group) return;
+	tip_data = gtk_tooltips_data_get(button);
+	if (!tip_data) return;
+	d[0] = (gpointer) closure_list->data;
+	d[1] = (gpointer) tip_data;
+	gtk_accel_group_find(accel_group, (GtkAccelGroupFindFunc)set_table_child_tip_accel_finder, d);
+}
+
+
 /* set_all_dispctrl_buttons_property. calls func with argument data for 
  * every button of the display control section.
  */
@@ -509,9 +536,11 @@ static void set_all_dispctrl_buttons_property (GFunc func, gpointer data)
 {
 	GtkTable	*table;
 
+	if (!dispctrl_xml) return;
 	/* at first the display control table. always there; somehow */
 	table = (GtkTable *) glade_xml_get_widget (dispctrl_xml, 
 		"table_dispctrl");
+	if (!table) return;
 	/* dispctrl_right has an extra table for cosmetic reasons. */
 	if (GTK_IS_TABLE (((GtkTableChild *)table->children->data)->widget))
 		table = (GtkTable *) ((GtkTableChild *)table->children->data)->widget;
@@ -571,6 +600,16 @@ void set_all_buttons_size (int width, int height)
 	size.width = width;
 	size.height = height;
 	set_all_buttons_property (set_table_child_size, (gpointer) &size);
+}
+
+void set_all_normal_buttons_tip ()
+{
+	set_all_normal_buttons_property (set_table_child_tip_accel, NULL);
+}
+
+void set_all_dispctrl_buttons_tip ()
+{
+	set_all_dispctrl_buttons_property (set_table_child_tip_accel, NULL);
 }
 
 /* set_all_nomral_buttons_size. gateway for set_all_normal_buttons_property.
@@ -696,52 +735,6 @@ void set_widget_visibility (GladeXML *xml, char *widget_name, gboolean visible)
 	}
 	if (visible) gtk_widget_show_all (widget);
 	else gtk_widget_hide_all (widget);
-}
-
-GtkWidget *ui_font_dialog_create (char *title, GtkButton *button)
-{
-	GladeXML	*font_xml;
-	GtkWidget	*font_dialog;
-	
-	font_xml = glade_file_open (FONT_GLADE_FILE, "font_dialog", FALSE);
-	glade_xml_signal_autoconnect(font_xml);
-	font_dialog = glade_xml_get_widget (font_xml, "font_dialog");
-	
-	gtk_window_set_title ((GtkWindow *) font_dialog, title);
-	gtk_font_selection_dialog_set_font_name ((GtkFontSelectionDialog *) font_dialog, \
-		gtk_button_get_label (button));
-	gtk_widget_hide (((GtkFontSelectionDialog *)font_dialog)->apply_button);
-	gtk_widget_show (font_dialog);
-
-	return font_dialog;
-}
-
-GtkWidget *ui_color_dialog_create (char *title, GtkButton *button)
-{
-	GladeXML	*color_xml;
-	GtkWidget	*color_dialog, *da;
-	GdkColor	color;
-	GtkRcStyle	*style;
-	GtkBox		*box;
-	GtkBin		*vp;
-	
-	box = (GtkBox *)gtk_bin_get_child ((GtkBin *) button);
-	vp = (GtkBin *) (((GtkBoxChild *)g_list_nth_data (box->children, 1))->widget);
-	da = gtk_bin_get_child(vp);
-	
-	style = gtk_widget_get_modifier_style (da);
-	color = style->fg[GTK_STATE_NORMAL];
-	
-	color_xml = glade_file_open (COLOR_GLADE_FILE, "color_dialog", FALSE);
-	glade_xml_signal_autoconnect(color_xml);
-	color_dialog = glade_xml_get_widget (color_xml, "color_dialog");
-	
-	gtk_window_set_title ((GtkWindow *) color_dialog, title);
-	gtk_color_selection_set_current_color ((GtkColorSelection *)((GtkColorSelectionDialog *)color_dialog)->colorsel, \
-		&color);
-	gtk_widget_hide (((GtkColorSelectionDialog *)color_dialog)->help_button);
-	gtk_widget_show (color_dialog);
-	return color_dialog;
 }
 
 /* menu code - e.g. used for the constant popup menu */
@@ -896,7 +889,6 @@ GtkWidget *ui_pref_dialog_create ()
 	GtkSizeGroup		*sgroup;
 	s_prefs_entry		*prefs_list;
 	
-	
 	prefs_xml = glade_file_open (PREFS_GLADE_FILE, "prefs_dialog", FALSE);
 	glade_xml_signal_autoconnect(prefs_xml);
 	
@@ -923,7 +915,7 @@ GtkWidget *ui_pref_dialog_create ()
 	
 	w = glade_xml_get_widget (prefs_xml, "prefs_bin_length");
 	gtk_widget_set_sensitive (w, prefs.bin_fixed);
-
+	
 	/* make user defined constants list. */
 	
 	prefs_constant_store = gtk_list_store_new (NR_CONST_COLUMNS, 
@@ -1018,7 +1010,7 @@ GtkWidget *ui_pref_dialog_create ()
 		glade_xml_get_widget (prefs_xml, "prefs_func_delete_button"));
 	gtk_size_group_add_widget (sgroup,
 		glade_xml_get_widget (prefs_xml, "prefs_func_clear_button"));
-
+	
 	gtk_widget_show (prefs_dialog);
 	return prefs_dialog;
 }

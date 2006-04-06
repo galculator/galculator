@@ -1,6 +1,4 @@
 ## Process this file with automake to produce Makefile.in
-#	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
-#	\
 
 INCLUDES = \
 	-DPACKAGE_LOCALE_DIR=\""$(datadir)/locale"\" \

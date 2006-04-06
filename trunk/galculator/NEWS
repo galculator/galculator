@@ -1,3 +1,10 @@
+galculator 1.3.0
+	* paper mode
+	* tooltips have now accelerators (depends GTK >= 2.6.0)
+
+galculator 1.2.5
+	* quick bugfix
+
 galculator 1.2.5
 	* bugfixes to formula mode entry, GUI
 	* updated build process (libglade problems, dependencies)

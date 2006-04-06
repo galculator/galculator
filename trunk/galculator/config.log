@@ -38,147 +38,122 @@ PATH: /usr/games
 ## Core tests. ##
 ## ----------- ##
 
-configure:1553: checking for a BSD-compatible install
-configure:1608: result: /usr/bin/install -c
-configure:1619: checking whether build environment is sane
-configure:1662: result: yes
-configure:1677: checking whether make sets $(MAKE)
-configure:1697: result: yes
-configure:1729: checking for working aclocal-1.4
-configure:1736: result: found
-configure:1744: checking for working autoconf
-configure:1751: result: found
-configure:1759: checking for working automake-1.4
-configure:1766: result: found
-configure:1774: checking for working autoheader
-configure:1781: result: found
-configure:1789: checking for working makeinfo
-configure:1796: result: found
-configure:1805: checking whether to enable maintainer-specific portions of Makefiles
-configure:1814: result: no
-configure:1881: checking for gcc
-configure:1897: found /usr/bin/gcc
-configure:1907: result: gcc
-configure:2151: checking for C compiler version
-configure:2154: gcc --version </dev/null >&5
+configure:1555: checking for a BSD-compatible install
+configure:1610: result: /usr/bin/install -c
+configure:1621: checking whether build environment is sane
+configure:1664: result: yes
+configure:1729: checking for gawk
+configure:1758: result: no
+configure:1729: checking for mawk
+configure:1745: found /usr/bin/mawk
+configure:1755: result: mawk
+configure:1765: checking whether make sets $(MAKE)
+configure:1785: result: yes
+configure:1953: checking whether to enable maintainer-specific portions of Makefiles
+configure:1962: result: no
+configure:2027: checking for gcc
+configure:2043: found /usr/bin/gcc
+configure:2053: result: gcc
+configure:2297: checking for C compiler version
+configure:2300: gcc --version </dev/null >&5
 gcc (GCC) 4.0.3 (Debian 4.0.3-1)
 Copyright (C) 2006 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:2157: $? = 0
-configure:2159: gcc -v </dev/null >&5
+configure:2303: $? = 0
+configure:2305: gcc -v </dev/null >&5
 Using built-in specs.
 Target: i486-linux-gnu
 Configured with: ../src/configure -v --enable-languages=c,c++,java,f95,objc,ada,treelang --prefix=/usr --enable-shared --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --enable-nls --program-suffix=-4.0 --enable-__cxa_atexit --enable-clocale=gnu --enable-libstdcxx-debug --enable-java-awt=gtk-default --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.4.2-gcj-4.0-1.4.2.0/jre --enable-mpfr --disable-werror --with-tune=i686 --enable-checking=release i486-linux-gnu
 Thread model: posix
 gcc version 4.0.3 (Debian 4.0.3-1)
-configure:2162: $? = 0
-configure:2164: gcc -V </dev/null >&5
+configure:2308: $? = 0
+configure:2310: gcc -V </dev/null >&5
 gcc: '-V' option must have argument
-configure:2167: $? = 1
-configure:2190: checking for C compiler default output file name
-configure:2193: gcc    conftest.c  >&5
-configure:2196: $? = 0
-configure:2242: result: a.out
-configure:2247: checking whether the C compiler works
-configure:2253: ./a.out
-configure:2256: $? = 0
-configure:2273: result: yes
-configure:2280: checking whether we are cross compiling
-configure:2282: result: no
-configure:2285: checking for suffix of executables
-configure:2287: gcc -o conftest    conftest.c  >&5
-configure:2290: $? = 0
-configure:2315: result: 
-configure:2321: checking for suffix of object files
-configure:2342: gcc -c   conftest.c >&5
-configure:2345: $? = 0
-configure:2367: result: o
-configure:2371: checking whether we are using the GNU C compiler
-configure:2395: gcc -c   conftest.c >&5
-configure:2401: $? = 0
-configure:2404: test -z 			 || test ! -s conftest.err
-configure:2407: $? = 0
-configure:2410: test -s conftest.o
-configure:2413: $? = 0
-configure:2426: result: yes
-configure:2432: checking whether gcc accepts -g
-configure:2453: gcc -c -g  conftest.c >&5
-configure:2459: $? = 0
-configure:2462: test -z 			 || test ! -s conftest.err
-configure:2465: $? = 0
-configure:2468: test -s conftest.o
-configure:2471: $? = 0
-configure:2482: result: yes
-configure:2499: checking for gcc option to accept ANSI C
-configure:2569: gcc  -c -g -O2  conftest.c >&5
-configure:2575: $? = 0
-configure:2578: test -z 			 || test ! -s conftest.err
-configure:2581: $? = 0
-configure:2584: test -s conftest.o
-configure:2587: $? = 0
-configure:2605: result: none needed
-configure:2623: gcc -c -g -O2  conftest.c >&5
+configure:2313: $? = 1
+configure:2336: checking for C compiler default output file name
+configure:2339: gcc    conftest.c  >&5
+configure:2342: $? = 0
+configure:2388: result: a.out
+configure:2393: checking whether the C compiler works
+configure:2399: ./a.out
+configure:2402: $? = 0
+configure:2419: result: yes
+configure:2426: checking whether we are cross compiling
+configure:2428: result: no
+configure:2431: checking for suffix of executables
+configure:2433: gcc -o conftest    conftest.c  >&5
+configure:2436: $? = 0
+configure:2461: result: 
+configure:2467: checking for suffix of object files
+configure:2488: gcc -c   conftest.c >&5
+configure:2491: $? = 0
+configure:2513: result: o
+configure:2517: checking whether we are using the GNU C compiler
+configure:2541: gcc -c   conftest.c >&5
+configure:2547: $? = 0
+configure:2550: test -z 			 || test ! -s conftest.err
+configure:2553: $? = 0
+configure:2556: test -s conftest.o
+configure:2559: $? = 0
+configure:2572: result: yes
+configure:2578: checking whether gcc accepts -g
+configure:2599: gcc -c -g  conftest.c >&5
+configure:2605: $? = 0
+configure:2608: test -z 			 || test ! -s conftest.err
+configure:2611: $? = 0
+configure:2614: test -s conftest.o
+configure:2617: $? = 0
+configure:2628: result: yes
+configure:2645: checking for gcc option to accept ANSI C
+configure:2715: gcc  -c -g -O2  conftest.c >&5
+configure:2721: $? = 0
+configure:2724: test -z 			 || test ! -s conftest.err
+configure:2727: $? = 0
+configure:2730: test -s conftest.o
+configure:2733: $? = 0
+configure:2751: result: none needed
+configure:2769: gcc -c -g -O2  conftest.c >&5
 conftest.c:2: error: syntax error before 'me'
-configure:2629: $? = 1
+configure:2775: $? = 1
 configure: failed program was:
 | #ifndef __cplusplus
 |   choke me
 | #endif
-configure:2834: checking for perl
-configure:2852: found /usr/bin/perl
-configure:2864: result: /usr/bin/perl
-configure:2896: checking for iconv
-configure:2914: found /usr/bin/iconv
-configure:2927: result: /usr/bin/iconv
-configure:2936: checking for msgfmt
-configure:2954: found /usr/bin/msgfmt
-configure:2967: result: /usr/bin/msgfmt
-configure:2976: checking for msgmerge
-configure:2994: found /usr/bin/msgmerge
-configure:3007: result: /usr/bin/msgmerge
-configure:3016: checking for xgettext
-configure:3034: found /usr/bin/xgettext
-configure:3047: result: /usr/bin/xgettext
-configure:3064: checking for strerror in -lcposix
-configure:3094: gcc -o conftest -g -O2   conftest.c -lcposix   >&5
-/usr/bin/ld: cannot find -lcposix
-collect2: ld returned 1 exit status
-configure:3100: $? = 1
-configure: failed program was:
-| /* confdefs.h.  */
-| 
-| #define PACKAGE_NAME ""
-| #define PACKAGE_TARNAME ""
-| #define PACKAGE_VERSION ""
-| #define PACKAGE_STRING ""
-| #define PACKAGE_BUGREPORT ""
-| #define PACKAGE "galculator"
-| #define VERSION "1.3.0CVS"
-| /* end confdefs.h.  */
-| 
-| /* Override any gcc2 internal prototype to avoid an error.  */
-| #ifdef __cplusplus
-| extern "C"
-| #endif
-| /* We use char because int might match the return type of a gcc2
-|    builtin and then its argument prototype would still apply.  */
-| char strerror ();
-| int
-| main ()
-| {
-| strerror ();
-|   ;
-|   return 0;
-| }
-configure:3125: result: no
-configure:3139: checking how to run the C preprocessor
-configure:3174: gcc -E  conftest.c
-configure:3180: $? = 0
-configure:3212: gcc -E  conftest.c
+configure:2916: checking for style of include used by make
+configure:2944: result: GNU
+configure:2972: checking dependency style of gcc
+configure:3062: result: gcc3
+configure:3154: checking for perl
+configure:3172: found /usr/bin/perl
+configure:3184: result: /usr/bin/perl
+configure:3216: checking for iconv
+configure:3234: found /usr/bin/iconv
+configure:3247: result: /usr/bin/iconv
+configure:3256: checking for msgfmt
+configure:3274: found /usr/bin/msgfmt
+configure:3287: result: /usr/bin/msgfmt
+configure:3296: checking for msgmerge
+configure:3314: found /usr/bin/msgmerge
+configure:3327: result: /usr/bin/msgmerge
+configure:3336: checking for xgettext
+configure:3354: found /usr/bin/xgettext
+configure:3367: result: /usr/bin/xgettext
+configure:3383: checking for library containing strerror
+configure:3413: gcc -o conftest -g -O2   conftest.c  >&5
+configure:3419: $? = 0
+configure:3422: test -z 			 || test ! -s conftest.err
+configure:3425: $? = 0
+configure:3428: test -s conftest
+configure:3431: $? = 0
+configure:3500: result: none required
+configure:3513: checking how to run the C preprocessor
+configure:3548: gcc -E  conftest.c
+configure:3554: $? = 0
+configure:3586: gcc -E  conftest.c
 conftest.c:11:28: error: ac_nonexistent.h: No such file or directory
-configure:3218: $? = 1
+configure:3592: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */
 | 
@@ -191,12 +166,12 @@ configure: failed program was:
 | #define VERSION "1.3.0CVS"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:3257: result: gcc -E
-configure:3281: gcc -E  conftest.c
-configure:3287: $? = 0
-configure:3319: gcc -E  conftest.c
+configure:3631: result: gcc -E
+configure:3655: gcc -E  conftest.c
+configure:3661: $? = 0
+configure:3693: gcc -E  conftest.c
 conftest.c:11:28: error: ac_nonexistent.h: No such file or directory
-configure:3325: $? = 1
+configure:3699: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */
 | 
@@ -209,209 +184,207 @@ configure: failed program was:
 | #define VERSION "1.3.0CVS"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:3369: checking for egrep
-configure:3379: result: grep -E
-configure:3384: checking for ANSI C header files
-configure:3409: gcc -c -g -O2  conftest.c >&5
-configure:3415: $? = 0
-configure:3418: test -z 			 || test ! -s conftest.err
-configure:3421: $? = 0
-configure:3424: test -s conftest.o
-configure:3427: $? = 0
-configure:3516: gcc -o conftest -g -O2   conftest.c  >&5
+configure:3743: checking for egrep
+configure:3753: result: grep -E
+configure:3758: checking for ANSI C header files
+configure:3783: gcc -c -g -O2  conftest.c >&5
+configure:3789: $? = 0
+configure:3792: test -z 			 || test ! -s conftest.err
+configure:3795: $? = 0
+configure:3798: test -s conftest.o
+configure:3801: $? = 0
+configure:3890: gcc -o conftest -g -O2   conftest.c  >&5
 conftest.c: In function 'main':
 conftest.c:28: warning: incompatible implicit declaration of built-in function 'exit'
-configure:3519: $? = 0
-configure:3521: ./conftest
-configure:3524: $? = 0
-configure:3539: result: yes
-configure:3599: checking for pkg-config
-configure:3617: found /usr/bin/pkg-config
-configure:3629: result: /usr/bin/pkg-config
-configure:3644: checking pkg-config is at least version 0.9.0
-configure:3647: result: yes
-configure:3658: checking for PACKAGE
-configure:3666: $PKG_CONFIG --exists --print-errors "$pkg_modules"
-configure:3669: $? = 0
-configure:3684: $PKG_CONFIG --exists --print-errors "$pkg_modules"
-configure:3687: $? = 0
-configure:3763: result: yes
-configure:3783: checking for flex
-configure:3799: found /usr/bin/flex
-configure:3809: result: flex
-configure:3824: checking for flex
-configure:3850: result: flex
-configure:3863: checking for yywrap in -lfl
-configure:3893: gcc -o conftest -g -O2   conftest.c -lfl   >&5
-configure:3899: $? = 0
-configure:3902: test -z 			 || test ! -s conftest.err
-configure:3905: $? = 0
-configure:3908: test -s conftest
-configure:3911: $? = 0
-configure:3924: result: yes
-configure:4001: checking lex output file root
-configure:4012: flex conftest.l
-configure:4015: $? = 0
-configure:4027: result: lex.yy
-configure:4032: checking whether yytext is a pointer
-configure:4048: gcc -o conftest -g -O2   conftest.c  -lfl >&5
-configure:4054: $? = 0
-configure:4057: test -z 			 || test ! -s conftest.err
-configure:4060: $? = 0
-configure:4063: test -s conftest
-configure:4066: $? = 0
-configure:4080: result: yes
-configure:4171: checking build system type
-configure:4189: result: i686-pc-linux-gnu
-configure:4197: checking host system type
-configure:4211: result: i686-pc-linux-gnu
-configure:4219: checking for a sed that does not truncate output
-configure:4273: result: /bin/sed
-configure:4287: checking for ld used by gcc
-configure:4354: result: /usr/bin/ld
-configure:4363: checking if the linker (/usr/bin/ld) is GNU ld
-configure:4378: result: yes
-configure:4383: checking for /usr/bin/ld option to reload object files
-configure:4390: result: -r
-configure:4408: checking for BSD-compatible nm
-configure:4457: result: /usr/bin/nm -B
-configure:4461: checking whether ln -s works
-configure:4465: result: yes
-configure:4472: checking how to recognise dependent libraries
-configure:4648: result: pass_all
-configure:4892: checking for sys/types.h
-configure:4908: gcc -c -g -O2  conftest.c >&5
-configure:4914: $? = 0
-configure:4917: test -z 			 || test ! -s conftest.err
-configure:4920: $? = 0
-configure:4923: test -s conftest.o
-configure:4926: $? = 0
-configure:4937: result: yes
-configure:4892: checking for sys/stat.h
-configure:4908: gcc -c -g -O2  conftest.c >&5
-configure:4914: $? = 0
-configure:4917: test -z 			 || test ! -s conftest.err
-configure:4920: $? = 0
-configure:4923: test -s conftest.o
-configure:4926: $? = 0
-configure:4937: result: yes
-configure:4892: checking for stdlib.h
-configure:4908: gcc -c -g -O2  conftest.c >&5
-configure:4914: $? = 0
-configure:4917: test -z 			 || test ! -s conftest.err
-configure:4920: $? = 0
-configure:4923: test -s conftest.o
-configure:4926: $? = 0
-configure:4937: result: yes
-configure:4892: checking for string.h
-configure:4908: gcc -c -g -O2  conftest.c >&5
-configure:4914: $? = 0
-configure:4917: test -z 			 || test ! -s conftest.err
-configure:4920: $? = 0
-configure:4923: test -s conftest.o
-configure:4926: $? = 0
-configure:4937: result: yes
-configure:4892: checking for memory.h
-configure:4908: gcc -c -g -O2  conftest.c >&5
-configure:4914: $? = 0
-configure:4917: test -z 			 || test ! -s conftest.err
-configure:4920: $? = 0
-configure:4923: test -s conftest.o
-configure:4926: $? = 0
-configure:4937: result: yes
-configure:4892: checking for strings.h
-configure:4908: gcc -c -g -O2  conftest.c >&5
-configure:4914: $? = 0
-configure:4917: test -z 			 || test ! -s conftest.err
-configure:4920: $? = 0
-configure:4923: test -s conftest.o
-configure:4926: $? = 0
-configure:4937: result: yes
-configure:4892: checking for inttypes.h
-configure:4908: gcc -c -g -O2  conftest.c >&5
-configure:4914: $? = 0
-configure:4917: test -z 			 || test ! -s conftest.err
-configure:4920: $? = 0
-configure:4923: test -s conftest.o
-configure:4926: $? = 0
-configure:4937: result: yes
-configure:4892: checking for stdint.h
-configure:4908: gcc -c -g -O2  conftest.c >&5
-configure:4914: $? = 0
-configure:4917: test -z 			 || test ! -s conftest.err
-configure:4920: $? = 0
-configure:4923: test -s conftest.o
-configure:4926: $? = 0
-configure:4937: result: yes
-configure:4892: checking for unistd.h
-configure:4908: gcc -c -g -O2  conftest.c >&5
-configure:4914: $? = 0
-configure:4917: test -z 			 || test ! -s conftest.err
-configure:4920: $? = 0
-configure:4923: test -s conftest.o
-configure:4926: $? = 0
-configure:4937: result: yes
-configure:4963: checking dlfcn.h usability
-configure:4975: gcc -c -g -O2  conftest.c >&5
-configure:4981: $? = 0
-configure:4984: test -z 			 || test ! -s conftest.err
-configure:4987: $? = 0
-configure:4990: test -s conftest.o
-configure:4993: $? = 0
-configure:5003: result: yes
-configure:5007: checking dlfcn.h presence
-configure:5017: gcc -E  conftest.c
-configure:5023: $? = 0
-configure:5043: result: yes
-configure:5078: checking for dlfcn.h
-configure:5085: result: yes
-configure:5150: checking for g++
-configure:5166: found /usr/bin/g++
-configure:5176: result: g++
-configure:5192: checking for C++ compiler version
-configure:5195: g++ --version </dev/null >&5
+configure:3893: $? = 0
+configure:3895: ./conftest
+configure:3898: $? = 0
+configure:3913: result: yes
+configure:3973: checking for pkg-config
+configure:3991: found /usr/bin/pkg-config
+configure:4003: result: /usr/bin/pkg-config
+configure:4018: checking pkg-config is at least version 0.9.0
+configure:4021: result: yes
+configure:4032: checking for PACKAGE
+configure:4040: $PKG_CONFIG --exists --print-errors "$pkg_modules"
+configure:4043: $? = 0
+configure:4058: $PKG_CONFIG --exists --print-errors "$pkg_modules"
+configure:4061: $? = 0
+configure:4137: result: yes
+configure:4156: checking for flex
+configure:4172: found /usr/bin/flex
+configure:4182: result: flex
+configure:4195: checking for yywrap in -lfl
+configure:4225: gcc -o conftest -g -O2   conftest.c -lfl   >&5
+configure:4231: $? = 0
+configure:4234: test -z 			 || test ! -s conftest.err
+configure:4237: $? = 0
+configure:4240: test -s conftest
+configure:4243: $? = 0
+configure:4256: result: yes
+configure:4333: checking lex output file root
+configure:4344: flex conftest.l
+configure:4347: $? = 0
+configure:4359: result: lex.yy
+configure:4364: checking whether yytext is a pointer
+configure:4380: gcc -o conftest -g -O2   conftest.c  -lfl >&5
+configure:4386: $? = 0
+configure:4389: test -z 			 || test ! -s conftest.err
+configure:4392: $? = 0
+configure:4395: test -s conftest
+configure:4398: $? = 0
+configure:4412: result: yes
+configure:4505: checking build system type
+configure:4523: result: i686-pc-linux-gnu
+configure:4531: checking host system type
+configure:4545: result: i686-pc-linux-gnu
+configure:4553: checking for a sed that does not truncate output
+configure:4607: result: /bin/sed
+configure:4621: checking for ld used by gcc
+configure:4688: result: /usr/bin/ld
+configure:4697: checking if the linker (/usr/bin/ld) is GNU ld
+configure:4712: result: yes
+configure:4717: checking for /usr/bin/ld option to reload object files
+configure:4724: result: -r
+configure:4742: checking for BSD-compatible nm
+configure:4791: result: /usr/bin/nm -B
+configure:4795: checking whether ln -s works
+configure:4799: result: yes
+configure:4806: checking how to recognise dependent libraries
+configure:4982: result: pass_all
+configure:5226: checking for sys/types.h
+configure:5242: gcc -c -g -O2  conftest.c >&5
+configure:5248: $? = 0
+configure:5251: test -z 			 || test ! -s conftest.err
+configure:5254: $? = 0
+configure:5257: test -s conftest.o
+configure:5260: $? = 0
+configure:5271: result: yes
+configure:5226: checking for sys/stat.h
+configure:5242: gcc -c -g -O2  conftest.c >&5
+configure:5248: $? = 0
+configure:5251: test -z 			 || test ! -s conftest.err
+configure:5254: $? = 0
+configure:5257: test -s conftest.o
+configure:5260: $? = 0
+configure:5271: result: yes
+configure:5226: checking for stdlib.h
+configure:5242: gcc -c -g -O2  conftest.c >&5
+configure:5248: $? = 0
+configure:5251: test -z 			 || test ! -s conftest.err
+configure:5254: $? = 0
+configure:5257: test -s conftest.o
+configure:5260: $? = 0
+configure:5271: result: yes
+configure:5226: checking for string.h
+configure:5242: gcc -c -g -O2  conftest.c >&5
+configure:5248: $? = 0
+configure:5251: test -z 			 || test ! -s conftest.err
+configure:5254: $? = 0
+configure:5257: test -s conftest.o
+configure:5260: $? = 0
+configure:5271: result: yes
+configure:5226: checking for memory.h
+configure:5242: gcc -c -g -O2  conftest.c >&5
+configure:5248: $? = 0
+configure:5251: test -z 			 || test ! -s conftest.err
+configure:5254: $? = 0
+configure:5257: test -s conftest.o
+configure:5260: $? = 0
+configure:5271: result: yes
+configure:5226: checking for strings.h
+configure:5242: gcc -c -g -O2  conftest.c >&5
+configure:5248: $? = 0
+configure:5251: test -z 			 || test ! -s conftest.err
+configure:5254: $? = 0
+configure:5257: test -s conftest.o
+configure:5260: $? = 0
+configure:5271: result: yes
+configure:5226: checking for inttypes.h
+configure:5242: gcc -c -g -O2  conftest.c >&5
+configure:5248: $? = 0
+configure:5251: test -z 			 || test ! -s conftest.err
+configure:5254: $? = 0
+configure:5257: test -s conftest.o
+configure:5260: $? = 0
+configure:5271: result: yes
+configure:5226: checking for stdint.h
+configure:5242: gcc -c -g -O2  conftest.c >&5
+configure:5248: $? = 0
+configure:5251: test -z 			 || test ! -s conftest.err
+configure:5254: $? = 0
+configure:5257: test -s conftest.o
+configure:5260: $? = 0
+configure:5271: result: yes
+configure:5226: checking for unistd.h
+configure:5242: gcc -c -g -O2  conftest.c >&5
+configure:5248: $? = 0
+configure:5251: test -z 			 || test ! -s conftest.err
+configure:5254: $? = 0
+configure:5257: test -s conftest.o
+configure:5260: $? = 0
+configure:5271: result: yes
+configure:5297: checking dlfcn.h usability
+configure:5309: gcc -c -g -O2  conftest.c >&5
+configure:5315: $? = 0
+configure:5318: test -z 			 || test ! -s conftest.err
+configure:5321: $? = 0
+configure:5324: test -s conftest.o
+configure:5327: $? = 0
+configure:5337: result: yes
+configure:5341: checking dlfcn.h presence
+configure:5351: gcc -E  conftest.c
+configure:5357: $? = 0
+configure:5377: result: yes
+configure:5412: checking for dlfcn.h
+configure:5419: result: yes
+configure:5484: checking for g++
+configure:5500: found /usr/bin/g++
+configure:5510: result: g++
+configure:5526: checking for C++ compiler version
+configure:5529: g++ --version </dev/null >&5
 g++ (GCC) 4.0.3 (Debian 4.0.3-1)
 Copyright (C) 2006 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:5198: $? = 0
-configure:5200: g++ -v </dev/null >&5
+configure:5532: $? = 0
+configure:5534: g++ -v </dev/null >&5
 Using built-in specs.
 Target: i486-linux-gnu
 Configured with: ../src/configure -v --enable-languages=c,c++,java,f95,objc,ada,treelang --prefix=/usr --enable-shared --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --enable-nls --program-suffix=-4.0 --enable-__cxa_atexit --enable-clocale=gnu --enable-libstdcxx-debug --enable-java-awt=gtk-default --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.4.2-gcj-4.0-1.4.2.0/jre --enable-mpfr --disable-werror --with-tune=i686 --enable-checking=release i486-linux-gnu
 Thread model: posix
 gcc version 4.0.3 (Debian 4.0.3-1)
-configure:5203: $? = 0
-configure:5205: g++ -V </dev/null >&5
+configure:5537: $? = 0
+configure:5539: g++ -V </dev/null >&5
 g++: '-V' option must have argument
-configure:5208: $? = 1
-configure:5211: checking whether we are using the GNU C++ compiler
-configure:5235: g++ -c   conftest.cc >&5
-configure:5241: $? = 0
-configure:5244: test -z 			 || test ! -s conftest.err
-configure:5247: $? = 0
-configure:5250: test -s conftest.o
-configure:5253: $? = 0
-configure:5266: result: yes
-configure:5272: checking whether g++ accepts -g
-configure:5293: g++ -c -g  conftest.cc >&5
-configure:5299: $? = 0
-configure:5302: test -z 			 || test ! -s conftest.err
-configure:5305: $? = 0
-configure:5308: test -s conftest.o
-configure:5311: $? = 0
-configure:5322: result: yes
-configure:5364: g++ -c -g -O2  conftest.cc >&5
-configure:5370: $? = 0
-configure:5373: test -z 			 || test ! -s conftest.err
-configure:5376: $? = 0
-configure:5379: test -s conftest.o
-configure:5382: $? = 0
-configure:5408: g++ -c -g -O2  conftest.cc >&5
+configure:5542: $? = 1
+configure:5545: checking whether we are using the GNU C++ compiler
+configure:5569: g++ -c   conftest.cc >&5
+configure:5575: $? = 0
+configure:5578: test -z 			 || test ! -s conftest.err
+configure:5581: $? = 0
+configure:5584: test -s conftest.o
+configure:5587: $? = 0
+configure:5600: result: yes
+configure:5606: checking whether g++ accepts -g
+configure:5627: g++ -c -g  conftest.cc >&5
+configure:5633: $? = 0
+configure:5636: test -z 			 || test ! -s conftest.err
+configure:5639: $? = 0
+configure:5642: test -s conftest.o
+configure:5645: $? = 0
+configure:5656: result: yes
+configure:5698: g++ -c -g -O2  conftest.cc >&5
+configure:5704: $? = 0
+configure:5707: test -z 			 || test ! -s conftest.err
+configure:5710: $? = 0
+configure:5713: test -s conftest.o
+configure:5716: $? = 0
+configure:5742: g++ -c -g -O2  conftest.cc >&5
 conftest.cc: In function 'int main()':
 conftest.cc:28: error: 'exit' was not declared in this scope
-configure:5414: $? = 1
+configure:5748: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */
 | 
@@ -444,24 +417,26 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:5364: g++ -c -g -O2  conftest.cc >&5
-configure:5370: $? = 0
-configure:5373: test -z 			 || test ! -s conftest.err
-configure:5376: $? = 0
-configure:5379: test -s conftest.o
-configure:5382: $? = 0
-configure:5408: g++ -c -g -O2  conftest.cc >&5
-configure:5414: $? = 0
-configure:5417: test -z 			 || test ! -s conftest.err
-configure:5420: $? = 0
-configure:5423: test -s conftest.o
-configure:5426: $? = 0
-configure:5459: checking how to run the C++ preprocessor
-configure:5490: g++ -E  conftest.cc
-configure:5496: $? = 0
-configure:5528: g++ -E  conftest.cc
+configure:5698: g++ -c -g -O2  conftest.cc >&5
+configure:5704: $? = 0
+configure:5707: test -z 			 || test ! -s conftest.err
+configure:5710: $? = 0
+configure:5713: test -s conftest.o
+configure:5716: $? = 0
+configure:5742: g++ -c -g -O2  conftest.cc >&5
+configure:5748: $? = 0
+configure:5751: test -z 			 || test ! -s conftest.err
+configure:5754: $? = 0
+configure:5757: test -s conftest.o
+configure:5760: $? = 0
+configure:5785: checking dependency style of g++
+configure:5875: result: gcc3
+configure:5902: checking how to run the C++ preprocessor
+configure:5933: g++ -E  conftest.cc
+configure:5939: $? = 0
+configure:5971: g++ -E  conftest.cc
 conftest.cc:27:28: error: ac_nonexistent.h: No such file or directory
-configure:5534: $? = 1
+configure:5977: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */
 | 
@@ -490,12 +465,12 @@ configure: failed program was:
 | #endif
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:5573: result: g++ -E
-configure:5597: g++ -E  conftest.cc
-configure:5603: $? = 0
-configure:5635: g++ -E  conftest.cc
+configure:6016: result: g++ -E
+configure:6040: g++ -E  conftest.cc
+configure:6046: $? = 0
+configure:6078: g++ -E  conftest.cc
 conftest.cc:27:28: error: ac_nonexistent.h: No such file or directory
-configure:5641: $? = 1
+configure:6084: $? = 1
 configure: failed program was:
 | /* confdefs.h.  */
 | 
@@ -524,11 +499,11 @@ configure: failed program was:
 | #endif
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:5738: checking for g77
-configure:5754: found /usr/bin/g77
-configure:5764: result: g77
-configure:5779: checking for Fortran 77 compiler version
-configure:5782: g77 --version </dev/null >&5
+configure:6181: checking for g77
+configure:6197: found /usr/bin/g77
+configure:6207: result: g77
+configure:6222: checking for Fortran 77 compiler version
+configure:6225: g77 --version </dev/null >&5
 GNU Fortran (GCC) 3.4.6 (Debian 3.4.6-1)
 Copyright (C) 2006 Free Software Foundation, Inc.
 
@@ -537,225 +512,225 @@ You may redistribute copies of GNU Fortran
 under the terms of the GNU General Public License.
 For more information about these matters, see the file named COPYING
 or type the command `info -f g77 Copying'.
-configure:5785: $? = 0
-configure:5787: g77 -v </dev/null >&5
+configure:6228: $? = 0
+configure:6230: g77 -v </dev/null >&5
 Reading specs from /usr/lib/gcc/i486-linux-gnu/3.4.6/specs
 Configured with: ../src/configure -v --enable-languages=c,c++,f77,pascal --prefix=/usr --libexecdir=/usr/lib --with-gxx-include-dir=/usr/include/c++/3.4 --enable-shared --with-system-zlib --enable-nls --without-included-gettext --program-suffix=-3.4 --enable-__cxa_atexit --enable-clocale=gnu --enable-libstdcxx-debug --with-tune=i686 i486-linux-gnu
 Thread model: posix
 gcc version 3.4.6 (Debian 3.4.6-1)
-configure:5790: $? = 0
-configure:5792: g77 -V </dev/null >&5
+configure:6233: $? = 0
+configure:6235: g77 -V </dev/null >&5
 g77: `-V' option must have argument
-configure:5795: $? = 1
-configure:5803: checking whether we are using the GNU Fortran 77 compiler
-configure:5817: g77 -c  conftest.F >&5
-configure:5823: $? = 0
-configure:5826: test -z 			 || test ! -s conftest.err
-configure:5829: $? = 0
-configure:5832: test -s conftest.o
-configure:5835: $? = 0
-configure:5848: result: yes
-configure:5854: checking whether g77 accepts -g
-configure:5866: g77 -c -g conftest.f >&5
-configure:5872: $? = 0
-configure:5875: test -z 			 || test ! -s conftest.err
-configure:5878: $? = 0
-configure:5881: test -s conftest.o
-configure:5884: $? = 0
-configure:5896: result: yes
-configure:5926: checking the maximum length of command line arguments
-configure:6035: result: 32768
-configure:6046: checking command to parse /usr/bin/nm -B output from gcc object
-configure:6151: gcc -c -g -O2  conftest.c >&5
-configure:6154: $? = 0
-configure:6158: /usr/bin/nm -B conftest.o \| sed -n -e 's/^.*[ 	]\([ABCDGIRSTW][ABCDGIRSTW]*\)[ 	][ 	]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' \> conftest.nm
-configure:6161: $? = 0
-configure:6213: gcc -o conftest -g -O2   conftest.c conftstm.o >&5
-configure:6216: $? = 0
-configure:6254: result: ok
-configure:6258: checking for objdir
-configure:6273: result: .libs
-configure:6363: checking for ar
-configure:6379: found /usr/bin/ar
-configure:6390: result: ar
-configure:6443: checking for ranlib
-configure:6459: found /usr/bin/ranlib
-configure:6470: result: ranlib
-configure:6523: checking for strip
-configure:6539: found /usr/bin/strip
-configure:6550: result: strip
-configure:6822: checking if gcc supports -fno-rtti -fno-exceptions
-configure:6840: gcc -c -g -O2  -fno-rtti -fno-exceptions conftest.c >&5
+configure:6238: $? = 1
+configure:6246: checking whether we are using the GNU Fortran 77 compiler
+configure:6260: g77 -c  conftest.F >&5
+configure:6266: $? = 0
+configure:6269: test -z 			 || test ! -s conftest.err
+configure:6272: $? = 0
+configure:6275: test -s conftest.o
+configure:6278: $? = 0
+configure:6291: result: yes
+configure:6297: checking whether g77 accepts -g
+configure:6309: g77 -c -g conftest.f >&5
+configure:6315: $? = 0
+configure:6318: test -z 			 || test ! -s conftest.err
+configure:6321: $? = 0
+configure:6324: test -s conftest.o
+configure:6327: $? = 0
+configure:6339: result: yes
+configure:6369: checking the maximum length of command line arguments
+configure:6478: result: 32768
+configure:6489: checking command to parse /usr/bin/nm -B output from gcc object
+configure:6594: gcc -c -g -O2  conftest.c >&5
+configure:6597: $? = 0
+configure:6601: /usr/bin/nm -B conftest.o \| sed -n -e 's/^.*[ 	]\([ABCDGIRSTW][ABCDGIRSTW]*\)[ 	][ 	]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' \> conftest.nm
+configure:6604: $? = 0
+configure:6656: gcc -o conftest -g -O2   conftest.c conftstm.o >&5
+configure:6659: $? = 0
+configure:6697: result: ok
+configure:6701: checking for objdir
+configure:6716: result: .libs
+configure:6806: checking for ar
+configure:6822: found /usr/bin/ar
+configure:6833: result: ar
+configure:6886: checking for ranlib
+configure:6902: found /usr/bin/ranlib
+configure:6913: result: ranlib
+configure:6966: checking for strip
+configure:6982: found /usr/bin/strip
+configure:6993: result: strip
+configure:7265: checking if gcc supports -fno-rtti -fno-exceptions
+configure:7283: gcc -c -g -O2  -fno-rtti -fno-exceptions conftest.c >&5
 cc1: warning: command line option "-fno-rtti" is valid for C++/ObjC++ but not for C
-configure:6844: $? = 0
-configure:6857: result: no
-configure:6872: checking for gcc option to produce PIC
-configure:7082: result: -fPIC
-configure:7090: checking if gcc PIC flag -fPIC works
-configure:7108: gcc -c -g -O2  -fPIC -DPIC conftest.c >&5
-configure:7112: $? = 0
-configure:7125: result: yes
-configure:7153: checking if gcc static flag -static works
-configure:7181: result: yes
-configure:7191: checking if gcc supports -c -o file.o
-configure:7212: gcc -c -g -O2  -o out/conftest2.o conftest.c >&5
-configure:7216: $? = 0
-configure:7238: result: yes
-configure:7264: checking whether the gcc linker (/usr/bin/ld) supports shared libraries
-configure:8221: result: yes
-configure:8242: checking whether -lc should be explicitly linked in
-configure:8247: gcc -c -g -O2  conftest.c >&5
-configure:8250: $? = 0
-configure:8265: gcc -shared conftest.o  -v -Wl,-soname -Wl,conftest -o conftest 2\>\&1 \| grep  -lc  \>/dev/null 2\>\&1
-configure:8268: $? = 0
-configure:8280: result: no
-configure:8288: checking dynamic linker characteristics
-configure:8864: result: GNU/Linux ld.so
-configure:8873: checking how to hardcode library paths into programs
-configure:8898: result: immediate
-configure:8912: checking whether stripping libraries is possible
-configure:8917: result: yes
-configure:9744: checking if libtool supports shared libraries
-configure:9746: result: yes
-configure:9749: checking whether to build shared libraries
-configure:9770: result: yes
-configure:9773: checking whether to build static libraries
-configure:9777: result: yes
-configure:9869: creating libtool
-configure:10457: checking for ld used by g++
-configure:10524: result: /usr/bin/ld
-configure:10533: checking if the linker (/usr/bin/ld) is GNU ld
-configure:10548: result: yes
-configure:10599: checking whether the g++ linker (/usr/bin/ld) supports shared libraries
-configure:11535: result: yes
-configure:11553: g++ -c -g -O2  conftest.cpp >&5
-configure:11556: $? = 0
-configure:11675: checking for g++ option to produce PIC
-configure:11949: result: -fPIC
-configure:11957: checking if g++ PIC flag -fPIC works
-configure:11975: g++ -c -g -O2  -fPIC -DPIC conftest.cpp >&5
-configure:11979: $? = 0
-configure:11992: result: yes
-configure:12020: checking if g++ static flag -static works
-configure:12048: result: yes
-configure:12058: checking if g++ supports -c -o file.o
-configure:12079: g++ -c -g -O2  -o out/conftest2.o conftest.cpp >&5
-configure:12083: $? = 0
-configure:12105: result: yes
-configure:12131: checking whether the g++ linker (/usr/bin/ld) supports shared libraries
-configure:12159: result: yes
-configure:12226: checking dynamic linker characteristics
-configure:12802: result: GNU/Linux ld.so
-configure:12811: checking how to hardcode library paths into programs
-configure:12836: result: immediate
-configure:13362: checking if libtool supports shared libraries
-configure:13364: result: yes
-configure:13367: checking whether to build shared libraries
-configure:13387: result: yes
-configure:13390: checking whether to build static libraries
-configure:13394: result: yes
-configure:13404: checking for g77 option to produce PIC
-configure:13614: result: -fPIC
-configure:13622: checking if g77 PIC flag -fPIC works
-configure:13640: g77 -c -g -O2 -fPIC conftest.f >&5
-configure:13644: $? = 0
-configure:13657: result: yes
-configure:13685: checking if g77 static flag -static works
-configure:13713: result: yes
-configure:13723: checking if g77 supports -c -o file.o
-configure:13744: g77 -c -g -O2 -o out/conftest2.o conftest.f >&5
-configure:13748: $? = 0
-configure:13770: result: yes
-configure:13796: checking whether the g77 linker (/usr/bin/ld) supports shared libraries
-configure:14733: result: yes
-configure:14800: checking dynamic linker characteristics
-configure:15376: result: GNU/Linux ld.so
-configure:15385: checking how to hardcode library paths into programs
-configure:15410: result: immediate
-configure:18977: checking locale.h usability
-configure:18989: gcc -c -g -O2  conftest.c >&5
-configure:18995: $? = 0
-configure:18998: test -z 			 || test ! -s conftest.err
-configure:19001: $? = 0
-configure:19004: test -s conftest.o
-configure:19007: $? = 0
-configure:19017: result: yes
-configure:19021: checking locale.h presence
-configure:19031: gcc -E  conftest.c
-configure:19037: $? = 0
-configure:19057: result: yes
-configure:19092: checking for locale.h
-configure:19099: result: yes
-configure:19113: checking for LC_MESSAGES
-configure:19134: gcc -o conftest -g -O2   conftest.c  >&5
-configure:19140: $? = 0
-configure:19143: test -z 			 || test ! -s conftest.err
-configure:19146: $? = 0
-configure:19149: test -s conftest
-configure:19152: $? = 0
-configure:19164: result: yes
-configure:19193: checking libintl.h usability
-configure:19205: gcc -c -g -O2  conftest.c >&5
-configure:19211: $? = 0
-configure:19214: test -z 			 || test ! -s conftest.err
-configure:19217: $? = 0
-configure:19220: test -s conftest.o
-configure:19223: $? = 0
-configure:19233: result: yes
-configure:19237: checking libintl.h presence
-configure:19247: gcc -E  conftest.c
-configure:19253: $? = 0
-configure:19273: result: yes
-configure:19308: checking for libintl.h
-configure:19315: result: yes
-configure:19326: checking for ngettext in libc
-configure:19349: gcc -o conftest -g -O2   conftest.c  >&5
-configure:19355: $? = 0
-configure:19358: test -z 			 || test ! -s conftest.err
-configure:19361: $? = 0
-configure:19364: test -s conftest
-configure:19367: $? = 0
-configure:19380: result: yes
-configure:19384: checking for dgettext in libc
-configure:19407: gcc -o conftest -g -O2   conftest.c  >&5
-configure:19413: $? = 0
-configure:19416: test -z 			 || test ! -s conftest.err
-configure:19419: $? = 0
-configure:19422: test -s conftest
-configure:19425: $? = 0
-configure:19438: result: yes
-configure:19447: checking for bind_textdomain_codeset
-configure:19504: gcc -o conftest -g -O2   conftest.c  >&5
-configure:19510: $? = 0
-configure:19513: test -z 			 || test ! -s conftest.err
-configure:19516: $? = 0
-configure:19519: test -s conftest
-configure:19522: $? = 0
-configure:19534: result: yes
-configure:20038: checking for msgfmt
-configure:20065: result: /usr/bin/msgfmt
-configure:20078: checking for dcgettext
-configure:20135: gcc -o conftest -g -O2   conftest.c   >&5
+configure:7287: $? = 0
+configure:7300: result: no
+configure:7315: checking for gcc option to produce PIC
+configure:7525: result: -fPIC
+configure:7533: checking if gcc PIC flag -fPIC works
+configure:7551: gcc -c -g -O2  -fPIC -DPIC conftest.c >&5
+configure:7555: $? = 0
+configure:7568: result: yes
+configure:7596: checking if gcc static flag -static works
+configure:7624: result: yes
+configure:7634: checking if gcc supports -c -o file.o
+configure:7655: gcc -c -g -O2  -o out/conftest2.o conftest.c >&5
+configure:7659: $? = 0
+configure:7681: result: yes
+configure:7707: checking whether the gcc linker (/usr/bin/ld) supports shared libraries
+configure:8664: result: yes
+configure:8685: checking whether -lc should be explicitly linked in
+configure:8690: gcc -c -g -O2  conftest.c >&5
+configure:8693: $? = 0
+configure:8708: gcc -shared conftest.o  -v -Wl,-soname -Wl,conftest -o conftest 2\>\&1 \| grep  -lc  \>/dev/null 2\>\&1
+configure:8711: $? = 0
+configure:8723: result: no
+configure:8731: checking dynamic linker characteristics
+configure:9307: result: GNU/Linux ld.so
+configure:9316: checking how to hardcode library paths into programs
+configure:9341: result: immediate
+configure:9355: checking whether stripping libraries is possible
+configure:9360: result: yes
+configure:10187: checking if libtool supports shared libraries
+configure:10189: result: yes
+configure:10192: checking whether to build shared libraries
+configure:10213: result: yes
+configure:10216: checking whether to build static libraries
+configure:10220: result: yes
+configure:10312: creating libtool
+configure:10900: checking for ld used by g++
+configure:10967: result: /usr/bin/ld
+configure:10976: checking if the linker (/usr/bin/ld) is GNU ld
+configure:10991: result: yes
+configure:11042: checking whether the g++ linker (/usr/bin/ld) supports shared libraries
+configure:11978: result: yes
+configure:11996: g++ -c -g -O2  conftest.cpp >&5
+configure:11999: $? = 0
+configure:12118: checking for g++ option to produce PIC
+configure:12392: result: -fPIC
+configure:12400: checking if g++ PIC flag -fPIC works
+configure:12418: g++ -c -g -O2  -fPIC -DPIC conftest.cpp >&5
+configure:12422: $? = 0
+configure:12435: result: yes
+configure:12463: checking if g++ static flag -static works
+configure:12491: result: yes
+configure:12501: checking if g++ supports -c -o file.o
+configure:12522: g++ -c -g -O2  -o out/conftest2.o conftest.cpp >&5
+configure:12526: $? = 0
+configure:12548: result: yes
+configure:12574: checking whether the g++ linker (/usr/bin/ld) supports shared libraries
+configure:12602: result: yes
+configure:12669: checking dynamic linker characteristics
+configure:13245: result: GNU/Linux ld.so
+configure:13254: checking how to hardcode library paths into programs
+configure:13279: result: immediate
+configure:13805: checking if libtool supports shared libraries
+configure:13807: result: yes
+configure:13810: checking whether to build shared libraries
+configure:13830: result: yes
+configure:13833: checking whether to build static libraries
+configure:13837: result: yes
+configure:13847: checking for g77 option to produce PIC
+configure:14057: result: -fPIC
+configure:14065: checking if g77 PIC flag -fPIC works
+configure:14083: g77 -c -g -O2 -fPIC conftest.f >&5
+configure:14087: $? = 0
+configure:14100: result: yes
+configure:14128: checking if g77 static flag -static works
+configure:14156: result: yes
+configure:14166: checking if g77 supports -c -o file.o
+configure:14187: g77 -c -g -O2 -o out/conftest2.o conftest.f >&5
+configure:14191: $? = 0
+configure:14213: result: yes
+configure:14239: checking whether the g77 linker (/usr/bin/ld) supports shared libraries
+configure:15176: result: yes
+configure:15243: checking dynamic linker characteristics
+configure:15819: result: GNU/Linux ld.so
+configure:15828: checking how to hardcode library paths into programs
+configure:15853: result: immediate
+configure:19420: checking locale.h usability
+configure:19432: gcc -c -g -O2  conftest.c >&5
+configure:19438: $? = 0
+configure:19441: test -z 			 || test ! -s conftest.err
+configure:19444: $? = 0
+configure:19447: test -s conftest.o
+configure:19450: $? = 0
+configure:19460: result: yes
+configure:19464: checking locale.h presence
+configure:19474: gcc -E  conftest.c
+configure:19480: $? = 0
+configure:19500: result: yes
+configure:19535: checking for locale.h
+configure:19542: result: yes
+configure:19556: checking for LC_MESSAGES
+configure:19577: gcc -o conftest -g -O2   conftest.c  >&5
+configure:19583: $? = 0
+configure:19586: test -z 			 || test ! -s conftest.err
+configure:19589: $? = 0
+configure:19592: test -s conftest
+configure:19595: $? = 0
+configure:19607: result: yes
+configure:19636: checking libintl.h usability
+configure:19648: gcc -c -g -O2  conftest.c >&5
+configure:19654: $? = 0
+configure:19657: test -z 			 || test ! -s conftest.err
+configure:19660: $? = 0
+configure:19663: test -s conftest.o
+configure:19666: $? = 0
+configure:19676: result: yes
+configure:19680: checking libintl.h presence
+configure:19690: gcc -E  conftest.c
+configure:19696: $? = 0
+configure:19716: result: yes
+configure:19751: checking for libintl.h
+configure:19758: result: yes
+configure:19769: checking for ngettext in libc
+configure:19792: gcc -o conftest -g -O2   conftest.c  >&5
+configure:19798: $? = 0
+configure:19801: test -z 			 || test ! -s conftest.err
+configure:19804: $? = 0
+configure:19807: test -s conftest
+configure:19810: $? = 0
+configure:19823: result: yes
+configure:19827: checking for dgettext in libc
+configure:19850: gcc -o conftest -g -O2   conftest.c  >&5
+configure:19856: $? = 0
+configure:19859: test -z 			 || test ! -s conftest.err
+configure:19862: $? = 0
+configure:19865: test -s conftest
+configure:19868: $? = 0
+configure:19881: result: yes
+configure:19890: checking for bind_textdomain_codeset
+configure:19947: gcc -o conftest -g -O2   conftest.c  >&5
+configure:19953: $? = 0
+configure:19956: test -z 			 || test ! -s conftest.err
+configure:19959: $? = 0
+configure:19962: test -s conftest
+configure:19965: $? = 0
+configure:19977: result: yes
+configure:20481: checking for msgfmt
+configure:20508: result: /usr/bin/msgfmt
+configure:20521: checking for dcgettext
+configure:20578: gcc -o conftest -g -O2   conftest.c   >&5
 conftest.c:55: warning: conflicting types for built-in function 'dcgettext'
-configure:20141: $? = 0
-configure:20144: test -z 			 || test ! -s conftest.err
-configure:20147: $? = 0
-configure:20150: test -s conftest
-configure:20153: $? = 0
-configure:20165: result: yes
-configure:20177: checking for gmsgfmt
-configure:20208: result: /usr/bin/msgfmt
-configure:20217: checking for xgettext
-configure:20244: result: /usr/bin/xgettext
-configure:20268: gcc -o conftest -g -O2   conftest.c   >&5
-configure:20274: $? = 0
-configure:20277: test -z 			 || test ! -s conftest.err
-configure:20280: $? = 0
-configure:20283: test -s conftest
-configure:20286: $? = 0
-configure:20458: checking for catalogs to be installed
-configure:20483: result:  de fr ja pt_BR pl ro sk es_MX
-configure:20623: creating ./config.status
+configure:20584: $? = 0
+configure:20587: test -z 			 || test ! -s conftest.err
+configure:20590: $? = 0
+configure:20593: test -s conftest
+configure:20596: $? = 0
+configure:20608: result: yes
+configure:20620: checking for gmsgfmt
+configure:20651: result: /usr/bin/msgfmt
+configure:20660: checking for xgettext
+configure:20687: result: /usr/bin/xgettext
+configure:20711: gcc -o conftest -g -O2   conftest.c   >&5
+configure:20717: $? = 0
+configure:20720: test -z 			 || test ! -s conftest.err
+configure:20723: $? = 0
+configure:20726: test -s conftest
+configure:20729: $? = 0
+configure:20901: checking for catalogs to be installed
+configure:20926: result:  de fr ja pt_BR pl ro sk es_MX
+configure:21094: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -772,17 +747,18 @@ generated by GNU Autoconf 2.59.  Invocation command line was
 
 on dioscuri
 
-config.status:798: creating Makefile
-config.status:798: creating galculator.spec
-config.status:798: creating src/Makefile
-config.status:798: creating po/Makefile.in
-config.status:798: creating ui/Makefile
-config.status:798: creating doc/Makefile
-config.status:864: creating config.h
-config.status:1146: executing default-1 commands
-config.status:1146: executing intltool commands
-config.status:1146: executing default-2 commands
-config.status:1146: executing po/stamp-it commands
+config.status:819: creating Makefile
+config.status:819: creating galculator.spec
+config.status:819: creating src/Makefile
+config.status:819: creating po/Makefile.in
+config.status:819: creating ui/Makefile
+config.status:819: creating doc/Makefile
+config.status:885: creating config.h
+config.status:1009: config.h is unchanged
+config.status:1189: executing depfiles commands
+config.status:1189: executing intltool commands
+config.status:1189: executing default-1 commands
+config.status:1189: executing po/stamp-it commands
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -843,7 +819,6 @@ ac_cv_header_sys_types_h=yes
 ac_cv_header_unistd_h=yes
 ac_cv_host=i686-pc-linux-gnu
 ac_cv_host_alias=i686-pc-linux-gnu
-ac_cv_lib_cposix_strerror=no
 ac_cv_lib_fl_yywrap=yes
 ac_cv_objext=o
 ac_cv_path_GMSGFMT=/usr/bin/msgfmt
@@ -856,6 +831,7 @@ ac_cv_path_MSGFMT=/usr/bin/msgfmt
 ac_cv_path_XGETTEXT=/usr/bin/xgettext
 ac_cv_path_ac_pt_PKG_CONFIG=/usr/bin/pkg-config
 ac_cv_path_install='/usr/bin/install -c'
+ac_cv_prog_AWK=mawk
 ac_cv_prog_CPP='gcc -E'
 ac_cv_prog_CXXCPP='g++ -E'
 ac_cv_prog_LEX=flex
@@ -873,6 +849,9 @@ ac_cv_prog_f77_g=yes
 ac_cv_prog_lex_root=lex.yy
 ac_cv_prog_lex_yytext_pointer=yes
 ac_cv_prog_make_make_set=yes
+ac_cv_search_strerror='none required'
+am_cv_CC_dependencies_compiler_type=gcc3
+am_cv_CXX_dependencies_compiler_type=gcc3
 am_cv_val_LC_MESSAGES=yes
 gt_cv_func_dgettext_libc=yes
 gt_cv_func_dgettext_libintl=no
@@ -910,22 +889,31 @@ pkg_cv_PACKAGE_LIBS='-L/usr/X11R6/lib -lglade-2.0 -lgtk-x11-2.0 -lxml2 -lz -lgdk
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='aclocal-1.4'
+ACLOCAL='${SHELL} /home/sf/Devel/galculator/missing --run aclocal-1.9'
+AMDEPBACKSLASH='\'
+AMDEP_FALSE='#'
+AMDEP_TRUE=''
+AMTAR='${SHELL} /home/sf/Devel/galculator/missing --run tar'
 AR='ar'
-AUTOCONF='autoconf'
-AUTOHEADER='autoheader'
-AUTOMAKE='automake-1.4'
+AUTOCONF='${SHELL} /home/sf/Devel/galculator/missing --run autoconf'
+AUTOHEADER='${SHELL} /home/sf/Devel/galculator/missing --run autoheader'
+AUTOMAKE='${SHELL} /home/sf/Devel/galculator/missing --run automake-1.9'
+AWK='mawk'
 CATALOGS=' de.gmo fr.gmo ja.gmo pt_BR.gmo pl.gmo ro.gmo sk.gmo es_MX.gmo'
 CATOBJEXT='.gmo'
 CC='gcc'
+CCDEPMODE='depmode=gcc3'
 CFLAGS='-g -O2 -Wall'
 CPP='gcc -E'
 CPPFLAGS=''
 CXX='g++'
 CXXCPP='g++ -E'
+CXXDEPMODE='depmode=gcc3'
 CXXFLAGS='-g -O2'
+CYGPATH_W='echo'
 DATADIRNAME='share'
 DEFS='-DHAVE_CONFIG_H'
+DEPDIR='.deps'
 ECHO='echo'
 ECHO_C=''
 ECHO_N='-n'
@@ -940,6 +928,7 @@ GMSGFMT='/usr/bin/msgfmt'
 INSTALL_DATA='${INSTALL} -m 644'
 INSTALL_PROGRAM='${INSTALL}'
 INSTALL_SCRIPT='${INSTALL}'
+INSTALL_STRIP_PROGRAM='${SHELL} $(install_sh) -c -s'
 INSTOBJEXT='.mo'
 INTLLIBS=''
 INTLTOOL_CAVES_RULE='%.caves:     %.caves.in     $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*.po) ; LC_ALL=C $(INTLTOOL_MERGE) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< $@'
@@ -980,7 +969,7 @@ LTLIBOBJS=''
 MAINT='#'
 MAINTAINER_MODE_FALSE=''
 MAINTAINER_MODE_TRUE='#'
-MAKEINFO='makeinfo'
+MAKEINFO='${SHELL} /home/sf/Devel/galculator/missing --run makeinfo'
 MKINSTALLDIRS='./mkinstalldirs'
 MSGFMT='/usr/bin/msgfmt'
 OBJEXT='o'
@@ -1012,6 +1001,15 @@ ac_ct_F77='g77'
 ac_ct_RANLIB='ranlib'
 ac_ct_STRIP='strip'
 ac_pt_PKG_CONFIG='/usr/bin/pkg-config'
+am__fastdepCC_FALSE='#'
+am__fastdepCC_TRUE=''
+am__fastdepCXX_FALSE='#'
+am__fastdepCXX_TRUE=''
+am__include='include'
+am__leading_dot='.'
+am__quote=''
+am__tar='${AMTAR} chof - "$$tardir"'
+am__untar='${AMTAR} xf -'
 bindir='${exec_prefix}/bin'
 build='i686-pc-linux-gnu'
 build_alias=''
@@ -1027,10 +1025,12 @@ host_os='linux-gnu'
 host_vendor='pc'
 includedir='${prefix}/include'
 infodir='${prefix}/info'
+install_sh='/home/sf/Devel/galculator/install-sh'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localstatedir='${prefix}/var'
 mandir='${prefix}/man'
+mkdir_p='mkdir -p --'
 oldincludedir='/usr/include'
 prefix='/usr/local'
 program_transform_name='s,x,x,'
