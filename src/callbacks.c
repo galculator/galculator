@@ -37,18 +37,6 @@
 #include <gdk/gdkkeysyms.h>
 #include <glade/glade.h>
 
-#define SELECT_RESULT_FONT _("Select result font")
-#define SELECT_STACK_FONT _("Select stack font")
-#define SELECT_MODULE_FONT _("Select module font")
-#define SELECT_ACT_MOD_COLOR _("Select active module color")
-#define SELECT_INACT_MOD_COLOR _("Select inactive module color")
-#define SELECT_RESULT_FONT_COLOR _("Select result font color")
-#define SELECT_STACK_COLOR _("Select stack color")
-#define SELECT_BKG_COLOR _("Select background color")
-#define SELECT_BUTTON_FONT _("Select button font")	
-
-static GtkWidget		*font_dialog, *color_dialog;
-
 /* File */
 
 void
@@ -698,179 +686,107 @@ on_preferences1_activate               (GtkMenuItem     *menuitem,
 }
 
 void
-on_prefs_result_font_clicked           (GtkButton       *button,
-                                        gpointer         user_data)
+on_prefs_result_font_set(GtkFontButton *button, gpointer user_data)
 {
-	font_dialog = ui_font_dialog_create (SELECT_RESULT_FONT, button);
+	const char	*font_name;
+	
+	font_name = gtk_font_button_get_font_name(button);
+	if (prefs.result_font != NULL) g_free (prefs.result_font);
+	prefs.result_font = g_strdup(font_name);
+	display_update_tags();
 }
 
 void
-on_prefs_result_color_clicked          (GtkButton       *button,
-                                        gpointer         user_data)
+on_prefs_result_color_set(GtkColorButton *button, gpointer user_data)
 {
-	color_dialog = ui_color_dialog_create (SELECT_RESULT_FONT_COLOR, button);
-}
-
-void
-on_prefs_stack_font_clicked           (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	font_dialog = ui_font_dialog_create (SELECT_STACK_FONT, button);
-}
-
-void
-on_prefs_stack_color_clicked          (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	color_dialog = ui_color_dialog_create (SELECT_STACK_COLOR, button);
-}
-
-void
-on_prefs_mod_font_clicked              (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	font_dialog = ui_font_dialog_create (SELECT_MODULE_FONT, button);
-}
-
-
-void
-on_prefs_act_mod_color_clicked         (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	color_dialog = ui_color_dialog_create (SELECT_ACT_MOD_COLOR, button);
-}
-
-
-void
-on_prefs_inact_mod_color_clicked       (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	color_dialog = ui_color_dialog_create (SELECT_INACT_MOD_COLOR, button);
-}
-
-
-void
-on_prefs_bkg_color_clicked             (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	color_dialog = ui_color_dialog_create (SELECT_BKG_COLOR, button);
-}
-
-
-void
-on_prefs_button_font_clicked           (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	font_dialog = ui_font_dialog_create (SELECT_BUTTON_FONT, button);
-}
-
-void
-on_color_ok_button_clicked             (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	const char 	*title;
-	GtkWidget	*da=NULL;
 	GdkColor	color;
-
-	title = gtk_window_get_title ((GtkWindow *) color_dialog);
-	gtk_color_selection_get_current_color ((GtkColorSelection *)(((GtkColorSelectionDialog *) color_dialog)->colorsel), \
-		&color);
 	
-	if (strcmp (title, SELECT_BKG_COLOR) == 0)
-	{
-		da = glade_xml_get_widget (prefs_xml, "prefs_bkg_color");
-		if (prefs.bkg_color != NULL) g_free (prefs.bkg_color);
-		prefs.bkg_color = gdk_color_to_string(color);
-		display_set_bkg_color (prefs.bkg_color);
-	}
-	else if (strcmp (title, SELECT_RESULT_FONT_COLOR) == 0)
-	{
-		da = glade_xml_get_widget (prefs_xml, "prefs_result_color");
-		if (prefs.result_color != NULL) g_free (prefs.result_color);
-		prefs.result_color = gdk_color_to_string(color);
-		display_update_tags();
-	}
-	else if (strcmp (title, SELECT_STACK_COLOR) == 0)
-	{
-		da = glade_xml_get_widget (prefs_xml, "prefs_stack_color");
-		if (prefs.stack_color != NULL) g_free (prefs.stack_color);
-		prefs.stack_color = gdk_color_to_string(color);
-		display_update_tags();
-	}
-	else if (strcmp (title, SELECT_ACT_MOD_COLOR) == 0)
-	{
-		da = glade_xml_get_widget (prefs_xml, "prefs_act_mod_color");
-		if (prefs.act_mod_color != NULL) g_free (prefs.act_mod_color);
-		prefs.act_mod_color = gdk_color_to_string(color);
-		display_update_tags();
-	}
-	else if (strcmp (title, SELECT_INACT_MOD_COLOR) == 0)
-	{
-		da = glade_xml_get_widget (prefs_xml, "prefs_inact_mod_color");
-		if (prefs.inact_mod_color != NULL) g_free (prefs.inact_mod_color);
-		prefs.inact_mod_color = gdk_color_to_string(color);
-		display_update_tags();
-	}
-	else fprintf (stderr, "[%s] Color Dialog (%s) not found. %s\n", PACKAGE, 
-		title, BUG_REPORT);
-
-	gtk_widget_really_modify_fg (da, color);
-	
-	gtk_widget_destroy (color_dialog);
+	gtk_color_button_get_color (button, &color);
+	if (prefs.result_color != NULL) g_free (prefs.result_color);
+	prefs.result_color = gdk_color_to_string(color);
+	display_update_tags();
 }
-
 
 void
-on_font_ok_button_clicked              (GtkButton       *button,
-                                        gpointer         user_data)
+on_prefs_stack_font_set(GtkFontButton *button, gpointer user_data)
 {
-	GtkButton		*font_button=NULL;
-	const char 		*title;
-	char			*font_name, *button_font;
-
-	title = gtk_window_get_title ((GtkWindow *) font_dialog);
-	font_name = gtk_font_selection_dialog_get_font_name ((GtkFontSelectionDialog *)font_dialog);
+	const char	*font_name;
 	
-	if (strcmp (title, SELECT_RESULT_FONT) == 0)
-	{
-		font_button = (GtkButton *) glade_xml_get_widget (prefs_xml, "prefs_result_font");
-		if (prefs.result_font != NULL) g_free (prefs.result_font);
-		prefs.result_font = g_strdup(font_name);
-		display_update_tags();
-	}
-	else if (strcmp (title, SELECT_STACK_FONT) == 0)
-	{
-		font_button = (GtkButton *) glade_xml_get_widget (prefs_xml, "prefs_stack_font");
-		if (prefs.stack_font != NULL) g_free (prefs.stack_font);
-		prefs.stack_font = g_strdup(font_name);
-		display_update_tags();
-	}
-	else if (strcmp (title, SELECT_MODULE_FONT) == 0)
-	{
-		font_button = (GtkButton *) glade_xml_get_widget (prefs_xml, "prefs_mod_font");
-		if (prefs.mod_font != NULL) g_free (prefs.mod_font);
-		prefs.mod_font = g_strdup(font_name);
-		display_update_tags();
-	}
-	else if (strcmp (title, SELECT_BUTTON_FONT) == 0)
-	{
-		font_button = (GtkButton *) glade_xml_get_widget (prefs_xml, "prefs_button_font");
-		if (prefs.button_font != NULL) g_free (prefs.button_font);
-		prefs.button_font = g_strdup(font_name);
-		if (prefs.custom_button_font == TRUE) button_font = g_strdup (prefs.button_font);
-		else button_font = g_strdup ("");
-		set_all_buttons_font (button_font);	
-		g_free (button_font);
-	}
-	else fprintf (stderr, "[%s] Font Dialog (%s) not found. %s\n", PACKAGE, 
-		title, BUG_REPORT);
-	
-	gtk_widget_destroy (font_dialog);
-	
-	gtk_button_set_label (font_button, font_name);
+	font_name = gtk_font_button_get_font_name(button);
+	if (prefs.stack_font != NULL) g_free (prefs.stack_font);
+	prefs.stack_font = g_strdup(font_name);
+	display_update_tags();
 }
 
+void
+on_prefs_stack_color_set(GtkColorButton *button, gpointer user_data)
+{
+	GdkColor	color;
+	
+	gtk_color_button_get_color (button, &color);
+	if (prefs.stack_color != NULL) g_free (prefs.stack_color);
+	prefs.stack_color = gdk_color_to_string(color);
+	display_update_tags();
+}
 
+void
+on_prefs_mod_font_set(GtkFontButton *button, gpointer user_data)
+{
+	const char	*font_name;
+	
+	font_name = gtk_font_button_get_font_name(button);
+	if (prefs.mod_font != NULL) g_free (prefs.mod_font);
+	prefs.mod_font = g_strdup(font_name);
+	display_update_tags();
+}
+
+void
+on_prefs_act_mod_color_set(GtkColorButton *button, gpointer user_data)
+{
+	GdkColor	color;
+	
+	gtk_color_button_get_color (button, &color);
+	if (prefs.act_mod_color != NULL) g_free (prefs.act_mod_color);
+	prefs.act_mod_color = gdk_color_to_string(color);
+	display_update_tags();
+}
+
+void
+on_prefs_inact_mod_color_set(GtkColorButton *button, gpointer user_data)
+{
+	GdkColor	color;
+	
+	gtk_color_button_get_color (button, &color);
+	if (prefs.inact_mod_color != NULL) g_free (prefs.inact_mod_color);
+	prefs.inact_mod_color = gdk_color_to_string(color);
+	display_update_tags();
+}
+
+void
+on_prefs_bkg_color_set(GtkColorButton *button, gpointer user_data)
+{
+	GdkColor	color;
+	
+	gtk_color_button_get_color (button, &color);
+	if (prefs.bkg_color != NULL) g_free (prefs.bkg_color);
+	prefs.bkg_color = gdk_color_to_string(color);
+	display_set_bkg_color (prefs.bkg_color);
+}
+
+void
+on_prefs_button_font_set(GtkFontButton *button, gpointer user_data)
+{
+	const char	*font_name;
+	char		*button_font;
+	
+	font_name = gtk_font_button_get_font_name(button);
+	if (prefs.button_font != NULL) g_free (prefs.button_font);
+	prefs.button_font = g_strdup(font_name);
+	if (prefs.custom_button_font == TRUE) button_font = g_strdup (prefs.button_font);
+	else button_font = g_strdup ("");
+	set_all_buttons_font (button_font);	
+	g_free (button_font);
+}
 
 void
 on_prefs_close_clicked                (GtkButton       *button,
@@ -878,23 +794,6 @@ on_prefs_close_clicked                (GtkButton       *button,
 {
 	gtk_widget_destroy (gtk_widget_get_toplevel((GtkWidget *)button));
 }
-
-
-void
-on_color_cancel_button_clicked         (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	gtk_widget_destroy (color_dialog);
-}
-
-
-void
-on_font_cancel_button_clicked          (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	gtk_widget_destroy (font_dialog);
-}
-
 
 void
 on_show_menubar1_activate              (GtkMenuItem     *menuitem,
@@ -1684,6 +1583,7 @@ void on_paper_entry_activate (GtkWidget *activated_widget, gpointer user_data)
 	else
 		entry = GTK_ENTRY(activated_widget);
 	
+	if (strcmp(gtk_entry_get_text(entry), "") == 0) return;
 	/* result.error result.value */
 	result = flex_parser(gtk_entry_get_text(entry));
 	
@@ -1692,6 +1592,7 @@ void on_paper_entry_activate (GtkWidget *activated_widget, gpointer user_data)
 	paper_store = GTK_LIST_STORE(gtk_tree_view_get_model(tree_view));
 	gtk_list_store_append (paper_store, &iter);
 	gtk_list_store_set (paper_store, &iter, 0, gtk_entry_get_text(entry), 1, 0.0, 2, NULL, -1);
+	
 	gtk_list_store_append (paper_store, &iter);
 	result_string = get_display_number_string(result.value, current_status.number);
 	markup_result_string = g_strdup_printf ("<b>%s</b>", result_string);

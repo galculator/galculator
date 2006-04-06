@@ -16,6 +16,7 @@
   <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
   <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
   <property name="focus_on_map">True</property>
+  <property name="urgency_hint">False</property>
   <signal name="destroy" handler="gtk_main_quit" last_modification_time="Thu, 05 Sep 2002 06:48:44 GMT"/>
 
   <child>
@@ -1147,6 +1148,8 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Sun, 15 Sep 2002 14:50:16 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <accelerator key="KP_Subtract" modifiers="GDK_CONTROL_MASK" signal="clicked"/>
+		  <accelerator key="minus" modifiers="GDK_CONTROL_MASK" signal="clicked"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">2</property>

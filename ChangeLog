@@ -1,4 +1,17 @@
+2006-04-01 Simon Floery <chimaira@users.sf.net>
+	* fixed build process (use automake1.9 from now on) (thanks to
+		Christian)
+	* released version 1.2.5.2 based on status of code at 1.2.5.1 with
+		above fix.
+	* ui/prefs.glade, src/callbacks.c, src/ui.c, src/general_functions.c: 
+		use GtkColorButton and GtkFontButton instead of homegrown 
+		color and font buttons
+	* src/display.c and more: preferences in paper mode work.
 
+2006-03-26 Simon Floery <chimaira@users.sf.net>
+	* src/ui.c: set_all_normal_buttons_tip (fixes sf.net 1214786)
+	* +/- got accelerator
+	
 2006-03-22 Simon Floery <chimaira@users.sf.net>
 	* src/ui.c: use g_object_unref instead of g_free to unref glade_xml
 		(fixes Debian BTS #358064 and sf.net 1442849)
