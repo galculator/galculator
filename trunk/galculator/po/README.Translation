@@ -1,5 +1,5 @@
 xgettext -f POTFILES.in -k=_ -o package.pot
-	creates a new package.pot. please not that file galculator.pot exists
+	creates a new package.pot. please note that file galculator.pot exists
 	and that you don't need this step therefore. resume with:
 
 msginit -l ll
