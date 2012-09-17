@@ -1,7 +1,7 @@
 /*
  *  display.h
  *	part of galculator
- *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -26,9 +26,9 @@
 
 #define DISPLAY_MARK_NUMBER		"mark_number"
 #define DISPLAY_MARK_ANGLE		"mark_angle"
-#define DISPLAY_MARK_NOTATION		"mark_notation"
+#define DISPLAY_MARK_NOTATION	"mark_notation"
 #define DISPLAY_MARK_ARITH		"mark_arith"
-#define DISPLAY_MARK_BRACKET		"mark_bracket"
+#define DISPLAY_MARK_BRACKET	"mark_bracket"
 
 #define DISPLAY_MODULES_DELIM 		"   "
 
@@ -51,13 +51,13 @@ extern gboolean calc_entry_start_new;
 /* general */
 
 
-gboolean on_textview_button_press_event (GtkWidget *widget,
-                                        GdkEventButton *event,
-                                        gpointer user_data);
-void on_textview_selection_received (GtkWidget *widget,
-                                            GtkSelectionData *data,
-                                            guint time,
-                                            gpointer user_data);
+G_MODULE_EXPORT gboolean on_textview_button_press_event (GtkWidget *widget,
+							GdkEventButton *event,
+							gpointer user_data);
+G_MODULE_EXPORT void on_textview_selection_received (GtkWidget *widget,
+							GtkSelectionData *data,
+							guint time,
+							gpointer user_data);
 void display_init ();
 void display_update_modules ();
 void display_option_label_set (GtkLabel *label);
@@ -74,20 +74,18 @@ void display_module_notation_activate (int mode);
 
 /* the result field */
 
-void display_result_add_digit (char digit);
-void display_result_set (char *string_value);
+/* there are some static functions declared in the header of display.c */
+void display_result_set (char *string_value, int update_display_value, double value);
 void display_result_set_double (double value, int number_base_status);
-void display_result_feed (char *string);
-char *display_get_line (int line_nr);
+void display_result_add_digit (char digit, int number_base_status);
+void display_result_feed (char *string, int number_base_status);
+
 char *display_result_get ();
 double display_result_get_double (int number_base_status);
 void display_append_e (GtkToggleButton *button);
 void display_result_toggle_sign (GtkToggleButton *button);
-void display_result_backspace ();
+void display_result_backspace (int number_base_status);
 void display_result_getset ();
-
-void display_set_line_double (double value, int line, char *tag, int number_base_status);
-void display_set_line (char *string, int line, char *tag);
 
 void display_stack_create ();
 void display_stack_remove ();

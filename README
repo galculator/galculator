@@ -70,6 +70,16 @@ complement			~			~(3) brackets are
 If formula entry mode's parser encounters an (syntax) error, the formula entry 
 text is turned red.
 
+Paper Mode
+==========
+
+Since version 1.3.0 galculator features a paper mode, which offers a very 
+simple GUI along with the functionality of formula entry mode. In the entry
+field, enter the expression following the same rules as for formula entry mode. 
+Hitting return or clicking the button to the right will evaluate the expression 
+and add it as well as the result to the list view above. Double click on any 
+row of that list view to copy the corresponding expression to the entry field.
+
 User defined functions
 ======================
 

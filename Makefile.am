@@ -7,7 +7,7 @@ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 CLEANFILES = $(desktop_DATA)
 
-SUBDIRS = src po ui doc
+SUBDIRS = src po ui doc pixmaps
 
 # things we want to include in the source code distribution
 

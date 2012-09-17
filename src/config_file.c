@@ -1,7 +1,7 @@
 /*
  *  config_file.c - manages config file access.
  *	part of galculator
- *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -307,7 +307,7 @@ void config_file_set_constants (char *line)
 	value++;
 	desc = g_strstrip(desc);
 	name = g_strstrip(name);
-	value = g_strstrip(value);
+	value = g_strstrip(value);	
 	/* allowing desc and name to be "" */
 	if (strlen(value) == 0) return;
 	nr_consts++;

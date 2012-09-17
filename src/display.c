@@ -1,7 +1,7 @@
 /*
  *  display.c - code for this nifty display.
  *	part of galculator
- *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -36,26 +36,33 @@
 #include <glib.h>
 #include <glade/glade.h>
 
-static GtkTextView 	*view;
-static GtkTextBuffer 	*buffer;
-static int 		display_result_counter = 0;
-static int		display_result_line = 0;
+static GtkTextView *view;
+static GtkTextBuffer *buffer;
+static int display_result_counter = 0;
+static int display_result_line = 0;
 
 static char	*number_mod_labels[5] = {" DEC ", " HEX ", " OCT ", " BIN ", NULL}, 
 		*angle_mod_labels[4] = {" DEG ", " RAD ", " GRAD ", NULL},
 		*notation_mod_labels[4] = {" ALG ", " RPN ", " FORM ", NULL};	
+
+/* no one outside display.c should need to call these functions */
+static void display_set_line_double (double value, int line, char *tag, int number_base_status);
+static void display_set_line (char *string, int line, char *tag);
+static char *display_get_line (int line_nr);
+
+/* we do not need to remember the stack in double as this is stored outside
+ * the stack functions in here only manipulate yzt
+ */
+double display_value=0.;
 
 /*
  * display.c mainly consists of two parts: first display setup code
  * and second display manipulation code.
  */
 
-
-
 /* this code is taken from the GTK 2.0 tutorial: 
  *		http://www.gtk.org/tutorial
  */
-
 gboolean on_textview_button_press_event (GtkWidget *widget,
 						GdkEventButton *event,
 						gpointer user_data)
@@ -101,7 +108,6 @@ gboolean on_textview_button_press_event (GtkWidget *widget,
 /* this code is taken from the GTK 2.0 tutorial: 
  *		http://www.gtk.org/tutorial
  */
-
 void on_textview_selection_received (GtkWidget *widget,
 					GtkSelectionData *data,
 					guint time,
@@ -114,7 +120,8 @@ void on_textview_selection_received (GtkWidget *widget,
 	/* Make sure we got the data in the expected form */
 	if (data->type != GDK_SELECTION_TYPE_STRING) return;
 
-	display_result_feed ((char *)data->data);
+	/* ok, we tried to avoid this in display.* but here we can't avoid using the global var. */
+	display_result_feed ((char *)data->data, current_status.number);
 
 	return;
 }
@@ -192,12 +199,10 @@ void display_init ()
 	gtk_text_view_set_tabs (view, tab_array);
 	pango_tab_array_free (tab_array);
 	
+	/* if we display a stack, this will be updated later */
+	display_result_line = 0;		
 	display_set_line (CLEARED_DISPLAY, display_result_line, "result");
-	/* DISPLAY RESULT MODIFIED
-	gtk_text_buffer_get_iter_at_line (buffer, &iter, display_result_line);
-	gtk_text_buffer_insert_with_tags_by_name (buffer, &iter, 
-		CLEARED_DISPLAY, -1, "result", NULL);
-	*/
+	
 	display_update_modules ();
 
 	/* number, angle and notation are now set in src/callbacks.c::
@@ -398,7 +403,10 @@ void display_delete_line (GtkTextBuffer *b, int line_index, GtkTextIter *iter)
 {
 	GtkTextIter start, end;
 	
-	if (gtk_text_buffer_get_line_count (b) <= line_index) return;
+	if (gtk_text_buffer_get_line_count (b) <= line_index) {
+		fprintf (stderr, _("[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"), PROG_NAME, BUG_REPORT);
+		return;
+	}
 	display_get_line_iters (b, line_index, &start, &end);
 	gtk_text_buffer_delete (buffer, &start, &end);
 	*iter = start;
@@ -627,17 +635,53 @@ void display_update_tags ()
  *** from here on display manipulation code.
  ******************/
 
+/* these is the most basic routine. all functions here finally result in a call
+ * to this.
+ */
+static void display_set_line (char *string, int line, char *tag)
+{
+	char 		*separator_string;
+	GtkTextIter	start;
+
+	/* at first clear the result field */
+	display_delete_line (buffer, line, &start);
+	
+	separator_string = string_add_separator(string, get_sep(current_status.number), 
+		get_sep_length(current_status.number), get_sep_char(current_status.number), dec_point[0]);
+	/* DISPLAY RESULT MODIFIED */
+	gtk_text_buffer_insert_with_tags_by_name (buffer, &start, separator_string, -1, tag, NULL);
+	free (separator_string);
+	if (line == display_result_line) {
+		display_result_counter = strlen (string);
+		/* this is some cosmetics. try to keep counter up2date */
+		if (strchr (string, 'e') != NULL) {
+			display_result_counter -= (strchr(string, 'e') + sizeof(char) - string)/sizeof(char);
+			display_result_counter += get_display_number_length(current_status.number) - DISPLAY_RESULT_E_LENGTH - 1;
+		}
+		else if (strchr (string, dec_point[0]) != NULL) display_result_counter--;
+	}
+}
+
+static void display_set_line_double (double value, int line, char *tag, int number_base_status)
+{
+	char		*string_value;
+	
+	string_value = get_display_number_string (value, current_status.number);
+	display_set_line (string_value, line, tag);
+	g_free (string_value);
+}
+
 /*
  * display_result_add_digit. appends the given digit to the current entry, 
  * handles zeros, decimal points. call e.g. with *(gtk_button_get_label (button))
  */
-void display_result_add_digit (char digit)
+void display_result_add_digit (char digit, int number_base_status)
 {
 	char			*display_string=NULL, *new_display_string=NULL;
 
+	/* fool the following code */
 	if (current_status.calc_entry_start_new == TRUE) {
-		/* fool the following code */
-		display_result_set ("0");
+		display_result_set (CLEARED_DISPLAY, TRUE, 0.);
 		current_status.calc_entry_start_new = FALSE;
 		display_result_counter = 1;
 	}
@@ -653,18 +697,183 @@ void display_result_add_digit (char digit)
 			new_display_string = g_strdup_printf ("%s%c", display_string, digit);
 	} else {
 		/* replace "0" on display with new digit */
-		if (strcmp (display_string, "0") == 0) new_display_string = g_strdup_printf ("%c", digit);
+		if (strcmp (display_string, CLEARED_DISPLAY) == 0) new_display_string = g_strdup_printf ("%c", digit);
 		else if (display_result_counter < get_display_number_length(current_status.number)) {
 			new_display_string = g_strdup_printf ("%s%c", display_string, digit);
 			/* increment counter only in this if directive as above the counter remains 1! */
 			display_result_counter++;
 		}
 	}
-	if (new_display_string) display_result_set (new_display_string);
+	if (new_display_string) display_result_set (new_display_string, TRUE, 
+		string2double(new_display_string, number_base_status));
 	if (display_string) g_free (display_string);
 	if (new_display_string) g_free (new_display_string);
 }
 
+/*
+ * display_result_set_double. set text of calc_entry to string given by float value.
+ *	the float value is manipulated (rounded, ...)
+ */
+void display_result_set_double (double value, int number_base_status)
+{	
+	current_status.allow_arith_op = TRUE;
+	display_module_arith_label_update (' ');
+	display_set_line_double (value, display_result_line, "result", number_base_status);
+	display_value = value;
+}
+
+void display_result_set (char *string_value, int update_display_value, double value)
+{
+	current_status.allow_arith_op = TRUE;
+	display_module_arith_label_update (' ');
+	display_set_line (string_value, display_result_line, "result");
+	/* this should be an exceptional case and never be done to results of operations */
+	if (update_display_value) display_value = value;
+}
+
+void display_result_feed (char *string, int number_base_status)
+{
+	int	counter;
+	
+	for (counter = 0; counter < strlen(string); counter++) {
+		if (is_valid_number(current_status.number, string[counter])) 
+			/* g_ascii_toupper to convert lower hex chars to upper */
+			display_result_add_digit (
+				g_ascii_toupper(string[counter]), number_base_status);
+	}
+	if (string[0] == '-') display_result_toggle_sign (NULL);
+}
+
+/*
+ * display_result_get_line. The only function calling a gtk_text_buffer_get_*
+ *	function directly.
+ */
+static char *display_get_line (int line_nr)
+{
+	GtkTextIter 	start, end;
+	
+	if (prefs.mode == PAPER_MODE) return NULL;
+	
+	display_get_line_iters (buffer, line_nr, &start, &end);
+	/* DISPLAY RESULT GET */
+	return string_del_separator(gtk_text_buffer_get_text (buffer, &start, &end, TRUE), get_sep_char(current_status.number));
+}
+
+/* display_result_get. a simplfied call to display_result_get_line
+ */
+char *display_result_get ()
+{
+	return display_get_line (display_result_line);
+}
+
+/* display_result_get_double. a display_result_get plus conversion to double
+ */
+double display_result_get_double (int number_base_status)
+{
+/*	char 	*result_string;
+	double	ret_val;
+	
+	result_string = display_result_get();
+	ret_val = string2double (result_string, number_base_status);
+	g_free (result_string);
+*/		
+	return display_value;
+}	
+
+void display_append_e (GtkToggleButton *button)
+{
+	/* we have kind of a shortcut. we don't set to 0e+ but 1e+ */
+	if (current_status.number != CS_DEC) return;
+	if ((current_status.calc_entry_start_new == FALSE) && 
+		(strcmp (display_result_get(), "0") != 0)) {
+		if (strstr (display_result_get(), "e") == NULL) {
+			/* DISPLAY RESULT MODIFIED
+			display_get_line_end_iter (buffer, display_result_line, &end);
+			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, "e+", -1, "result", NULL);
+			*/
+			char *display_string = g_strdup_printf ("%se+", display_result_get());
+			display_result_set (display_string, FALSE, -1);
+			g_free (display_string);
+		}
+	} else {
+		display_result_set ("1e+", TRUE, 1.);
+		current_status.calc_entry_start_new = FALSE;
+	}
+	display_result_counter = get_display_number_length(current_status.number) - DISPLAY_RESULT_E_LENGTH;
+}
+
+void display_result_toggle_sign (GtkToggleButton *button)
+{
+	char			*result_field, *e_pointer;
+
+	if (current_status.number != CS_DEC) return;
+	result_field = display_result_get();
+	/* if there is no e? we toggle the leading sign, otherwise the sign after e */
+	if ((e_pointer = strchr (result_field, 'e')) == NULL || current_status.calc_entry_start_new) {
+		if (*result_field == '-') g_stpcpy (result_field, result_field + sizeof(char));
+		else if (strcmp (result_field, "0") != 0)
+			result_field = g_strdup_printf ("-%s", result_field);
+		display_value *= (-1);
+	} else {
+		if (*(++e_pointer) == '-') *e_pointer = '+';
+		else *e_pointer = '-';
+		/* this has to be done by retrieving the exponent. believe me.
+		 * (try 0.001e-3 for example).
+		 */
+		if (strlen(e_pointer) > 1) 
+			display_value *= pow(10., 2*string2double(e_pointer, CS_DEC));
+	}
+	display_result_set (result_field, FALSE, -1.);
+	g_free (result_field);
+}
+
+/* display_result_backspace - deletes the tail of the display.
+ *		sets the display with display_result_set => no additional manipulation of 
+ *		display_result_counter
+ *		necessary
+ */
+
+void display_result_backspace (int number_base_status)
+{															
+	char	*current_entry;
+
+	if (current_status.calc_entry_start_new == TRUE) {
+		current_status.calc_entry_start_new = FALSE;
+		display_result_set (CLEARED_DISPLAY, TRUE, 0.);
+	} else {
+		current_entry = display_result_get();
+		/* to avoid an empty/senseless result field */
+		if (strlen(current_entry) == 1) current_entry[0] = '0';
+		else if ((strlen(current_entry) == 2) && (*current_entry == '-')) current_entry = "0\0";
+		else if (current_entry[strlen(current_entry) - 2] == 'e') current_entry[strlen(current_entry) - 2] = '\0';
+		else current_entry[strlen(current_entry) - 1] = '\0';
+		display_result_set (current_entry, TRUE, string2double (current_entry, number_base_status));
+		g_free (current_entry);
+	}
+}
+
+/* display_result_getset. kind of display result redraw. use this to get and
+ * set the display, it frees the return string of display_result_get()
+ */
+
+void display_result_getset ()
+{
+	char	*result;
+	char	**stack;
+	
+	if (prefs.mode == PAPER_MODE) return;
+	
+	result = display_result_get();
+	stack = display_stack_get_yzt();
+	display_result_set(result, FALSE, -1);
+	display_stack_set_yzt(stack);
+	g_free(result);
+	g_free(stack);
+}
+
+/*
+ * STACK functions manipulating the display
+ */
 void display_stack_create ()
 {
 	int 		counter;
@@ -718,7 +927,7 @@ void display_stack_set_yzt (char **stack)
 }
 
 /*
- * display_stack_get_yzt - returns an three-sized char array with 1:1 copies
+ * display_stack_get_yzt - returns a three-sized char array with 1:1 copies
  *	of the current displayed stack.
  */
 
@@ -754,192 +963,4 @@ double *display_stack_get_yzt_double (int number_base_status)
 	for (counter = 0; counter < display_result_line; counter++)
 		double_stack[counter] = string2double (string_stack[counter], number_base_status);
 	return double_stack;
-}
-
-void display_set_line_double (double value, int line, char *tag, int number_base_status)
-{
-	char		*string_value;
-	
-	string_value = get_display_number_string (value, current_status.number);
-	display_set_line (string_value, line, tag);
-	g_free (string_value);
-}
-
-void display_set_line (char *string, int line, char *tag)
-{
-	char 		*separator_string;
-	GtkTextIter	start;
-
-	/* at first clear the result field */
-	display_delete_line (buffer, line, &start);
-	
-	separator_string = string_add_separator(string, get_sep(current_status.number), 
-		get_sep_length(current_status.number), get_sep_char(current_status.number), dec_point[0]);
-	/* DISPLAY RESULT MODIFIED */
-	gtk_text_buffer_insert_with_tags_by_name (buffer, &start, separator_string, -1, tag, NULL);
-	free (separator_string);
-	if (line == display_result_line) {
-		display_result_counter = strlen (string);
-		/* this is some cosmetics. try to keep counter up2date */
-		if (strchr (string, 'e') != NULL) {
-			display_result_counter -= (strchr(string, 'e') + sizeof(char) - string)/sizeof(char);
-			display_result_counter += get_display_number_length(current_status.number) - DISPLAY_RESULT_E_LENGTH - 1;
-		}
-		else if (strchr (string, dec_point[0]) != NULL) display_result_counter--;
-	}
-}
-
-/*
- * display_result_set_double. set text of calc_entry to string given by float value.
- *	the float value is manipulated (rounded, ...)
- */
-
-void display_result_set_double (double value, int number_base_status)
-{	
-	current_status.allow_arith_op = TRUE;
-	display_module_arith_label_update (' ');
-	display_set_line_double (value, display_result_line, "result", number_base_status);
-}
-
-void display_result_set (char *string_value)
-{
-	current_status.allow_arith_op = TRUE;
-	display_module_arith_label_update (' ');
-	display_set_line (string_value, display_result_line, "result");
-}
-
-void display_result_feed (char *string)
-{
-	int	counter;
-	
-	for (counter = 0; counter < strlen(string); counter++) {
-		if (is_valid_number(current_status.number, string[counter])) 
-			/* g_ascii_toupper to convert lower hex chars to upper */
-			display_result_add_digit (
-				g_ascii_toupper(string[counter]));
-	}
-	if (string[0] == '-') display_result_toggle_sign (NULL);
-}
-
-/*
- * display_result_get_line. The only function calling a gtk_text_buffer_get_*
- *	function directly.
- */
-
-char *display_get_line (int line_nr)
-{
-	GtkTextIter 	start, end;
-	
-	display_get_line_iters (buffer, line_nr, &start, &end);
-	/* DISPLAY RESULT GET */
-	return string_del_separator(gtk_text_buffer_get_text (buffer, &start, &end, TRUE), get_sep_char(current_status.number));
-}
-
-/* display_result_get. a simplfied call to display_result_get_line
- */
-
-char *display_result_get ()
-{
-	return display_get_line (display_result_line);
-}
-
-/* display_result_get_double. a display_result_get plus conversion to double
- */
-
-double display_result_get_double (int number_base_status)
-{
-	char 	*result_string;
-	double	ret_val;
-	
-	result_string = display_result_get();
-	ret_val = string2double (result_string, number_base_status);
-	g_free (result_string);
-		
-	return ret_val;
-}	
-
-void display_append_e (GtkToggleButton *button)
-{
-	char			*display_value;
-
-	/* we have kind of a shortcut. we don't set to 0e+ but 1e+ */
-	if (current_status.number != CS_DEC) return;
-	if ((current_status.calc_entry_start_new == FALSE) && 
-		(strcmp (display_result_get(), "0") != 0)) {
-		if (strstr (display_result_get(), "e") == NULL) {
-			/* DISPLAY RESULT MODIFIED
-			display_get_line_end_iter (buffer, display_result_line, &end);
-			gtk_text_buffer_insert_with_tags_by_name (buffer, &end, "e+", -1, "result", NULL);
-			*/
-			display_value = g_strdup_printf ("%se+", display_result_get());
-			display_result_set (display_value);
-			g_free (display_value);
-		}
-	} else {
-		display_result_set ("1e+");
-		current_status.calc_entry_start_new = FALSE;
-	}
-	display_result_counter = get_display_number_length(current_status.number) - DISPLAY_RESULT_E_LENGTH;
-}
-
-void display_result_toggle_sign (GtkToggleButton *button)
-{
-	char			*result_field, *e_pointer;
-
-	if (current_status.number != CS_DEC) return;
-	result_field = display_result_get();
-	/* if there is no e? we toggle the leading sign, otherwise the sign after e */
-	if ((e_pointer = strchr (result_field, 'e')) == NULL) {
-		if (*result_field == '-') g_stpcpy (result_field, result_field + sizeof(char));
-		else if (strcmp (result_field, "0") != 0)
-			result_field = g_strdup_printf ("-%s", result_field);
-	} else {
-		if (*(++e_pointer) == '-') *e_pointer = '+';
-		else *e_pointer = '-';
-	}
-	display_result_set (result_field);
-	g_free (result_field);
-}
-
-/* display_result_backspace - deletes the tail of the display.
- *		sets the display with display_result_set => no additional manipulation of 
- *		display_result_counter
- *		necessary
- */
-
-void display_result_backspace ()
-{															
-	char	*current_entry;
-
-	if (current_status.calc_entry_start_new == TRUE) {
-		current_status.calc_entry_start_new = FALSE;
-		display_result_set ("0");
-	} else {
-		current_entry = display_result_get();
-		/* to avoid an empty/senseless result field */
-		if (strlen(current_entry) == 1) current_entry[0] = '0';
-		else if ((strlen(current_entry) == 2) && (*current_entry == '-')) current_entry = "0\0";
-		else if (current_entry[strlen(current_entry) - 2] == 'e') current_entry[strlen(current_entry) - 2] = '\0';
-		else current_entry[strlen(current_entry) - 1] = '\0';
-		display_result_set (current_entry);
-		g_free (current_entry);
-	}
-}
-
-/* display_result_getset. kind of display result redraw. use this to get and
- * set the display, it frees the return string of display_result_get()
- */
-
-void display_result_getset ()
-{
-	char	*result;
-	char	**stack;
-	
-	if (prefs.mode == PAPER_MODE) return;
-	result = display_result_get();
-	stack = display_stack_get_yzt();
-	display_result_set(result);
-	display_stack_set_yzt(stack);
-	g_free(result);
-	g_free(stack);
 }

@@ -30,7 +30,7 @@
 
 ## Release information
 my $PROGRAM = "intltool-update";
-my $VERSION = "0.34.2";
+my $VERSION = "0.36.2";
 my $PACKAGE = "intltool";
 
 ## Loaded modules
@@ -71,7 +71,8 @@ my $xml_support =
 "sheet(?:\\.in)+|".	# ?
 "schemas(?:\\.in)+|".	# GConf specific
 "pong(?:\\.in)+|".	# DEPRECATED: PONG is not used [by GNOME] any longer.
-"kbd(?:\\.in)+";	# GOK specific. 
+"kbd(?:\\.in)+|".	# GOK specific. 
+"policy(?:\\.in)+";	# PolicyKit files
 
 my $ini_support =
 "icon(?:\\.in)+|".	# http://www.freedesktop.org/Standards/icon-theme-spec
@@ -90,10 +91,9 @@ my $buildin_gettext_support =
 $| = 1;
 
 ## Sometimes the source tree will be rooted somewhere else.
-my $SRCDIR = ".";
+my $SRCDIR = $ENV{"srcdir"} || ".";
 my $POTFILES_in;
 
-$SRCDIR = $ENV{"srcdir"} if $ENV{"srcdir"};
 $POTFILES_in = "<$SRCDIR/POTFILES.in";
 
 my $devnull = ($^O eq 'MSWin32' ? 'NUL:' : '/dev/null');
@@ -124,8 +124,10 @@ my $arg_count = ($DIST_ARG > 0)
 
 &Console_Write_IntltoolHelp if $arg_count > 1;
 
+my $PKGNAME = FindPackageName ();
+
 # --version and --help don't require a module name
-my $MODULE = $GETTEXT_PACKAGE || &FindPackageName;
+my $MODULE = $GETTEXT_PACKAGE || $PKGNAME || "unknown";
 
 if ($POT_ARG)
 {
@@ -316,7 +318,8 @@ sub FindLeftoutFiles
 	@buf_potfiles_ignore,
 	@buf_allfiles,
 	@buf_allfiles_sorted,
-	@buf_potfiles_sorted
+	@buf_potfiles_sorted,
+        @buf_potfiles_ignore_sorted
     );
 
     ## Search and find all translatable files
@@ -326,7 +329,12 @@ sub FindLeftoutFiles
 	push @buf_i18n_ini,          "$File::Find::name" if /\.($ini_support)$/;
 	push @buf_i18n_xml_unmarked, "$File::Find::name" if /\.(schemas(\.in)+)$/;
 	}, "..";
-
+    find sub { 
+	push @buf_i18n_plain,        "$File::Find::name" if /\.($buildin_gettext_support)$/;
+	push @buf_i18n_xml,          "$File::Find::name" if /\.($xml_support)$/;
+	push @buf_i18n_ini,          "$File::Find::name" if /\.($ini_support)$/;
+	push @buf_i18n_xml_unmarked, "$File::Find::name" if /\.(schemas(\.in)+)$/;
+	}, "$SRCDIR/..";
 
     open POTFILES, $POTFILES_in or die "$PROGRAM:  there's no POTFILES.in!\n";
     @buf_potfiles = grep !/^(#|\s*$)/, <POTFILES>;
@@ -342,7 +350,7 @@ sub FindLeftoutFiles
     ## comparing with POTFILES.in
     foreach my $ignore ("POTFILES.skip", "POTFILES.ignore")
     {
-	(-s $ignore) or next;
+	(-s "$SRCDIR/$ignore") or next;
 
 	if ("$ignore" eq "POTFILES.ignore")
 	{
@@ -351,7 +359,7 @@ sub FindLeftoutFiles
 	}
 
 	print "Found $ignore: Ignoring files...\n" if $VERBOSE;
-	open FILE, "<$ignore" or die "ERROR: Failed to open $ignore!\n";
+	open FILE, "<$SRCDIR/$ignore" or die "ERROR: Failed to open $SRCDIR/$ignore!\n";
 	    
 	while (<FILE>)
 	{
@@ -359,7 +367,7 @@ sub FindLeftoutFiles
 	}
 	close FILE;
 
-	@buf_potfiles = (@buf_potfiles_ignore, @buf_potfiles);
+	@buf_potfiles_ignore_sorted = sort (@buf_potfiles_ignore);
     }
 
     foreach my $file (@buf_i18n_plain)
@@ -417,7 +425,7 @@ sub FindLeftoutFiles
 		}
 	    }	    
 
-	    if (/\.GetString ?\(QUOTEDTEXT/)
+	    if (/\w\.GetString *\(QUOTEDTEXT/)
 	    {
                 if (defined isNotValidMissing (unpack("x3 A*", $file))) {
                     ## Remove the first 3 chars and add newline
@@ -426,7 +434,8 @@ sub FindLeftoutFiles
 		last;
 	    }
 
-	    if (/_\(QUOTEDTEXT/)
+            ## N_ Q_ and _ are the three macros defined in gi8n.h
+	    if (/[NQ]?_ *\(QUOTEDTEXT/)
 	    {
                 if (defined isNotValidMissing (unpack("x3 A*", $file))) {
                     ## Remove the first 3 chars and add newline
@@ -486,6 +495,15 @@ sub FindLeftoutFiles
     my %in2;
     foreach (@buf_potfiles_sorted) 
     {
+        s#^$SRCDIR/../##;
+        s#^$SRCDIR/##;
+	$in2{$_} = 1;
+    }
+
+    foreach (@buf_potfiles_ignore_sorted) 
+    {
+        s#^$SRCDIR/../##;
+        s#^$SRCDIR/##;
 	$in2{$_} = 1;
     }
 
@@ -493,9 +511,16 @@ sub FindLeftoutFiles
 
     foreach (@buf_allfiles_sorted)
     {
-	if (!exists($in2{$_}))
+        my $dummy = $_;
+        my $srcdir = $SRCDIR;
+
+        $srcdir =~ s#^../##;
+        $dummy =~ s#^$srcdir/../##;
+        $dummy =~ s#^$srcdir/##;
+        $dummy =~ s#_build/##;
+	if (!exists($in2{$dummy}))
 	{
-	    push @result, $_
+	    push @result, $dummy
 	}
     }
 
@@ -504,7 +529,7 @@ sub FindLeftoutFiles
     foreach (@buf_potfiles_sorted)
     {
 	chomp (my $dummy = $_);
-	if ("$dummy" ne "" and ! -f "../$dummy")
+	if ("$dummy" ne "" and !(-f "$SRCDIR/../$dummy" or -f "../$dummy"))
 	{
 	    push @buf_potfiles_notexist, $_;
 	}
@@ -537,7 +562,7 @@ sub FindLeftoutFiles
 	    warn "\n" if ($VERBOSE or @result);
 	    warn "\e[1mThe following files do not exist anymore:\e[0m\n\n";
 	    warn @buf_potfiles_notexist, "\n";
-	    warn "Please remove them from POTFILES.in or POTFILES.skip. A file \e[1m'notexist'\e[0m\n".
+	    warn "Please remove them from POTFILES.in. A file \e[1m'notexist'\e[0m\n".
 		 "containing this list of absent files has been written in the current directory.\n";
 	}
     }
@@ -555,16 +580,33 @@ sub Console_WriteError_InvalidOption
     exit 1;
 }
 
+sub isProgramInPath
+{
+    my ($file) = @_;
+    # If either a file exists, or when run it returns 0 exit status
+    return 1 if ((-x $file) or (system("$file --version >$devnull") == 0));
+    return 0;
+}
+
+sub isGNUGettextTool
+{
+    my ($file) = @_;
+    # Check that we are using GNU gettext tools
+    if (isProgramInPath ($file))
+    {
+        my $version = `$file --version`;
+        return 1 if ($version =~ m/.*\(GNU .*\).*/);
+    }
+    return 0;
+}
+
 sub GenerateHeaders
 {
-    my $EXTRACT = "/home/sf/Devel/galculator/intltool-extract";
-    chomp $EXTRACT;
-
-    $EXTRACT = $ENV{"INTLTOOL_EXTRACT"} if $ENV{"INTLTOOL_EXTRACT"};
+    my $EXTRACT = $ENV{"INTLTOOL_EXTRACT"} || "intltool-extract";
 
     ## Generate the .h header files, so we can allow glade and
     ## xml translation support
-    if (! -x "$EXTRACT")
+    if (! isProgramInPath ("$EXTRACT"))
     {
 	print STDERR "\n *** The intltool-extract script wasn't found!"
 	     ."\n *** Without it, intltool-update can not generate files.\n";
@@ -611,13 +653,13 @@ sub GenerateHeaders
 #
 sub GeneratePOTemplate
 {
-    my $XGETTEXT = $ENV{"XGETTEXT"} || "/usr/bin/xgettext";
+    my $XGETTEXT = $ENV{"XGETTEXT"} || "xgettext";
     my $XGETTEXT_ARGS = $ENV{"XGETTEXT_ARGS"} || '';
     chomp $XGETTEXT;
 
-    if (! -x $XGETTEXT)
+    if (! isGNUGettextTool ("$XGETTEXT"))
     {
-	print STDERR " *** xgettext is not found on this system!\n".
+	print STDERR " *** GNU xgettext is not found on this system!\n".
 		     " *** Without it, intltool-update can not extract strings.\n";
 	exit;
     }
@@ -671,12 +713,8 @@ sub GeneratePOTemplate
 	} 
 	else 
 	{
-	    if ($SRCDIR eq ".") {
-	        print OUTFILE "../$_\n";
-	    } else {
-	        print OUTFILE "$SRCDIR/../$_\n";
-	    }
-	    $gettext_code = &TextFile_DetermineEncoding ("../$_") if ($gettext_support_nonascii and not defined $forced_gettext_code);
+            print OUTFILE "$SRCDIR/../$_\n";
+	    $gettext_code = &TextFile_DetermineEncoding ("$SRCDIR/../$_") if ($gettext_support_nonascii and not defined $forced_gettext_code);
 	}
 
 	next if (! $gettext_support_nonascii);
@@ -717,11 +755,29 @@ sub GeneratePOTemplate
     unlink "$MODULE.pot";
     my @xgettext_argument=("$XGETTEXT",
 			   "--add-comments",
-			   "--directory\=\.",
+			   "--directory\=.",
+                           "--default-domain\=$MODULE",
+                           "--flag\=g_strdup_printf:1:c-format",
+                           "--flag\=g_string_printf:2:c-format",
+                           "--flag\=g_string_append_printf:2:c-format",
+                           "--flag\=g_error_new:3:c-format",
+                           "--flag\=g_set_error:4:c-format",
+                           "--flag\=g_markup_printf_escaped:1:c-format",
+                           "--flag\=g_log:3:c-format",
+                           "--flag\=g_print:1:c-format",
+                           "--flag\=g_printerr:1:c-format",
+                           "--flag\=g_printf:1:c-format",
+                           "--flag\=g_fprintf:2:c-format",
+                           "--flag\=g_sprintf:2:c-format",
+                           "--flag\=g_snprintf:3:c-format",
+                           "--flag\=g_scanner_error:2:c-format",
+                           "--flag\=g_scanner_warn:2:c-format",
 			   "--output\=$MODULE\.pot",
 			   "--files-from\=\.\/POTFILES\.in\.temp");
     my $XGETTEXT_KEYWORDS = &FindPOTKeywords;
     push @xgettext_argument, $XGETTEXT_KEYWORDS;
+    my $MSGID_BUGS_ADDRESS = &FindMakevarsBugAddress;
+    push @xgettext_argument, "--msgid-bugs-address\=$MSGID_BUGS_ADDRESS" if $MSGID_BUGS_ADDRESS;
     push @xgettext_argument, "--from-code\=$encoding" if ($gettext_support_nonascii);
     push @xgettext_argument, $XGETTEXT_ARGS if $XGETTEXT_ARGS;
     my $xgettext_command = join ' ', @xgettext_argument;
@@ -782,8 +838,15 @@ sub POFile_Update
 {
     -f "$MODULE.pot" or die "$PROGRAM: $MODULE.pot does not exist.\n";
 
-    my $MSGMERGE = $ENV{"MSGMERGE"} || "/usr/bin/msgmerge";
+    my $MSGMERGE = $ENV{"MSGMERGE"} || "msgmerge";
     my ($lang, $outfile) = @_;
+
+    if (! isGNUGettextTool ("$MSGMERGE"))
+    {
+	print STDERR " *** GNU msgmerge is not found on this system!\n".
+		     " *** Without it, intltool-update can not extract strings.\n";
+	exit;
+    }
 
     print "Merging $SRCDIR/$lang.po with $MODULE.pot..." if $VERBOSE;
 
@@ -825,7 +888,14 @@ sub POFile_GetLanguage ($)
 sub Console_Write_TranslationStatus
 {
     my ($lang, $output_file) = @_;
-    my $MSGFMT = $ENV{"MSGFMT"} || "/usr/bin/msgfmt";
+    my $MSGFMT = $ENV{"MSGFMT"} || "msgfmt";
+
+    if (! isGNUGettextTool ("$MSGFMT"))
+    {
+	print STDERR " *** GNU msgfmt is not found on this system!\n".
+		     " *** Without it, intltool-update can not extract strings.\n";
+	exit;
+    }
 
     $output_file = "$SRCDIR/$lang.po" if ($output_file eq "");
 
@@ -834,21 +904,28 @@ sub Console_Write_TranslationStatus
 
 sub Console_Write_CoverageReport
 {
-    my $MSGFMT = $ENV{"MSGFMT"} || "/usr/bin/msgfmt";
+    my $MSGFMT = $ENV{"MSGFMT"} || "msgfmt";
+
+    if (! isGNUGettextTool ("$MSGFMT"))
+    {
+	print STDERR " *** GNU msgfmt is not found on this system!\n".
+		     " *** Without it, intltool-update can not extract strings.\n";
+	exit;
+    }
 
     &GatherPOFiles;
 
     foreach my $lang (@languages) 
     {
-	print "$lang: ";
+	print STDERR "$lang: ";
 	&POFile_Update ($lang, "");
     }
 
-    print "\n\n * Current translation support in $MODULE \n\n";
+    print STDERR "\n\n * Current translation support in $MODULE \n\n";
 
     foreach my $lang (@languages)
     {
-	print "$lang: ";
+	print STDERR "$lang: ";
 	system ("$MSGFMT", "-o", "$devnull", "--verbose", "$SRCDIR/$lang.po");
     }
 }
@@ -874,8 +951,10 @@ sub SubstituteVariable
     {
 	my $rest = $3;
 	my $untouched = $1;
-	my $sub = $varhash{$2};
-	
+	my $sub = "";
+        # Ignore recursive definitions of variables
+        $sub = $varhash{$2} if defined $varhash{$2} and $varhash{$2} !~ /\${?$2}?/;
+
 	return SubstituteVariable ("$untouched$sub$rest");
     }
     
@@ -920,13 +999,13 @@ sub CONF_Handle_Open
 
 	    $conf_in || die "Cannot find top_builddir in Makevars.";
 	}
-	elsif (-f "../configure.ac") 
+	elsif (-f "$SRCDIR/../configure.ac") 
 	{
-	    $conf_in = "../configure.ac";
+	    $conf_in = "$SRCDIR/../configure.ac";
 	} 
-	elsif (-f "../configure.in") 
+	elsif (-f "$SRCDIR/../configure.in") 
 	{
-	    $conf_in = "../configure.in";
+	    $conf_in = "$SRCDIR/../configure.in";
 	} 
 	else 
 	{
@@ -992,10 +1071,10 @@ sub FindPackageName
 	($name, $version) = ($1, $2);
 	$name    =~ s/[\[\]\s]//g;
 	$version =~ s/[\[\]\s]//g;
-	$varhash{"PACKAGE_NAME"} = $name;
-	$varhash{"PACKAGE"} = $name;
-	$varhash{"PACKAGE_VERSION"} = $version;
-	$varhash{"VERSION"} = $version;
+	$varhash{"PACKAGE_NAME"} = $name if (not $name =~ /\${?AC_PACKAGE_NAME}?/);
+	$varhash{"PACKAGE"} = $name if (not $name =~ /\${?PACKAGE}?/);
+	$varhash{"PACKAGE_VERSION"} = $version if (not $name =~ /\${?AC_PACKAGE_VERSION}?/);
+	$varhash{"VERSION"} = $version if (not $name =~ /\${?VERSION}?/);
     }
     
     if ($conf_source =~ /^AC_INIT\(([^,\)]+),([^,\)]+)/m) 
@@ -1003,10 +1082,10 @@ sub FindPackageName
 	($name, $version) = ($1, $2);
 	$name    =~ s/[\[\]\s]//g;
 	$version =~ s/[\[\]\s]//g;
-	$varhash{"PACKAGE_NAME"} = $name;
-	$varhash{"PACKAGE"} = $name;
-	$varhash{"PACKAGE_VERSION"} = $version;
-	$varhash{"VERSION"} = $version;
+	$varhash{"PACKAGE_NAME"} = $name if (not $name =~ /\${?AC_PACKAGE_NAME}?/);
+	$varhash{"PACKAGE"} = $name if (not $name =~ /\${?PACKAGE}?/);
+	$varhash{"PACKAGE_VERSION"} = $version if (not $name =~ /\${?AC_PACKAGE_VERSION}?/);
+	$varhash{"VERSION"} = $version if (not $name =~ /\${?VERSION}?/);
     }
 
     # \s makes this not work, why?
@@ -1062,4 +1141,24 @@ sub FindMakevarsDomain
     $domain =~ s/\s+$//;
     
     return $domain;
+}
+
+sub FindMakevarsBugAddress
+{
+
+    my $address = "";
+    my $makevars_source; { 
+	local (*IN);
+	open (IN, "<Makevars") || return undef;
+	seek (IN, 0, 0);
+	local $/; # slurp mode
+	$makevars_source = <IN>;
+	close IN;
+    }
+
+    $address = $1 if $makevars_source =~ /^MSGID_BUGS_ADDRESS[ ]*=\[?([^\n\]\$]+)/m;
+    $address =~ s/^\s+//;
+    $address =~ s/\s+$//;
+    
+    return $address;
 }

@@ -1,7 +1,7 @@
 /*
  *  ui.c - general user interface code.
  *	part of galculator
- *  	(c) 2002-2006 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -40,6 +40,7 @@ char		dec_point[2];
 GtkListStore	*prefs_constant_store, *prefs_user_function_store;
 
 static void set_disp_ctrl_object_data ();
+static void set_all_buttons_property (GFunc func, gpointer data);
 static void set_all_dispctrl_buttons_property (GFunc func, gpointer data);
 static void set_all_normal_buttons_property (GFunc func, gpointer data);
 static void set_table_child_callback (gpointer data, gpointer user_data);
@@ -301,6 +302,17 @@ GtkWidget *ui_main_window_create ()
 	return glade_xml_get_widget (main_window_xml, "main_window");
 }
 
+#ifdef WITH_HILDON
+void create_hildon_menu (HildonWindow *main_window)
+{
+    GtkWidget *main_menu;
+    
+    main_menu = glade_xml_get_widget (main_window_xml, "main_menu");
+    hildon_window_set_menu(HILDON_WINDOW(main_window), GTK_MENU(main_menu));
+    gtk_widget_show_all(GTK_WIDGET(main_menu));
+}
+#endif
+
 /* ui_main_window_set_dispctrl. we can't (un-)hide the dispctrl buttons as they
  * have the same key accelerators and thus only one button group would get
  * activated.
@@ -527,7 +539,6 @@ static void set_table_child_tip_accel (gpointer data, gpointer user_data)
 	gtk_accel_group_find(accel_group, (GtkAccelGroupFindFunc)set_table_child_tip_accel_finder, d);
 }
 
-
 /* set_all_dispctrl_buttons_property. calls func with argument data for 
  * every button of the display control section.
  */
@@ -599,7 +610,11 @@ void set_all_buttons_size (int width, int height)
 	
 	size.width = width;
 	size.height = height;
+		
 	set_all_buttons_property (set_table_child_size, (gpointer) &size);
+		
+	gtk_window_resize ((GtkWindow *) gtk_widget_get_toplevel(
+			(GtkWidget *) glade_xml_get_widget (main_window_xml, "main_window")), 1, 1);
 }
 
 void set_all_normal_buttons_tip ()
@@ -900,13 +915,14 @@ GtkWidget *ui_pref_dialog_create ()
 	prefs_list = config_file_get_prefs_list();
 	while (prefs_list[counter].key != NULL) {
 		if (prefs_list[counter].set_handler != NULL) {
-			prefs_list[counter].set_handler (prefs_xml,
+			prefs_list[counter].set_handler (
+				prefs_xml,
 				prefs_list[counter].widget_name,
 				prefs_list[counter].variable);
 		}
 		counter++;
 	}
-	
+
 	w = glade_xml_get_widget (prefs_xml, "prefs_button_font_label");
 	gtk_widget_set_sensitive (w, prefs.custom_button_font);
 	
@@ -1132,6 +1148,7 @@ void ui_classic_view_create()
 	view_xml = glade_file_open (CLASSIC_VIEW_GLADE_FILE, "classic_view_vbox", TRUE);
 	box = glade_xml_get_widget (main_window_xml, "window_vbox");
 	ui_pack_from_xml (box, 1, view_xml, "classic_view_vbox", "textview", TRUE, TRUE);
+	
 	display_init ();
 	
 	remember_display_values ();
@@ -1179,6 +1196,8 @@ void ui_paper_view_create()
 	g_signal_connect (G_OBJECT (tree_view), "button-press-event",
                   G_CALLBACK (paper_tree_view_selection_changed_cb),
                   NULL);
+                  
+	gtk_widget_grab_focus(glade_xml_get_widget (view_xml, "paper_entry"));
 
 }
 

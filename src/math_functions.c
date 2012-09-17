@@ -1,7 +1,7 @@
 /*
  *  math_functions.c - some mathematical functions for the calculator
  *	part of galculator
- *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 
 double pow10y (double y)
 {
-	return pow (10, y);
+	return pow (10., y);
 }
 
 double reciprocal (double x)

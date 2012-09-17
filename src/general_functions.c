@@ -1,7 +1,7 @@
 /*
  *  general_functions.c - this and that.
  *	part of galculator
- *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -23,6 +23,7 @@
 #include <stdarg.h>
 #include <string.h>
 #include <math.h>
+#include <ctype.h>
 
 #include "galculator.h"
 #include "general_functions.h"
@@ -68,7 +69,7 @@ void error_message (char *format_string, ...)
 
 void clear ()
 {
-	display_result_set (CLEARED_DISPLAY);
+	display_result_set (CLEARED_DISPLAY, TRUE, 0.);
 	if (current_status.notation == CS_FORMULA) ui_formula_entry_set ("");
 }
 
@@ -79,7 +80,7 @@ void clear ()
 void backspace ()
 {
 	if (current_status.notation == CS_FORMULA) ui_formula_entry_backspace();
-	else display_result_backspace();
+	else display_result_backspace(current_status.number);
 }
 
 /* clear all: display ("0"), calc_tree ... */
@@ -295,7 +296,7 @@ void set_entry (GladeXML *xml, char *entry_name, void *entry_text)
 {
 	GtkEntry	*entry;
 	char 		**string_var;
-	
+
 	string_var = entry_text;	
 	entry = (GtkEntry *) glade_xml_get_widget (xml, entry_name);
 	if (entry) gtk_entry_set_text (entry, *string_var);	
@@ -303,10 +304,11 @@ void set_entry (GladeXML *xml, char *entry_name, void *entry_text)
 
 /*
  * convert given GdkColor to a string so that gdk_color_parse gives the 
- * same color again.
+ * same color again. Formerly called gdk_color_to_string but since version 2.12
+ * gdk features that function by itself.
  */
 
-char *gdk_color_to_string (GdkColor color)
+char *convert_gdk_color_to_string (GdkColor color)
 {
 	return g_strdup_printf ("#%04X%04X%04X", color.red, color.green, color.blue);
 }
@@ -318,10 +320,13 @@ char *gdk_color_to_string (GdkColor color)
 void apply_preferences (s_preferences prefs)
 {
 	GtkWidget	*menu_item;
-	//char		*button_font;
 
 	/* not view specific */
-	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
+#ifdef WITH_HILDON
+	set_widget_visibility (main_window_xml, "main_menu", prefs.show_menu);
+#else
+ 	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
+#endif
 	menu_item = glade_xml_get_widget (main_window_xml, "show_menubar1");
 	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
 
@@ -344,15 +349,16 @@ void apply_preferences (s_preferences prefs)
 	gtk_menu_item_activate ((GtkMenuItem *) menu_item);
 	
 	/* view specific */
-	//display_update_tags ();
-	//display_set_bkg_color (prefs.bkg_color);
+/*	display_update_tags ();
+	display_set_bkg_color (prefs.bkg_color);
 	
-	//set_all_buttons_size (prefs.button_width, prefs.button_height);
+	set_all_buttons_size (prefs.button_width, prefs.button_height);
 
-	//if (prefs.custom_button_font == TRUE) button_font = g_strdup (prefs.button_font);
-	//else button_font = g_strdup ("");
-	//set_all_buttons_font (button_font);
-	//g_free (button_font);
+	if (prefs.custom_button_font == TRUE) button_font = g_strdup (prefs.button_font);
+	else button_font = g_strdup ("");
+	set_all_buttons_font (button_font);
+	g_free (button_font);
+*/
 }
 
 /*
@@ -401,11 +407,25 @@ void activate_menu_item (char *item_name)
 
 char *get_display_number_string (double value, int base)
 {
-	char 	*string_value;
+	char 	*string_value, *string_value0, *string_value1;
 	
 	switch (base) {
 		case CS_DEC:
-			string_value = g_strdup_printf ("%.*g", get_display_number_length(current_status.number), value);
+			/* this is a work around for numerical issues. When
+			 * get_display_number_length(current_status.number) = 12, 
+			 * 1000.11 - 1000.10 returns 0.0099999999999999. We round for two
+			 * different precision levels and check whether one result is
+			 * significantly shorter than the other.
+			 */
+			string_value0 = g_strdup_printf("%.*g", get_display_number_length(current_status.number) - 1, value);
+			string_value1 = g_strdup_printf("%.*g", get_display_number_length(current_status.number), value);
+			if (strlen(string_value0) + 1 < strlen(string_value1)) {
+				string_value = string_value0;
+				g_free(string_value1);
+			} else {
+				string_value = string_value1;
+				g_free(string_value0);
+			}
 			break;
 		case CS_HEX:
 			string_value = ftoax (value, 16, prefs.hex_bits, prefs.hex_signed);
@@ -520,7 +540,7 @@ void remember_display_values()
 	char 	*stack[3];
 	
 	if (prefs.rem_display == TRUE) {
-		display_result_set (prefs.rem_valuex);
+		display_result_set (prefs.rem_valuex, TRUE, string2double(prefs.rem_valuex, current_status.number));
 		/* for the result setting the display string is enough */
 		if (current_status.notation == CS_RPN) {
 			stack[0] = prefs.rem_valuey;
@@ -551,7 +571,9 @@ double string2double (char *string, int number_base)
 		case CS_DEC:
 			ret_val = strtod(string, &end_ptr);
 			if (*end_ptr != '\0')
-				fprintf (stderr, _("[%s] failed to convert %s to a number properly in function \"string2double\". Have you changed your locales? %s\n"), PACKAGE, string, BUG_REPORT);
+				fprintf (stderr, _("[%s] failed to convert %s to a number properly \
+in function \"string2double\". Have you changed your locales? \
+Deleting your configuration file might solve this problem. %s\n"), PACKAGE, string, BUG_REPORT);
 			return ret_val;
 			break;
 		case CS_HEX:
@@ -583,21 +605,20 @@ double string2double (char *string, int number_base)
 
 char *string_add_separator (char* string, gboolean separate, int block_length, char separator, char dpoint)
 {
-	int	int_length=0, frac_length=0, counter=0, new_counter=0, offset;
+	int		int_length=0, frac_length=0, counter=0, new_counter=0, offset;
 	char 	*new_string;
-	
 	
 	if (!separate) return g_strdup(string);
 	/* at first, get length of parts pre- and succeeding the decimal point */
-	while ((string[int_length] != '\0') && (string[int_length] != dpoint))
+	while ((string[int_length] != '\0') && (string[int_length] != dpoint) && (string[int_length] != 'e'))
 		int_length++;
-	if (string[int_length] != '\0')
-		while (string[int_length + frac_length + 1] != '\0') frac_length++;
+	if (string[int_length] == dpoint)
+		while ((string[int_length + frac_length + 1] != '\0') && (string[int_length + frac_length + 1] != 'e')) frac_length++;
 	/* then allocate memory for new string holding separators */
 	new_string = (char *) malloc ((strlen(string) + (int_length-1)/block_length +
 		(frac_length-1)/block_length + 1) * sizeof(char));
 	/* then copy from string to new_string and insert separators */
-	while ((string[counter] != '\0') && (string[counter] != dpoint)) {
+	while ((string[counter] != '\0') && (string[counter] != dpoint) && (string[counter] != 'e')) {
 		/* > ( == ) is horrible, yes, but somehow cool. avoids space
 		 * between sign char '-' and leading digit
 		 */
@@ -609,13 +630,13 @@ char *string_add_separator (char* string, gboolean separate, int block_length, c
 		new_counter++;
 		counter++;
 	}
-	if (string[int_length] != '\0') {
+	if ((string[int_length] != '\0')  && (string[int_length] != 'e')) {
 		/* copy decimal point */
 		new_string[new_counter] = string[counter];
 		new_counter++;
 		counter++;
 		offset = counter;
-		while (string[counter] != '\0') {
+		while ((string[counter] != '\0')  && (string[counter] != 'e')) {
 			if (((counter - offset) > 0) && ((counter - offset) % block_length == 0)) {
 				new_string[new_counter] = separator;
 				new_counter++;
@@ -625,7 +646,9 @@ char *string_add_separator (char* string, gboolean separate, int block_length, c
 			counter++;
 		}
 	}
+	while (string[counter] != '\0') new_string[new_counter++] = string[counter++];
 	new_string[new_counter] = '\0';
+	
 	return new_string;
 }
 
@@ -658,9 +681,9 @@ void set_button_label_and_tooltip (GladeXML *xml, char *button_name,
 	w = glade_xml_get_widget (xml, button_name);
 	if (w) {
 		gtk_button_set_label ((GtkButton *)w, label);
+		
 		tooltip_data = gtk_tooltips_data_get (w);
-		g_free (tooltip_data->tip_text);
-		tooltip_data->tip_text = g_strdup (tooltip);
+		gtk_tooltips_set_tip(tooltip_data->tooltips, w, tooltip, tooltip_data->tip_private);
 	}
 }
 
@@ -704,8 +727,6 @@ s_flex_parser_result compute_user_function (char *expression, char *variable, ch
 	while (constant[nr_constants].name != NULL) nr_constants++;
 	constant = (s_constant *) realloc (constant, (nr_constants + 2) * sizeof(s_constant));
 	constant[nr_constants + 1].name = NULL;
-	
-	fprintf (stderr, "--> %s\n", variable);
 	
 	constant[nr_constants].name = variable;
 	constant[nr_constants].value = value;
@@ -801,25 +822,32 @@ char get_sep_char (int number_base)
 
 void prefs_sep_char_changed (GtkEditable *editable, char *prefs_sep, int number_base)
 {
-	char 	*sep, *result, **stack;
+	char 	*sep, *result=NULL, **stack=NULL;
 	
 	sep = gtk_editable_get_chars (editable, 0, -1);
 	if (strlen(sep) > 0) {
 		if ((is_valid_number(number_base, *sep)) ||
 			((number_base == CS_DEC) && ((*sep == '-') ||
-			(*sep == 'e') || (*sep == dec_point[0]))))
+			(*sep == 'e') || (*sep == dec_point[0]))) ||
+			!isascii(*sep))
 			gtk_editable_delete_text (editable, 0, -1);
 		else {
-			result = display_result_get();
-			stack = display_stack_get_yzt();
+			if (prefs.mode != PAPER_MODE) {
+				result = display_result_get();
+				stack = display_stack_get_yzt();				
+			}
+			
 			if (prefs_sep) g_free (prefs_sep);
 			prefs_sep = g_strdup(sep);
-			if (number_base == current_status.number) {
-				display_result_set(result);
-				display_stack_set_yzt(stack);
+			
+			if (prefs.mode != PAPER_MODE && result && stack) {
+				if (number_base == current_status.number) {
+					display_result_set(result, FALSE, -1.);
+					display_stack_set_yzt(stack);
+				}
+				g_free (result);
+				g_free (stack);
 			}
-			g_free (result);
-			g_free (stack);
 		}
 	}
 	g_free (sep);	
@@ -858,4 +886,17 @@ void change_option (int new_status, int opt_group)
 			error_message (_("unknown display option in function \"change_option\""));
 	}
 	current_status.calc_entry_start_new = TRUE;
+}
+
+/*
+ * after changing for example the view from scientific to basic, call this
+ * function to resize the window.
+ */
+void set_window_size_minimal()
+{
+	GtkWidget	*main_window=NULL;
+	
+	main_window = glade_xml_get_widget (main_window_xml, "main_window");
+	if (main_window != NULL)
+		gtk_window_resize ((GtkWindow *)gtk_widget_get_toplevel(main_window), 1, 1);
 }

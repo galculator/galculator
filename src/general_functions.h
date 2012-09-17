@@ -1,7 +1,7 @@
 /*
  *  general_functions.h
  *	part of galculator
- *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -51,7 +51,7 @@ void set_button_color (GladeXML *xml, char *button_name, void *color_string);
 void set_stacksize (GladeXML *xml, char *name, void *stack_size);
 void set_entry (GladeXML *xml, char *entry_name, void *entry_text);
 
-char *gdk_color_to_string (GdkColor color);
+char *convert_gdk_color_to_string (GdkColor color);
 
 void apply_preferences (s_preferences prefs);
 
@@ -94,5 +94,7 @@ char get_sep_char (int number_base);
 void prefs_sep_char_changed (GtkEditable *editable, char *prefs_sep, int number_base);
 
 void change_option (int new_status, int opt_group);
+
+void set_window_size_minimal();
 
 #endif /* general_functions.h */

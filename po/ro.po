@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-07-11 20:41+0200\n"
+"POT-Creation-Date: 2007-11-07 21:31+0100\n"
 "PO-Revision-Date: 2004-06-15 01:50+0200\n"
 "Last-Translator:Florin Cosma <cosma_florin@yahoo.com>\n"
 "Language-Team: \n"
@@ -15,74 +15,38 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: galculator.desktop.in.h:1
+#: ../galculator.desktop.in.h:1
 #, fuzzy
 msgid "Perform simple and scientific calculations"
 msgstr "Calculator ºtiinþific"
 
-#: src/callbacks.c:40
-msgid "Select result font"
-msgstr "Selecteaza fontul pentru rezultat"
-
-#: src/callbacks.c:41
-msgid "Select stack font"
-msgstr "Selecteaza fontul pentru stiva"
-
-#: src/callbacks.c:42
-msgid "Select module font"
-msgstr "Selecteaza fontul pentru module"
-
-#: src/callbacks.c:43
-msgid "Select active module color"
-msgstr "Selecteaza culoarea modulului activ"
-
-#: src/callbacks.c:44
-msgid "Select inactive module color"
-msgstr "Selecteaza culoarea modulului inactiv"
-
-#: src/callbacks.c:45
-msgid "Select result font color"
-msgstr "Selecteaza culoarea fontului pentru rezultat"
-
-#: src/callbacks.c:46
-msgid "Select stack color"
-msgstr "Selecteaza culoarea fontului pentru stiva"
-
-#: src/callbacks.c:47
-msgid "Select background color"
-msgstr "Selecteaza culoarea fundalului"
-
-#: src/callbacks.c:48
-msgid "Select button font"
-msgstr "Selecteaza fontul pentru butoane"
-
-#: src/callbacks.c:98
+#: ../src/callbacks.c:89
 #, c-format
 msgid "About %s"
 msgstr "Despre %s"
 
-#: src/callbacks.c:101
+#: ../src/callbacks.c:92
 #, fuzzy, c-format
 msgid ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
 "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
 "\n"
-"(c) 2002-2005 by Simon Floery (chimaira@users.sf.net)"
+"(c) 2002-2007 by Simon Floery (chimaira@users.sf.net)"
 msgstr ""
 "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
 "<span size=\"large\">Calculator ºtiinþific bazat pe GTK+ 2</span>\n"
 "\n"
 "Drept de autor 2002-2003 pentru Simon Floery (chimaira@users.sf.net)"
 
-#: src/callbacks.c:1066
+#: ../src/callbacks.c:1004
 msgid "save here"
 msgstr "salveaza aici"
 
-#: src/main.c:59
+#: ../src/main.c:59
 #, fuzzy, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2005 Simon Floery\n"
+"%s v%s, (c) 2002-2007 Simon Floery\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -103,37 +67,37 @@ msgstr ""
 " -v, --version\t\tAfiºeaza versiunea\n"
 "\n"
 
-#: src/galculator.h:58
+#: ../src/galculator.h:60
 msgid "Please submit a bugreport."
 msgstr "Te rog trimite un raport despre eroare"
 
-#: src/calc_basic.c:149
+#: ../src/calc_basic.c:149
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr "[%s] %c - caracter operaþie necunoscut. %s\n"
 
-#: src/config_file.c:180
+#: ../src/config_file.c:180
 msgid "Pi"
 msgstr "Pi"
 
-#: src/config_file.c:181
+#: ../src/config_file.c:181
 msgid "pi"
 msgstr "pi"
 
-#: src/config_file.c:183
+#: ../src/config_file.c:183
 msgid "Euler's Number"
 msgstr "Constanta lui Euler"
 
-#: src/config_file.c:184
+#: ../src/config_file.c:184
 msgid "e"
 msgstr "e"
 
-#: src/config_file.c:232
+#: ../src/config_file.c:232
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
 msgstr "[%s] fiºier de configuraþie: ignora intrarea necunoscuta %s=%s. %s\n"
 
-#: src/config_file.c:256
+#: ../src/config_file.c:256
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
@@ -141,14 +105,14 @@ msgstr ""
 "[%s] fiºier de configuraþie: %s trebuie sa fie TRUE sau FALSE. Se "
 "utilizaeaza valoarea implicita. %s\n"
 
-#: src/config_file.c:262
+#: ../src/config_file.c:262
 #, c-format
 msgid ""
 "[%s] configuration file: failed to convert %s to a number properly. Have you "
 "changed your locales? %s\n"
 msgstr ""
 
-#: src/config_file.c:265
+#: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
@@ -156,7 +120,7 @@ msgstr ""
 "[%s] fiºier de configuraþie: se ignora tipul de cheie necunoscuta in "
 "structura de configurare. %s\n"
 
-#: src/config_file.c:284
+#: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
@@ -165,7 +129,7 @@ msgstr ""
 "[%s] sa gasit o secþiune necunoscuta %s in fiºierul de configuraþie %s.Se "
 "utilizeaza secþiunea precedenta.\n"
 
-#: src/config_file.c:403
+#: ../src/config_file.c:403
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
@@ -176,7 +140,7 @@ msgstr ""
 "pentru citire. Nu este o eroare daca utilizati %s pentru prima data. Se "
 "utilizeaza setarile implicite.\n"
 
-#: src/config_file.c:441
+#: ../src/config_file.c:441
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. %"
@@ -185,7 +149,7 @@ msgstr ""
 "[%s] fiºier de configuraþie: eroare la scriere. Se renunþa la aceasta cheie. "
 "%s\n"
 
-#: src/config_file.c:449
+#: ../src/config_file.c:449
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
@@ -194,7 +158,7 @@ msgstr ""
 "[%s] fiºier de configuraþie: se ignora \"tipul de cheie\" necunoscuta in "
 "\"structura de configurare\". %s\n"
 
-#: src/config_file.c:472
+#: ../src/config_file.c:472
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
@@ -202,49 +166,57 @@ msgstr ""
 "[%s] fiºier de configuraþie: eroare la scrierea in fiºierul de configuraþiei "
 "%s.\n"
 
-#: src/display.c:568
-#, c-format
-msgid "[%s] unknown display option in function \"display_change_option\". %s\n"
+#: ../src/display.c:407
+#, fuzzy, c-format
+msgid ""
+"[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
+msgstr ""
+"[%s] Type d'angle inconnu dans la fonction \"display_result_get_rad_angle\". "
+"%s\n"
+
+#: ../src/display.c:575
+#, fuzzy, c-format
+msgid "[%s] unknown display option in function \"display_change_option\""
 msgstr ""
 "[%s] opþiune de afiºare necunoscuta in funcþia \"schimba opþiunea de afiºare"
 "\". %s\n"
 
-#: src/general_functions.c:41
+#: ../src/general_functions.c:43
 msgid "unsupported inverse function"
 msgstr "Funcþie inversa necunoscuta"
 
-#: src/general_functions.c:47
+#: ../src/general_functions.c:49
 msgid "unsupported hyperbolic function"
 msgstr "Funcþie hiperbolica necunoscuta"
 
-#: src/general_functions.c:101
+#: ../src/general_functions.c:110
 #, fuzzy, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
 msgstr ""
 "[%s] tip de unghi necunoscut in funcþia \"display_result_set_angle\". %s\n"
 
-#: src/general_functions.c:127
+#: ../src/general_functions.c:136
 #, fuzzy, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
 "[%s] Ã©chec de la conversion du caractÃ¨re %c dans la fonction \"axtof\". %"
 "s\n"
 
-#: src/general_functions.c:181
+#: ../src/general_functions.c:190
 #, c-format
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr "[%s] Ã©chec de la conversion de %f dans la fonction \"ftoax\". %s\n"
 
-#: src/general_functions.c:391
+#: ../src/general_functions.c:397
 #, fuzzy, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr "[%s] Ã©chec de la conversion de %f dans la fonction \"ftoax\". %s\n"
 
-#: src/general_functions.c:419
+#: ../src/general_functions.c:425
 msgid "unknown number base"
 msgstr "baza de numerotaþie necunoscuta"
 
-#: src/general_functions.c:420
+#: ../src/general_functions.c:426
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
@@ -252,7 +224,7 @@ msgstr ""
 "[%s] base de numÃ©rotation inconnue dans la fonction "
 "'get_display_number_string'. %s\n"
 
-#: src/general_functions.c:441
+#: ../src/general_functions.c:447
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
@@ -260,54 +232,61 @@ msgstr ""
 "[%s] base de numÃ©rotation inconnue dans la fonction "
 "'get_display_number_length. %s\n"
 
-#: src/general_functions.c:550
+#: ../src/general_functions.c:556
 #, c-format
 msgid ""
 "[%s] failed to convert %s to a number properly in function \"string2double"
 "\". Have you changed your locales? %s\n"
 msgstr ""
 
-#: src/general_functions.c:566
+#: ../src/general_functions.c:572
 #, fuzzy, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr ""
 "[%s] base de numÃ©rotation inconnue dans la fonction "
 "\"display_result_get_double\". %s\n"
 
-#: src/general_functions.c:725
+#: ../src/general_functions.c:732
 #, fuzzy, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr ""
 "[%s] tip de unghi necunoscut in funcþia \"display_result_set_angle\". %s\n"
 
-#: src/general_functions.c:740
+#: ../src/general_functions.c:747
 #, fuzzy, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr ""
 "[%s] tip de unghi necunoscut in funcþia \"display_result_set_angle\". %s\n"
 
-#: src/general_functions.c:757
+#: ../src/general_functions.c:764
 #, fuzzy, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr ""
 "[%s] base de numÃ©rotation inconnue dans la fonction "
 "\"display_result_get_double\". %s\n"
 
-#: src/general_functions.c:774
+#: ../src/general_functions.c:781
 #, fuzzy, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
 msgstr ""
 "[%s] base de numÃ©rotation inconnue dans la fonction "
 "'get_display_number_length. %s\n"
 
-#: src/general_functions.c:791
+#: ../src/general_functions.c:798
 #, fuzzy, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
 msgstr ""
 "[%s] base de numÃ©rotation inconnue dans la fonction "
 "'get_display_number_length. %s\n"
 
-#: src/ui.c:88
+#: ../src/general_functions.c:860
+#, fuzzy
+msgid "unknown display option in function \"change_option\""
+msgstr ""
+"[%s] opþiune de afiºare necunoscuta in funcþia \"schimba opþiunea de afiºare"
+"\". %s\n"
+
+#: ../src/ui.c:89
 #, c-format
 msgid ""
 "[%s] Couldn't load %s. This file is necessary to build galculator's user "
@@ -317,7 +296,7 @@ msgstr ""
 "l'interface utilisateur.VÃ©rifiez que le make install a Ã©tÃ© effectuÃ© et "
 "que le fichier est accessible!\n"
 
-#: src/ui.c:401
+#: ../src/ui.c:413
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -329,922 +308,987 @@ msgstr ""
 "Vous devriez rÃ©gler le problÃ¨me en utilisant %s! %s\n"
 ")"
 
-#: src/ui.c:783 ui/main_frame.glade.h:11
+#: ../src/ui.c:871 ../ui/main_frame.glade.h:9
 #, fuzzy
 msgid "Show _menu bar"
 msgstr "Afiseaza bara de meniu"
 
-#: src/ui.c:811
+#: ../src/ui.c:898
 #, c-format
 msgid "%s Preferences"
 msgstr "Preferinþele  %s"
 
-#: src/ui.c:1003 ui/scientific_buttons.glade.h:21 ui/basic_buttons.glade.h:21
+#: ../src/ui.c:1090 ../ui/scientific_buttons.glade.h:21
+#: ../ui/basic_buttons.glade.h:21
 msgid "="
 msgstr "="
 
-#: src/ui.c:1003 src/ui.c:1015 ui/scientific_buttons.glade.h:39
-#: ui/basic_buttons.glade.h:28
+#: ../src/ui.c:1090 ../src/ui.c:1102 ../ui/paper_view.glade.h:1
+#: ../ui/scientific_buttons.glade.h:39 ../ui/basic_buttons.glade.h:28
 msgid "Enter"
 msgstr "Egal"
 
-#: src/ui.c:1005 ui/scientific_buttons.glade.h:99
+#: ../src/ui.c:1092 ../ui/scientific_buttons.glade.h:99
 msgid "x^y"
 msgstr "x^y"
 
-#: src/ui.c:1005 src/ui.c:1017 ui/scientific_buttons.glade.h:71
+#: ../src/ui.c:1092 ../src/ui.c:1104 ../ui/scientific_buttons.glade.h:71
 msgid "Power"
 msgstr "Putere"
 
-#: src/ui.c:1007 ui/scientific_buttons.glade.h:3 ui/basic_buttons.glade.h:3
+#: ../src/ui.c:1094 ../ui/scientific_buttons.glade.h:3
+#: ../ui/basic_buttons.glade.h:3
 msgid "("
 msgstr "("
 
-#: src/ui.c:1007 ui/scientific_buttons.glade.h:69 ui/basic_buttons.glade.h:37
+#: ../src/ui.c:1094 ../ui/scientific_buttons.glade.h:69
+#: ../ui/basic_buttons.glade.h:37
 msgid "Open Bracket"
 msgstr "Deschide paranteze"
 
-#: src/ui.c:1009 ui/scientific_buttons.glade.h:4 ui/basic_buttons.glade.h:4
+#: ../src/ui.c:1096 ../ui/scientific_buttons.glade.h:4
+#: ../ui/basic_buttons.glade.h:4
 msgid ")"
 msgstr ")"
 
-#: src/ui.c:1009 ui/scientific_buttons.glade.h:30 ui/basic_buttons.glade.h:24
+#: ../src/ui.c:1096 ../ui/scientific_buttons.glade.h:30
+#: ../ui/basic_buttons.glade.h:24
 msgid "Close Bracket"
 msgstr "Inchide parantezele"
 
-#: src/ui.c:1015
+#: ../src/ui.c:1102
 msgid "ENT"
 msgstr "ENT"
 
-#: src/ui.c:1017
+#: ../src/ui.c:1104
 msgid "y^x"
 msgstr "y^x"
 
-#: src/ui.c:1019
+#: ../src/ui.c:1106
 msgid "x<>y"
 msgstr "x<>y"
 
-#: src/ui.c:1019
+#: ../src/ui.c:1106
 msgid "swap current number with top of stack"
 msgstr ""
 
-#: src/ui.c:1021
+#: ../src/ui.c:1108
 msgid "roll"
 msgstr "roll"
 
-#: src/ui.c:1021
+#: ../src/ui.c:1108
 msgid "roll down stack"
 msgstr ""
 
-#: flex_parser.l:214
+#: flex_parser.l:219
 #, c-format
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
 "doing? If not: %s\n"
 msgstr ""
 
-#: ui/main_frame.glade.h:1 ui/scientific_buttons.glade.h:5
-#: ui/basic_buttons.glade.h:5
-msgid "*"
-msgstr "*"
-
-#: ui/main_frame.glade.h:2
+#: ../ui/main_frame.glade.h:1
 msgid "Angle _units"
 msgstr "Unitaþile unghiurilor"
 
-#: ui/main_frame.glade.h:3 ui/prefs.glade.h:24
+#: ../ui/main_frame.glade.h:2 ../ui/prefs.glade.h:24
 msgid "Buttons"
 msgstr "Butoane"
 
-#: ui/main_frame.glade.h:4
+#: ../ui/main_frame.glade.h:3
 msgid "Cu_t Display Value"
 msgstr "Sterge valoarea afiºata"
 
-#: ui/main_frame.glade.h:5
+#: ../ui/main_frame.glade.h:4
 msgid "D_egrees"
 msgstr "Grade _zecimale"
 
-#: ui/main_frame.glade.h:6
+#: ../ui/main_frame.glade.h:5
 msgid "Display Control"
 msgstr "Controleaza afiºajul"
 
-#: ui/main_frame.glade.h:7
-msgid "Formula entry text field - enter string expression to compute here."
-msgstr ""
-
-#: ui/main_frame.glade.h:8 ui/prefs.glade.h:35
+#: ../ui/main_frame.glade.h:6 ../ui/prefs.glade.h:35
 msgid "Functions"
 msgstr "Funcþii"
 
-#: ui/main_frame.glade.h:9
+#: ../ui/main_frame.glade.h:7
 msgid "Logical"
 msgstr "Logic"
 
-#: ui/main_frame.glade.h:10
+#: ../ui/main_frame.glade.h:8
 msgid "Notation _modes"
 msgstr "_Moduri de notaþie"
 
-#: ui/main_frame.glade.h:12
+#: ../ui/main_frame.glade.h:10
 msgid "Standard"
 msgstr "Standard"
 
-#: ui/main_frame.glade.h:13
+#: ../ui/main_frame.glade.h:11 ../ui/classic_view.glade.h:2
+#: ../ui/paper_view.glade.h:2
 msgid "The main program window."
 msgstr "Fereastra progam principala"
 
-#: ui/main_frame.glade.h:14
+#: ../ui/main_frame.glade.h:12
 msgid "_About..."
 msgstr "_Despre..."
 
-#: ui/main_frame.glade.h:15
+#: ../ui/main_frame.glade.h:13
 msgid "_Algebraic"
 msgstr "_Algebric"
 
-#: ui/main_frame.glade.h:16
+#: ../ui/main_frame.glade.h:14
 msgid "_Basic Mode"
 msgstr "Mod de _baza"
 
-#: ui/main_frame.glade.h:17
+#: ../ui/main_frame.glade.h:15
 msgid "_Binary"
 msgstr "_Binar"
 
-#: ui/main_frame.glade.h:18
+#: ../ui/main_frame.glade.h:16
 msgid "_Calculator"
 msgstr "_Calculator"
 
-#: ui/main_frame.glade.h:19
+#: ../ui/main_frame.glade.h:17
 msgid "_Copy Display Value"
 msgstr "Copiaza valorea afiºata"
 
-#: ui/main_frame.glade.h:20
+#: ../ui/main_frame.glade.h:18
 msgid "_Decimal"
 msgstr "_Zecimal"
 
-#: ui/main_frame.glade.h:21
+#: ../ui/main_frame.glade.h:19
 msgid "_Edit"
 msgstr "_Editeaza"
 
-#: ui/main_frame.glade.h:22
+#: ../ui/main_frame.glade.h:20
 msgid "_File"
 msgstr "_Fiºier"
 
-#: ui/main_frame.glade.h:23
+#: ../ui/main_frame.glade.h:21
 msgid "_Formula Entry"
 msgstr ""
 
-#: ui/main_frame.glade.h:24
+#: ../ui/main_frame.glade.h:22
 msgid "_Gradians"
 msgstr "_Grade"
 
-#: ui/main_frame.glade.h:25
+#: ../ui/main_frame.glade.h:23
 msgid "_Help"
 msgstr "_Ajutor"
 
-#: ui/main_frame.glade.h:26
+#: ../ui/main_frame.glade.h:24
 msgid "_Hexadecimal"
 msgstr "_Hexazecimal"
 
-#: ui/main_frame.glade.h:27
+#: ../ui/main_frame.glade.h:25
 msgid "_Number bases"
 msgstr "Baza de _numerotaþie"
 
-#: ui/main_frame.glade.h:28
+#: ../ui/main_frame.glade.h:26
 msgid "_Octal"
 msgstr "_Octal"
 
-#: ui/main_frame.glade.h:29
+#: ../ui/main_frame.glade.h:27
+#, fuzzy
+msgid "_Paper Mode"
+msgstr "Mod de _baza"
+
+#: ../ui/main_frame.glade.h:28
 msgid "_Paste As Display Value"
 msgstr "Insereaza valoarea afiºata"
 
-#: ui/main_frame.glade.h:30
+#: ../ui/main_frame.glade.h:29
 msgid "_Preferences..."
 msgstr "_Preferinþe..."
 
-#: ui/main_frame.glade.h:31
+#: ../ui/main_frame.glade.h:30
 msgid "_Quit"
 msgstr "_Inchide"
 
-#: ui/main_frame.glade.h:32
+#: ../ui/main_frame.glade.h:31
 msgid "_Radians"
 msgstr "_Radiani"
 
-#: ui/main_frame.glade.h:33
+#: ../ui/main_frame.glade.h:32
 msgid "_Reverse Polish (RPN)"
 msgstr "Logica Poloneza inve_rsa (RPN)"
 
-#: ui/main_frame.glade.h:34
+#: ../ui/main_frame.glade.h:33
 msgid "_Scientific Mode"
 msgstr "Mod _ºtinþific"
 
-#: ui/main_frame.glade.h:35
+#: ../ui/main_frame.glade.h:34
 msgid "_View"
 msgstr "_Mod de afiºare"
 
-#: ui/scientific_buttons.glade.h:2 ui/basic_buttons.glade.h:2
+#: ../ui/classic_view.glade.h:1
+msgid "Formula entry text field - enter string expression to compute here."
+msgstr ""
+
+#: ../ui/scientific_buttons.glade.h:2 ../ui/basic_buttons.glade.h:2
 #, no-c-format
 msgid "%"
 msgstr "%"
 
-#: ui/scientific_buttons.glade.h:6 ui/basic_buttons.glade.h:6
+#: ../ui/scientific_buttons.glade.h:5 ../ui/basic_buttons.glade.h:5
+msgid "*"
+msgstr "*"
+
+#: ../ui/scientific_buttons.glade.h:6 ../ui/basic_buttons.glade.h:6
 msgid "+"
 msgstr "+"
 
-#: ui/scientific_buttons.glade.h:7 ui/basic_buttons.glade.h:7
+#: ../ui/scientific_buttons.glade.h:7 ../ui/basic_buttons.glade.h:7
 msgid "+/-"
 msgstr "+/-"
 
-#: ui/scientific_buttons.glade.h:8 ui/basic_buttons.glade.h:8
+#: ../ui/scientific_buttons.glade.h:8 ../ui/basic_buttons.glade.h:8
 msgid "-"
 msgstr "-"
 
-#: ui/scientific_buttons.glade.h:9 ui/basic_buttons.glade.h:9
+#: ../ui/scientific_buttons.glade.h:9 ../ui/basic_buttons.glade.h:9
 msgid "."
 msgstr "."
 
-#: ui/scientific_buttons.glade.h:10 ui/basic_buttons.glade.h:10
+#: ../ui/scientific_buttons.glade.h:10 ../ui/basic_buttons.glade.h:10
 msgid "/"
 msgstr "/"
 
-#: ui/scientific_buttons.glade.h:11 ui/basic_buttons.glade.h:11
+#: ../ui/scientific_buttons.glade.h:11 ../ui/basic_buttons.glade.h:11
 msgid "0"
 msgstr "0"
 
-#: ui/scientific_buttons.glade.h:12 ui/basic_buttons.glade.h:12
+#: ../ui/scientific_buttons.glade.h:12 ../ui/basic_buttons.glade.h:12
 msgid "1"
 msgstr "1"
 
-#: ui/scientific_buttons.glade.h:13 ui/basic_buttons.glade.h:13
+#: ../ui/scientific_buttons.glade.h:13 ../ui/basic_buttons.glade.h:13
 msgid "2"
 msgstr "2"
 
-#: ui/scientific_buttons.glade.h:14 ui/basic_buttons.glade.h:14
+#: ../ui/scientific_buttons.glade.h:14 ../ui/basic_buttons.glade.h:14
 msgid "3"
 msgstr "3"
 
-#: ui/scientific_buttons.glade.h:15 ui/basic_buttons.glade.h:15
+#: ../ui/scientific_buttons.glade.h:15 ../ui/basic_buttons.glade.h:15
 msgid "4"
 msgstr "4"
 
-#: ui/scientific_buttons.glade.h:16 ui/basic_buttons.glade.h:16
+#: ../ui/scientific_buttons.glade.h:16 ../ui/basic_buttons.glade.h:16
 msgid "5"
 msgstr "5"
 
-#: ui/scientific_buttons.glade.h:17 ui/basic_buttons.glade.h:17
+#: ../ui/scientific_buttons.glade.h:17 ../ui/basic_buttons.glade.h:17
 msgid "6"
 msgstr "6"
 
-#: ui/scientific_buttons.glade.h:18 ui/basic_buttons.glade.h:18
+#: ../ui/scientific_buttons.glade.h:18 ../ui/basic_buttons.glade.h:18
 msgid "7"
 msgstr "7"
 
-#: ui/scientific_buttons.glade.h:19 ui/basic_buttons.glade.h:19
+#: ../ui/scientific_buttons.glade.h:19 ../ui/basic_buttons.glade.h:19
 msgid "8"
 msgstr "8"
 
-#: ui/scientific_buttons.glade.h:20 ui/basic_buttons.glade.h:20
+#: ../ui/scientific_buttons.glade.h:20 ../ui/basic_buttons.glade.h:20
 msgid "9"
 msgstr "9"
 
-#: ui/scientific_buttons.glade.h:22
+#: ../ui/scientific_buttons.glade.h:22
 msgid "A"
 msgstr "A"
 
-#: ui/scientific_buttons.glade.h:23
+#: ../ui/scientific_buttons.glade.h:23
 msgid "AND"
 msgstr "AND"
 
-#: ui/scientific_buttons.glade.h:24 ui/basic_buttons.glade.h:22
+#: ../ui/scientific_buttons.glade.h:24 ../ui/basic_buttons.glade.h:22
 msgid "Add current display value to memory"
 msgstr "Adauga valoarea afiºajului la memorie"
 
-#: ui/scientific_buttons.glade.h:25
+#: ../ui/scientific_buttons.glade.h:25
 msgid "B"
 msgstr "B"
 
-#: ui/scientific_buttons.glade.h:26
+#: ../ui/scientific_buttons.glade.h:26
 msgid "Bitwise complement"
 msgstr "Complement pe biþi"
 
-#: ui/scientific_buttons.glade.h:27 ui/dispctrl_right.glade.h:4
-#: ui/dispctrl_bottom.glade.h:4
+#: ../ui/scientific_buttons.glade.h:27 ../ui/dispctrl_right.glade.h:4
+#: ../ui/dispctrl_bottom.glade.h:4
 msgid "C"
 msgstr "C"
 
-#: ui/scientific_buttons.glade.h:28
+#: ../ui/scientific_buttons.glade.h:28
 msgid "CMP"
 msgstr "CMP"
 
-#: ui/scientific_buttons.glade.h:29 ui/basic_buttons.glade.h:23
+#: ../ui/scientific_buttons.glade.h:29 ../ui/basic_buttons.glade.h:23
 msgid "Change sign"
 msgstr "Schimba semnul"
 
-#: ui/scientific_buttons.glade.h:31 ui/prefs.glade.h:28
+#: ../ui/scientific_buttons.glade.h:31 ../ui/prefs.glade.h:28
 msgid "Constants"
 msgstr "Constante"
 
-#: ui/scientific_buttons.glade.h:32
+#: ../ui/scientific_buttons.glade.h:32
 msgid "Cosine"
 msgstr "Cosinus"
 
-#: ui/scientific_buttons.glade.h:33
+#: ../ui/scientific_buttons.glade.h:33
 msgid "D"
 msgstr "D"
 
-#: ui/scientific_buttons.glade.h:34 ui/basic_buttons.glade.h:25
+#: ../ui/scientific_buttons.glade.h:34 ../ui/basic_buttons.glade.h:25
 msgid "Decimal point"
 msgstr "Punct zecimal"
 
-#: ui/scientific_buttons.glade.h:35 ui/basic_buttons.glade.h:26
+#: ../ui/scientific_buttons.glade.h:35 ../ui/basic_buttons.glade.h:26
 msgid "Divide"
 msgstr "Impartire"
 
-#: ui/scientific_buttons.glade.h:36
+#: ../ui/scientific_buttons.glade.h:36
 msgid "E"
 msgstr "E"
 
-#: ui/scientific_buttons.glade.h:37
+#: ../ui/scientific_buttons.glade.h:37
 msgid "EE"
 msgstr "EE"
 
-#: ui/scientific_buttons.glade.h:38 ui/basic_buttons.glade.h:27
+#: ../ui/scientific_buttons.glade.h:38 ../ui/basic_buttons.glade.h:27
 msgid "Eight"
 msgstr "Opt"
 
-#: ui/scientific_buttons.glade.h:40
+#: ../ui/scientific_buttons.glade.h:40
 msgid "Enter exponent (base: 10)"
 msgstr "Exponent (baza: 10)"
 
-#: ui/scientific_buttons.glade.h:41
+#: ../ui/scientific_buttons.glade.h:41
 msgid "F"
 msgstr "F"
 
-#: ui/scientific_buttons.glade.h:42
+#: ../ui/scientific_buttons.glade.h:42
 msgid "Factorial"
 msgstr "Factorial"
 
-#: ui/scientific_buttons.glade.h:43 ui/basic_buttons.glade.h:29
+#: ../ui/scientific_buttons.glade.h:43 ../ui/basic_buttons.glade.h:29
 msgid "Five"
 msgstr "Cinci"
 
-#: ui/scientific_buttons.glade.h:44 ui/basic_buttons.glade.h:30
+#: ../ui/scientific_buttons.glade.h:44 ../ui/basic_buttons.glade.h:30
 msgid "Four"
 msgstr "Patru"
 
-#: ui/scientific_buttons.glade.h:45
+#: ../ui/scientific_buttons.glade.h:45
 msgid "Hexadecimal 0xA"
 msgstr "0xA hexazecimal"
 
-#: ui/scientific_buttons.glade.h:46
+#: ../ui/scientific_buttons.glade.h:46
 msgid "Hexadecimal 0xB"
 msgstr "0xB hexazecimal"
 
-#: ui/scientific_buttons.glade.h:47
+#: ../ui/scientific_buttons.glade.h:47
 msgid "Hexadecimal 0xC"
 msgstr "0xC hexazecimal"
 
-#: ui/scientific_buttons.glade.h:48
+#: ../ui/scientific_buttons.glade.h:48
 msgid "Hexadecimal 0xD"
 msgstr "0xD hexazecimal"
 
-#: ui/scientific_buttons.glade.h:49
+#: ../ui/scientific_buttons.glade.h:49
 msgid "Hexadecimal 0xE"
 msgstr "0xE hexazecimal"
 
-#: ui/scientific_buttons.glade.h:50
+#: ../ui/scientific_buttons.glade.h:50
 msgid "Hexadecimal 0xF"
 msgstr "0xF hexazecimal"
 
-#: ui/scientific_buttons.glade.h:51
+#: ../ui/scientific_buttons.glade.h:51
 msgid "Hyperbolic mode"
 msgstr "Mod hiperbolic"
 
-#: ui/scientific_buttons.glade.h:52
+#: ../ui/scientific_buttons.glade.h:52
 msgid "Inverse mode"
 msgstr "Mod invers"
 
-#: ui/scientific_buttons.glade.h:53
+#: ../ui/scientific_buttons.glade.h:53
 msgid "LSH"
 msgstr "LSH"
 
-#: ui/scientific_buttons.glade.h:54
+#: ../ui/scientific_buttons.glade.h:54
 msgid "Left shift"
 msgstr "Deplasare dreapta"
 
-#: ui/scientific_buttons.glade.h:55
+#: ../ui/scientific_buttons.glade.h:55
 msgid "Logarithm (base: 10)"
 msgstr "Logaritm (baza 10)"
 
-#: ui/scientific_buttons.glade.h:56
+#: ../ui/scientific_buttons.glade.h:56
 msgid "Logical AND"
 msgstr "AND"
 
-#: ui/scientific_buttons.glade.h:57
+#: ../ui/scientific_buttons.glade.h:57
 msgid "Logical OR"
 msgstr "OR"
 
-#: ui/scientific_buttons.glade.h:58
+#: ../ui/scientific_buttons.glade.h:58
 msgid "Logical XOR"
 msgstr "OR exclusif"
 
-#: ui/scientific_buttons.glade.h:59 ui/basic_buttons.glade.h:31
+#: ../ui/scientific_buttons.glade.h:59 ../ui/basic_buttons.glade.h:31
 msgid "M+"
 msgstr "M+"
 
-#: ui/scientific_buttons.glade.h:60
+#: ../ui/scientific_buttons.glade.h:60
 msgid "MOD"
 msgstr "MOD"
 
-#: ui/scientific_buttons.glade.h:61 ui/basic_buttons.glade.h:32
+#: ../ui/scientific_buttons.glade.h:61 ../ui/basic_buttons.glade.h:32
 msgid "MR"
 msgstr "MR"
 
-#: ui/scientific_buttons.glade.h:62 ui/basic_buttons.glade.h:33
+#: ../ui/scientific_buttons.glade.h:62 ../ui/basic_buttons.glade.h:33
 msgid "MS"
 msgstr "MS"
 
-#: ui/scientific_buttons.glade.h:63
+#: ../ui/scientific_buttons.glade.h:63
 msgid "Modulus"
 msgstr "Modulo"
 
-#: ui/scientific_buttons.glade.h:64 ui/basic_buttons.glade.h:34
+#: ../ui/scientific_buttons.glade.h:64 ../ui/basic_buttons.glade.h:34
 msgid "Multiply"
 msgstr "Inmulþire"
 
-#: ui/scientific_buttons.glade.h:65
+#: ../ui/scientific_buttons.glade.h:65
 msgid "Natural logarithm (base: e)"
 msgstr "Logaritm natural (baza: e)"
 
-#: ui/scientific_buttons.glade.h:66 ui/basic_buttons.glade.h:35
+#: ../ui/scientific_buttons.glade.h:66 ../ui/basic_buttons.glade.h:35
 msgid "Nine"
 msgstr "Noua"
 
-#: ui/scientific_buttons.glade.h:67
+#: ../ui/scientific_buttons.glade.h:67
 msgid "OR"
 msgstr "OR"
 
-#: ui/scientific_buttons.glade.h:68 ui/basic_buttons.glade.h:36
+#: ../ui/scientific_buttons.glade.h:68 ../ui/basic_buttons.glade.h:36
 msgid "One"
 msgstr "Unu"
 
-#: ui/scientific_buttons.glade.h:70 ui/basic_buttons.glade.h:38
+#: ../ui/scientific_buttons.glade.h:70 ../ui/basic_buttons.glade.h:38
 msgid "Percent"
 msgstr "Procentaj"
 
-#: ui/scientific_buttons.glade.h:72 ui/basic_buttons.glade.h:39
+#: ../ui/scientific_buttons.glade.h:72 ../ui/basic_buttons.glade.h:39
 msgid "Read from memory"
 msgstr "Citeºte din memorie"
 
-#: ui/scientific_buttons.glade.h:73 ui/basic_buttons.glade.h:40
+#: ../ui/scientific_buttons.glade.h:73 ../ui/basic_buttons.glade.h:40
 msgid "Save to memory"
 msgstr "Salveaza in memorie"
 
-#: ui/scientific_buttons.glade.h:74 ui/basic_buttons.glade.h:41
+#: ../ui/scientific_buttons.glade.h:74 ../ui/basic_buttons.glade.h:41
 msgid "Seven"
 msgstr "Sapte"
 
-#: ui/scientific_buttons.glade.h:75
+#: ../ui/scientific_buttons.glade.h:75
 msgid "Sine"
 msgstr "Sinus"
 
-#: ui/scientific_buttons.glade.h:76 ui/basic_buttons.glade.h:42
+#: ../ui/scientific_buttons.glade.h:76 ../ui/basic_buttons.glade.h:42
 msgid "Six"
 msgstr "Sase"
 
-#: ui/scientific_buttons.glade.h:77
+#: ../ui/scientific_buttons.glade.h:77
 msgid "Square"
 msgstr "Patrat"
 
-#: ui/scientific_buttons.glade.h:78 ui/basic_buttons.glade.h:43
+#: ../ui/scientific_buttons.glade.h:78 ../ui/basic_buttons.glade.h:43
 msgid "Square root"
 msgstr "Radacina patrata"
 
-#: ui/scientific_buttons.glade.h:79 ui/basic_buttons.glade.h:44
+#: ../ui/scientific_buttons.glade.h:79 ../ui/basic_buttons.glade.h:44
 msgid "Subtract"
 msgstr "Scadere"
 
-#: ui/scientific_buttons.glade.h:80 ui/basic_buttons.glade.h:45
+#: ../ui/scientific_buttons.glade.h:80 ../ui/basic_buttons.glade.h:45
 msgid "Sum"
 msgstr ""
 
-#: ui/scientific_buttons.glade.h:81
+#: ../ui/scientific_buttons.glade.h:81
 msgid "Tangent"
 msgstr "Tangenta"
 
-#: ui/scientific_buttons.glade.h:82 ui/basic_buttons.glade.h:46
+#: ../ui/scientific_buttons.glade.h:82 ../ui/basic_buttons.glade.h:46
 msgid "Three"
 msgstr "Trei"
 
-#: ui/scientific_buttons.glade.h:83 ui/basic_buttons.glade.h:47
+#: ../ui/scientific_buttons.glade.h:83 ../ui/basic_buttons.glade.h:47
 msgid "Two"
 msgstr "Doi"
 
-#: ui/scientific_buttons.glade.h:84
+#: ../ui/scientific_buttons.glade.h:84
 msgid "User defined functions"
 msgstr "Funcþie definita de utilizator"
 
-#: ui/scientific_buttons.glade.h:85
+#: ../ui/scientific_buttons.glade.h:85
 msgid "XOR"
 msgstr "XOR"
 
-#: ui/scientific_buttons.glade.h:86 ui/basic_buttons.glade.h:48
+#: ../ui/scientific_buttons.glade.h:86 ../ui/basic_buttons.glade.h:48
 msgid "Zero"
 msgstr "Zero"
 
-#: ui/scientific_buttons.glade.h:87
+#: ../ui/scientific_buttons.glade.h:87
 msgid "con"
 msgstr "con"
 
-#: ui/scientific_buttons.glade.h:88
+#: ../ui/scientific_buttons.glade.h:88
 msgid "cos"
 msgstr "cos"
 
-#: ui/scientific_buttons.glade.h:89
+#: ../ui/scientific_buttons.glade.h:89
 msgid "fun"
 msgstr "fun"
 
-#: ui/scientific_buttons.glade.h:90
+#: ../ui/scientific_buttons.glade.h:90
 msgid "hyp"
 msgstr "hyp"
 
-#: ui/scientific_buttons.glade.h:91
+#: ../ui/scientific_buttons.glade.h:91
 msgid "inv"
 msgstr "inv"
 
-#: ui/scientific_buttons.glade.h:92
+#: ../ui/scientific_buttons.glade.h:92
 msgid "ln"
 msgstr "ln"
 
-#: ui/scientific_buttons.glade.h:93
+#: ../ui/scientific_buttons.glade.h:93
 msgid "log"
 msgstr "log"
 
-#: ui/scientific_buttons.glade.h:94
+#: ../ui/scientific_buttons.glade.h:94
 msgid "n!"
 msgstr "n!"
 
-#: ui/scientific_buttons.glade.h:95
+#: ../ui/scientific_buttons.glade.h:95
 msgid "sin"
 msgstr "sin"
 
-#: ui/scientific_buttons.glade.h:96 ui/basic_buttons.glade.h:49
+#: ../ui/scientific_buttons.glade.h:96 ../ui/basic_buttons.glade.h:49
 msgid "sqrt"
 msgstr "radical"
 
-#: ui/scientific_buttons.glade.h:97
+#: ../ui/scientific_buttons.glade.h:97
 msgid "tan"
 msgstr "tan"
 
-#: ui/scientific_buttons.glade.h:98
+#: ../ui/scientific_buttons.glade.h:98
 msgid "x^2"
 msgstr "X^2"
 
-#: ui/about.glade.h:1
+#: ../ui/about.glade.h:1
 msgid "A dialog that shows information about this program."
 msgstr "O fereastra de dialog ce afiºeaza informaþii despre program"
 
-#: ui/about.glade.h:2 ui/prefs.glade.h:26
+#: ../ui/about.glade.h:2 ../ui/prefs.glade.h:26
 msgid "Closes the dialog."
 msgstr "Inchide fereastra."
 
-#: ui/about.glade.h:3
+#: ../ui/about.glade.h:3
 msgid "Shows information about the program."
 msgstr "Afiºeaza informaþii despre program."
 
-#: ui/about.glade.h:4
+#: ../ui/about.glade.h:4
 msgid "fill_me"
 msgstr "fill_me"
 
-#: ui/color.glade.h:1
-msgid "A dialog that is used to change a color setting."
-msgstr "O fereastra dialog pentru setarea culorilor."
-
-#: ui/color.glade.h:2 ui/font.glade.h:2
-msgid "Applies all changes and closes the dialog."
-msgstr "Aplica toate schimbarile ºi inchide fereastra."
-
-#: ui/color.glade.h:3 ui/font.glade.h:4
-msgid "Cancels all changes and closes the dialog."
-msgstr "Anuleaza toate schimbarile ºi inchide fereastra."
-
-#: ui/color.glade.h:4
-msgid "Contains various widgets to select a color value."
-msgstr "Contient diffÃ©rents composants pour choisir une valeur de couleur"
-
-#: ui/color.glade.h:5
-msgid "Select Color"
-msgstr "Selecteaza culoarea"
-
-#: ui/color.glade.h:6
-msgid "Shows some help about the dialog."
-msgstr "Afiºeaza anumite ajutoare despre dialoguri"
-
-#: ui/font.glade.h:1
-msgid "A dialog that is used to change a font setting."
-msgstr "O fereastra de dialog pentru setarea fonturilor."
-
-#: ui/font.glade.h:3
-msgid "Applies all changes."
-msgstr "Aplica toate schimbarile."
-
-#: ui/font.glade.h:5
-msgid "Displays various fonts and font sizes to select from."
-msgstr "Afiºeaza diferite fonturi pentru a alege."
-
-#: ui/font.glade.h:6
-msgid "Select Font"
-msgstr "Alege un font"
-
-#: ui/font.glade.h:7
-msgid "decimal PI 3.14159265359"
-msgstr "PI zecimal 3.14159265359"
-
-#: ui/prefs.glade.h:1
+#: ../ui/prefs.glade.h:1
 msgid " "
 msgstr " "
 
-#: ui/prefs.glade.h:2
+#: ../ui/prefs.glade.h:2
 msgid "    "
 msgstr "    "
 
-#: ui/prefs.glade.h:3
+#: ../ui/prefs.glade.h:3
 msgid "<b>Appearance</b>"
 msgstr "<b>Aspect</b>"
 
-#: ui/prefs.glade.h:4
+#: ../ui/prefs.glade.h:4
 #, fuzzy
 msgid "<b>Binary Settings</b>"
 msgstr "<b>Binar</b>"
 
-#: ui/prefs.glade.h:5
+#: ../ui/prefs.glade.h:5
 #, fuzzy
 msgid "<b>Decimal Settings</b>"
 msgstr "<b>Dimensiune</b>"
 
-#: ui/prefs.glade.h:6
+#: ../ui/prefs.glade.h:6
 msgid "<b>Dimension</b>"
 msgstr "<b>Dimensiune</b>"
 
-#: ui/prefs.glade.h:7
+#: ../ui/prefs.glade.h:7
 msgid "<b>Font</b>"
 msgstr "<b>Font</b>"
 
-#: ui/prefs.glade.h:8
+#: ../ui/prefs.glade.h:8
 #, fuzzy
 msgid "<b>Hexadecimal Settings</b>"
 msgstr "<b>Hexazecimal</b>"
 
-#: ui/prefs.glade.h:9
+#: ../ui/prefs.glade.h:9
 msgid "<b>Modules Visibility</b>"
 msgstr "<b>Module vizibile</b>"
 
-#: ui/prefs.glade.h:10
+#: ../ui/prefs.glade.h:10
 #, fuzzy
 msgid "<b>Octal Settings</b>"
 msgstr "<b>Octal</b>"
 
-#: ui/prefs.glade.h:11
+#: ../ui/prefs.glade.h:11
 msgid "<b>RPN</b>"
 msgstr "<b>RPN</b>"
 
-#: ui/prefs.glade.h:12
+#: ../ui/prefs.glade.h:12
 msgid "<b>Startup</b>"
 msgstr "<b>Pornire</b>"
 
-#: ui/prefs.glade.h:13
+#: ../ui/prefs.glade.h:13
 msgid "<b>User defined constants:</b>"
 msgstr "<b>Constante definite de utilizator:</b>"
 
-#: ui/prefs.glade.h:14
+#: ../ui/prefs.glade.h:14
 #, fuzzy
 msgid "<b>User defined functions:</b>"
 msgstr "Funcþie definita de utilizator"
 
-#: ui/prefs.glade.h:15
+#: ../ui/prefs.glade.h:15
 msgid "<b>Visibility</b>"
 msgstr "<b>Vizibile</b>"
 
-#: ui/prefs.glade.h:16
+#: ../ui/prefs.glade.h:16
 msgid "A dialog that is used to change preferences settings."
 msgstr "O fereastra de dialog pentru setarea preferintelor."
 
-#: ui/prefs.glade.h:17
+#: ../ui/prefs.glade.h:17
 msgid "Active module color:"
 msgstr "Culoarea modulului activ."
 
-#: ui/prefs.glade.h:18
+#: ../ui/prefs.glade.h:18
 msgid "Add"
 msgstr "Adunare"
 
-#: ui/prefs.glade.h:19
+#: ../ui/prefs.glade.h:19
 msgid "Angle base units"
 msgstr "Unitatea de masura pentru unghiuri"
 
-#: ui/prefs.glade.h:20
+#: ../ui/prefs.glade.h:20
 msgid "Arithmetic operation"
 msgstr "Operatie aritmetica"
 
-#: ui/prefs.glade.h:21
+#: ../ui/prefs.glade.h:21
 msgid "Background color:"
 msgstr "Culoarea fundalului:"
 
-#: ui/prefs.glade.h:22
+#: ../ui/prefs.glade.h:22
 #, fuzzy
 msgid "Binary"
 msgstr "_Binar"
 
-#: ui/prefs.glade.h:23
+#: ../ui/prefs.glade.h:23
 msgid "Button font:"
 msgstr "Fontul pentru butoane:"
 
-#: ui/prefs.glade.h:25
+#: ../ui/prefs.glade.h:25
 msgid "Clear"
 msgstr "Anuleaza"
 
-#: ui/prefs.glade.h:27
+#: ../ui/prefs.glade.h:27
 #, fuzzy
 msgid "Configure number base: "
 msgstr "baza de numerotaþie necunoscuta"
 
-#: ui/prefs.glade.h:29
+#: ../ui/prefs.glade.h:29
 #, fuzzy
 msgid "Decimal"
 msgstr "_Zecimal"
 
-#: ui/prefs.glade.h:30
+#: ../ui/prefs.glade.h:30
 msgid "Delete"
 msgstr "Sterge"
 
-#: ui/prefs.glade.h:31
+#: ../ui/prefs.glade.h:31
 msgid "Description:"
 msgstr "Descriere"
 
-#: ui/prefs.glade.h:32
+#: ../ui/prefs.glade.h:32
 msgid "Display"
 msgstr "Afiºaj"
 
-#: ui/prefs.glade.h:33
+#: ../ui/prefs.glade.h:33
 msgid "Expression:"
 msgstr ""
 
-#: ui/prefs.glade.h:34
+#: ../ui/prefs.glade.h:34
 #, fuzzy
 msgid "Fix length to a multiple of"
 msgstr "fixeaza lungimea ca un multiplu de"
 
-#: ui/prefs.glade.h:36
+#: ../ui/prefs.glade.h:36
 msgid "General"
 msgstr "General"
 
-#: ui/prefs.glade.h:37
+#: ../ui/prefs.glade.h:37
 #, fuzzy
 msgid "Hexadecimal"
 msgstr "_Hexazecimal"
 
-#: ui/prefs.glade.h:38
+#: ../ui/prefs.glade.h:38
 msgid "Inactive module color:"
 msgstr "Culoarea modulului inactiv"
 
-#: ui/prefs.glade.h:39
+#: ../ui/prefs.glade.h:39
 msgid "Minimal button height:"
 msgstr "Inalþimea minima a butonului:"
 
-#: ui/prefs.glade.h:40
+#: ../ui/prefs.glade.h:40
 msgid "Minimal button width:"
 msgstr "Laþimea minima a butonului:"
 
-#: ui/prefs.glade.h:41
+#: ../ui/prefs.glade.h:41
 msgid "Module font:"
 msgstr "Fontul modulului:"
 
-#: ui/prefs.glade.h:42
+#: ../ui/prefs.glade.h:42
 msgid "Name:"
 msgstr "Nume:"
 
-#: ui/prefs.glade.h:43
+#: ../ui/prefs.glade.h:43
 msgid "Notation"
 msgstr "Notaþie"
 
-#: ui/prefs.glade.h:44
+#: ../ui/prefs.glade.h:44
 msgid "Number base units"
 msgstr "Baza de numerotaþie"
 
-#: ui/prefs.glade.h:45
+#: ../ui/prefs.glade.h:45
 #, fuzzy
 msgid "Number of bits: "
 msgstr "Numarul de biþi:"
 
-#: ui/prefs.glade.h:46
+#: ../ui/prefs.glade.h:46
 msgid "Numbers"
 msgstr "Numere"
 
-#: ui/prefs.glade.h:47
+#: ../ui/prefs.glade.h:47
 #, fuzzy
 msgid "Octal"
 msgstr "_Octal"
 
-#: ui/prefs.glade.h:48
+#: ../ui/prefs.glade.h:48
 msgid "Open brackets"
 msgstr "Deschide paranteze"
 
-#: ui/prefs.glade.h:49
+#: ../ui/prefs.glade.h:49
+#, fuzzy
+msgid "Pick a Active Module Color"
+msgstr "Culoarea modulului activ."
+
+#: ../ui/prefs.glade.h:50
+#, fuzzy
+msgid "Pick a Button Font"
+msgstr "Fontul pentru butoane:"
+
+#: ../ui/prefs.glade.h:51
+#, fuzzy
+msgid "Pick a Display Background Color"
+msgstr "Culoarea fundalului:"
+
+#: ../ui/prefs.glade.h:52
+#, fuzzy
+msgid "Pick a Display Result Font Color"
+msgstr "Culoarea fontului pentru rezultat:"
+
+#: ../ui/prefs.glade.h:53
+#, fuzzy
+msgid "Pick a Inactive Module Color"
+msgstr "Culoarea modulului inactiv"
+
+#: ../ui/prefs.glade.h:54
+#, fuzzy
+msgid "Pick a Module Font"
+msgstr "Fontul modulului:"
+
+#: ../ui/prefs.glade.h:55
+#, fuzzy
+msgid "Pick a RPN Stack Color"
+msgstr "Culoarea fontului stivei RPN:"
+
+#: ../ui/prefs.glade.h:56
+#, fuzzy
+msgid "Pick a RPN Stack Font"
+msgstr "Fontul stivei RPN:"
+
+#: ../ui/prefs.glade.h:57
+#, fuzzy
+msgid "Pick a Result Font"
+msgstr "Fontul pentru rezultat:"
+
+#: ../ui/prefs.glade.h:58
 msgid "RPN stack color:"
 msgstr "Culoarea fontului stivei RPN:"
 
-#: ui/prefs.glade.h:50
+#: ../ui/prefs.glade.h:59
 msgid "RPN stack font:"
 msgstr "Fontul stivei RPN:"
 
-#: ui/prefs.glade.h:51
+#: ../ui/prefs.glade.h:60
 msgid "Remember display value on exit"
 msgstr "Memoreaza valoarea afiºajului la ieºire"
 
-#: ui/prefs.glade.h:52
+#: ../ui/prefs.glade.h:61
 msgid "Result font color:"
 msgstr "Culoarea fontului pentru rezultat:"
 
-#: ui/prefs.glade.h:53
+#: ../ui/prefs.glade.h:62
 msgid "Result font:"
 msgstr "Fontul pentru rezultat:"
 
-#: ui/prefs.glade.h:54
+#: ../ui/prefs.glade.h:63
 msgid "Separator block length:"
 msgstr ""
 
-#: ui/prefs.glade.h:55
+#: ../ui/prefs.glade.h:64
 msgid "Separator character:"
 msgstr ""
 
-#: ui/prefs.glade.h:56
+#: ../ui/prefs.glade.h:65
 msgid "Show menu bar"
 msgstr "Afiseaza bara de meniu"
 
-#: ui/prefs.glade.h:57
+#: ../ui/prefs.glade.h:66
 msgid "Show separator"
 msgstr ""
 
-#: ui/prefs.glade.h:58
+#: ../ui/prefs.glade.h:67
 msgid "Show thousands separator"
 msgstr ""
 
-#: ui/prefs.glade.h:59
+#: ../ui/prefs.glade.h:68
 #, fuzzy
 msgid "Signed"
 msgstr "cu semn"
 
-#: ui/prefs.glade.h:60
+#: ../ui/prefs.glade.h:69
 msgid "Update"
 msgstr "Actualizeaza"
 
-#: ui/prefs.glade.h:61
+#: ../ui/prefs.glade.h:70
 msgid "Use custom button font"
 msgstr "Utilizeaza un font anume pentru butoane"
 
-#: ui/prefs.glade.h:62
+#: ../ui/prefs.glade.h:71
 msgid "Value:"
 msgstr "Valoare:"
 
-#: ui/prefs.glade.h:63
+#: ../ui/prefs.glade.h:72
 #, fuzzy
 msgid "Variable:"
 msgstr "Valoare:"
 
-#: ui/prefs.glade.h:64
+#: ../ui/prefs.glade.h:73
 msgid "finite stack size (x, y, z, t)"
 msgstr "stiva de lungime finita (x, y, z, t)"
 
-#: ui/prefs.glade.h:65
+#: ../ui/prefs.glade.h:74
 msgid "galculator - Preferences"
 msgstr "galculator - Preferinþe"
 
-#: ui/prefs.glade.h:66
+#: ../ui/prefs.glade.h:75
 msgid "infinite stack size"
 msgstr "stiva infinita"
 
-#: ui/dispctrl_right.glade.h:1 ui/dispctrl_bottom.glade.h:1
+#: ../ui/dispctrl_right.glade.h:1 ../ui/dispctrl_bottom.glade.h:1
 msgid "<-"
 msgstr "<-"
 
-#: ui/dispctrl_right.glade.h:2 ui/dispctrl_bottom.glade.h:2
+#: ../ui/dispctrl_right.glade.h:2 ../ui/dispctrl_bottom.glade.h:2
 msgid "AC"
 msgstr "AC"
 
-#: ui/dispctrl_right.glade.h:3 ui/dispctrl_bottom.glade.h:3
+#: ../ui/dispctrl_right.glade.h:3 ../ui/dispctrl_bottom.glade.h:3
 msgid "Backspace"
 msgstr "Spaþiu inapoi"
 
-#: ui/dispctrl_right.glade.h:5 ui/dispctrl_bottom.glade.h:5
+#: ../ui/dispctrl_right.glade.h:5 ../ui/dispctrl_bottom.glade.h:5
 msgid "Clear display"
 msgstr "Sterge afiºajul"
 
-#: ui/dispctrl_right.glade.h:6 ui/dispctrl_bottom.glade.h:6
+#: ../ui/dispctrl_right.glade.h:6 ../ui/dispctrl_bottom.glade.h:6
 msgid "Reset calculator (clear all)"
 msgstr "Reseteaza calculatorul (ºterge tot)"
 
-#~ msgid ""
-#~ "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
-#~ msgstr ""
-#~ "[%s] Type d'angle inconnu dans la fonction \"display_result_get_rad_angle"
-#~ "\". %s\n"
+#~ msgid "Select result font"
+#~ msgstr "Selecteaza fontul pentru rezultat"
+
+#~ msgid "Select stack font"
+#~ msgstr "Selecteaza fontul pentru stiva"
+
+#~ msgid "Select module font"
+#~ msgstr "Selecteaza fontul pentru module"
+
+#~ msgid "Select active module color"
+#~ msgstr "Selecteaza culoarea modulului activ"
+
+#~ msgid "Select inactive module color"
+#~ msgstr "Selecteaza culoarea modulului inactiv"
+
+#~ msgid "Select result font color"
+#~ msgstr "Selecteaza culoarea fontului pentru rezultat"
+
+#~ msgid "Select stack color"
+#~ msgstr "Selecteaza culoarea fontului pentru stiva"
+
+#~ msgid "Select background color"
+#~ msgstr "Selecteaza culoarea fundalului"
+
+#~ msgid "Select button font"
+#~ msgstr "Selecteaza fontul pentru butoane"
+
+#~ msgid "A dialog that is used to change a color setting."
+#~ msgstr "O fereastra dialog pentru setarea culorilor."
+
+#~ msgid "Applies all changes and closes the dialog."
+#~ msgstr "Aplica toate schimbarile ºi inchide fereastra."
+
+#~ msgid "Cancels all changes and closes the dialog."
+#~ msgstr "Anuleaza toate schimbarile ºi inchide fereastra."
+
+#~ msgid "Contains various widgets to select a color value."
+#~ msgstr "Contient diffÃ©rents composants pour choisir une valeur de couleur"
+
+#~ msgid "Select Color"
+#~ msgstr "Selecteaza culoarea"
+
+#~ msgid "Shows some help about the dialog."
+#~ msgstr "Afiºeaza anumite ajutoare despre dialoguri"
+
+#~ msgid "A dialog that is used to change a font setting."
+#~ msgstr "O fereastra de dialog pentru setarea fonturilor."
+
+#~ msgid "Applies all changes."
+#~ msgstr "Aplica toate schimbarile."
+
+#~ msgid "Displays various fonts and font sizes to select from."
+#~ msgstr "Afiºeaza diferite fonturi pentru a alege."
+
+#~ msgid "Select Font"
+#~ msgstr "Alege un font"
+
+#~ msgid "decimal PI 3.14159265359"
+#~ msgstr "PI zecimal 3.14159265359"
 
 #~ msgid "_Show menu bar"
 #~ msgstr "_Arata bara de meniu"

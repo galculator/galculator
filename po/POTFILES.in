@@ -9,11 +9,11 @@ src/general_functions.c
 src/ui.c
 src/flex_parser.c
 ui/main_frame.glade
+ui/classic_view.glade
+ui/paper_view.glade
 ui/scientific_buttons.glade
 ui/basic_buttons.glade
 ui/about.glade
-ui/color.glade
-ui/font.glade
 ui/prefs.glade
 ui/dispctrl_right.glade
 ui/dispctrl_bottom.glade

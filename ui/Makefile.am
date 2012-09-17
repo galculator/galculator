@@ -3,10 +3,10 @@
 gladedir = $(datadir)/galculator/glade
 
 glade_DATA = about.glade \
-		color.glade \
-		font.glade \
 		prefs.glade \
+		prefs-ume.glade \
 		main_frame.glade \
+		main_frame_hildon.glade \
 		scientific_buttons.glade \
 		basic_buttons.glade \
 		dispctrl_bottom.glade \

@@ -1,10 +1,10 @@
 [Desktop Entry]
+Version=1.0
 Name=Galculator
 _Comment=Perform simple and scientific calculations
 Exec=galculator
-Icon=gnome-calc2.png
+Icon=galculator
 Terminal=false
 Type=Application
-Categories=Application;Utility;
+Categories=Utility;
 StartupNotify=true
-Encoding=UTF-8
