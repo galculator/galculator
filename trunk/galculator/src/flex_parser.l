@@ -7,7 +7,18 @@
 %option never-interactive
 
 SPACES		[[:space:]]*
-ID		[[:alpha:]][[:alnum:]]*
+ID			[[:alpha:]][[:alnum:]]*
+    
+	/* this is more or less copy-pasted from the flex manual, "A.4.1 Numbers" */
+dseq      ([[:digit:]]+)
+dseq_opt  ([[:digit:]]*)
+frac      (({dseq_opt}[".",]{dseq})|{dseq}[".",])
+exp       ([eE][+-]?{dseq})
+exp_opt   ({exp}?)
+fsuff     [flFL]
+fsuff_opt ({fsuff}?)
+dfc       ([-]?(({frac}{exp_opt}{fsuff_opt})|({dseq}{exp}{fsuff_opt})))
+ddc       ([-]?([[:digit:]]{-}[0])[[:digit:]]*)
 
 %x OP
 
@@ -29,7 +40,7 @@ static void flex_parser_submit_func_token (double (*func)(double));
 static GSList		*user_function_stack=NULL, *flex_buffer_stack=NULL;
 static ALG_OBJECT	*alg_object_stack=NULL;
 static s_cb_token 	parser_token;
-static int 		bracket_counter=0;
+static int 			bracket_counter=0;
 %}
 
 	
@@ -51,7 +62,8 @@ static int 		bracket_counter=0;
 "("		{
 			parser_token.func = NULL;
 			parser_token.operation = *yytext;
-			alg_add_token (CURRENT_ALG_OBJECT, parser_token);
+			gpointer *thisData = &(alg_object_stack->data);
+			alg_add_token ((ALG_OBJECT **) thisData, parser_token);
 			bracket_counter++;
 		}
 	/* 
@@ -64,7 +76,8 @@ static int 		bracket_counter=0;
 			 * the value we want to feed with that operation
 			 * is alg_add_token's return value
 			 */
-			parser_token.number = alg_add_token (CURRENT_ALG_OBJECT, parser_token);
+			gpointer *thisData = &(alg_object_stack->data);
+			parser_token.number = alg_add_token ((ALG_OBJECT **) thisData, parser_token);
 			bracket_counter--;
 		}
 <OP>")!"	{
@@ -74,7 +87,8 @@ static int 		bracket_counter=0;
 			 * the value we want to feed with that operation
 			 * is alg_add_token's return value
 			 */
-			parser_token.number = alg_add_token (CURRENT_ALG_OBJECT, parser_token);
+			gpointer *thisData = &(alg_object_stack->data);
+			parser_token.number = alg_add_token ((ALG_OBJECT **) thisData, parser_token);
 			bracket_counter--;
 		}
 	/* 
@@ -86,8 +100,12 @@ static int 		bracket_counter=0;
 	/* 
 	 * NUMBERS
 	 */
-[-]?([[:digit:]])+[.,]?([[:digit:]])* 	parser_token.number = string2double (yytext, CS_DEC); BEGIN(OP);
-[-]?[.,]+([[:digit:]])+			parser_token.number = string2double (yytext, CS_DEC); BEGIN(OP);
+	/*[-]?([[:digit:]])+[.,]?([[:digit:]])* 	parser_token.number = string2double (yytext, CS_DEC); BEGIN(OP);
+	 *[-]?[.,]+([[:digit:]])+			parser_token.number = string2double (yytext, CS_DEC); BEGIN(OP);
+	 */
+
+{dfc}				parser_token.number = string2double (yytext, CS_DEC); BEGIN(OP);
+{ddc}			  	parser_token.number = string2double (yytext, CS_DEC); BEGIN(OP);
 (0b)([0,1])*		yytext+=2*sizeof(char); parser_token.number = string2double (yytext, CS_BIN); BEGIN(OP);
 (0o)([0-7])*		yytext+=2*sizeof(char); parser_token.number = string2double (yytext, CS_OCT); BEGIN(OP);
 (0x)([[:xdigit:]])*	yytext+=2*sizeof(char); parser_token.number = string2double (yytext, CS_HEX); BEGIN(OP);
@@ -189,7 +207,8 @@ static int flex_parser_identify_constant (char *string)
 static void flex_parser_submit_token (char operation)
 {
 	parser_token.operation = operation;
-	parser_token.number = alg_add_token (CURRENT_ALG_OBJECT, parser_token);
+	gpointer *thisData = &(alg_object_stack->data);
+	parser_token.number = alg_add_token ((ALG_OBJECT **) thisData, parser_token);
 	BEGIN(INITIAL);
 }
 
@@ -197,7 +216,8 @@ static void flex_parser_submit_func_token (double (*func)(double))
 {
 	parser_token.func = func;
 	parser_token.operation = '(';
-	alg_add_token (CURRENT_ALG_OBJECT, parser_token);
+	gpointer *thisData = &(alg_object_stack->data);
+	alg_add_token ((ALG_OBJECT **) thisData, parser_token);
 	bracket_counter++;
 }
 

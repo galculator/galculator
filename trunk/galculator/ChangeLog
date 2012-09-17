@@ -1,3 +1,107 @@
+##############################################
+# 2009-02-08 galculator 1.3.4 released       #
+##############################################
+
+2009-02-08 Simon Floery <chimaira@users.sf.net>
+	* src/display.c: fixed display_result_toggle_sign for EE (closes sf.net
+		#2570283).
+	* pixmaps: renamed galculator_48x48.png to galculator.png (closes sf.net
+		#2496411, thanks to Marco for reporting)
+	* src/flex_parser.l: parser allows both '.' and ',' as decimal point
+		(closes Debian BTS #513232, thanks to Mario for reporting)
+	* applied 01_hildon_interface.patch from ubuntu (closes sf.net #1831261,
+		thanks to Marco for reporting)
+	* pixmaps: added galculator.xpm
+
+##############################################
+# 2009-01-11 galculator 1.3.3 released       #
+##############################################
+
+2009-01-11 Simon Floery <chimaira@users.sf.net>
+	* galculator.desktop.in: new version (closes sf.net #2496411, 
+		thanks to Marco)
+	* src/general_functions.c: workaround for numerical issues (closes sf.net
+		#2496461, Debian BTS #459456)
+	* src/callbacks.c: main_window resizes to minimum after changing views
+		(thanks to Christian for reporting)
+
+##############################################
+# 2009-01-06 galculator 1.3.2 released       #
+##############################################
+
+2009-01-06 Simon Floery <chimaira@users.sf.net>
+	* galculator.desktop.in: use galculator icon (patch by Omair, thanks; fixes
+		also Debian BTS #487177)
+	* src/Makefile.am, pixmaps/Makefile.am: put galculator icon in pixmaps
+		and not in pixmaps/galculator (patch by Omair, thanks)
+	* ui/main_frame.glade: about icon (patch by Omair, thanks)
+	* src/main.c: show main window after it was created (fixes sf.net #2286315,
+		#1821281, thanks to Paul for reporting)
+	* src/main.c: key_snooper adapted to paper mode (thanks to Peter and
+		Les for reporting, fixes sf.net #1874108)
+	* src/general_functions.c: prefs_sep_char_changed changed to prevent 
+		segfault in paper mode
+	* src/ui.c, src/callbacks.c: removed check-resize signal handler (fixes
+		sf.net #2055644, thanks to Aanjhan for reporting)
+	* src/callbacks.c: fixed LP64 warnings (patch by Christian, thanks)
+	* po/pt.po: added Portugese translation (thanks to Marco)
+	* src/general_functions.c: Set tooltips properly when changing to RPN mode
+		(fixes sf.net #1849320)
+	* src/display.c: +/- display and internal sync (fixes sf.net #1857743 and
+		#1869931, thanks to Benjamin for reporting)
+	* src/flex.l: floating point numbers and decimals now as proposed by flex
+		manual (thanks to Ferdinand)
+		
+##############################################
+# 2007-09-28 galculator 1.3.1-win32 released #
+##############################################
+
+2007-09-28 Simon Floery <chimaira@users.sf.net>
+	* src/callbacks.h and src/display.h: all callbacks and signal handlers
+		got G_MODULE_EXPORT (win32 compatibility, closes sf.net 1804428,
+		thanks to Michael for reporting)
+	* ui/main_frame.glade: commented some entries to ensure meet gtk 2.6
+		requirement (closes sf.net 1804428,	thanks to Michael for reporting)
+
+########################################
+# 2007-09-27 galculator 1.3.1 released #
+########################################
+
+2007-09-27 Simon Floery <chimaira@users.sf.net>
+	* configure.in: check if $MSGFMT is set. closes sf.net 1803786
+
+2007-09-08 Simon Floery <chimaira@users.sf.net>
+	* src/callbacks.c: escape input string for proper display (thanks to 
+		Christian for reporting)
+	* src/display.c: fixed display_result_line bug in RPN mode (thanks to
+		Christian for reporting)
+	* src/ui.c: paper mode entry gets keyboard focus
+
+########################################
+# 2007-09-05 galculator 1.3.0 released #
+########################################
+
+2007-09-05 Simon Floery <chimaira@users.sf.net>
+	* ui/prefs.glade: fixed name of hex bit spin, closes sf.net 1788678
+
+2007-09-04 Simon Floery <chimaira@users.sf.net>
+	* general_functions.c: renamed gdk_color_to_string to 
+		convert_gdk_color_to_string for compability with gdk version >= 2.12
+		which features that function (name) by itself. Closes Debian BTS
+		#440844 and #440845, thanks to Stephan for reporting.
+	* general_functions.c: string_add_separator bugfix, now we stop at
+		exponent. closes sf.net 1479269.
+	* display.c: display value is now stored in double as well which gives
+		us much better precision. closes sf.net 1479279
+	* flex_parser.l: fixed some compiler warnings
+	* pixmaps/*: created a basic icon for galculator. closes sf.net 1726031 
+		and sf.net 1702178
+	* po/ru.po: added Russian locale, closes sf.net 1736900
+
+2006-04-09 Simon Floery <chimaira@users.sf.net>
+	* callbacks.c: invisible buttons/menuitems still have working accels
+		(signal can-activate-accel) (fixes sf.net #1214786)
+
 2006-04-01 Simon Floery <chimaira@users.sf.net>
 	* fixed build process (use automake1.9 from now on) (thanks to
 		Christian)

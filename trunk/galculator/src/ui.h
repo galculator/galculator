@@ -1,7 +1,7 @@
 /*
  *  ui.h - general user interface code.
  *	part of galculator
- *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -90,3 +90,8 @@ void ui_classic_view_create();
 void ui_classic_view_destroy();
 void ui_paper_view_create();
 void ui_paper_view_destroy();
+
+#ifdef WITH_HILDON
+void create_hildon_menu (HildonWindow *main_window);
+#endif
+

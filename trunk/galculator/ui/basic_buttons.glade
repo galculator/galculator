@@ -10,6 +10,13 @@
   <property name="modal">False</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
+  <property name="focus_on_map">True</property>
+<!--  <property name="urgency_hint">False</property> -->
   <signal name="destroy" handler="gtk_main_quit" last_modification_time="Thu, 05 Sep 2002 06:48:44 GMT"/>
 
   <child>
@@ -47,11 +54,12 @@
 		  <property name="label" translatable="yes">7</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:11 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="7" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_7" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Home" modifiers="0" signal="clicked"/>
@@ -74,11 +82,12 @@
 		  <property name="label" translatable="yes">8</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:15 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="8" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_8" modifiers="0" signal="clicked"/>
 		</widget>
@@ -100,11 +109,12 @@
 		  <property name="label" translatable="yes">9</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:19 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="9" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_9" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Page_Up" modifiers="0" signal="clicked"/>
@@ -127,11 +137,12 @@
 		  <property name="label" translatable="yes">/</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:37 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="KP_Divide" modifiers="0" signal="clicked"/>
 		  <accelerator key="slash" modifiers="0" signal="clicked"/>
 		</widget>
@@ -153,11 +164,12 @@
 		  <property name="label" translatable="yes">4</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:04:40 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="KP_4" modifiers="0" signal="clicked"/>
 		  <accelerator key="4" modifiers="0" signal="clicked"/>
 		</widget>
@@ -179,11 +191,12 @@
 		  <property name="label" translatable="yes">5</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:04:55 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="5" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_5" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Begin" modifiers="0" signal="clicked"/>
@@ -206,11 +219,12 @@
 		  <property name="label" translatable="yes">6</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:06 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="6" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_6" modifiers="0" signal="clicked"/>
 		</widget>
@@ -232,11 +246,12 @@
 		  <property name="label" translatable="yes">3</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:03:06 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="3" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_3" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Page_Down" modifiers="0" signal="clicked"/>
@@ -259,11 +274,12 @@
 		  <property name="label" translatable="yes">-</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:27 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="KP_Subtract" modifiers="0" signal="clicked"/>
 		  <accelerator key="minus" modifiers="0" signal="clicked"/>
 		</widget>
@@ -285,11 +301,12 @@
 		  <property name="label" translatable="yes">+</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:21 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="KP_Add" modifiers="0" signal="clicked"/>
 		  <accelerator key="plus" modifiers="0" signal="clicked"/>
 		</widget>
@@ -311,11 +328,12 @@
 		  <property name="label" translatable="yes">+/-</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Sun, 15 Sep 2002 14:50:16 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">2</property>
@@ -335,11 +353,12 @@
 		  <property name="label" translatable="yes">*</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:32 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="KP_Multiply" modifiers="0" signal="clicked"/>
 		  <accelerator key="asterisk" modifiers="0" signal="clicked"/>
 		</widget>
@@ -360,11 +379,11 @@
 		  <property name="tooltip" translatable="yes">Add current display value to memory</property>
 		  <property name="can_focus">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_mplus_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:23:58 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox4">
@@ -385,6 +404,10 @@
 			  <property name="yalign">0.5</property>
 			  <property name="xpad">0</property>
 			  <property name="ypad">0</property>
+			  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+			  <property name="width_chars">-1</property>
+			  <property name="single_line_mode">False</property>
+			  <property name="angle">0</property>
 			</widget>
 			<packing>
 			  <property name="padding">0</property>
@@ -429,11 +452,11 @@
 		  <property name="tooltip" translatable="yes">Read from memory</property>
 		  <property name="can_focus">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_mr_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:04:30 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox3">
@@ -454,6 +477,10 @@
 			  <property name="yalign">0.5</property>
 			  <property name="xpad">0</property>
 			  <property name="ypad">0</property>
+			  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+			  <property name="width_chars">-1</property>
+			  <property name="single_line_mode">False</property>
+			  <property name="angle">0</property>
 			</widget>
 			<packing>
 			  <property name="padding">0</property>
@@ -497,11 +524,11 @@
 		  <property name="tooltip" translatable="yes">Save to memory</property>
 		  <property name="can_focus">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_ms_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:23:49 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
 
 		  <child>
 		    <widget class="GtkHBox" id="hbox2">
@@ -522,6 +549,10 @@
 			  <property name="yalign">0.5</property>
 			  <property name="xpad">0</property>
 			  <property name="ypad">0</property>
+			  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+			  <property name="width_chars">-1</property>
+			  <property name="single_line_mode">False</property>
+			  <property name="angle">0</property>
 			</widget>
 			<packing>
 			  <property name="padding">0</property>
@@ -567,11 +598,12 @@
 		  <property name="label" translatable="yes">)</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Fri, 19 Sep 2003 07:54:16 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:20:05 GMT"/>
 		  <accelerator key="parenright" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
@@ -592,11 +624,12 @@
 		  <property name="label" translatable="yes">(</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Fri, 19 Sep 2003 07:54:09 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="parenleft" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
@@ -617,11 +650,12 @@
 		  <property name="label" translatable="yes">0</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:01:58 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="0" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_0" modifiers="0" signal="clicked"/>
 		</widget>
@@ -643,11 +677,12 @@
 		  <property name="label" translatable="yes">.</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="comma" modifiers="0" signal="clicked"/>
 		  <accelerator key="period" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Decimal" modifiers="0" signal="clicked"/>
@@ -669,11 +704,12 @@
 		  <property name="label" translatable="yes">1</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Sat, 12 Jul 2003 13:20:42 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 17:54:18 GMT"/>
 		  <accelerator key="1" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_1" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_End" modifiers="0" signal="clicked"/>
@@ -694,11 +730,12 @@
 		  <property name="label" translatable="yes">2</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Sat, 12 Jul 2003 13:20:42 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="KP_2" modifiers="0" signal="clicked"/>
 		  <accelerator key="2" modifiers="0" signal="clicked"/>
 		</widget>
@@ -720,11 +757,12 @@
 		  <property name="label" translatable="yes">=</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:53 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="Return" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Enter" modifiers="0" signal="clicked"/>
 		  <accelerator key="equal" modifiers="0" signal="clicked"/>
@@ -747,11 +785,12 @@
 		  <property name="label" translatable="yes">sqrt</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Tue, 17 Sep 2002 09:08:28 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		  <accelerator key="r" modifiers="0" signal="clicked"/>
 		  <accelerator key="r" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
@@ -773,11 +812,12 @@
 		  <property name="label" translatable="yes">%</property>
 		  <property name="use_underline">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
+		  <property name="focus_on_click">True</property>
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Mon, 09 Jun 2003 22:21:36 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
-		  <signal name="button_press_event" handler="on_button_press_event" last_modification_time="Fri, 28 Nov 2003 19:18:39 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:17:00 GMT"/>
 		</widget>
 		<packing>
 		  <property name="left_attach">4</property>

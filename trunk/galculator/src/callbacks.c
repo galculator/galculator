@@ -1,7 +1,7 @@
 /*
  *  callbacks.c - functions to handle GUI events.
  *	part of galculator
- *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -91,7 +91,7 @@ on_about_activate                     (GtkMenuItem     *menuitem,
 	gtk_label_set_justify (about_label, GTK_JUSTIFY_CENTER);
 	about_text = g_strdup_printf (_("<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n\
 <span size=\"large\">a GTK 2 based scientific calculator</span>\n\n\
-(c) 2002-2005 by Simon Floery (chimaira@users.sf.net)"), PROG_NAME, VERSION);
+(c) 2002-2009 by Simon Floery (chimaira@users.sf.net)"), PROG_NAME, VERSION);
 	gtk_label_set_markup (about_label, \
 		about_text);
 	gtk_widget_show (about_dialog);
@@ -119,7 +119,7 @@ on_number_button_clicked               (GtkToggleButton  *button,
 		ui_formula_entry_insert (gtk_button_get_label ((GtkButton *)button));
 	} else {
 		rpn_stack_lift();
-		display_result_add_digit (*(gtk_button_get_label ((GtkButton *)button)));
+		display_result_add_digit (*(gtk_button_get_label ((GtkButton *)button)), current_status.number);
 	}
 	return;
 }
@@ -140,7 +140,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 	button_activation (button);
 	
 	if (current_status.notation == CS_FORMULA) {
-		if (strcmp (gtk_widget_get_name ((GtkWidget *) button), "button_enter") == 0)
+		if (strcmp (gtk_widget_get_name((GtkWidget *) button), "button_enter") == 0)
 			ui_formula_entry_activate();
 		/* as long as we don't support string operation ids, we take
 		 * operation char. take this later on:
@@ -148,15 +148,15 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
 		 *	g_object_get_data (G_OBJECT (button), "display_string"));
 		 */
 		else {
-			operation_string = g_strdup_printf ("%c", (int) g_object_get_data (
-				G_OBJECT (button), "operation"));
+			operation_string = g_strdup_printf("%c", GPOINTER_TO_INT(g_object_get_data (
+				G_OBJECT (button), "operation")));
 			ui_formula_entry_insert (operation_string);
 			g_free(operation_string);
 		}
 		return;
 	}
 	
-	current_token.operation = (int) g_object_get_data (G_OBJECT (button), "operation");
+	current_token.operation = GPOINTER_TO_INT(g_object_get_data(G_OBJECT (button), "operation"));
 	/* current number, get it from the display! */
 	current_token.number = display_result_get_double (current_status.number);
 	current_token.func = NULL;
@@ -246,7 +246,7 @@ on_function_button_clicked             (GtkToggleButton	*button,
 		return;
 	}
 	memcpy (func, g_object_get_data (G_OBJECT (button), "func"), sizeof (func));
-	if (!func) error_message ("This button has no function associated with");
+	if (!*func) error_message ("This button has no function associated with");
 	display_result_set_double (
 		func[current_status.fmod](display_result_get_double(current_status.number)), current_status.number);
 	current_status.calc_entry_start_new = TRUE;	
@@ -502,6 +502,8 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 	gtk_widget_set_sensitive (menu_item, TRUE);
 	menu_item = glade_xml_get_widget (main_window_xml, "notation");
 	gtk_widget_set_sensitive (menu_item, TRUE);
+	
+	set_window_size_minimal();
 }
 
 void
@@ -562,6 +564,8 @@ on_scientific_mode_activate (GtkMenuItem *menuitem,
 	gtk_widget_set_sensitive (menu_item, TRUE);
 	menu_item = glade_xml_get_widget (main_window_xml, "notation");
 	gtk_widget_set_sensitive (menu_item, TRUE);
+	
+	set_window_size_minimal();
 }	
 
 void
@@ -587,6 +591,8 @@ on_paper_mode_activate (GtkMenuItem *menuitem,
 	gtk_widget_set_sensitive (menu_item, FALSE);
 	menu_item = glade_xml_get_widget (main_window_xml, "notation");
 	gtk_widget_set_sensitive (menu_item, FALSE);
+	
+	set_window_size_minimal();
 }	
 
 void
@@ -612,7 +618,7 @@ on_paste_activate (GtkMenuItem     *menuitem,
 		if ((formula_entry = formula_entry_is_active_no_toplevel_check ()) != NULL) {
 			gtk_editable_paste_clipboard((GtkEditable *)formula_entry);
 		}
-		else display_result_feed (cp_text);
+		else display_result_feed (cp_text, current_status.number);
 		g_free (cp_text);
 	}
 }
@@ -703,7 +709,7 @@ on_prefs_result_color_set(GtkColorButton *button, gpointer user_data)
 	
 	gtk_color_button_get_color (button, &color);
 	if (prefs.result_color != NULL) g_free (prefs.result_color);
-	prefs.result_color = gdk_color_to_string(color);
+	prefs.result_color = convert_gdk_color_to_string(color);
 	display_update_tags();
 }
 
@@ -725,7 +731,7 @@ on_prefs_stack_color_set(GtkColorButton *button, gpointer user_data)
 	
 	gtk_color_button_get_color (button, &color);
 	if (prefs.stack_color != NULL) g_free (prefs.stack_color);
-	prefs.stack_color = gdk_color_to_string(color);
+	prefs.stack_color = convert_gdk_color_to_string(color);
 	display_update_tags();
 }
 
@@ -747,7 +753,7 @@ on_prefs_act_mod_color_set(GtkColorButton *button, gpointer user_data)
 	
 	gtk_color_button_get_color (button, &color);
 	if (prefs.act_mod_color != NULL) g_free (prefs.act_mod_color);
-	prefs.act_mod_color = gdk_color_to_string(color);
+	prefs.act_mod_color = convert_gdk_color_to_string(color);
 	display_update_tags();
 }
 
@@ -758,7 +764,7 @@ on_prefs_inact_mod_color_set(GtkColorButton *button, gpointer user_data)
 	
 	gtk_color_button_get_color (button, &color);
 	if (prefs.inact_mod_color != NULL) g_free (prefs.inact_mod_color);
-	prefs.inact_mod_color = gdk_color_to_string(color);
+	prefs.inact_mod_color = convert_gdk_color_to_string(color);
 	display_update_tags();
 }
 
@@ -769,7 +775,7 @@ on_prefs_bkg_color_set(GtkColorButton *button, gpointer user_data)
 	
 	gtk_color_button_get_color (button, &color);
 	if (prefs.bkg_color != NULL) g_free (prefs.bkg_color);
-	prefs.bkg_color = gdk_color_to_string(color);
+	prefs.bkg_color = convert_gdk_color_to_string(color);
 	display_set_bkg_color (prefs.bkg_color);
 }
 
@@ -802,7 +808,11 @@ on_show_menubar1_activate              (GtkMenuItem     *menuitem,
 	GtkWidget	*menu_item;
 	
 	prefs.show_menu = gtk_check_menu_item_get_active ((GtkCheckMenuItem *) menuitem);;
-	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
+#ifdef WITH_HILDON
+	set_widget_visibility (main_window_xml, "main_menu", prefs.show_menu);
+#else
+ 	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
+#endif
 	/* in case this cb is called by the right button mouse click menu */
 	menu_item = glade_xml_get_widget (main_window_xml, "show_menubar1");
 	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
@@ -871,7 +881,11 @@ void on_prefs_show_menu_toggled (GtkToggleButton *togglebutton,
 	GtkCheckMenuItem		*show_menubar_item;
 	
 	prefs.show_menu = gtk_toggle_button_get_active (togglebutton);
-	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
+#ifdef WITH_HILDON
+	set_widget_visibility (main_window_xml, "main_menu", prefs.show_menu);
+#else
+ 	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
+#endif
 	show_menubar_item = (GtkCheckMenuItem *) glade_xml_get_widget (main_window_xml, "show_menubar1");
 	gtk_check_menu_item_set_active (show_menubar_item, prefs.show_menu);
 }
@@ -887,16 +901,23 @@ void on_prefs_button_width_changed (GtkSpinButton *spinbutton,
 					GtkScrollType arg1,
 					gpointer user_data)
 {
-	prefs.button_width = (int) gtk_spin_button_get_value (spinbutton);
-	set_all_buttons_size (prefs.button_width, prefs.button_height);
+	int new_button_width = (int) gtk_spin_button_get_value (spinbutton);
+	
+	if (new_button_width != prefs.button_width) {
+		prefs.button_width = new_button_width;
+		set_all_buttons_size (prefs.button_width, prefs.button_height);
+	}
 }
 
 void on_prefs_button_height_changed (GtkSpinButton *spinbutton,
 					GtkScrollType arg1,
 					gpointer user_data)
 {	
-	prefs.button_height = (int) gtk_spin_button_get_value (spinbutton);
-	set_all_buttons_size (prefs.button_width, prefs.button_height);
+	int new_button_height = (int) gtk_spin_button_get_value (spinbutton);
+	if (new_button_height != prefs.button_height) {
+		prefs.button_height = new_button_height;
+		set_all_buttons_size (prefs.button_width, prefs.button_height);
+	}
 }
 
 /*
@@ -908,7 +929,7 @@ void user_functions_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	int 			index;
 	s_flex_parser_result	result;
 	
-	index = (int) user_data;
+	index = GPOINTER_TO_INT(user_data);
 	result = compute_user_function (
 		user_function[index].expression, user_function[index].variable,
 		display_result_get());
@@ -947,7 +968,7 @@ void constants_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	current_status.rpn_stack_lift_enabled = TRUE;
 	rpn_stack_lift();
 	const_value = user_data;
-	display_result_set (const_value);
+	display_result_set (const_value, TRUE, string2double(const_value, current_status.number));
 	current_status.rpn_stack_lift_enabled = TRUE;
 	current_status.calc_entry_start_new = TRUE;
 }
@@ -995,9 +1016,7 @@ void ms_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	current_status.calc_entry_start_new = TRUE;
 }
 
-void
-on_ms_button_clicked (GtkToggleButton       *button,
-			gpointer user_data)
+void on_ms_button_clicked (GtkToggleButton *button, gpointer user_data)
 {
 	GtkWidget	*menu;
 	
@@ -1021,9 +1040,7 @@ void mr_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	current_status.calc_entry_start_new = TRUE;
 }
 
-void
-on_mr_button_clicked             (GtkToggleButton       *button,
-				gpointer         user_data)
+void on_mr_button_clicked (GtkToggleButton *button, gpointer user_data)
 {
 	GtkWidget	*menu;;
 	
@@ -1043,9 +1060,7 @@ void mplus_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 	memory.data[index] += display_result_get_double(current_status.number);
 }
 
-void
-on_mplus_button_clicked             (GtkToggleButton       *button,
-				gpointer         user_data)
+void on_mplus_button_clicked (GtkToggleButton *button, gpointer user_data)
 {
 	GtkWidget	*menu;
 	
@@ -1516,9 +1531,15 @@ void on_togglebutton_released (GtkToggleButton *togglebutton,
 	gtk_toggle_button_set_active (togglebutton, FALSE);
 }
 
+/* this function was the signal handler for 'check-resize' of main_window.
+ * I see no reason to have it further. so i unlinked it. the code is here
+ * if we need it some later time.
+ */
 void on_main_window_check_resize (GtkContainer *container,
                                             gpointer user_data)
 {
+	fprintf (stderr, _("[%s] on_main_window_check_resize should not get called. %s\n"), PROG_NAME, BUG_REPORT);
+	
 	static gboolean		itsme=FALSE;
 	
 	/* only in classic views this function may take effect */
@@ -1571,12 +1592,12 @@ void on_formula_entry_changed (GtkEditable *editable, gpointer user_data)
 void on_paper_entry_activate (GtkWidget *activated_widget, gpointer user_data)
 {
 	s_flex_parser_result 	result;
-	GtkEntry		*entry;
-	GtkTreeView		*tree_view;
-	GtkListStore		*paper_store;
-	GtkTreeIter   		iter;
-	char			*result_string, *markup_result_string;
-	GtkAdjustment		*v_adjustment;
+	GtkEntry				*entry;
+	GtkTreeView				*tree_view;
+	GtkListStore			*paper_store;
+	GtkTreeIter   			iter;
+	char					*escaped_input_string, *result_string, *markup_result_string;
+	GtkTreePath* 			last_row_path;
 	
 	if (!GTK_IS_ENTRY(activated_widget))
 		entry = GTK_ENTRY(glade_xml_get_widget (view_xml, "paper_entry"));
@@ -1591,19 +1612,24 @@ void on_paper_entry_activate (GtkWidget *activated_widget, gpointer user_data)
 	tree_view = GTK_TREE_VIEW(glade_xml_get_widget (view_xml, "paper_treeview"));
 	paper_store = GTK_LIST_STORE(gtk_tree_view_get_model(tree_view));
 	gtk_list_store_append (paper_store, &iter);
-	gtk_list_store_set (paper_store, &iter, 0, gtk_entry_get_text(entry), 1, 0.0, 2, NULL, -1);
+	escaped_input_string = g_markup_escape_text(gtk_entry_get_text(entry), -1);
+	gtk_list_store_set (paper_store, &iter, 0, escaped_input_string, 1, 0.0, 2, NULL, -1);
+	g_free(escaped_input_string);
 	
 	gtk_list_store_append (paper_store, &iter);
 	result_string = get_display_number_string(result.value, current_status.number);
-	markup_result_string = g_strdup_printf ("<b>%s</b>", result_string);
+	markup_result_string = g_markup_printf_escaped ("<b>%s</b>", result_string);
+	
 	g_free(result_string);
 	if (result.error)
 		gtk_list_store_set (paper_store, &iter, 0, "Syntax Error", 1, 1.0, 2, "red", -1);
 	else
 		gtk_list_store_set (paper_store, &iter, 0, markup_result_string, 1, 1.0, 2, NULL, -1);
 	g_free(markup_result_string);
-	v_adjustment = gtk_tree_view_get_vadjustment (tree_view);
-	gtk_adjustment_set_value(v_adjustment, v_adjustment->upper);
+	
+	/* scroll to last row */
+	last_row_path = gtk_tree_model_get_path (gtk_tree_view_get_model(tree_view), &iter);
+	gtk_tree_view_scroll_to_cell(tree_view, last_row_path, NULL, FALSE, 0., 0.);
 	
 	/* clear entry */
 	gtk_entry_set_text (entry, "");
@@ -1639,4 +1665,17 @@ gboolean paper_tree_view_selection_changed_cb (GtkWidget *widget,
 	return FALSE;
 }
 
+gboolean on_button_can_activate_accel (GtkWidget *widget, guint signal_id, gpointer user_data)
+{
+	if (!GTK_WIDGET_SENSITIVE(widget)) return FALSE;
+	if (strcmp("clicked", g_signal_name(signal_id)) == 0) return TRUE;
+	return FALSE;
+}
+
+gboolean on_menuitem_can_activate_accel (GtkWidget *widget, guint signal_id, gpointer user_data)
+{
+	if (!GTK_WIDGET_SENSITIVE(widget)) return FALSE;
+	if (strcmp("activate", g_signal_name(signal_id)) == 0) return TRUE;
+	return FALSE;
+}
 /* END */

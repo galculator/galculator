@@ -1,8 +1,16 @@
-galculator 1.3.0
+galculator 1.3.1
+	* some minor bugfixes
+
+galculator 1.3
 	* paper mode
 	* tooltips have now accelerators (depends GTK >= 2.6.0)
+	* several improvements and bugfixes to the GUI - core interface
+	* new and updated translations
 
-galculator 1.2.5
+galculator 1.2.5.2
+	* quick bugfix
+
+galculator 1.2.5.1
 	* quick bugfix
 
 galculator 1.2.5

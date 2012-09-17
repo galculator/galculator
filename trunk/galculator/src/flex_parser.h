@@ -1,7 +1,7 @@
 /*
  *  flex_parser.h
  *	part of galculator
- *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -21,7 +21,6 @@
 #ifndef _FLEX_PARSER_H
 #define _FLEX_PARSER_H 1
 
-#define CURRENT_ALG_OBJECT 		(ALG_OBJECT **) &(alg_object_stack->data)
 #define FLEX_PARSER_NR_RECURSIONS	10
 
 enum {

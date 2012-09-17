@@ -32,7 +32,7 @@
 ## Release information
 my $PROGRAM      = "intltool-extract";
 my $PACKAGE      = "intltool";
-my $VERSION      = "0.34.2";
+my $VERSION      = "0.36.2";
 
 ## Loaded modules
 use strict; 
@@ -114,6 +114,11 @@ sub split_on_argument {
 sub place_normal {
     $FILE	 = $ARGV[0];
     $OUTFILE     = "$FILE.h";
+
+    my $dirname = dirname ($OUTFILE);
+    if (! -d "$dirname" && $dirname ne "") {
+        system ("mkdir -p $dirname");
+    }
 }   
 
 sub place_local {
@@ -156,7 +161,7 @@ XML files. Read manpage (man ${PROGRAM}) for more info.
       --type=TYPE   Specify the file type of FILENAME. Currently supports:
                     "gettext/glade", "gettext/ini", "gettext/keys"
                     "gettext/rfc822deb", "gettext/schemas",
-                    "gettext/scheme", "gettext/xml"
+                    "gettext/scheme", "gettext/xml", "gettext/quoted"
   -l, --local       Writes output into current working directory
                     (conflicts with --update)
       --update      Writes output into the same directory the source file 
@@ -212,6 +217,7 @@ sub convert {
     &type_scheme if $gettext_type eq "scheme";
     &type_schemas  if $gettext_type eq "schemas";
     &type_rfc822deb  if $gettext_type eq "rfc822deb";
+    &type_quoted if $gettext_type eq "quoted";
 }
 
 sub entity_decode_minimal
@@ -231,9 +237,9 @@ sub entity_decode
 
     s/&apos;/'/g; # '
     s/&quot;/"/g; # "
-    s/&amp;/&/g;
     s/&lt;/</g;
     s/&gt;/>/g;
+    s/&amp;/&/g;
 
     return $_;
 }
@@ -242,7 +248,7 @@ sub escape_char
 {
     return '\"' if $_ eq '"';
     return '\n' if $_ eq "\n";
-    return '\\' if $_ eq '\\';
+    return '\\\\' if $_ eq '\\';
 
     return $_;
 }
@@ -255,8 +261,11 @@ sub escape
 
 sub type_ini {
     ### For generic translatable desktop files ###
-    while ($input =~ /^_.*=(.*)$/mg) {
-        $messages{$1} = [];
+    while ($input =~ /^(#(.+)\n)?^_.*=(.*)$/mg) {
+        if (defined($2))  {
+            $comments{$3} = $2;
+        }
+        $messages{$3} = [];
     }
 }
 
@@ -709,6 +718,17 @@ sub rfc822deb_split {
     $str =~ s/\s*$//;
     push(@list, $str) if length ($str);
     return @list;
+}
+
+sub type_quoted {
+    while ($input =~ /\"(([^\"]|\\\")*[^\\\"])\"/g) {
+        my $message = $1;
+        my $before = $`;
+        $message =~ s/\\\"/\"/g;
+        $before =~ s/[^\n]//g;
+        $messages{$message} = [];
+        $loc{$message} = length ($before) + 2;
+    }
 }
 
 sub type_glade {

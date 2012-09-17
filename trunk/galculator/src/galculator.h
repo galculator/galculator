@@ -1,7 +1,7 @@
 /*
  *  galculator.h - general definitions.
  *	part of galculator
- *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -27,17 +27,31 @@
 #  include <config.h>
 #endif
 
+#ifdef WITH_HILDON
+#include "hildon/hildon-program.h"
+#include "hildon/hildon-window.h"
+#include "glade/glade-build.h"
+#endif
+
 #define DEFAULT_DEC_POINT '.'
 
 #define CLEARED_DISPLAY	"0"
 
 #define CONFIG_FILE_NAME ".galculator"
 
+#ifdef WITH_HILDON
+#define MAIN_GLADE_FILE 		PACKAGE_GLADE_DIR "/main_frame_hildon.glade"
+#else
 #define MAIN_GLADE_FILE 		PACKAGE_GLADE_DIR "/main_frame.glade"
+#endif
 #define SCIENTIFIC_GLADE_FILE		PACKAGE_GLADE_DIR "/scientific_buttons.glade"
 #define BASIC_GLADE_FILE		PACKAGE_GLADE_DIR "/basic_buttons.glade"
 #define ABOUT_GLADE_FILE 		PACKAGE_GLADE_DIR "/about.glade"
+#ifdef WITH_HILDON
+#define PREFS_GLADE_FILE 		PACKAGE_GLADE_DIR "/prefs-ume.glade"
+#else
 #define PREFS_GLADE_FILE 		PACKAGE_GLADE_DIR "/prefs.glade"
+#endif
 #define FONT_GLADE_FILE 		PACKAGE_GLADE_DIR "/font.glade"
 #define COLOR_GLADE_FILE 		PACKAGE_GLADE_DIR "/color.glade"
 #define CLASSIC_VIEW_GLADE_FILE		PACKAGE_GLADE_DIR "/classic_view.glade"

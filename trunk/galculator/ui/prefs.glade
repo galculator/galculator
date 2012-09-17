@@ -16,7 +16,7 @@
   <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
   <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
   <property name="focus_on_map">True</property>
-  <property name="urgency_hint">False</property>
+<!--  <property name="urgency_hint">False</property> -->
   <property name="has_separator">True</property>
   <accessibility>
     <atkproperty name="AtkObject::accessible_description" translatable="yes">A dialog that is used to change preferences settings.</atkproperty>
@@ -2425,7 +2425,7 @@
 			  </child>
 
 			  <child>
-			    <widget class="GtkSpinButton" id="spinbutton1">
+			    <widget class="GtkSpinButton" id="prefs_hex_bits">
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
 			      <property name="climb_rate">1</property>
@@ -2434,7 +2434,7 @@
 			      <property name="update_policy">GTK_UPDATE_ALWAYS</property>
 			      <property name="snap_to_ticks">False</property>
 			      <property name="wrap">False</property>
-			      <property name="adjustment">2 1 32 1 10 10</property>
+			      <property name="adjustment">1 1 32 1 10 10</property>
 			      <signal name="value_changed" handler="on_prefs_hex_bits_value_changed" last_modification_time="Mon, 23 Jun 2003 15:38:23 GMT"/>
 			    </widget>
 			    <packing>

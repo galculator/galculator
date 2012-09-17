@@ -35,7 +35,7 @@
 ## Release information
 my $PROGRAM = "intltool-merge";
 my $PACKAGE = "intltool";
-my $VERSION = "0.34.2";
+my $VERSION = "0.36.2";
 
 ## Loaded modules
 use strict; 
@@ -60,6 +60,7 @@ my $KEYS_STYLE_ARG = 0;
 my $DESKTOP_STYLE_ARG = 0;
 my $SCHEMAS_STYLE_ARG = 0;
 my $RFC822DEB_STYLE_ARG = 0;
+my $QUOTED_STYLE_ARG = 0;
 my $QUIET_ARG = 0;
 my $PASS_THROUGH_ARG = 0;
 my $UTF8_ARG = 0;
@@ -79,6 +80,7 @@ GetOptions
  "desktop-style|d" => \$DESKTOP_STYLE_ARG,
  "schemas-style|s" => \$SCHEMAS_STYLE_ARG,
  "rfc822deb-style|r" => \$RFC822DEB_STYLE_ARG,
+ "quoted-style" => \$QUOTED_STYLE_ARG,
  "pass-through|p" => \$PASS_THROUGH_ARG,
  "utf8|u" => \$UTF8_ARG,
  "multiple-output|m" => \$MULTIPLE_OUTPUT,
@@ -91,8 +93,23 @@ my $OUTFILE;
 
 my %po_files_by_lang = ();
 my %translations = ();
-my $iconv = $ENV{"ICONV"} || $ENV{"INTLTOOL_ICONV"} || "@INTLTOOL_ICONV@";
+my $iconv = $ENV{"ICONV"} || "iconv";
 my $devnull = ($^O eq 'MSWin32' ? 'NUL:' : '/dev/null');
+
+sub isProgramInPath
+{
+    my ($file) = @_;
+    # If either a file exists, or when run it returns 0 exit status
+    return 1 if ((-x $file) or (system("$file -l >$devnull") == 0));
+    return 0;
+}
+
+if (! isProgramInPath ("$iconv"))
+{
+	print STDERR " *** iconv is not found on this system!\n".
+		     " *** Without it, intltool-merge can not convert encodings.\n";
+	exit;
+}
 
 # Use this instead of \w for XML files to handle more possible characters.
 my $w = "[-A-Za-z0-9._:]";
@@ -157,6 +174,14 @@ elsif ($RFC822DEB_STYLE_ARG && @ARGV > 2)
 	&rfc822deb_merge_translations;
 	&finalize;
 } 
+elsif ($QUOTED_STYLE_ARG && @ARGV > 2) 
+{
+	&utf8_sanity_check;
+	&preparation;
+	&print_message;
+	&quoted_merge_translations;
+	&finalize;
+} 
 else 
 {
 	&print_help;
@@ -193,6 +218,7 @@ Mandatory options: (exactly one must be specified)
   -k, --keys-style       includes translations in the keys style
   -s, --schemas-style    includes translations in the schemas style
   -r, --rfc822deb-style  includes translations in the RFC822 style
+      --quoted-style     includes translations in the quoted string style
   -x, --xml-style        includes translations in the standard xml style
 
 Other options:
@@ -249,8 +275,42 @@ sub po_file2lang
 
 sub gather_po_files
 {
-    for my $po_file (glob "$PO_DIR/*.po") {
-	$po_files_by_lang{po_file2lang($po_file)} = $po_file;
+    if (my $linguas = $ENV{"LINGUAS"})
+    {
+        for my $lang (split / /, $linguas) {
+            my $po_file = $PO_DIR . "/" . $lang . ".po";
+            if (-e $po_file) {
+                $po_files_by_lang{$lang} = $po_file;
+            }
+        }
+    }
+    else
+    {
+        if (open LINGUAS_FILE, "$PO_DIR/LINGUAS")
+        {
+            while (<LINGUAS_FILE>)
+            {
+                next if /^#/;
+
+                if (/([-a-zA-Z_@.]+)\n/)
+                {
+                    my $lang = $1;
+
+                    my $po_file = $PO_DIR . "/" . $lang . ".po";
+                    if (-e $po_file) {
+                        $po_files_by_lang{$lang} = $po_file;
+                    }
+                }
+            }
+
+            close LINGUAS_FILE;
+        }
+        else
+        {
+            for my $po_file (glob "$PO_DIR/*.po") {
+                $po_files_by_lang{po_file2lang($po_file)} = $po_file;
+            }
+        }
     }
 }
 
@@ -395,7 +455,7 @@ sub create_translation_database
             } 
             else 
             {
-		print STDERR "WARNING: $po_file is not in UTF-8 but $encoding, converting...\n" unless $QUIET_ARG;;
+		print "NOTICE: $po_file is not in UTF-8 but $encoding, converting...\n" unless $QUIET_ARG;;
 
                 open PO_FILE, "$iconv -f $encoding -t UTF-8 $po_file|";	
             }
@@ -415,7 +475,7 @@ sub create_translation_database
         {
 	    $nextfuzzy = 1 if /^#, fuzzy/;
        
-	    if (/^msgid "((\\.|[^\\])*)"/ ) 
+	    if (/^msgid "((\\.|[^\\]+)*)"/ ) 
             {
 		$translations{$lang, $msgid} = $msgstr if $inmsgstr && $msgid && $msgstr;
 		$msgid = "";
@@ -431,14 +491,14 @@ sub create_translation_database
 		$nextfuzzy = 0;
 	    }
 
-	    if (/^msgstr "((\\.|[^\\])*)"/) 
+	    if (/^msgstr "((\\.|[^\\]+)*)"/) 
             {
 	        $msgstr = unescape_po_string($1);
 		$inmsgstr = 1;
 		$inmsgid = 0;
 	    }
 
-	    if (/^"((\\.|[^\\])*)"/) 
+	    if (/^"((\\.|[^\\]+)*)"/) 
             {
 	        $msgid .= unescape_po_string($1) if $inmsgid;
 	        $msgstr .= unescape_po_string($1) if $inmsgstr;
@@ -483,16 +543,15 @@ sub unescape_po_string
     return $string;
 }
 
-## NOTE: deal with < - &lt; but not > - &gt;  because it seems its ok to have 
-## > in the entity. For further info please look at #84738.
 sub entity_decode
 {
     local ($_) = @_;
 
     s/&apos;/'/g; # '
     s/&quot;/"/g; # "
-    s/&amp;/&/g;
     s/&lt;/</g;
+    s/&gt;/>/g;
+    s/&amp;/&/g;
 
     return $_;
 }
@@ -1006,8 +1065,8 @@ sub xml_merge_output
 
     if ($MULTIPLE_OUTPUT) {
         for my $lang (sort keys %po_files_by_lang) {
-	    if ( ! -e $lang ) {
-	        mkdir $lang or die "Cannot create subdirectory $lang: $!\n";
+	    if ( ! -d $lang ) {
+	        mkdir $lang or -d $lang or die "Cannot create subdirectory $lang: $!\n";
             }
             open OUTPUT, ">$lang/$OUTFILE" or die "Cannot open $lang/$OUTFILE: $!\n";
             binmode (OUTPUT) if $^O eq 'MSWin32';
@@ -1354,3 +1413,39 @@ sub rfc822deb_split
     return @list;
 }
 
+sub quoted_translation
+{
+    my ($lang, $string) = @_;
+
+    $string =~ s/\\\"/\"/g;
+
+    my $translation = $translations{$lang, $string};
+    $translation = $string if !$translation;
+
+    $translation =~ s/\"/\\\"/g;
+    return $translation
+}
+
+sub quoted_merge_translations
+{
+    if (!$MULTIPLE_OUTPUT) {
+        print "Quoted only supports Multiple Output.\n";
+        exit(1);
+    }
+
+    for my $lang (sort keys %po_files_by_lang) {
+        if ( ! -d $lang ) {
+            mkdir $lang or -d $lang or die "Cannot create subdirectory $lang: $!\n";
+        }
+        open INPUT, "<${FILE}" or die;
+        open OUTPUT, ">$lang/$OUTFILE" or die "Cannot open $lang/$OUTFILE: $!\n";
+        binmode (OUTPUT) if $^O eq 'MSWin32';
+        while (<INPUT>) 
+        {
+            s/\"(([^\"]|\\\")*[^\\\"])\"/"\"" . &quoted_translation($lang, $1) . "\""/ge;
+            print OUTPUT;
+        }
+        close OUTPUT;
+        close INPUT;
+    }
+}

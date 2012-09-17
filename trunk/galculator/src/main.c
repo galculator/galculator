@@ -1,7 +1,7 @@
 /*
  *  main.c
  *	part of galculator
- *  	(c) 2002-2005 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -56,7 +56,7 @@ ALG_OBJECT		*main_alg;
 
 void print_usage ()
 {
-	printf (_("\n%s v%s, (c) 2002-2005 Simon Floery\n\n\
+	printf (_("\n%s v%s, (c) 2002-2009 Simon Floery\n\n\
 Usage: %s [options]\n\n\
 options:\n\
 (GTK options)\n\
@@ -68,6 +68,7 @@ PACKAGE, VERSION, PACKAGE);
 int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 {
 	GtkWidget	*formula_entry;
+	
 	/* the problem: key acceleration in gtk2 works a bit strange. I do not
 	 * understand it completely. The following is in part the result of a
 	 * long trial and error process. If you can explain why it works, please
@@ -76,15 +77,16 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 	 * keypad's 0,2,4,6,8 won't work in gtkentry etc. (e.g. found in prefs)
 	 */
 	
-	/* fprintf (stderr, "[%s] key snooper (1): %i %i %s\n", PROG_NAME, event->state, event->keyval, gdk_keyval_name (event->keyval)); */
+	//fprintf (stderr, "[%s] key snooper (1): %i %i %s\n", PROG_NAME, event->state, event->keyval, gdk_keyval_name (event->keyval));
 	if (((event->keyval != GDK_KP_2) && (event->keyval != GDK_KP_Down) &&
 		(event->keyval != GDK_KP_4) && (event->keyval != GDK_KP_Left) &&
 		(event->keyval != GDK_KP_6) && (event->keyval != GDK_KP_Right) &&
 		(event->keyval != GDK_KP_8) && (event->keyval != GDK_KP_Up) &&
 		(event->keyval != GDK_KP_0) && (event->keyval != GDK_KP_Insert)) ||
-		(strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(grab_widget)),
-			"main_window") != 0))
+		(strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(grab_widget)), "main_window") != 0) ||
+		(prefs.mode == PAPER_MODE))
 			event->state &= ~GDK_MOD2_MASK;
+	//fprintf (stderr, "[%s] key snooper (2): %i %i %s\n", PROG_NAME, event->state, event->keyval, gdk_keyval_name (event->keyval));
 	
 	/* another problem: we have keyboard accelerators which are simple
 	 * keypresses, e.g. "1", "2" but also "s" for the sin button. if the
@@ -108,10 +110,24 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 	return FALSE;
 }
 
+#ifdef WITH_HILDON
+/* Registering the hildon application */
+static GtkWidget* glade_hildon_window_new (GladeXML *xml, GType type, GladeWidgetInfo *info)
+{
+    return hildon_window_new();
+}
+#endif
+
 int main (int argc, char *argv[])
 {
-	char		*config_file_name;
+	char		*config_file_name, *icon_file_name;
 	GtkWidget 	*main_window;
+	GList 		*buf_list;
+	GError		*error;
+
+#ifdef WITH_HILDON
+	HildonProgram   *hildon_program;
+#endif
 	
 	/*
 	 * gtk_init runs (among other things) setlocale (LC_ALL, ""). Therefore we
@@ -139,14 +155,31 @@ int main (int argc, char *argv[])
 	g_free (config_file_name);
 
 	current_status.notation = prefs.def_notation;
-	
+
+#ifdef WITH_HILDON
+	glade_register_widget (HILDON_TYPE_WINDOW, glade_hildon_window_new, glade_standard_build_children, NULL);
+	hildon_program = HILDON_PROGRAM(hildon_program_get_instance());
+#endif
+
 	/* at first get the main frame */
 	
+	/* sth like ui_launch_up_ui for splitting into first time wizard? */
 	main_window = ui_main_window_create();
+#ifdef WITH_HILDON
+	hildon_program_add_window(hildon_program, HILDON_WINDOW(main_window));
+	g_set_application_name("Galculator");
+	create_hildon_menu(HILDON_WINDOW(main_window));
+#endif	
 	gtk_window_set_title ((GtkWindow *)main_window, PACKAGE);
-
-	// ui_main_window_buttons_create(prefs.mode);
 	
+	/* set the window's icon */
+	buf_list = NULL;
+	error = NULL;
+	icon_file_name = g_strdup_printf ("%s/galculator_48x48.png", PACKAGE_PIXMAPS_DIR);
+	buf_list = g_list_append(buf_list, gdk_pixbuf_new_from_file (icon_file_name, &error));
+	g_free(icon_file_name);
+	gtk_window_set_icon_list ((GtkWindow *) main_window, buf_list);
+
 	/* usually, only Shift, CTRL and ALT modifiers are paid attention to by 
 	 * accelerator code. add MOD2 (NUMLOCK allover the world?) to the list. 
 	 * We have to do this for a working keypad.
@@ -158,13 +191,7 @@ int main (int argc, char *argv[])
 
 	main_alg = alg_init (0);
 	rpn_init (prefs.stack_size, 0);
-
-	/* finally show what we put together. do this as late asap */
-	gtk_widget_show (main_window);
-	
-	/* main_windows has to be visible to get a nice and proper display */	
-	//display_init (main_window);
-	
+		
 	/* apply changes */
 	apply_preferences (prefs);
 
@@ -175,6 +202,9 @@ int main (int argc, char *argv[])
 	gtk_key_snooper_install (key_snooper, NULL);
 	
 	gtk_window_resize ((GtkWindow *)main_window, 1, 1);
+	
+	/* gtk_widget_show main window as late as possible */
+	gtk_widget_show (main_window);
 	
 	gtk_main ();
 

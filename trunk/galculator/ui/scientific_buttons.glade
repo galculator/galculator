@@ -16,7 +16,7 @@
   <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
   <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
   <property name="focus_on_map">True</property>
-  <property name="urgency_hint">False</property>
+<!--  <property name="urgency_hint">False</property> -->
   <signal name="destroy" handler="gtk_main_quit" last_modification_time="Thu, 05 Sep 2002 06:48:44 GMT"/>
 
   <child>
@@ -59,6 +59,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Thu, 14 Nov 2002 22:52:35 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:13:01 GMT"/>
 		  <accelerator key="t" modifiers="0" signal="clicked"/>
 		  <accelerator key="t" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
@@ -85,6 +86,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Fri, 06 Sep 2002 16:11:04 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:12:55 GMT"/>
 		  <accelerator key="n" modifiers="0" signal="clicked"/>
 		  <accelerator key="n" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
@@ -111,6 +113,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Tue, 17 Sep 2002 09:08:28 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:12:49 GMT"/>
 		  <accelerator key="r" modifiers="0" signal="clicked"/>
 		  <accelerator key="r" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
@@ -137,6 +140,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Fri, 06 Sep 2002 16:11:04 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:12:43 GMT"/>
 		  <accelerator key="exclam" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		  <accelerator key="exclam" modifiers="0" signal="clicked"/>
 		</widget>
@@ -163,6 +167,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Tue, 17 Sep 2002 09:13:28 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:12:37 GMT"/>
 		  <accelerator key="e" modifiers="GDK_CONTROL_MASK | GDK_MOD1_MASK" signal="clicked"/>
 		</widget>
 		<packing>
@@ -188,6 +193,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Thu, 14 Nov 2002 22:52:29 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:13:32 GMT"/>
 		  <accelerator key="o" modifiers="0" signal="clicked"/>
 		  <accelerator key="o" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
@@ -214,6 +220,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Fri, 06 Sep 2002 16:11:04 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:13:26 GMT"/>
 		  <accelerator key="l" modifiers="0" signal="clicked"/>
 		  <accelerator key="l" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
@@ -240,6 +247,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Fri, 06 Sep 2002 16:11:04 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:13:20 GMT"/>
 		  <accelerator key="q" modifiers="0" signal="clicked"/>
 		  <accelerator key="q" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
@@ -266,6 +274,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:38:14 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:13:14 GMT"/>
 		  <accelerator key="asciicircum" modifiers="0" signal="clicked"/>
 		  <accelerator key="p" modifiers="0" signal="clicked"/>
 		  <accelerator key="p" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
@@ -290,6 +299,7 @@
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_user_function_button_clicked" last_modification_time="Sun, 14 Mar 2004 17:05:09 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:13:08 GMT"/>
 		  <accelerator key="u" modifiers="GDK_MOD1_MASK" signal="clicked"/>
 
 		  <child>
@@ -362,6 +372,7 @@
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_constant_button_clicked" last_modification_time="Sun, 08 Sep 2002 13:22:41 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:13:39 GMT"/>
 		  <accelerator key="o" modifiers="GDK_MOD1_MASK" signal="clicked"/>
 
 		  <child>
@@ -437,6 +448,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Mon, 09 Jun 2003 22:21:36 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:13:46 GMT"/>
 		  <accelerator key="percent" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
@@ -461,6 +473,7 @@
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_tbutton_fmod_clicked" last_modification_time="Sun, 08 Sep 2002 13:24:02 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:13:52 GMT"/>
 		  <accelerator key="i" modifiers="0" signal="clicked"/>
 		  <accelerator key="i" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
@@ -486,6 +499,7 @@
 		  <property name="active">False</property>
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_tbutton_fmod_clicked" last_modification_time="Sun, 08 Sep 2002 13:24:02 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:14:27 GMT"/>
 		  <accelerator key="h" modifiers="0" signal="clicked"/>
 		  <accelerator key="h" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
@@ -512,6 +526,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Thu, 14 Nov 2002 22:52:25 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:14:04 GMT"/>
 		  <accelerator key="s" modifiers="0" signal="clicked"/>
 		  <accelerator key="s" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
@@ -554,6 +569,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:38:19 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:09:51 GMT"/>
 		  <accelerator key="ampersand" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
@@ -579,6 +595,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:38:24 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:09:56 GMT"/>
 		  <accelerator key="bar" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
@@ -604,6 +621,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:38:29 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:10:02 GMT"/>
 		  <accelerator key="x" modifiers="0" signal="clicked"/>
 		  <accelerator key="x" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
 		</widget>
@@ -630,6 +648,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_function_button_clicked" last_modification_time="Fri, 15 Nov 2002 13:09:55 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:10:08 GMT"/>
 		  <accelerator key="asciitilde" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
@@ -655,6 +674,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:09:23 GMT"/>
 		  <accelerator key="c" modifiers="0" signal="clicked"/>
 		  <accelerator key="C" modifiers="0" signal="clicked"/>
 		  <accelerator key="c" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
@@ -682,6 +702,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:09:28 GMT"/>
 		  <accelerator key="d" modifiers="0" signal="clicked"/>
 		  <accelerator key="D" modifiers="0" signal="clicked"/>
 		  <accelerator key="d" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
@@ -709,6 +730,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:09:33 GMT"/>
 		  <accelerator key="e" modifiers="0" signal="clicked"/>
 		  <accelerator key="E" modifiers="0" signal="clicked"/>
 		  <accelerator key="e" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
@@ -736,6 +758,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:09:39 GMT"/>
 		  <accelerator key="f" modifiers="0" signal="clicked"/>
 		  <accelerator key="F" modifiers="0" signal="clicked"/>
 		  <accelerator key="f" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
@@ -763,6 +786,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:09:18 GMT"/>
 		  <accelerator key="b" modifiers="0" signal="clicked"/>
 		  <accelerator key="B" modifiers="0" signal="clicked"/>
 		  <accelerator key="b" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
@@ -790,6 +814,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:09:45 GMT"/>
 		  <accelerator key="a" modifiers="0" signal="clicked"/>
 		  <accelerator key="A" modifiers="0" signal="clicked"/>
 		  <accelerator key="a" modifiers="GDK_SHIFT_MASK" signal="clicked"/>
@@ -833,6 +858,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:11 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:05:59 GMT"/>
 		  <accelerator key="7" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_7" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Home" modifiers="0" signal="clicked"/>
@@ -860,6 +886,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:15 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:06:06 GMT"/>
 		  <accelerator key="8" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_8" modifiers="0" signal="clicked"/>
 		</widget>
@@ -886,6 +913,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:19 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:06:11 GMT"/>
 		  <accelerator key="9" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_9" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Page_Up" modifiers="0" signal="clicked"/>
@@ -913,6 +941,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:37 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:07:28 GMT"/>
 		  <accelerator key="KP_Divide" modifiers="0" signal="clicked"/>
 		  <accelerator key="slash" modifiers="0" signal="clicked"/>
 		</widget>
@@ -939,6 +968,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:41 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:07:50 GMT"/>
 		  <accelerator key="M" modifiers="0" signal="clicked"/>
 		  <accelerator key="m" modifiers="0" signal="clicked"/>
 		</widget>
@@ -965,6 +995,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:04:40 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:05:39 GMT"/>
 		  <accelerator key="KP_4" modifiers="0" signal="clicked"/>
 		  <accelerator key="4" modifiers="0" signal="clicked"/>
 		</widget>
@@ -991,6 +1022,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:04:55 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:05:46 GMT"/>
 		  <accelerator key="5" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_5" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Begin" modifiers="0" signal="clicked"/>
@@ -1018,6 +1050,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:05:06 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:05:53 GMT"/>
 		  <accelerator key="6" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_6" modifiers="0" signal="clicked"/>
 		</widget>
@@ -1044,6 +1077,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:03:06 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:05:34 GMT"/>
 		  <accelerator key="3" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_3" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Page_Down" modifiers="0" signal="clicked"/>
@@ -1071,6 +1105,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:27 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:07:17 GMT"/>
 		  <accelerator key="KP_Subtract" modifiers="0" signal="clicked"/>
 		  <accelerator key="minus" modifiers="0" signal="clicked"/>
 		</widget>
@@ -1097,6 +1132,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:21 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:07:11 GMT"/>
 		  <accelerator key="KP_Add" modifiers="0" signal="clicked"/>
 		  <accelerator key="plus" modifiers="0" signal="clicked"/>
 		</widget>
@@ -1123,6 +1159,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:48 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:07:56 GMT"/>
 		  <accelerator key="less" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
@@ -1148,6 +1185,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Sun, 15 Sep 2002 14:50:16 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:07:04 GMT"/>
 		  <accelerator key="KP_Subtract" modifiers="GDK_CONTROL_MASK" signal="clicked"/>
 		  <accelerator key="minus" modifiers="GDK_CONTROL_MASK" signal="clicked"/>
 		</widget>
@@ -1174,6 +1212,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:32 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:07:23 GMT"/>
 		  <accelerator key="KP_Multiply" modifiers="0" signal="clicked"/>
 		  <accelerator key="asterisk" modifiers="0" signal="clicked"/>
 		</widget>
@@ -1199,6 +1238,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_mplus_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:23:58 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:07:44 GMT"/>
 		  <accelerator key="plus" modifiers="GDK_MOD1_MASK" signal="clicked"/>
 
 		  <child>
@@ -1273,6 +1313,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_mr_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:04:30 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:07:36 GMT"/>
 		  <accelerator key="r" modifiers="GDK_MOD1_MASK" signal="clicked"/>
 
 		  <child>
@@ -1346,6 +1387,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_ms_button_clicked" last_modification_time="Mon, 09 Jun 2003 21:23:49 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:06:42 GMT"/>
 		  <accelerator key="s" modifiers="GDK_MOD1_MASK" signal="clicked"/>
 
 		  <child>
@@ -1421,6 +1463,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Fri, 19 Sep 2003 08:23:49 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:06:27 GMT"/>
 		  <accelerator key="parenright" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
@@ -1446,6 +1489,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_gfunc_button_clicked" last_modification_time="Fri, 19 Sep 2003 08:23:34 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:06:22 GMT"/>
 		  <accelerator key="parenleft" modifiers="0" signal="clicked"/>
 		</widget>
 		<packing>
@@ -1471,6 +1515,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Tue, 27 May 2003 13:01:58 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:06:49 GMT"/>
 		  <accelerator key="0" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_0" modifiers="0" signal="clicked"/>
 		</widget>
@@ -1497,6 +1542,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Thu, 05 Sep 2002 06:32:07 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:06:57 GMT"/>
 		  <accelerator key="comma" modifiers="0" signal="clicked"/>
 		  <accelerator key="period" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Decimal" modifiers="0" signal="clicked"/>
@@ -1523,6 +1569,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Sat, 12 Jul 2003 13:20:42 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:03:55 GMT"/>
 		  <accelerator key="1" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_1" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_End" modifiers="0" signal="clicked"/>
@@ -1548,6 +1595,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_number_button_clicked" last_modification_time="Sat, 12 Jul 2003 13:20:42 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:05:28 GMT"/>
 		  <accelerator key="KP_2" modifiers="0" signal="clicked"/>
 		  <accelerator key="2" modifiers="0" signal="clicked"/>
 		</widget>
@@ -1574,6 +1622,7 @@
 		  <property name="inconsistent">False</property>
 		  <signal name="clicked" handler="on_operation_button_clicked" last_modification_time="Tue, 27 May 2003 13:37:53 GMT"/>
 		  <signal name="released" handler="on_togglebutton_released" last_modification_time="Sat, 12 Jul 2003 13:31:46 GMT"/>
+		  <signal name="can_activate_accel" handler="on_button_can_activate_accel" last_modification_time="Sun, 09 Apr 2006 18:08:02 GMT"/>
 		  <accelerator key="Return" modifiers="0" signal="clicked"/>
 		  <accelerator key="KP_Enter" modifiers="0" signal="clicked"/>
 		  <accelerator key="equal" modifiers="0" signal="clicked"/>
