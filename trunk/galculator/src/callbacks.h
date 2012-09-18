@@ -36,25 +36,25 @@ G_MODULE_EXPORT void on_gfunc_button_clicked (GtkToggleButton *button,
 					gpointer user_data);
 G_MODULE_EXPORT void on_main_window_destroy (GtkWidget* widget,
 					gpointer user_data);
-G_MODULE_EXPORT void on_dec_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_dec_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_hex_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_hex_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_oct_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_oct_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_bin_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_bin_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_deg_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_deg_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_rad_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_rad_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_grad_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_grad_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_ordinary_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_ordinary_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_rpn_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_rpn_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);					
-G_MODULE_EXPORT void on_form_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_form_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
 G_MODULE_EXPORT void on_about_activate (GtkMenuItem *menuitem,
 					gpointer user_data);
@@ -90,7 +90,7 @@ G_MODULE_EXPORT void on_color_cancel_button_clicked (GtkButton *button,
 					gpointer user_data);
 G_MODULE_EXPORT void on_font_cancel_button_clicked (GtkButton *button,
 					gpointer user_data);
-G_MODULE_EXPORT void on_show_menubar1_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_show_menubar1_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
 G_MODULE_EXPORT void on_prefs_custom_button_font_toggled (GtkToggleButton *togglebutton,
 					gpointer user_data);
@@ -159,9 +159,9 @@ G_MODULE_EXPORT void on_prefs_oct_sep_char_changed (GtkEditable *editable,
 					gpointer user_data);
 G_MODULE_EXPORT void on_prefs_bin_sep_char_changed (GtkEditable *editable,
 					gpointer user_data);
-G_MODULE_EXPORT void on_prefs_menu_dec_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_prefs_menu_dec_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_prefs_menu_hex_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_prefs_menu_hex_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
 G_MODULE_EXPORT void on_prefs_menu_oct_activate (GtkMenuItem *menuitem,
 					gpointer user_data);
@@ -171,23 +171,23 @@ G_MODULE_EXPORT void const_list_selection_changed_cb (GtkTreeSelection *selectio
 					gpointer data);
 G_MODULE_EXPORT void on_togglebutton_released (GtkToggleButton *togglebutton, 
 					gpointer user_data);
-G_MODULE_EXPORT void on_display_control_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_display_control_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_logical_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_logical_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
 G_MODULE_EXPORT void on_copy_activate (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_basic_mode_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_basic_mode_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
 G_MODULE_EXPORT void on_cut_activate (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_scientific_mode_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_scientific_mode_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
 G_MODULE_EXPORT void on_paste_activate (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_functions_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_functions_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
-G_MODULE_EXPORT void on_standard_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_standard_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
 G_MODULE_EXPORT void on_main_window_check_resize (GtkContainer *container,
 					gpointer user_data);
@@ -206,7 +206,7 @@ G_MODULE_EXPORT void on_user_function_button_clicked (GtkToggleButton *button,
 					gpointer user_data);
 G_MODULE_EXPORT void user_function_list_selection_changed_cb (GtkTreeSelection *selection, 
 					gpointer data);
-G_MODULE_EXPORT void on_paper_mode_activate (GtkMenuItem *menuitem,
+G_MODULE_EXPORT void on_paper_mode_toggled (GtkMenuItem *menuitem,
 					gpointer user_data);
 G_MODULE_EXPORT void on_paper_entry_activate (GtkWidget *activated_widget, 
 					gpointer user_data);

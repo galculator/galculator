@@ -169,7 +169,7 @@
                             <property name="use_action_appearance">False</property>
                             <property name="label" translatable="yes">_Basic Mode</property>
                             <property name="use_underline">True</property>
-                            <signal name="activate" handler="on_basic_mode_activate" swapped="no"/>
+                            <signal name="toggled" handler="on_basic_mode_toggled" swapped="no"/>
                           </object>
                         </child>
                         <child>
@@ -180,7 +180,7 @@
                             <property name="label" translatable="yes">_Scientific Mode</property>
                             <property name="use_underline">True</property>
                             <property name="group">basic_mode</property>
-                            <signal name="activate" handler="on_scientific_mode_activate" swapped="no"/>
+                            <signal name="toggled" handler="on_scientific_mode_toggled" swapped="no"/>
                           </object>
                         </child>
                         <child>
@@ -191,7 +191,7 @@
                             <property name="label" translatable="yes">_Paper Mode</property>
                             <property name="use_underline">True</property>
                             <property name="group">basic_mode</property>
-                            <signal name="activate" handler="on_paper_mode_activate" swapped="no"/>
+                            <signal name="toggled" handler="on_paper_mode_toggled" swapped="no"/>
                           </object>
                         </child>
                         <child>
@@ -217,7 +217,7 @@
                                     <property name="use_action_appearance">False</property>
                                     <property name="label" translatable="yes">Display Control</property>
                                     <property name="use_underline">True</property>
-                                    <signal name="activate" handler="on_display_control_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_display_control_toggled" swapped="no"/>
                                   </object>
                                 </child>
                                 <child>
@@ -227,7 +227,7 @@
                                     <property name="use_action_appearance">False</property>
                                     <property name="label" translatable="yes">Functions</property>
                                     <property name="use_underline">True</property>
-                                    <signal name="activate" handler="on_functions_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_functions_toggled" swapped="no"/>
                                   </object>
                                 </child>
                                 <child>
@@ -237,7 +237,7 @@
                                     <property name="use_action_appearance">False</property>
                                     <property name="label" translatable="yes">Logical</property>
                                     <property name="use_underline">True</property>
-                                    <signal name="activate" handler="on_logical_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_logical_toggled" swapped="no"/>
                                   </object>
                                 </child>
                                 <child>
@@ -247,7 +247,7 @@
                                     <property name="use_action_appearance">False</property>
                                     <property name="label" translatable="yes">Standard</property>
                                     <property name="use_underline">True</property>
-                                    <signal name="activate" handler="on_standard_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_standard_toggled" swapped="no"/>
                                   </object>
                                 </child>
                               </object>
@@ -268,7 +268,7 @@
                             <property name="label" translatable="yes">Show _menu bar</property>
                             <property name="use_underline">True</property>
                             <accelerator key="M" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                            <signal name="activate" handler="on_show_menubar1_activate" swapped="no"/>
+                            <signal name="toggled" handler="on_show_menubar1_toggled" swapped="no"/>
                             <signal name="can-activate-accel" handler="on_menuitem_can_activate_accel" swapped="no"/>
                           </object>
                         </child>
@@ -304,7 +304,7 @@
                                     <property name="label" translatable="yes">_Decimal</property>
                                     <property name="use_underline">True</property>
                                     <accelerator key="D" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                                    <signal name="activate" handler="on_dec_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_dec_toggled" swapped="no"/>
                                   </object>
                                 </child>
                                 <child>
@@ -316,7 +316,7 @@
                                     <property name="use_underline">True</property>
                                     <property name="group">dec</property>
                                     <accelerator key="H" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                                    <signal name="activate" handler="on_hex_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_hex_toggled" swapped="no"/>
                                   </object>
                                 </child>
                                 <child>
@@ -328,7 +328,7 @@
                                     <property name="use_underline">True</property>
                                     <property name="group">dec</property>
                                     <accelerator key="O" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                                    <signal name="activate" handler="on_oct_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_oct_toggled" swapped="no"/>
                                   </object>
                                 </child>
                                 <child>
@@ -340,7 +340,7 @@
                                     <property name="use_underline">True</property>
                                     <property name="group">dec</property>
                                     <accelerator key="B" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                                    <signal name="activate" handler="on_bin_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_bin_toggled" swapped="no"/>
                                   </object>
                                 </child>
                               </object>
@@ -365,7 +365,7 @@
                                     <property name="label" translatable="yes">D_egrees</property>
                                     <property name="use_underline">True</property>
                                     <accelerator key="E" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                                    <signal name="activate" handler="on_deg_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_deg_toggled" swapped="no"/>
                                   </object>
                                 </child>
                                 <child>
@@ -377,7 +377,7 @@
                                     <property name="use_underline">True</property>
                                     <property name="group">deg</property>
                                     <accelerator key="R" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                                    <signal name="activate" handler="on_rad_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_rad_toggled" swapped="no"/>
                                   </object>
                                 </child>
                                 <child>
@@ -389,7 +389,7 @@
                                     <property name="use_underline">True</property>
                                     <property name="group">deg</property>
                                     <accelerator key="G" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                                    <signal name="activate" handler="on_grad_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_grad_toggled" swapped="no"/>
                                   </object>
                                 </child>
                               </object>
@@ -414,7 +414,7 @@
                                     <property name="label" translatable="yes">_Algebraic</property>
                                     <property name="use_underline">True</property>
                                     <accelerator key="A" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                                    <signal name="activate" handler="on_ordinary_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_ordinary_toggled" swapped="no"/>
                                   </object>
                                 </child>
                                 <child>
@@ -426,7 +426,7 @@
                                     <property name="use_underline">True</property>
                                     <property name="group">alg</property>
                                     <accelerator key="N" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                                    <signal name="activate" handler="on_rpn_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_rpn_toggled" swapped="no"/>
                                   </object>
                                 </child>
                                 <child>
@@ -438,7 +438,7 @@
                                     <property name="use_underline">True</property>
                                     <property name="group">alg</property>
                                     <accelerator key="F" signal="activate" modifiers="GDK_CONTROL_MASK"/>
-                                    <signal name="activate" handler="on_form_activate" swapped="no"/>
+                                    <signal name="toggled" handler="on_form_toggled" swapped="no"/>
                                   </object>
                                 </child>
                               </object>

@@ -72,7 +72,6 @@
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">galculator - Preferences</property>
     <property name="type_hint">dialog</property>
-    <property name="has_separator">True</property>
     <child internal-child="accessible">
       <object class="AtkObject" id="prefs_dialog-atkobject">
         <property name="AtkObject::accessible-description" translatable="yes">A dialog that is used to change preferences settings.</property>
@@ -442,7 +441,7 @@
                         </child>
                       </object>
                       <packing>
-                        <property name="expand">True</property>
+                        <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">1</property>
                       </packing>
@@ -599,14 +598,14 @@
                         </child>
                       </object>
                       <packing>
-                        <property name="expand">True</property>
+                        <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">1</property>
                       </packing>
                     </child>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">True</property>
                     <property name="position">1</property>
                   </packing>
@@ -714,14 +713,14 @@
                                     <signal name="font-set" handler="on_prefs_button_font_set" swapped="no"/>
                                   </object>
                                   <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
+                                    <property name="expand">True</property>
+                                    <property name="fill">True</property>
                                     <property name="position">1</property>
                                   </packing>
                                 </child>
                               </object>
                               <packing>
-                                <property name="expand">True</property>
+                                <property name="expand">False</property>
                                 <property name="fill">True</property>
                                 <property name="position">1</property>
                               </packing>
@@ -735,7 +734,7 @@
                         </child>
                       </object>
                       <packing>
-                        <property name="expand">True</property>
+                        <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">1</property>
                       </packing>
@@ -882,14 +881,14 @@
                         </child>
                       </object>
                       <packing>
-                        <property name="expand">True</property>
+                        <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">1</property>
                       </packing>
                     </child>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">True</property>
                     <property name="position">1</property>
                   </packing>
@@ -963,15 +962,9 @@
                                 <property name="hscrollbar_policy">automatic</property>
                                 <property name="vscrollbar_policy">automatic</property>
                                 <child>
-                                  <object class="GtkViewport" id="viewport1">
+                                  <object class="GtkTreeView" id="constant_treeview">
                                     <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <child>
-                                      <object class="GtkTreeView" id="constant_treeview">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">True</property>
-                                      </object>
-                                    </child>
+                                    <property name="can_focus">True</property>
                                   </object>
                                 </child>
                               </object>
@@ -1659,7 +1652,7 @@
                         </child>
                       </object>
                       <packing>
-                        <property name="expand">True</property>
+                        <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">1</property>
                       </packing>
@@ -1860,7 +1853,7 @@
                         </child>
                       </object>
                       <packing>
-                        <property name="expand">True</property>
+                        <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">1</property>
                       </packing>
@@ -2061,7 +2054,7 @@
                         </child>
                       </object>
                       <packing>
-                        <property name="expand">True</property>
+                        <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">1</property>
                       </packing>
@@ -2300,7 +2293,7 @@
                         </child>
                       </object>
                       <packing>
-                        <property name="expand">True</property>
+                        <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">1</property>
                       </packing>
@@ -2418,7 +2411,7 @@
                         </child>
                       </object>
                       <packing>
-                        <property name="expand">True</property>
+                        <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">1</property>
                       </packing>
@@ -2496,7 +2489,7 @@
                         </child>
                       </object>
                       <packing>
-                        <property name="expand">True</property>
+                        <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">1</property>
                       </packing>
@@ -2569,7 +2562,7 @@
                     </child>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">True</property>
                     <property name="position">2</property>
                   </packing>

@@ -52,8 +52,6 @@ char *convert_gdk_color_to_string (GdkColor color);
 
 void apply_preferences (s_preferences prefs);
 
-void gtk_widget_really_modify_fg (GtkWidget *widget, GdkColor color);
-
 gboolean is_valid_number (int number_base, char number);
 
 void activate_menu_item (char *item_name);

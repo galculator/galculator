@@ -1,1 +1,5 @@
-simon floery (chimaira@users.sf.net)
+simon floery (chimaira@users.sf.net):
+    The original author, dose most of the hard work
+
+Hong Jen Yee (PCMan) <pcman.tw@gmail.com>:
+    Port to gtk+ 3, little bug fixes

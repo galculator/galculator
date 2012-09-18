@@ -310,14 +310,8 @@ void apply_preferences (s_preferences prefs)
 {
 	GtkWidget	*menu_item;
 
-	/* not view specific */
-#ifdef WITH_HILDON
-	set_widget_visibility (main_window_xml, "main_menu", prefs.show_menu);
-#else
- 	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
-#endif
 	menu_item = gtk_builder_get_object (main_window_xml, "show_menubar1");
-	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
+	gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM(menu_item), prefs.show_menu);
 
 	switch (prefs.mode) {
 	case BASIC_MODE:
@@ -335,8 +329,8 @@ void apply_preferences (s_preferences prefs)
 	default:
 		error_message ("Unknown mode %i in \"apply_preferences\"", prefs.mode);
 	}
-	gtk_menu_item_activate ((GtkMenuItem *) menu_item);
-	
+	gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), TRUE);
+
 	/* view specific */
 /*	display_update_tags ();
 	display_set_bkg_color (prefs.bkg_color);
@@ -348,19 +342,6 @@ void apply_preferences (s_preferences prefs)
 	set_all_buttons_font (button_font);
 	g_free (button_font);
 */
-}
-
-/*
- * this function changes the foreground color for all states to the given string
- */
-
-void gtk_widget_really_modify_fg (GtkWidget *widget, GdkColor color)
-{
-	gtk_widget_modify_fg (widget, GTK_STATE_NORMAL, &color);
-	gtk_widget_modify_fg (widget, GTK_STATE_ACTIVE, &color);
-	gtk_widget_modify_fg (widget, GTK_STATE_PRELIGHT, &color);
-	gtk_widget_modify_fg (widget, GTK_STATE_SELECTED, &color);
-	gtk_widget_modify_fg (widget, GTK_STATE_INSENSITIVE, &color);
 }
 
 gboolean is_valid_number (int number_base, char number)
@@ -378,15 +359,25 @@ gboolean is_valid_number (int number_base, char number)
 void activate_menu_item (char *item_name)
 {
 	GtkMenuItem		*menu_item;
-	
-	menu_item = (GtkMenuItem *) gtk_builder_get_object (main_window_xml, \
-		g_strstrip (g_ascii_strdown (item_name, -1)));
+    char* lower_item_name = g_ascii_strdown (item_name, -1);
+
+	menu_item = (GtkMenuItem *) gtk_builder_get_object (main_window_xml,
+		g_strstrip (lower_item_name));
+    g_free(lower_item_name);
 	if (menu_item)
-	/* as we use this only for menu boxes, a simple activate is enough.
-	 * the extra magic in src/callbacks.c::on_scientific_mode_activate
-	 * is necessary only for checkboxmenuitems.
-	 */
-		gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+    {
+        if(gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menu_item)) == TRUE)
+        {
+            /* PCMan: if the checkbox is already checked, gtk+ won't emit
+             * a "toggled" signal again if we call set_active().
+             * so let's trigger "toggled" signal manually since galculator
+             * relies heavily on this behavior and cannot work without it.
+             * FIXME: This is not the right way to use gtk+, though. */
+            gtk_check_menu_item_toggled(GTK_CHECK_MENU_ITEM(menu_item));
+        }
+        else
+            gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), TRUE);
+    }
 	else fprintf (stderr, _("[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"), PROG_NAME, item_name, BUG_REPORT);
 }
 

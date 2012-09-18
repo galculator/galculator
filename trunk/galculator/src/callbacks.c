@@ -285,7 +285,7 @@ on_gfunc_button_clicked                (GtkToggleButton       *button,
  */
 
 void
-on_dec_activate                       (GtkMenuItem     *menuitem,
+on_dec_toggled                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
     if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
@@ -294,7 +294,7 @@ on_dec_activate                       (GtkMenuItem     *menuitem,
 
 
 void
-on_hex_activate                       (GtkMenuItem     *menuitem,
+on_hex_toggled                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
     if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
@@ -303,7 +303,7 @@ on_hex_activate                       (GtkMenuItem     *menuitem,
 
 
 void
-on_oct_activate                       (GtkMenuItem     *menuitem,
+on_oct_toggled                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
     if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
@@ -312,7 +312,7 @@ on_oct_activate                       (GtkMenuItem     *menuitem,
 
 
 void
-on_bin_activate                       (GtkMenuItem     *menuitem,
+on_bin_toggled                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
     if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
@@ -321,7 +321,7 @@ on_bin_activate                       (GtkMenuItem     *menuitem,
 
 
 void
-on_deg_activate                       (GtkMenuItem     *menuitem,
+on_deg_toggled                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
     if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
@@ -330,7 +330,7 @@ on_deg_activate                       (GtkMenuItem     *menuitem,
 
 
 void
-on_rad_activate                       (GtkMenuItem     *menuitem,
+on_rad_toggled                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
     if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
@@ -339,7 +339,7 @@ on_rad_activate                       (GtkMenuItem     *menuitem,
 
 
 void
-on_grad_activate                      (GtkMenuItem     *menuitem,
+on_grad_toggled                      (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
     if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
@@ -347,10 +347,10 @@ on_grad_activate                      (GtkMenuItem     *menuitem,
 }
 
 void
-on_ordinary_activate                  (GtkMenuItem     *menuitem,
+on_ordinary_toggled                  (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
-    if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
+    if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem)) == FALSE) return;
     change_option (CS_PAN, DISPLAY_OPT_NOTATION);
     set_widget_visibility (view_xml, "formula_entry_hbox", FALSE);
     rpn_free();
@@ -363,10 +363,10 @@ on_ordinary_activate                  (GtkMenuItem     *menuitem,
 }
 
 void
-on_rpn_activate                       (GtkMenuItem     *menuitem,
+on_rpn_toggled                       (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
-    if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
+    if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem)) == FALSE) return;
     change_option (CS_RPN, DISPLAY_OPT_NOTATION);
     
     set_widget_visibility (view_xml, "formula_entry_hbox", FALSE);
@@ -379,20 +379,21 @@ on_rpn_activate                       (GtkMenuItem     *menuitem,
     display_update_tags ();
 }
 
+/* toggle formula entry */
 void 
-on_form_activate             (GtkMenuItem     *menuitem,
+on_form_toggled             (GtkMenuItem     *menuitem,
                     gpointer         user_data)
 {
-    if (((GtkCheckMenuItem *)menuitem)->active == FALSE) return;
+    if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem)) == FALSE) return;
     change_option (CS_FORMULA, DISPLAY_OPT_NOTATION);
     all_clear();
     ui_button_set_pan();
     update_dispctrl();
-    set_widget_visibility (view_xml, "formula_entry_hbox", TRUE);    
+    set_widget_visibility (view_xml, "formula_entry_hbox", TRUE);
 }
 
 void
-on_display_control_activate (GtkMenuItem     *menuitem,
+on_display_control_toggled (GtkMenuItem     *menuitem,
             gpointer         user_data)
 {
     if (prefs.mode == PAPER_MODE) return;
@@ -403,7 +404,7 @@ on_display_control_activate (GtkMenuItem     *menuitem,
 }
 
 void 
-on_logical_activate (GtkMenuItem     *menuitem,
+on_logical_toggled (GtkMenuItem     *menuitem,
             gpointer         user_data)
 {
     if (prefs.mode == BASIC_MODE) return;
@@ -416,7 +417,7 @@ on_logical_activate (GtkMenuItem     *menuitem,
 }
 
 void
-on_functions_activate (GtkMenuItem     *menuitem,
+on_functions_toggled (GtkMenuItem     *menuitem,
             gpointer         user_data)
 {
     if (prefs.mode == BASIC_MODE) return;
@@ -428,7 +429,7 @@ on_functions_activate (GtkMenuItem     *menuitem,
 }
 
 void
-on_standard_activate (GtkMenuItem     *menuitem,
+on_standard_toggled (GtkMenuItem     *menuitem,
             gpointer         user_data)
 {
     if (prefs.mode == BASIC_MODE) return;
@@ -440,12 +441,12 @@ on_standard_activate (GtkMenuItem     *menuitem,
 }
 
 void
-on_basic_mode_activate (GtkMenuItem     *menuitem,
+on_basic_mode_toggled (GtkMenuItem     *menuitem,
             gpointer         user_data)
 {
     GtkWidget    *menu_item;
     
-    if (((GtkCheckMenuItem *) menuitem)->active == FALSE) return;
+    if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem)) == FALSE) return;
 
     if (prefs.mode == SCIENTIFIC_MODE) {
         /* remember number and angle. notation is active in basic mode */
@@ -471,10 +472,8 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
     display_module_notation_activate (current_status.notation);
 
     menu_item = gtk_builder_get_object (main_window_xml, "display_control");
-    if (((GtkCheckMenuItem *) menu_item)->active == prefs.vis_dispctrl)
-            gtk_menu_item_activate ((GtkMenuItem *) menu_item);
-    gtk_menu_item_activate ((GtkMenuItem *) menu_item);
-    
+    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menuitem), prefs.vis_dispctrl);
+
     update_active_buttons (current_status.number, current_status.notation);
     menu_item = gtk_builder_get_object (main_window_xml, "functions");
     gtk_widget_set_sensitive (menu_item, FALSE);
@@ -495,12 +494,12 @@ on_basic_mode_activate (GtkMenuItem     *menuitem,
 }
 
 void
-on_scientific_mode_activate (GtkMenuItem *menuitem,
+on_scientific_mode_toggled (GtkMenuItem *menuitem,
                 gpointer user_data)
 {
     GtkWidget    *menu_item;
     
-    if (((GtkCheckMenuItem *) menuitem)->active == FALSE) return;
+    if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem)) == FALSE) return;
 
     prefs.mode = SCIENTIFIC_MODE;
 
@@ -519,31 +518,18 @@ on_scientific_mode_activate (GtkMenuItem *menuitem,
     
     menu_item = gtk_builder_get_object (main_window_xml, "functions");
     gtk_widget_set_sensitive (menu_item, TRUE);
-    /* what's that? the problem: glade only connects the activate signal
-     * for gtkmenucheckboxitem and gtk_check_menu_item_set_active doesn't
-     * emit a signal if change has not changed. so we force a change of
-     * state here.
-     */
-    if (((GtkCheckMenuItem *) menu_item)->active == prefs.vis_funcs) 
-            gtk_menu_item_activate ((GtkMenuItem *) menu_item);
-    gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_funcs);
     
     menu_item = gtk_builder_get_object (main_window_xml, "display_control");
-    if (((GtkCheckMenuItem *) menu_item)->active == prefs.vis_dispctrl)
-            gtk_menu_item_activate ((GtkMenuItem *) menu_item);
-    gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_dispctrl);
     
     menu_item = gtk_builder_get_object (main_window_xml, "logical");
     gtk_widget_set_sensitive (menu_item, TRUE);
-    if (((GtkCheckMenuItem *) menu_item)->active == prefs.vis_logic)
-            gtk_menu_item_activate ((GtkMenuItem *) menu_item);
-    gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_logic);
     
     menu_item = gtk_builder_get_object (main_window_xml, "standard");
     gtk_widget_set_sensitive (menu_item, TRUE);
-    if (((GtkCheckMenuItem *) menu_item)->active == prefs.vis_standard)
-            gtk_menu_item_activate ((GtkMenuItem *) menu_item);
-    gtk_menu_item_activate ((GtkMenuItem *) menu_item);
+    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_standard);
     
     menu_item = gtk_builder_get_object (main_window_xml, "base_units");
     gtk_widget_set_sensitive (menu_item, TRUE);
@@ -555,15 +541,15 @@ on_scientific_mode_activate (GtkMenuItem *menuitem,
     gtk_widget_set_sensitive (menu_item, TRUE);
     
     set_window_size_minimal();
-}    
+}
 
 void
-on_paper_mode_activate (GtkMenuItem *menuitem,
+on_paper_mode_toggled (GtkMenuItem *menuitem,
                 gpointer user_data)
 {
     GtkWidget    *menu_item;
     
-    if (((GtkCheckMenuItem *) menuitem)->active == FALSE) return;
+    if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem)) == FALSE) return;
 
     prefs.mode = PAPER_MODE;
 
@@ -792,21 +778,22 @@ on_prefs_close_clicked                (GtkButton       *button,
 }
 
 void
-on_show_menubar1_activate              (GtkMenuItem     *menuitem,
+on_show_menubar1_toggled              (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
     GtkWidget    *menu_item;
-    
-    prefs.show_menu = gtk_check_menu_item_get_active ((GtkCheckMenuItem *) menuitem);;
+    prefs.show_menu = gtk_check_menu_item_get_active ((GtkCheckMenuItem *) menuitem);
 #ifdef WITH_HILDON
     set_widget_visibility (main_window_xml, "main_menu", prefs.show_menu);
 #else
      set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
 #endif
+
     /* in case this cb is called by the right button mouse click menu */
     menu_item = gtk_builder_get_object (main_window_xml, "show_menubar1");
+    g_signal_handlers_block_by_func(menuitem, on_show_menubar1_toggled, user_data);
     gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
-
+    g_signal_handlers_unblock_by_func(menuitem, on_show_menubar1_toggled, user_data);
 }
 
 void
@@ -1150,7 +1137,7 @@ void on_prefs_ufadd_clicked (GtkButton *button, gpointer user_data)
         return;
     }
         
-    nr_user_functions = prefs_user_function_store->length;
+    nr_user_functions = gtk_tree_model_iter_n_children(GTK_TREE_MODEL(prefs_user_function_store), NULL);
     user_function = (s_user_function *) realloc (user_function, (nr_user_functions + 2) * sizeof(s_user_function));
     user_function[nr_user_functions + 1].name = NULL;
     
@@ -1176,7 +1163,7 @@ void on_prefs_ufdelete_clicked (GtkButton *button, gpointer user_data)
         (GtkTreeView *)gtk_builder_get_object (prefs_xml, "user_function_treeview")),
         NULL, &current_list_iter)) return;
     
-    nr_user_functions = prefs_user_function_store->length;
+    nr_user_functions = gtk_tree_model_iter_n_children(GTK_TREE_MODEL(prefs_user_function_store), NULL);
     path = gtk_tree_model_get_path (GTK_TREE_MODEL (prefs_user_function_store), 
         &current_list_iter);
     index = *(gtk_tree_path_get_indices (path));
@@ -1255,7 +1242,7 @@ void on_prefs_cadd_clicked (GtkButton *button, gpointer user_data)
         return;
     }
         
-    nr_consts = prefs_constant_store->length;
+    nr_consts = gtk_tree_model_iter_n_children(GTK_TREE_MODEL(prefs_constant_store), NULL);
     constant = (s_constant *) realloc (constant, (nr_consts + 2) * sizeof(s_constant));
     constant[nr_consts + 1].name = NULL;
     
@@ -1281,7 +1268,7 @@ void on_prefs_cdelete_clicked (GtkButton *button, gpointer user_data)
         (GtkTreeView *)gtk_builder_get_object (prefs_xml, "constant_treeview")),
         NULL, &current_list_iter)) return;
     
-    nr_consts = prefs_constant_store->length;
+    nr_consts = gtk_tree_model_iter_n_children(GTK_TREE_MODEL(prefs_constant_store), NULL);
     path = gtk_tree_model_get_path (GTK_TREE_MODEL (prefs_constant_store), &current_list_iter);
     index = *(gtk_tree_path_get_indices (path));
 

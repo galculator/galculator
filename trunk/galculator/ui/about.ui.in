@@ -13,7 +13,8 @@
     <property name="copyright" translatable="yes">Copyright (c) 2002-2012 by Simon Floery &lt;chimaira@users.sf.net&gt;</property>
     <property name="comments" translatable="yes">a GTK 2 based scientific calculator</property>
     <property name="website">http://galculator.sourceforge.net/</property>
-    <property name="authors">Simon Floery &lt;chimaira@users.sf.net&gt;</property>
+    <property name="authors">Simon Floery &lt;chimaira@users.sf.net&gt;
+Hong Jen Yee (PCMan) &lt;pcman.tw@gmail.com&gt;</property>
     <property name="logo_icon_name">galculator</property>
     <signal name="response" handler="gtk_widget_destroy" swapped="no"/>
     <child internal-child="vbox">

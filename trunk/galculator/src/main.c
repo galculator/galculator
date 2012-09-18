@@ -43,6 +43,7 @@
 
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
+#include <gdk/gdkkeysyms-compat.h>
 
 #define MASK_NUMLOCK GDK_MOD2_MASK
 
@@ -191,8 +192,9 @@ int main (int argc, char *argv[])
 	/* see function key_snooper for details */
 	gtk_key_snooper_install (key_snooper, NULL);
 	
+    /* make the window as small as possible */
 	gtk_window_resize ((GtkWindow *)main_window, 1, 1);
-	
+
 	/* gtk_widget_show main window as late as possible */
 	gtk_widget_show (main_window);
 	
