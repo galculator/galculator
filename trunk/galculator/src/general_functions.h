@@ -44,7 +44,6 @@ gboolean da_expose_event_cb(GtkWidget *widget, GdkEventExpose *event, gpointer d
 void set_button_font (GtkBuilder *xml, char *button_name, void *new_label);
 void set_checkbutton (GtkBuilder *xml, char *checkbutton_name, void *checked);
 void set_spinbutton (GtkBuilder *xml, char *spinbutton_name, void *value);
-void set_optmenu (GtkBuilder *xml, char *optmenu_name, void *index);
 void set_button_color (GtkBuilder *xml, char *button_name, void *color_string);
 void set_stacksize (GtkBuilder *xml, char *name, void *stack_size);
 void set_entry (GtkBuilder *xml, char *entry_name, void *entry_text);

@@ -65,15 +65,20 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_galculator_OBJECTS = main.$(OBJEXT) math_functions.$(OBJEXT) \
-	display.$(OBJEXT) general_functions.$(OBJEXT) \
-	calc_basic.$(OBJEXT) config_file.$(OBJEXT) callbacks.$(OBJEXT) \
-	ui.$(OBJEXT) flex_parser.$(OBJEXT)
+am_galculator_OBJECTS = galculator-main.$(OBJEXT) \
+	galculator-math_functions.$(OBJEXT) \
+	galculator-display.$(OBJEXT) \
+	galculator-general_functions.$(OBJEXT) \
+	galculator-calc_basic.$(OBJEXT) \
+	galculator-config_file.$(OBJEXT) \
+	galculator-callbacks.$(OBJEXT) galculator-ui.$(OBJEXT) \
+	galculator-flex_parser.$(OBJEXT)
 galculator_OBJECTS = $(am_galculator_OBJECTS)
-galculator_DEPENDENCIES =
+am__DEPENDENCIES_1 =
+galculator_DEPENDENCIES = $(am__DEPENDENCIES_1)
 galculator_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-	$(galculator_LDFLAGS) $(LDFLAGS) -o $@
+	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(galculator_CFLAGS) \
+	$(CFLAGS) $(galculator_LDFLAGS) $(LDFLAGS) -o $@
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -254,11 +259,12 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-INCLUDES = \
+AM_CPPFLAGS = \
 	-DPACKAGE_LOCALE_DIR=\""$(datadir)/locale"\" \
 	-DPACKAGE_UI_DIR=\""$(datadir)/galculator/ui"\" \
 	-DPACKAGE_PIXMAPS_DIR=\""$(datadir)/pixmaps"\" \
-	@PACKAGE_CFLAGS@
+	-DGDK_DISABLE_DEPRECATED \
+	-DGTK_DISABLE_DEPRECATED
 
 galculator_SOURCES = \
 	main.c galculator.h \
@@ -271,7 +277,12 @@ galculator_SOURCES = \
 	ui.c ui.h \
 	flex_parser.l flex_parser.h
 
-galculator_LDADD = @PACKAGE_LIBS@
+galculator_CFLAGS = \
+	$(PACKAGE_CFLAGS)
+
+galculator_LDADD = \
+	$(PACKAGE_LIBS)
+
 galculator_LDFLAGS = -export-dynamic
 all: all-am
 
@@ -363,15 +374,15 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/calc_basic.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/callbacks.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/config_file.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/display.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/flex_parser.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/general_functions.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/math_functions.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ui.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/galculator-calc_basic.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/galculator-callbacks.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/galculator-config_file.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/galculator-display.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/galculator-flex_parser.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/galculator-general_functions.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/galculator-main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/galculator-math_functions.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/galculator-ui.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -393,6 +404,132 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
+
+galculator-main.o: main.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-main.o -MD -MP -MF $(DEPDIR)/galculator-main.Tpo -c -o galculator-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-main.Tpo $(DEPDIR)/galculator-main.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='main.c' object='galculator-main.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-main.o `test -f 'main.c' || echo '$(srcdir)/'`main.c
+
+galculator-main.obj: main.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-main.obj -MD -MP -MF $(DEPDIR)/galculator-main.Tpo -c -o galculator-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-main.Tpo $(DEPDIR)/galculator-main.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='main.c' object='galculator-main.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-main.obj `if test -f 'main.c'; then $(CYGPATH_W) 'main.c'; else $(CYGPATH_W) '$(srcdir)/main.c'; fi`
+
+galculator-math_functions.o: math_functions.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-math_functions.o -MD -MP -MF $(DEPDIR)/galculator-math_functions.Tpo -c -o galculator-math_functions.o `test -f 'math_functions.c' || echo '$(srcdir)/'`math_functions.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-math_functions.Tpo $(DEPDIR)/galculator-math_functions.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='math_functions.c' object='galculator-math_functions.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-math_functions.o `test -f 'math_functions.c' || echo '$(srcdir)/'`math_functions.c
+
+galculator-math_functions.obj: math_functions.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-math_functions.obj -MD -MP -MF $(DEPDIR)/galculator-math_functions.Tpo -c -o galculator-math_functions.obj `if test -f 'math_functions.c'; then $(CYGPATH_W) 'math_functions.c'; else $(CYGPATH_W) '$(srcdir)/math_functions.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-math_functions.Tpo $(DEPDIR)/galculator-math_functions.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='math_functions.c' object='galculator-math_functions.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-math_functions.obj `if test -f 'math_functions.c'; then $(CYGPATH_W) 'math_functions.c'; else $(CYGPATH_W) '$(srcdir)/math_functions.c'; fi`
+
+galculator-display.o: display.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-display.o -MD -MP -MF $(DEPDIR)/galculator-display.Tpo -c -o galculator-display.o `test -f 'display.c' || echo '$(srcdir)/'`display.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-display.Tpo $(DEPDIR)/galculator-display.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='display.c' object='galculator-display.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-display.o `test -f 'display.c' || echo '$(srcdir)/'`display.c
+
+galculator-display.obj: display.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-display.obj -MD -MP -MF $(DEPDIR)/galculator-display.Tpo -c -o galculator-display.obj `if test -f 'display.c'; then $(CYGPATH_W) 'display.c'; else $(CYGPATH_W) '$(srcdir)/display.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-display.Tpo $(DEPDIR)/galculator-display.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='display.c' object='galculator-display.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-display.obj `if test -f 'display.c'; then $(CYGPATH_W) 'display.c'; else $(CYGPATH_W) '$(srcdir)/display.c'; fi`
+
+galculator-general_functions.o: general_functions.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-general_functions.o -MD -MP -MF $(DEPDIR)/galculator-general_functions.Tpo -c -o galculator-general_functions.o `test -f 'general_functions.c' || echo '$(srcdir)/'`general_functions.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-general_functions.Tpo $(DEPDIR)/galculator-general_functions.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='general_functions.c' object='galculator-general_functions.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-general_functions.o `test -f 'general_functions.c' || echo '$(srcdir)/'`general_functions.c
+
+galculator-general_functions.obj: general_functions.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-general_functions.obj -MD -MP -MF $(DEPDIR)/galculator-general_functions.Tpo -c -o galculator-general_functions.obj `if test -f 'general_functions.c'; then $(CYGPATH_W) 'general_functions.c'; else $(CYGPATH_W) '$(srcdir)/general_functions.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-general_functions.Tpo $(DEPDIR)/galculator-general_functions.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='general_functions.c' object='galculator-general_functions.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-general_functions.obj `if test -f 'general_functions.c'; then $(CYGPATH_W) 'general_functions.c'; else $(CYGPATH_W) '$(srcdir)/general_functions.c'; fi`
+
+galculator-calc_basic.o: calc_basic.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-calc_basic.o -MD -MP -MF $(DEPDIR)/galculator-calc_basic.Tpo -c -o galculator-calc_basic.o `test -f 'calc_basic.c' || echo '$(srcdir)/'`calc_basic.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-calc_basic.Tpo $(DEPDIR)/galculator-calc_basic.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='calc_basic.c' object='galculator-calc_basic.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-calc_basic.o `test -f 'calc_basic.c' || echo '$(srcdir)/'`calc_basic.c
+
+galculator-calc_basic.obj: calc_basic.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-calc_basic.obj -MD -MP -MF $(DEPDIR)/galculator-calc_basic.Tpo -c -o galculator-calc_basic.obj `if test -f 'calc_basic.c'; then $(CYGPATH_W) 'calc_basic.c'; else $(CYGPATH_W) '$(srcdir)/calc_basic.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-calc_basic.Tpo $(DEPDIR)/galculator-calc_basic.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='calc_basic.c' object='galculator-calc_basic.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-calc_basic.obj `if test -f 'calc_basic.c'; then $(CYGPATH_W) 'calc_basic.c'; else $(CYGPATH_W) '$(srcdir)/calc_basic.c'; fi`
+
+galculator-config_file.o: config_file.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-config_file.o -MD -MP -MF $(DEPDIR)/galculator-config_file.Tpo -c -o galculator-config_file.o `test -f 'config_file.c' || echo '$(srcdir)/'`config_file.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-config_file.Tpo $(DEPDIR)/galculator-config_file.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='config_file.c' object='galculator-config_file.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-config_file.o `test -f 'config_file.c' || echo '$(srcdir)/'`config_file.c
+
+galculator-config_file.obj: config_file.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-config_file.obj -MD -MP -MF $(DEPDIR)/galculator-config_file.Tpo -c -o galculator-config_file.obj `if test -f 'config_file.c'; then $(CYGPATH_W) 'config_file.c'; else $(CYGPATH_W) '$(srcdir)/config_file.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-config_file.Tpo $(DEPDIR)/galculator-config_file.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='config_file.c' object='galculator-config_file.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-config_file.obj `if test -f 'config_file.c'; then $(CYGPATH_W) 'config_file.c'; else $(CYGPATH_W) '$(srcdir)/config_file.c'; fi`
+
+galculator-callbacks.o: callbacks.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-callbacks.o -MD -MP -MF $(DEPDIR)/galculator-callbacks.Tpo -c -o galculator-callbacks.o `test -f 'callbacks.c' || echo '$(srcdir)/'`callbacks.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-callbacks.Tpo $(DEPDIR)/galculator-callbacks.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='callbacks.c' object='galculator-callbacks.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-callbacks.o `test -f 'callbacks.c' || echo '$(srcdir)/'`callbacks.c
+
+galculator-callbacks.obj: callbacks.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-callbacks.obj -MD -MP -MF $(DEPDIR)/galculator-callbacks.Tpo -c -o galculator-callbacks.obj `if test -f 'callbacks.c'; then $(CYGPATH_W) 'callbacks.c'; else $(CYGPATH_W) '$(srcdir)/callbacks.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-callbacks.Tpo $(DEPDIR)/galculator-callbacks.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='callbacks.c' object='galculator-callbacks.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-callbacks.obj `if test -f 'callbacks.c'; then $(CYGPATH_W) 'callbacks.c'; else $(CYGPATH_W) '$(srcdir)/callbacks.c'; fi`
+
+galculator-ui.o: ui.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-ui.o -MD -MP -MF $(DEPDIR)/galculator-ui.Tpo -c -o galculator-ui.o `test -f 'ui.c' || echo '$(srcdir)/'`ui.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-ui.Tpo $(DEPDIR)/galculator-ui.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='ui.c' object='galculator-ui.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-ui.o `test -f 'ui.c' || echo '$(srcdir)/'`ui.c
+
+galculator-ui.obj: ui.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-ui.obj -MD -MP -MF $(DEPDIR)/galculator-ui.Tpo -c -o galculator-ui.obj `if test -f 'ui.c'; then $(CYGPATH_W) 'ui.c'; else $(CYGPATH_W) '$(srcdir)/ui.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-ui.Tpo $(DEPDIR)/galculator-ui.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='ui.c' object='galculator-ui.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-ui.obj `if test -f 'ui.c'; then $(CYGPATH_W) 'ui.c'; else $(CYGPATH_W) '$(srcdir)/ui.c'; fi`
+
+galculator-flex_parser.o: flex_parser.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-flex_parser.o -MD -MP -MF $(DEPDIR)/galculator-flex_parser.Tpo -c -o galculator-flex_parser.o `test -f 'flex_parser.c' || echo '$(srcdir)/'`flex_parser.c
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-flex_parser.Tpo $(DEPDIR)/galculator-flex_parser.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='flex_parser.c' object='galculator-flex_parser.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-flex_parser.o `test -f 'flex_parser.c' || echo '$(srcdir)/'`flex_parser.c
+
+galculator-flex_parser.obj: flex_parser.c
+@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -MT galculator-flex_parser.obj -MD -MP -MF $(DEPDIR)/galculator-flex_parser.Tpo -c -o galculator-flex_parser.obj `if test -f 'flex_parser.c'; then $(CYGPATH_W) 'flex_parser.c'; else $(CYGPATH_W) '$(srcdir)/flex_parser.c'; fi`
+@am__fastdepCC_TRUE@	$(am__mv) $(DEPDIR)/galculator-flex_parser.Tpo $(DEPDIR)/galculator-flex_parser.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='flex_parser.c' object='galculator-flex_parser.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(galculator_CFLAGS) $(CFLAGS) -c -o galculator-flex_parser.obj `if test -f 'flex_parser.c'; then $(CYGPATH_W) 'flex_parser.c'; else $(CYGPATH_W) '$(srcdir)/flex_parser.c'; fi`
 
 .l.c:
 	$(am__skiplex) $(SHELL) $(YLWRAP) $< $(LEX_OUTPUT_ROOT).c $@ -- $(LEXCOMPILE)

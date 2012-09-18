@@ -1,10 +1,11 @@
 ## Process this file with automake to produce Makefile.in
 
-INCLUDES = \
+AM_CPPFLAGS = \
 	-DPACKAGE_LOCALE_DIR=\""$(datadir)/locale"\" \
 	-DPACKAGE_UI_DIR=\""$(datadir)/galculator/ui"\" \
 	-DPACKAGE_PIXMAPS_DIR=\""$(datadir)/pixmaps"\" \
-	@PACKAGE_CFLAGS@
+	-DGDK_DISABLE_DEPRECATED \
+	-DGTK_DISABLE_DEPRECATED
 
 bin_PROGRAMS = galculator
 
@@ -19,7 +20,11 @@ galculator_SOURCES = \
 	ui.c ui.h \
 	flex_parser.l flex_parser.h
 
-galculator_LDADD = @PACKAGE_LIBS@
+galculator_CFLAGS = \
+	$(PACKAGE_CFLAGS)
+
+galculator_LDADD = \
+	$(PACKAGE_LIBS)
 
 galculator_LDFLAGS = -export-dynamic
 
