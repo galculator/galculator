@@ -12,7 +12,7 @@ AC_ISC_POSIX
 
 AC_HEADER_STDC
 
-pkg_modules="gtk+-2.0 >= 2.6.0 libglade-2.0 >= 2.0.0"
+pkg_modules="gtk+-2.0 >= 2.16.0"
 PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
 AC_SUBST(PACKAGE_CFLAGS)
 AC_SUBST(PACKAGE_LIBS)
@@ -59,6 +59,7 @@ galculator.spec
 src/Makefile
 po/Makefile.in 
 ui/Makefile
+ui/about.ui
 doc/Makefile
 pixmaps/Makefile
 ])

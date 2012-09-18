@@ -40,25 +40,25 @@
 #define CONFIG_FILE_NAME ".galculator"
 
 #ifdef WITH_HILDON
-#define MAIN_GLADE_FILE 		PACKAGE_GLADE_DIR "/main_frame_hildon.glade"
+#define MAIN_GLADE_FILE 		PACKAGE_UI_DIR "/main_frame_hildon.ui"
 #else
-#define MAIN_GLADE_FILE 		PACKAGE_GLADE_DIR "/main_frame.glade"
+#define MAIN_GLADE_FILE 		PACKAGE_UI_DIR "/main_frame.ui"
 #endif
-#define SCIENTIFIC_GLADE_FILE		PACKAGE_GLADE_DIR "/scientific_buttons.glade"
-#define BASIC_GLADE_FILE		PACKAGE_GLADE_DIR "/basic_buttons.glade"
-#define ABOUT_GLADE_FILE 		PACKAGE_GLADE_DIR "/about.glade"
+#define SCIENTIFIC_GLADE_FILE		PACKAGE_UI_DIR "/scientific_buttons.ui"
+#define BASIC_GLADE_FILE		PACKAGE_UI_DIR "/basic_buttons.ui"
+#define ABOUT_GLADE_FILE 		PACKAGE_UI_DIR "/about.ui"
 #ifdef WITH_HILDON
-#define PREFS_GLADE_FILE 		PACKAGE_GLADE_DIR "/prefs-ume.glade"
+#define PREFS_GLADE_FILE 		PACKAGE_UI_DIR "/prefs-ume.ui"
 #else
-#define PREFS_GLADE_FILE 		PACKAGE_GLADE_DIR "/prefs.glade"
+#define PREFS_GLADE_FILE 		PACKAGE_UI_DIR "/prefs.ui"
 #endif
-#define FONT_GLADE_FILE 		PACKAGE_GLADE_DIR "/font.glade"
-#define COLOR_GLADE_FILE 		PACKAGE_GLADE_DIR "/color.glade"
-#define CLASSIC_VIEW_GLADE_FILE		PACKAGE_GLADE_DIR "/classic_view.glade"
-#define PAPER_VIEW_GLADE_FILE		PACKAGE_GLADE_DIR "/paper_view.glade"
-#define DISPCTRL_RIGHT_GLADE_FILE	PACKAGE_GLADE_DIR "/dispctrl_right.glade"
-#define DISPCTRL_RIGHTV_GLADE_FILE	PACKAGE_GLADE_DIR "/dispctrl_right_vertical.glade"
-#define DISPCTRL_BOTTOM_GLADE_FILE	PACKAGE_GLADE_DIR "/dispctrl_bottom.glade"
+#define FONT_GLADE_FILE 		PACKAGE_UI_DIR "/font.ui"
+#define COLOR_GLADE_FILE 		PACKAGE_UI_DIR "/color.ui"
+#define CLASSIC_VIEW_GLADE_FILE		PACKAGE_UI_DIR "/classic_view.ui"
+#define PAPER_VIEW_GLADE_FILE		PACKAGE_UI_DIR "/paper_view.ui"
+#define DISPCTRL_RIGHT_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right.ui"
+#define DISPCTRL_RIGHTV_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right_vertical.ui"
+#define DISPCTRL_BOTTOM_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_bottom.ui"
 
 #define MY_INFINITY_STRING "inf"
 

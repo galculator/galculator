@@ -34,7 +34,6 @@
 
 #include <gtk/gtk.h>
 #include <glib.h>
-#include <glade/glade.h>
 
 static GtkTextView *view;
 static GtkTextBuffer *buffer;
@@ -179,7 +178,7 @@ void display_init ()
 	GtkTextTagTable		*tag_table;
 	
 	current_status.calc_entry_start_new = FALSE;
-	view = (GtkTextView *) glade_xml_get_widget (view_xml, "textview");
+	view = (GtkTextView *) gtk_builder_get_object (view_xml, "textview");
 	gdk_color_parse (prefs.bkg_color, &color);
 	gtk_widget_modify_base ((GtkWidget *)view, GTK_STATE_NORMAL, &color);
 	

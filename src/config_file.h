@@ -20,7 +20,6 @@
  
 #include <gtk/gtk.h>
 #include <glib.h>
-#include <glade/glade.h>
 
 #include "galculator.h"
 
@@ -155,7 +154,7 @@ typedef struct {
 	void	*variable;
 	int	key_type;
 	char 	*widget_name;
-	void	(*set_handler)(GladeXML *, char *, void *);
+	void	(*set_handler)(GtkBuilder *, char *, void *);
 } s_prefs_entry;
 
 enum {

@@ -43,7 +43,6 @@
 
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
-#include <glade/glade.h>
 
 #define MASK_NUMLOCK GDK_MOD2_MASK
 
@@ -112,7 +111,7 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 
 #ifdef WITH_HILDON
 /* Registering the hildon application */
-static GtkWidget* glade_hildon_window_new (GladeXML *xml, GType type, GladeWidgetInfo *info)
+static GtkWidget* glade_hildon_window_new (GtkBuilder *xml, GType type, GladeWidgetInfo *info)
 {
     return hildon_window_new();
 }
@@ -122,7 +121,6 @@ int main (int argc, char *argv[])
 {
 	char		*config_file_name, *icon_file_name;
 	GtkWidget 	*main_window;
-	GList 		*buf_list;
 	GError		*error;
 
 #ifdef WITH_HILDON
@@ -171,14 +169,6 @@ int main (int argc, char *argv[])
 	create_hildon_menu(HILDON_WINDOW(main_window));
 #endif	
 	gtk_window_set_title ((GtkWindow *)main_window, PACKAGE);
-	
-	/* set the window's icon */
-	buf_list = NULL;
-	error = NULL;
-	icon_file_name = g_strdup_printf ("%s/galculator_48x48.png", PACKAGE_PIXMAPS_DIR);
-	buf_list = g_list_append(buf_list, gdk_pixbuf_new_from_file (icon_file_name, &error));
-	g_free(icon_file_name);
-	gtk_window_set_icon_list ((GtkWindow *) main_window, buf_list);
 
 	/* usually, only Shift, CTRL and ALT modifiers are paid attention to by 
 	 * accelerator code. add MOD2 (NUMLOCK allover the world?) to the list. 

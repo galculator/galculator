@@ -18,12 +18,11 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-extern GladeXML 	*main_window_xml;
-extern GladeXML 	*button_box_xml;
-extern GladeXML 	*prefs_xml;
-extern GladeXML 	*about_dialog_xml;
-extern GladeXML		*dispctrl_xml;
-extern GladeXML		*view_xml;
+extern GtkBuilder 	*main_window_xml;
+extern GtkBuilder 	*button_box_xml;
+extern GtkBuilder 	*prefs_xml;
+extern GtkBuilder		*dispctrl_xml;
+extern GtkBuilder		*view_xml;
 extern GtkListStore	*prefs_constant_store, *prefs_user_function_store;
 extern char		dec_point[2];
 
@@ -84,7 +83,7 @@ void position_menu (GtkMenu *menu,
 		gint *y, 
 		gboolean *push_in, 
 		gpointer user_data);
-void set_widget_visibility (GladeXML *xml, char *widget_name, gboolean visible);
+void set_widget_visibility (GtkBuilder *xml, char *widget_name, gboolean visible);
 
 void ui_classic_view_create();
 void ui_classic_view_destroy();
