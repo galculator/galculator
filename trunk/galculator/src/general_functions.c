@@ -36,7 +36,6 @@
 #include "flex_parser.h"
 
 #include <gtk/gtk.h>
-#include <glade/glade.h>
 
 double error_unsupported_inv (double dummy)
 {
@@ -217,23 +216,23 @@ char *add_leading_zeros (char *string, int multiple)
  * preference dialog sets. these are handler for the big configuration struct.
  */
 
-void set_button_font (GladeXML *xml, char *button_name, void *new_label)
+void set_button_font (GtkBuilder *xml, char *button_name, void *new_label)
 {
 	GtkButton	*button;
 	char 		**string_var;
 	
 	string_var = new_label;	
-	button = (GtkButton *) glade_xml_get_widget (xml, button_name);
+	button = (GtkButton *) gtk_builder_get_object (xml, button_name);
 	if (button) gtk_font_button_set_font_name (GTK_FONT_BUTTON(button), *string_var);	
 }
 
-void set_checkbutton (GladeXML *xml, char *checkbutton_name, void *is_active)
+void set_checkbutton (GtkBuilder *xml, char *checkbutton_name, void *is_active)
 {
 	GtkToggleButton		*toggle_button;
 	gboolean		*bool_var;
 	
 	bool_var = is_active;
-	toggle_button = (GtkToggleButton *) glade_xml_get_widget (xml, checkbutton_name);	
+	toggle_button = (GtkToggleButton *) gtk_builder_get_object (xml, checkbutton_name);	
 	if (toggle_button) {
 		gtk_toggle_button_set_active (toggle_button, *bool_var);
 		/* they say there is no good reason. i say there is */
@@ -241,24 +240,24 @@ void set_checkbutton (GladeXML *xml, char *checkbutton_name, void *is_active)
 	}
 }
 
-void set_spinbutton (GladeXML *xml, char *spinbutton_name, void *value)
+void set_spinbutton (GtkBuilder *xml, char *spinbutton_name, void *value)
 {
 	GtkSpinButton	*spin_button;
 	int		*int_var;
 	
 	int_var = value;
 	/*d_var = (double) *int_var;*/
-	spin_button = (GtkSpinButton *) glade_xml_get_widget (xml, spinbutton_name);
+	spin_button = (GtkSpinButton *) gtk_builder_get_object (xml, spinbutton_name);
 	if (spin_button) gtk_spin_button_set_value (spin_button, *int_var);
 }
 
-void set_optmenu (GladeXML *xml, char *optmenu_name, void *index)
+void set_optmenu (GtkBuilder *xml, char *optmenu_name, void *index)
 {
 	GtkOptionMenu	*opt_menu;
 	int		*int_var;
 	
 	int_var = index;	
-	opt_menu = (GtkOptionMenu *) glade_xml_get_widget (xml, optmenu_name);
+	opt_menu = (GtkOptionMenu *) gtk_builder_get_object (xml, optmenu_name);
 	if (opt_menu) gtk_option_menu_set_history (opt_menu, *int_var);
 }
 
@@ -266,7 +265,7 @@ void set_optmenu (GladeXML *xml, char *optmenu_name, void *index)
  *
  */
 
-void set_button_color (GladeXML *xml, char *button_name, void *color_string)
+void set_button_color (GtkBuilder *xml, char *button_name, void *color_string)
 {
 	GtkWidget	*button;
 	char 		**string_var;
@@ -275,11 +274,11 @@ void set_button_color (GladeXML *xml, char *button_name, void *color_string)
 	/* dereference */
 	string_var = color_string;
 	gdk_color_parse (*string_var, &color);
-	button = glade_xml_get_widget (xml, button_name);
+	button = gtk_builder_get_object (xml, button_name);
 	if (button) gtk_color_button_set_color (GTK_COLOR_BUTTON(button), &color);
 }
 
-void set_stacksize (GladeXML *xml, char *name, void *stack_size)
+void set_stacksize (GtkBuilder *xml, char *name, void *stack_size)
 {
 	int		*size;
 	GtkToggleButton	*tb;
@@ -287,18 +286,18 @@ void set_stacksize (GladeXML *xml, char *name, void *stack_size)
 	/* name is NULL */
 	size = stack_size;
 	if (*size == RPN_FINITE_STACK)
-		tb = (GtkToggleButton *) glade_xml_get_widget (xml, "finite_stack_size");
-	else tb = (GtkToggleButton *) glade_xml_get_widget (xml, "infinite_stack_size");
+		tb = (GtkToggleButton *) gtk_builder_get_object (xml, "finite_stack_size");
+	else tb = (GtkToggleButton *) gtk_builder_get_object (xml, "infinite_stack_size");
 	gtk_toggle_button_set_active (tb, TRUE);
 }
 
-void set_entry (GladeXML *xml, char *entry_name, void *entry_text)
+void set_entry (GtkBuilder *xml, char *entry_name, void *entry_text)
 {
 	GtkEntry	*entry;
 	char 		**string_var;
 
 	string_var = entry_text;	
-	entry = (GtkEntry *) glade_xml_get_widget (xml, entry_name);
+	entry = (GtkEntry *) gtk_builder_get_object (xml, entry_name);
 	if (entry) gtk_entry_set_text (entry, *string_var);	
 }
 
@@ -327,21 +326,21 @@ void apply_preferences (s_preferences prefs)
 #else
  	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
 #endif
-	menu_item = glade_xml_get_widget (main_window_xml, "show_menubar1");
+	menu_item = gtk_builder_get_object (main_window_xml, "show_menubar1");
 	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
 
 	switch (prefs.mode) {
 	case BASIC_MODE:
 		menu_item = 
-			glade_xml_get_widget (main_window_xml, "basic_mode");
+			gtk_builder_get_object (main_window_xml, "basic_mode");
 		break;
 	case SCIENTIFIC_MODE:
 		menu_item = 
-			glade_xml_get_widget (main_window_xml, "scientific_mode");
+			gtk_builder_get_object (main_window_xml, "scientific_mode");
 		break;
 	case PAPER_MODE:
 		menu_item = 
-			glade_xml_get_widget (main_window_xml, "paper_mode");
+			gtk_builder_get_object (main_window_xml, "paper_mode");
 		break;
 	default:
 		error_message ("Unknown mode %i in \"apply_preferences\"", prefs.mode);
@@ -390,7 +389,7 @@ void activate_menu_item (char *item_name)
 {
 	GtkMenuItem		*menu_item;
 	
-	menu_item = (GtkMenuItem *) glade_xml_get_widget (main_window_xml, \
+	menu_item = (GtkMenuItem *) gtk_builder_get_object (main_window_xml, \
 		g_strstrip (g_ascii_strdown (item_name, -1)));
 	if (menu_item)
 	/* as we use this only for menu boxes, a simple activate is enough.
@@ -672,18 +671,15 @@ char *string_del_separator (char *string, char separator)
 	return string;
 }
 
-void set_button_label_and_tooltip (GladeXML *xml, char *button_name, 
+void set_button_label_and_tooltip (GtkBuilder *xml, char *button_name, 
 	char *label, char *tooltip)
 {
 	GtkWidget	*w;
-	GtkTooltipsData	*tooltip_data;
-	
-	w = glade_xml_get_widget (xml, button_name);
+
+	w = gtk_builder_get_object (xml, button_name);
 	if (w) {
 		gtk_button_set_label ((GtkButton *)w, label);
-		
-		tooltip_data = gtk_tooltips_data_get (w);
-		gtk_tooltips_set_tip(tooltip_data->tooltips, w, tooltip, tooltip_data->tip_private);
+        gtk_widget_set_tooltip_text(w, tooltip);
 	}
 }
 
@@ -691,7 +687,7 @@ GtkWidget *formula_entry_is_active (GtkWidget *window_widget)
 {
 	GtkWidget	*active_widget=NULL, *main_window=NULL;
 	
-	main_window = glade_xml_get_widget (main_window_xml, "main_window");
+	main_window = gtk_builder_get_object (main_window_xml, "main_window");
 	if (main_window != NULL)
 		active_widget = gtk_window_get_focus ((GtkWindow *)main_window);
 	if (active_widget != NULL)
@@ -709,7 +705,7 @@ GtkWidget *formula_entry_is_active_no_toplevel_check ()
 {
 	GtkWidget	*active_widget=NULL, *main_window=NULL;
 	
-	main_window = glade_xml_get_widget (main_window_xml, "main_window");
+	main_window = gtk_builder_get_object (main_window_xml, "main_window");
 	if (main_window) 
 		active_widget = gtk_window_get_focus ((GtkWindow *) main_window);
 	if (active_widget)
@@ -896,7 +892,7 @@ void set_window_size_minimal()
 {
 	GtkWidget	*main_window=NULL;
 	
-	main_window = glade_xml_get_widget (main_window_xml, "main_window");
+	main_window = gtk_builder_get_object (main_window_xml, "main_window");
 	if (main_window != NULL)
 		gtk_window_resize ((GtkWindow *)gtk_widget_get_toplevel(main_window), 1, 1);
 }

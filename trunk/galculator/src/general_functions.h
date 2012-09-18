@@ -24,8 +24,6 @@
 #include "config_file.h"
 #include "flex_parser.h"
 
-#include <glade/glade.h>
-
 #define BIT(val, index) ((val & (1 << index)) >> index)
 
 void statusbar_init (GtkWidget *a_parent_widget);
@@ -43,13 +41,13 @@ char *add_leading_zeros (char *string, int multiple);
 
 gboolean da_expose_event_cb(GtkWidget *widget, GdkEventExpose *event, gpointer data);
 
-void set_button_font (GladeXML *xml, char *button_name, void *new_label);
-void set_checkbutton (GladeXML *xml, char *checkbutton_name, void *checked);
-void set_spinbutton (GladeXML *xml, char *spinbutton_name, void *value);
-void set_optmenu (GladeXML *xml, char *optmenu_name, void *index);
-void set_button_color (GladeXML *xml, char *button_name, void *color_string);
-void set_stacksize (GladeXML *xml, char *name, void *stack_size);
-void set_entry (GladeXML *xml, char *entry_name, void *entry_text);
+void set_button_font (GtkBuilder *xml, char *button_name, void *new_label);
+void set_checkbutton (GtkBuilder *xml, char *checkbutton_name, void *checked);
+void set_spinbutton (GtkBuilder *xml, char *spinbutton_name, void *value);
+void set_optmenu (GtkBuilder *xml, char *optmenu_name, void *index);
+void set_button_color (GtkBuilder *xml, char *button_name, void *color_string);
+void set_stacksize (GtkBuilder *xml, char *name, void *stack_size);
+void set_entry (GtkBuilder *xml, char *entry_name, void *entry_text);
 
 char *convert_gdk_color_to_string (GdkColor color);
 
@@ -76,7 +74,7 @@ double string2double (char *string, int number_base);
 char *string_add_separator (char *string, gboolean separate, int block_length, char separator, char dpoint);
 char *string_del_separator (char *string, char separator);
 
-void set_button_label_and_tooltip (GladeXML *xml, char *button_name, 
+void set_button_label_and_tooltip (GtkBuilder *xml, char *button_name, 
 	char *label, char *tooltip);
 	
 GtkWidget *formula_entry_is_active (GtkWidget *window_widget);

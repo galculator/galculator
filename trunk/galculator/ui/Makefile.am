@@ -1,20 +1,20 @@
 ## Process this file with automake to produce Makefile.in
 
-gladedir = $(datadir)/galculator/glade
+uidir = $(datadir)/galculator/ui
 
-glade_DATA = about.glade \
-		prefs.glade \
-		prefs-ume.glade \
-		main_frame.glade \
-		main_frame_hildon.glade \
-		scientific_buttons.glade \
-		basic_buttons.glade \
-		dispctrl_bottom.glade \
-		dispctrl_right.glade \
-		dispctrl_right_vertical.glade \
-		classic_view.glade \
-		paper_view.glade
+ui_DATA = about.ui \
+		prefs.ui \
+		prefs-ume.ui \
+		main_frame.ui \
+		main_frame_hildon.ui \
+		scientific_buttons.ui \
+		basic_buttons.ui \
+		dispctrl_bottom.ui \
+		dispctrl_right.ui \
+		dispctrl_right_vertical.ui \
+		classic_view.ui \
+		paper_view.ui
 
-EXTRA_DIST = $(glade_DATA)
+EXTRA_DIST = $(ui_DATA)
 
 

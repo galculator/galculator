@@ -2,7 +2,7 @@
 
 INCLUDES = \
 	-DPACKAGE_LOCALE_DIR=\""$(datadir)/locale"\" \
-	-DPACKAGE_GLADE_DIR=\""$(datadir)/galculator/glade"\" \
+	-DPACKAGE_UI_DIR=\""$(datadir)/galculator/ui"\" \
 	-DPACKAGE_PIXMAPS_DIR=\""$(datadir)/pixmaps"\" \
 	@PACKAGE_CFLAGS@
 
