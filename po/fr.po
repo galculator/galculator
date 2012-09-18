@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-19 01:29+0800\n"
+"POT-Creation-Date: 2012-09-19 02:24+0800\n"
 "PO-Revision-Date: 2003-10-08 01:50+0200\n"
 "Last-Translator:\n"
 "Language-Team: \n"
@@ -30,7 +30,7 @@ msgstr "sauvegarder ici"
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
 msgstr ""
 
-#: ../src/main.c:59
+#: ../src/main.c:62
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -275,7 +275,7 @@ msgstr ""
 "[%s] option d'affichage inconnue dans la fonction \"display_change_option\". "
 "%s\n"
 
-#: ../src/ui.c:90
+#: ../src/ui.c:91
 #, fuzzy, c-format
 msgid ""
 "[%s] Couldn't load %s. This file is necessary     to build galculator's user "
@@ -285,7 +285,7 @@ msgstr ""
 "l'interface utilisateur.Vérifiez que le make install a été effectué et que "
 "le fichier est accessible!\n"
 
-#: ../src/ui.c:453
+#: ../src/ui.c:454
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -297,77 +297,106 @@ msgstr ""
 "Vous devriez régler le problème en utilisant %s! %s\n"
 ")"
 
-#: ../src/ui.c:928 ../ui/main_frame.ui.h:17
+#: ../src/ui.c:929 ../ui/main_frame.ui.h:17
 #, fuzzy
 msgid "Show _menu bar"
 msgstr "Afficher la barre de menu"
 
-#: ../src/ui.c:955
+#: ../src/ui.c:956
 #, c-format
 msgid "%s Preferences"
 msgstr "Préférences de %s"
 
-#: ../src/ui.c:1163 ../ui/scientific_buttons.ui.h:98
+#: ../src/ui.c:996 ../src/ui.c:1028
+#, fuzzy
+msgid "Name"
+msgstr "Nom:"
+
+#: ../src/ui.c:999
+#, fuzzy
+msgid "Value"
+msgstr "Valeur:"
+
+#: ../src/ui.c:1002
+#, fuzzy
+msgid "Description"
+msgstr "Description"
+
+#: ../src/ui.c:1031
+#, fuzzy
+msgid "Variable"
+msgstr "Valeur:"
+
+#: ../src/ui.c:1034
+msgid "Expression"
+msgstr ""
+
+#: ../src/ui.c:1164 ../ui/scientific_buttons.ui.h:98
 #: ../ui/basic_buttons.ui.h:43
 msgid "="
 msgstr "="
 
-#: ../src/ui.c:1163 ../src/ui.c:1175 ../ui/paper_view.ui.h:2
+#: ../src/ui.c:1164 ../src/ui.c:1176 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons.ui.h:99 ../ui/basic_buttons.ui.h:44
 msgid "Enter"
 msgstr "Entrée"
 
-#: ../src/ui.c:1165 ../ui/scientific_buttons.ui.h:17
+#: ../src/ui.c:1166 ../ui/scientific_buttons.ui.h:17
 msgid "x^y"
 msgstr "x^y"
 
-#: ../src/ui.c:1165 ../src/ui.c:1177 ../ui/scientific_buttons.ui.h:18
+#: ../src/ui.c:1166 ../src/ui.c:1178 ../ui/scientific_buttons.ui.h:18
 msgid "Power"
 msgstr "Puissance"
 
-#: ../src/ui.c:1167 ../ui/scientific_buttons.ui.h:88
+#: ../src/ui.c:1168 ../ui/scientific_buttons.ui.h:88
 #: ../ui/basic_buttons.ui.h:33
 msgid "("
 msgstr "("
 
-#: ../src/ui.c:1167 ../ui/scientific_buttons.ui.h:89
+#: ../src/ui.c:1168 ../ui/scientific_buttons.ui.h:89
 #: ../ui/basic_buttons.ui.h:34
 msgid "Open Bracket"
 msgstr "Ouvrir la parenthèse"
 
-#: ../src/ui.c:1169 ../ui/scientific_buttons.ui.h:86
+#: ../src/ui.c:1170 ../ui/scientific_buttons.ui.h:86
 #: ../ui/basic_buttons.ui.h:31
 msgid ")"
 msgstr ")"
 
-#: ../src/ui.c:1169 ../ui/scientific_buttons.ui.h:87
+#: ../src/ui.c:1170 ../ui/scientific_buttons.ui.h:87
 #: ../ui/basic_buttons.ui.h:32
 msgid "Close Bracket"
 msgstr "Fermer la parenthèse"
 
-#: ../src/ui.c:1175
+#: ../src/ui.c:1176
 msgid "ENT"
 msgstr "ENT"
 
-#: ../src/ui.c:1177
+#: ../src/ui.c:1178
 msgid "y^x"
 msgstr "y^x"
 
-#: ../src/ui.c:1179
+#: ../src/ui.c:1180
 msgid "x<>y"
 msgstr "x<>y"
 
-#: ../src/ui.c:1179
+#: ../src/ui.c:1180
 msgid "swap current number with top of stack"
 msgstr ""
 
-#: ../src/ui.c:1181
+#: ../src/ui.c:1182
 msgid "roll"
 msgstr "roll"
 
-#: ../src/ui.c:1181
+#: ../src/ui.c:1182
 msgid "roll down stack"
 msgstr ""
+
+#: ../src/ui.c:1255
+#, fuzzy
+msgid "Result Display"
+msgstr "Affichage"
 
 #: flex_parser.l:234
 #, c-format
@@ -878,7 +907,7 @@ msgstr ""
 
 #: ../ui/about.ui.in.h:3
 #, fuzzy
-msgid "a GTK 2 based scientific calculator"
+msgid "a GTK+ based scientific calculator"
 msgstr "Calculatrice Scientifique"
 
 #: ../ui/prefs.ui.h:1

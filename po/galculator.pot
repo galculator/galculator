@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-19 01:29+0800\n"
+"POT-Creation-Date: 2012-09-19 02:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
 msgstr ""
 
-#: ../src/main.c:59
+#: ../src/main.c:62
 #, c-format
 msgid ""
 "\n"
@@ -226,14 +226,14 @@ msgstr ""
 msgid "unknown display option in function \"change_option\""
 msgstr ""
 
-#: ../src/ui.c:90
+#: ../src/ui.c:91
 #, c-format
 msgid ""
 "[%s] Couldn't load %s. This file is necessary     to build galculator's user "
 "interface. Make sure you did a make install and the file     is accessible!\n"
 msgstr ""
 
-#: ../src/ui.c:453
+#: ../src/ui.c:454
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -241,75 +241,99 @@ msgid ""
 ")"
 msgstr ""
 
-#: ../src/ui.c:928 ../ui/main_frame.ui.h:17
+#: ../src/ui.c:929 ../ui/main_frame.ui.h:17
 msgid "Show _menu bar"
 msgstr ""
 
-#: ../src/ui.c:955
+#: ../src/ui.c:956
 #, c-format
 msgid "%s Preferences"
 msgstr ""
 
-#: ../src/ui.c:1163 ../ui/scientific_buttons.ui.h:98
+#: ../src/ui.c:996 ../src/ui.c:1028
+msgid "Name"
+msgstr ""
+
+#: ../src/ui.c:999
+msgid "Value"
+msgstr ""
+
+#: ../src/ui.c:1002
+msgid "Description"
+msgstr ""
+
+#: ../src/ui.c:1031
+msgid "Variable"
+msgstr ""
+
+#: ../src/ui.c:1034
+msgid "Expression"
+msgstr ""
+
+#: ../src/ui.c:1164 ../ui/scientific_buttons.ui.h:98
 #: ../ui/basic_buttons.ui.h:43
 msgid "="
 msgstr ""
 
-#: ../src/ui.c:1163 ../src/ui.c:1175 ../ui/paper_view.ui.h:2
+#: ../src/ui.c:1164 ../src/ui.c:1176 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons.ui.h:99 ../ui/basic_buttons.ui.h:44
 msgid "Enter"
 msgstr ""
 
-#: ../src/ui.c:1165 ../ui/scientific_buttons.ui.h:17
+#: ../src/ui.c:1166 ../ui/scientific_buttons.ui.h:17
 msgid "x^y"
 msgstr ""
 
-#: ../src/ui.c:1165 ../src/ui.c:1177 ../ui/scientific_buttons.ui.h:18
+#: ../src/ui.c:1166 ../src/ui.c:1178 ../ui/scientific_buttons.ui.h:18
 msgid "Power"
 msgstr ""
 
-#: ../src/ui.c:1167 ../ui/scientific_buttons.ui.h:88
+#: ../src/ui.c:1168 ../ui/scientific_buttons.ui.h:88
 #: ../ui/basic_buttons.ui.h:33
 msgid "("
 msgstr ""
 
-#: ../src/ui.c:1167 ../ui/scientific_buttons.ui.h:89
+#: ../src/ui.c:1168 ../ui/scientific_buttons.ui.h:89
 #: ../ui/basic_buttons.ui.h:34
 msgid "Open Bracket"
 msgstr ""
 
-#: ../src/ui.c:1169 ../ui/scientific_buttons.ui.h:86
+#: ../src/ui.c:1170 ../ui/scientific_buttons.ui.h:86
 #: ../ui/basic_buttons.ui.h:31
 msgid ")"
 msgstr ""
 
-#: ../src/ui.c:1169 ../ui/scientific_buttons.ui.h:87
+#: ../src/ui.c:1170 ../ui/scientific_buttons.ui.h:87
 #: ../ui/basic_buttons.ui.h:32
 msgid "Close Bracket"
 msgstr ""
 
-#: ../src/ui.c:1175
+#: ../src/ui.c:1176
 msgid "ENT"
 msgstr ""
 
-#: ../src/ui.c:1177
+#: ../src/ui.c:1178
 msgid "y^x"
 msgstr ""
 
-#: ../src/ui.c:1179
+#: ../src/ui.c:1180
 msgid "x<>y"
 msgstr ""
 
-#: ../src/ui.c:1179
+#: ../src/ui.c:1180
 msgid "swap current number with top of stack"
 msgstr ""
 
-#: ../src/ui.c:1181
+#: ../src/ui.c:1182
 msgid "roll"
 msgstr ""
 
-#: ../src/ui.c:1181
+#: ../src/ui.c:1182
 msgid "roll down stack"
+msgstr ""
+
+#: ../src/ui.c:1255
+msgid "Result Display"
 msgstr ""
 
 #: flex_parser.l:234
@@ -818,7 +842,7 @@ msgid "Copyright (c) 2002-2012 by Simon Floery <chimaira@users.sf.net>"
 msgstr ""
 
 #: ../ui/about.ui.in.h:3
-msgid "a GTK 2 based scientific calculator"
+msgid "a GTK+ based scientific calculator"
 msgstr ""
 
 #: ../ui/prefs.ui.h:1

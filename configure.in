@@ -38,7 +38,7 @@ AM_PROG_LEX
 AM_PROG_LIBTOOL
 
 dnl Add the languages which your application supports here.
-ALL_LINGUAS="de fr ja pt pt_BR pl ro sk es_MX ru"
+ALL_LINGUAS="de fr ja pt pt_BR pl ro sk es_MX ru zh_TW"
 AM_GLIB_GNU_GETTEXT
 
 dnl If we don't have msgfmt, then po/ is going to fail -- ensure that
