@@ -82,7 +82,7 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 		(event->keyval != GDK_KP_6) && (event->keyval != GDK_KP_Right) &&
 		(event->keyval != GDK_KP_8) && (event->keyval != GDK_KP_Up) &&
 		(event->keyval != GDK_KP_0) && (event->keyval != GDK_KP_Insert)) ||
-		(strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(grab_widget)), "main_window") != 0) ||
+		(strcmp (gtk_buildable_get_name (GTK_BUILDABLE(gtk_widget_get_toplevel(grab_widget))), "main_window") != 0) ||
 		(prefs.mode == PAPER_MODE))
 			event->state &= ~GDK_MOD2_MASK;
 	//fprintf (stderr, "[%s] key snooper (2): %i %i %s\n", PROG_NAME, event->state, event->keyval, gdk_keyval_name (event->keyval));

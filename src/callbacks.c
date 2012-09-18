@@ -127,7 +127,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
     button_activation (button);
     
     if (current_status.notation == CS_FORMULA) {
-        if (strcmp (gtk_widget_get_name((GtkWidget *) button), "button_enter") == 0)
+        if (strcmp (gtk_buildable_get_name(GTK_BUILDABLE(button)), "button_enter") == 0)
             ui_formula_entry_activate();
         /* as long as we don't support string operation ids, we take
          * operation char. take this later on:
@@ -273,7 +273,7 @@ on_gfunc_button_clicked                (GtkToggleButton       *button,
             return;
         }
     }
-    if (strcmp(gtk_widget_get_name((GtkWidget *) button), "button_ee") == 0) 
+    if (strcmp(gtk_buildable_get_name(GTK_BUILDABLE(button)), "button_ee") == 0) 
         rpn_stack_lift();
     func = g_object_get_data (G_OBJECT (button), "func");
     if (func != NULL) func(button);
