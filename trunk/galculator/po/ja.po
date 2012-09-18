@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-19 01:29+0800\n"
+"POT-Creation-Date: 2012-09-19 02:24+0800\n"
 "PO-Revision-Date: 2004-10-25 09:01+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -29,7 +29,7 @@ msgstr "ここに保存する"
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
 msgstr ""
 
-#: ../src/main.c:59
+#: ../src/main.c:62
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -262,7 +262,7 @@ msgstr ""
 "[%s] 関数 \"display_change_option\" に不明な表示オプションが渡されまし"
 "た。%s\n"
 
-#: ../src/ui.c:90
+#: ../src/ui.c:91
 #, fuzzy, c-format
 msgid ""
 "[%s] Couldn't load %s. This file is necessary     to build galculator's user "
@@ -272,7 +272,7 @@ msgstr ""
 "フェースを構築するために必要です。正しくインストールされたか、さらにそのファ"
 "イルの権限をそれぞれ確認して下さい！\n"
 
-#: ../src/ui.c:453
+#: ../src/ui.c:454
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -283,76 +283,106 @@ msgstr ""
 "%s を使用すると問題が発生するかもしれません！ %s\n"
 ")"
 
-#: ../src/ui.c:928 ../ui/main_frame.ui.h:17
+#: ../src/ui.c:929 ../ui/main_frame.ui.h:17
 msgid "Show _menu bar"
 msgstr "メニュー・バーを表示する(_M)"
 
-#: ../src/ui.c:955
+#: ../src/ui.c:956
 #, c-format
 msgid "%s Preferences"
 msgstr "%s の設定"
 
-#: ../src/ui.c:1163 ../ui/scientific_buttons.ui.h:98
+#: ../src/ui.c:996 ../src/ui.c:1028
+#, fuzzy
+msgid "Name"
+msgstr "名前:"
+
+#: ../src/ui.c:999
+#, fuzzy
+msgid "Value"
+msgstr "値:"
+
+#: ../src/ui.c:1002
+#, fuzzy
+msgid "Description"
+msgstr "説明:"
+
+#: ../src/ui.c:1031
+#, fuzzy
+msgid "Variable"
+msgstr "変数:"
+
+#: ../src/ui.c:1034
+#, fuzzy
+msgid "Expression"
+msgstr "式:"
+
+#: ../src/ui.c:1164 ../ui/scientific_buttons.ui.h:98
 #: ../ui/basic_buttons.ui.h:43
 msgid "="
 msgstr "="
 
-#: ../src/ui.c:1163 ../src/ui.c:1175 ../ui/paper_view.ui.h:2
+#: ../src/ui.c:1164 ../src/ui.c:1176 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons.ui.h:99 ../ui/basic_buttons.ui.h:44
 msgid "Enter"
 msgstr "計算結果を算出します"
 
-#: ../src/ui.c:1165 ../ui/scientific_buttons.ui.h:17
+#: ../src/ui.c:1166 ../ui/scientific_buttons.ui.h:17
 msgid "x^y"
 msgstr "x^y"
 
-#: ../src/ui.c:1165 ../src/ui.c:1177 ../ui/scientific_buttons.ui.h:18
+#: ../src/ui.c:1166 ../src/ui.c:1178 ../ui/scientific_buttons.ui.h:18
 msgid "Power"
 msgstr "累乗を計算します"
 
-#: ../src/ui.c:1167 ../ui/scientific_buttons.ui.h:88
+#: ../src/ui.c:1168 ../ui/scientific_buttons.ui.h:88
 #: ../ui/basic_buttons.ui.h:33
 msgid "("
 msgstr "("
 
-#: ../src/ui.c:1167 ../ui/scientific_buttons.ui.h:89
+#: ../src/ui.c:1168 ../ui/scientific_buttons.ui.h:89
 #: ../ui/basic_buttons.ui.h:34
 msgid "Open Bracket"
 msgstr "開きカッコ"
 
-#: ../src/ui.c:1169 ../ui/scientific_buttons.ui.h:86
+#: ../src/ui.c:1170 ../ui/scientific_buttons.ui.h:86
 #: ../ui/basic_buttons.ui.h:31
 msgid ")"
 msgstr ")"
 
-#: ../src/ui.c:1169 ../ui/scientific_buttons.ui.h:87
+#: ../src/ui.c:1170 ../ui/scientific_buttons.ui.h:87
 #: ../ui/basic_buttons.ui.h:32
 msgid "Close Bracket"
 msgstr "閉じカッコ"
 
-#: ../src/ui.c:1175
+#: ../src/ui.c:1176
 msgid "ENT"
 msgstr "ENT"
 
-#: ../src/ui.c:1177
+#: ../src/ui.c:1178
 msgid "y^x"
 msgstr "y^x"
 
-#: ../src/ui.c:1179
+#: ../src/ui.c:1180
 msgid "x<>y"
 msgstr "x<>y"
 
-#: ../src/ui.c:1179
+#: ../src/ui.c:1180
 msgid "swap current number with top of stack"
 msgstr "現在の数値を一番上のスタックと交換します"
 
-#: ../src/ui.c:1181
+#: ../src/ui.c:1182
 msgid "roll"
 msgstr "roll"
 
-#: ../src/ui.c:1181
+#: ../src/ui.c:1182
 msgid "roll down stack"
 msgstr "スタックを下げます"
+
+#: ../src/ui.c:1255
+#, fuzzy
+msgid "Result Display"
+msgstr "表示"
 
 #: flex_parser.l:234
 #, c-format
@@ -863,7 +893,7 @@ msgstr ""
 
 #: ../ui/about.ui.in.h:3
 #, fuzzy
-msgid "a GTK 2 based scientific calculator"
+msgid "a GTK+ based scientific calculator"
 msgstr "単純な科学計算を実行します"
 
 #: ../ui/prefs.ui.h:1

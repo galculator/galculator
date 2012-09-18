@@ -82,6 +82,7 @@ static GtkBuilder *gtk_builder_file_open (char *filename, gboolean fatal)
     GError* error = NULL;
     GtkWidget* root, *parent;
     gboolean success;
+    /* gtk_builder_set_translation_domain(xml, NULL); */
 	if(!gtk_builder_add_from_file(xml, filename, &error))
     {
         /* if errors happen */
@@ -992,13 +993,13 @@ GtkWidget *ui_pref_dialog_create ()
 	gtk_tree_view_set_model ((GtkTreeView *) tree_view, 
 		GTK_TREE_MODEL (prefs_constant_store));
 	renderer = gtk_cell_renderer_text_new ();
-	column = gtk_tree_view_column_new_with_attributes ("Name", renderer, 
+	column = gtk_tree_view_column_new_with_attributes (_("Name"), renderer, 
 		"text", CONST_NAME_COLUMN, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
-	column = gtk_tree_view_column_new_with_attributes ("Value", renderer, 
+	column = gtk_tree_view_column_new_with_attributes (_("Value"), renderer, 
 		"text", CONST_VALUE_COLUMN, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
-	column = gtk_tree_view_column_new_with_attributes ("Description", renderer, 
+	column = gtk_tree_view_column_new_with_attributes (_("Description"), renderer, 
 		"text", CONST_DESC_COLUMN, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
 	select = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
@@ -1024,13 +1025,13 @@ GtkWidget *ui_pref_dialog_create ()
 	gtk_tree_view_set_model ((GtkTreeView *) tree_view, 
 		GTK_TREE_MODEL (prefs_user_function_store));
 	renderer = gtk_cell_renderer_text_new ();
-	column = gtk_tree_view_column_new_with_attributes ("Name", renderer, 
+	column = gtk_tree_view_column_new_with_attributes (_("Name"), renderer, 
 		"text", UFUNC_NAME_COLUMN, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
-	column = gtk_tree_view_column_new_with_attributes ("Variable", renderer, 
+	column = gtk_tree_view_column_new_with_attributes (_("Variable"), renderer, 
 		"text", UFUNC_VARIABLE_COLUMN, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
-	column = gtk_tree_view_column_new_with_attributes ("Expression", renderer, 
+	column = gtk_tree_view_column_new_with_attributes (_("Expression"), renderer, 
 		"text", UFUNC_EXPRESSION_COLUMN, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
 	select = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
@@ -1251,7 +1252,7 @@ void ui_paper_view_create()
 	gtk_tree_view_set_model ((GtkTreeView *) tree_view, GTK_TREE_MODEL (paper_store));
 	
 	renderer = gtk_cell_renderer_text_new ();
-	column = gtk_tree_view_column_new_with_attributes ("Result Display", renderer, "markup", 0, "xalign", 1, "foreground", 2, NULL);
+	column = gtk_tree_view_column_new_with_attributes (_("Result Display"), renderer, "markup", 0, "xalign", 1, "foreground", 2, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), column);
 	
 	select = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
