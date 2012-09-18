@@ -691,8 +691,8 @@ GtkWidget *formula_entry_is_active (GtkWidget *window_widget)
 	if (main_window != NULL)
 		active_widget = gtk_window_get_focus ((GtkWindow *)main_window);
 	if (active_widget != NULL)
-		if ((strcmp (gtk_widget_get_name (gtk_widget_get_toplevel(window_widget)),"main_window") == 0) &&
-			(strcmp (gtk_widget_get_name (active_widget), "formula_entry") == 0)) 
+		if ((g_strcmp0 (gtk_buildable_get_name (GTK_BUILDABLE(gtk_widget_get_toplevel(window_widget))),"main_window") == 0) &&
+			(g_strcmp0 (gtk_buildable_get_name (GTK_BUILDABLE(active_widget)), "formula_entry") == 0)) 
 			return active_widget;
 	return NULL;
 }
@@ -709,7 +709,7 @@ GtkWidget *formula_entry_is_active_no_toplevel_check ()
 	if (main_window) 
 		active_widget = gtk_window_get_focus ((GtkWindow *) main_window);
 	if (active_widget)
-		if (strcmp (gtk_widget_get_name (active_widget), "formula_entry") == 0) 
+		if (g_strcmp0 (gtk_buildable_get_name (GTK_BUILDABLE(active_widget)), "formula_entry") == 0) 
 			return active_widget;
 	return NULL;
 }
