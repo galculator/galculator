@@ -264,7 +264,8 @@ AM_CPPFLAGS = \
 	-DPACKAGE_UI_DIR=\""$(datadir)/galculator/ui"\" \
 	-DPACKAGE_PIXMAPS_DIR=\""$(datadir)/pixmaps"\" \
 	-DGDK_DISABLE_DEPRECATED \
-	-DGTK_DISABLE_DEPRECATED
+	-DGTK_DISABLE_DEPRECATED \
+	-DGSEAL_ENABLE
 
 galculator_SOURCES = \
 	main.c galculator.h \

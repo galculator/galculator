@@ -114,13 +114,13 @@ void on_textview_selection_received (GtkWidget *widget,
 {
 	/* **** IMPORTANT **** Check to see if retrieval succeeded  */
 	/* occurs if we just press the middle button with no active selection */
-	if (data->length < 0) return;
+	if (gtk_selection_data_get_length(data) < 0) return;
 	
 	/* Make sure we got the data in the expected form */
-	if (data->type != GDK_SELECTION_TYPE_STRING) return;
+	if (gtk_selection_data_get_data_type(data) != GDK_SELECTION_TYPE_STRING) return;
 
 	/* ok, we tried to avoid this in display.* but here we can't avoid using the global var. */
-	display_result_feed ((char *)data->data, current_status.number);
+	display_result_feed ((char *)gtk_selection_data_get_data(data), current_status.number);
 
 	return;
 }
@@ -176,12 +176,14 @@ void display_init ()
 	GtkTextTag		*tag;
 	PangoTabArray		*tab_array;
 	GtkTextTagTable		*tag_table;
-	
+    PangoLanguage* language;
+    PangoFontDescription* font_desc;
+    char* lang_name;
+
 	current_status.calc_entry_start_new = FALSE;
 	view = (GtkTextView *) gtk_builder_get_object (view_xml, "textview");
-	gdk_color_parse (prefs.bkg_color, &color);
-	gtk_widget_modify_base ((GtkWidget *)view, GTK_STATE_NORMAL, &color);
-	
+    display_set_bkg_color(prefs.bkg_color);
+
 	buffer = gtk_text_view_get_buffer (view);
 	display_create_text_tags ();
 	/* compute the approx char/digit width and create a tab stops */
@@ -189,10 +191,17 @@ void display_init ()
 	tag = gtk_text_tag_table_lookup (tag_table, "active_module");
 	/* get the approx char width */
 	pango_context = gtk_widget_get_pango_context ((GtkWidget *)view);
-	font_metrics = pango_context_get_metrics(pango_context, \
-		tag->values->font,
-		tag->values->language);
-	char_width = MAX (pango_font_metrics_get_approximate_char_width (font_metrics), \
+
+    g_object_get(tag, "font-desc", &font_desc, "language", &lang_name, NULL);
+    language = pango_language_from_string(lang_name);
+    g_free(lang_name);
+	font_metrics = pango_context_get_metrics(pango_context,
+		font_desc,
+		language);
+    pango_font_description_free(font_desc);
+    g_boxed_free(PANGO_TYPE_LANGUAGE, language);
+
+	char_width = MAX (pango_font_metrics_get_approximate_char_width (font_metrics),
 		pango_font_metrics_get_approximate_digit_width (font_metrics));
 	tab_array = pango_tab_array_new_with_positions (1, FALSE, PANGO_TAB_LEFT, 3*char_width);
 	gtk_text_view_set_tabs (view, tab_array);
@@ -581,11 +590,20 @@ void display_change_option (int old_status, int new_status, int opt_group)
 
 void display_set_bkg_color (char *color_string)
 {
+#if GTK_CHECK_VERSION(3, 0, 0)
+	GdkRGBA	color;
+	if (prefs.mode == PAPER_MODE) return;
+	gdk_rgba_parse (&color, color_string);
+	if (view)
+        gtk_widget_override_background_color(GTK_WIDGET(view), 
+            GTK_STATE_FLAG_NORMAL, &color);
+#else
 	GdkColor	color;
-	
 	if (prefs.mode == PAPER_MODE) return;
 	gdk_color_parse (color_string, &color);
-	if (view) gtk_widget_modify_base ((GtkWidget *)view, GTK_STATE_NORMAL, &color);
+	if (view)
+        gtk_widget_modify_base ((GtkWidget *)view, GTK_STATE_NORMAL, &color);
+#endif
 }
 
 /*

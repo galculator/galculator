@@ -39,10 +39,10 @@ char		dec_point[2];
 GtkListStore	*prefs_constant_store, *prefs_user_function_store;
 
 static void set_disp_ctrl_object_data ();
-static void set_all_buttons_property (GFunc func, gpointer data);
-static void set_all_dispctrl_buttons_property (GFunc func, gpointer data);
-static void set_all_normal_buttons_property (GFunc func, gpointer data);
-static void set_table_child_callback (gpointer data, gpointer user_data);
+static void set_all_buttons_property (GtkCallback func, gpointer data);
+static void set_all_dispctrl_buttons_property (GtkCallback func, gpointer data);
+static void set_all_normal_buttons_property (GtkCallback func, gpointer data);
+static void set_table_child_callback (GtkWidget	*table_child, gpointer user_data);
 
 /* active_buttons. bit mask, in which modes the corresponding button is active.
  * assume TRUE for all other bases/modes!
@@ -255,6 +255,17 @@ static void set_disp_ctrl_object_data ()
 	};
 }
 
+
+static void free_accel_group(GtkWidget* widget, gpointer user_data)
+{
+    GtkAccelGroup* accel_group = GTK_ACCEL_GROUP(user_data);
+    if(main_window_xml)
+    {
+        GtkWidget* toplevel = gtk_builder_get_object(main_window_xml, "main_window");
+        gtk_window_remove_accel_group(toplevel, accel_group);
+    }
+}
+
 /* ui_pack_from_xml. This is a very special function. But we need it at least
  * three times. takes child_name from child_xml and adds it to box at index.
  * signals are connected and accel_group of accel_child_name is attached to
@@ -289,7 +300,11 @@ static void ui_pack_from_xml (GtkWidget *box,
     {
         accel_group = GTK_ACCEL_GROUP(accel_list->data);
         if (accel_group)
+        {
             gtk_window_add_accel_group ((GtkWindow *) gtk_widget_get_toplevel (box), accel_group);
+            /* remove the accel group when the child widget is destroyed */
+            g_signal_connect(child_widget, "destroy", G_CALLBACK(free_accel_group), accel_group);
+        }
     }
 
     /* reparent the child widget */
@@ -303,6 +318,7 @@ static void ui_pack_from_xml (GtkWidget *box,
         gtk_widget_destroy(child_toplevel);
 
 	gtk_box_reorder_child ((GtkBox *) box, child_widget, index);
+
 	gtk_widget_show (box);
 }
 
@@ -457,14 +473,11 @@ is not supported: >%s<\nYou might face problems when using %s! %s\n)"),
  * sets the size.
  */
 
-static void set_table_child_callback (gpointer data, gpointer user_data)
+static void set_table_child_callback (GtkWidget	*table_child, gpointer user_data)
 {
 	s_signal_cb	*signal_cb;
-	GtkTableChild	*table_child;
-	
-	table_child = data;
 	signal_cb = user_data;
-	g_signal_connect (table_child->widget, signal_cb->detailed_signal, 
+	g_signal_connect (table_child, signal_cb->detailed_signal, 
 		signal_cb->callback, NULL);
 }
 
@@ -472,31 +485,25 @@ static void set_table_child_callback (gpointer data, gpointer user_data)
  * sets the size.
  */
 
-static void set_table_child_size (gpointer data, gpointer user_data)
+static void set_table_child_size (GtkWidget	*table_child, gpointer user_data)
 {
 	GtkRequisition	*size;
-	GtkTableChild	*table_child;
-	
 	size = user_data;				/* dereference */
-	table_child = data;
-	gtk_widget_set_size_request (table_child->widget, size->width, size->height);
+	gtk_widget_set_size_request (table_child, size->width, size->height);
 }
 
 /* set_table_child_font. Function argument for set_all_buttons_property.
  * sets the font of buttons. We have to set the label of the button!
  */
 
-static void set_table_child_font (gpointer data, gpointer user_data)
+static void set_table_child_font (GtkWidget		*w, gpointer user_data)
 {
 	PangoFontDescription	*font;
-	GtkTableChild		*table_child;
-	GtkWidget		*w=NULL;
-	
+
 	font = user_data;				/* dereference */
-	table_child = data;
 	
-	if (GTK_IS_BIN (table_child->widget)) 
-		w = gtk_bin_get_child ((GtkBin *)(table_child->widget));
+	if (GTK_IS_BIN (w))
+		w = gtk_bin_get_child (GTK_BIN(w));
 	/* if it's a normal button, w is now the label we want to font-change.
 	 * if it's a popup button, we have to get the most left child first.
 	 */
@@ -511,7 +518,14 @@ static void set_table_child_font (gpointer data, gpointer user_data)
         else
             w = NULL;
     }
-	if (GTK_IS_LABEL(w)) gtk_widget_modify_font (w, font);
+	if (GTK_IS_LABEL(w))
+    {
+#if GTK_CHECK_VERSION(3, 0, 0)
+        gtk_widget_override_font(w, font);
+#else
+        gtk_widget_modify_font (w, font);
+#endif
+    }
 	/* else do nothing */
 }
 
@@ -539,16 +553,12 @@ gboolean set_table_child_tip_accel_finder (GtkAccelKey *key, GClosure *closure, 
 }
 
 
-static void set_table_child_tip_accel (gpointer data, gpointer user_data)
+static void set_table_child_tip_accel (GtkWidget* button, gpointer user_data)
 {
-	GtkTableChild	*tc;
-	GtkWidget	*button;
 	GList 		*closure_list;
 	GtkAccelGroup	*accel_group;
 	gpointer	d[2];
 	
-	tc = data;
-	button = tc->widget;
 	/* get all accelerators (== closures) connected to this button */
 	closure_list = gtk_widget_list_accel_closures (button);
 	if (!closure_list) return;
@@ -565,26 +575,30 @@ static void set_table_child_tip_accel (gpointer data, gpointer user_data)
  * every button of the display control section.
  */
 
-static void set_all_dispctrl_buttons_property (GFunc func, gpointer data)
+static void set_all_dispctrl_buttons_property (GtkCallback func, gpointer data)
 {
 	GtkTable	*table;
+    GList* table_children;
 
 	if (!dispctrl_xml) return;
 	/* at first the display control table. always there; somehow */
 	table = (GtkTable *) gtk_builder_get_object (dispctrl_xml, 
 		"table_dispctrl");
 	if (!table) return;
+    
+    table_children = gtk_container_get_children(GTK_CONTAINER(table));
 	/* dispctrl_right has an extra table for cosmetic reasons. */
-	if (GTK_IS_TABLE (((GtkTableChild *)table->children->data)->widget))
-		table = (GtkTable *) ((GtkTableChild *)table->children->data)->widget;
-	g_list_foreach (table->children, func, data);
+	if (GTK_IS_TABLE (table_children->data))
+		table = GTK_TABLE(table_children->data);
+    g_list_free(table_children);
+	gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
 }
 
 /* set_all_dispctrl_buttons_property. calls func with argument data for 
  * every button of the "calculator" section.
  */
 
-static void set_all_normal_buttons_property (GFunc func, gpointer data)
+static void set_all_normal_buttons_property (GtkCallback func, gpointer data)
 {
 	GtkTable	*table;
 	
@@ -593,18 +607,18 @@ static void set_all_normal_buttons_property (GFunc func, gpointer data)
 	case BASIC_MODE:
 		table = (GtkTable *) gtk_builder_get_object (button_box_xml, 
 			"table_buttons");
-		g_list_foreach (table->children, func, data);
+		gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
 		break;
 	case SCIENTIFIC_MODE:
 		table = (GtkTable *) gtk_builder_get_object (button_box_xml, 
 			"table_standard_buttons");
-		g_list_foreach (table->children, func, data);
+		gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
 		table = (GtkTable *) gtk_builder_get_object (button_box_xml, 
 			"table_bin_buttons");
-		g_list_foreach (table->children, func, data);
+		gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
 		table = (GtkTable *) gtk_builder_get_object (button_box_xml, 
 			"table_func_buttons");
-		g_list_foreach (table->children, func, data);
+		gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
 		break;
 	case PAPER_MODE:
 		/* do nothing - no buttons */
@@ -617,7 +631,7 @@ static void set_all_normal_buttons_property (GFunc func, gpointer data)
 /* set_all_buttons_property. calls func with argument data for every button.
  */
 
-static void set_all_buttons_property (GFunc func, gpointer data)
+static void set_all_buttons_property (GtkCallback func, gpointer data)
 {
 	set_all_dispctrl_buttons_property (func, data);
 	set_all_normal_buttons_property (func, data);
@@ -764,14 +778,14 @@ void update_dispctrl()
 void set_widget_visibility (GtkBuilder *xml, char *widget_name, gboolean visible)
 {
 	GtkWidget	*widget;
-	
+	/* g_print("set visible: %s: %d\n", widget_name, visible); */
 	widget = gtk_builder_get_object (xml, widget_name);
 	if (!widget) {
 		error_message ("Couldn't find widget \"%s\" in \"set_widget_visibility\"", widget_name);
 		return;
 	}
-	if (visible) gtk_widget_show_all (widget);
-	else gtk_widget_hide_all (widget);
+	if (visible) gtk_widget_show (widget);
+	else gtk_widget_hide (widget);
 }
 
 /* menu code - e.g. used for the constant popup menu */
@@ -793,7 +807,8 @@ void position_menu (GtkMenu *menu,
 	GtkWidget *child;
 	GtkWidget *widget;
 	GtkRequisition requisition;
-	GList *children;
+    GtkAllocation allocation;
+	GList *children, *l;
 	gint screen_width;
 	gint menu_xpos;
 	gint menu_ypos;
@@ -810,20 +825,21 @@ void position_menu (GtkMenu *menu,
 		code. we don't have any active items
 	 */
 	 
-	gdk_window_get_origin (widget->window, &menu_xpos, &menu_ypos);
+	gdk_window_get_origin (gtk_widget_get_window(widget), &menu_xpos, &menu_ypos);
+    gtk_widget_get_allocation(widget, &allocation);
+
+	menu_xpos += allocation.x;
+	menu_ypos += allocation.y + allocation.height / 2 - 2;
 	
-	menu_xpos += widget->allocation.x;
-	menu_ypos += widget->allocation.y + widget->allocation.height / 2 - 2;
-	
-	children = GTK_MENU_SHELL(menu)->children;
-	while (children) {
-		child = children->data;
+	children = gtk_container_get_children(GTK_CONTAINER(menu));
+	for(l = children; l; l=l->next) {
+		child = GTK_WIDGET(l->data);
 		if (gtk_widget_get_visible (child))	{
 			gtk_widget_get_child_requisition (child, &requisition);
 			menu_ypos -= requisition.height;
 		}
-		children = children->next;
 	}
+    g_list_free(children);
 	
 	/*screen_width = gdk_screen_get_width (gtk_widget_get_screen (widget));*/
 	screen_width = gdk_screen_width ();
@@ -913,7 +929,7 @@ GtkWidget *ui_right_mouse_menu_create ()
 	gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
 	gtk_menu_shell_append ((GtkMenuShell *) menu, menu_item);
 	gtk_widget_show (menu_item);
-	g_signal_connect (G_OBJECT (menu_item), "activate", (GCallback) on_show_menubar1_activate, NULL);
+	g_signal_connect (G_OBJECT (menu_item), "toggled", (GCallback) on_show_menubar1_toggled, NULL);
 	
 	return menu;
 }
@@ -1113,19 +1129,32 @@ void ui_formula_entry_backspace ()
 void ui_formula_entry_state (gboolean error)
 {
 	GtkWidget		*formula_entry;
-	GdkColor		*color=NULL;
-	
+#if GTK_CHECK_VERSION(3, 0, 0)
+    GdkRGBA color, *pcolor = NULL;
 	formula_entry = gtk_builder_get_object (view_xml, "formula_entry");
 	if (error) {
-		color = (GdkColor *) malloc(sizeof(GdkColor));
-		gdk_color_parse ("red", color);
+		gdk_rgba_parse (&color, "red");
+        pcolor = &color;
 	}
-	gtk_widget_modify_text (formula_entry, 0, color);
-	gtk_widget_modify_text (formula_entry, 1, color);
-	gtk_widget_modify_text (formula_entry, 2, color);
-	gtk_widget_modify_text (formula_entry, 3, color);
-	gtk_widget_modify_text (formula_entry, 4, color);
-	if (color) g_free(color);
+	gtk_widget_override_color (formula_entry, GTK_STATE_FLAG_NORMAL, pcolor);
+    gtk_widget_override_color (formula_entry, GTK_STATE_FLAG_ACTIVE, pcolor);
+    gtk_widget_override_color (formula_entry, GTK_STATE_FLAG_PRELIGHT, pcolor);
+    gtk_widget_override_color (formula_entry, GTK_STATE_FLAG_INSENSITIVE, pcolor);
+
+#else
+	GdkColor color, *pcolor = NULL;
+	formula_entry = gtk_builder_get_object (view_xml, "formula_entry");
+	if (error) {
+		gdk_color_parse ("red", &color);
+        pcolor = &color;
+	}
+	gtk_widget_modify_text (formula_entry, 0, pcolor);
+	gtk_widget_modify_text (formula_entry, 1, pcolor);
+	gtk_widget_modify_text (formula_entry, 2, pcolor);
+	gtk_widget_modify_text (formula_entry, 3, pcolor);
+	gtk_widget_modify_text (formula_entry, 4, pcolor);
+#endif
+
 }
 
 void ui_button_set_pan ()

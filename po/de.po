@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-18 17:55+0800\n"
+"POT-Creation-Date: 2012-09-19 01:29+0800\n"
 "PO-Revision-Date: 2003-05-26 14:24+0200\n"
 "Last-Translator: Simon Floery <chimaira@users.sf.net>\n"
 "Language-Team: German <de@li.org>\n"
@@ -21,16 +21,16 @@ msgstr ""
 msgid "Perform simple and scientific calculations"
 msgstr "Ausführen von einfachen und wissenschaftlichen Berechnungen"
 
-#: ../src/callbacks.c:1015
+#: ../src/callbacks.c:1002
 msgid "save here"
 msgstr "speichere hier"
 
-#: ../src/callbacks.c:1531
+#: ../src/callbacks.c:1518
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
 msgstr ""
 
-#: ../src/main.c:58
+#: ../src/main.c:59
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -156,7 +156,7 @@ msgstr ""
 "[%s] configuration file: Die Einstellungen konnten nicht gespeichert werden "
 "%s.\n"
 
-#: ../src/display.c:406
+#: ../src/display.c:415
 #, fuzzy, c-format
 msgid ""
 "[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
@@ -164,7 +164,7 @@ msgstr ""
 "[%s] unbekannte Winkeleinheit in der Funktion \"display_result_set_angle\". "
 "%s\n"
 
-#: ../src/display.c:574
+#: ../src/display.c:583
 #, fuzzy, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
 msgstr ""
@@ -197,18 +197,18 @@ msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr ""
 "[%s] %f konnte von der Funktion \"ftoax\" nicht umgewandelt werden. %s\n"
 
-#: ../src/general_functions.c:400
+#: ../src/general_functions.c:381
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr ""
 "[%s] Das Widget %s konnte von der Funktion \"activate_menu_item\" nicht "
 "gefunden werden. %s\n"
 
-#: ../src/general_functions.c:442
+#: ../src/general_functions.c:423
 msgid "unknown number base"
 msgstr "unbekannte Zahlenbasis"
 
-#: ../src/general_functions.c:443
+#: ../src/general_functions.c:424
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
@@ -216,7 +216,7 @@ msgstr ""
 "[%s] unbekannte Zahlenbasis in der Funktion \"get_display_number_string\". "
 "%s\n"
 
-#: ../src/general_functions.c:464
+#: ../src/general_functions.c:445
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
@@ -224,7 +224,7 @@ msgstr ""
 "[%s] unbekannte Zahlenbasis in der Funktion \"display_result_number_length"
 "\". %s\n"
 
-#: ../src/general_functions.c:573
+#: ../src/general_functions.c:554
 #, fuzzy, c-format
 msgid ""
 "[%s] failed to convert %s to a number properly in function \"string2double"
@@ -234,37 +234,37 @@ msgstr ""
 "[%s] %s konnte in der Funktion \"string2double\" nicht in eine Zahl "
 "umgewandeltwerden. Wurden die locales Einstellungen geändert? %s\n"
 
-#: ../src/general_functions.c:591
+#: ../src/general_functions.c:572
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr "[%s] unbekannte Zahlenbasis in der Funktion \"string2double\". %s\n"
 
-#: ../src/general_functions.c:748
+#: ../src/general_functions.c:729
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr "[%s] unbekannte Zahlenbasis in der Funktion \"x2rad\". %s\n"
 
-#: ../src/general_functions.c:763
+#: ../src/general_functions.c:744
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr "[%s] unbekannte Zahlenbasis in der Funktion \"rad2dx\". %s\n"
 
-#: ../src/general_functions.c:780
+#: ../src/general_functions.c:761
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr "[%s] unbekannte Zahlenbasis in der Funktion \"get_sep\". %s\n"
 
-#: ../src/general_functions.c:797
+#: ../src/general_functions.c:778
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
 msgstr "[%s] unbekannte Zahlenbasis in der Funktion \"get_sep_length\". %s\n"
 
-#: ../src/general_functions.c:814
+#: ../src/general_functions.c:795
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
 msgstr "[%s] unbekannte Zahlenbasis in der Funktion \"get_sep_char\". %s\n"
 
-#: ../src/general_functions.c:882
+#: ../src/general_functions.c:863
 #, fuzzy
 msgid "unknown display option in function \"change_option\""
 msgstr ""
@@ -281,7 +281,7 @@ msgstr ""
 "galculatorsgraphische Oberfläche zu erstellen. Wurde ein make install "
 "durchgeführt undkann auf die Datei zugegriffen werden?\n"
 
-#: ../src/ui.c:437
+#: ../src/ui.c:453
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -292,75 +292,75 @@ msgstr ""
 "Es könnte Probleme beim Ausführen von %s geben! %s\n"
 ")"
 
-#: ../src/ui.c:898 ../ui/main_frame.ui.h:17
+#: ../src/ui.c:928 ../ui/main_frame.ui.h:17
 msgid "Show _menu bar"
 msgstr "_Menü anzeigen"
 
-#: ../src/ui.c:925
+#: ../src/ui.c:955
 #, c-format
 msgid "%s Preferences"
 msgstr "%s Einstellungen"
 
-#: ../src/ui.c:1120 ../ui/scientific_buttons.ui.h:98
+#: ../src/ui.c:1163 ../ui/scientific_buttons.ui.h:98
 #: ../ui/basic_buttons.ui.h:43
 msgid "="
 msgstr "="
 
-#: ../src/ui.c:1120 ../src/ui.c:1132 ../ui/paper_view.ui.h:2
+#: ../src/ui.c:1163 ../src/ui.c:1175 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons.ui.h:99 ../ui/basic_buttons.ui.h:44
 msgid "Enter"
 msgstr "Eingabe"
 
-#: ../src/ui.c:1122 ../ui/scientific_buttons.ui.h:17
+#: ../src/ui.c:1165 ../ui/scientific_buttons.ui.h:17
 msgid "x^y"
 msgstr "x^y"
 
-#: ../src/ui.c:1122 ../src/ui.c:1134 ../ui/scientific_buttons.ui.h:18
+#: ../src/ui.c:1165 ../src/ui.c:1177 ../ui/scientific_buttons.ui.h:18
 msgid "Power"
 msgstr "Potenz"
 
-#: ../src/ui.c:1124 ../ui/scientific_buttons.ui.h:88
+#: ../src/ui.c:1167 ../ui/scientific_buttons.ui.h:88
 #: ../ui/basic_buttons.ui.h:33
 msgid "("
 msgstr "("
 
-#: ../src/ui.c:1124 ../ui/scientific_buttons.ui.h:89
+#: ../src/ui.c:1167 ../ui/scientific_buttons.ui.h:89
 #: ../ui/basic_buttons.ui.h:34
 msgid "Open Bracket"
 msgstr "ÖffnetKlammer"
 
-#: ../src/ui.c:1126 ../ui/scientific_buttons.ui.h:86
+#: ../src/ui.c:1169 ../ui/scientific_buttons.ui.h:86
 #: ../ui/basic_buttons.ui.h:31
 msgid ")"
 msgstr ")"
 
-#: ../src/ui.c:1126 ../ui/scientific_buttons.ui.h:87
+#: ../src/ui.c:1169 ../ui/scientific_buttons.ui.h:87
 #: ../ui/basic_buttons.ui.h:32
 msgid "Close Bracket"
 msgstr "Schließt die Klammer"
 
-#: ../src/ui.c:1132
+#: ../src/ui.c:1175
 msgid "ENT"
 msgstr "ENT"
 
-#: ../src/ui.c:1134
+#: ../src/ui.c:1177
 msgid "y^x"
 msgstr "y^x"
 
-#: ../src/ui.c:1136
+#: ../src/ui.c:1179
 msgid "x<>y"
 msgstr "x<>y"
 
-#: ../src/ui.c:1136
+#: ../src/ui.c:1179
 msgid "swap current number with top of stack"
 msgstr ""
 "Aktuelle Zahl am Display mit dem ersten Element des Stacks vertauschen(swap)."
 
-#: ../src/ui.c:1138
+#: ../src/ui.c:1181
 msgid "roll"
 msgstr "roll"
 
-#: ../src/ui.c:1138
+#: ../src/ui.c:1181
 msgid "roll down stack"
 msgstr "Elemente des Stacks zyklisch vertauschen (roll down stack)."
 

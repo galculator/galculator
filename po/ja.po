@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-18 17:55+0800\n"
+"POT-Creation-Date: 2012-09-19 01:29+0800\n"
 "PO-Revision-Date: 2004-10-25 09:01+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -20,16 +20,16 @@ msgstr ""
 msgid "Perform simple and scientific calculations"
 msgstr "単純な科学計算を実行します"
 
-#: ../src/callbacks.c:1015
+#: ../src/callbacks.c:1002
 msgid "save here"
 msgstr "ここに保存する"
 
-#: ../src/callbacks.c:1531
+#: ../src/callbacks.c:1518
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
 msgstr ""
 
-#: ../src/main.c:58
+#: ../src/main.c:59
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -153,14 +153,14 @@ msgstr ""
 "[%s] 設定ファイル: 設定ファイル %s へ保存または書き込むことができませんでし"
 "た。\n"
 
-#: ../src/display.c:406
+#: ../src/display.c:415
 #, fuzzy, c-format
 msgid ""
 "[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
 msgstr ""
 "[%s] 関数 \"get_display_number_string\" に不明な基数が渡されました。%s\n"
 
-#: ../src/display.c:574
+#: ../src/display.c:583
 #, fuzzy, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
 msgstr ""
@@ -190,32 +190,32 @@ msgstr "[%s] 関数 \"axtof\" で文字 %c の変換に失敗しました。%s\n
 msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
 msgstr "[%s] 関数 \"ftoax\" で数値 %f の変換に失敗しました。%s\n"
 
-#: ../src/general_functions.c:400
+#: ../src/general_functions.c:381
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr ""
 "[%s] 関数 \"activation_menu_item\" でウィジット %s が見つかりませんでし"
 "た。%s\n"
 
-#: ../src/general_functions.c:442
+#: ../src/general_functions.c:423
 msgid "unknown number base"
 msgstr "基数が不明です"
 
-#: ../src/general_functions.c:443
+#: ../src/general_functions.c:424
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
 msgstr ""
 "[%s] 関数 \"get_display_number_string\" に不明な基数が渡されました。%s\n"
 
-#: ../src/general_functions.c:464
+#: ../src/general_functions.c:445
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
 msgstr ""
 "[%s] 関数 \"get_display_number_length\" に不明な基数が渡されました。%s\n"
 
-#: ../src/general_functions.c:573
+#: ../src/general_functions.c:554
 #, fuzzy, c-format
 msgid ""
 "[%s] failed to convert %s to a number properly in function \"string2double"
@@ -225,37 +225,37 @@ msgstr ""
 "[%s] 関数 \"string2double\" の中で %s を適切な数値に変換できませんでした。ロ"
 "ケールを変更しました？ %s\n"
 
-#: ../src/general_functions.c:591
+#: ../src/general_functions.c:572
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr "[%s] 関数 \"string2double\" に不明な基数が渡されました。%s\n"
 
-#: ../src/general_functions.c:748
+#: ../src/general_functions.c:729
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr "[%s] 関数 \"x2rad\" に不明な角度の単位が渡されました。%s\n"
 
-#: ../src/general_functions.c:763
+#: ../src/general_functions.c:744
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr "[%s] 関数 \"rad2x\" に不明な角度の単位が渡されました。%s\n"
 
-#: ../src/general_functions.c:780
+#: ../src/general_functions.c:761
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr "[%s] 関数 \"get_sep\" に不明な基数が渡されました。%s\n"
 
-#: ../src/general_functions.c:797
+#: ../src/general_functions.c:778
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
 msgstr "[%s] 関数 \"get_sep_length\" に不明な基数が渡されました。%s\n"
 
-#: ../src/general_functions.c:814
+#: ../src/general_functions.c:795
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
 msgstr "[%s] 関数 \"get_sep_char\" に不明な基数が渡されました。%s\n"
 
-#: ../src/general_functions.c:882
+#: ../src/general_functions.c:863
 #, fuzzy
 msgid "unknown display option in function \"change_option\""
 msgstr ""
@@ -272,7 +272,7 @@ msgstr ""
 "フェースを構築するために必要です。正しくインストールされたか、さらにそのファ"
 "イルの権限をそれぞれ確認して下さい！\n"
 
-#: ../src/ui.c:437
+#: ../src/ui.c:453
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -283,74 +283,74 @@ msgstr ""
 "%s を使用すると問題が発生するかもしれません！ %s\n"
 ")"
 
-#: ../src/ui.c:898 ../ui/main_frame.ui.h:17
+#: ../src/ui.c:928 ../ui/main_frame.ui.h:17
 msgid "Show _menu bar"
 msgstr "メニュー・バーを表示する(_M)"
 
-#: ../src/ui.c:925
+#: ../src/ui.c:955
 #, c-format
 msgid "%s Preferences"
 msgstr "%s の設定"
 
-#: ../src/ui.c:1120 ../ui/scientific_buttons.ui.h:98
+#: ../src/ui.c:1163 ../ui/scientific_buttons.ui.h:98
 #: ../ui/basic_buttons.ui.h:43
 msgid "="
 msgstr "="
 
-#: ../src/ui.c:1120 ../src/ui.c:1132 ../ui/paper_view.ui.h:2
+#: ../src/ui.c:1163 ../src/ui.c:1175 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons.ui.h:99 ../ui/basic_buttons.ui.h:44
 msgid "Enter"
 msgstr "計算結果を算出します"
 
-#: ../src/ui.c:1122 ../ui/scientific_buttons.ui.h:17
+#: ../src/ui.c:1165 ../ui/scientific_buttons.ui.h:17
 msgid "x^y"
 msgstr "x^y"
 
-#: ../src/ui.c:1122 ../src/ui.c:1134 ../ui/scientific_buttons.ui.h:18
+#: ../src/ui.c:1165 ../src/ui.c:1177 ../ui/scientific_buttons.ui.h:18
 msgid "Power"
 msgstr "累乗を計算します"
 
-#: ../src/ui.c:1124 ../ui/scientific_buttons.ui.h:88
+#: ../src/ui.c:1167 ../ui/scientific_buttons.ui.h:88
 #: ../ui/basic_buttons.ui.h:33
 msgid "("
 msgstr "("
 
-#: ../src/ui.c:1124 ../ui/scientific_buttons.ui.h:89
+#: ../src/ui.c:1167 ../ui/scientific_buttons.ui.h:89
 #: ../ui/basic_buttons.ui.h:34
 msgid "Open Bracket"
 msgstr "開きカッコ"
 
-#: ../src/ui.c:1126 ../ui/scientific_buttons.ui.h:86
+#: ../src/ui.c:1169 ../ui/scientific_buttons.ui.h:86
 #: ../ui/basic_buttons.ui.h:31
 msgid ")"
 msgstr ")"
 
-#: ../src/ui.c:1126 ../ui/scientific_buttons.ui.h:87
+#: ../src/ui.c:1169 ../ui/scientific_buttons.ui.h:87
 #: ../ui/basic_buttons.ui.h:32
 msgid "Close Bracket"
 msgstr "閉じカッコ"
 
-#: ../src/ui.c:1132
+#: ../src/ui.c:1175
 msgid "ENT"
 msgstr "ENT"
 
-#: ../src/ui.c:1134
+#: ../src/ui.c:1177
 msgid "y^x"
 msgstr "y^x"
 
-#: ../src/ui.c:1136
+#: ../src/ui.c:1179
 msgid "x<>y"
 msgstr "x<>y"
 
-#: ../src/ui.c:1136
+#: ../src/ui.c:1179
 msgid "swap current number with top of stack"
 msgstr "現在の数値を一番上のスタックと交換します"
 
-#: ../src/ui.c:1138
+#: ../src/ui.c:1181
 msgid "roll"
 msgstr "roll"
 
-#: ../src/ui.c:1138
+#: ../src/ui.c:1181
 msgid "roll down stack"
 msgstr "スタックを下げます"
 
