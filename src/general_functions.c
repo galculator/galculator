@@ -251,16 +251,6 @@ void set_spinbutton (GtkBuilder *xml, char *spinbutton_name, void *value)
 	if (spin_button) gtk_spin_button_set_value (spin_button, *int_var);
 }
 
-void set_optmenu (GtkBuilder *xml, char *optmenu_name, void *index)
-{
-	GtkOptionMenu	*opt_menu;
-	int		*int_var;
-	
-	int_var = index;	
-	opt_menu = (GtkOptionMenu *) gtk_builder_get_object (xml, optmenu_name);
-	if (opt_menu) gtk_option_menu_set_history (opt_menu, *int_var);
-}
-
 /*
  *
  */

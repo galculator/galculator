@@ -1655,16 +1655,22 @@ gboolean paper_tree_view_selection_changed_cb (GtkWidget *widget,
     return FALSE;
 }
 
+#if !GTK_CHECK_VERSION(2, 18, 0)
+
+#define gtk_widget_get_sensitive(widget)    GTK_WIDGET_SENSITIVE(widget)
+
+#endif
+
 gboolean on_button_can_activate_accel (GtkWidget *widget, guint signal_id, gpointer user_data)
 {
-    if (!GTK_WIDGET_SENSITIVE(widget)) return FALSE;
+    if (!gtk_widget_get_sensitive(widget)) return FALSE;
     if (strcmp("clicked", g_signal_name(signal_id)) == 0) return TRUE;
     return FALSE;
 }
 
 gboolean on_menuitem_can_activate_accel (GtkWidget *widget, guint signal_id, gpointer user_data)
 {
-    if (!GTK_WIDGET_SENSITIVE(widget)) return FALSE;
+    if (!gtk_widget_get_sensitive(widget)) return FALSE;
     if (strcmp("activate", g_signal_name(signal_id)) == 0) return TRUE;
     return FALSE;
 }

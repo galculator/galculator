@@ -500,7 +500,17 @@ static void set_table_child_font (gpointer data, gpointer user_data)
 	/* if it's a normal button, w is now the label we want to font-change.
 	 * if it's a popup button, we have to get the most left child first.
 	 */
-	if (GTK_IS_BOX (w)) w = ((GtkBoxChild *)((((GtkBox *)w)->children)->data))->widget;
+	if (GTK_IS_BOX (w))
+    {
+        GList* children = gtk_container_get_children(GTK_CONTAINER(w));
+        if(children)
+        {
+            w = GTK_WIDGET(children->data);
+            g_list_free(children);
+        }
+        else
+            w = NULL;
+    }
 	if (GTK_IS_LABEL(w)) gtk_widget_modify_font (w, font);
 	/* else do nothing */
 }
@@ -766,6 +776,10 @@ void set_widget_visibility (GtkBuilder *xml, char *widget_name, gboolean visible
 
 /* menu code - e.g. used for the constant popup menu */
 
+#if !GTK_CHECK_VERSION(2, 18, 0)
+#define gtk_widget_get_visible(widget)  GTK_WIDGET_VISIBLE(widget)
+#endif
+
 void position_menu (GtkMenu *menu, 
 		gint *x, 
 		gint *y, 
@@ -804,7 +818,7 @@ void position_menu (GtkMenu *menu,
 	children = GTK_MENU_SHELL(menu)->children;
 	while (children) {
 		child = children->data;
-		if (GTK_WIDGET_VISIBLE (child))	{
+		if (gtk_widget_get_visible (child))	{
 			gtk_widget_get_child_requisition (child, &requisition);
 			menu_ypos -= requisition.height;
 		}
