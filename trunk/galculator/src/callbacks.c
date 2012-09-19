@@ -83,12 +83,8 @@ void
 on_about_activate                     (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
-    GtkWidget    *about_dialog;
-    GtkLabel    *about_label;
-    char        *about_text;
-
-    about_dialog = ui_about_dialog_create();
-    gtk_dialog_run (about_dialog);
+    GtkWidget *about_dialog = ui_about_dialog_create();
+    gtk_dialog_run (GTK_DIALOG(about_dialog));
 }
 
 /* this callback is called if a button for entering a number is clicked. There are two
@@ -150,7 +146,7 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
     /* do inverse left shift is a right shift */
     if ((current_token.operation == '<') && \
         (BIT (current_status.fmod, CS_FMOD_FLAG_INV) == 1)) {
-            tbutton = gtk_builder_get_object (button_box_xml, "button_inv");
+            tbutton = GTK_WIDGET(gtk_builder_get_object (button_box_xml, "button_inv"));
             gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
             current_token.operation = '>';
     }
@@ -471,23 +467,23 @@ on_basic_mode_toggled (GtkMenuItem     *menuitem,
     display_module_number_activate (CS_DEC);
     display_module_notation_activate (current_status.notation);
 
-    menu_item = gtk_builder_get_object (main_window_xml, "display_control");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "display_control"));
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menuitem), prefs.vis_dispctrl);
 
     update_active_buttons (current_status.number, current_status.notation);
-    menu_item = gtk_builder_get_object (main_window_xml, "functions");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "functions"));
     gtk_widget_set_sensitive (menu_item, FALSE);
-    menu_item = gtk_builder_get_object (main_window_xml, "logical");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "logical"));
     gtk_widget_set_sensitive (menu_item, FALSE);
-    menu_item = gtk_builder_get_object (main_window_xml, "standard");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "standard"));
     gtk_widget_set_sensitive (menu_item, FALSE);
-    menu_item = gtk_builder_get_object (main_window_xml, "base_units");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "base_units"));
     gtk_widget_set_sensitive (menu_item, FALSE);
-    menu_item = gtk_builder_get_object (main_window_xml, "angle_units");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "angle_units"));
     gtk_widget_set_sensitive (menu_item, FALSE);
-    menu_item = gtk_builder_get_object (main_window_xml, "buttons1");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "buttons1"));
     gtk_widget_set_sensitive (menu_item, TRUE);
-    menu_item = gtk_builder_get_object (main_window_xml, "notation");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "notation"));
     gtk_widget_set_sensitive (menu_item, TRUE);
     
     set_window_size_minimal();
@@ -516,28 +512,28 @@ on_scientific_mode_toggled (GtkMenuItem *menuitem,
     update_active_buttons (current_status.number, current_status.notation);
     update_dispctrl();
     
-    menu_item = gtk_builder_get_object (main_window_xml, "functions");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "functions"));
     gtk_widget_set_sensitive (menu_item, TRUE);
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_funcs);
     
-    menu_item = gtk_builder_get_object (main_window_xml, "display_control");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "display_control"));
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_dispctrl);
     
-    menu_item = gtk_builder_get_object (main_window_xml, "logical");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "logical"));
     gtk_widget_set_sensitive (menu_item, TRUE);
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_logic);
     
-    menu_item = gtk_builder_get_object (main_window_xml, "standard");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "standard"));
     gtk_widget_set_sensitive (menu_item, TRUE);
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_standard);
     
-    menu_item = gtk_builder_get_object (main_window_xml, "base_units");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "base_units"));
     gtk_widget_set_sensitive (menu_item, TRUE);
-    menu_item = gtk_builder_get_object (main_window_xml, "angle_units");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "angle_units"));
     gtk_widget_set_sensitive (menu_item, TRUE);
-    menu_item = gtk_builder_get_object (main_window_xml, "buttons1");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "buttons1"));
     gtk_widget_set_sensitive (menu_item, TRUE);
-    menu_item = gtk_builder_get_object (main_window_xml, "notation");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "notation"));
     gtk_widget_set_sensitive (menu_item, TRUE);
     
     set_window_size_minimal();
@@ -563,9 +559,9 @@ on_paper_mode_toggled (GtkMenuItem *menuitem,
     display_module_angle_activate (prefs.def_angle);
     
     /* update menus */
-    menu_item = gtk_builder_get_object (main_window_xml, "buttons1");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "buttons1"));
     gtk_widget_set_sensitive (menu_item, FALSE);
-    menu_item = gtk_builder_get_object (main_window_xml, "notation");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "notation"));
     gtk_widget_set_sensitive (menu_item, FALSE);
     
     set_window_size_minimal();
@@ -622,15 +618,15 @@ void user_function_list_selection_changed_cb (GtkTreeSelection *selection, gpoin
         if (gtk_tree_selection_get_selected (selection, &model, &current_list_iter))
         {
                 gtk_tree_model_get (model, &current_list_iter, UFUNC_NAME_COLUMN, &string, -1);
-        entry = gtk_builder_get_object (prefs_xml, "prefs_ufname_entry");
+        entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_ufname_entry"));
         gtk_entry_set_text ((GtkEntry *) entry, string);
                 g_free (string);
         gtk_tree_model_get (model, &current_list_iter, UFUNC_VARIABLE_COLUMN, &string, -1);
-        entry = gtk_builder_get_object (prefs_xml, "prefs_ufvar_entry");
+        entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_ufvar_entry"));
         gtk_entry_set_text ((GtkEntry *) entry, string);
                 g_free (string);
         gtk_tree_model_get (model, &current_list_iter, UFUNC_EXPRESSION_COLUMN, &string, -1);
-        entry = gtk_builder_get_object (prefs_xml, "prefs_ufexpr_entry");
+        entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_ufexpr_entry"));
         gtk_entry_set_text ((GtkEntry *) entry, string);
                 g_free (string);
         }
@@ -638,23 +634,23 @@ void user_function_list_selection_changed_cb (GtkTreeSelection *selection, gpoin
 
 void const_list_selection_changed_cb (GtkTreeSelection *selection, gpointer data)
 {
-        GtkTreeModel     *model;
-    char         *string;
-    GtkWidget    *entry;
+    GtkTreeModel    *model;
+    char            *string;
+    GtkWidget       *entry;
     GtkTreeIter     current_list_iter;
     
         if (gtk_tree_selection_get_selected (selection, &model, &current_list_iter))
         {
                 gtk_tree_model_get (model, &current_list_iter, CONST_NAME_COLUMN, &string, -1);
-        entry = gtk_builder_get_object (prefs_xml, "prefs_cname_entry");
+        entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_cname_entry"));
         gtk_entry_set_text ((GtkEntry *) entry, string);
                 g_free (string);
         gtk_tree_model_get (model, &current_list_iter, CONST_VALUE_COLUMN, &string, -1);
-        entry = gtk_builder_get_object (prefs_xml, "prefs_cvalue_entry");
+        entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_cvalue_entry"));
         gtk_entry_set_text ((GtkEntry *) entry, string);
                 g_free (string);
         gtk_tree_model_get (model, &current_list_iter, CONST_DESC_COLUMN, &string, -1);
-        entry = gtk_builder_get_object (prefs_xml, "prefs_cdesc_entry");
+        entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_cdesc_entry"));
         gtk_entry_set_text ((GtkEntry *) entry, string);
                 g_free (string);
         }
@@ -790,7 +786,7 @@ on_show_menubar1_toggled              (GtkMenuItem     *menuitem,
 #endif
 
     /* in case this cb is called by the right button mouse click menu */
-    menu_item = gtk_builder_get_object (main_window_xml, "show_menubar1");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "show_menubar1"));
     g_signal_handlers_block_by_func(menuitem, on_show_menubar1_toggled, user_data);
     gtk_check_menu_item_set_active ((GtkCheckMenuItem *) menu_item, prefs.show_menu);
     g_signal_handlers_unblock_by_func(menuitem, on_show_menubar1_toggled, user_data);
@@ -805,10 +801,10 @@ on_prefs_custom_button_font_toggled    (GtkToggleButton *togglebutton,
     
     prefs.custom_button_font = gtk_toggle_button_get_active (togglebutton);
     
-    w = gtk_builder_get_object (prefs_xml, "prefs_button_font_label");
+    w = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_button_font_label"));
     gtk_widget_set_sensitive (w, prefs.custom_button_font);
     
-    w = gtk_builder_get_object (prefs_xml, "prefs_button_font");
+    w = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_button_font"));
     gtk_widget_set_sensitive (w, prefs.custom_button_font);
     
     if (prefs.custom_button_font == TRUE) button_font = g_strdup (prefs.button_font);
@@ -985,9 +981,9 @@ void ms_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
      * to show. now, as there is sth, enable them. see also 
      * ui.c::ui_main_window_buttons_create
      */
-    button = gtk_builder_get_object (button_box_xml, "button_MR");
+    button = GTK_WIDGET(gtk_builder_get_object (button_box_xml, "button_MR"));
     gtk_widget_set_sensitive (button, TRUE);
-    button = gtk_builder_get_object (button_box_xml, "button_Mplus");
+    button = GTK_WIDGET(gtk_builder_get_object (button_box_xml, "button_Mplus"));
     gtk_widget_set_sensitive (button, TRUE);
     
     current_status.calc_entry_start_new = TRUE;
@@ -1108,11 +1104,11 @@ void on_prefs_ufclear_clicked (GtkButton *button, gpointer user_data)
 {
     GtkWidget    *entry;
     
-    entry = gtk_builder_get_object (prefs_xml, "prefs_ufname_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_ufname_entry"));
     gtk_entry_set_text ((GtkEntry *) entry, "");
-        entry = gtk_builder_get_object (prefs_xml, "prefs_ufvar_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_ufvar_entry"));
     gtk_entry_set_text ((GtkEntry *) entry, "");
-        entry = gtk_builder_get_object (prefs_xml, "prefs_ufexpr_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_ufexpr_entry"));
     gtk_entry_set_text ((GtkEntry *) entry, "");
 }
 
@@ -1123,11 +1119,11 @@ void on_prefs_ufadd_clicked (GtkButton *button, gpointer user_data)
     int            nr_user_functions;
     char             *name, *value, *desc;
     
-    entry = gtk_builder_get_object (prefs_xml, "prefs_ufname_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_ufname_entry"));
     name = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
-        entry = gtk_builder_get_object (prefs_xml, "prefs_ufvar_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_ufvar_entry"));
     value = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
-        entry = gtk_builder_get_object (prefs_xml, "prefs_ufexpr_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_ufexpr_entry"));
     desc = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
     
     if ((strlen(name) == 0) || (strlen(value) == 0) || (strlen(desc) == 0)) {
@@ -1195,11 +1191,11 @@ void on_prefs_ufupdate_clicked (GtkButton *button, gpointer user_data)
         &current_list_iter);
     index = *(gtk_tree_path_get_indices (path));
     
-    entry = gtk_builder_get_object (prefs_xml, "prefs_ufname_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_ufname_entry"));
     user_function[index].name = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
-        entry = gtk_builder_get_object (prefs_xml, "prefs_ufvar_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_ufvar_entry"));
     user_function[index].variable = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
-        entry = gtk_builder_get_object (prefs_xml, "prefs_ufexpr_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_ufexpr_entry"));
     user_function[index].expression = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
     
     gtk_list_store_set (prefs_user_function_store, &current_list_iter, 
@@ -1213,11 +1209,11 @@ void on_prefs_cclear_clicked (GtkButton *button, gpointer user_data)
 {
     GtkWidget    *entry;
     
-    entry = gtk_builder_get_object (prefs_xml, "prefs_cname_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_cname_entry"));
     gtk_entry_set_text ((GtkEntry *) entry, "");
-        entry = gtk_builder_get_object (prefs_xml, "prefs_cvalue_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_cvalue_entry"));
     gtk_entry_set_text ((GtkEntry *) entry, "");
-        entry = gtk_builder_get_object (prefs_xml, "prefs_cdesc_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_cdesc_entry"));
     gtk_entry_set_text ((GtkEntry *) entry, "");
 }
 
@@ -1228,11 +1224,11 @@ void on_prefs_cadd_clicked (GtkButton *button, gpointer user_data)
     int            nr_consts;
     char             *name, *value, *desc;
     
-    entry = gtk_builder_get_object (prefs_xml, "prefs_cname_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_cname_entry"));
     name = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
-        entry = gtk_builder_get_object (prefs_xml, "prefs_cvalue_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_cvalue_entry"));
     value = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
-        entry = gtk_builder_get_object (prefs_xml, "prefs_cdesc_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_cdesc_entry"));
     desc = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
     
     if ((strlen(name) == 0) || (strlen(value) == 0) || (strlen(desc) == 0)) {
@@ -1299,11 +1295,11 @@ void on_prefs_cupdate_clicked (GtkButton *button, gpointer user_data)
         &current_list_iter);
     index = *(gtk_tree_path_get_indices (path));
     
-    entry = gtk_builder_get_object (prefs_xml, "prefs_cname_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_cname_entry"));
     constant[index].name = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
-        entry = gtk_builder_get_object (prefs_xml, "prefs_cvalue_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_cvalue_entry"));
     constant[index].value = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
-        entry = gtk_builder_get_object (prefs_xml, "prefs_cdesc_entry");
+    entry = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_cdesc_entry"));
     constant[index].desc = g_strdup (gtk_entry_get_text ((GtkEntry *) entry));
     
     gtk_list_store_set (prefs_constant_store, &current_list_iter, 
@@ -1359,7 +1355,7 @@ void on_prefs_bin_fixed_toggled (GtkToggleButton *togglebutton,
     GtkWidget    *w;
     
     prefs.bin_fixed = gtk_toggle_button_get_active (togglebutton);
-    w = gtk_builder_get_object (prefs_xml, "prefs_bin_length");
+    w = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_bin_length"));
     gtk_widget_set_sensitive (w, prefs.bin_fixed);
 }
 
@@ -1372,44 +1368,44 @@ void on_prefs_bin_length_value_changed (GtkSpinButton *spinbutton,
 
 void on_prefs_menu_dec_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-    gtk_widget_show (gtk_builder_get_object (prefs_xml, "prefs_vbox_dec"));
-    gtk_widget_hide (gtk_builder_get_object (prefs_xml, "prefs_vbox_hex"));
-    gtk_widget_hide (gtk_builder_get_object (prefs_xml, "prefs_vbox_oct"));
-    gtk_widget_hide (gtk_builder_get_object (prefs_xml, "prefs_vbox_bin"));
+    gtk_widget_show (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_dec")));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_hex")));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_oct")));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_bin")));
 }
             
 void on_prefs_menu_hex_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-    gtk_widget_hide (gtk_builder_get_object (prefs_xml, "prefs_vbox_dec"));
-    gtk_widget_show (gtk_builder_get_object (prefs_xml, "prefs_vbox_hex"));
-    gtk_widget_hide (gtk_builder_get_object (prefs_xml, "prefs_vbox_oct"));
-    gtk_widget_hide (gtk_builder_get_object (prefs_xml, "prefs_vbox_bin"));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_dec")));
+    gtk_widget_show (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_hex")));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_oct")));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_bin")));
 }
             
 void on_prefs_menu_oct_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-    gtk_widget_hide (gtk_builder_get_object (prefs_xml, "prefs_vbox_dec"));
-    gtk_widget_hide (gtk_builder_get_object (prefs_xml, "prefs_vbox_hex"));
-    gtk_widget_show (gtk_builder_get_object (prefs_xml, "prefs_vbox_oct"));
-    gtk_widget_hide (gtk_builder_get_object (prefs_xml, "prefs_vbox_bin"));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_dec")));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_hex")));
+    gtk_widget_show (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_oct")));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_bin")));
 }
             
 void on_prefs_menu_bin_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
-    gtk_widget_hide (gtk_builder_get_object (prefs_xml, "prefs_vbox_dec"));
-    gtk_widget_hide (gtk_builder_get_object (prefs_xml, "prefs_vbox_hex"));
-    gtk_widget_hide (gtk_builder_get_object (prefs_xml, "prefs_vbox_oct"));
-    gtk_widget_show (gtk_builder_get_object (prefs_xml, "prefs_vbox_bin"));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_dec")));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_hex")));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_oct")));
+    gtk_widget_show (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_bin")));
 }
 
 void on_prefs_dec_sep_toggled (GtkToggleButton *togglebutton, 
                     gpointer user_data)
 {
     prefs.dec_sep = gtk_toggle_button_get_active (togglebutton);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_dec_sep_char_label"), prefs.dec_sep);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_dec_sep_char"), prefs.dec_sep);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_dec_sep_length_label"), prefs.dec_sep);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_dec_sep_length"), prefs.dec_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_dec_sep_char_label")), prefs.dec_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_dec_sep_char")), prefs.dec_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_dec_sep_length_label")), prefs.dec_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_dec_sep_length")), prefs.dec_sep);
     display_result_getset();
 }
 
@@ -1417,10 +1413,10 @@ void on_prefs_hex_sep_toggled (GtkToggleButton *togglebutton,
                     gpointer user_data)
 {
     prefs.hex_sep = gtk_toggle_button_get_active (togglebutton);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_hex_sep_char_label"), prefs.hex_sep);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_hex_sep_char"), prefs.hex_sep);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_hex_sep_length_label"), prefs.hex_sep);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_hex_sep_length"), prefs.hex_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_hex_sep_char_label")), prefs.hex_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_hex_sep_char")), prefs.hex_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_hex_sep_length_label")), prefs.hex_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_hex_sep_length")), prefs.hex_sep);
     display_result_getset();
 }
 
@@ -1428,10 +1424,10 @@ void on_prefs_oct_sep_toggled (GtkToggleButton *togglebutton,
                     gpointer user_data)
 {
     prefs.oct_sep = gtk_toggle_button_get_active (togglebutton);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_oct_sep_char_label"), prefs.oct_sep);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_oct_sep_char"), prefs.oct_sep);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_oct_sep_length_label"), prefs.oct_sep);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_oct_sep_length"), prefs.oct_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_oct_sep_char_label")), prefs.oct_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_oct_sep_char")), prefs.oct_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_oct_sep_length_label")), prefs.oct_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_oct_sep_length")), prefs.oct_sep);
     display_result_getset();
 }
 
@@ -1439,10 +1435,10 @@ void on_prefs_bin_sep_toggled (GtkToggleButton *togglebutton,
                     gpointer user_data)
 {
     prefs.bin_sep = gtk_toggle_button_get_active (togglebutton);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_bin_sep_char_label"), prefs.bin_sep);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_bin_sep_char"), prefs.bin_sep);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_bin_sep_length_label"), prefs.bin_sep);
-    gtk_widget_set_sensitive (gtk_builder_get_object (prefs_xml, "prefs_bin_sep_length"), prefs.bin_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_bin_sep_char_label")), prefs.bin_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_bin_sep_char")), prefs.bin_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_bin_sep_length_label")), prefs.bin_sep);
+    gtk_widget_set_sensitive (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_bin_sep_length")), prefs.bin_sep);
     display_result_getset();
 }
 
@@ -1630,7 +1626,7 @@ gboolean paper_tree_view_selection_changed_cb (GtkWidget *widget,
             stripped_string = g_strdup(string);
             pango_parse_markup (string, -1, 0, NULL, &stripped_string, NULL, NULL);
             g_free (string);
-            entry = gtk_builder_get_object (view_xml, "paper_entry");
+            entry = GTK_WIDGET(gtk_builder_get_object (view_xml, "paper_entry"));
             position = gtk_editable_get_position (GTK_EDITABLE(entry));
             gtk_editable_insert_text (GTK_EDITABLE (entry), stripped_string, strlen(stripped_string), &position);
             /* set position after currently inserted text */
