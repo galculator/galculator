@@ -80,8 +80,7 @@ static GtkBuilder *gtk_builder_file_open (char *filename, gboolean fatal)
 {
 	GtkBuilder	*xml = gtk_builder_new();
     GError* error = NULL;
-    GtkWidget* root, *parent;
-    gboolean success;
+
     /* gtk_builder_set_translation_domain(xml, NULL); */
 	if(!gtk_builder_add_from_file(xml, filename, &error))
     {
@@ -262,8 +261,8 @@ static void free_accel_group(GtkWidget* widget, gpointer user_data)
     GtkAccelGroup* accel_group = GTK_ACCEL_GROUP(user_data);
     if(main_window_xml)
     {
-        GtkWidget* toplevel = gtk_builder_get_object(main_window_xml, "main_window");
-        gtk_window_remove_accel_group(toplevel, accel_group);
+        GtkWidget* toplevel = GTK_WIDGET(gtk_builder_get_object(main_window_xml, "main_window"));
+        gtk_window_remove_accel_group(GTK_WINDOW(toplevel), accel_group);
     }
 }
 
@@ -280,7 +279,7 @@ static void ui_pack_from_xml (GtkWidget *box,
 				gboolean expand,
 				gboolean fill)
 {
-	GtkWidget	*child_widget=NULL, *accel_child_widget=NULL;
+    GtkWidget	*child_widget=NULL;
     GtkWidget  *parent, *child_toplevel;
 	GtkAccelGroup	*accel_group=NULL;
 	GSList		*accel_list=NULL;
@@ -288,7 +287,7 @@ static void ui_pack_from_xml (GtkWidget *box,
 	/* at first connect signal handlers */
 	gtk_builder_connect_signals (child_xml, NULL);
 	/* next, get the "root" child */
-	child_widget = gtk_builder_get_object (child_xml, child_name);
+    child_widget = GTK_WIDGET(gtk_builder_get_object (child_xml, child_name));
 
 	/* we have to add the accel_group of child to the main_window in order
 	 * to get working accelerators.
@@ -296,7 +295,7 @@ static void ui_pack_from_xml (GtkWidget *box,
     parent = gtk_widget_get_parent(child_widget);
     g_assert(parent != NULL);
     child_toplevel = gtk_widget_get_toplevel(parent);
-    accel_list = gtk_accel_groups_from_object(child_toplevel);
+    accel_list = gtk_accel_groups_from_object(G_OBJECT(child_toplevel));
 	if (accel_list)
     {
         accel_group = GTK_ACCEL_GROUP(accel_list->data);
@@ -310,7 +309,7 @@ static void ui_pack_from_xml (GtkWidget *box,
 
     /* reparent the child widget */
     g_object_ref(child_widget);
-    gtk_container_remove(parent, child_widget);
+    gtk_container_remove(GTK_CONTAINER(parent), child_widget);
 	gtk_box_pack_start ((GtkBox *) box, child_widget, expand, fill, 0);
     g_object_unref(child_widget);
 
@@ -345,7 +344,7 @@ void create_hildon_menu (HildonWindow *main_window)
 {
     GtkWidget *main_menu;
     
-    main_menu = gtk_builder_get_object (main_window_xml, "main_menu");
+    main_menu = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "main_menu"));
     hildon_window_set_menu(HILDON_WINDOW(main_window), GTK_MENU(main_menu));
     gtk_widget_show_all(GTK_WIDGET(main_menu));
 }
@@ -362,7 +361,7 @@ void ui_main_window_set_dispctrl (int location)
 	s_signal_cb	signal_cb;
 	/* destroy any existing display controls */
 	if (dispctrl_xml) {
-		table_dispctrl = gtk_builder_get_object (dispctrl_xml, "table_dispctrl");
+        table_dispctrl = GTK_WIDGET(gtk_builder_get_object (dispctrl_xml, "table_dispctrl"));
 		if (table_dispctrl) gtk_widget_destroy (table_dispctrl); 
 		g_object_unref (G_OBJECT(dispctrl_xml));
 		dispctrl_xml = NULL;
@@ -370,17 +369,17 @@ void ui_main_window_set_dispctrl (int location)
 	/* now create the new one at location */
 	switch(location) {
 		case DISPCTRL_BOTTOM:
-			box = gtk_builder_get_object (view_xml, "display_vbox");
+            box = GTK_WIDGET(gtk_builder_get_object (view_xml, "display_vbox"));
 			dispctrl_xml = gtk_builder_file_open (DISPCTRL_BOTTOM_GLADE_FILE, TRUE);
 			ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl", TRUE, TRUE);
 			break;
 		case DISPCTRL_RIGHT:
-			box = gtk_builder_get_object (view_xml, "display_hbox");
+            box = GTK_WIDGET(gtk_builder_get_object (view_xml, "display_hbox"));
 			dispctrl_xml = gtk_builder_file_open (DISPCTRL_RIGHT_GLADE_FILE, TRUE);
 			ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl", FALSE, FALSE);
 			break;
 		case DISPCTRL_RIGHTV:
-			box = gtk_builder_get_object (view_xml, "display_hbox");
+            box = GTK_WIDGET(gtk_builder_get_object (view_xml, "display_hbox"));
 			dispctrl_xml = gtk_builder_file_open (DISPCTRL_RIGHTV_GLADE_FILE, TRUE);
 			ui_pack_from_xml (box, 1, dispctrl_xml, "table_dispctrl", FALSE, FALSE);
 			break;
@@ -406,7 +405,7 @@ void ui_main_window_buttons_destroy ()
 	GtkWidget	*box;
 	
 	if (!button_box_xml) return;
-	box = gtk_builder_get_object (button_box_xml, "button_box");
+    box = GTK_WIDGET(gtk_builder_get_object (button_box_xml, "button_box"));
 	if (box) gtk_widget_destroy (box);
     g_object_unref(button_box_xml);
     button_box_xml = NULL;
@@ -426,14 +425,14 @@ void ui_main_window_buttons_create (int mode)
 	case BASIC_MODE:
 		if (button_box_xml) g_object_unref (G_OBJECT(button_box_xml));
 		button_box_xml = gtk_builder_file_open (BASIC_GLADE_FILE, TRUE);
-		box = gtk_builder_get_object (view_xml, "classic_view_vbox");
+        box = GTK_WIDGET(gtk_builder_get_object (view_xml, "classic_view_vbox"));
 		ui_pack_from_xml (box, 2, button_box_xml, "button_box", TRUE, TRUE);
 		set_basic_object_data (button_box_xml);
 		break;
 	case SCIENTIFIC_MODE:
 		if (button_box_xml) g_object_unref (G_OBJECT(button_box_xml));
 		button_box_xml = gtk_builder_file_open (SCIENTIFIC_GLADE_FILE, TRUE);
-		box = gtk_builder_get_object (view_xml, "classic_view_vbox");
+        box = GTK_WIDGET(gtk_builder_get_object (view_xml, "classic_view_vbox"));
 		ui_pack_from_xml (box, 2, button_box_xml, "button_box", TRUE, TRUE);
 		set_scientific_object_data (button_box_xml);
 		break;
@@ -456,12 +455,12 @@ is not supported: >%s<\nYou might face problems when using %s! %s\n)"),
 		PACKAGE, locale_settings->decimal_point, PROG_NAME, BUG_REPORT);
 	} else dec_point[0] = locale_settings->decimal_point[0];
 	dec_point[1] = '\0';
-	gtk_button_set_label ((GtkButton *) gtk_builder_get_object (
-		button_box_xml, "button_point"), dec_point);
+    gtk_button_set_label ((GtkButton *) GTK_WIDGET(gtk_builder_get_object (
+        button_box_xml, "button_point")), dec_point);
 	/* disable mr and m+ button if there is nothing to display */
-	button = gtk_builder_get_object (button_box_xml, "button_MR");
+    button = GTK_WIDGET(gtk_builder_get_object (button_box_xml, "button_MR"));
 	gtk_widget_set_sensitive (button, memory.len > 0);
-	button = gtk_builder_get_object (button_box_xml, "button_Mplus");
+    button = GTK_WIDGET(gtk_builder_get_object (button_box_xml, "button_Mplus"));
 	gtk_widget_set_sensitive (button, memory.len > 0);
 	
 	/* apply button specific prefs */
@@ -583,8 +582,7 @@ static void set_all_dispctrl_buttons_property (GtkCallback func, gpointer data)
 
 	if (!dispctrl_xml) return;
 	/* at first the display control table. always there; somehow */
-	table = (GtkTable *) gtk_builder_get_object (dispctrl_xml, 
-		"table_dispctrl");
+    table = (GtkTable *) GTK_WIDGET(gtk_builder_get_object (dispctrl_xml, "table_dispctrl"));
 	if (!table) return;
     
     table_children = gtk_container_get_children(GTK_CONTAINER(table));
@@ -606,19 +604,15 @@ static void set_all_normal_buttons_property (GtkCallback func, gpointer data)
 	/* now depending on mode the remaining buttons */
 	switch (prefs.mode) {
 	case BASIC_MODE:
-		table = (GtkTable *) gtk_builder_get_object (button_box_xml, 
-			"table_buttons");
+        table = (GtkTable *) GTK_WIDGET(gtk_builder_get_object (button_box_xml, "table_buttons"));
 		gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
 		break;
 	case SCIENTIFIC_MODE:
-		table = (GtkTable *) gtk_builder_get_object (button_box_xml, 
-			"table_standard_buttons");
+        table = (GtkTable *) GTK_WIDGET(gtk_builder_get_object (button_box_xml, "table_standard_buttons"));
 		gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
-		table = (GtkTable *) gtk_builder_get_object (button_box_xml, 
-			"table_bin_buttons");
+        table = (GtkTable *) GTK_WIDGET(gtk_builder_get_object (button_box_xml, "table_bin_buttons"));
 		gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
-		table = (GtkTable *) gtk_builder_get_object (button_box_xml, 
-			"table_func_buttons");
+        table = (GtkTable *) GTK_WIDGET(gtk_builder_get_object (button_box_xml, "table_func_buttons"));
 		gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
 		break;
 	case PAPER_MODE:
@@ -651,7 +645,7 @@ void set_all_buttons_size (int width, int height)
 	set_all_buttons_property (set_table_child_size, (gpointer) &size);
 		
 	gtk_window_resize ((GtkWindow *) gtk_widget_get_toplevel(
-			(GtkWidget *) gtk_builder_get_object (main_window_xml, "main_window")), 1, 1);
+            GTK_WIDGET(gtk_builder_get_object (main_window_xml, "main_window"))), 1, 1);
 }
 
 void set_all_normal_buttons_tip ()
@@ -744,8 +738,7 @@ void update_active_buttons (int number_base, int notation_mode)
 	/* state = (1 << number_base) | (1 << (notation_mode + NR_NUMBER_BASES)); */
 	state = 1 << number_base;
 	while (active_buttons[counter].button_name != NULL) {
-		current_button = gtk_builder_get_object (button_box_xml, 
-			active_buttons[counter].button_name);
+        current_button = GTK_WIDGET(gtk_builder_get_object (button_box_xml, active_buttons[counter].button_name));
 		if (current_button == NULL) {
 			counter++;
 			continue;
@@ -780,7 +773,7 @@ void set_widget_visibility (GtkBuilder *xml, char *widget_name, gboolean visible
 {
 	GtkWidget	*widget;
 	/* g_print("set visible: %s: %d\n", widget_name, visible); */
-	widget = gtk_builder_get_object (xml, widget_name);
+    widget = GTK_WIDGET(gtk_builder_get_object (xml, widget_name));
 	if (!widget) {
 		error_message ("Couldn't find widget \"%s\" in \"set_widget_visibility\"", widget_name);
 		return;
@@ -950,7 +943,7 @@ GtkWidget *ui_pref_dialog_create ()
 	prefs_xml = gtk_builder_file_open (PREFS_GLADE_FILE, FALSE);
 	gtk_builder_connect_signals(prefs_xml, NULL);
 	
-	prefs_dialog = gtk_builder_get_object (prefs_xml, "prefs_dialog");
+    prefs_dialog = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_dialog"));
 	
 	gtk_window_set_title ((GtkWindow *)prefs_dialog, \
 		g_strdup_printf (_("%s Preferences"), PACKAGE));
@@ -966,13 +959,13 @@ GtkWidget *ui_pref_dialog_create ()
 		counter++;
 	}
 
-	w = gtk_builder_get_object (prefs_xml, "prefs_button_font_label");
+    w = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_button_font_label"));
 	gtk_widget_set_sensitive (w, prefs.custom_button_font);
 	
-	w = gtk_builder_get_object (prefs_xml, "prefs_button_font");
+    w = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_button_font"));
 	gtk_widget_set_sensitive (w, prefs.custom_button_font);
 	
-	w = gtk_builder_get_object (prefs_xml, "prefs_bin_length");
+    w = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_bin_length"));
 	gtk_widget_set_sensitive (w, prefs.bin_fixed);
 	
 	/* make user defined constants list. */
@@ -989,7 +982,7 @@ GtkWidget *ui_pref_dialog_create ()
 			-1);
 		counter++;
 	}
-	tree_view = gtk_builder_get_object (prefs_xml, "constant_treeview");
+    tree_view = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "constant_treeview"));
 	gtk_tree_view_set_model ((GtkTreeView *) tree_view, 
 		GTK_TREE_MODEL (prefs_constant_store));
 	renderer = gtk_cell_renderer_text_new ();
@@ -1021,7 +1014,7 @@ GtkWidget *ui_pref_dialog_create ()
 			-1);
 		counter++;
 	}
-	tree_view = gtk_builder_get_object (prefs_xml, "user_function_treeview");
+    tree_view = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "user_function_treeview"));
 	gtk_tree_view_set_model ((GtkTreeView *) tree_view, 
 		GTK_TREE_MODEL (prefs_user_function_store));
 	renderer = gtk_cell_renderer_text_new ();
@@ -1043,32 +1036,32 @@ GtkWidget *ui_pref_dialog_create ()
 	/* pack widget of same size into GtkSizeGroup */
 
 	sgroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-	gtk_size_group_add_widget (sgroup, 
-		gtk_builder_get_object (prefs_xml, "prefs_button_font_label"));
-	gtk_size_group_add_widget (sgroup,
-		gtk_builder_get_object (prefs_xml, "prefs_button_width_label"));
-	gtk_size_group_add_widget (sgroup,
-		gtk_builder_get_object (prefs_xml, "prefs_button_height_label"));
+    gtk_size_group_add_widget (sgroup, GTK_WIDGET(
+        gtk_builder_get_object (prefs_xml, "prefs_button_font_label")));
+    gtk_size_group_add_widget (sgroup, GTK_WIDGET(
+        gtk_builder_get_object (prefs_xml, "prefs_button_width_label")));
+    gtk_size_group_add_widget (sgroup, GTK_WIDGET(
+        gtk_builder_get_object (prefs_xml, "prefs_button_height_label")));
 	
 	sgroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-	gtk_size_group_add_widget (sgroup, 
-		gtk_builder_get_object (prefs_xml, "prefs_const_add_button"));
-	gtk_size_group_add_widget (sgroup,
-		gtk_builder_get_object (prefs_xml, "prefs_const_update_button"));
-	gtk_size_group_add_widget (sgroup,
-		gtk_builder_get_object (prefs_xml, "prefs_const_delete_button"));
-	gtk_size_group_add_widget (sgroup,
-		gtk_builder_get_object (prefs_xml, "prefs_const_clear_button"));
+    gtk_size_group_add_widget (sgroup, GTK_WIDGET(
+        gtk_builder_get_object (prefs_xml, "prefs_const_add_button")));
+    gtk_size_group_add_widget (sgroup, GTK_WIDGET(
+        gtk_builder_get_object (prefs_xml, "prefs_const_update_button")));
+    gtk_size_group_add_widget (sgroup, GTK_WIDGET(
+        gtk_builder_get_object (prefs_xml, "prefs_const_delete_button")));
+    gtk_size_group_add_widget (sgroup, GTK_WIDGET(
+        gtk_builder_get_object (prefs_xml, "prefs_const_clear_button")));
 	
 	sgroup = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-	gtk_size_group_add_widget (sgroup, 
-		gtk_builder_get_object (prefs_xml, "prefs_func_add_button"));
-	gtk_size_group_add_widget (sgroup,
-		gtk_builder_get_object (prefs_xml, "prefs_func_update_button"));
-	gtk_size_group_add_widget (sgroup,
-		gtk_builder_get_object (prefs_xml, "prefs_func_delete_button"));
-	gtk_size_group_add_widget (sgroup,
-		gtk_builder_get_object (prefs_xml, "prefs_func_clear_button"));
+    gtk_size_group_add_widget (sgroup, GTK_WIDGET(
+        gtk_builder_get_object (prefs_xml, "prefs_func_add_button")));
+    gtk_size_group_add_widget (sgroup, GTK_WIDGET(
+        gtk_builder_get_object (prefs_xml, "prefs_func_update_button")));
+    gtk_size_group_add_widget (sgroup, GTK_WIDGET(
+        gtk_builder_get_object (prefs_xml, "prefs_func_delete_button")));
+    gtk_size_group_add_widget (sgroup, GTK_WIDGET(
+        gtk_builder_get_object (prefs_xml, "prefs_func_clear_button")));
 	
 	gtk_widget_show (prefs_dialog);
 	return prefs_dialog;
@@ -1088,7 +1081,7 @@ void ui_formula_entry_activate ()
 {
 	GtkWidget	*formula_entry;
 	
-	formula_entry = gtk_builder_get_object (view_xml, "formula_entry");
+    formula_entry = GTK_WIDGET(gtk_builder_get_object (view_xml, "formula_entry"));
 	gtk_widget_activate(formula_entry);
 }
 
@@ -1097,7 +1090,7 @@ void ui_formula_entry_set (G_CONST_RETURN gchar *text)
 	GtkWidget	*formula_entry;
 
 	if (text == NULL) return;
-	formula_entry = gtk_builder_get_object (view_xml, "formula_entry");
+    formula_entry = GTK_WIDGET(gtk_builder_get_object (view_xml, "formula_entry"));
 	gtk_entry_set_text ((GtkEntry *) formula_entry, text);
 }
 
@@ -1107,7 +1100,7 @@ void ui_formula_entry_insert (G_CONST_RETURN gchar *text)
 	int		position;
 	
 	if (text == NULL) return;
-	formula_entry = gtk_builder_get_object (view_xml, "formula_entry");
+    formula_entry = GTK_WIDGET(gtk_builder_get_object (view_xml, "formula_entry"));
 	position = gtk_editable_get_position ((GtkEditable *) formula_entry);
 	gtk_editable_insert_text ((GtkEditable *) formula_entry, text, -1,
                                              &position);
@@ -1118,7 +1111,7 @@ void ui_formula_entry_backspace ()
 {
 	GtkWidget	*formula_entry;
 	
-	formula_entry = gtk_builder_get_object (view_xml, "formula_entry");
+    formula_entry = GTK_WIDGET(gtk_builder_get_object (view_xml, "formula_entry"));
 	gtk_editable_delete_text ((GtkEditable *) formula_entry, 
 		strlen(gtk_entry_get_text((GtkEntry *) formula_entry)) - 1, -1);
 }
@@ -1132,7 +1125,7 @@ void ui_formula_entry_state (gboolean error)
 	GtkWidget		*formula_entry;
 #if GTK_CHECK_VERSION(3, 0, 0)
     GdkRGBA color, *pcolor = NULL;
-	formula_entry = gtk_builder_get_object (view_xml, "formula_entry");
+    formula_entry = GTK_WIDGET(gtk_builder_get_object (view_xml, "formula_entry"));
 	if (error) {
 		gdk_rgba_parse (&color, "red");
         pcolor = &color;
@@ -1144,7 +1137,7 @@ void ui_formula_entry_state (gboolean error)
 
 #else
 	GdkColor color, *pcolor = NULL;
-	formula_entry = gtk_builder_get_object (view_xml, "formula_entry");
+    formula_entry = GTK_WIDGET(gtk_builder_get_object (view_xml, "formula_entry"));
 	if (error) {
 		gdk_color_parse ("red", &color);
         pcolor = &color;
@@ -1186,9 +1179,9 @@ void ui_relax_fmod_buttons ()
 {
 	GtkWidget	*tbutton;
 	
-	tbutton = gtk_builder_get_object (button_box_xml, "button_inv");
+    tbutton = GTK_WIDGET(gtk_builder_get_object (button_box_xml, "button_inv"));
 	gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
-	tbutton = gtk_builder_get_object (button_box_xml, "button_hyp");
+    tbutton = GTK_WIDGET(gtk_builder_get_object (button_box_xml, "button_hyp"));
 	gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
 }
 
@@ -1198,14 +1191,14 @@ void ui_classic_view_create()
 
 	/* at first, check if there is already a classic view */
 	if (classic_view_xml) {
-		classic_view_vbox = gtk_builder_get_object (classic_view_xml, "classic_view_vbox");
+        classic_view_vbox = GTK_WIDGET(gtk_builder_get_object (classic_view_xml, "classic_view_vbox"));
         g_assert(classic_view_xml != NULL);
 		if (classic_view_vbox) return;
 	}
 
 	/* if not, build one */
 	classic_view_xml = gtk_builder_file_open (CLASSIC_VIEW_GLADE_FILE, TRUE);
-	box = gtk_builder_get_object (main_window_xml, "window_vbox");
+    box = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "window_vbox"));
 	ui_pack_from_xml (box, 1, classic_view_xml, "classic_view_vbox", TRUE, TRUE);
     view_xml = classic_view_xml;
 	
@@ -1219,7 +1212,7 @@ void ui_classic_view_destroy()
 	GtkWidget	*classic_view_vbox;
 	
 	if (!classic_view_xml) return;
-	classic_view_vbox = gtk_builder_get_object (classic_view_xml, "classic_view_vbox");
+    classic_view_vbox = GTK_WIDGET(gtk_builder_get_object (classic_view_xml, "classic_view_vbox"));
 	if (classic_view_vbox) gtk_widget_destroy (classic_view_vbox);
     g_object_unref(classic_view_xml);
     classic_view_xml = NULL;
@@ -1235,20 +1228,20 @@ void ui_paper_view_create()
 
 	/* at first, check if there is already a ng view */
 	if (paper_view_xml) {
-		paper_view_vbox = gtk_builder_get_object (paper_view_xml, "paper_view_vbox");
+        paper_view_vbox = GTK_WIDGET(gtk_builder_get_object (paper_view_xml, "paper_view_vbox"));
         g_assert(paper_view_vbox != NULL);
 		if (paper_view_vbox) return;
 	}
 	
 	/* if not, build one */
 	paper_view_xml = gtk_builder_file_open (PAPER_VIEW_GLADE_FILE, TRUE);
-	box = gtk_builder_get_object (main_window_xml, "window_vbox");
+    box = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "window_vbox"));
 	ui_pack_from_xml (box, 1, paper_view_xml, "paper_view_vbox", TRUE, TRUE);
     view_xml = paper_view_xml;
 	
 	/* markup / xalign / foreground */
 	paper_store = gtk_list_store_new (3, G_TYPE_STRING, G_TYPE_FLOAT, G_TYPE_STRING);
-	tree_view = gtk_builder_get_object (view_xml, "paper_treeview");
+    tree_view = GTK_WIDGET(gtk_builder_get_object (view_xml, "paper_treeview"));
 	gtk_tree_view_set_model ((GtkTreeView *) tree_view, GTK_TREE_MODEL (paper_store));
 	
 	renderer = gtk_cell_renderer_text_new ();
@@ -1261,7 +1254,7 @@ void ui_paper_view_create()
                   G_CALLBACK (paper_tree_view_selection_changed_cb),
                   NULL);
                   
-	gtk_widget_grab_focus(gtk_builder_get_object (view_xml, "paper_entry"));
+    gtk_widget_grab_focus(GTK_WIDGET(gtk_builder_get_object (view_xml, "paper_entry")));
 }
 
 void ui_paper_view_destroy()
@@ -1269,7 +1262,7 @@ void ui_paper_view_destroy()
 	GtkWidget	*paper_view_vbox;
 	
 	if (!paper_view_xml) return;
-	paper_view_vbox = gtk_builder_get_object (paper_view_xml, "paper_view_vbox");
+    paper_view_vbox = GTK_WIDGET(gtk_builder_get_object (paper_view_xml, "paper_view_vbox"));
 	if (paper_view_vbox) gtk_widget_destroy (paper_view_vbox);
     g_object_unref(paper_view_xml);
     paper_view_xml = NULL;

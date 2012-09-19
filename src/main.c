@@ -123,9 +123,8 @@ static GtkWidget* glade_hildon_window_new (GtkBuilder *xml, GType type, GladeWid
 
 int main (int argc, char *argv[])
 {
-	char		*config_file_name, *icon_file_name;
+    char		*config_file_name;
 	GtkWidget 	*main_window;
-	GError		*error;
 
 #ifdef WITH_HILDON
 	HildonProgram   *hildon_program;

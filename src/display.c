@@ -169,16 +169,15 @@ void display_create_text_tags ()
 
 void display_init ()
 {
-	GdkColor		color;
-	int			char_width;
-	PangoContext 		*pango_context;
-	PangoFontMetrics 	*font_metrics;
-	GtkTextTag		*tag;
-	PangoTabArray		*tab_array;
-	GtkTextTagTable		*tag_table;
-    PangoLanguage* language;
-    PangoFontDescription* font_desc;
-    char* lang_name;
+    int                     char_width;
+    PangoContext            *pango_context;
+    PangoFontMetrics        *font_metrics;
+    GtkTextTag              *tag;
+    PangoTabArray           *tab_array;
+    GtkTextTagTable         *tag_table;
+    PangoLanguage           *language;
+    PangoFontDescription    *font_desc;
+    char                    *lang_name;
 
 	current_status.calc_entry_start_new = FALSE;
 	view = (GtkTextView *) gtk_builder_get_object (view_xml, "textview");

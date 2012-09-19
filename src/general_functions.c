@@ -264,7 +264,7 @@ void set_button_color (GtkBuilder *xml, char *button_name, void *color_string)
 	/* dereference */
 	string_var = color_string;
 	gdk_color_parse (*string_var, &color);
-	button = gtk_builder_get_object (xml, button_name);
+    button = GTK_WIDGET(gtk_builder_get_object (xml, button_name));
 	if (button) gtk_color_button_set_color (GTK_COLOR_BUTTON(button), &color);
 }
 
@@ -310,21 +310,18 @@ void apply_preferences (s_preferences prefs)
 {
 	GtkWidget	*menu_item;
 
-	menu_item = gtk_builder_get_object (main_window_xml, "show_menubar1");
+    menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "show_menubar1"));
 	gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM(menu_item), prefs.show_menu);
 
 	switch (prefs.mode) {
 	case BASIC_MODE:
-		menu_item = 
-			gtk_builder_get_object (main_window_xml, "basic_mode");
+        menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "basic_mode"));
 		break;
 	case SCIENTIFIC_MODE:
-		menu_item = 
-			gtk_builder_get_object (main_window_xml, "scientific_mode");
+        menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "scientific_mode"));
 		break;
 	case PAPER_MODE:
-		menu_item = 
-			gtk_builder_get_object (main_window_xml, "paper_mode");
+        menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "paper_mode"));
 		break;
 	default:
 		error_message ("Unknown mode %i in \"apply_preferences\"", prefs.mode);
@@ -655,9 +652,7 @@ char *string_del_separator (char *string, char separator)
 void set_button_label_and_tooltip (GtkBuilder *xml, char *button_name, 
 	char *label, char *tooltip)
 {
-	GtkWidget	*w;
-
-	w = gtk_builder_get_object (xml, button_name);
+    GtkWidget *w = GTK_WIDGET(gtk_builder_get_object (xml, button_name));
 	if (w) {
 		gtk_button_set_label ((GtkButton *)w, label);
         gtk_widget_set_tooltip_text(w, tooltip);
@@ -668,9 +663,9 @@ GtkWidget *formula_entry_is_active (GtkWidget *window_widget)
 {
 	GtkWidget	*active_widget=NULL, *main_window=NULL;
 	
-	main_window = gtk_builder_get_object (main_window_xml, "main_window");
+    main_window = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "main_window"));
 	if (main_window != NULL)
-		active_widget = gtk_window_get_focus ((GtkWindow *)main_window);
+        active_widget = GTK_WIDGET(gtk_window_get_focus ((GtkWindow *)main_window));
 	if (active_widget != NULL)
 		if ((g_strcmp0 (gtk_buildable_get_name (GTK_BUILDABLE(gtk_widget_get_toplevel(window_widget))),"main_window") == 0) &&
 			(g_strcmp0 (gtk_buildable_get_name (GTK_BUILDABLE(active_widget)), "formula_entry") == 0)) 
@@ -686,9 +681,9 @@ GtkWidget *formula_entry_is_active_no_toplevel_check ()
 {
 	GtkWidget	*active_widget=NULL, *main_window=NULL;
 	
-	main_window = gtk_builder_get_object (main_window_xml, "main_window");
+    main_window = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "main_window"));
 	if (main_window) 
-		active_widget = gtk_window_get_focus ((GtkWindow *) main_window);
+        active_widget = GTK_WIDGET(gtk_window_get_focus ((GtkWindow *) main_window));
 	if (active_widget)
 		if (g_strcmp0 (gtk_buildable_get_name (GTK_BUILDABLE(active_widget)), "formula_entry") == 0) 
 			return active_widget;
@@ -871,9 +866,7 @@ void change_option (int new_status, int opt_group)
  */
 void set_window_size_minimal()
 {
-	GtkWidget	*main_window=NULL;
-	
-	main_window = gtk_builder_get_object (main_window_xml, "main_window");
+    GtkWidget *main_window = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "main_window"));
 	if (main_window != NULL)
-		gtk_window_resize ((GtkWindow *)gtk_widget_get_toplevel(main_window), 1, 1);
+        gtk_window_resize ((GtkWindow *)GTK_WIDGET(gtk_widget_get_toplevel(main_window)), 1, 1);
 }
