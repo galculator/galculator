@@ -1,7 +1,7 @@
 /*
  *  display.c - code for this nifty display.
  *	part of galculator
- *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2012 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -72,7 +72,13 @@ gboolean on_textview_button_press_event (GtkWidget *widget,
 	char 			*selected_text;
 
 	if (event->button == 1)	{
-		gtk_widget_get_pointer (widget, &x, &y);
+        // GTK_CHECK_VERSION returns TRUE if version is at least ...
+#if GTK_CHECK_VERSION(3, 4, 0)
+        GdkModifierType mask;
+        gdk_window_get_device_position(gtk_widget_get_window(widget), gtk_get_current_event_device(), &x, &y, &mask);
+#else
+        gtk_widget_get_pointer(widget, &x, &y);
+#endif
 		gtk_text_view_get_iter_at_location (view, &start, x, y);
 		/* we return if we are in the first line */
 		if (gtk_text_iter_get_line (&start) != display_result_line+1) return FALSE;

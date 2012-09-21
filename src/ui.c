@@ -1,7 +1,7 @@
 /*
  *  ui.c - general user interface code.
  *	part of galculator
- *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2012 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -800,7 +800,6 @@ void position_menu (GtkMenu *menu,
 	 */
 	GtkWidget *child;
 	GtkWidget *widget;
-	GtkRequisition requisition;
     GtkAllocation allocation;
 	GList *children, *l;
 	gint screen_width;
@@ -812,9 +811,15 @@ void position_menu (GtkMenu *menu,
 	
 	widget = GTK_WIDGET (user_data);
 	
-	gtk_widget_get_child_requisition (GTK_WIDGET (menu), &requisition);
-	menu_width = requisition.width;
-	
+    GtkRequisition requisition;
+#if GTK_CHECK_VERSION(3, 0, 0)
+        /* see this patch: http://osdir.com/ml/general/2010-10/msg06642.html */
+        gtk_widget_get_preferred_size (GTK_WIDGET (menu), &requisition, NULL);
+#else
+        gtk_widget_get_child_requisition (GTK_WIDGET (menu), &requisition);
+#endif
+    menu_width = requisition.width;
+
 	/* i guess we don't need the "active" stuff from the original positioning
 		code. we don't have any active items
 	 */
@@ -829,7 +834,12 @@ void position_menu (GtkMenu *menu,
 	for(l = children; l; l=l->next) {
 		child = GTK_WIDGET(l->data);
 		if (gtk_widget_get_visible (child))	{
-			gtk_widget_get_child_requisition (child, &requisition);
+#if GTK_CHECK_VERSION(3, 0, 0)
+            /* see above */
+            gtk_widget_get_preferred_size (child, &requisition, NULL);
+#else
+            gtk_widget_get_child_requisition (child, &requisition);
+#endif
 			menu_ypos -= requisition.height;
 		}
 	}
