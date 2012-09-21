@@ -1,7 +1,7 @@
 /*
  *  main.c
  *	part of galculator
- *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2012 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -59,15 +59,23 @@ ALG_OBJECT		*main_alg;
 
 void print_usage ()
 {
-	printf (_("\n%s v%s, (c) 2002-2009 Simon Floery\n\n\
+    printf (_("\n%s v%s, (c) 2002-2012 Simon Floery\n\n\
 Usage: %s [options]\n\n\
 options:\n\
 (GTK options)\n\
  -h, --help\t\tShow this usage message\n\
- -v, --version\t\tShow version information\n\n"), \
-PACKAGE, VERSION, PACKAGE);
+ -v, --version\t\tShow version information\n\n\
+Compiled against GTK version %i.%i.%i\n\
+Linked against GTK version %i.%i.%i\n"),
+PACKAGE, VERSION, PACKAGE,
+GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION,
+gtk_major_version, gtk_minor_version, gtk_micro_version);
 }
 
+/* gtk_key_snooper_install is deprecated from version 3.4 on, see thread at
+ *      http://osdir.com/ml/gtk-list/2012-02/msg00016.html
+ * for a possible replacement.
+ */
 int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 {
 	GtkWidget	*formula_entry;

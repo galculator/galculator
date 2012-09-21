@@ -1,3 +1,6 @@
+2012-09-21 Simon Flöery <chimaira@users.sf.net>
+	* making --enable-gtk3 default for configure
+	* replaced three deprecated GTK calls
 
 2012-09-19 Simon Floery <chimaira@users.sf.net>
 	* added zh_CN, da_DK, kk_KZ and sv locale (thanks to Athurg Gooth, Joakim  Seeberg, Baurzhan Muftakhidinov and Daniel Nylander)

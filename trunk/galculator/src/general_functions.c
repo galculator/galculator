@@ -1,7 +1,7 @@
 /*
  *  general_functions.c - this and that.
  *	part of galculator
- *  	(c) 2002-2009 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2012 Simon Floery (chimaira@users.sf.net)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

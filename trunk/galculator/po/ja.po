@@ -33,7 +33,7 @@ msgstr ""
 #, fuzzy, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2009 Simon Floery\n"
+"%s v%s, (c) 2002-2012 Simon Floery\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
