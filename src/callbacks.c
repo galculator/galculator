@@ -290,8 +290,7 @@ on_dec_toggled                       (GtkMenuItem     *menuitem,
 
 
 void
-on_hex_toggled                       (GtkMenuItem     *menuitem,
-                                        gpointer         user_data)
+on_hex_toggled (GtkMenuItem     *menuitem, gpointer         user_data)
 {
     if (!gtk_check_menu_item_get_active((GtkCheckMenuItem *)menuitem)) return;
     change_option (CS_HEX, DISPLAY_OPT_NUMBER);

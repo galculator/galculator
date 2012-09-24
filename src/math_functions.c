@@ -50,7 +50,12 @@ double powx2 (double x)
 double factorial (double n)
 {
 	/* to avoid useless factorial computation of big numbers */
-	if (n > 200) return INFINITY;
+    if (n > 200) return INFINITY;
+    /* undefined for negative numbers, patch by adrianb23 on sf.net */
+    if (n < 0) return INFINITY;
+    /* So we know we are positive, now check if n is an integer */
+    if (n > floor(n)) return INFINITY;
+
 	if (n > 1) return n*factorial (n-1);
 	else return 1;
 }

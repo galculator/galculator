@@ -1,8 +1,15 @@
-2012-09-21 Simon Flöery <chimaira@users.sf.net>
+2012-09-24 Simon Flöry <simon.floery@rechenraum.com>
+	* removed gtk_key_snooper_install for GTK3
+	* made factorial more robust (thanks to Nick Warne)
+	* GALCULATOR_CONFIG environment variable may be used to set a user
+		defined location of the configuration file (thanks to Richard Gill)
+	* adding -lm (thanks to Tomas Mraz and Alexandre Rostovtsev)
+
+2012-09-21 Simon Flöey <chimaira@users.sf.net>
 	* making --enable-gtk3 default for configure
 	* replaced three deprecated GTK calls
 
-2012-09-19 Simon Floery <chimaira@users.sf.net>
+2012-09-19 Simon Flöry <chimaira@users.sf.net>
 	* added zh_CN, da_DK, kk_KZ and sv locale (thanks to Athurg Gooth, Joakim  Seeberg, Baurzhan Muftakhidinov and Daniel Nylander)
 	* added plenty of GTK_WIDGET macro casts to get rid of some compilation warnings
 
