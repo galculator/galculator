@@ -37,7 +37,7 @@ msgstr ""
 #, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2012 Simon Floery\n"
+"%s v%s, (c) 2002-2012 Simon Flöry\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -849,7 +849,7 @@ msgid "About galculator"
 msgstr "_Kalkulačka"
 
 #: ../ui/about.ui.in.h:2
-msgid "Copyright (c) 2002-2012 by Simon Floery <chimaira@users.sf.net>"
+msgid "Copyright (c) 2002-2012 by Simon Flöry <simon.floery@rechenraum.com>"
 msgstr ""
 
 #: ../ui/about.ui.in.h:3
@@ -1166,12 +1166,12 @@ msgstr "Vymazať displej"
 #~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
 #~ "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
 #~ "\n"
-#~ "(c) 2002-2007 by Simon Floery (chimaira@users.sf.net)"
+#~ "(c) 2002-2007 by Simon Flöry (simon.floery@rechenraum.com)"
 #~ msgstr ""
 #~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
 #~ "<span size=\"large\">vedecká kalulačka</span>\n"
 #~ "\n"
-#~ "(c) 2002-2004 Simon Floery (chimaira@users.sf.net)"
+#~ "(c) 2002-2004 Simon Flöry (simon.floery@rechenraum.com)"
 
 #~ msgid "_About..."
 #~ msgstr "_O programe..."

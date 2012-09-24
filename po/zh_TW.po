@@ -35,7 +35,7 @@ msgstr ""
 #, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2012 Simon Floery\n"
+"%s v%s, (c) 2002-2012 Simon Flöry\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -876,8 +876,8 @@ msgid "About galculator"
 msgstr "關於 galculator"
 
 #: ../ui/about.ui.in.h:2
-msgid "Copyright (c) 2002-2012 by Simon Floery <chimaira@users.sf.net>"
-msgstr "版權所有 (c) 2002-2012 by Simon Floery <chimaira@users.sf.net>"
+msgid "Copyright (c) 2002-2012 by Simon Flöry <simon.floery@rechenraum.com>"
+msgstr "版權所有 (c) 2002-2012 by Simon Flöry <simon.floery@rechenraum.com>"
 
 #: ../ui/about.ui.in.h:3
 msgid "a GTK+ based scientific calculator"
