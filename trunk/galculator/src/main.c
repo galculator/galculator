@@ -44,10 +44,6 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 
-#if GTK_CHECK_VERSION(3, 0, 0)
-#include <gdk/gdkkeysyms-compat.h>
-#endif
-
 #define MASK_NUMLOCK GDK_MOD2_MASK
 
 s_preferences		prefs;
@@ -72,10 +68,13 @@ GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION,
 gtk_major_version, gtk_minor_version, gtk_micro_version);
 }
 
-/* gtk_key_snooper_install is deprecated from version 3.4 on, see thread at
- *      http://osdir.com/ml/gtk-list/2012-02/msg00016.html
- * for a possible replacement.
+/* gtk_key_snooper_install is deprecated from version 3.4 on. Anyway, the key
+ * snooper was a dirty work-around for problems I had with early versions of
+ * GTK2, that I can't reproduce nowadays. So try to go w/o any key snopper for
+ * GTK3.
  */
+#if !(GTK_CHECK_VERSION(3, 4, 0))
+
 int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 {
 	GtkWidget	*formula_entry;
@@ -120,6 +119,8 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 	
 	return FALSE;
 }
+
+#endif
 
 #ifdef WITH_HILDON
 /* Registering the hildon application */
@@ -200,7 +201,9 @@ int main (int argc, char *argv[])
 	memory.len = 0;
 
 	/* see function key_snooper for details */
-	gtk_key_snooper_install (key_snooper, NULL);
+#if !(GTK_CHECK_VERSION(3, 0, 0))
+//    gtk_key_snooper_install (key_snooper, NULL);
+#endif
 	
     /* make the window as small as possible */
 	gtk_window_resize ((GtkWindow *)main_window, 1, 1);
