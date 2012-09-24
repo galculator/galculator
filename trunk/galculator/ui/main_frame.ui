@@ -35,6 +35,7 @@
       </object>
     </child>
     <signal name="destroy" handler="on_main_window_destroy" swapped="no"/>
+    <signal name="event" handler="on_button_event" swapped="no"/>
     <signal name="delete-event" handler="gtk_widget_destroy" swapped="no"/>
     <child>
       <object class="GtkEventBox" id="main_eventbox">
