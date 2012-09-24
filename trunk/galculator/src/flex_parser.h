@@ -1,7 +1,7 @@
 /*
  *  flex_parser.h
  *	part of galculator
- *  	(c) 2002-2012 Simon Floery (chimaira@users.sf.net)
+ *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

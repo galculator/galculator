@@ -33,7 +33,7 @@ msgstr ""
 #, fuzzy, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2012 Simon Floery\n"
+"%s v%s, (c) 2002-2012 Simon Flöry\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -44,7 +44,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"%s v%s, (c) 2002-2004 Simon Floery\n"
+"%s v%s, (c) 2002-2004 Simon Flöry\n"
 "\n"
 "Sposób użycia: %s [opcje]\n"
 "\n"
@@ -891,7 +891,7 @@ msgid "About galculator"
 msgstr "_Kalkulator"
 
 #: ../ui/about.ui.in.h:2
-msgid "Copyright (c) 2002-2012 by Simon Floery <chimaira@users.sf.net>"
+msgid "Copyright (c) 2002-2012 by Simon Flöry <simon.floery@rechenraum.com>"
 msgstr ""
 
 #: ../ui/about.ui.in.h:3

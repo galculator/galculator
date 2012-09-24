@@ -5,11 +5,11 @@
 		defined location of the configuration file (thanks to Richard Gill)
 	* adding -lm (thanks to Tomas Mraz and Alexandre Rostovtsev)
 
-2012-09-21 Simon Flöey <chimaira@users.sf.net>
+2012-09-21 Simon Flöey <simon.floery@rechenraum.com>
 	* making --enable-gtk3 default for configure
 	* replaced three deprecated GTK calls
 
-2012-09-19 Simon Flöry <chimaira@users.sf.net>
+2012-09-19 Simon Flöry <simon.floery@rechenraum.com>
 	* added zh_CN, da_DK, kk_KZ and sv locale (thanks to Athurg Gooth, Joakim  Seeberg, Baurzhan Muftakhidinov and Daniel Nylander)
 	* added plenty of GTK_WIDGET macro casts to get rid of some compilation warnings
 
@@ -23,7 +23,7 @@
 # 2009-02-08 galculator 1.3.4 released       #
 ##############################################
 
-2009-02-08 Simon Floery <chimaira@users.sf.net>
+2009-02-08 Simon Flöry <simon.floery@rechenraum.com>
 	* src/display.c: fixed display_result_toggle_sign for EE (closes sf.net
 		#2570283).
 	* pixmaps: renamed galculator_48x48.png to galculator.png (closes sf.net
@@ -38,7 +38,7 @@
 # 2009-01-11 galculator 1.3.3 released       #
 ##############################################
 
-2009-01-11 Simon Floery <chimaira@users.sf.net>
+2009-01-11 Simon Flöry <simon.floery@rechenraum.com>
 	* galculator.desktop.in: new version (closes sf.net #2496411, 
 		thanks to Marco)
 	* src/general_functions.c: workaround for numerical issues (closes sf.net
@@ -50,7 +50,7 @@
 # 2009-01-06 galculator 1.3.2 released       #
 ##############################################
 
-2009-01-06 Simon Floery <chimaira@users.sf.net>
+2009-01-06 Simon Flöry <simon.floery@rechenraum.com>
 	* galculator.desktop.in: use galculator icon (patch by Omair, thanks; fixes
 		also Debian BTS #487177)
 	* src/Makefile.am, pixmaps/Makefile.am: put galculator icon in pixmaps
@@ -77,7 +77,7 @@
 # 2007-09-28 galculator 1.3.1-win32 released #
 ##############################################
 
-2007-09-28 Simon Floery <chimaira@users.sf.net>
+2007-09-28 Simon Flöry <simon.floery@rechenraum.com>
 	* src/callbacks.h and src/display.h: all callbacks and signal handlers
 		got G_MODULE_EXPORT (win32 compatibility, closes sf.net 1804428,
 		thanks to Michael for reporting)
@@ -88,10 +88,10 @@
 # 2007-09-27 galculator 1.3.1 released #
 ########################################
 
-2007-09-27 Simon Floery <chimaira@users.sf.net>
+2007-09-27 Simon Flöry <simon.floery@rechenraum.com>
 	* configure.in: check if $MSGFMT is set. closes sf.net 1803786
 
-2007-09-08 Simon Floery <chimaira@users.sf.net>
+2007-09-08 Simon Flöry <simon.floery@rechenraum.com>
 	* src/callbacks.c: escape input string for proper display (thanks to 
 		Christian for reporting)
 	* src/display.c: fixed display_result_line bug in RPN mode (thanks to
@@ -102,10 +102,10 @@
 # 2007-09-05 galculator 1.3.0 released #
 ########################################
 
-2007-09-05 Simon Floery <chimaira@users.sf.net>
+2007-09-05 Simon Flöry <simon.floery@rechenraum.com>
 	* ui/prefs.glade: fixed name of hex bit spin, closes sf.net 1788678
 
-2007-09-04 Simon Floery <chimaira@users.sf.net>
+2007-09-04 Simon Flöry <simon.floery@rechenraum.com>
 	* general_functions.c: renamed gdk_color_to_string to 
 		convert_gdk_color_to_string for compability with gdk version >= 2.12
 		which features that function (name) by itself. Closes Debian BTS
@@ -119,11 +119,11 @@
 		and sf.net 1702178
 	* po/ru.po: added Russian locale, closes sf.net 1736900
 
-2006-04-09 Simon Floery <chimaira@users.sf.net>
+2006-04-09 Simon Flöry <simon.floery@rechenraum.com>
 	* callbacks.c: invisible buttons/menuitems still have working accels
 		(signal can-activate-accel) (fixes sf.net #1214786)
 
-2006-04-01 Simon Floery <chimaira@users.sf.net>
+2006-04-01 Simon Flöry <simon.floery@rechenraum.com>
 	* fixed build process (use automake1.9 from now on) (thanks to
 		Christian)
 	* released version 1.2.5.2 based on status of code at 1.2.5.1 with
@@ -133,46 +133,46 @@
 		color and font buttons
 	* src/display.c and more: preferences in paper mode work.
 
-2006-03-26 Simon Floery <chimaira@users.sf.net>
+2006-03-26 Simon Flöry <simon.floery@rechenraum.com>
 	* src/ui.c: set_all_normal_buttons_tip (fixes sf.net 1214786)
 	* +/- got accelerator
 	
-2006-03-22 Simon Floery <chimaira@users.sf.net>
+2006-03-22 Simon Flöry <simon.floery@rechenraum.com>
 	* src/ui.c: use g_object_unref instead of g_free to unref glade_xml
 		(fixes Debian BTS #358064 and sf.net 1442849)
 	* src/*: sed -i 's/2004/2006/g' *
 	* released version 1.2.5.1 based on status of code at 1.2.5 with
 		above two changes.
 
-2005-11-24 Simon Floery <chimaira@users.sf.net>
+2005-11-24 Simon Flöry <simon.floery@rechenraum.com>
 	* ng_view updates radio box based menus
 	* "ng mode" -> "paper mode"
 
-2005-11-21 Simon Floery <chimaira@users.sf.net>
+2005-11-21 Simon Flöry <simon.floery@rechenraum.com>
 	* ng_view gets some basic number base and angle base functionality
 	* ng_view updates menus
 
-2005-11-21 Simon Floery <chimaira@users.sf.net>
+2005-11-21 Simon Flöry <simon.floery@rechenraum.com>
 	* ng_view gets some tuning
 
-2005-11-19 Simon Floery <chimaira@users.sf.net>
+2005-11-19 Simon Flöry <simon.floery@rechenraum.com>
 	* ng_view gets some major improvements
 	
-2005-11-18 Simon Floery <chimaira@users.sf.net>
+2005-11-18 Simon Flöry <simon.floery@rechenraum.com>
 	* ng_view gets on its way
 
-2005-11-17 Simon Floery <chimaira@users.sf.net>
+2005-11-17 Simon Flöry <simon.floery@rechenraum.com>
 	* added es_MX translation (thanks to eduardo)
 	* reorganize set prefs code, seperate code into classic_view
 
-2005-07-11 Simon Floery <chimaira@users.sf.net>
+2005-07-11 Simon Flöry <simon.floery@rechenraum.com>
 	* updated German translation (thanks to Jens)
 	* added Slovakian translation (thanks to Peter)
 
-2005-07-08 Simon Floery <chimaira@users.sf.net>
+2005-07-08 Simon Flöry <simon.floery@rechenraum.com>
 	* gcc4 compatibility
 
-2005-05-10 Simon Floery <chimaira@users.sf.net>
+2005-05-10 Simon Flöry <simon.floery@rechenraum.com>
 	* configure.in: added libtool to build process
 	* src/*.[ch]: 2004 replaced by 2005
 
@@ -180,22 +180,22 @@
 # 2005-05-09 galculator 1.2.5 released #
 ########################################
 
-2005-05-06 Simon Floery <chimaira@users.sf.net>
+2005-05-06 Simon Flöry <simon.floery@rechenraum.com>
 	* ui/scientific_buttons.glade: hex buttons with shift modifiers
 
-2005-05-05 Simon Floery <chimaira@users.sf.net>
+2005-05-05 Simon Flöry <simon.floery@rechenraum.com>
 	* src/Makefile.am: added galculator_LDFLAGS = -export-dynamic
 		(thanks to Jim)
 
-2004-11-09 Simon Floery <chimaira@users.sf.net>
+2004-11-09 Simon Flöry <simon.floery@rechenraum.com>
 	* configure.in: removed perl XML::Parser dependancy (thanks to
 		Christian)
 
-2004-11-07 Simon Floery <chimaira@users.sf.net>
+2004-11-07 Simon Flöry <simon.floery@rechenraum.com>
 	* callbacks.c: on_paste_activate CTRL-V in formula entry (small bugfix)
 	* updated ja.po
 
-2004-10-22 Simon Floery <chimaira@users.sf.net>
+2004-10-22 Simon Flöry <simon.floery@rechenraum.com>
 	* general_functions.c: lower_bin_string in axtof (small bugfix)
 	* callbacks.c: on_number_button_clicked missing brackets (small bugfix)
 	* callbacks.c: on_paste_activate check for NULL pointer (small bugfix)
@@ -204,17 +204,17 @@
 # 2004-10-21 galculator 1.2.4 released #
 ########################################
 
-2004-10-19 Simon Floery <chimaira@users.sf.net>
+2004-10-19 Simon Flöry <simon.floery@rechenraum.com>
 	* display.c, callbacks.c, general_functions.c: separator bugfixes
 
-2004-10-17 Simon Floery <chimaira@users.sf.net>
+2004-10-17 Simon Flöry <simon.floery@rechenraum.com>
 	* config_file.c: strings in config file are now enclosed by "s
 	* display.c, callbacks.c: separator finetuning
 
-2004-10-16 Simon Floery <chimaira@users.sf.net>
+2004-10-16 Simon Flöry <simon.floery@rechenraum.com>
 	* finalized GUI integration for separators
 
-2004-09-27 Simon Floery <chimaira@users.sf.net>
+2004-09-27 Simon Flöry <simon.floery@rechenraum.com>
 	* bugfix in string_add_separator
 	* display_set_line is single display modifier in display.c
 	* finnished separator stuff in display.c
@@ -222,20 +222,20 @@
 	* general_functions.c: binary infinity display bug fixed
 		(add_leading_zeros)
 
-2004-09-26 Simon Floery <chimaira@users.sf.net>
+2004-09-26 Simon Flöry <simon.floery@rechenraum.com>
 	* made display_result_add_digit use display_result_set
 	
-2004-09-11 Simon Floery <chimaira@users.sf.net>
+2004-09-11 Simon Flöry <simon.floery@rechenraum.com>
 	* string_add_separator, string_del_separator
 	* config_file.c: separator config options
 
-2004-07-11 Simon Floery <chimaira@users.sf.net>
+2004-07-11 Simon Flöry <simon.floery@rechenraum.com>
 	* added Romanian translation (thanks to cosma)
 
-2204-07-01 Simon Floery <chimaira@users.sf.net>
+2204-07-01 Simon Flöry <simon.floery@rechenraum.com>
 	* updated pt_BR.po
 
-2004-06-19 Simon Floery <chimaira@users.sf.net>
+2004-06-19 Simon Flöry <simon.floery@rechenraum.com>
 	* src/general_functions.c: check for NULL pointers in 
 		formula_entry_is_active. fixes sf.net #971328.
 		(thanks to michal)
@@ -245,25 +245,25 @@
 # 2004-05-23 galculator 1.2.3 released #
 ########################################
 
-2004-05-23 Simon Floery <chimaira@users.sf.net>
+2004-05-23 Simon Flöry <simon.floery@rechenraum.com>
 	* src/callback.c: CON and MR buttons push display value all the time
 		(thanks to christian)
 	* src/calc_basic.c: '=' closes now all open brackets
 	
-2004-05-22 Simon Floery <chimaira@users.sf.net>
+2004-05-22 Simon Flöry <simon.floery@rechenraum.com>
 	* ui/main_frame.glade: fixed "destroy" signal bug (thanks to andrew)
 	* galculator.desktop.in: updates (thanks to dag)
 	* src/ui.c, src/callbacks.c: disable MR and M+ button until there is 
 		sth to display (thanks to christian)
 
-2004-04-19 Simon Floery <chimaira@users.sf.net>
+2004-04-19 Simon Flöry <simon.floery@rechenraum.com>
 	* updated ja.po and pt_BR.po
 
 ########################################
 # 2004-04-01 galculator 1.2.2 released #
 ########################################
 
-2004-04-01 Simon Floery <chimaira@users.sf.net>
+2004-04-01 Simon Flöry <simon.floery@rechenraum.com>
 	* bugfix: inv, hyp button in form mode release (thanks to christian)
 	* bugfix: rolldn, swapxy start new entry now (thanks to christian)
 	* 0e+ -> 1e+ shortcut
@@ -275,24 +275,24 @@
 # 2003-03-20 galculator 1.2.1 released #
 ########################################
 
-2004-03-20 Simon Floery <chimaira@users.sf.net>
+2004-03-20 Simon Flöry <simon.floery@rechenraum.com>
 	* enable nested calls of flex_parser
 	* fixed default user defined functions
 	* error handling for flex_parser calls
 
-2004-03-19 Simon Floery <chimaira@users.sf.net>
+2004-03-19 Simon Flöry <simon.floery@rechenraum.com>
 	* calc_basic.c: ALG_OBJECT
 
-2004-03-17 Simon Floery <chimaira@users.sf.net>
+2004-03-17 Simon Flöry <simon.floery@rechenraum.com>
 	* implemented parser with flex
 	* modified build process for flex
 	* parser part - user defined functions
 
-2004-03-14 Simon Floery <chimaira@users.sf.net>
+2004-03-14 Simon Flöry <simon.floery@rechenraum.com>
 	* fixed stack lifting in RPN mode (thanks to Christian)
 	* GUI part - for user defined functions
 
-2004-03-12 Simon Floery <chimaira@users.sf.net>
+2004-03-12 Simon Flöry <simon.floery@rechenraum.com>
 	* fixed general functions (brackets, rpn roll-swap) bug
 	* pt_BR.po update
 
@@ -300,112 +300,112 @@
 # 2004-03-11 galculator 1.2.0 released #
 ########################################
 
-2004-03-11 Simon Floery <chimaira@users.sf.net>
+2004-03-11 Simon Flöry <simon.floery@rechenraum.com>
 	* updated ja.po, pt_BR.po
 
-2004-02-28 Simon Floery <chimaira@users.sf.net>
+2004-02-28 Simon Flöry <simon.floery@rechenraum.com>
 	* updated de.po
 	
-2004-02-27 Simon Floery <chimaira@users.sf.net>
+2004-02-27 Simon Flöry <simon.floery@rechenraum.com>
 	* formula entry turns red on syntax error
 	* parser improvements
 
-2004-02-26 Simon Floery <chimaira@users.sf.net>
+2004-02-26 Simon Flöry <simon.floery@rechenraum.com>
 	* improved parser: factorial, complement
 
-2004-02-18 Simon Floery <chimaira@users.sf.net>
+2004-02-18 Simon Flöry <simon.floery@rechenraum.com>
 	* improved parser: functions, whitespaces, constants
 
-2004-02-17 Simon Floery <chimaira@users.sf.net>
+2004-02-17 Simon Flöry <simon.floery@rechenraum.com>
 	* check end_ptr in strtods.
 
-2004-02-02 Simon Floery <chimaira@users.sf.net>
+2004-02-02 Simon Flöry <simon.floery@rechenraum.com>
 	* basic implemenation of a parser for formula entry mode
 
-2004-02-01 Simon Floery <chimaira@users.sf.net>
+2004-02-01 Simon Flöry <simon.floery@rechenraum.com>
 	* right mouse button click brings popup menu to control "Show menu bar"
 
-2004-01-31 Simon Floery <chimaira@users.sf.net>
+2004-01-31 Simon Flöry <simon.floery@rechenraum.com>
 	* GUI integration of formula entry mode
 
-2003-12-31 Simon Floery <chimaira@users.sf.net>
+2003-12-31 Simon Flöry <simon.floery@rechenraum.com>
 	* fixed DBTS #220857 (tooltips in RPN mode)
 
-2003-11-21 Simon Floery <chimaira@users.sf.net>
+2003-11-21 Simon Flöry <simon.floery@rechenraum.com>
 	* patch: lower hex chars to upper chars (thanks to Remi)
 	
-2003-11-15 Simon Floery <chimaira@users.sf.net>
+2003-11-15 Simon Flöry <simon.floery@rechenraum.com>
 	* patch galculator.spec.in (thanks to Filippo)
 
-2003-11-14 Simon Floery <chimaira@users.sf.net>
+2003-11-14 Simon Flöry <simon.floery@rechenraum.com>
 	* fixed sf.net #841527 (typo in de.po)
 
 ########################################
 # 2003-11-10 galculator 1.1.4 released #
 ########################################
 
-2003-11-09 Simon Floery <chimaira@users.sf.net>
+2003-11-09 Simon Flöry <simon.floery@rechenraum.com>
 	* RPN stack is remembered. several fixes
 	* fixed DBTS #219390 (fixed de.po)
 	* updated french and german translations
 	* fixed sf.net #820399 (added p,P shortcuts)
 
 	* introduced display_result_changed. fixes sf.net bug #750519
-2003-10-07 Simon Floery <chimaira@users.sf.net>	
+2003-10-07 Simon Flöry <simon.floery@rechenraum.com>	
 
-2003-09-23 Simon Floery <chimaira@users.sf.net>
+2003-09-23 Simon Flöry <simon.floery@rechenraum.com>
 	* agreed to and fixed sf.net bug #799417 (memory save, memory read and
 	constant retrieve start new calc entry)
 
-2003-09-20 Simon Floery <chimaira@users.sf.net>
+2003-09-20 Simon Flöry <simon.floery@rechenraum.com>
 	* sf.net bug #798511 fixed
 
-2003-09-19 Simon Floery <chimaira@users.sf.net>
+2003-09-19 Simon Flöry <simon.floery@rechenraum.com>
 	* RPN updates: rolldown stack, swap xy on stack 
 	(satifies sf.net fr #799397 and DBTS #202633)
 
-2003-09-18 Simon Floery <chimaira@users.sf.net>
+2003-09-18 Simon Flöry <simon.floery@rechenraum.com>
 	* src/display.c: display RPN stack
 	
-2003-09-11 Simon Floery <chimaira@users.sf.net>
+2003-09-11 Simon Flöry <simon.floery@rechenraum.com>
 	* ui/prefs.galde: added (in)finite RPN stack option, naturally updates
 	to config code, etc.
 	* applied patches (c cleanups, IBM compiler) by albert. Thanks!
 
-2003-09-09 Simon Floery <chimaira@users.sf.net>
+2003-09-09 Simon Flöry <simon.floery@rechenraum.com>
 	* src/calc_basic.c: finite/infinite stack, swap x y, rolldown stack
 
 ########################################
 # 2003-08-31 galculator 1.1.3 released #
 ########################################
 
-2003-08-31 Simon Floery <chimaira@users.sf.net>
+2003-08-31 Simon Flöry <simon.floery@rechenraum.com>
 	* ja.po translation update
 
-2003-08-26 Simon Floery <chimaira@users.sf.net>
+2003-08-26 Simon Flöry <simon.floery@rechenraum.com>
 	* fr.po translation update
 
-2003-08-25 Simon Floery <chimaira@users.sf.net>
+2003-08-25 Simon Flöry <simon.floery@rechenraum.com>
 	* display control buttons in scientific resp basic mode.
 	* de.po translation update
 
-2003-08-20 Simon Floery <chimaira@users.sf.net>
+2003-08-20 Simon Flöry <simon.floery@rechenraum.com>
 	* number, angle and notation are remembered on exit. no defaults anymore
 
-2003-08-18 Simon Floery <chimaira@users.sf.net>
+2003-08-18 Simon Flöry <simon.floery@rechenraum.com>
 	* src/callbacks.c: fixed token.func bug (closes DBTS #205126)
 	* GUI updates (y^x in RPN, change font for "popup buttons")
 	* src/display.c: fixed order of init notation and rem_value (closes
 	sf.net #778572)
 
-2003-07-25 Simon Floery <chimaira@users.sf.net>
+2003-07-25 Simon Flöry <simon.floery@rechenraum.com>
 	* added basic mode
 	* updates to scientific mode
 
-2003-07-17 Simon Floery <chimaira@users.sf.net>
+2003-07-17 Simon Flöry <simon.floery@rechenraum.com>
 	* asinh, acosh, atanh
 
-2003-07-04 Simon Floery <chimaira@users.sf.net>
+2003-07-04 Simon Flöry <simon.floery@rechenraum.com>
 	* src/callbacks.c: GtkSizeGroup for preferences dialog
 	* fix length to multiple of k in binary mode (fill with zeros)
 	(closes sf.net fr #760390)
@@ -415,18 +415,18 @@
 # 2003-07-06 galculator 1.1.2 released #
 ########################################
 
-2003-07-05 Simon Floery <chimaira@users.sf.net>
+2003-07-05 Simon Flöry <simon.floery@rechenraum.com>
 	* updated french translation (thanks to seb128)
 
-2003-07-02 Simon Floery <chimaira@users.sf.net>
+2003-07-02 Simon Flöry <simon.floery@rechenraum.com>
 	* src/calc_basic.c: complete rewrite
 
-2003-06-26 Simon Floery <chimaira@users.sf.net>
+2003-06-26 Simon Flöry <simon.floery@rechenraum.com>
 
 	* src/display.c: fixed display_length bug (e.g. only one HEX char after
 	startup)
 
-2003-06-24 Simon Floery <chimaira@users.sf.net>
+2003-06-24 Simon Flöry <simon.floery@rechenraum.com>
 
 	* added french translation (fr.po). thanks to seb128
 	* src/main.c: restricted key_snooper to main_window to get a working
@@ -440,7 +440,7 @@
 # 2003-06-23 galculator 1.1.1 released #
 ########################################
 
-2003-06-23 Simon Floery <chimaira@users.sf.net>
+2003-06-23 Simon Flöry <simon.floery@rechenraum.com>
 
 	* specify bit length/signed for hex, oct and bin mode 
 	(closes DBTS #197490)
@@ -452,7 +452,7 @@
 # 2003-06-22 galculator 1.1.0 released #
 ########################################
 
-2003-06-18  Simon Floery <chimaira@users.sf.net>
+2003-06-18  Simon Flöry <simon.floery@rechenraum.com>
 
 	* changed Changelog format
 	* src/display.c: removed mark_result_[start | end] in order to remove

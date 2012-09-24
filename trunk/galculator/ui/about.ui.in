@@ -10,10 +10,10 @@
     <property name="type_hint">dialog</property>
     <property name="program_name">galculator</property>
     <property name="version">@VERSION@</property>
-    <property name="copyright" translatable="yes">Copyright (c) 2002-2012 by Simon Floery &lt;chimaira@users.sf.net&gt;</property>
+    <property name="copyright" translatable="yes">Copyright (c) 2002-2012 by Simon Flöry &lt;simon.floery@rechenraum.com&gt;</property>
     <property name="comments" translatable="yes">a GTK+ based scientific calculator</property>
     <property name="website">http://galculator.sourceforge.net/</property>
-    <property name="authors">Simon Floery &lt;chimaira@users.sf.net&gt;
+    <property name="authors">Simon Flöry &lt;simon.floery@rechenraum.com&gt;
 Hong Jen Yee (PCMan) &lt;pcman.tw@gmail.com&gt;</property>
     <property name="logo_icon_name">galculator</property>
     <signal name="response" handler="gtk_widget_destroy" swapped="no"/>
