@@ -68,6 +68,8 @@ GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION,
 gtk_major_version, gtk_minor_version, gtk_micro_version);
 }
 
+/* see GtkWidget can-activate-accel signal */
+
 /* gtk_key_snooper_install is deprecated from version 3.4 on. Anyway, the key
  * snooper was a dirty work-around for problems I had with early versions of
  * GTK2, that I can't reproduce nowadays. So try to go w/o any key snopper for
@@ -202,7 +204,7 @@ int main (int argc, char *argv[])
 
 	/* see function key_snooper for details */
 #if !(GTK_CHECK_VERSION(3, 0, 0))
-//    gtk_key_snooper_install (key_snooper, NULL);
+    gtk_key_snooper_install (key_snooper, NULL);
 #endif
 	
     /* make the window as small as possible */

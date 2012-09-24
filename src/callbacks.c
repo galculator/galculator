@@ -219,7 +219,7 @@ on_function_button_clicked             (GtkToggleButton    *button,
 {
     double        (*func[4])(double);
     char         **display_name;
-    
+
     if (gtk_toggle_button_get_active(button) == FALSE) return;
     button_activation (button);
     if (current_status.notation == CS_FORMULA) {
@@ -259,7 +259,7 @@ on_gfunc_button_clicked                (GtkToggleButton       *button,
 {
     void    (*func)();
     char     *display_string;
-    
+
     if (gtk_toggle_button_get_active(button) == FALSE) return;
     button_activation (button);
     if (current_status.notation == CS_FORMULA) {
@@ -921,7 +921,7 @@ on_user_function_button_clicked (GtkToggleButton       *button,
                                         gpointer         user_data)
 {
     GtkWidget    *menu;
-    
+
     if (gtk_toggle_button_get_active(button) == FALSE) return;
     button_activation (button);
     menu = ui_user_functions_menu_create(user_function, (GCallback)user_functions_menu_handler);
@@ -952,7 +952,7 @@ on_constant_button_clicked (GtkToggleButton       *button,
                                         gpointer         user_data)
 {
     GtkWidget        *menu;
-    
+
     if (gtk_toggle_button_get_active(button) == FALSE) return;
     button_activation (button);
     menu = ui_constants_menu_create(constant, (GCallback)constants_menu_handler);
@@ -992,7 +992,7 @@ void ms_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 void on_ms_button_clicked (GtkToggleButton *button, gpointer user_data)
 {
     GtkWidget    *menu;
-    
+
     if (gtk_toggle_button_get_active(button) == FALSE) return;
     button_activation (button);
     menu = ui_memory_menu_create (memory, (GCallback)ms_menu_handler, _("save here"));
@@ -1016,7 +1016,7 @@ void mr_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 void on_mr_button_clicked (GtkToggleButton *button, gpointer user_data)
 {
     GtkWidget    *menu;;
-    
+
     if (gtk_toggle_button_get_active(button) == FALSE) return;
     button_activation (button);
     menu = ui_memory_menu_create(memory, (GCallback)mr_menu_handler, NULL);
@@ -1036,7 +1036,7 @@ void mplus_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
 void on_mplus_button_clicked (GtkToggleButton *button, gpointer user_data)
 {
     GtkWidget    *menu;
-    
+
     if (gtk_toggle_button_get_active(button) == FALSE) return;
     button_activation (button);
     menu = ui_memory_menu_create(memory, (GCallback)mplus_menu_handler, NULL);
@@ -1067,7 +1067,7 @@ on_mc_button_clicked             (GtkToggleButton       *button,
                 gpointer         user_data)
 {
     GtkWidget    *menu;
-    
+
     if (gtk_toggle_button_get_active(button) == FALSE) return;
     button_activation (button);
     menu = ui_memory_menu_create(memory, (GCallback)mc_menu_handler, "clear all");
@@ -1091,7 +1091,7 @@ on_mx_button_clicked             (GtkToggleButton       *button,
                 gpointer         user_data)
 {
     GtkWidget    *menu;
-    
+
     if (gtk_toggle_button_get_active(button) == FALSE) return;
     button_activation (button);
     menu = ui_memory_menu_create(memory, (GCallback)mx_menu_handler, NULL);
@@ -1657,4 +1657,30 @@ gboolean on_menuitem_can_activate_accel (GtkWidget *widget, guint signal_id, gpo
     if (strcmp("activate", g_signal_name(signal_id)) == 0) return TRUE;
     return FALSE;
 }
+
+/* This callback is connected to the "Event" event of the main window. Every
+ * event in gtk triggers three events: this general "Event", the more specific
+ * event and the general "Event-after". If we return TRUE, processing of the
+ * event stops. For GTK2 we use the key_snooper installed in main.c.
+ */
+gboolean on_button_event(GtkWidget *widget, GdkEvent *event, gpointer user_data)
+{
+#if GTK_CHECK_VERSION(3, 0, 0)
+    if (current_status.notation == CS_FORMULA) {
+        GtkWidget *formula_entry = formula_entry_is_active(widget);
+        if (formula_entry && (event->type == GDK_KEY_PRESS)) {
+            GdkEventKey *key_event = (GdkEventKey *) event;
+            /* try to rule out some obvious key presses */
+            if (key_event->state & GDK_SUPER_MASK ||
+                 key_event->state & GDK_HYPER_MASK ||
+                 key_event->state & GDK_META_MASK ||
+                 key_event->state & GDK_CONTROL_MASK) return FALSE;
+            gtk_widget_event (formula_entry, event);
+            return TRUE;
+        }
+    }
+#endif
+    return FALSE;
+}
+
 /* END */
