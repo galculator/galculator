@@ -58,7 +58,7 @@ am_galculator_OBJECTS = galculator-main.$(OBJEXT) \
 	galculator-flex_parser.$(OBJEXT)
 galculator_OBJECTS = $(am_galculator_OBJECTS)
 am__DEPENDENCIES_1 =
-galculator_DEPENDENCIES = $(am__DEPENDENCIES_1)
+galculator_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 galculator_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(galculator_CFLAGS) \
 	$(CFLAGS) $(galculator_LDFLAGS) $(LDFLAGS) -o $@
@@ -138,6 +138,7 @@ LDFLAGS = @LDFLAGS@
 LEX = @LEX@
 LEXLIB = @LEXLIB@
 LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
+LIBM = @LIBM@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LIBTOOL = @LIBTOOL@
@@ -260,7 +261,7 @@ galculator_CFLAGS = \
 	$(PACKAGE_CFLAGS)
 
 galculator_LDADD = \
-	$(PACKAGE_LIBS)
+	$(PACKAGE_LIBS) $(LIBM)
 
 galculator_LDFLAGS = -export-dynamic
 all: all-am

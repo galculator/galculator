@@ -130,8 +130,8 @@ static double compute_expression (double left_hand,
 	case '>':
 		result = ldexp (left_hand, ((int) floor(right_hand))*(-1));
 		break;
-	case 'm':
-		result = fmod (left_hand, right_hand);
+    case 'm':
+        result = fmod (left_hand, right_hand);
 		break;
 	case '&':
 		result = (long long int)left_hand & (long long int) right_hand;

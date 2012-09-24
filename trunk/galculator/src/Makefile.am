@@ -25,7 +25,7 @@ galculator_CFLAGS = \
 	$(PACKAGE_CFLAGS)
 
 galculator_LDADD = \
-	$(PACKAGE_LIBS)
+	$(PACKAGE_LIBS) $(LIBM)
 
 galculator_LDFLAGS = -export-dynamic
 

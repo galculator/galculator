@@ -92,4 +92,6 @@ void change_option (int new_status, int opt_group);
 
 void set_window_size_minimal();
 
+int rem (double, long long int);
+
 #endif /* general_functions.h */

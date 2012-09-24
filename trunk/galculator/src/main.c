@@ -158,13 +158,15 @@ int main (int argc, char *argv[])
 		return EXIT_SUCCESS;
 	}
 
-	/* at first, get config file */
-	config_file_name = g_strdup_printf ("%s/%s", getenv ("HOME"), CONFIG_FILE_NAME);
+    /* at first, get config file */
+    config_file_name = getenv("GALCULATOR_CONFIG");
+    if (config_file_name) config_file_name = g_strdup(config_file_name);
+    else config_file_name = g_strdup_printf ("%s/%s", getenv ("HOME"), CONFIG_FILE_NAME);
+
 	prefs = config_file_read (config_file_name);
 	
 	constant = config_file_get_constants();
-	user_function = config_file_get_user_functions();
-	g_free (config_file_name);
+    user_function = config_file_get_user_functions();
 
 	current_status.notation = prefs.def_notation;
 
@@ -217,7 +219,7 @@ int main (int argc, char *argv[])
 
 	/* save changes to file */
 
-	config_file_name = g_strdup_printf ("%s/%s", getenv ("HOME"), CONFIG_FILE_NAME);
+//	config_file_name = g_strdup_printf ("%s/%s", getenv ("HOME"), CONFIG_FILE_NAME);
 	config_file_write (config_file_name, prefs, constant, user_function);
 	g_free (config_file_name);
 
