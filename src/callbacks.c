@@ -1665,15 +1665,16 @@ gboolean on_menuitem_can_activate_accel (GtkWidget *widget, guint signal_id, gpo
 gboolean on_button_event(GtkWidget *widget, GdkEvent *event, gpointer user_data)
 {
 #if GTK_CHECK_VERSION(3, 0, 0)
-    if (current_status.notation == CS_FORMULA) {
+    /* do all cheap checks first before calling expensive formula_entry_is_active */
+    if ((current_status.notation == CS_FORMULA) && (event->type == GDK_KEY_PRESS)) {
+        GdkEventKey *key_event = (GdkEventKey *) event;
+        /* try to rule out some obvious key presses */
+        if (key_event->state & GDK_SUPER_MASK ||
+             key_event->state & GDK_HYPER_MASK ||
+             key_event->state & GDK_META_MASK ||
+             key_event->state & GDK_CONTROL_MASK) return FALSE;
         GtkWidget *formula_entry = formula_entry_is_active(widget);
-        if (formula_entry && (event->type == GDK_KEY_PRESS)) {
-            GdkEventKey *key_event = (GdkEventKey *) event;
-            /* try to rule out some obvious key presses */
-            if (key_event->state & GDK_SUPER_MASK ||
-                 key_event->state & GDK_HYPER_MASK ||
-                 key_event->state & GDK_META_MASK ||
-                 key_event->state & GDK_CONTROL_MASK) return FALSE;
+        if (formula_entry) {
             gtk_widget_event (formula_entry, event);
             return TRUE;
         }

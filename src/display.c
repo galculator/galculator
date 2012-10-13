@@ -756,14 +756,30 @@ void display_result_set (char *string_value, int update_display_value, double va
 void display_result_feed (char *string, int number_base_status)
 {
 	int	counter;
-	
-	for (counter = 0; counter < strlen(string); counter++) {
-		if (is_valid_number(current_status.number, string[counter])) 
-			/* g_ascii_toupper to convert lower hex chars to upper */
-			display_result_add_digit (
-				g_ascii_toupper(string[counter]), number_base_status);
+
+    gboolean toggleSign = current_status.calc_entry_start_new && (strlen(string) > 0) && (*string == '-');
+
+    for (counter = 0; counter < strlen(string); counter++) {
+        switch (string[counter]) {
+        case 'e':
+        case 'E':
+            display_append_e(NULL);
+            break;
+        case '-': {
+            /* this only applies if we just had "EE" before */
+            char *dline = display_result_get();
+            if (strlen(dline) < 3) break;
+            if (strncmp(&dline[strlen(dline)-2], "e+", 2) == 0) display_result_toggle_sign(NULL);
+            break;
+        }
+        default:
+            /* g_ascii_toupper to convert lower hex chars to upper */
+            if (is_valid_number(current_status.number, string[counter]))
+                display_result_add_digit(g_ascii_toupper(string[counter]), number_base_status);
+        }
+        if (toggleSign && counter==1) display_result_toggle_sign(NULL);
 	}
-	if (string[0] == '-') display_result_toggle_sign (NULL);
+//
 }
 
 /*
@@ -866,7 +882,7 @@ void display_result_backspace (int number_base_status)
 		current_entry = display_result_get();
 		/* to avoid an empty/senseless result field */
 		if (strlen(current_entry) == 1) current_entry[0] = '0';
-		else if ((strlen(current_entry) == 2) && (*current_entry == '-')) current_entry = "0\0";
+        else if ((strlen(current_entry) == 2) && (*current_entry == '-')) strcpy(current_entry, "0");
 		else if (current_entry[strlen(current_entry) - 2] == 'e') current_entry[strlen(current_entry) - 2] = '\0';
 		else current_entry[strlen(current_entry) - 1] = '\0';
 		display_result_set (current_entry, TRUE, string2double (current_entry, number_base_status));

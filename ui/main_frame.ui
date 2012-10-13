@@ -117,7 +117,7 @@
                         </child>
                         <child>
                           <object class="GtkImageMenuItem" id="paste">
-                            <property name="label" translatable="yes">_Paste As Display Value</property>
+                            <property name="label" translatable="yes">_Paste and Append to Display Value</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="use_action_appearance">False</property>
