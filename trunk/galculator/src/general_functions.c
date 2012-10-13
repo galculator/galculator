@@ -516,7 +516,7 @@ void remember_display_values()
 {
 	char 	*stack[3];
 	
-	if (prefs.rem_display == TRUE) {
+    if (prefs.rem_display == TRUE) {
 		display_result_set (prefs.rem_valuex, TRUE, string2double(prefs.rem_valuex, current_status.number));
 		/* for the result setting the display string is enough */
 		if (current_status.notation == CS_RPN) {

@@ -1,3 +1,10 @@
+2012-10-13 Simon Flöry <simon.floery@rechenraum.com>
+	* fixed bug in display_result_backspace in display.c (thanks to tjbp)
+	* moved call to remember_display_values from ui_classic_view_create
+		to main, to restore remember display value functionality
+	* Improved pasting of numbers in scientific notation (e.g. 1e-4, 
+		thanks to stevefranks for reporting)
+
 2012-09-24 Simon Flöry <simon.floery@rechenraum.com>
 	* removed gtk_key_snooper_install for GTK3
 	* made factorial more robust (thanks to Nick Warne)
@@ -5,7 +12,7 @@
 		defined location of the configuration file (thanks to Richard Gill)
 	* adding -lm (thanks to Tomas Mraz and Alexandre Rostovtsev)
 
-2012-09-21 Simon Flöey <simon.floery@rechenraum.com>
+2012-09-21 Simon Flöry <simon.floery@rechenraum.com>
 	* making --enable-gtk3 default for configure
 	* replaced three deprecated GTK calls
 

@@ -200,6 +200,7 @@ int main (int argc, char *argv[])
 		
 	/* apply changes */
 	apply_preferences (prefs);
+    remember_display_values ();
 
 	memory.data = NULL;
 	memory.len = 0;

@@ -1213,8 +1213,6 @@ void ui_classic_view_create()
     view_xml = classic_view_xml;
 	
 	display_init ();
-	
-	remember_display_values ();
 }
 
 void ui_classic_view_destroy()
