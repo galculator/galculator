@@ -1,3 +1,8 @@
+
+##############################################
+# 2009-10-15 galculator 2.0 released       #
+##############################################
+
 2012-10-13 Simon Flöry <simon.floery@rechenraum.com>
 	* fixed bug in display_result_backspace in display.c (thanks to tjbp)
 	* moved call to remember_display_values from ui_classic_view_create
