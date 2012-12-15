@@ -26,6 +26,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <errno.h>
 
 #include "calc_basic.h"
 #include "galculator.h"
@@ -43,6 +44,8 @@
 
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
+#include <glib.h>
+#include <glib/gstdio.h>
 
 #define MASK_NUMLOCK GDK_MOD2_MASK
 
@@ -158,10 +161,39 @@ int main (int argc, char *argv[])
 		return EXIT_SUCCESS;
 	}
 
-    /* at first, get config file */
+    /* get config file. 
+     * 
+     * at first we check if there is env variable GALCULATOR_CONFIG set. If not,
+     * we try the XDG location with g_get_user_config_dir. If this does not 
+     * succeed, we try the old non-spec location, that will be migrated to the
+     * XDG location.
+     */
     config_file_name = getenv("GALCULATOR_CONFIG");
     if (config_file_name) config_file_name = g_strdup(config_file_name);
-    else config_file_name = g_strdup_printf ("%s/%s", getenv ("HOME"), CONFIG_FILE_NAME);
+    else {
+		/* if there is a config file in g_get_user_config_dir, use that. 
+		 * otherwise, try old method. anyway, we will store in 
+		 * g_get_user_config_dir and tell the user to remove the file from the
+		 * old location.
+		 */
+		config_file_name = g_strdup_printf("%s/%s/%s", g_get_user_config_dir(), PACKAGE, CONFIG_FILE_NAME);
+		if (!g_file_test(config_file_name, G_FILE_TEST_IS_REGULAR)) {
+			/* create directory for new config file location */
+			char *path = g_strdup_printf("%s/%s", g_get_user_config_dir(), PACKAGE);
+			if (g_mkdir(path, 0755) == -1 && errno != EEXIST) 
+				fprintf (stderr, _("[%s] configuration file: Failed to create directory %s.\n"), PACKAGE, path);
+			g_free(path);
+			/* check old file location */
+			char *config_file_name_old = g_strdup_printf("%s/%s", getenv ("HOME"), CONFIG_FILE_NAME_OLD);
+			if (g_file_test(config_file_name_old, G_FILE_TEST_IS_REGULAR)) {
+				fprintf (stderr, _("[%s] configuration file: We will move the configuration \
+file from %s to %s. After you quit %s, you may remove the configuration file from its old location %s.\n"), 
+PACKAGE, config_file_name_old, config_file_name, PACKAGE, config_file_name_old);
+				g_free(config_file_name);
+				config_file_name = config_file_name_old;
+			} else g_free(config_file_name_old);
+		}
+	}
 
 	prefs = config_file_read (config_file_name);
 	
@@ -220,7 +252,13 @@ int main (int argc, char *argv[])
 
 	/* save changes to file */
 
-//	config_file_name = g_strdup_printf ("%s/%s", getenv ("HOME"), CONFIG_FILE_NAME);
+	if (!getenv("GALCULATOR_CONFIG")) {
+		/* If the config file name is not from an env variable, enforce the
+		 * new location.
+		 */
+		g_free(config_file_name);
+		config_file_name = g_strdup_printf ("%s/%s/%s", g_get_user_config_dir(), PACKAGE, CONFIG_FILE_NAME);
+	}
 	config_file_write (config_file_name, prefs, constant, user_function);
 	g_free (config_file_name);
 
