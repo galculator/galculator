@@ -1,3 +1,10 @@
+2012-12-15 Simon Flöry <simon.floery@rechenraum.com>
+	* removed deprecated calls to set color on color buttons
+	* fixed decimal separator on keypad (thanks to cyberpatrol and qwertypoke,
+		fixes sf.net #86)
+	* config file stored according to XDG spec (thanks to Eric Heintzmann, fixes
+		sf.net #88)
+
 2012-11-08 Simon Flöry <simon.floery@rechenraum.com>
 	* applied patch to update spec file for RPM (thanks to Dwigth Engen)
 
