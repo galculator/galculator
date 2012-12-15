@@ -1,4 +1,6 @@
 2012-12-15 Simon Flöry <simon.floery@rechenraum.com>
+	* added missing GUI element in preferences dialog (migrated GtkOptionMenu
+		to GtkComboBox in Numbers tab)
 	* fixed integer parsing rule in flex parser (thanks to John Williams, fixes
 		sf.net #74)
 	* working around bug with window resizing, I assume this was GTK's fault
@@ -13,7 +15,7 @@
 	* applied patch to update spec file for RPM (thanks to Dwigth Engen)
 
 ##############################################
-# 2009-10-15 galculator 2.0 released       #
+# 2009-10-15 galculator 2.0 released         #
 ##############################################
 
 2012-10-13 Simon Flöry <simon.floery@rechenraum.com>

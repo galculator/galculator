@@ -267,3 +267,5 @@ G_MODULE_EXPORT void on_prefs_inact_mod_color_set (GtkColorButton *button,
 					gpointer user_data);
 G_MODULE_EXPORT void on_prefs_bkg_color_set (GtkColorButton *button, 
 					gpointer user_data);
+G_MODULE_EXPORT void on_prefs_number_combo_changed(GtkComboBox *widget,
+					gpointer user_data);

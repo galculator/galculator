@@ -1410,6 +1410,29 @@ void on_prefs_bin_length_value_changed (GtkSpinButton *spinbutton,
     prefs.bin_length = (int) gtk_spin_button_get_value (spinbutton);
 }
 
+
+void on_prefs_number_combo_changed(GtkComboBox *widget, gpointer user_data)
+{
+	GtkTreeIter iter;
+	if (!gtk_combo_box_get_active_iter(widget, &iter)) {
+		fprintf (stderr, _("[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"), PROG_NAME, BUG_REPORT);
+		return;
+	}
+	
+	int selID;
+	gtk_tree_model_get(gtk_combo_box_get_model(widget), &iter, 1, &selID, -1);
+
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_dec")));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_hex")));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_oct")));
+    gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_bin")));
+    
+    if (selID == 0) gtk_widget_show (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_dec")));
+    else if (selID == 1) gtk_widget_show (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_hex")));
+    else if (selID == 2) gtk_widget_show (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_oct")));
+    else if (selID == 3) gtk_widget_show (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_bin")));
+}
+
 void on_prefs_menu_dec_activate (GtkMenuItem *menuitem, gpointer user_data)
 {
     gtk_widget_show (GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_vbox_dec")));
