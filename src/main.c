@@ -126,8 +126,11 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 	
 	return FALSE;
 }
-
 #endif
+
+/*
+ * main
+ */
 
 #ifdef WITH_HILDON
 /* Registering the hildon application */
@@ -250,9 +253,15 @@ PACKAGE, config_file_name_old, config_file_name, PACKAGE, config_file_name_old);
 	/* gtk_widget_show main window as late as possible */
 	gtk_widget_show (main_window);
 	
+	/*
+	 * enter GTK's main loop
+	 */
+	
 	gtk_main ();
 
-	/* save changes to file */
+	/* 
+	 * save changes to configuration file 
+	 */
 
 	if (!getenv("GALCULATOR_CONFIG")) {
 		/* If the config file name is not from an env variable, enforce the

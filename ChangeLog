@@ -1,4 +1,6 @@
 2012-12-15 Simon Flöry <simon.floery@rechenraum.com>
+	* working around bug with window resizing, I assume this was GTK's fault
+		(general_functions.c, set_window_size_minimal)
 	* removed deprecated calls to set color on color buttons
 	* fixed decimal separator on keypad (thanks to cyberpatrol and qwertypoke,
 		fixes sf.net #86)
