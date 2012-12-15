@@ -37,7 +37,10 @@
 
 #define CLEARED_DISPLAY	"0"
 
-#define CONFIG_FILE_NAME ".galculator"
+/* old, non-XDG method */
+#define CONFIG_FILE_NAME_OLD ".galculator"
+/* XDG spec */
+#define CONFIG_FILE_NAME "galculator.conf"
 
 #ifdef WITH_HILDON
 #define MAIN_GLADE_FILE 		PACKAGE_UI_DIR "/main_frame_hildon.ui"
