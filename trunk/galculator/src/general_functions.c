@@ -873,6 +873,16 @@ void change_option (int new_status, int opt_group)
 void set_window_size_minimal()
 {
     GtkWidget *main_window = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "main_window"));
-	if (main_window != NULL)
+	if (main_window != NULL) {
         gtk_window_resize ((GtkWindow *)GTK_WIDGET(gtk_widget_get_toplevel(main_window)), 1, 1);
+#if (GTK_CHECK_VERSION(3, 0, 0))
+		/* with gtk 3.6.0 on ubuntu I observed that simply calling gtk_window_resize
+		 * with (1,1) did not properly resize widgets and the main window. 
+		 * Interestingly, performing the subsequent query solved the problem in
+		 * almost all cases. I assume this being a bug in GTK which I do not
+		 * pursue any further, until I get told to so.
+		 */
+		gtk_widget_get_preferred_size(GTK_WIDGET(gtk_widget_get_toplevel(main_window)), NULL, NULL);
+#endif
+	}
 }

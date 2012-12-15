@@ -443,10 +443,12 @@ on_basic_mode_toggled (GtkMenuItem     *menuitem,
     
     if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem)) == FALSE) return;
 
+	double display_value = 0;
     if (prefs.mode == SCIENTIFIC_MODE) {
         /* remember number and angle. notation is active in basic mode */
         prefs.def_number = current_status.number;
         prefs.def_angle = current_status.angle;
+        display_value = display_result_get_double(current_status.number);
     }
     prefs.mode = BASIC_MODE;
     
@@ -486,6 +488,8 @@ on_basic_mode_toggled (GtkMenuItem     *menuitem,
     gtk_widget_set_sensitive (menu_item, TRUE);
     
     set_window_size_minimal();
+    
+    display_result_set_double(display_value, current_status.number);
 }
 
 void
@@ -496,6 +500,10 @@ on_scientific_mode_toggled (GtkMenuItem *menuitem,
     
     if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem)) == FALSE) return;
 
+	double display_value = 0;
+    if (prefs.mode == BASIC_MODE)
+		display_value = display_result_get_double(current_status.number);
+		
     prefs.mode = SCIENTIFIC_MODE;
 
     ui_paper_view_destroy ();
@@ -536,6 +544,8 @@ on_scientific_mode_toggled (GtkMenuItem *menuitem,
     gtk_widget_set_sensitive (menu_item, TRUE);
     
     set_window_size_minimal();
+    
+    display_result_set_double(display_value, current_status.number);
 }
 
 void
