@@ -93,6 +93,7 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 	 */
 	
 	//fprintf (stderr, "[%s] key snooper (1): %i %i %s\n", PROG_NAME, event->state, event->keyval, gdk_keyval_name (event->keyval));
+#if 0	
 	if (((event->keyval != GDK_KP_2) && (event->keyval != GDK_KP_Down) &&
 		(event->keyval != GDK_KP_4) && (event->keyval != GDK_KP_Left) &&
 		(event->keyval != GDK_KP_6) && (event->keyval != GDK_KP_Right) &&
@@ -101,6 +102,7 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 		(strcmp (gtk_buildable_get_name (GTK_BUILDABLE(gtk_widget_get_toplevel(grab_widget))), "main_window") != 0) ||
 		(prefs.mode == PAPER_MODE))
 			event->state &= ~GDK_MOD2_MASK;
+#endif
 	//fprintf (stderr, "[%s] key snooper (2): %i %i %s\n", PROG_NAME, event->state, event->keyval, gdk_keyval_name (event->keyval));
 	
 	/* another problem: we have keyboard accelerators which are simple
