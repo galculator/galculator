@@ -686,7 +686,6 @@
                     <property name="use_underline">True</property>
                     <accelerator key="7" signal="clicked"/>
                     <accelerator key="KP_7" signal="clicked"/>
-                    <accelerator key="KP_Home" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>
@@ -733,7 +732,6 @@
                     <property name="use_underline">True</property>
                     <accelerator key="9" signal="clicked"/>
                     <accelerator key="KP_9" signal="clicked"/>
-                    <accelerator key="KP_Page_Up" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>
@@ -828,7 +826,6 @@
                     <property name="use_underline">True</property>
                     <accelerator key="5" signal="clicked"/>
                     <accelerator key="KP_5" signal="clicked"/>
-                    <accelerator key="KP_Begin" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>
@@ -877,7 +874,6 @@
                     <property name="use_underline">True</property>
                     <accelerator key="3" signal="clicked"/>
                     <accelerator key="KP_3" signal="clicked"/>
-                    <accelerator key="KP_Page_Down" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>
@@ -1231,7 +1227,7 @@
                     <accelerator key="comma" signal="clicked"/>
                     <accelerator key="period" signal="clicked"/>
                     <accelerator key="KP_Decimal" signal="clicked"/>
-                    <accelerator key="KP_Delete" signal="clicked"/>
+                    <accelerator key="KP_Separator" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>
@@ -1254,7 +1250,6 @@
                     <property name="use_underline">True</property>
                     <accelerator key="1" signal="clicked"/>
                     <accelerator key="KP_1" signal="clicked"/>
-                    <accelerator key="KP_End" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>

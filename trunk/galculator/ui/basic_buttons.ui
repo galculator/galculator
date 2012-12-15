@@ -35,9 +35,8 @@
                     <property name="tooltip_text" translatable="yes">Seven</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="KP_Home" signal="clicked"/>
-                    <accelerator key="KP_7" signal="clicked"/>
                     <accelerator key="7" signal="clicked"/>
+                    <accelerator key="KP_7" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>
@@ -58,8 +57,8 @@
                     <property name="tooltip_text" translatable="yes">Eight</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="KP_8" signal="clicked"/>
                     <accelerator key="8" signal="clicked"/>
+                    <accelerator key="KP_8" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>
@@ -82,7 +81,6 @@
                     <property name="tooltip_text" translatable="yes">Nine</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="KP_Page_Up" signal="clicked"/>
                     <accelerator key="KP_9" signal="clicked"/>
                     <accelerator key="9" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
@@ -107,8 +105,8 @@
                     <property name="tooltip_text" translatable="yes">Divide</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="slash" signal="clicked"/>
                     <accelerator key="KP_Divide" signal="clicked"/>
+                    <accelerator key="slash" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_operation_button_clicked" swapped="no"/>
@@ -131,8 +129,8 @@
                     <property name="tooltip_text" translatable="yes">Four</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="4" signal="clicked"/>
                     <accelerator key="KP_4" signal="clicked"/>
+                    <accelerator key="4" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>
@@ -153,7 +151,6 @@
                     <property name="tooltip_text" translatable="yes">Five</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="KP_Begin" signal="clicked"/>
                     <accelerator key="KP_5" signal="clicked"/>
                     <accelerator key="5" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
@@ -178,8 +175,8 @@
                     <property name="tooltip_text" translatable="yes">Six</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="KP_6" signal="clicked"/>
                     <accelerator key="6" signal="clicked"/>
+                    <accelerator key="KP_6" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>
@@ -202,7 +199,6 @@
                     <property name="tooltip_text" translatable="yes">Three</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="KP_Page_Down" signal="clicked"/>
                     <accelerator key="KP_3" signal="clicked"/>
                     <accelerator key="3" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
@@ -227,8 +223,8 @@
                     <property name="tooltip_text" translatable="yes">Subtract</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="minus" signal="clicked"/>
                     <accelerator key="KP_Subtract" signal="clicked"/>
+                    <accelerator key="minus" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_operation_button_clicked" swapped="no"/>
@@ -251,8 +247,8 @@
                     <property name="tooltip_text" translatable="yes">Sum</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="plus" signal="clicked"/>
                     <accelerator key="KP_Add" signal="clicked"/>
+                    <accelerator key="plus" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_operation_button_clicked" swapped="no"/>
@@ -297,8 +293,8 @@
                     <property name="tooltip_text" translatable="yes">Multiply</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="asterisk" signal="clicked"/>
                     <accelerator key="KP_Multiply" signal="clicked"/>
+                    <accelerator key="asterisk" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_operation_button_clicked" swapped="no"/>
@@ -502,8 +498,8 @@
                     <property name="tooltip_text" translatable="yes">Zero</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="KP_0" signal="clicked"/>
                     <accelerator key="0" signal="clicked"/>
+                    <accelerator key="KP_0" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>
@@ -524,8 +520,8 @@
                     <property name="tooltip_text" translatable="yes">Decimal point</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="KP_Delete" signal="clicked"/>
                     <accelerator key="KP_Decimal" signal="clicked"/>
+                    <accelerator key="KP_Separator" signal="clicked"/>
                     <accelerator key="period" signal="clicked"/>
                     <accelerator key="comma" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
@@ -548,9 +544,8 @@
                     <property name="tooltip_text" translatable="yes">One</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="KP_End" signal="clicked"/>
-                    <accelerator key="KP_1" signal="clicked"/>
                     <accelerator key="1" signal="clicked"/>
+                    <accelerator key="KP_1" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>
@@ -569,8 +564,8 @@
                     <property name="tooltip_text" translatable="yes">Two</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="2" signal="clicked"/>
                     <accelerator key="KP_2" signal="clicked"/>
+                    <accelerator key="2" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_number_button_clicked" swapped="no"/>
@@ -593,9 +588,9 @@
                     <property name="tooltip_text" translatable="yes">Enter</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="equal" signal="clicked"/>
-                    <accelerator key="KP_Enter" signal="clicked"/>
                     <accelerator key="Return" signal="clicked"/>
+                    <accelerator key="KP_Enter" signal="clicked"/>
+                    <accelerator key="equal" signal="clicked"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_operation_button_clicked" swapped="no"/>
@@ -618,8 +613,8 @@
                     <property name="tooltip_text" translatable="yes">Square root</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <accelerator key="r" signal="clicked" modifiers="GDK_SHIFT_MASK"/>
                     <accelerator key="r" signal="clicked"/>
+                    <accelerator key="r" signal="clicked" modifiers="GDK_SHIFT_MASK"/>
                     <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                     <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                     <signal name="clicked" handler="on_function_button_clicked" swapped="no"/>
