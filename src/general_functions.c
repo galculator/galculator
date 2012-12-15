@@ -257,15 +257,21 @@ void set_spinbutton (GtkBuilder *xml, char *spinbutton_name, void *value)
 
 void set_button_color (GtkBuilder *xml, char *button_name, void *color_string)
 {
-	GtkWidget	*button;
-	char 		**string_var;
-	GdkColor	color;
-
-	/* dereference */
-	string_var = color_string;
-	gdk_color_parse (*string_var, &color);
-    button = GTK_WIDGET(gtk_builder_get_object (xml, button_name));
-	if (button) gtk_color_button_set_color (GTK_COLOR_BUTTON(button), &color);
+	GtkWidget *button = GTK_WIDGET(gtk_builder_get_object (xml, button_name));
+	char **string_var = color_string;
+		
+	if (button) {
+#if GTK_CHECK_VERSION(3, 0, 0)
+		GdkRGBA color;
+		if (!gdk_rgba_parse(&color, *string_var))
+			fprintf (stderr, _("[%s] failed to convert color %s in function \"set_button_color\". %s\n"), PROG_NAME, *string_var, BUG_REPORT);
+		gtk_color_chooser_set_rgba(GTK_COLOR_CHOOSER(button), &color);
+#else
+		GdkColor color;
+		gdk_color_parse(*string_var, &color);
+		gtk_color_button_set_color (GTK_COLOR_BUTTON(button), &color);
+#endif
+	}
 }
 
 void set_stacksize (GtkBuilder *xml, char *name, void *stack_size)
@@ -294,7 +300,7 @@ void set_entry (GtkBuilder *xml, char *entry_name, void *entry_text)
 /*
  * convert given GdkColor to a string so that gdk_color_parse gives the 
  * same color again. Formerly called gdk_color_to_string but since version 2.12
- * gdk features that function by itself.
+ * gdk features that function by itself. For GTK3, we use gdk_rgba.
  */
 
 char *convert_gdk_color_to_string (GdkColor color)

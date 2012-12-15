@@ -676,11 +676,18 @@ on_prefs_result_font_set(GtkFontButton *button, gpointer user_data)
 void
 on_prefs_result_color_set(GtkColorButton *button, gpointer user_data)
 {
-    GdkColor    color;
-    
-    gtk_color_button_get_color (button, &color);
     if (prefs.result_color != NULL) g_free (prefs.result_color);
+
+#if GTK_CHECK_VERSION(3, 0, 0)   
+    GdkRGBA color;
+    gtk_color_chooser_get_rgba(GTK_COLOR_CHOOSER(button), &color);
+    prefs.result_color = gdk_rgba_to_string(&color);
+#else
+    GdkColor color;
+    gtk_color_button_get_color (button, &color);
     prefs.result_color = convert_gdk_color_to_string(color);
+#endif
+
     display_update_tags();
 }
 
@@ -698,11 +705,18 @@ on_prefs_stack_font_set(GtkFontButton *button, gpointer user_data)
 void
 on_prefs_stack_color_set(GtkColorButton *button, gpointer user_data)
 {
-    GdkColor    color;
-    
+	if (prefs.stack_color != NULL) g_free (prefs.stack_color);
+	
+#if GTK_CHECK_VERSION(3, 0, 0)   
+    GdkRGBA color;
+    gtk_color_chooser_get_rgba(GTK_COLOR_CHOOSER(button), &color);
+    prefs.stack_color = gdk_rgba_to_string(&color);
+#else
+    GdkColor color;
     gtk_color_button_get_color (button, &color);
-    if (prefs.stack_color != NULL) g_free (prefs.stack_color);
     prefs.stack_color = convert_gdk_color_to_string(color);
+#endif    
+    
     display_update_tags();
 }
 
@@ -720,33 +734,54 @@ on_prefs_mod_font_set(GtkFontButton *button, gpointer user_data)
 void
 on_prefs_act_mod_color_set(GtkColorButton *button, gpointer user_data)
 {
-    GdkColor    color;
-    
-    gtk_color_button_get_color (button, &color);
     if (prefs.act_mod_color != NULL) g_free (prefs.act_mod_color);
+    
+#if GTK_CHECK_VERSION(3, 0, 0)   
+    GdkRGBA color;
+    gtk_color_chooser_get_rgba(GTK_COLOR_CHOOSER(button), &color);
+    prefs.act_mod_color = gdk_rgba_to_string(&color);
+#else
+    GdkColor color;
+    gtk_color_button_get_color (button, &color);
     prefs.act_mod_color = convert_gdk_color_to_string(color);
+#endif 
+    
     display_update_tags();
 }
 
 void
 on_prefs_inact_mod_color_set(GtkColorButton *button, gpointer user_data)
 {
-    GdkColor    color;
+	if (prefs.inact_mod_color != NULL) g_free (prefs.inact_mod_color);
     
+#if GTK_CHECK_VERSION(3, 0, 0)   
+    GdkRGBA color;
+    gtk_color_chooser_get_rgba(GTK_COLOR_CHOOSER(button), &color);
+    prefs.inact_mod_color = gdk_rgba_to_string(&color);
+#else
+    GdkColor color;
     gtk_color_button_get_color (button, &color);
-    if (prefs.inact_mod_color != NULL) g_free (prefs.inact_mod_color);
     prefs.inact_mod_color = convert_gdk_color_to_string(color);
+#endif 
+
     display_update_tags();
 }
 
 void
 on_prefs_bkg_color_set(GtkColorButton *button, gpointer user_data)
 {
-    GdkColor    color;
-    
+	if (prefs.bkg_color != NULL) g_free (prefs.bkg_color);
+	
+#if GTK_CHECK_VERSION(3, 0, 0)   
+    GdkRGBA color;
+    gtk_color_chooser_get_rgba(GTK_COLOR_CHOOSER(button), &color);
+    prefs.bkg_color = gdk_rgba_to_string(&color);
+#else
+    GdkColor color;
     gtk_color_button_get_color (button, &color);
-    if (prefs.bkg_color != NULL) g_free (prefs.bkg_color);
     prefs.bkg_color = convert_gdk_color_to_string(color);
+#endif 
+
     display_set_bkg_color (prefs.bkg_color);
 }
 
