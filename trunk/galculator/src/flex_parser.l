@@ -18,7 +18,7 @@ exp_opt   ({exp}?)
 fsuff     [flFL]
 fsuff_opt ({fsuff}?)
 dfc       ([-]?(({frac}{exp_opt}{fsuff_opt})|({dseq}{exp}{fsuff_opt})))
-ddc       ([-]?([[:digit:]]{-}[0])[[:digit:]]*)
+ddc       ([-]?[[:digit:]]+)
 
 %x OP
 
