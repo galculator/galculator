@@ -1,7 +1,7 @@
 galculator
 ==========
 
-a GTK 2 based scientific calculator 
+a GTK 2  / GTK 3 based scientific calculator 
 
 For installation information see the INSTALL file.
 For a list of shortcuts, see doc/shortcuts
