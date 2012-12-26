@@ -16,3 +16,4 @@ search at google for "locale id" to look up language codes
 
 no empty newline in POTFILES.in!!!!!
 
+add language code to ../configure.in
