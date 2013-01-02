@@ -112,15 +112,22 @@ on_number_button_clicked               (GtkToggleButton  *button,
  */
 
 void
-on_operation_button_clicked            (GtkToggleButton       *button,                                        gpointer         user_data)
+on_operation_button_clicked(GtkToggleButton *button, gpointer user_data)
 {
     s_cb_token        current_token;
     double            return_value, *stack;
     GtkWidget        *tbutton;
-    char             *operation_string;
     
     if (gtk_toggle_button_get_active(button) == FALSE) return;
     button_activation (button);
+    
+    current_token.operation = GPOINTER_TO_INT(g_object_get_data(G_OBJECT (button), "operation"));
+    /* do inverse left shift is a right shift */
+    if ((current_token.operation == '<') && (BIT (current_status.fmod, CS_FMOD_FLAG_INV) == 1)) {
+		tbutton = GTK_WIDGET(gtk_builder_get_object (button_box_xml, "button_inv"));
+		gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
+        current_token.operation = '>';
+    }
     
     if (current_status.notation == CS_FORMULA) {
         if (strcmp (gtk_buildable_get_name(GTK_BUILDABLE(button)), "button_enter") == 0)
@@ -131,25 +138,23 @@ on_operation_button_clicked            (GtkToggleButton       *button,          
          *    g_object_get_data (G_OBJECT (button), "display_string"));
          */
         else {
-            operation_string = g_strdup_printf("%c", GPOINTER_TO_INT(g_object_get_data (
-                G_OBJECT (button), "operation")));
-            ui_formula_entry_insert (operation_string);
-            g_free(operation_string);
+			if (current_token.operation == '<')
+				ui_formula_entry_insert("<<");
+			else if (current_token.operation == '>')
+				ui_formula_entry_insert(">>");
+			else {
+				char text[2];
+				text[0] = current_token.operation;
+				text[1] = '\0';
+				ui_formula_entry_insert(text);
+			}
         }
         return;
     }
     
-    current_token.operation = GPOINTER_TO_INT(g_object_get_data(G_OBJECT (button), "operation"));
     /* current number, get it from the display! */
     current_token.number = display_result_get_double (current_status.number);
     current_token.func = NULL;
-    /* do inverse left shift is a right shift */
-    if ((current_token.operation == '<') && \
-        (BIT (current_status.fmod, CS_FMOD_FLAG_INV) == 1)) {
-            tbutton = GTK_WIDGET(gtk_builder_get_object (button_box_xml, "button_inv"));
-            gtk_toggle_button_set_active ((GtkToggleButton *) tbutton, FALSE);
-            current_token.operation = '>';
-    }
     
     /* notation specific interface code */
     
