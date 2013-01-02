@@ -1,7 +1,10 @@
 2013-01-02 Simon Flöry <simon.floery@rechenraum.com>
 	* fixed left shift / right shift in formula entry mode (thanks to Thure 
 		Dührsen for reporting, closes sf.net #81)
-
+	* changed default background color
+	* left / right shift returns integers only now by truncating (closes sf.net 
+		#82)
+		
 2012-12-26 Simon Flöry <simon.floery@rechenraum.com>
 	* add Turkish translation (thanks to Oğuz Yarımtepe and all others for
 		contributing, fixes sf.net #86)
