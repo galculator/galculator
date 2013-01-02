@@ -124,11 +124,17 @@ static double compute_expression (double left_hand,
 		result = pow (left_hand, right_hand);
 		break;
 	case '<':
-		/* left shift x*2^n */
-		result = ldexp (left_hand, (int) floor(right_hand));		
+		/* left shift x*2^n. We cast to integer to truncate any fractional part.
+		 * (if we lsh by a negative number, we do a right shift.)
+		 */
+		result = (int) ldexp (left_hand, (int) floor(right_hand));		
 		break;
 	case '>':
-		result = ldexp (left_hand, ((int) floor(right_hand))*(-1));
+		/* right shift x*2^(-n). We temporarily cast to int to round towards
+		 * zero. We want right shifts to return an integer by truncating any
+		 * fractional parts.
+		 */
+		result = (int) ldexp (left_hand, ((int) floor(right_hand))*(-1));
 		break;
     case 'm':
         result = fmod (left_hand, right_hand);
@@ -143,7 +149,7 @@ static double compute_expression (double left_hand,
 		result = (long long int)left_hand ^ (long long int) right_hand;
 		break;
 	case '%':
-		result = left_hand * right_hand/100;
+		result = left_hand * right_hand/100.;
 		break;
 	default: 
 		if (alg_debug+rpn_debug > 0) fprintf (stderr, _("[%s] %c - unknown operation \
