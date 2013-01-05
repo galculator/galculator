@@ -886,3 +886,4 @@ void set_window_size_minimal()
 #endif
 	}
 }
+

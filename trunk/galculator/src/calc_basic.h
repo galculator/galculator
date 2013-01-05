@@ -70,6 +70,13 @@ typedef struct {
 	
 G_REAL id (G_REAL x);
 
+G_REAL g_trunc(G_REAL x);
+
+#if HAVE_LIBQUADMATH
+G_HUGEINT2 greal2hugeint(G_REAL d);
+G_REAL hugeint2greal(G_HUGEINT2 h);
+#endif 
+
 G_REAL alg_add_token (ALG_OBJECT **alg, s_cb_token this_token);
 ALG_OBJECT *alg_init (int debug_level);
 void alg_free (ALG_OBJECT *alg);

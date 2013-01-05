@@ -62,6 +62,7 @@ G_REAL factorial (G_REAL n)
 
 #if HAVE_LIBQUADMATH
 
+/* Compute complement (negation) of argument. See greal2hugeint for more information. */
 G_REAL cmp (G_REAL n)
 {
 	G_REAL mask;
@@ -91,14 +92,14 @@ G_REAL cmp (G_REAL n)
 	return n;
 }
 
-#else
+#else // HAVE_LIBQUADMATH
 
 G_REAL cmp (G_REAL n)
 {
 	return (G_REAL)(~((G_HUGEINT)n));
 }
 
-#endif
+#endif  // HAVE_LIBQUADMATH
 
 /*
  * angle base conversions

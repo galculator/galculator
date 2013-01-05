@@ -46,7 +46,7 @@
 static char 	*operator_precedence[] = {"=)", "+-&|x", "*/<>%", "^", "(", "%", NULL};
 static char 	*right_associative = "^";
 
-static GArray		*rpn_stack;
+static GArray	*rpn_stack;
 static int		rpn_stack_size;
 static int		alg_debug = 0, rpn_debug = 0;
 
@@ -61,6 +61,147 @@ G_REAL id (G_REAL x)
 {
 	return x;
 }
+
+
+/*
+ * binary arithmetic
+ */
+
+#if HAVE_LIBQUADMATH
+
+/* This is a helper function to implement and/or/xor with arguments of up to 
+ * 112 bit length. This converts the given G_REAL (which is the type variables
+ * are passed around in galculator) to G_HUGEINT2, a struct that is capable of
+ * storing at least 128 bits. This function is called at the beginning of
+ * and/or/xor to obtain integer representation for right and left hand side. 
+ * These are subsequently combined and converted back to G_REAL with 
+ * hugeint2greal.
+ */
+G_HUGEINT2 greal2hugeint(G_REAL d)
+{
+	G_HUGEINT2 h;
+	int bits = 112;
+
+	if (d < 0) {
+		switch (current_status.number)
+		{
+		case CS_HEX:
+			bits = prefs.hex_bits;
+			break;
+		case CS_OCT:
+			bits = prefs.oct_bits;
+			break;
+		case CS_BIN:
+			bits = prefs.bin_bits;
+			break;
+		}
+		d += scalbnq(1.0Q, bits);
+	}
+
+	/* The first 128-56=56 bits */
+	h.a = truncq(d / 0x100000000000000L);
+	/* The remainding 56 bits */
+	h.b = fmodq(d, 0x100000000000000L);
+	/* this makes 112 bits in total */
+	
+	return h;
+}
+
+
+/* This is a helper function to implement and/or/xor with arguments of up to 
+ * 112 bit length. This converts the given G_HUGEINT2 back to G_REAL.
+ * 
+ * See greal2hugeint for more information.
+ */
+G_REAL hugeint2greal(G_HUGEINT2 h)
+{
+	G_REAL d;
+	G_REAL mask;
+	G_HUGEINT2 maskh;
+	int is_signed = 1;
+	int bits = 112;
+
+	switch (current_status.number)
+	{
+	case CS_HEX:
+		is_signed = prefs.hex_signed;
+		bits = prefs.hex_bits;
+		break;
+	case CS_OCT:
+		is_signed = prefs.oct_signed;
+		bits = prefs.oct_bits;
+		break;
+	case CS_BIN:
+		is_signed = prefs.bin_signed;
+		bits = prefs.bin_bits;
+		break;
+	}
+
+	/* d = h.a*2^56 + h.b */
+	d = scalbnq((__float128)(h.a & 0xffffffffffffffL), 56) +
+		(__float128)(h.b & 0xffffffffffffffL);
+
+	if (is_signed) {
+		mask = scalbnq(1.0Q, bits - 1);
+		maskh = greal2hugeint(mask);
+		if ((h.a & maskh.a) | (h.b & maskh.b))
+			d -= scalbnq(1.0Q, bits);
+	}
+
+	return d;
+}
+
+/* See greal2hugeint for more information. */
+static G_REAL and(G_REAL left_hand, G_REAL right_hand)
+{
+	G_HUGEINT2 hl, hr, h;
+	hl = greal2hugeint(left_hand);
+	hr = greal2hugeint(right_hand);
+	h.a = hl.a & hr.a;
+	h.b = hl.b & hr.b;
+	return hugeint2greal(h);
+}
+
+/* See greal2hugeint for more information. */
+static G_REAL or(G_REAL left_hand, G_REAL right_hand)
+{
+	G_HUGEINT2 hl, hr, h;
+	hl = greal2hugeint(left_hand);
+	hr = greal2hugeint(right_hand);
+	h.a = hl.a | hr.a;
+	h.b = hl.b | hr.b;
+	return hugeint2greal(h);
+}
+
+/* See greal2hugeint for more information. */
+static G_REAL xor(G_REAL left_hand, G_REAL right_hand)
+{
+	G_HUGEINT2 hl, hr, h;
+	hl = greal2hugeint(left_hand);
+	hr = greal2hugeint(right_hand);
+	h.a = hl.a ^ hr.a;
+	h.b = hl.b ^ hr.b;
+	return hugeint2greal(h);
+}
+
+#else // HAVE_LIBQUADMATH
+
+static G_REAL and(G_REAL left_hand, G_REAL right_hand)
+{
+	return (G_HUGEINT)left_hand & (G_HUGEINT)right_hand;
+}
+
+static G_REAL or(G_REAL left_hand, G_REAL right_hand)
+{
+	return (G_HUGEINT)left_hand | (G_HUGEINT)right_hand;
+}
+
+static G_REAL xor(G_REAL left_hand, G_REAL right_hand)
+{
+	return (G_HUGEINT)left_hand ^ (G_HUGEINT)right_hand;
+}
+
+#endif // HAVE_LIBQUADMATH
 
 /* debug_input. debug code: enter tokens on stdin.
  */
@@ -100,119 +241,6 @@ static int reduce (char op1, char op2)
 	else return TRUE;
 }
 
-#if HAVE_LIBQUADMATH
-
-G_HUGEINT2 greal2hugeint(G_REAL d)
-{
-	G_HUGEINT2 h;
-	int bits = 112;
-
-	if (d < 0) {
-		switch (current_status.number)
-		{
-		case CS_HEX:
-			bits = prefs.hex_bits;
-			break;
-		case CS_OCT:
-			bits = prefs.oct_bits;
-			break;
-		case CS_BIN:
-			bits = prefs.bin_bits;
-			break;
-		}
-		d += scalbnq(1.0Q, bits);
-	}
-
-	h.a = truncq(d / 0x100000000000000L);
-	h.b = fmodq(d, 0x100000000000000L);
-	return h;
-}
-
-G_REAL hugeint2greal(G_HUGEINT2 h)
-{
-	G_REAL d;
-	G_REAL mask;
-	G_HUGEINT2 maskh;
-	int is_signed = 1;
-	int bits = 112;
-
-	switch (current_status.number)
-	{
-	case CS_HEX:
-		is_signed = prefs.hex_signed;
-		bits = prefs.hex_bits;
-		break;
-	case CS_OCT:
-		is_signed = prefs.oct_signed;
-		bits = prefs.oct_bits;
-		break;
-	case CS_BIN:
-		is_signed = prefs.bin_signed;
-		bits = prefs.bin_bits;
-		break;
-	}
-
-	d = scalbnq((__float128)(h.a & 0xffffffffffffffL), 56) +
-		(__float128)(h.b & 0xffffffffffffffL);
-
-	if (is_signed) {
-		mask = scalbnq(1.0Q, bits - 1);
-		maskh = greal2hugeint(mask);
-		if ((h.a & maskh.a) | (h.b & maskh.b))
-			d -= scalbnq(1.0Q, bits);
-	}
-
-	return d;
-}
-
-static G_REAL and(G_REAL left_hand, G_REAL right_hand)
-{
-	G_HUGEINT2 hl, hr, h;
-	hl = greal2hugeint(left_hand);
-	hr = greal2hugeint(right_hand);
-	h.a = hl.a & hr.a;
-	h.b = hl.b & hr.b;
-	return hugeint2greal(h);
-}
-
-static G_REAL or(G_REAL left_hand, G_REAL right_hand)
-{
-	G_HUGEINT2 hl, hr, h;
-	hl = greal2hugeint(left_hand);
-	hr = greal2hugeint(right_hand);
-	h.a = hl.a | hr.a;
-	h.b = hl.b | hr.b;
-	return hugeint2greal(h);
-}
-
-static G_REAL xor(G_REAL left_hand, G_REAL right_hand)
-{
-	G_HUGEINT2 hl, hr, h;
-	hl = greal2hugeint(left_hand);
-	hr = greal2hugeint(right_hand);
-	h.a = hl.a ^ hr.a;
-	h.b = hl.b ^ hr.b;
-	return hugeint2greal(h);
-}
-
-#else
-
-static G_REAL and(G_REAL left_hand, G_REAL right_hand)
-{
-	return (G_HUGEINT)left_hand & (G_HUGEINT)right_hand;
-}
-
-static G_REAL or(G_REAL left_hand, G_REAL right_hand)
-{
-	return (G_HUGEINT)left_hand | (G_HUGEINT)right_hand;
-}
-
-static G_REAL xor(G_REAL left_hand, G_REAL right_hand)
-{
-	return (G_HUGEINT)left_hand ^ (G_HUGEINT)right_hand;
-}
-
-#endif
 
 /* compute_expression. here, the real copmputation is done.
  */
@@ -221,7 +249,7 @@ static G_REAL compute_expression (G_REAL left_hand,
 				char operator, 
 				G_REAL right_hand)
 {
-	G_REAL	result;
+	G_REAL result;
 	
 	switch (operator) {
 	case '+':
@@ -241,11 +269,17 @@ static G_REAL compute_expression (G_REAL left_hand,
 		break;
 	case '<':
 		/* left shift x*2^n */
-		result = G_LDEXP (left_hand, (int) floor(right_hand));
+		result = G_LDEXP (left_hand, (int) G_FLOOR(right_hand));
+		/* truncate result to have integers as result only. negative exponent
+		 * makes left shifitng a right shifting.
+		 */
+		result = g_trunc(result);
 		break;
 	case '>':
 		/* right shift x*2^(-n). */
-		result = G_LDEXP (left_hand, ((int) floor(right_hand))*(-1));
+		result = G_LDEXP (left_hand, ((int) G_FLOOR(right_hand))*(-1));
+		/* truncate result to have integers as result only */
+		result = g_trunc(result);
 		break;
     case 'm':
         result = G_FMOD (left_hand, right_hand);
@@ -271,6 +305,16 @@ character. %s\n"), PROG_NAME, operator, BUG_REPORT);
 	if (alg_debug + rpn_debug > 0) fprintf (stderr, "[%s] computing: %"G_LMOD"f %c %"G_LMOD"f = %"G_LMOD"f\n", 
 		PROG_NAME, left_hand, operator, right_hand, result);
 	return result;
+}
+
+/* implement truncate with floor function:
+ * 	x > 0 --> trunc(x) = floor(x)			trunc(0.4) = floor(0.4) = 0
+ *  x < 0 --> trunc(x) = floor(x) + 1		trunc(-0.4) = 0 = floor(-0.4) + 1 = -1 + 1 = 0
+ */
+
+G_REAL g_trunc(G_REAL x)
+{
+	return G_FLOOR(x) + (x < 0);
 }
 
 /*
