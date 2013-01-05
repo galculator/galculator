@@ -2,7 +2,7 @@
  *  calc_basic.h - arithmetic precedence handling and computing in basic 
  *			calculator mode.
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -39,13 +39,15 @@
 
 #include <glib.h>
 
+#include "g_real.h"
+
 typedef GSList ALG_OBJECT;
 
 enum {THIS_LEVEL, LEVEL_UP, LEVEL_DOWN};
 
 typedef struct {
-	double		num;		/* numerator */
-	double		denum;		/* denumerator */
+	G_REAL		num;		/* numerator */
+	G_REAL		denum;		/* denumerator */
 } s_frac;
 
 typedef struct {
@@ -54,31 +56,31 @@ typedef struct {
 } s_complex;
 
 typedef struct {
-	double		number;
-	double		(*func)(double);
+	G_REAL		number;
+	G_REAL		(*func)(G_REAL);
 	char		operation;
 } s_cb_token;
 
 typedef struct {
-	double		(*func)(double);
-	double		*number;
+	G_REAL		(*func)(G_REAL);
+	G_REAL		*number;
 	char		*operation;
 	int		size;
 } s_alg_stack;
 	
-double id (double x);
+G_REAL id (G_REAL x);
 
-double alg_add_token (ALG_OBJECT **alg, s_cb_token this_token);
+G_REAL alg_add_token (ALG_OBJECT **alg, s_cb_token this_token);
 ALG_OBJECT *alg_init (int debug_level);
 void alg_free (ALG_OBJECT *alg);
 
 void rpn_init (int size, int debug_level);
-void rpn_stack_set_array (double *values, int length);
-void rpn_stack_push (double number);
-double rpn_stack_operation (s_cb_token current_token);
-double rpn_stack_rolldown (double x);
-double rpn_stack_swapxy (double x);
-double *rpn_stack_get (int length);
+void rpn_stack_set_array (G_REAL *values, int length);
+void rpn_stack_push (G_REAL number);
+G_REAL rpn_stack_operation (s_cb_token current_token);
+G_REAL rpn_stack_rolldown (G_REAL x);
+G_REAL rpn_stack_swapxy (G_REAL x);
+G_REAL *rpn_stack_get (int length);
 void rpn_stack_set_size (int size);
 void rpn_free ();
 

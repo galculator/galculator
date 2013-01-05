@@ -1,7 +1,7 @@
 /*
  *  math_functions.h
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -21,24 +21,28 @@
 #ifndef _MATH_FUNCTIONS_H
 #define _MATH_FUNCTIONS_H 1
 
-double pow10y (double y);
-double reciprocal (double x);
-double idx (double x);
-double powx2 (double x);
-double factorial (double n);
-double cmp (double n);
-double rad2deg (double value);
-double rad2grad (double value);
-double deg2rad (double value);
-double grad2rad (double value);
-double asinh (double x);
-double acosh (double x);
-double atanh (double x);
-double sin_wrapper (double x);
-double asin_wrapper (double x);
-double cos_wrapper (double x);
-double acos_wrapper (double x);
-double tan_wrapper (double x);
-double atan_wrapper (double x);
+#include "g_real.h"
+
+G_REAL pow10y (G_REAL y);
+G_REAL reciprocal (G_REAL x);
+G_REAL idx (G_REAL x);
+G_REAL powx2 (G_REAL x);
+G_REAL factorial (G_REAL n);
+G_REAL cmp (G_REAL n);
+G_REAL rad2deg (G_REAL value);
+G_REAL rad2grad (G_REAL value);
+G_REAL deg2rad (G_REAL value);
+G_REAL grad2rad (G_REAL value);
+/*
+G_REAL asinh (G_REAL x);
+G_REAL acosh (G_REAL x);
+G_REAL atanh (G_REAL x);
+*/
+G_REAL sin_wrapper (G_REAL x);
+G_REAL asin_wrapper (G_REAL x);
+G_REAL cos_wrapper (G_REAL x);
+G_REAL acos_wrapper (G_REAL x);
+G_REAL tan_wrapper (G_REAL x);
+G_REAL atan_wrapper (G_REAL x);
 
 #endif /* math_functions.h */

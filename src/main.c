@@ -1,7 +1,7 @@
 /*
  *  main.c
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -51,24 +51,31 @@
 
 s_preferences		prefs;
 s_current_status 	current_status = {0, 0, 0, 0, FALSE, FALSE, TRUE};
-s_array			memory;
-s_constant 		*constant;
+s_array				memory;
+s_constant 			*constant;
 s_user_function		*user_function;
-ALG_OBJECT		*main_alg;
+ALG_OBJECT			*main_alg;
 
 void print_usage ()
 {
-    printf (_("\n%s v%s, (c) 2002-2012 Simon Flöry\n\n\
+    printf (_("\n%s v%s, (c) 2002-2013 Simon Flöry\n\n\
 Usage: %s [options]\n\n\
 options:\n\
 (GTK options)\n\
  -h, --help\t\tShow this usage message\n\
  -v, --version\t\tShow version information\n\n\
 Compiled against GTK version %i.%i.%i\n\
-Linked against GTK version %i.%i.%i\n"),
+Linked against GTK version %i.%i.%i\n\
+%s-precision floating point numbers.\n"),
 PACKAGE, VERSION, PACKAGE,
 GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION,
-gtk_major_version, gtk_minor_version, gtk_micro_version);
+gtk_major_version, gtk_minor_version, gtk_micro_version,
+#if HAVE_LIBQUADMATH
+"Quad"
+#else
+"Double"
+#endif
+);
 }
 
 /* see GtkWidget can-activate-accel signal */

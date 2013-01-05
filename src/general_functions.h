@@ -1,7 +1,7 @@
 /*
  *  general_functions.h
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -27,15 +27,15 @@
 #define BIT(val, index) ((val & (1 << index)) >> index)
 
 void statusbar_init (GtkWidget *a_parent_widget);
-double error_unsupported_inv (double dummy);
-double error_unsupported_hyp (double dummy);
+G_REAL error_unsupported_inv (G_REAL dummy);
+G_REAL error_unsupported_hyp (G_REAL dummy);
 void error_message (char *format_string, ...);
 void clear ();
 void backspace ();
 void all_clear ();
 
-double axtof (char *bin_string, int base, int nr_bits, gboolean is_signed);
-char *ftoax (double x, int base, int nr_bits, gboolean is_signedh);
+G_REAL axtof (char *bin_string, int base, int nr_bits, gboolean is_signed);
+char *ftoax (G_REAL x, int base, int nr_bits, gboolean is_signedh);
 
 char *add_leading_zeros (char *string, int multiple);
 
@@ -56,7 +56,7 @@ gboolean is_valid_number (int number_base, char number);
 
 void activate_menu_item (char *item_name);
 
-char *get_display_number_string (double value, int base);
+char *get_display_number_string (G_REAL value, int base);
 int get_display_number_length (int base);
 
 void gfunc_f1 (GtkToggleButton *button);
@@ -66,7 +66,7 @@ void rpn_stack_lift ();
 
 void remember_display_values();
 
-double string2double (char *string, int number_base);
+G_REAL string2double (char *string, int number_base);
 
 char *string_add_separator (char *string, gboolean separate, int block_length, char separator, char dpoint);
 char *string_del_separator (char *string, char separator);
@@ -79,8 +79,8 @@ GtkWidget *formula_entry_is_active_no_toplevel_check ();
 
 s_flex_parser_result compute_user_function (char *expression, char *variable, char *value);
 
-double x2rad (double x);
-double rad2x (double x);
+G_REAL x2rad (G_REAL x);
+G_REAL rad2x (G_REAL x);
 
 gboolean get_sep (int number_base);
 int get_sep_length (int number_base);
@@ -92,6 +92,6 @@ void change_option (int new_status, int opt_group);
 
 void set_window_size_minimal();
 
-int rem (double, long long int);
+int rem (G_REAL, G_HUGEINT);
 
 #endif /* general_functions.h */

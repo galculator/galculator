@@ -1,7 +1,7 @@
 /*
  *  display.h
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -75,13 +75,13 @@ void display_module_notation_activate (int mode);
 /* the result field */
 
 /* there are some static functions declared in the header of display.c */
-void display_result_set (char *string_value, int update_display_value, double value);
-void display_result_set_double (double value, int number_base_status);
+void display_result_set (char *string_value, int update_display_value, G_REAL value);
+void display_result_set_double (G_REAL value, int number_base_status);
 void display_result_add_digit (char digit, int number_base_status);
 void display_result_feed (char *string, int number_base_status);
 
 char *display_result_get ();
-double display_result_get_double (int number_base_status);
+G_REAL display_result_get_double (int number_base_status);
 void display_append_e (GtkToggleButton *button);
 void display_result_toggle_sign (GtkToggleButton *button);
 void display_result_backspace (int number_base_status);
@@ -90,8 +90,8 @@ void display_result_getset ();
 void display_stack_create ();
 void display_stack_remove ();
 void display_stack_set_yzt (char **stack);
-void display_stack_set_yzt_double (double *stack, int number_base_status);
+void display_stack_set_yzt_double (G_REAL *stack, int number_base_status);
 char **display_stack_get_yzt ();
-double *display_stack_get_yzt_double (int number_base_status);
+G_REAL *display_stack_get_yzt_double (int number_base_status);
 
 #endif /* display.h */

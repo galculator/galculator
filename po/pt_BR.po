@@ -36,7 +36,7 @@ msgstr ""
 #, fuzzy, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2012 Simon Flöry\n"
+"%s v%s, (c) 2002-2013 Simon Flöry\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -903,7 +903,7 @@ msgid "About galculator"
 msgstr "_Calculadora"
 
 #: ../ui/about.ui.in.h:2
-msgid "Copyright (c) 2002-2012 by Simon Flöry <simon.floery@rechenraum.com>"
+msgid "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
 msgstr ""
 
 #: ../ui/about.ui.in.h:3

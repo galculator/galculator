@@ -1,3 +1,7 @@
+2013-01-05 Simon Flöry <simon.floery@rechenraum.com>
+	* applied patch by John Williams to support libquadmath (quad-precision
+		floating point and up to 112-bit integer arithmetic)
+		
 2013-01-02 Simon Flöry <simon.floery@rechenraum.com>
 	* fixed left shift / right shift in formula entry mode (thanks to Thure 
 		Dührsen for reporting, closes sf.net #81)

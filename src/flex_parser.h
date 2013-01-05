@@ -1,7 +1,7 @@
 /*
  *  flex_parser.h
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ enum {
 };
 
 typedef struct {
-	double		value;
+	G_REAL		value;
 	gboolean	error;
 } s_flex_parser_result;
 

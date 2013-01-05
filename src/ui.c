@@ -1,7 +1,7 @@
 /*
  *  ui.c - general user interface code.
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -181,13 +181,13 @@ static void set_scientific_object_data ()
 	/* declare this one static as we need the display_names throughout */
 	
 	static s_function_map function_map[] = {
-		{"button_sin", {"sin(", "asin(", "sinh(", "asinh("}, {sin_wrapper, asin_wrapper, sinh, asinh}},
-		{"button_cos", {"cos(", "acos(", "cosh(", "acosh("}, {cos_wrapper, acos_wrapper, cosh, acosh}},
-		{"button_tan", {"tan(", "atan(", "tanh(", "atanh("}, {tan_wrapper, atan_wrapper, tanh, atanh}},
-		{"button_log", {"log(", "10^", "log(", "log("}, {log10, pow10y, log10, log10}},
-		{"button_ln", {"ln(", "e^", "ln(", "ln("}, {log, exp, log, log}},
-		{"button_sq", {"^2", "sqrt(", "^2", "^2"}, {powx2, sqrt, powx2, powx2}},
-		{"button_sqrt", {"sqrt(", "^2", "sqrt(", "sqrt("}, {sqrt, powx2, sqrt, sqrt}},
+		{"button_sin", {"sin(", "asin(", "sinh(", "asinh("}, {sin_wrapper, asin_wrapper, G_SINH, G_ASINH}},
+		{"button_cos", {"cos(", "acos(", "cosh(", "acosh("}, {cos_wrapper, acos_wrapper, G_COSH, G_ACOSH}},
+		{"button_tan", {"tan(", "atan(", "tanh(", "atanh("}, {tan_wrapper, atan_wrapper, G_TANH, G_ATANH}},
+		{"button_log", {"log(", "10^", "log(", "log("}, {G_LOG10, pow10y, G_LOG10, G_LOG10}},
+		{"button_ln", {"ln(", "e^", "ln(", "ln("}, {G_LOG, G_EXP, G_LOG, G_LOG}},
+		{"button_sq", {"^2", "sqrt(", "^2", "^2"}, {powx2, G_SQRT, powx2, powx2}},
+		{"button_sqrt", {"sqrt(", "^2", "sqrt(", "sqrt("}, {G_SQRT, powx2, G_SQRT, G_SQRT}},
 		{"button_fac", {"!", "!", "!", "!"}, {factorial, factorial, factorial, factorial}},
 		{"button_cmp", {"~", "~", "~", "~"}, {cmp, cmp, cmp, cmp}},
 		{NULL}
@@ -222,7 +222,7 @@ static void set_basic_object_data ()
 	};
 	
 	s_function_map function_map[] = {
-		{"button_sqrt", {"sqrt", "^2", "sqrt", "sqrt"}, {sqrt, powx2, sqrt, sqrt}},
+		{"button_sqrt", {"sqrt", "^2", "sqrt", "sqrt"}, {G_SQRT, powx2, G_SQRT, G_SQRT}},
 		{NULL}
 	};
 	
@@ -905,7 +905,7 @@ GtkWidget *ui_memory_menu_create (s_array memory, GCallback memory_handler, char
 	
 	menu = gtk_menu_new();
 	for (counter = 0; counter < memory.len; counter++) {
-		label = g_strdup_printf ("%f", memory.data[counter]);
+		label = g_strdup_printf ("%"G_LMOD"f", memory.data[counter]);
 		child = gtk_menu_item_new_with_label(label);
 		g_free (label);
 		gtk_menu_shell_append ((GtkMenuShell *) menu, child);
@@ -954,10 +954,27 @@ GtkWidget *ui_pref_dialog_create ()
 	gtk_builder_connect_signals(prefs_xml, NULL);
 	
     prefs_dialog = GTK_WIDGET(gtk_builder_get_object (prefs_xml, "prefs_dialog"));
+    
+    /* Set maximal number of bits for the integer types depending on whether
+	 * float128 is available or not.
+	 */
 	
-	gtk_window_set_title ((GtkWindow *)prefs_dialog, \
-		g_strdup_printf (_("%s Preferences"), PACKAGE));
-	/* preferences -> gui */
+#if HAVE_LIBQUADMATH
+	gdouble upperBound = 112;
+#else
+	gdouble upperBound = 32;
+#endif
+
+	gtk_adjustment_set_upper(gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(gtk_builder_get_object (prefs_xml, "prefs_hex_bits"))), upperBound);
+	gtk_adjustment_set_upper(gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(gtk_builder_get_object (prefs_xml, "prefs_oct_bits"))), upperBound);
+	gtk_adjustment_set_upper(gtk_spin_button_get_adjustment(GTK_SPIN_BUTTON(gtk_builder_get_object (prefs_xml, "prefs_bin_bits"))), upperBound);
+	
+	gtk_window_set_title ((GtkWindow *)prefs_dialog, g_strdup_printf (_("%s Preferences"), PACKAGE));
+	
+	/* 
+	 * fill gui with current preferences settings 
+	 */
+	 
 	prefs_list = config_file_get_prefs_list();
 	while (prefs_list[counter].key != NULL) {
 		if (prefs_list[counter].set_handler != NULL) {
@@ -1072,7 +1089,7 @@ GtkWidget *ui_pref_dialog_create ()
         gtk_builder_get_object (prefs_xml, "prefs_func_delete_button")));
     gtk_size_group_add_widget (sgroup, GTK_WIDGET(
         gtk_builder_get_object (prefs_xml, "prefs_func_clear_button")));
-	
+
 	gtk_widget_show (prefs_dialog);
 	return prefs_dialog;
 }
