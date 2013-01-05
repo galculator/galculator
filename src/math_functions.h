@@ -28,7 +28,9 @@ G_REAL reciprocal (G_REAL x);
 G_REAL idx (G_REAL x);
 G_REAL powx2 (G_REAL x);
 G_REAL factorial (G_REAL n);
+
 G_REAL cmp (G_REAL n);
+
 G_REAL rad2deg (G_REAL value);
 G_REAL rad2grad (G_REAL value);
 G_REAL deg2rad (G_REAL value);

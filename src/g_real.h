@@ -6,19 +6,31 @@
 #  include <config.h>
 #endif
 
+/* 
+ * The basic type in galculator is G_REAL. By default, this is a double 
+ * precision floating point number. If we are compiling on gcc 4.6 and later,
+ * there is libquadmath available and G_REAL is a quad-precision floating point
+ * number.
+ * 
+ * Quad-precision means a 128-bit float, see
+ * 	http://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format
+ * We have a fraction of 112 bits and an exponent of 15 bits. So apart from
+ * quad-precision floating point arithmetic, we may have 112 bit binary 
+ * arithmetic. While +,-,* etc is inherited from floating points, this is 
+ * achieved for missing opterators such as and/or/xor in math_functions. 
+ */
+
 #if HAVE_LIBQUADMATH
 
 #include <quadmath.h>
 
 typedef __float128 G_REAL;
+/* this is at least 64-bit wide */
 typedef unsigned long long int G_HUGEINT;
 typedef struct {
 	G_HUGEINT a;
 	G_HUGEINT b;
 } G_HUGEINT2;
-
-G_HUGEINT2 greal2hugeint(G_REAL d);
-G_REAL hugeint2greal(G_HUGEINT2 h);
 
 #define G_SIN sinq
 #define G_COS cosq
@@ -44,13 +56,12 @@ G_REAL hugeint2greal(G_HUGEINT2 h);
 #define G_FMOD fmodq
 #define G_LDEXP ldexpq
 
-#define G_STRTOD strtodq
-
 #define G_LMOD "Q"
 
 #else // HAVE_LIBQUADMATH
 
 typedef double G_REAL;
+/* this is at least 64-bit wide */
 typedef long long int G_HUGEINT;
 
 #define G_SIN sin
@@ -76,8 +87,6 @@ typedef long long int G_HUGEINT;
 #define G_FLOOR floor
 #define G_FMOD fmod
 #define G_LDEXP ldexp
-
-#define G_STRTOD strtod
 
 #define G_LMOD ""
 
