@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT(configure.in)
-AM_INIT_AUTOMAKE([galculator], [2.0.2beta])
+AM_INIT_AUTOMAKE([galculator], [2.1beta])
 AM_MAINTAINER_MODE
 
 AM_CONFIG_HEADER(config.h)
@@ -31,6 +31,10 @@ AC_SUBST(PACKAGE_LIBS)
 
 AC_CHECK_LIBM
 AC_SUBST(LIBM)
+
+dnl If the check succeeds, -lquadmath is added to LIBS and we get a 
+dnl HAVE_LIBQUADMATH defined
+AC_CHECK_LIB(quadmath,sinhq)
 
 GETTEXT_PACKAGE=galculator
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Name of gettext package])

@@ -1,7 +1,7 @@
 /*
  *  display.c - code for this nifty display.
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -45,14 +45,14 @@ static char	*number_mod_labels[5] = {" DEC ", " HEX ", " OCT ", " BIN ", NULL},
 		*notation_mod_labels[4] = {" ALG ", " RPN ", " FORM ", NULL};	
 
 /* no one outside display.c should need to call these functions */
-static void display_set_line_double (double value, int line, char *tag, int number_base_status);
+static void display_set_line_double (G_REAL value, int line, char *tag, int number_base_status);
 static void display_set_line (char *string, int line, char *tag);
 static char *display_get_line (int line_nr);
 
-/* we do not need to remember the stack in double as this is stored outside
+/* we do not need to remember the stack in G_REAL as this is stored outside
  * the stack functions in here only manipulate yzt
  */
-double display_value=0.;
+G_REAL display_value=0.;
 
 /*
  * display.c mainly consists of two parts: first display setup code
@@ -555,8 +555,8 @@ void display_module_base_delete (char *mark_name, char **text)
 
 void display_change_option (int old_status, int new_status, int opt_group)
 {
-	double	display_value=0;
-	double 	*stack;
+	G_REAL	display_value=0;
+	G_REAL 	*stack;
 	
 	switch (opt_group) {
 		case DISPLAY_OPT_NUMBER:
@@ -684,7 +684,7 @@ static void display_set_line (char *string, int line, char *tag)
 	}
 }
 
-static void display_set_line_double (double value, int line, char *tag, int number_base_status)
+static void display_set_line_double (G_REAL value, int line, char *tag, int number_base_status)
 {
 	char		*string_value;
 	
@@ -736,7 +736,7 @@ void display_result_add_digit (char digit, int number_base_status)
  * display_result_set_double. set text of calc_entry to string given by float value.
  *	the float value is manipulated (rounded, ...)
  */
-void display_result_set_double (double value, int number_base_status)
+void display_result_set_double (G_REAL value, int number_base_status)
 {	
 	current_status.allow_arith_op = TRUE;
 	display_module_arith_label_update (' ');
@@ -744,7 +744,7 @@ void display_result_set_double (double value, int number_base_status)
 	display_value = value;
 }
 
-void display_result_set (char *string_value, int update_display_value, double value)
+void display_result_set (char *string_value, int update_display_value, G_REAL value)
 {
 	current_status.allow_arith_op = TRUE;
 	display_module_arith_label_update (' ');
@@ -804,12 +804,12 @@ char *display_result_get ()
 	return display_get_line (display_result_line);
 }
 
-/* display_result_get_double. a display_result_get plus conversion to double
+/* display_result_get_double. a display_result_get plus conversion to G_REAL
  */
-double display_result_get_double (int number_base_status)
+G_REAL display_result_get_double (int number_base_status)
 {
 /*	char 	*result_string;
-	double	ret_val;
+	G_REAL	ret_val;
 	
 	result_string = display_result_get();
 	ret_val = string2double (result_string, number_base_status);
@@ -941,7 +941,7 @@ void display_stack_remove ()
  *	calc_basic IS NOT modified.
  */
 
-void display_stack_set_yzt_double (double *stack, int number_base_status)
+void display_stack_set_yzt_double (G_REAL *stack, int number_base_status)
 {
 	int		counter;
 
@@ -987,18 +987,18 @@ char **display_stack_get_yzt ()
 
 /*
  * display_stack_get_yzt_double - returns the string array of display_stack_get_yzt
- * 	as double array.
+ * 	as G_REAL array.
  */
 
-double *display_stack_get_yzt_double (int number_base_status)
+G_REAL *display_stack_get_yzt_double (int number_base_status)
 {
 	char 	**string_stack;
-	double	*double_stack;
+	G_REAL	*G_REAL_stack;
 	int	counter;
 	
-	double_stack = (double *) malloc (display_result_line * sizeof(double));
+	G_REAL_stack = (G_REAL *) malloc (display_result_line * sizeof(G_REAL));
 	string_stack = display_stack_get_yzt();
 	for (counter = 0; counter < display_result_line; counter++)
-		double_stack[counter] = string2double (string_stack[counter], number_base_status);
-	return double_stack;
+		G_REAL_stack[counter] = string2double (string_stack[counter], number_base_status);
+	return G_REAL_stack;
 }

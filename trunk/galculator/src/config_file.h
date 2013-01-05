@@ -1,7 +1,7 @@
 /*
  *  config_file.h - header file for config_file.c, manages config file access.
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -32,58 +32,59 @@
 #define SECTION_CONSTANTS "[constants]"
 #define SECTION_USER_FUNCTIONS "[user functions]"
 
-#define DEFAULT_BKG_COLOR		"#f2ffc2"
-#define DEFAULT_RESULT_FONT		"Sans Bold 26"
+#define DEFAULT_BKG_COLOR			"#f2ffc2"
+#define DEFAULT_RESULT_FONT			"Sans Bold 26"
 #define	DEFAULT_RESULT_COLOR 		"black"
-#define DEFAULT_STACK_FONT		"Sans Bold 11"
-#define DEFAULT_STACK_COLOR		"black"
-#define DEFAULT_MOD_FONT		"Sans Bold 8"
+#define DEFAULT_STACK_FONT			"Sans Bold 11"
+#define DEFAULT_STACK_COLOR			"black"
+#define DEFAULT_MOD_FONT			"Sans Bold 8"
 #define DEFAULT_ACT_MOD_COLOR		"black"
 #define DEFAULT_INACT_MOD_COLOR		"grey"
-#define	DEFAULT_VIS_NUMBER		TRUE
-#define	DEFAULT_VIS_ANGLE		TRUE
+#define	DEFAULT_VIS_NUMBER			TRUE
+#define	DEFAULT_VIS_ANGLE			TRUE
 #define	DEFAULT_VIS_NOTATION		TRUE
-#define DEFAULT_VIS_ARITH		TRUE
-#define DEFAULT_VIS_BRACKET		TRUE
+#define DEFAULT_VIS_ARITH			TRUE
+#define DEFAULT_VIS_BRACKET			TRUE
 #define DEFAULT_CUSTOM_BUTTON_FONT	FALSE
-#define DEFAULT_BUTTON_FONT		"Sans 10"
+#define DEFAULT_BUTTON_FONT			"Sans 10"
 #define DEFAULT_BUTTON_WIDTH 		40
 #define DEFAULT_BUTTON_HEIGHT 		25
-#define DEFAULT_VIS_FUNCS		TRUE
+#define DEFAULT_VIS_FUNCS			TRUE
 #define DEFAULT_VIS_DISPCTRL		TRUE
-#define DEFAULT_VIS_LOGIC		TRUE
+#define DEFAULT_VIS_LOGIC			TRUE
 #define DEFAULT_VIS_STANDARD		TRUE
-#define DEFAULT_MODE			BASIC_MODE
-#define DEFAULT_DEC_SEP			FALSE
+#define DEFAULT_MODE				BASIC_MODE
+#define DEFAULT_DEC_SEP				FALSE
 #define DEFAULT_DEC_SEP_LENGTH		3
 #define DEFAULT_DEC_SEP_CHAR		" "
-#define DEFAULT_HEX_BITS		32
-#define DEFAULT_HEX_SIGNED		TRUE
-#define DEFAULT_HEX_SEP			FALSE
+#define DEFAULT_HEX_BITS			32
+#define DEFAULT_HEX_SIGNED			TRUE
+#define DEFAULT_HEX_SEP				FALSE
 #define DEFAULT_HEX_SEP_LENGTH		4
 #define DEFAULT_HEX_SEP_CHAR		" "
-#define DEFAULT_OCT_BITS		32
-#define DEFAULT_OCT_SIGNED		TRUE
-#define DEFAULT_OCT_SEP			FALSE
+#define DEFAULT_OCT_BITS			32
+
+#define DEFAULT_OCT_SIGNED			TRUE
+#define DEFAULT_OCT_SEP				FALSE
 #define DEFAULT_OCT_SEP_LENGTH		3
 #define DEFAULT_OCT_SEP_CHAR		" "
-#define DEFAULT_BIN_BITS		16
-#define DEFAULT_BIN_SIGNED		TRUE
-#define DEFAULT_BIN_FIXED		FALSE
-#define DEFAULT_BIN_LENGTH		8
-#define DEFAULT_BIN_SEP			FALSE
+#define DEFAULT_BIN_BITS			16
+#define DEFAULT_BIN_SIGNED			TRUE
+#define DEFAULT_BIN_FIXED			FALSE
+#define DEFAULT_BIN_LENGTH			8
+#define DEFAULT_BIN_SEP				FALSE
 #define DEFAULT_BIN_SEP_LENGTH		4
 #define DEFAULT_BIN_SEP_CHAR		" "
-#define DEFAULT_NUMBER			CS_DEC
-#define DEFAULT_ANGLE			CS_RAD
-#define DEFAULT_NOTATION		CS_PAN
-#define DEFAULT_STACK_SIZE		3
-#define DEFAULT_REM_DISPLAY		FALSE
-#define	DEFAULT_REM_VALUEX		"0"	/* must not end with a newline! */
-#define	DEFAULT_REM_VALUEY		"0"
-#define	DEFAULT_REM_VALUEZ		"0"
-#define	DEFAULT_REM_VALUET		"0"
-#define DEFAULT_SHOW_MENU		TRUE
+#define DEFAULT_NUMBER				CS_DEC
+#define DEFAULT_ANGLE				CS_RAD
+#define DEFAULT_NOTATION			CS_PAN
+#define DEFAULT_STACK_SIZE			3
+#define DEFAULT_REM_DISPLAY			FALSE
+#define	DEFAULT_REM_VALUEX			"0"	/* must not end with a newline! */
+#define	DEFAULT_REM_VALUEY			"0"
+#define	DEFAULT_REM_VALUEZ			"0"
+#define	DEFAULT_REM_VALUET			"0"
+#define DEFAULT_SHOW_MENU			TRUE
 
 typedef struct {
 	/* 1st pref page */

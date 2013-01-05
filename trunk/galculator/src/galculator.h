@@ -1,7 +1,7 @@
 /*
  *  galculator.h - general definitions.
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -23,6 +23,8 @@
 
 #include <glib.h>
 
+#include "g_real.h"
+
 #ifdef HAVE_CONFIG_H
 #  include <config.h>
 #endif
@@ -43,20 +45,20 @@
 #define CONFIG_FILE_NAME "galculator.conf"
 
 #ifdef WITH_HILDON
-#define MAIN_GLADE_FILE 		PACKAGE_UI_DIR "/main_frame_hildon.ui"
+#define MAIN_GLADE_FILE 			PACKAGE_UI_DIR "/main_frame_hildon.ui"
 #else
-#define MAIN_GLADE_FILE 		PACKAGE_UI_DIR "/main_frame.ui"
+#define MAIN_GLADE_FILE 			PACKAGE_UI_DIR "/main_frame.ui"
 #endif
 #define SCIENTIFIC_GLADE_FILE		PACKAGE_UI_DIR "/scientific_buttons.ui"
-#define BASIC_GLADE_FILE		PACKAGE_UI_DIR "/basic_buttons.ui"
-#define ABOUT_GLADE_FILE 		PACKAGE_UI_DIR "/about.ui"
+#define BASIC_GLADE_FILE			PACKAGE_UI_DIR "/basic_buttons.ui"
+#define ABOUT_GLADE_FILE 			PACKAGE_UI_DIR "/about.ui"
 #ifdef WITH_HILDON
-#define PREFS_GLADE_FILE 		PACKAGE_UI_DIR "/prefs-ume.ui"
+#define PREFS_GLADE_FILE 			PACKAGE_UI_DIR "/prefs-ume.ui"
 #else
-#define PREFS_GLADE_FILE 		PACKAGE_UI_DIR "/prefs.ui"
+#define PREFS_GLADE_FILE 			PACKAGE_UI_DIR "/prefs.ui"
 #endif
-#define FONT_GLADE_FILE 		PACKAGE_UI_DIR "/font.ui"
-#define COLOR_GLADE_FILE 		PACKAGE_UI_DIR "/color.ui"
+#define FONT_GLADE_FILE 			PACKAGE_UI_DIR "/font.ui"
+#define COLOR_GLADE_FILE 			PACKAGE_UI_DIR "/color.ui"
 #define CLASSIC_VIEW_GLADE_FILE		PACKAGE_UI_DIR "/classic_view.ui"
 #define PAPER_VIEW_GLADE_FILE		PACKAGE_UI_DIR "/paper_view.ui"
 #define DISPCTRL_RIGHT_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right.ui"
@@ -159,7 +161,7 @@ typedef struct {
 	char		*button_name;
 	/* for simplicity we put the display_names not in an array */
 	char		*display_names[4];
-	double		(*func[4])(double);
+	G_REAL		(*func[4])(G_REAL);
 } s_function_map;
 
 typedef struct {
@@ -195,7 +197,7 @@ typedef struct {
 } s_user_function;
 
 typedef struct {
-	double		*data;
+	G_REAL		*data;
 	int		len;
 } s_array;
 

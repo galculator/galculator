@@ -2,7 +2,7 @@
  *  calc_basic.c - arithmetic precedence handling and computing in basic 
  *			calculator mode.
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -34,6 +34,7 @@
 #include <math.h>
 
 #include "calc_basic.h"
+#include "galculator.h"
 
 /* i18n */
 
@@ -56,7 +57,7 @@ static int		alg_debug = 0, rpn_debug = 0;
 /* id. The identity function. This is used as stack function, if none was given.
  */
 
-double id (double x)
+G_REAL id (G_REAL x)
 {
 	return x;
 }
@@ -74,9 +75,10 @@ void debug_input ()
 	scanf ("%s", input);
 	current_token.operation = input[0];
 	current_token.func = NULL;
-	printf ("\t\tdisplay value: %f\n", alg_add_token (current_token));
+	printf ("\t\tdisplay value: %"G_LMOD"f\n", alg_add_token (current_token));
 }
 */
+
 /* reduce. TRUE if op1 comes before op2 in a computation.
  */
 
@@ -98,14 +100,128 @@ static int reduce (char op1, char op2)
 	else return TRUE;
 }
 
+#if HAVE_LIBQUADMATH
+
+G_HUGEINT2 greal2hugeint(G_REAL d)
+{
+	G_HUGEINT2 h;
+	int bits = 112;
+
+	if (d < 0) {
+		switch (current_status.number)
+		{
+		case CS_HEX:
+			bits = prefs.hex_bits;
+			break;
+		case CS_OCT:
+			bits = prefs.oct_bits;
+			break;
+		case CS_BIN:
+			bits = prefs.bin_bits;
+			break;
+		}
+		d += scalbnq(1.0Q, bits);
+	}
+
+	h.a = truncq(d / 0x100000000000000L);
+	h.b = fmodq(d, 0x100000000000000L);
+	return h;
+}
+
+G_REAL hugeint2greal(G_HUGEINT2 h)
+{
+	G_REAL d;
+	G_REAL mask;
+	G_HUGEINT2 maskh;
+	int is_signed = 1;
+	int bits = 112;
+
+	switch (current_status.number)
+	{
+	case CS_HEX:
+		is_signed = prefs.hex_signed;
+		bits = prefs.hex_bits;
+		break;
+	case CS_OCT:
+		is_signed = prefs.oct_signed;
+		bits = prefs.oct_bits;
+		break;
+	case CS_BIN:
+		is_signed = prefs.bin_signed;
+		bits = prefs.bin_bits;
+		break;
+	}
+
+	d = scalbnq((__float128)(h.a & 0xffffffffffffffL), 56) +
+		(__float128)(h.b & 0xffffffffffffffL);
+
+	if (is_signed) {
+		mask = scalbnq(1.0Q, bits - 1);
+		maskh = greal2hugeint(mask);
+		if ((h.a & maskh.a) | (h.b & maskh.b))
+			d -= scalbnq(1.0Q, bits);
+	}
+
+	return d;
+}
+
+static G_REAL and(G_REAL left_hand, G_REAL right_hand)
+{
+	G_HUGEINT2 hl, hr, h;
+	hl = greal2hugeint(left_hand);
+	hr = greal2hugeint(right_hand);
+	h.a = hl.a & hr.a;
+	h.b = hl.b & hr.b;
+	return hugeint2greal(h);
+}
+
+static G_REAL or(G_REAL left_hand, G_REAL right_hand)
+{
+	G_HUGEINT2 hl, hr, h;
+	hl = greal2hugeint(left_hand);
+	hr = greal2hugeint(right_hand);
+	h.a = hl.a | hr.a;
+	h.b = hl.b | hr.b;
+	return hugeint2greal(h);
+}
+
+static G_REAL xor(G_REAL left_hand, G_REAL right_hand)
+{
+	G_HUGEINT2 hl, hr, h;
+	hl = greal2hugeint(left_hand);
+	hr = greal2hugeint(right_hand);
+	h.a = hl.a ^ hr.a;
+	h.b = hl.b ^ hr.b;
+	return hugeint2greal(h);
+}
+
+#else
+
+static G_REAL and(G_REAL left_hand, G_REAL right_hand)
+{
+	return (G_HUGEINT)left_hand & (G_HUGEINT)right_hand;
+}
+
+static G_REAL or(G_REAL left_hand, G_REAL right_hand)
+{
+	return (G_HUGEINT)left_hand | (G_HUGEINT)right_hand;
+}
+
+static G_REAL xor(G_REAL left_hand, G_REAL right_hand)
+{
+	return (G_HUGEINT)left_hand ^ (G_HUGEINT)right_hand;
+}
+
+#endif
+
 /* compute_expression. here, the real copmputation is done.
  */
 
-static double compute_expression (double left_hand, 
+static G_REAL compute_expression (G_REAL left_hand, 
 				char operator, 
-				double right_hand)
+				G_REAL right_hand)
 {
-	double	result;
+	G_REAL	result;
 	
 	switch (operator) {
 	case '+':
@@ -121,32 +237,27 @@ static double compute_expression (double left_hand,
 		result = left_hand / right_hand;
 		break;
 	case '^':
-		result = pow (left_hand, right_hand);
+		result = G_POW (left_hand, right_hand);
 		break;
 	case '<':
-		/* left shift x*2^n. We cast to integer to truncate any fractional part.
-		 * (if we lsh by a negative number, we do a right shift.)
-		 */
-		result = (int) ldexp (left_hand, (int) floor(right_hand));		
+		/* left shift x*2^n */
+		result = G_LDEXP (left_hand, (int) floor(right_hand));
 		break;
 	case '>':
-		/* right shift x*2^(-n). We temporarily cast to int to round towards
-		 * zero. We want right shifts to return an integer by truncating any
-		 * fractional parts.
-		 */
-		result = (int) ldexp (left_hand, ((int) floor(right_hand))*(-1));
+		/* right shift x*2^(-n). */
+		result = G_LDEXP (left_hand, ((int) floor(right_hand))*(-1));
 		break;
     case 'm':
-        result = fmod (left_hand, right_hand);
+        result = G_FMOD (left_hand, right_hand);
 		break;
 	case '&':
-		result = (long long int)left_hand & (long long int) right_hand;
+		result = and(left_hand, right_hand);
 		break;
 	case '|':
-		result = (long long int)left_hand | (long long int) right_hand;
+		result = or(left_hand, right_hand);
 		break;
 	case 'x':
-		result = (long long int)left_hand ^ (long long int) right_hand;
+		result = xor(left_hand, right_hand);
 		break;
 	case '%':
 		result = left_hand * right_hand/100.;
@@ -157,7 +268,7 @@ character. %s\n"), PROG_NAME, operator, BUG_REPORT);
 		result = left_hand;
 		break;
 	}	
-	if (alg_debug + rpn_debug > 0) fprintf (stderr, "[%s] computing: %f %c %f = %f\n", 
+	if (alg_debug + rpn_debug > 0) fprintf (stderr, "[%s] computing: %"G_LMOD"f %c %"G_LMOD"f = %"G_LMOD"f\n", 
 		PROG_NAME, left_hand, operator, right_hand, result);
 	return result;
 }
@@ -189,8 +300,8 @@ static s_alg_stack *alg_stack_new (s_cb_token this_token)
 static void alg_stack_append (s_alg_stack *stack, s_cb_token token)
 {
 	stack->size++;
-	stack->number = (double *) realloc (stack->number, 
-		stack->size * sizeof(double));
+	stack->number = (G_REAL *) realloc (stack->number, 
+		stack->size * sizeof(G_REAL));
 	stack->number[stack->size-1] = token.number;
 	stack->operation = (char *) realloc (stack->operation,
 		stack->size * sizeof(char));
@@ -201,7 +312,7 @@ static void alg_stack_append (s_alg_stack *stack, s_cb_token token)
  * precedence. here, reduce from above is used.
  */
 
-static double alg_stack_pool (s_alg_stack *stack)
+static G_REAL alg_stack_pool (s_alg_stack *stack)
 {
 	int	index;
 	
@@ -217,8 +328,8 @@ static double alg_stack_pool (s_alg_stack *stack)
 	}
 	if (stack->size != (index + 1)) {
 		stack->size = index + 1;
-		stack->number = (double *) realloc (stack->number,
-			sizeof(double) * stack->size);
+		stack->number = (G_REAL *) realloc (stack->number,
+			sizeof(G_REAL) * stack->size);
 		stack->operation = (char *) realloc (stack->operation, 
 			sizeof(char) * stack->size);
 	}
@@ -251,9 +362,9 @@ static void alg_stack_free_gfunc (gpointer data, gpointer user_data)
 /* alg_add_token. call this from outside. 
  */
 
-double alg_add_token (ALG_OBJECT **alg, s_cb_token this_token)
+G_REAL alg_add_token (ALG_OBJECT **alg, s_cb_token this_token)
 {
-	static double	return_value;
+	static G_REAL	return_value;
 	s_alg_stack	*current_stack;
 	
 	switch (this_token.operation) {
@@ -331,7 +442,7 @@ void alg_free (ALG_OBJECT *alg)
 
 void rpn_init (int size, int debug_level)
 {
-	rpn_stack = g_array_new (FALSE, FALSE, sizeof(double));
+	rpn_stack = g_array_new (FALSE, FALSE, sizeof(G_REAL));
 	rpn_stack_size = size;
 	rpn_debug = debug_level;
 }
@@ -342,11 +453,11 @@ void rpn_init (int size, int debug_level)
 void debug_rpn_stack_print ()
 {
 	int 	counter;
-	double	*stack;
+	G_REAL	*stack;
 	
 	stack = rpn_stack_get (rpn_stack_size);
 	for (counter = 0; counter < MAX(rpn_stack_size, (int)rpn_stack->len); counter++)
-		fprintf (stderr, "[%s]\t %02i: %f\n", PROG_NAME, counter, stack[counter]);
+		fprintf (stderr, "[%s]\t %02i: %"G_LMOD"f\n", PROG_NAME, counter, stack[counter]);
 	free (stack);
 }
 
@@ -354,7 +465,7 @@ void debug_rpn_stack_print ()
  * remove last one. in the end some debugs.
  */
 
-void rpn_stack_push (double number)
+void rpn_stack_push (G_REAL number)
 {
 	rpn_stack = g_array_prepend_val (rpn_stack, number);
 	if (((int)rpn_stack->len > rpn_stack_size) && (rpn_stack_size > 0))
@@ -368,11 +479,11 @@ void rpn_stack_push (double number)
  * stack is popped!
  */
 
-double rpn_stack_operation (s_cb_token current_token)
+G_REAL rpn_stack_operation (s_cb_token current_token)
 {
-	double	return_value;
-	double	left_hand;
-	double	last_on_stack;
+	G_REAL	return_value;
+	G_REAL	left_hand;
+	G_REAL	last_on_stack;
 	
 	/* this function only serves binary operations. therefore, we need at 
 	 * least one element on the stack. if this is not the case, work with 0.
@@ -380,8 +491,8 @@ double rpn_stack_operation (s_cb_token current_token)
 	if (rpn_stack->len < 1) left_hand = 0;
 	else {
 		/* retrieve left_hand from stack */
-		left_hand = g_array_index (rpn_stack, double, 0);
-		last_on_stack = g_array_index (rpn_stack, double, (int)rpn_stack->len-1);
+		left_hand = g_array_index (rpn_stack, G_REAL, 0);
+		last_on_stack = g_array_index (rpn_stack, G_REAL, (int)rpn_stack->len-1);
 		rpn_stack = g_array_remove_index (rpn_stack, 0);
 		/* last register is kept, if stack size is finite */
 		if (((int) rpn_stack->len == rpn_stack_size-1) && (rpn_stack_size > 0))
@@ -399,15 +510,15 @@ double rpn_stack_operation (s_cb_token current_token)
 /* rpn_stack_swapxy. swap first and second register. there are some special cases.
  */
 
-double rpn_stack_swapxy (double x)
+G_REAL rpn_stack_swapxy (G_REAL x)
 {
-	double	*y, ret_val;
+	G_REAL	*y, ret_val;
 	
 	if ((int)rpn_stack->len < 1) { 
 		ret_val = 0.;
 		rpn_stack = g_array_append_val (rpn_stack, x);
 	} else {
-		y = &g_array_index (rpn_stack, double, 0);
+		y = &g_array_index (rpn_stack, G_REAL, 0);
 		ret_val = *y;
 		*y = x;
 	}
@@ -421,9 +532,9 @@ double rpn_stack_swapxy (double x)
  * return value ret_val is new result.
  */
 
-double rpn_stack_rolldown (double x)
+G_REAL rpn_stack_rolldown (G_REAL x)
 {
-	double	*a, ret_val;
+	G_REAL	*a, ret_val;
 	int	counter;
 	
 	if (rpn_stack_size <= 0) return x;
@@ -434,29 +545,29 @@ double rpn_stack_rolldown (double x)
 	if ((rpn_stack_size > 0) && ((int)rpn_stack->len < rpn_stack_size))
 		for (counter = rpn_stack->len; counter < rpn_stack_size; counter++)
 			rpn_stack = g_array_append_val (rpn_stack, ret_val);
-	ret_val = g_array_index (rpn_stack, double, 0);
+	ret_val = g_array_index (rpn_stack, G_REAL, 0);
 	for (counter = 0; counter < (int) rpn_stack->len - 1; counter++) {
-		a = &g_array_index (rpn_stack, double, counter);
-		*a = g_array_index (rpn_stack, double, counter + 1);
+		a = &g_array_index (rpn_stack, G_REAL, counter);
+		*a = g_array_index (rpn_stack, G_REAL, counter + 1);
 	}
-	a = &g_array_index (rpn_stack, double, rpn_stack->len - 1);
+	a = &g_array_index (rpn_stack, G_REAL, rpn_stack->len - 1);
 	*a = x;
 	return ret_val;
 }
 
-/* rpn_stack_get. returns a double array with the first length elements of
+/* rpn_stack_get. returns a G_REAL array with the first length elements of
  * stack. returned array should be freed.
  */
 
-double *rpn_stack_get (int length)
+G_REAL *rpn_stack_get (int length)
 {
-	double		*return_array;
+	G_REAL		*return_array;
 	int		counter;
 	
 	if (length <= 0) length = (int)rpn_stack->len;
-	return_array = (double *) malloc (length*sizeof(double));
+	return_array = (G_REAL *) malloc (length*sizeof(G_REAL));
 	for (counter = 0; counter < MIN (length, (int)rpn_stack->len); counter++)
-		return_array[counter] = g_array_index (rpn_stack, double, counter);
+		return_array[counter] = g_array_index (rpn_stack, G_REAL, counter);
 	for (; counter < length; counter++) 
 		return_array[counter] = 0.;
 	return return_array;

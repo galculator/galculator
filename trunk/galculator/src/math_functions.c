@@ -1,7 +1,7 @@
 /*
  *  math_functions.c - some mathematical functions for the calculator
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -27,130 +27,167 @@
 
 #include <glib.h>		/* for G_PI etc */
 
-double pow10y (double y)
+G_REAL pow10y (G_REAL y)
 {
-	return pow (10., y);
+	return G_POW (10., y);
 }
 
-double reciprocal (double x)
+G_REAL reciprocal (G_REAL x)
 {
 	return 1/x;
 }
 
-double idx (double x)
+G_REAL idx (G_REAL x)
 {
 	return x;
 }
 
-double powx2 (double x)
+G_REAL powx2 (G_REAL x)
 {
-	return pow (x, 2);
+	return G_POW (x, 2);
 }
 
-double factorial (double n)
+G_REAL factorial (G_REAL n)
 {
 	/* to avoid useless factorial computation of big numbers */
     if (n > 200) return INFINITY;
     /* undefined for negative numbers, patch by adrianb23 on sf.net */
     if (n < 0) return INFINITY;
     /* So we know we are positive, now check if n is an integer */
-    if (n > floor(n)) return INFINITY;
+    if (n > G_FLOOR(n)) return INFINITY;
 
 	if (n > 1) return n*factorial (n-1);
 	else return 1;
 }
 
-double cmp (double n)
+#if HAVE_LIBQUADMATH
+
+G_REAL cmp (G_REAL n)
 {
-	return (double)(~((long long int)n));
+	G_REAL mask;
+	G_HUGEINT2 h1, h2;
+	int bits = 112;
+
+	switch (current_status.number)
+	{
+	case CS_HEX: 
+		bits = prefs.hex_bits; 
+		break;
+	case CS_OCT: 
+		bits = prefs.oct_bits; 
+		break;
+	case CS_BIN: 
+		bits = prefs.bin_bits; 
+		break;
+	}
+
+	mask = scalbnq(1.0Q, bits) - 1;
+
+	h1 = greal2hugeint(n);
+	h2 = greal2hugeint(mask);
+	h1.a = ~h1.a & h2.a;
+	h1.b = ~h1.b & h2.b;
+	n = hugeint2greal(h1);
+	return n;
 }
+
+#else
+
+G_REAL cmp (G_REAL n)
+{
+	return (G_REAL)(~((G_HUGEINT)n));
+}
+
+#endif
 
 /*
  * angle base conversions
  */
 
-double rad2deg (double value)
+G_REAL rad2deg (G_REAL value)
 {
 	return (value/G_PI)*180;
 }
 
-double rad2grad (double value)
+G_REAL rad2grad (G_REAL value)
 {
 	return (value/G_PI)*200;
 }
 
-double deg2rad (double value)
+G_REAL deg2rad (G_REAL value)
 {
 	return (value/180)*G_PI;
 }
 
-double grad2rad (double value)
+G_REAL grad2rad (G_REAL value)
 {
 	return (value/200)*G_PI;
 }
 
-double asinh (double x)
+/*
+G_REAL asinh (G_REAL x)
 {
-	return log (x + sqrt(x*x+1));
+	return G_LOG (x + G_SQRT(x*x+1));
 }
 
-double acosh (double x)
+G_REAL acosh (G_REAL x)
 {
-	return log (x + sqrt(x*x-1));
+	return G_LOG (x + G_SQRT(x*x-1));
 }
 
-double atanh (double x)
+G_REAL atanh (G_REAL x)
 {
-	return log ((1+x)/(1-x))/2;
+	return G_LOG ((1+x)/(1-x))/2;
 }
+*/
 
 /* sine wrapper. interprete and convert x according to current_status.angle
  */
 
-double sin_wrapper (double x) 
+G_REAL sin_wrapper (G_REAL x) 
 {
-	return sin(x2rad(x));
+	return G_SIN(x2rad(x));
 }
 
 /* arcus sine wrapper. interprete and convert result according to 
  * current_status.angle
  */
 
-double asin_wrapper (double x) 
+G_REAL asin_wrapper (G_REAL x) 
 {
-	return rad2x(asin(x));
+	return rad2x(G_ASIN(x));
 }
 
 /* cosine wrapper. interprete and convert x according to current_status.angle
  */
 
-double cos_wrapper (double x) 
+G_REAL cos_wrapper (G_REAL x) 
 {
-	return cos(x2rad(x));
+	return G_COS(x2rad(x));
 }
 
 /* arcus cosine wrapper. interprete and convert result according to 
  * current_status.angle
  */
 
-double acos_wrapper (double x) 
+G_REAL acos_wrapper (G_REAL x) 
 {
-	return rad2x(acos(x));
+	return rad2x(G_ACOS(x));
 }
 
 /* tangens wrapper. interprete and convert x according to current_status.angle
  */
 
-double tan_wrapper (double x) 
+G_REAL tan_wrapper (G_REAL x) 
 {
-	return tan(x2rad(x));
+	return G_TAN(x2rad(x));
 }
 
 /* arcus tangens wrapper. interprete and convert result according to 
  * current_status.angle
  */
 
-double atan_wrapper (double x) 
+G_REAL atan_wrapper (G_REAL x) 
 {
-	return rad2x(atan(x));
+	return rad2x(G_ATAN(x));
 }

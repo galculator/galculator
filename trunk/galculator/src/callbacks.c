@@ -1,7 +1,7 @@
 /*
  *  callbacks.c - functions to handle GUI events.
  *    part of galculator
- *      (c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *      (c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -115,7 +115,7 @@ void
 on_operation_button_clicked(GtkToggleButton *button, gpointer user_data)
 {
     s_cb_token        current_token;
-    double            return_value, *stack;
+    G_REAL            return_value, *stack;
     GtkWidget        *tbutton;
     
     if (gtk_toggle_button_get_active(button) == FALSE) return;
@@ -222,7 +222,7 @@ void
 on_function_button_clicked             (GtkToggleButton    *button,
                                         gpointer user_data)
 {
-    double        (*func[4])(double);
+    G_REAL        (*func[4])(G_REAL);
     char         **display_name;
 
     if (gtk_toggle_button_get_active(button) == FALSE) return;
@@ -1021,7 +1021,7 @@ void ms_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
     index = GPOINTER_TO_INT(user_data);
     if (index >= memory.len) {
         index = memory.len;
-        memory.data = (double *) realloc (memory.data, (index + 1) * sizeof(double));
+        memory.data = (G_REAL *) realloc (memory.data, (index + 1) * sizeof(G_REAL));
         memory.len++;
     }
     memory.data[index] = display_result_get_double(current_status.number);
@@ -1107,7 +1107,7 @@ void mc_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
         for (counter = index; counter < (memory.len - 1); counter++) 
             memory.data[counter] = memory.data[counter + 1];
         memory.len--;
-        memory.data = (double *) realloc (memory.data, memory.len * sizeof(double));
+        memory.data = (G_REAL *) realloc (memory.data, memory.len * sizeof(G_REAL));
     }
 }
 

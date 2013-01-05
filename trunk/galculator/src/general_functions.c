@@ -1,7 +1,7 @@
 /*
  *  general_functions.c - this and that.
  *	part of galculator
- *  	(c) 2002-2012 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -37,13 +37,13 @@
 
 #include <gtk/gtk.h>
 
-double error_unsupported_inv (double dummy)
+G_REAL error_unsupported_inv (G_REAL dummy)
 {
 	error_message (_("unsupported inverse function"));
 	return dummy;
 }
 
-double error_unsupported_hyp (double dummy)
+G_REAL error_unsupported_hyp (G_REAL dummy)
 {
 	error_message (_("unsupported hyperbolic function"));
 	return dummy;
@@ -117,9 +117,9 @@ void all_clear ()
  *  a number is called negative, if its msb is set!
  */
 
-double axtof (char *bin_string, int base, int nr_bits, gboolean is_signed)
+G_REAL axtof (char *bin_string, int base, int nr_bits, gboolean is_signed)
 {
-	double 		return_value=0;
+	G_REAL 		return_value=0;
 	int		counter;
 	char		*lower_bin_string;
 	
@@ -129,9 +129,9 @@ double axtof (char *bin_string, int base, int nr_bits, gboolean is_signed)
 
 	for (counter = strlen (lower_bin_string) - 1; counter >= 0; counter--) {
 		if (lower_bin_string[counter] - '0' < 10) \
-			return_value += (lower_bin_string[counter] - '0') * pow (base, strlen (lower_bin_string) - 1 - counter);
+			return_value += (lower_bin_string[counter] - '0') * G_POW (base, strlen (lower_bin_string) - 1 - counter);
 		else if (lower_bin_string[counter] - 'a' < 10) \
-			return_value += (lower_bin_string[counter] - 'a' + 10) * pow (base, strlen (lower_bin_string) - 1 - counter);
+			return_value += (lower_bin_string[counter] - 'a' + 10) * G_POW (base, strlen (lower_bin_string) - 1 - counter);
 		else fprintf (stderr, _("[%s] failed to convert char %c in function \"axtof\". %s\n"), PROG_NAME, lower_bin_string[counter], BUG_REPORT);
 	}
 	
@@ -141,16 +141,16 @@ double axtof (char *bin_string, int base, int nr_bits, gboolean is_signed)
 
 	/* if most significant bit is set, its a negative number. using */
 	if (is_signed == TRUE) 
-		if (return_value >= pow (2, nr_bits - 1))
-			return_value = (-1) * (pow (2, nr_bits) - return_value);
+		if (return_value >= G_POW (2, nr_bits - 1))
+			return_value = (-1) * (G_POW (2, nr_bits) - return_value);
 	return return_value;
 }
 
 /* rem: my own remainder function to deal with precision problems */
 
-int rem (double x, long long int y)
+int rem (G_REAL x, G_HUGEINT y)
 {
-	return x - ((long long int)(x/((double)y)))*y;
+	return x - G_FLOOR(x / (G_REAL)y) * y;
 }
 
 /* ftoax - number to string conversion.
@@ -158,25 +158,25 @@ int rem (double x, long long int y)
  *  see axtof for details about what is a negative number.
  */
 
-char *ftoax (double x, int base, int nr_bits, gboolean is_signed)
+char *ftoax (G_REAL x, int base, int nr_bits, gboolean is_signed)
 {
 	char		*return_string;
 	int		length=0, counter, remainder;
-	double		localx;
+	G_REAL		localx;
 	
 	/* handle huge values --> infinity */
 	if (is_signed == TRUE) {
-		if (x < (-1)*pow (2, nr_bits - 1)) return g_strdup(MY_INFINITY_STRING);
-		if (x >= pow (2, nr_bits - 1)) return g_strdup(MY_INFINITY_STRING);
+		if (x < (-1)*G_POW (2, nr_bits - 1)) return g_strdup(MY_INFINITY_STRING);
+		if (x >= G_POW (2, nr_bits - 1)) return g_strdup(MY_INFINITY_STRING);
 		/* handle negative numbers */
-		if (x < 0) x = pow (2, nr_bits) + x;
+		if (x < 0) x = G_POW (2, nr_bits) + x;
 	} else {
-		if (x >= pow (2, nr_bits)) return g_strdup(MY_INFINITY_STRING);
+		if (x >= G_POW (2, nr_bits)) return g_strdup(MY_INFINITY_STRING);
 		if (x < 0) return g_strdup(MY_INFINITY_STRING);
 	}
 	/* doing it this way and not with logs as this is much more numerical stable */
 	localx = x;
-	while ((localx=floor(localx/(double)base)) >= 1) length++;
+	while ((localx=G_FLOOR(localx/(G_REAL)base)) >= 1) length++;
 	length+=2;
 	
 	localx = x;
@@ -186,8 +186,8 @@ char *ftoax (double x, int base, int nr_bits, gboolean is_signed)
 		remainder = rem (localx, base);
 		if (remainder < 10) return_string[counter] = '0' + remainder;
 		else if (remainder < 20) return_string[counter] = 'A' + remainder - 10;
-		else fprintf (stderr, _("[%s] failed to convert %f in function \"ftoax\". %s\n"), PROG_NAME, x, BUG_REPORT);
-		localx = floor (localx / (double)base);
+		else fprintf (stderr, _("[%s] failed to convert %"G_LMOD"f in function \"ftoax\". %s\n"), PROG_NAME, x, BUG_REPORT);
+		localx = G_FLOOR (localx / (G_REAL)base);
 	}
 	return return_string;
 }
@@ -246,7 +246,7 @@ void set_spinbutton (GtkBuilder *xml, char *spinbutton_name, void *value)
 	int		*int_var;
 	
 	int_var = value;
-	/*d_var = (double) *int_var;*/
+	/*d_var = (G_REAL) *int_var;*/
 	spin_button = (GtkSpinButton *) gtk_builder_get_object (xml, spinbutton_name);
 	if (spin_button) gtk_spin_button_set_value (spin_button, *int_var);
 }
@@ -388,7 +388,7 @@ void activate_menu_item (char *item_name)
  *	string should be freed.
  */
 
-char *get_display_number_string (double value, int base)
+char *get_display_number_string (G_REAL value, int base)
 {
 	char 	*string_value, *string_value0, *string_value1;
 	
@@ -400,8 +400,8 @@ char *get_display_number_string (double value, int base)
 			 * different precision levels and check whether one result is
 			 * significantly shorter than the other.
 			 */
-			string_value0 = g_strdup_printf("%.*g", get_display_number_length(current_status.number) - 1, value);
-			string_value1 = g_strdup_printf("%.*g", get_display_number_length(current_status.number), value);
+			string_value0 = g_strdup_printf("%.*"G_LMOD"g", get_display_number_length(current_status.number) - 1, value);
+			string_value1 = g_strdup_printf("%.*"G_LMOD"g", get_display_number_length(current_status.number), value);
 			if (strlen(string_value0) + 1 < strlen(string_value1)) {
 				string_value = string_value0;
 				g_free(string_value1);
@@ -461,7 +461,7 @@ int get_display_number_length (int base)
 
 void gfunc_f1 (GtkToggleButton *button)
 {
-	double		*stack;
+	G_REAL		*stack;
 	
 	if (current_status.notation == CS_PAN) 
 		on_operation_button_clicked (button, NULL);
@@ -481,7 +481,7 @@ void gfunc_f1 (GtkToggleButton *button)
 
 void gfunc_f2 (GtkToggleButton *button)
 {
-	double 		*stack;
+	G_REAL 		*stack;
 	
 	if (current_status.notation == CS_PAN)
 		on_operation_button_clicked (button, NULL);
@@ -506,7 +506,7 @@ void gfunc_f2 (GtkToggleButton *button)
 
 void rpn_stack_lift ()
 {
-	double	*stack;
+	G_REAL	*stack;
 	
 	if ((current_status.notation == CS_RPN) && 
 		(current_status.rpn_stack_lift_enabled == TRUE)) {
@@ -539,16 +539,16 @@ void remember_display_values()
 }
 
 /*
- * string2double - this function makes a string to double conversion with 
+ * string2double - this function makes a string to G_REAL conversion with 
  * 	respect to supplied number base. if number base < 0 we try to 
  *	determine from string which should have then a 0? prefix.
  *	it uses axtof.
  */
 
-double string2double (char *string, int number_base)
+G_REAL string2double (char *string, int number_base)
 {
 	char 	*end_ptr;
-	double	ret_val;
+	G_REAL	ret_val;
 	
 	switch (number_base) {
 		case CS_DEC:
@@ -717,7 +717,7 @@ s_flex_parser_result compute_user_function (char *expression, char *variable, ch
 	return result;
 }
 
-double x2rad (double x)
+G_REAL x2rad (G_REAL x)
 {
 	switch (current_status.angle){
 	case CS_DEG:
@@ -732,7 +732,7 @@ double x2rad (double x)
 	return x;
 }	
 
-double rad2x (double rad)
+G_REAL rad2x (G_REAL rad)
 {
 	switch (current_status.angle) {
 	case CS_DEG:

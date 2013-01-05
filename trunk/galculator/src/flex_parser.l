@@ -35,7 +35,7 @@ ddc       ([-]?[[:digit:]]+)
 static int flex_parser_identify_constant (char *string);
 static int flex_parser_identify_user_function (char *string);
 static void flex_parser_submit_token(char operation);
-static void flex_parser_submit_func_token (double (*func)(double));
+static void flex_parser_submit_func_token (G_REAL (*func)(G_REAL));
 
 static GSList		*user_function_stack=NULL, *flex_buffer_stack=NULL;
 static ALG_OBJECT	*alg_object_stack=NULL;
@@ -122,19 +122,19 @@ static int 			bracket_counter=0;
 	 */
 sin{SPACES}"("		flex_parser_submit_func_token (sin_wrapper);
 asin{SPACES}"("		flex_parser_submit_func_token (asin_wrapper);
-sinh{SPACES}"("		flex_parser_submit_func_token (sinh);
-asinh{SPACES}"("	flex_parser_submit_func_token (asinh);
+sinh{SPACES}"("		flex_parser_submit_func_token (G_SINH);
+asinh{SPACES}"("	flex_parser_submit_func_token (G_ASINH);
 cos{SPACES}"("		flex_parser_submit_func_token (cos_wrapper);
 acos{SPACES}"("		flex_parser_submit_func_token (acos_wrapper);
-cosh{SPACES}"("		flex_parser_submit_func_token (cosh);
-acosh{SPACES}"("	flex_parser_submit_func_token (acosh);
+cosh{SPACES}"("		flex_parser_submit_func_token (G_COSH);
+acosh{SPACES}"("	flex_parser_submit_func_token (G_ACOSH);
 tan{SPACES}"("		flex_parser_submit_func_token (tan_wrapper);
 atan{SPACES}"("		flex_parser_submit_func_token (atan_wrapper);
-tanh{SPACES}"("		flex_parser_submit_func_token (tanh);
-atanh{SPACES}"("	flex_parser_submit_func_token (atanh);
-sqrt{SPACES}"("		flex_parser_submit_func_token (sqrt);
-ln{SPACES}"("		flex_parser_submit_func_token (log);
-log{SPACES}"("		flex_parser_submit_func_token (log10);
+tanh{SPACES}"("		flex_parser_submit_func_token (G_TANH);
+atanh{SPACES}"("	flex_parser_submit_func_token (G_ATANH);
+sqrt{SPACES}"("		flex_parser_submit_func_token (G_SQRT);
+ln{SPACES}"("		flex_parser_submit_func_token (G_LOG);
+log{SPACES}"("		flex_parser_submit_func_token (G_LOG10);
 !{SPACES}"("		flex_parser_submit_func_token (factorial);
 cmp{SPACES}"("		flex_parser_submit_func_token (cmp);
 CMP{SPACES}"("		flex_parser_submit_func_token (cmp);
@@ -154,7 +154,7 @@ CMP{SPACES}"("		flex_parser_submit_func_token (cmp);
 
 %%
 
-static double user_function_handler (double value)
+static G_REAL user_function_handler (G_REAL value)
 {
 	int			index;
 	s_flex_parser_result	result;
@@ -212,7 +212,7 @@ static void flex_parser_submit_token (char operation)
 	BEGIN(INITIAL);
 }
 
-static void flex_parser_submit_func_token (double (*func)(double))
+static void flex_parser_submit_func_token (G_REAL (*func)(G_REAL))
 {
 	parser_token.func = func;
 	parser_token.operation = '(';
