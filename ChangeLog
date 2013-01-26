@@ -1,3 +1,7 @@
+2013-01-06 Simon Flöry <simon.floery@rechenraum.com>
+	* configure.in: replaced AM_CONFIG_HEADER by AC_CONFIG_HEADER (thanks to
+		John Williams)
+
 2013-01-05 Simon Flöry <simon.floery@rechenraum.com>
 	* applied patch by John Williams to support libquadmath (quad-precision
 		floating point and up to 112-bit integer arithmetic)

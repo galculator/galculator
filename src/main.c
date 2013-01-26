@@ -208,9 +208,34 @@ PACKAGE, config_file_name_old, config_file_name, PACKAGE, config_file_name_old);
 	}
 
 	prefs = config_file_read (config_file_name);
-	
 	constant = config_file_get_constants();
     user_function = config_file_get_user_functions();
+
+	/* If locales have changed since last start one of the separator characters
+	 * could be the new decimal point. This would lead to confusion.
+	 */
+	char decPoint = getDecPoint();
+	int resetSep = 0;
+	if (prefs.dec_sep_char[0] == decPoint) {
+		resetSep = 1;
+		prefs.dec_sep_char[0] = DEFAULT_DEC_SEP_CHAR[0];
+	}
+	if (prefs.hex_sep_char[0] == decPoint) {
+		resetSep = 1;
+		prefs.hex_sep_char[0] = DEFAULT_HEX_SEP_CHAR[0];
+	}
+	if (prefs.bin_sep_char[0] == decPoint) {
+		resetSep = 1;
+		prefs.bin_sep_char[0] = DEFAULT_BIN_SEP_CHAR[0];
+	}
+	if (prefs.oct_sep_char[0] == decPoint) {
+		resetSep = 1;
+		prefs.oct_sep_char[0] = DEFAULT_OCT_SEP_CHAR[0];
+	}
+	if (resetSep != 0) 
+		fprintf (stderr, _("[%s] configuration file - We reset at least one separator character \
+as it coincides with the decimal point. If you recently changed your locales settings, this \
+is nothing to worry about.\n"), PACKAGE);
 
 	current_status.notation = prefs.def_notation;
 
