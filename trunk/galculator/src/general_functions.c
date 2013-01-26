@@ -24,6 +24,7 @@
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
+#include <locale.h>
 
 #include "galculator.h"
 #include "general_functions.h"
@@ -887,3 +888,18 @@ void set_window_size_minimal()
 	}
 }
 
+/*! \brief Determine decimal point from locale settings */
+char getDecPoint()
+{
+	struct lconv 	*locale_settings;
+	
+	char decPoint = DEFAULT_DEC_POINT;
+	locale_settings = localeconv();
+	if (strlen (locale_settings->decimal_point) != 1) {
+		fprintf (stderr, _("[%s] length of decimal point (in locale) \
+is not supported: >%s<\nYou might face problems when using %s! %s\n)"), 
+		PACKAGE, locale_settings->decimal_point, PROG_NAME, BUG_REPORT);
+	} else decPoint = locale_settings->decimal_point[0];
+	
+	return decPoint;
+}

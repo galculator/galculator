@@ -21,7 +21,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <locale.h>
 
 #include "galculator.h"
 #include "ui.h"
@@ -418,7 +417,6 @@ void ui_main_window_buttons_destroy ()
 void ui_main_window_buttons_create (int mode)
 {
 	GtkWidget	*box, *button;
-	struct lconv 	*locale_settings;
 	s_signal_cb	signal_cb;
 
 	switch (mode) {
@@ -447,16 +445,11 @@ void ui_main_window_buttons_create (int mode)
 	set_all_normal_buttons_property (set_table_child_callback, (gpointer) &signal_cb);
 	
 	/* update "decimal point" button to locale's decimal point */
-	dec_point[0] = DEFAULT_DEC_POINT;
-	locale_settings = localeconv();
-	if (strlen (locale_settings->decimal_point) != 1) {
-		fprintf (stderr, _("[%s] length of decimal point (in locale) \
-is not supported: >%s<\nYou might face problems when using %s! %s\n)"), 
-		PACKAGE, locale_settings->decimal_point, PROG_NAME, BUG_REPORT);
-	} else dec_point[0] = locale_settings->decimal_point[0];
+	dec_point[0] = getDecPoint();
 	dec_point[1] = '\0';
     gtk_button_set_label ((GtkButton *) GTK_WIDGET(gtk_builder_get_object (
         button_box_xml, "button_point")), dec_point);
+        
 	/* disable mr and m+ button if there is nothing to display */
     button = GTK_WIDGET(gtk_builder_get_object (button_box_xml, "button_MR"));
 	gtk_widget_set_sensitive (button, memory.len > 0);

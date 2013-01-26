@@ -4,7 +4,7 @@ AC_INIT(configure.in)
 AM_INIT_AUTOMAKE([galculator], [2.1beta])
 AM_MAINTAINER_MODE
 
-AM_CONFIG_HEADER(config.h)
+AC_CONFIG_HEADER(config.h)
 
 AC_PROG_CC
 AC_PROG_INTLTOOL(, no-xml)
