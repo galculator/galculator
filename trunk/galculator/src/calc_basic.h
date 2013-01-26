@@ -91,4 +91,7 @@ G_REAL *rpn_stack_get (int length);
 void rpn_stack_set_size (int size);
 void rpn_free ();
 
+char* float2string(const char*, G_REAL);
+char* float2stringP(const char*, int, G_REAL);
+
 #endif /* calc_basic.h */

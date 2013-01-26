@@ -1,3 +1,8 @@
+2013-01-26 Simon Flöry <simon.floery@rechenraum.com>
+	* fallback to default separator if a separator equals the decimal point
+		(thanks to Jan Korbel and Dmitry Smirnov for tracking this down)
+	* Convert quad-precision floating point numbers properly to strings 
+
 2013-01-06 Simon Flöry <simon.floery@rechenraum.com>
 	* configure.in: replaced AM_CONFIG_HEADER by AC_CONFIG_HEADER (thanks to
 		John Williams)

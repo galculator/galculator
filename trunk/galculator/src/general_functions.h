@@ -94,8 +94,6 @@ void set_window_size_minimal();
 
 int rem (G_REAL, G_HUGEINT);
 
-char* Qf(G_REAL, char*);
-
 char getDecPoint();
 
 #endif /* general_functions.h */
