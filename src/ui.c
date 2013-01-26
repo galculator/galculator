@@ -898,7 +898,7 @@ GtkWidget *ui_memory_menu_create (s_array memory, GCallback memory_handler, char
 	
 	menu = gtk_menu_new();
 	for (counter = 0; counter < memory.len; counter++) {
-		label = g_strdup_printf ("%"G_LMOD"f", memory.data[counter]);
+		label = float2string("%"G_LMOD"f", memory.data[counter]);
 		child = gtk_menu_item_new_with_label(label);
 		g_free (label);
 		gtk_menu_shell_append ((GtkMenuShell *) menu, child);

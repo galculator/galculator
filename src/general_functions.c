@@ -187,7 +187,11 @@ char *ftoax (G_REAL x, int base, int nr_bits, gboolean is_signed)
 		remainder = rem (localx, base);
 		if (remainder < 10) return_string[counter] = '0' + remainder;
 		else if (remainder < 20) return_string[counter] = 'A' + remainder - 10;
-		else fprintf (stderr, _("[%s] failed to convert %"G_LMOD"f in function \"ftoax\". %s\n"), PROG_NAME, x, BUG_REPORT);
+		else {
+			char *sx = float2string("%"G_LMOD"f", x);
+			fprintf (stderr, _("[%s] failed to convert %s in function \"ftoax\". %s\n"), PROG_NAME, sx, BUG_REPORT);
+			free(sx);
+		}
 		localx = G_FLOOR (localx / (G_REAL)base);
 	}
 	return return_string;
@@ -401,8 +405,8 @@ char *get_display_number_string (G_REAL value, int base)
 			 * different precision levels and check whether one result is
 			 * significantly shorter than the other.
 			 */
-			string_value0 = g_strdup_printf("%.*"G_LMOD"g", get_display_number_length(current_status.number) - 1, value);
-			string_value1 = g_strdup_printf("%.*"G_LMOD"g", get_display_number_length(current_status.number), value);
+			string_value0 = float2stringP("%.*"G_LMOD"g", get_display_number_length(current_status.number) - 1, value);
+			string_value1 = float2stringP("%.*"G_LMOD"g", get_display_number_length(current_status.number), value);
 			if (strlen(string_value0) + 1 < strlen(string_value1)) {
 				string_value = string_value0;
 				g_free(string_value1);
@@ -888,7 +892,13 @@ void set_window_size_minimal()
 	}
 }
 
-/*! \brief Determine decimal point from locale settings */
+/*! \brief Determine decimal point from locale settings 
+ *
+ * If locale's decimal point takes more than a single character, we fallback
+ * to the DEFAULT_DEC_POINT.
+ * 
+ * \return Decimal point
+ */
 char getDecPoint()
 {
 	struct lconv 	*locale_settings;

@@ -302,8 +302,15 @@ character. %s\n"), PROG_NAME, operator, BUG_REPORT);
 		result = left_hand;
 		break;
 	}	
-	if (alg_debug + rpn_debug > 0) fprintf (stderr, "[%s] computing: %"G_LMOD"f %c %"G_LMOD"f = %"G_LMOD"f\n", 
-		PROG_NAME, left_hand, operator, right_hand, result);
+	if (alg_debug + rpn_debug > 0) {
+		char *slh = float2string("%"G_LMOD"f", left_hand);
+		char *srh = float2string("%"G_LMOD"f", right_hand);
+		char *sr = float2string("%"G_LMOD"f", result);
+		fprintf (stderr, "[%s] computing: %s %c %s = %s\n", PROG_NAME, slh, operator, srh, sr);
+		free(slh);
+		free(srh);
+		free(sr);
+	}
 	return result;
 }
 
@@ -498,10 +505,14 @@ void debug_rpn_stack_print ()
 {
 	int 	counter;
 	G_REAL	*stack;
+	char *str;
 	
 	stack = rpn_stack_get (rpn_stack_size);
-	for (counter = 0; counter < MAX(rpn_stack_size, (int)rpn_stack->len); counter++)
-		fprintf (stderr, "[%s]\t %02i: %"G_LMOD"f\n", PROG_NAME, counter, stack[counter]);
+	for (counter = 0; counter < MAX(rpn_stack_size, (int)rpn_stack->len); counter++) {
+		str = float2string("%"G_LMOD"f", stack[counter]);
+		fprintf (stderr, "[%s]\t %02i: %s\n", PROG_NAME, counter, str);
+		free(str);
+	}
 	free (stack);
 }
 
@@ -645,3 +656,65 @@ int main (int argc, char *argv[])
 	return 1;
 }
 */
+
+/*! \brief Convert floating point number to string.
+ * 
+ * With quad precision support the printing of numbers is a bit tricky. 
+ * libquadmath documentation says the Q modifier should be supported for all
+ * variants of printf, but it turned out this was not the case. Hence, this
+ * work-around.
+ * 
+ * We implement this here in calc_basic as we don't want to include any further
+ * files in here.
+ * 
+ * \param x Number to convert
+ * 
+ * \return Pointer to newly allocated memory storing a string representation
+ * 		of given argument. Caller must free the code!
+ */ 
+char *float2string(const char* formatString, G_REAL x)
+{
+	char *s = (char *) malloc(128*sizeof(char));
+	int len = 0;
+
+#if HAVE_LIBQUADMATH
+	len = quadmath_snprintf(s, 128*sizeof(char), formatString, x); 
+#else // HAVE_LIBQUADMATH
+	len = snprintf(s, 128*sizeof(char), formatString, x); 
+#endif // HAVE_LIBQUADMATH
+
+	if (len >= 128)
+		fprintf (stderr, _("[%s] Conversion of floating point number in float2string \
+failed because buffer was too small. %s\n)"), PACKAGE, BUG_REPORT);
+
+	return s;
+}
+
+/*! \brief Convert floating point number to string of given precision
+ * 
+ * This is an add-on to float2string assuming the format string allows us 
+ * to define the precision of the string representation.
+ * 
+ * \param prec Number of digits
+ * \param x Number to convert
+ * 
+ * \return Pointer to newly allocated memory storing a string representation
+ * 		of given argument. Caller must free the code!
+ */ 
+char *float2stringP(const char* formatString, int prec, G_REAL x)
+{
+	char *s = (char *) malloc(128*sizeof(char));
+	int len = 0;
+
+#if HAVE_LIBQUADMATH
+	len = quadmath_snprintf(s, 128*sizeof(char), formatString, prec, x); 
+#else // HAVE_LIBQUADMATH
+	len = snprintf(s, 128*sizeof(char), formatString, prec, x); 
+#endif // HAVE_LIBQUADMATH
+
+	if (len >= 128)
+		fprintf (stderr, _("[%s] Conversion of floating point number in float2stringP \
+failed because buffer was too small. %s\n)"), PACKAGE, BUG_REPORT);
+
+	return s;
+}
