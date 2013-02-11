@@ -19,7 +19,8 @@ galculator_SOURCES = \
 	config_file.c config_file.h \
 	callbacks.c callbacks.h \
 	ui.c ui.h \
-	flex_parser.l flex_parser.h
+	flex_parser.l flex_parser.h \
+	g_real.h
 
 galculator_CFLAGS = \
 	$(PACKAGE_CFLAGS)
