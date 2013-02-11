@@ -70,9 +70,9 @@
   </object>
   <object class="GtkListStore" id="liststore1">
     <columns>
-      <!-- column-name Number Base -->
+      <!-- column-name Number -->
       <column type="gchararray"/>
-      <!-- column-name Number Base ID -->
+      <!-- column-name Number1 -->
       <column type="gint"/>
     </columns>
     <data>
@@ -1750,7 +1750,7 @@
                             <property name="column_spacing">12</property>
                             <property name="row_spacing">6</property>
                             <child>
-                              <object class="GtkCheckButton" id="checkbutton1">
+                              <object class="GtkCheckButton" id="prefs_hex_signed">
                                 <property name="label" translatable="yes">Signed</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
