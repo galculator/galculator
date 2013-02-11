@@ -1,3 +1,14 @@
+
+##############################################
+# 2013-02-11 galculator 2.1 released         #
+##############################################
+
+2013-02-11 Simon Flöry <simon.floery@rechenraum.com>
+	* display_change_option - In case of switching from dec to hex/bin/oct, we 
+		apply floor function to display values (otherwise, 8.5 -> HEX -> *2 
+		gives 17).
+	* prefs.ui - Correct wrong name of prefs_hex_signed
+
 2013-01-26 Simon Flöry <simon.floery@rechenraum.com>
 	* fallback to default separator if a separator equals the decimal point
 		(thanks to Jan Korbel and Dmitry Smirnov for tracking this down)

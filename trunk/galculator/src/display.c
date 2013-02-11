@@ -557,12 +557,22 @@ void display_change_option (int old_status, int new_status, int opt_group)
 {
 	G_REAL	display_value=0;
 	G_REAL 	*stack;
+	int 	counter;
 	
 	switch (opt_group) {
 		case DISPLAY_OPT_NUMBER:
 			update_active_buttons (new_status, current_status.notation);
 			display_value = display_result_get_double (old_status);
 			stack = display_stack_get_yzt_double (old_status);
+			/* In case we convert from decimal to integer, we round display 
+			 * values to integers. As in ftoax we use G_FLOOR, we use it here as
+			 * well.
+			 */
+			if ((old_status == CS_DEC) && (new_status != CS_DEC)) {
+				display_value = G_FLOOR(display_value);
+				for (counter = 0; counter < display_result_line; counter++)
+					stack[counter] = G_FLOOR(stack[counter]);
+			}
 			display_result_set_double (display_value, new_status);
 			display_stack_set_yzt_double (stack, new_status);
 			g_free (stack);
