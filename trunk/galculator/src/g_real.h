@@ -31,7 +31,7 @@
  * simon20130214
  */
 
-#if HAVE_LIBQUADMATH && !defined (__clang__) && !defined (__INTEL_COMPILER) 
+#if HAVE_LIBQUADMATH && defined (__GNUC__) && !defined (__clang__) && !defined (__INTEL_COMPILER) 
 
 #define USE_LIBQUADMATH 1
 
