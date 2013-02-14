@@ -952,7 +952,7 @@ GtkWidget *ui_pref_dialog_create ()
 	 * float128 is available or not.
 	 */
 	
-#if HAVE_LIBQUADMATH
+#if USE_LIBQUADMATH
 	gdouble upperBound = 112;
 #else
 	gdouble upperBound = 32;

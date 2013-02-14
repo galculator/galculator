@@ -70,11 +70,11 @@ Linked against GTK version %i.%i.%i\n\
 PACKAGE, VERSION, PACKAGE,
 GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION,
 gtk_major_version, gtk_minor_version, gtk_micro_version,
-#if HAVE_LIBQUADMATH
+#if USE_LIBQUADMATH
 "Quad"
-#else
+#else // USE_LIBQUADMATH
 "Double"
-#endif
+#endif // USE_LIBQUADMATH
 );
 }
 

@@ -1,7 +1,7 @@
 #ifndef _G_REAL_H
 #define _G_REAL_H
 
-/* We need to include config.h here in order to know about HAVE_LIBQUADMATH */
+/* We need to include config.h here in order to know about USE_LIBQUADMATH */
 #ifdef HAVE_CONFIG_H
 #  include <config.h>
 #endif
@@ -20,7 +20,20 @@
  * achieved for missing opterators such as and/or/xor in math_functions. 
  */
 
-#if HAVE_LIBQUADMATH
+/* Our configure script only checks if libquadmath exists on the system. We can
+ * use it however only if we really compile with gcc. Hence, we define a 
+ * USE_LIBQUADMATH in these cases. There is currently no predefined macro 
+ * identifying gcc as compiler, __GNUC__ only tells us that the used compiler
+ * supports gcc's compiler extensions.
+ * 
+ * See also http://sourceforge.net/p/predef/wiki/Compilers/
+ * 
+ * simon20130214
+ */
+
+#if HAVE_LIBQUADMATH && !defined (__clang__) && !defined (__INTEL_COMPILER) 
+
+#define USE_LIBQUADMATH 1
 
 #include <quadmath.h>
 

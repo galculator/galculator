@@ -1,3 +1,7 @@
+2013-02-14 Simon Flöry <simon.floery@rechenraum.com>
+	* g_real.h - Introducing USE_LIBQUADMATH only when we compile with gcc 
+		(fixes sf.net #92).
+	* display.c - In display_result_feed, allow pasting of e/E in hex mode
 
 ##############################################
 # 2013-02-11 galculator 2.1 released         #

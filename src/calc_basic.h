@@ -72,7 +72,7 @@ G_REAL id (G_REAL x);
 
 G_REAL g_trunc(G_REAL x);
 
-#if HAVE_LIBQUADMATH
+#if USE_LIBQUADMATH
 G_HUGEINT2 greal2hugeint(G_REAL d);
 G_REAL hugeint2greal(G_HUGEINT2 h);
 #endif 

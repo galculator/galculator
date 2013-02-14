@@ -67,7 +67,7 @@ G_REAL id (G_REAL x)
  * binary arithmetic
  */
 
-#if HAVE_LIBQUADMATH
+#if USE_LIBQUADMATH
 
 /* This is a helper function to implement and/or/xor with arguments of up to 
  * 112 bit length. This converts the given G_REAL (which is the type variables
@@ -184,7 +184,7 @@ static G_REAL xor(G_REAL left_hand, G_REAL right_hand)
 	return hugeint2greal(h);
 }
 
-#else // HAVE_LIBQUADMATH
+#else // USE_LIBQUADMATH
 
 static G_REAL and(G_REAL left_hand, G_REAL right_hand)
 {
@@ -201,7 +201,7 @@ static G_REAL xor(G_REAL left_hand, G_REAL right_hand)
 	return (G_HUGEINT)left_hand ^ (G_HUGEINT)right_hand;
 }
 
-#endif // HAVE_LIBQUADMATH
+#endif // USE_LIBQUADMATH
 
 /* debug_input. debug code: enter tokens on stdin.
  */
@@ -677,11 +677,11 @@ char *float2string(const char* formatString, G_REAL x)
 	char *s = (char *) malloc(128*sizeof(char));
 	int len = 0;
 
-#if HAVE_LIBQUADMATH
+#if USE_LIBQUADMATH
 	len = quadmath_snprintf(s, 128*sizeof(char), formatString, x); 
-#else // HAVE_LIBQUADMATH
+#else // USE_LIBQUADMATH
 	len = snprintf(s, 128*sizeof(char), formatString, x); 
-#endif // HAVE_LIBQUADMATH
+#endif // USE_LIBQUADMATH
 
 	if (len >= 128)
 		fprintf (stderr, _("[%s] Conversion of floating point number in float2string \
@@ -706,11 +706,11 @@ char *float2stringP(const char* formatString, int prec, G_REAL x)
 	char *s = (char *) malloc(128*sizeof(char));
 	int len = 0;
 
-#if HAVE_LIBQUADMATH
+#if USE_LIBQUADMATH
 	len = quadmath_snprintf(s, 128*sizeof(char), formatString, prec, x); 
-#else // HAVE_LIBQUADMATH
+#else // USE_LIBQUADMATH
 	len = snprintf(s, 128*sizeof(char), formatString, prec, x); 
-#endif // HAVE_LIBQUADMATH
+#endif // USE_LIBQUADMATH
 
 	if (len >= 128)
 		fprintf (stderr, _("[%s] Conversion of floating point number in float2stringP \
