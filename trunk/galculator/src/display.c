@@ -771,10 +771,6 @@ void display_result_feed (char *string, int number_base_status)
 
     for (counter = 0; counter < strlen(string); counter++) {
         switch (string[counter]) {
-        case 'e':
-        case 'E':
-            display_append_e(NULL);
-            break;
         case '-': {
             /* this only applies if we just had "EE" before */
             char *dline = display_result_get();
@@ -782,6 +778,15 @@ void display_result_feed (char *string, int number_base_status)
             if (strncmp(&dline[strlen(dline)-2], "e+", 2) == 0) display_result_toggle_sign(NULL);
             break;
         }
+        case 'e':
+        case 'E':
+			/* In decimal mode, call display_append_e, otherwise, run into 
+			 * default handler. simon20130214
+			 */
+			if (current_status.number == CS_DEC) {
+				display_append_e(NULL);
+				break;
+			}
         default:
             /* g_ascii_toupper to convert lower hex chars to upper */
             if (is_valid_number(current_status.number, string[counter]))
