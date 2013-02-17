@@ -49,21 +49,21 @@
 #else
 #define MAIN_GLADE_FILE 			PACKAGE_UI_DIR "/main_frame.ui"
 #endif
-#define SCIENTIFIC_GLADE_FILE		PACKAGE_UI_DIR "/scientific_buttons.ui"
-#define BASIC_GLADE_FILE			PACKAGE_UI_DIR "/basic_buttons.ui"
+#define SCIENTIFIC_GLADE_FILE		PACKAGE_UI_DIR "/scientific_buttons_gtk2.ui"
+#define BASIC_GLADE_FILE			PACKAGE_UI_DIR "/basic_buttons_gtk2.ui"
 #define ABOUT_GLADE_FILE 			PACKAGE_UI_DIR "/about.ui"
 #ifdef WITH_HILDON
 #define PREFS_GLADE_FILE 			PACKAGE_UI_DIR "/prefs-ume.ui"
 #else
-#define PREFS_GLADE_FILE 			PACKAGE_UI_DIR "/prefs.ui"
+#define PREFS_GLADE_FILE 			PACKAGE_UI_DIR "/prefs_gtk2.ui"
 #endif
 #define FONT_GLADE_FILE 			PACKAGE_UI_DIR "/font.ui"
 #define COLOR_GLADE_FILE 			PACKAGE_UI_DIR "/color.ui"
 #define CLASSIC_VIEW_GLADE_FILE		PACKAGE_UI_DIR "/classic_view.ui"
 #define PAPER_VIEW_GLADE_FILE		PACKAGE_UI_DIR "/paper_view.ui"
-#define DISPCTRL_RIGHT_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right.ui"
-#define DISPCTRL_RIGHTV_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right_vertical.ui"
-#define DISPCTRL_BOTTOM_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_bottom.ui"
+#define DISPCTRL_RIGHT_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right_gtk2.ui"
+#define DISPCTRL_RIGHTV_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right_vertical_gtk2.ui"
+#define DISPCTRL_BOTTOM_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_bottom_gtk2.ui"
 
 #define MY_INFINITY_STRING "inf"
 
