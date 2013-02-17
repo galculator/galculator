@@ -570,20 +570,35 @@ static void set_table_child_tip_accel (GtkWidget* button, gpointer user_data)
 
 static void set_all_dispctrl_buttons_property (GtkCallback func, gpointer data)
 {
-	GtkTable	*table;
+	/* The following became necessary with our migration from GtkTable to 
+	 * GtkGrid. simon20130217
+	 */
+	 
+#if GTK_CHECK_VERSION(3, 0, 0)
+#define GTK_TABLE_OR_GRID GtkGrid
+#define GTK_IS_TABLE_OR_GRID GTK_IS_GRID
+#else // GTK 3
+#define GTK_TABLE_OR_GRID GtkTable	
+#define GTK_IS_TABLE_OR_GRID GTK_IS_TABLE
+#endif // GTK 3
+
+	GTK_TABLE_OR_GRID	*table;
     GList* table_children;
 
 	if (!dispctrl_xml) return;
 	/* at first the display control table. always there; somehow */
-    table = (GtkTable *) GTK_WIDGET(gtk_builder_get_object (dispctrl_xml, "table_dispctrl"));
+    table = (GTK_TABLE_OR_GRID *) GTK_WIDGET(gtk_builder_get_object (dispctrl_xml, "table_dispctrl"));
 	if (!table) return;
     
     table_children = gtk_container_get_children(GTK_CONTAINER(table));
 	/* dispctrl_right has an extra table for cosmetic reasons. */
-	if (GTK_IS_TABLE (table_children->data))
-		table = GTK_TABLE(table_children->data);
+	if (GTK_IS_TABLE_OR_GRID (table_children->data))
+		table = (GTK_TABLE_OR_GRID *) GTK_WIDGET(table_children->data);
     g_list_free(table_children);
 	gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
+	
+#undef GTK_TABLE_OR_GRID
+#undef GTK_IS_TABLE_OR_GRID
 }
 
 /* set_all_dispctrl_buttons_property. calls func with argument data for 
@@ -592,20 +607,30 @@ static void set_all_dispctrl_buttons_property (GtkCallback func, gpointer data)
 
 static void set_all_normal_buttons_property (GtkCallback func, gpointer data)
 {
-	GtkTable	*table;
+	/* The following became necessary with our migration from GtkTable to 
+	 * GtkGrid. simon20130217
+	 */
+	 
+#if GTK_CHECK_VERSION(3, 0, 0)
+#define GTK_TABLE_OR_GRID GtkGrid
+#else // GTK 3
+#define GTK_TABLE_OR_GRID GtkTable	
+#endif // GTK 3
+	
+	GTK_TABLE_OR_GRID 	*table;
 	
 	/* now depending on mode the remaining buttons */
 	switch (prefs.mode) {
 	case BASIC_MODE:
-        table = (GtkTable *) GTK_WIDGET(gtk_builder_get_object (button_box_xml, "table_buttons"));
+        table = (GTK_TABLE_OR_GRID *) GTK_WIDGET(gtk_builder_get_object (button_box_xml, "table_buttons"));
 		gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
 		break;
 	case SCIENTIFIC_MODE:
-        table = (GtkTable *) GTK_WIDGET(gtk_builder_get_object (button_box_xml, "table_standard_buttons"));
+        table = (GTK_TABLE_OR_GRID *) GTK_WIDGET(gtk_builder_get_object (button_box_xml, "table_standard_buttons"));
 		gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
-        table = (GtkTable *) GTK_WIDGET(gtk_builder_get_object (button_box_xml, "table_bin_buttons"));
+        table = (GTK_TABLE_OR_GRID *) GTK_WIDGET(gtk_builder_get_object (button_box_xml, "table_bin_buttons"));
 		gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
-        table = (GtkTable *) GTK_WIDGET(gtk_builder_get_object (button_box_xml, "table_func_buttons"));
+        table = (GTK_TABLE_OR_GRID *) GTK_WIDGET(gtk_builder_get_object (button_box_xml, "table_func_buttons"));
 		gtk_container_foreach (GTK_CONTAINER(table), (GtkCallback)func, data);
 		break;
 	case PAPER_MODE:
@@ -614,6 +639,7 @@ static void set_all_normal_buttons_property (GtkCallback func, gpointer data)
 	default:
 		error_message ("Unknown mode %i in \"set_all_normal_buttons_property\"", prefs.mode);
 	}
+#undef GTK_TABLE_OR_GRID
 }
 
 /* set_all_buttons_property. calls func with argument data for every button.
