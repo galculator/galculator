@@ -11,11 +11,8 @@
           <object class="GtkGrid" id="inner_table">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="n_rows">2</property>
-            <property name="n_columns">2</property>
-            <property name="column_spacing">6</property>
             <property name="row_spacing">6</property>
-            <property name="homogeneous">True</property>
+            <property name="column_spacing">6</property>
             <child>
               <object class="GtkToggleButton" id="button_allclr">
                 <property name="label" translatable="yes">AC</property>
@@ -26,8 +23,8 @@
                 <property name="receives_default">False</property>
                 <property name="tooltip_text" translatable="yes">Reset calculator (clear all)</property>
                 <property name="use_underline">True</property>
-                <accelerator key="Escape" signal="clicked"/>
                 <accelerator key="Delete" signal="clicked" modifiers="GDK_CONTROL_MASK"/>
+                <accelerator key="Escape" signal="clicked"/>
                 <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                 <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                 <signal name="clicked" handler="on_gfunc_button_clicked" swapped="no"/>
@@ -35,8 +32,8 @@
               <packing>
                 <property name="left_attach">1</property>
                 <property name="top_attach">1</property>
-                <property name="x_options"/>
-                <property name="y_options"/>
+                <property name="width">1</property>
+                <property name="height">1</property>
               </packing>
             </child>
             <child>
@@ -55,12 +52,10 @@
                 <signal name="clicked" handler="on_gfunc_button_clicked" swapped="no"/>
               </object>
               <packing>
-                <property name="top_attach">0</property>
                 <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
                 <property name="width">2</property>
                 <property name="height">1</property>
-                <property name="x_options">GTK_FILL</property>
-                <property name="y_options"/>
               </packing>
             </child>
             <child>
@@ -73,25 +68,25 @@
                 <property name="receives_default">False</property>
                 <property name="tooltip_text" translatable="yes">Clear display</property>
                 <property name="use_underline">True</property>
-                <accelerator key="c" signal="clicked" modifiers="GDK_MOD1_MASK"/>
                 <accelerator key="Delete" signal="clicked"/>
+                <accelerator key="c" signal="clicked" modifiers="GDK_MOD1_MASK"/>
                 <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
                 <signal name="released" handler="on_togglebutton_released" swapped="no"/>
                 <signal name="clicked" handler="on_gfunc_button_clicked" swapped="no"/>
               </object>
               <packing>
-                <property name="top_attach">1</property>
                 <property name="left_attach">0</property>
-                <property name="x_options"/>
-                <property name="y_options"/>
+                <property name="top_attach">1</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
               </packing>
             </child>
           </object>
           <packing>
-			<property name="top_attach">0</property>
             <property name="left_attach">0</property>
-            <property name="x_options">GTK_EXPAND</property>
-            <property name="y_options">GTK_EXPAND</property>
+            <property name="top_attach">0</property>
+            <property name="width">1</property>
+            <property name="height">1</property>
           </packing>
         </child>
       </object>
