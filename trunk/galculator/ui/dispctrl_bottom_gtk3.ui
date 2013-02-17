@@ -20,8 +20,8 @@
             <property name="receives_default">False</property>
             <property name="tooltip_text" translatable="yes">Reset calculator (clear all)</property>
             <property name="use_underline">True</property>
-            <accelerator key="Escape" signal="clicked"/>
             <accelerator key="Delete" signal="clicked" modifiers="GDK_CONTROL_MASK"/>
+            <accelerator key="Escape" signal="clicked"/>
             <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
             <signal name="released" handler="on_togglebutton_released" swapped="no"/>
             <signal name="clicked" handler="on_gfunc_button_clicked" swapped="no"/>
@@ -43,8 +43,8 @@
             <property name="receives_default">False</property>
             <property name="tooltip_text" translatable="yes">Clear display</property>
             <property name="use_underline">True</property>
-            <accelerator key="c" signal="clicked" modifiers="GDK_MOD1_MASK"/>
             <accelerator key="Delete" signal="clicked"/>
+            <accelerator key="c" signal="clicked" modifiers="GDK_MOD1_MASK"/>
             <signal name="can-activate-accel" handler="on_button_can_activate_accel" swapped="no"/>
             <signal name="released" handler="on_togglebutton_released" swapped="no"/>
             <signal name="clicked" handler="on_gfunc_button_clicked" swapped="no"/>

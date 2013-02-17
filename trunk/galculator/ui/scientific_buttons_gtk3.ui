@@ -22,6 +22,8 @@
                 <property name="can_focus">False</property>
                 <property name="row_spacing">6</property>
                 <property name="column_spacing">6</property>
+                <property name="row_homogeneous">True</property>
+                <property name="column_homogeneous">True</property>
                 <child>
                   <object class="GtkToggleButton" id="button_tan">
                     <property name="label" translatable="yes">tan</property>
@@ -429,6 +431,8 @@
                 <property name="can_focus">False</property>
                 <property name="row_spacing">6</property>
                 <property name="column_spacing">6</property>
+                <property name="row_homogeneous">True</property>
+                <property name="column_homogeneous">True</property>
                 <child>
                   <object class="GtkToggleButton" id="button_and">
                     <property name="label" translatable="yes">AND</property>
@@ -675,6 +679,8 @@
                 <property name="can_focus">False</property>
                 <property name="row_spacing">6</property>
                 <property name="column_spacing">6</property>
+                <property name="row_homogeneous">True</property>
+                <property name="column_homogeneous">True</property>
                 <child>
                   <object class="GtkToggleButton" id="button_7">
                     <property name="label" translatable="yes">7</property>
@@ -1315,8 +1321,8 @@
             </child>
           </object>
           <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
             <property name="position">0</property>
           </packing>
         </child>

@@ -21,6 +21,7 @@
 #ifndef _GALCULATOR_H
 #define _GALCULATOR_H 1
 
+#include <gtk/gtk.h>
 #include <glib.h>
 
 #include "g_real.h"
@@ -49,21 +50,33 @@
 #else
 #define MAIN_GLADE_FILE 			PACKAGE_UI_DIR "/main_frame.ui"
 #endif
+#define CLASSIC_VIEW_GLADE_FILE		PACKAGE_UI_DIR "/classic_view.ui"
+#define PAPER_VIEW_GLADE_FILE		PACKAGE_UI_DIR "/paper_view.ui"
+
+#if GTK_CHECK_VERSION(3, 0, 0)
+#define SCIENTIFIC_GLADE_FILE		PACKAGE_UI_DIR "/scientific_buttons_gtk3.ui"
+#define BASIC_GLADE_FILE			PACKAGE_UI_DIR "/basic_buttons_gtk3.ui"
+#define DISPCTRL_RIGHT_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right_gtk3.ui"
+#define DISPCTRL_RIGHTV_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right_vertical_gtk3.ui"
+#define DISPCTRL_BOTTOM_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_bottom_gtk3.ui"
+#else // GTK3
 #define SCIENTIFIC_GLADE_FILE		PACKAGE_UI_DIR "/scientific_buttons_gtk2.ui"
 #define BASIC_GLADE_FILE			PACKAGE_UI_DIR "/basic_buttons_gtk2.ui"
+#define DISPCTRL_RIGHT_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right_gtk2.ui"
+#define DISPCTRL_RIGHTV_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right_vertical_gtk2.ui"
+#define DISPCTRL_BOTTOM_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_bottom_gtk2.ui"
+#endif // GTK3
+
 #define ABOUT_GLADE_FILE 			PACKAGE_UI_DIR "/about.ui"
 #ifdef WITH_HILDON
 #define PREFS_GLADE_FILE 			PACKAGE_UI_DIR "/prefs-ume.ui"
 #else
+#if GTK_CHECK_VERSION(3, 0, 0)
+#define PREFS_GLADE_FILE 			PACKAGE_UI_DIR "/prefs_gtk3.ui"
+#else // GTK 3
 #define PREFS_GLADE_FILE 			PACKAGE_UI_DIR "/prefs_gtk2.ui"
+#endif // GTK 3
 #endif
-#define FONT_GLADE_FILE 			PACKAGE_UI_DIR "/font.ui"
-#define COLOR_GLADE_FILE 			PACKAGE_UI_DIR "/color.ui"
-#define CLASSIC_VIEW_GLADE_FILE		PACKAGE_UI_DIR "/classic_view.ui"
-#define PAPER_VIEW_GLADE_FILE		PACKAGE_UI_DIR "/paper_view.ui"
-#define DISPCTRL_RIGHT_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right_gtk2.ui"
-#define DISPCTRL_RIGHTV_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_right_vertical_gtk2.ui"
-#define DISPCTRL_BOTTOM_GLADE_FILE	PACKAGE_UI_DIR "/dispctrl_bottom_gtk2.ui"
 
 #define MY_INFINITY_STRING "inf"
 
