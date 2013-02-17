@@ -49,15 +49,24 @@ G_REAL powx2 (G_REAL x)
 
 G_REAL factorial (G_REAL n)
 {
-	/* to avoid useless factorial computation of big numbers */
-    if (n > 200) return INFINITY;
+	/* more is not representable */
+#if USE_LIBQUADMATH
+    if (n > 1754) return INFINITY;
+#else // USE_LIBQUADMATH
+    if (n > 170) return INFINITY;
+#endif
     /* undefined for negative numbers, patch by adrianb23 on sf.net */
     if (n < 0) return INFINITY;
     /* So we know we are positive, now check if n is an integer */
     if (n > G_FLOOR(n)) return INFINITY;
 
-	if (n > 1) return n*factorial (n-1);
-	else return 1;
+    /* not best but better than the old code */
+    if (n > 1)
+	{
+		G_REAL i=2,k=1;
+		for ( ; i <= n; i++) k=(k*i);
+		return k;
+	} else return 1;
 }
 
 #if USE_LIBQUADMATH

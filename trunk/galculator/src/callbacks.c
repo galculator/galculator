@@ -448,7 +448,7 @@ on_basic_mode_toggled (GtkMenuItem     *menuitem,
     
     if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem)) == FALSE) return;
 
-	double display_value = 0;
+	G_REAL display_value = 0;
     if (prefs.mode == SCIENTIFIC_MODE) {
         /* remember number and angle. notation is active in basic mode */
         prefs.def_number = current_status.number;
@@ -505,7 +505,7 @@ on_scientific_mode_toggled (GtkMenuItem *menuitem,
     
     if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem)) == FALSE) return;
 
-	double display_value = 0;
+	G_REAL display_value = 0;
     if (prefs.mode == BASIC_MODE)
 		display_value = display_result_get_double(current_status.number);
 		

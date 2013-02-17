@@ -1,3 +1,9 @@
+2013-02-17 Simon Flöry <simon.floery@rechenraum.com>
+	* Creating GTK3 versions of all ui glade files that have GtkTable, which is
+		deprecated in GTK3 (fixes sf.net #93)
+	* Having non-recursive variant of factorial with correct upper bound checking
+		depending on double or quad precision (sf.net patch #6 by t.sonntig)
+
 2013-02-14 Simon Flöry <simon.floery@rechenraum.com>
 	* g_real.h - Introducing USE_LIBQUADMATH only when we compile with gcc 
 		(fixes sf.net #92).
