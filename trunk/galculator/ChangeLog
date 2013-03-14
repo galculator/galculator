@@ -1,3 +1,6 @@
+2013-03-14 Simon Flöry <simon.floery@rechenraum.com>
+	* Added Lithuanian translation (thanks to gymka, closes sf.net #94)
+
 2013-02-17 Simon Flöry <simon.floery@rechenraum.com>
 	* Creating GTK3 versions of all ui glade files that have GtkTable, which is
 		deprecated in GTK3 (fixes sf.net #93)
