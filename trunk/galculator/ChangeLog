@@ -1,4 +1,13 @@
 ##############################################
+# 2013-04-28 galculator 2.1.2 released       #
+##############################################
+
+2013-04-28 Simon Flöry <simon.floery@rechenraum.com>
+	* Changed encoding of ro.po and pt_BR.po to UTF-8
+	* adapted po files to new ui file structure
+	* updated German translations
+
+##############################################
 # 2013-04-27 galculator 2.1.1 released       #
 ##############################################
 

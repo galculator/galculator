@@ -7,7 +7,7 @@ msginit -l ll
 
 edit this ll.po file
 
-this ll.po must be in UTF-8!?
+this ll.po must be in UTF-8.
 
 make update-po 
 	for merging etc. look out for FUZZY entries etc
