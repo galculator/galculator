@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-14 08:54+0200\n"
+"POT-Creation-Date: 2013-04-28 12:51+0200\n"
 "PO-Revision-Date: 2013-03-14 18:42+0200\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
@@ -343,7 +343,7 @@ msgstr ""
 "[%s] Įkelti %s nepavyko. Šis failas būtinas     sukurti galculator naudotojo "
 "sąsają. Įsitikinkite jog įdiegėte failą ir     jis prieinamas!\n"
 
-#: ../src/ui.c:951 ../ui/main_frame_hildon.ui.h:16 ../ui/main_frame.ui.h:17
+#: ../src/ui.c:951 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
 msgstr "Rodyti _meniu juostą"
 
@@ -446,7 +446,7 @@ msgstr "išvynioti rietuvę"
 msgid "Result Display"
 msgstr "Rezultatų rodymas"
 
-#: ../src/flex_parser.l:233
+#: flex_parser.l:234
 #, c-format
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
@@ -455,166 +455,17 @@ msgstr ""
 "[%s] „flex parser“ buvo iškviestas daugiau nei %i kartus. Ar žinote ką "
 "darote? Jei ne: %s\n"
 
-#: ../ui/about.ui.h:1
+#: ../ui/about.ui.in.h:1
 msgid "About galculator"
 msgstr "Apie galculator"
 
-#: ../ui/about.ui.h:2
+#: ../ui/about.ui.in.h:2
 msgid "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
 msgstr "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
 
-#: ../ui/about.ui.h:3
+#: ../ui/about.ui.in.h:3
 msgid "a GTK+ based scientific calculator"
 msgstr "GTK+ paremtas mokslinis skaičiuotuvas"
-
-#: ../ui/main_frame_hildon.ui.h:1 ../ui/main_frame.ui.h:2
-msgid "_File"
-msgstr "_Failas"
-
-#: ../ui/main_frame_hildon.ui.h:2
-msgid "_Quit"
-msgstr "Iš_eiti"
-
-#: ../ui/main_frame_hildon.ui.h:3 ../ui/main_frame.ui.h:3
-msgid "_Edit"
-msgstr "_Taisa"
-
-#: ../ui/main_frame_hildon.ui.h:4 ../ui/main_frame.ui.h:4
-msgid "Cu_t Display Value"
-msgstr "_Iškirpti rodomą reikšmę"
-
-#: ../ui/main_frame_hildon.ui.h:5 ../ui/main_frame.ui.h:5
-msgid "_Copy Display Value"
-msgstr "_Kopijuoti rodomą reikšmę"
-
-#: ../ui/main_frame_hildon.ui.h:6
-msgid "_Paste As Display Value"
-msgstr "Į_klijuoti kaip rodomą reikšmę"
-
-#: ../ui/main_frame_hildon.ui.h:7 ../ui/main_frame.ui.h:7
-msgid "_Preferences..."
-msgstr "_Nustatymai..."
-
-#: ../ui/main_frame_hildon.ui.h:8 ../ui/main_frame.ui.h:8
-msgid "_View"
-msgstr "R_odymas"
-
-#: ../ui/main_frame_hildon.ui.h:9 ../ui/main_frame.ui.h:9
-msgid "_Basic Mode"
-msgstr "_Pagrindinis režimas"
-
-#: ../ui/main_frame_hildon.ui.h:10 ../ui/main_frame.ui.h:10
-msgid "_Scientific Mode"
-msgstr "_Mokslinis režimas"
-
-#: ../ui/main_frame_hildon.ui.h:11 ../ui/main_frame.ui.h:12
-#: ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
-msgid "Buttons"
-msgstr "Mygtukai"
-
-#: ../ui/main_frame_hildon.ui.h:12 ../ui/main_frame.ui.h:13
-msgid "Display Control"
-msgstr "Rodymo valdymas"
-
-#: ../ui/main_frame_hildon.ui.h:13 ../ui/main_frame.ui.h:14
-#: ../ui/prefs_gtk2.ui.h:53 ../ui/prefs_gtk3.ui.h:53
-msgid "Functions"
-msgstr "Funkcijos"
-
-#: ../ui/main_frame_hildon.ui.h:14 ../ui/main_frame.ui.h:15
-msgid "Logical"
-msgstr "Loginės"
-
-#: ../ui/main_frame_hildon.ui.h:15 ../ui/main_frame.ui.h:16
-msgid "Standard"
-msgstr "Standartinės"
-
-#: ../ui/main_frame_hildon.ui.h:17 ../ui/main_frame.ui.h:18
-msgid "_Calculator"
-msgstr "_Skaičiuotuvas"
-
-#: ../ui/main_frame_hildon.ui.h:18 ../ui/main_frame.ui.h:19
-msgid "_Number bases"
-msgstr "_Skaičių pagrindai"
-
-#: ../ui/main_frame_hildon.ui.h:19 ../ui/main_frame.ui.h:20
-msgid "_Decimal"
-msgstr "_Dešimtainis"
-
-#: ../ui/main_frame_hildon.ui.h:20 ../ui/main_frame.ui.h:21
-msgid "_Hexadecimal"
-msgstr "Š_ešioliktainis"
-
-#: ../ui/main_frame_hildon.ui.h:21 ../ui/main_frame.ui.h:22
-msgid "_Octal"
-msgstr "_Aštuntainis"
-
-#: ../ui/main_frame_hildon.ui.h:22 ../ui/main_frame.ui.h:23
-msgid "_Binary"
-msgstr "D_vejetainis"
-
-#: ../ui/main_frame_hildon.ui.h:23 ../ui/main_frame.ui.h:24
-msgid "Angle _units"
-msgstr "_Kampų matavimo vienetai"
-
-#: ../ui/main_frame_hildon.ui.h:24 ../ui/main_frame.ui.h:25
-msgid "D_egrees"
-msgstr "_Laipsniai"
-
-#: ../ui/main_frame_hildon.ui.h:25 ../ui/main_frame.ui.h:26
-msgid "_Radians"
-msgstr "_Radianai"
-
-#: ../ui/main_frame_hildon.ui.h:26 ../ui/main_frame.ui.h:27
-msgid "_Gradians"
-msgstr "_Gradienai"
-
-#: ../ui/main_frame_hildon.ui.h:27 ../ui/main_frame.ui.h:28
-msgid "Notation _modes"
-msgstr "Užrašymo _režimai"
-
-#: ../ui/main_frame_hildon.ui.h:28 ../ui/main_frame.ui.h:29
-msgid "_Algebraic"
-msgstr "_Algebrinis"
-
-#: ../ui/main_frame_hildon.ui.h:29 ../ui/main_frame.ui.h:30
-msgid "_Reverse Polish (RPN)"
-msgstr "Atvirkščias _Lenkiškas (RPN)"
-
-#: ../ui/main_frame_hildon.ui.h:30 ../ui/main_frame.ui.h:31
-msgid "_Formula Entry"
-msgstr "_Formulių įvestis"
-
-#: ../ui/main_frame_hildon.ui.h:31 ../ui/main_frame.ui.h:32
-msgid "_Help"
-msgstr "Ž_inynas"
-
-#: ../ui/main_frame_hildon.ui.h:32
-msgid "_About..."
-msgstr "_Apie..."
-
-#: ../ui/main_frame_hildon.ui.h:33 ../ui/classic_view.ui.h:2
-msgid "Formula entry text field - enter string expression to compute here."
-msgstr "Formulės įvedimo laukas - įveskite išraišką kurią bus skaičiuojama."
-
-#: ../ui/main_frame_hildon.ui.h:34 ../ui/basic_buttons_gtk2.ui.h:23
-#: ../ui/basic_buttons_gtk3.ui.h:23 ../ui/scientific_buttons_gtk2.ui.h:78
-#: ../ui/scientific_buttons_gtk3.ui.h:78
-msgid "*"
-msgstr "*"
-
-#: ../ui/main_frame_hildon.ui.h:35 ../ui/main_frame.ui.h:1
-#: ../ui/classic_view.ui.h:1 ../ui/paper_view.ui.h:1
-msgid "The main program window."
-msgstr "Pagrindinis programos langas."
-
-#: ../ui/main_frame.ui.h:6
-msgid "_Paste and Append to Display Value"
-msgstr "Įklijuoti ir _pridėti prie rodomos reikšmės"
-
-#: ../ui/main_frame.ui.h:11
-msgid "_Paper Mode"
-msgstr "_Popieriaus režimas"
 
 #: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1
 #: ../ui/scientific_buttons_gtk2.ui.h:52 ../ui/scientific_buttons_gtk3.ui.h:52
@@ -726,6 +577,12 @@ msgstr "+/-"
 msgid "Change sign"
 msgstr "Keisti ženklą"
 
+#: ../ui/basic_buttons_gtk2.ui.h:23 ../ui/basic_buttons_gtk3.ui.h:23
+#: ../ui/main_frame_hildon.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:78
+#: ../ui/scientific_buttons_gtk3.ui.h:78
+msgid "*"
+msgstr "*"
+
 #: ../ui/basic_buttons_gtk2.ui.h:24 ../ui/basic_buttons_gtk3.ui.h:24
 #: ../ui/scientific_buttons_gtk2.ui.h:79 ../ui/scientific_buttons_gtk3.ui.h:79
 msgid "Multiply"
@@ -822,6 +679,15 @@ msgstr "%"
 msgid "Percent"
 msgstr "Procentai"
 
+#: ../ui/classic_view.ui.h:1 ../ui/main_frame.ui.h:1
+#: ../ui/main_frame_hildon.ui.h:35 ../ui/paper_view.ui.h:1
+msgid "The main program window."
+msgstr "Pagrindinis programos langas."
+
+#: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
+msgid "Formula entry text field - enter string expression to compute here."
+msgstr "Formulės įvedimo laukas - įveskite išraišką kurią bus skaičiuojama."
+
 #: ../ui/dispctrl_bottom_gtk2.ui.h:1 ../ui/dispctrl_bottom_gtk3.ui.h:1
 #: ../ui/dispctrl_right_gtk2.ui.h:1 ../ui/dispctrl_right_gtk3.ui.h:1
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:5
@@ -839,9 +705,8 @@ msgstr "Atstatyti skaičiuotuvą (viską išvalyti)"
 #: ../ui/dispctrl_bottom_gtk2.ui.h:3 ../ui/dispctrl_bottom_gtk3.ui.h:3
 #: ../ui/dispctrl_right_gtk2.ui.h:5 ../ui/dispctrl_right_gtk3.ui.h:5
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:3
-#: ../ui/scientific_buttons_gtk2.ui.h:40
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:3
-#: ../ui/scientific_buttons_gtk3.ui.h:40
+#: ../ui/scientific_buttons_gtk2.ui.h:40 ../ui/scientific_buttons_gtk3.ui.h:40
 msgid "C"
 msgstr "C"
 
@@ -865,6 +730,140 @@ msgstr "<-"
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:2
 msgid "Backspace"
 msgstr "Backspace"
+
+#: ../ui/main_frame.ui.h:2 ../ui/main_frame_hildon.ui.h:1
+msgid "_File"
+msgstr "_Failas"
+
+#: ../ui/main_frame.ui.h:3 ../ui/main_frame_hildon.ui.h:3
+msgid "_Edit"
+msgstr "_Taisa"
+
+#: ../ui/main_frame.ui.h:4 ../ui/main_frame_hildon.ui.h:4
+msgid "Cu_t Display Value"
+msgstr "_Iškirpti rodomą reikšmę"
+
+#: ../ui/main_frame.ui.h:5 ../ui/main_frame_hildon.ui.h:5
+msgid "_Copy Display Value"
+msgstr "_Kopijuoti rodomą reikšmę"
+
+#: ../ui/main_frame.ui.h:6
+msgid "_Paste and Append to Display Value"
+msgstr "Įklijuoti ir _pridėti prie rodomos reikšmės"
+
+#: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
+msgid "_Preferences..."
+msgstr "_Nustatymai..."
+
+#: ../ui/main_frame.ui.h:8 ../ui/main_frame_hildon.ui.h:8
+msgid "_View"
+msgstr "R_odymas"
+
+#: ../ui/main_frame.ui.h:9 ../ui/main_frame_hildon.ui.h:9
+msgid "_Basic Mode"
+msgstr "_Pagrindinis režimas"
+
+#: ../ui/main_frame.ui.h:10 ../ui/main_frame_hildon.ui.h:10
+msgid "_Scientific Mode"
+msgstr "_Mokslinis režimas"
+
+#: ../ui/main_frame.ui.h:11
+msgid "_Paper Mode"
+msgstr "_Popieriaus režimas"
+
+#: ../ui/main_frame.ui.h:12 ../ui/main_frame_hildon.ui.h:11
+#: ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
+msgid "Buttons"
+msgstr "Mygtukai"
+
+#: ../ui/main_frame.ui.h:13 ../ui/main_frame_hildon.ui.h:12
+msgid "Display Control"
+msgstr "Rodymo valdymas"
+
+#: ../ui/main_frame.ui.h:14 ../ui/main_frame_hildon.ui.h:13
+#: ../ui/prefs_gtk2.ui.h:53 ../ui/prefs_gtk3.ui.h:53
+msgid "Functions"
+msgstr "Funkcijos"
+
+#: ../ui/main_frame.ui.h:15 ../ui/main_frame_hildon.ui.h:14
+msgid "Logical"
+msgstr "Loginės"
+
+#: ../ui/main_frame.ui.h:16 ../ui/main_frame_hildon.ui.h:15
+msgid "Standard"
+msgstr "Standartinės"
+
+#: ../ui/main_frame.ui.h:18 ../ui/main_frame_hildon.ui.h:17
+msgid "_Calculator"
+msgstr "_Skaičiuotuvas"
+
+#: ../ui/main_frame.ui.h:19 ../ui/main_frame_hildon.ui.h:18
+msgid "_Number bases"
+msgstr "_Skaičių pagrindai"
+
+#: ../ui/main_frame.ui.h:20 ../ui/main_frame_hildon.ui.h:19
+msgid "_Decimal"
+msgstr "_Dešimtainis"
+
+#: ../ui/main_frame.ui.h:21 ../ui/main_frame_hildon.ui.h:20
+msgid "_Hexadecimal"
+msgstr "Š_ešioliktainis"
+
+#: ../ui/main_frame.ui.h:22 ../ui/main_frame_hildon.ui.h:21
+msgid "_Octal"
+msgstr "_Aštuntainis"
+
+#: ../ui/main_frame.ui.h:23 ../ui/main_frame_hildon.ui.h:22
+msgid "_Binary"
+msgstr "D_vejetainis"
+
+#: ../ui/main_frame.ui.h:24 ../ui/main_frame_hildon.ui.h:23
+msgid "Angle _units"
+msgstr "_Kampų matavimo vienetai"
+
+#: ../ui/main_frame.ui.h:25 ../ui/main_frame_hildon.ui.h:24
+msgid "D_egrees"
+msgstr "_Laipsniai"
+
+#: ../ui/main_frame.ui.h:26 ../ui/main_frame_hildon.ui.h:25
+msgid "_Radians"
+msgstr "_Radianai"
+
+#: ../ui/main_frame.ui.h:27 ../ui/main_frame_hildon.ui.h:26
+msgid "_Gradians"
+msgstr "_Gradienai"
+
+#: ../ui/main_frame.ui.h:28 ../ui/main_frame_hildon.ui.h:27
+msgid "Notation _modes"
+msgstr "Užrašymo _režimai"
+
+#: ../ui/main_frame.ui.h:29 ../ui/main_frame_hildon.ui.h:28
+msgid "_Algebraic"
+msgstr "_Algebrinis"
+
+#: ../ui/main_frame.ui.h:30 ../ui/main_frame_hildon.ui.h:29
+msgid "_Reverse Polish (RPN)"
+msgstr "Atvirkščias _Lenkiškas (RPN)"
+
+#: ../ui/main_frame.ui.h:31 ../ui/main_frame_hildon.ui.h:30
+msgid "_Formula Entry"
+msgstr "_Formulių įvestis"
+
+#: ../ui/main_frame.ui.h:32 ../ui/main_frame_hildon.ui.h:31
+msgid "_Help"
+msgstr "Ž_inynas"
+
+#: ../ui/main_frame_hildon.ui.h:2
+msgid "_Quit"
+msgstr "Iš_eiti"
+
+#: ../ui/main_frame_hildon.ui.h:6
+msgid "_Paste As Display Value"
+msgstr "Į_klijuoti kaip rodomą reikšmę"
+
+#: ../ui/main_frame_hildon.ui.h:32
+msgid "_About..."
+msgstr "_Apie..."
 
 #: ../ui/prefs_gtk2.ui.h:1 ../ui/prefs_gtk3.ui.h:1
 msgid "Decimal"

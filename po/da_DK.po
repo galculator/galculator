@@ -7,85 +7,40 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-17 16:29+0100\n"
+"POT-Creation-Date: 2013-04-28 12:51+0200\n"
 "PO-Revision-Date: 2010-01-07 14:39+0100\n"
 "Last-Translator: Joakim Seeberg <>\n"
 "Language-Team: en_US <kde-i18n-doc@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: galculator.desktop.in.h:1
+#: ../galculator.desktop.in.h:1
 msgid "Perform simple and scientific calculations"
 msgstr "Udfør simple og videnskabelige bereginiger"
 
-#: src/callbacks.c:40
-msgid "Select result font"
-msgstr "Vælg resultat font"
-
-#: src/callbacks.c:41
-#, fuzzy
-msgid "Select stack font"
-msgstr "Vælg xx font"
-
-#: src/callbacks.c:42
-msgid "Select module font"
-msgstr "Vælg modul font"
-
-#: src/callbacks.c:43
-msgid "Select active module color"
-msgstr "Vælg aktiv modul farve"
-
-#: src/callbacks.c:44
-msgid "Select inactive module color"
-msgstr "Vælg inaktiv modul farve"
-
-#: src/callbacks.c:45
-msgid "Select result font color"
-msgstr "Vælg resultat font farve"
-
-#: src/callbacks.c:46
-#, fuzzy
-msgid "Select stack color"
-msgstr "Vælg xx farve"
-
-#: src/callbacks.c:47
-msgid "Select background color"
-msgstr "Vælg baggrundsfarve"
-
-#: src/callbacks.c:48
-msgid "Select button font"
-msgstr "Vælg knap farve"
-
-#: src/callbacks.c:98
-#, c-format
-msgid "About %s"
-msgstr "Om %s"
-
-#: src/callbacks.c:101
-#, c-format
-msgid ""
-"<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-"<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
-"\n"
-"(c) 2002-2005 by Simon Flöry (simon.floery@rechenraum.com)"
-msgstr ""
-"<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-"<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
-"\n"
-"(c) 2002-2005 by Simon Flöry (simon.floery@rechenraum.com)"
-
-#: src/callbacks.c:1093
+#: ../src/callbacks.c:1047
 msgid "save here"
 msgstr "gem her"
 
-#: src/main.c:59
+#: ../src/callbacks.c:1423
+#, c-format
+msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
+msgstr ""
+
+#: ../src/callbacks.c:1586
+#, c-format
+msgid "[%s] on_main_window_check_resize should not get called. %s\n"
+msgstr ""
+
+#: ../src/main.c:61
 #, fuzzy, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2005 Simon Flöry\n"
+"%s v%s, (c) 2002-2013 Simon Flöry\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -94,6 +49,9 @@ msgid ""
 " -h, --help\t\tShow this usage message\n"
 " -v, --version\t\tShow version information\n"
 "\n"
+"Compiled against GTK version %i.%i.%i\n"
+"Linked against GTK version %i.%i.%i\n"
+"%s-precision floating point numbers.\n"
 msgstr ""
 "\n"
 "%s v%s, (c) 2002-2005 Simon Flöry\n"
@@ -105,46 +63,75 @@ msgstr ""
 " -h, --help\t\tShow this usage message\n"
 " -v, --version\t\tShow version information\n"
 
-#: src/galculator.h:59
+#: ../src/main.c:196
+#, fuzzy, c-format
+msgid "[%s] configuration file: Failed to create directory %s.\n"
+msgstr "[%s] konfigurationsfil: ignorerer ukendt indgang %s=%s. %s\n"
+
+#: ../src/main.c:201
+#, c-format
+msgid ""
+"[%s] configuration file: We will move the configuration file from %s to %s. "
+"After you quit %s, you may remove the configuration file from its old "
+"location %s.\n"
+msgstr ""
+
+#: ../src/galculator.h:92
 #, fuzzy
 msgid "Please submit a bugreport."
 msgstr "Indsend venligst em bugreport"
 
-#: src/calc_basic.c:149
+#: ../src/calc_basic.c:300
 #, fuzzy, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr "[%s] %c - unknown operation character. %s\n"
 
-#: src/config_file.c:180
+#: ../src/calc_basic.c:687
+#, c-format
+msgid ""
+"[%s] Conversion of floating point number in float2string failed because "
+"buffer was too small. %s\n"
+")"
+msgstr ""
+
+#: ../src/calc_basic.c:716
+#, c-format
+msgid ""
+"[%s] Conversion of floating point number in float2stringP failed because "
+"buffer was too small. %s\n"
+")"
+msgstr ""
+
+#: ../src/config_file.c:180
 msgid "Pi"
 msgstr "Pi"
 
-#: src/config_file.c:181
+#: ../src/config_file.c:181
 msgid "pi"
 msgstr "pi"
 
-#: src/config_file.c:183
+#: ../src/config_file.c:183
 msgid "Euler's Number"
 msgstr "Euler's  tal"
 
-#: src/config_file.c:184
+#: ../src/config_file.c:184
 msgid "e"
 msgstr "e"
 
-#: src/config_file.c:232
+#: ../src/config_file.c:232
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
 msgstr "[%s] konfigurationsfil: ignorerer ukendt indgang %s=%s. %s\n"
 
-#: src/config_file.c:256
+#: ../src/config_file.c:256
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
 msgstr ""
-"[%s] konfigurationsfil: %s skal være SAND eller FALSK. Anvender standard. %"
-"s\n"
+"[%s] konfigurationsfil: %s skal være SAND eller FALSK. Anvender standard. "
+"%s\n"
 
-#: src/config_file.c:262
+#: ../src/config_file.c:262
 #, fuzzy, c-format
 msgid ""
 "[%s] configuration file: failed to convert %s to a number properly. Have you "
@@ -153,15 +140,15 @@ msgstr ""
 "[%s] configurationsfil: lykkedes ikke korrekt at konvertere %s til et tal. "
 "Har du ændret your locales? %s"
 
-#: src/config_file.c:265
+#: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
 msgstr ""
-"[%s] konfigurationsfil: ignorerer ukendt nøgle_type i konfigurationstruktur %"
-"s\n"
+"[%s] konfigurationsfil: ignorerer ukendt nøgle_type i konfigurationstruktur "
+"%s\n"
 
-#: src/config_file.c:284
+#: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
@@ -170,7 +157,7 @@ msgstr ""
 "[%s] fandt ukendt sektion%s i konfigurationsfil %s. Anvender foregående "
 "sektion.\n"
 
-#: src/config_file.c:403
+#: ../src/config_file.c:403
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
@@ -181,120 +168,139 @@ msgstr ""
 "Intet at bekymre sig om hvis du starter %s for første gang og anvender "
 "standard.\n"
 
-#: src/config_file.c:441
+#: ../src/config_file.c:432
 #, c-format
 msgid ""
-"[%s] configuration file: strange boolean when writing. Skipping this key. %"
-"s\n"
+"[%s] configuration file - We reset at least one separator character as it "
+"coincides with the decimal point. If you recently changed your locales "
+"settings, this is nothing to worry about.\n"
 msgstr ""
 
-#: src/config_file.c:449
+#: ../src/config_file.c:470
+#, c-format
+msgid ""
+"[%s] configuration file: strange boolean when writing. Skipping this key. "
+"%s\n"
+msgstr ""
+
+#: ../src/config_file.c:478
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
 "\". %s\n"
 msgstr ""
 
-#: src/config_file.c:472
+#: ../src/config_file.c:501
 #, c-format
 msgid ""
 "[%s] configuration file: couldn't save/write to configuration file %s.\n"
 msgstr ""
 
-#: src/display.c:572
+#: ../src/display.c:420
 #, c-format
-msgid "[%s] unknown display option in function \"display_change_option\". %s\n"
+msgid ""
+"[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:42
+#: ../src/display.c:598
+#, c-format
+msgid "[%s] unknown display option in function \"display_change_option\""
+msgstr ""
+
+#: ../src/general_functions.c:43
 msgid "unsupported inverse function"
 msgstr ""
 
-#: src/general_functions.c:48
+#: ../src/general_functions.c:49
 msgid "unsupported hyperbolic function"
 msgstr ""
 
-#: src/general_functions.c:109
+#: ../src/general_functions.c:110
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:135
+#: ../src/general_functions.c:136
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:189
+#: ../src/general_functions.c:192
 #, c-format
-msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
+msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:413
+#: ../src/general_functions.c:272
+#, c-format
+msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:389
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:441
+#: ../src/general_functions.c:431
 msgid "unknown number base"
 msgstr ""
 
-#: src/general_functions.c:442
+#: ../src/general_functions.c:432
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_string\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:463
+#: ../src/general_functions.c:453
 #, c-format
 msgid ""
 "[%s] unknown number base in function \"get_display_number_length\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:572
-#, c-format
+#: ../src/general_functions.c:562
+#, fuzzy, c-format
 msgid ""
 "[%s] failed to convert %s to a number properly in function \"string2double"
-"\". Have you changed your locales? %s\n"
+"\". Have you changed your locales? Deleting your configuration file might "
+"solve this problem. %s\n"
 msgstr ""
+"[%s] configurationsfil: lykkedes ikke korrekt at konvertere %s til et tal. "
+"Har du ændret your locales? %s"
 
-#: src/general_functions.c:588
+#: ../src/general_functions.c:580
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:747
+#: ../src/general_functions.c:735
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:762
+#: ../src/general_functions.c:750
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:779
+#: ../src/general_functions.c:767
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:796
+#: ../src/general_functions.c:784
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
 msgstr ""
 
-#: src/general_functions.c:813
+#: ../src/general_functions.c:801
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
 msgstr ""
 
-#: src/ui.c:88
-#, c-format
-msgid ""
-"[%s] Couldn't load %s. This file is necessary to build galculator's user "
-"interface. Make sure you did a make install and the file is accessible!\n"
+#: ../src/general_functions.c:869
+msgid "unknown display option in function \"change_option\""
 msgstr ""
 
-#: src/ui.c:408
+#: ../src/general_functions.c:909
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -302,897 +308,1040 @@ msgid ""
 ")"
 msgstr ""
 
-#: src/ui.c:799 ui/main_frame.glade.h:9
+#: ../src/ui.c:89
+#, c-format
+msgid ""
+"[%s] Couldn't load %s. This file is necessary     to build galculator's user "
+"interface. Make sure you did a make install and the file     is accessible!\n"
+msgstr ""
+
+#: ../src/ui.c:951 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
 msgstr ""
 
-#: src/ui.c:827
+#: ../src/ui.c:991
 #, c-format
 msgid "%s Preferences"
 msgstr ""
 
-#: src/ui.c:1019 ui/scientific_buttons.glade.h:21 ui/basic_buttons.glade.h:21
+#: ../src/ui.c:1035 ../src/ui.c:1067
+msgid "Name"
+msgstr ""
+
+#: ../src/ui.c:1038
+msgid "Value"
+msgstr ""
+
+#: ../src/ui.c:1041
+msgid "Description"
+msgstr ""
+
+#: ../src/ui.c:1070
+msgid "Variable"
+msgstr ""
+
+#: ../src/ui.c:1073
+msgid "Expression"
+msgstr ""
+
+#: ../src/ui.c:1203 ../ui/basic_buttons_gtk2.ui.h:43
+#: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
+#: ../ui/scientific_buttons_gtk3.ui.h:98
 msgid "="
 msgstr ""
 
-#: src/ui.c:1019 src/ui.c:1031 ui/scientific_buttons.glade.h:39
-#: ui/basic_buttons.glade.h:28
+#: ../src/ui.c:1203 ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:44
+#: ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
+#: ../ui/scientific_buttons_gtk2.ui.h:99 ../ui/scientific_buttons_gtk3.ui.h:99
 msgid "Enter"
 msgstr ""
 
-#: src/ui.c:1021 ui/scientific_buttons.glade.h:99
+#: ../src/ui.c:1205 ../ui/scientific_buttons_gtk2.ui.h:17
+#: ../ui/scientific_buttons_gtk3.ui.h:17
 msgid "x^y"
 msgstr ""
 
-#: src/ui.c:1021 src/ui.c:1033 ui/scientific_buttons.glade.h:71
+#: ../src/ui.c:1205 ../src/ui.c:1217 ../ui/scientific_buttons_gtk2.ui.h:18
+#: ../ui/scientific_buttons_gtk3.ui.h:18
 msgid "Power"
 msgstr ""
 
-#: src/ui.c:1023 ui/scientific_buttons.glade.h:3 ui/basic_buttons.glade.h:3
+#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:33
+#: ../ui/basic_buttons_gtk3.ui.h:33 ../ui/scientific_buttons_gtk2.ui.h:88
+#: ../ui/scientific_buttons_gtk3.ui.h:88
 msgid "("
 msgstr ""
 
-#: src/ui.c:1023 ui/scientific_buttons.glade.h:69 ui/basic_buttons.glade.h:37
+#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:34
+#: ../ui/basic_buttons_gtk3.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:89
+#: ../ui/scientific_buttons_gtk3.ui.h:89
 msgid "Open Bracket"
 msgstr ""
 
-#: src/ui.c:1025 ui/scientific_buttons.glade.h:4 ui/basic_buttons.glade.h:4
+#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:31
+#: ../ui/basic_buttons_gtk3.ui.h:31 ../ui/scientific_buttons_gtk2.ui.h:86
+#: ../ui/scientific_buttons_gtk3.ui.h:86
 msgid ")"
 msgstr ""
 
-#: src/ui.c:1025 ui/scientific_buttons.glade.h:30 ui/basic_buttons.glade.h:24
+#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:32
+#: ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
+#: ../ui/scientific_buttons_gtk3.ui.h:87
 msgid "Close Bracket"
 msgstr ""
 
-#: src/ui.c:1031
+#: ../src/ui.c:1215
 msgid "ENT"
 msgstr ""
 
-#: src/ui.c:1033
+#: ../src/ui.c:1217
 msgid "y^x"
 msgstr ""
 
-#: src/ui.c:1035
+#: ../src/ui.c:1219
 msgid "x<>y"
 msgstr ""
 
-#: src/ui.c:1035
+#: ../src/ui.c:1219
 msgid "swap current number with top of stack"
 msgstr ""
 
-#: src/ui.c:1037
+#: ../src/ui.c:1221
 msgid "roll"
 msgstr ""
 
-#: src/ui.c:1037
+#: ../src/ui.c:1221
 msgid "roll down stack"
 msgstr ""
 
-#: flex_parser.l:214
+#: ../src/ui.c:1292
+msgid "Result Display"
+msgstr ""
+
+#: flex_parser.l:234
 #, c-format
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
 "doing? If not: %s\n"
 msgstr ""
 
-#: ui/main_frame.glade.h:1
-msgid "Angle _units"
+#: ../ui/about.ui.in.h:1
+msgid "About galculator"
 msgstr ""
 
-#: ui/main_frame.glade.h:2 ui/prefs.glade.h:24
-msgid "Buttons"
+#: ../ui/about.ui.in.h:2
+msgid "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
 msgstr ""
 
-#: ui/main_frame.glade.h:3
-msgid "Cu_t Display Value"
+#: ../ui/about.ui.in.h:3
+#, fuzzy
+msgid "a GTK+ based scientific calculator"
+msgstr "Udfør simple og videnskabelige bereginiger"
+
+#: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1
+#: ../ui/scientific_buttons_gtk2.ui.h:52 ../ui/scientific_buttons_gtk3.ui.h:52
+msgid "7"
 msgstr ""
 
-#: ui/main_frame.glade.h:4
-msgid "D_egrees"
+#: ../ui/basic_buttons_gtk2.ui.h:2 ../ui/basic_buttons_gtk3.ui.h:2
+#: ../ui/scientific_buttons_gtk2.ui.h:53 ../ui/scientific_buttons_gtk3.ui.h:53
+msgid "Seven"
 msgstr ""
 
-#: ui/main_frame.glade.h:5
-msgid "Display Control"
+#: ../ui/basic_buttons_gtk2.ui.h:3 ../ui/basic_buttons_gtk3.ui.h:3
+#: ../ui/scientific_buttons_gtk2.ui.h:54 ../ui/scientific_buttons_gtk3.ui.h:54
+msgid "8"
 msgstr ""
 
-#: ui/main_frame.glade.h:6 ui/prefs.glade.h:35
-msgid "Functions"
+#: ../ui/basic_buttons_gtk2.ui.h:4 ../ui/basic_buttons_gtk3.ui.h:4
+#: ../ui/scientific_buttons_gtk2.ui.h:55 ../ui/scientific_buttons_gtk3.ui.h:55
+msgid "Eight"
 msgstr ""
 
-#: ui/main_frame.glade.h:7
-msgid "Logical"
+#: ../ui/basic_buttons_gtk2.ui.h:5 ../ui/basic_buttons_gtk3.ui.h:5
+#: ../ui/scientific_buttons_gtk2.ui.h:56 ../ui/scientific_buttons_gtk3.ui.h:56
+msgid "9"
 msgstr ""
 
-#: ui/main_frame.glade.h:8
-msgid "Notation _modes"
+#: ../ui/basic_buttons_gtk2.ui.h:6 ../ui/basic_buttons_gtk3.ui.h:6
+#: ../ui/scientific_buttons_gtk2.ui.h:57 ../ui/scientific_buttons_gtk3.ui.h:57
+msgid "Nine"
 msgstr ""
 
-#: ui/main_frame.glade.h:10
-msgid "Standard"
+#: ../ui/basic_buttons_gtk2.ui.h:7 ../ui/basic_buttons_gtk3.ui.h:7
+#: ../ui/scientific_buttons_gtk2.ui.h:58 ../ui/scientific_buttons_gtk3.ui.h:58
+msgid "/"
 msgstr ""
 
-#: ui/main_frame.glade.h:11
-msgid "The main program window."
+#: ../ui/basic_buttons_gtk2.ui.h:8 ../ui/basic_buttons_gtk3.ui.h:8
+#: ../ui/scientific_buttons_gtk2.ui.h:59 ../ui/scientific_buttons_gtk3.ui.h:59
+msgid "Divide"
 msgstr ""
 
-#: ui/main_frame.glade.h:12
-msgid "_About..."
+#: ../ui/basic_buttons_gtk2.ui.h:9 ../ui/basic_buttons_gtk3.ui.h:9
+#: ../ui/scientific_buttons_gtk2.ui.h:62 ../ui/scientific_buttons_gtk3.ui.h:62
+msgid "4"
 msgstr ""
 
-#: ui/main_frame.glade.h:13
-msgid "_Algebraic"
+#: ../ui/basic_buttons_gtk2.ui.h:10 ../ui/basic_buttons_gtk3.ui.h:10
+#: ../ui/scientific_buttons_gtk2.ui.h:63 ../ui/scientific_buttons_gtk3.ui.h:63
+msgid "Four"
 msgstr ""
 
-#: ui/main_frame.glade.h:14
-msgid "_Basic Mode"
+#: ../ui/basic_buttons_gtk2.ui.h:11 ../ui/basic_buttons_gtk3.ui.h:11
+#: ../ui/scientific_buttons_gtk2.ui.h:64 ../ui/scientific_buttons_gtk3.ui.h:64
+msgid "5"
 msgstr ""
 
-#: ui/main_frame.glade.h:15
-msgid "_Binary"
+#: ../ui/basic_buttons_gtk2.ui.h:12 ../ui/basic_buttons_gtk3.ui.h:12
+#: ../ui/scientific_buttons_gtk2.ui.h:65 ../ui/scientific_buttons_gtk3.ui.h:65
+msgid "Five"
 msgstr ""
 
-#: ui/main_frame.glade.h:16
-msgid "_Calculator"
+#: ../ui/basic_buttons_gtk2.ui.h:13 ../ui/basic_buttons_gtk3.ui.h:13
+#: ../ui/scientific_buttons_gtk2.ui.h:66 ../ui/scientific_buttons_gtk3.ui.h:66
+msgid "6"
 msgstr ""
 
-#: ui/main_frame.glade.h:17
-msgid "_Copy Display Value"
+#: ../ui/basic_buttons_gtk2.ui.h:14 ../ui/basic_buttons_gtk3.ui.h:14
+#: ../ui/scientific_buttons_gtk2.ui.h:67 ../ui/scientific_buttons_gtk3.ui.h:67
+msgid "Six"
 msgstr ""
 
-#: ui/main_frame.glade.h:18
-msgid "_Decimal"
+#: ../ui/basic_buttons_gtk2.ui.h:15 ../ui/basic_buttons_gtk3.ui.h:15
+#: ../ui/scientific_buttons_gtk2.ui.h:68 ../ui/scientific_buttons_gtk3.ui.h:68
+msgid "3"
 msgstr ""
 
-#: ui/main_frame.glade.h:19
-msgid "_Edit"
+#: ../ui/basic_buttons_gtk2.ui.h:16 ../ui/basic_buttons_gtk3.ui.h:16
+#: ../ui/scientific_buttons_gtk2.ui.h:69 ../ui/scientific_buttons_gtk3.ui.h:69
+msgid "Three"
 msgstr ""
 
-#: ui/main_frame.glade.h:20
-msgid "_File"
+#: ../ui/basic_buttons_gtk2.ui.h:17 ../ui/basic_buttons_gtk3.ui.h:17
+#: ../ui/scientific_buttons_gtk2.ui.h:70 ../ui/scientific_buttons_gtk3.ui.h:70
+msgid "-"
 msgstr ""
 
-#: ui/main_frame.glade.h:21
-msgid "_Formula Entry"
+#: ../ui/basic_buttons_gtk2.ui.h:18 ../ui/basic_buttons_gtk3.ui.h:18
+#: ../ui/scientific_buttons_gtk2.ui.h:71 ../ui/scientific_buttons_gtk3.ui.h:71
+msgid "Subtract"
 msgstr ""
 
-#: ui/main_frame.glade.h:22
-msgid "_Gradians"
+#: ../ui/basic_buttons_gtk2.ui.h:19 ../ui/basic_buttons_gtk3.ui.h:19
+#: ../ui/scientific_buttons_gtk2.ui.h:72 ../ui/scientific_buttons_gtk3.ui.h:72
+msgid "+"
 msgstr ""
 
-#: ui/main_frame.glade.h:23
-msgid "_Help"
+#: ../ui/basic_buttons_gtk2.ui.h:20 ../ui/basic_buttons_gtk3.ui.h:20
+#: ../ui/scientific_buttons_gtk2.ui.h:73 ../ui/scientific_buttons_gtk3.ui.h:73
+msgid "Sum"
 msgstr ""
 
-#: ui/main_frame.glade.h:24
-msgid "_Hexadecimal"
+#: ../ui/basic_buttons_gtk2.ui.h:21 ../ui/basic_buttons_gtk3.ui.h:21
+#: ../ui/scientific_buttons_gtk2.ui.h:76 ../ui/scientific_buttons_gtk3.ui.h:76
+msgid "+/-"
 msgstr ""
 
-#: ui/main_frame.glade.h:25
-msgid "_NG Mode"
+#: ../ui/basic_buttons_gtk2.ui.h:22 ../ui/basic_buttons_gtk3.ui.h:22
+#: ../ui/scientific_buttons_gtk2.ui.h:77 ../ui/scientific_buttons_gtk3.ui.h:77
+msgid "Change sign"
 msgstr ""
 
-#: ui/main_frame.glade.h:26
-msgid "_Number bases"
+#: ../ui/basic_buttons_gtk2.ui.h:23 ../ui/basic_buttons_gtk3.ui.h:23
+#: ../ui/main_frame_hildon.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:78
+#: ../ui/scientific_buttons_gtk3.ui.h:78
+msgid "*"
 msgstr ""
 
-#: ui/main_frame.glade.h:27
-msgid "_Octal"
+#: ../ui/basic_buttons_gtk2.ui.h:24 ../ui/basic_buttons_gtk3.ui.h:24
+#: ../ui/scientific_buttons_gtk2.ui.h:79 ../ui/scientific_buttons_gtk3.ui.h:79
+msgid "Multiply"
 msgstr ""
 
-#: ui/main_frame.glade.h:28
-msgid "_Paste As Display Value"
+#: ../ui/basic_buttons_gtk2.ui.h:25 ../ui/basic_buttons_gtk3.ui.h:25
+#: ../ui/scientific_buttons_gtk2.ui.h:80 ../ui/scientific_buttons_gtk3.ui.h:80
+msgid "Add current display value to memory"
 msgstr ""
 
-#: ui/main_frame.glade.h:29
-msgid "_Preferences..."
+#: ../ui/basic_buttons_gtk2.ui.h:26 ../ui/basic_buttons_gtk3.ui.h:26
+#: ../ui/scientific_buttons_gtk2.ui.h:81 ../ui/scientific_buttons_gtk3.ui.h:81
+msgid "M+"
 msgstr ""
 
-#: ui/main_frame.glade.h:30
-msgid "_Quit"
+#: ../ui/basic_buttons_gtk2.ui.h:27 ../ui/basic_buttons_gtk3.ui.h:27
+#: ../ui/scientific_buttons_gtk2.ui.h:82 ../ui/scientific_buttons_gtk3.ui.h:82
+msgid "Read from memory"
 msgstr ""
 
-#: ui/main_frame.glade.h:31
-msgid "_Radians"
+#: ../ui/basic_buttons_gtk2.ui.h:28 ../ui/basic_buttons_gtk3.ui.h:28
+#: ../ui/scientific_buttons_gtk2.ui.h:83 ../ui/scientific_buttons_gtk3.ui.h:83
+msgid "MR"
 msgstr ""
 
-#: ui/main_frame.glade.h:32
-msgid "_Reverse Polish (RPN)"
+#: ../ui/basic_buttons_gtk2.ui.h:29 ../ui/basic_buttons_gtk3.ui.h:29
+#: ../ui/scientific_buttons_gtk2.ui.h:84 ../ui/scientific_buttons_gtk3.ui.h:84
+msgid "Save to memory"
 msgstr ""
 
-#: ui/main_frame.glade.h:33
-msgid "_Scientific Mode"
+#: ../ui/basic_buttons_gtk2.ui.h:30 ../ui/basic_buttons_gtk3.ui.h:30
+#: ../ui/scientific_buttons_gtk2.ui.h:85 ../ui/scientific_buttons_gtk3.ui.h:85
+msgid "MS"
 msgstr ""
 
-#: ui/main_frame.glade.h:34
-msgid "_View"
+#: ../ui/basic_buttons_gtk2.ui.h:35 ../ui/basic_buttons_gtk3.ui.h:35
+#: ../ui/scientific_buttons_gtk2.ui.h:90 ../ui/scientific_buttons_gtk3.ui.h:90
+msgid "0"
 msgstr ""
 
-#: ui/scientific_buttons.glade.h:2 ui/basic_buttons.glade.h:2
+#: ../ui/basic_buttons_gtk2.ui.h:36 ../ui/basic_buttons_gtk3.ui.h:36
+#: ../ui/scientific_buttons_gtk2.ui.h:91 ../ui/scientific_buttons_gtk3.ui.h:91
+msgid "Zero"
+msgstr ""
+
+#: ../ui/basic_buttons_gtk2.ui.h:37 ../ui/basic_buttons_gtk3.ui.h:37
+#: ../ui/scientific_buttons_gtk2.ui.h:92 ../ui/scientific_buttons_gtk3.ui.h:92
+msgid "."
+msgstr ""
+
+#: ../ui/basic_buttons_gtk2.ui.h:38 ../ui/basic_buttons_gtk3.ui.h:38
+#: ../ui/scientific_buttons_gtk2.ui.h:93 ../ui/scientific_buttons_gtk3.ui.h:93
+msgid "Decimal point"
+msgstr ""
+
+#: ../ui/basic_buttons_gtk2.ui.h:39 ../ui/basic_buttons_gtk3.ui.h:39
+#: ../ui/scientific_buttons_gtk2.ui.h:94 ../ui/scientific_buttons_gtk3.ui.h:94
+msgid "1"
+msgstr ""
+
+#: ../ui/basic_buttons_gtk2.ui.h:40 ../ui/basic_buttons_gtk3.ui.h:40
+#: ../ui/scientific_buttons_gtk2.ui.h:95 ../ui/scientific_buttons_gtk3.ui.h:95
+msgid "One"
+msgstr ""
+
+#: ../ui/basic_buttons_gtk2.ui.h:41 ../ui/basic_buttons_gtk3.ui.h:41
+#: ../ui/scientific_buttons_gtk2.ui.h:96 ../ui/scientific_buttons_gtk3.ui.h:96
+msgid "2"
+msgstr ""
+
+#: ../ui/basic_buttons_gtk2.ui.h:42 ../ui/basic_buttons_gtk3.ui.h:42
+#: ../ui/scientific_buttons_gtk2.ui.h:97 ../ui/scientific_buttons_gtk3.ui.h:97
+msgid "Two"
+msgstr ""
+
+#: ../ui/basic_buttons_gtk2.ui.h:45 ../ui/basic_buttons_gtk3.ui.h:45
+#: ../ui/scientific_buttons_gtk2.ui.h:5 ../ui/scientific_buttons_gtk3.ui.h:5
+msgid "sqrt"
+msgstr ""
+
+#: ../ui/basic_buttons_gtk2.ui.h:46 ../ui/basic_buttons_gtk3.ui.h:46
+#: ../ui/scientific_buttons_gtk2.ui.h:6 ../ui/scientific_buttons_gtk3.ui.h:6
+msgid "Square root"
+msgstr ""
+
+#: ../ui/basic_buttons_gtk2.ui.h:48 ../ui/basic_buttons_gtk3.ui.h:48
+#: ../ui/scientific_buttons_gtk2.ui.h:24 ../ui/scientific_buttons_gtk3.ui.h:24
 #, no-c-format
 msgid "%"
 msgstr ""
 
-#: ui/scientific_buttons.glade.h:5 ui/basic_buttons.glade.h:5
-msgid "*"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:6 ui/basic_buttons.glade.h:6
-msgid "+"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:7 ui/basic_buttons.glade.h:7
-msgid "+/-"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:8 ui/basic_buttons.glade.h:8
-msgid "-"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:9 ui/basic_buttons.glade.h:9
-msgid "."
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:10 ui/basic_buttons.glade.h:10
-msgid "/"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:11 ui/basic_buttons.glade.h:11
-msgid "0"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:12 ui/basic_buttons.glade.h:12
-msgid "1"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:13 ui/basic_buttons.glade.h:13
-msgid "2"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:14 ui/basic_buttons.glade.h:14
-msgid "3"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:15 ui/basic_buttons.glade.h:15
-msgid "4"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:16 ui/basic_buttons.glade.h:16
-msgid "5"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:17 ui/basic_buttons.glade.h:17
-msgid "6"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:18 ui/basic_buttons.glade.h:18
-msgid "7"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:19 ui/basic_buttons.glade.h:19
-msgid "8"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:20 ui/basic_buttons.glade.h:20
-msgid "9"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:22
-msgid "A"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:23
-msgid "AND"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:24 ui/basic_buttons.glade.h:22
-msgid "Add current display value to memory"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:25
-msgid "B"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:26
-msgid "Bitwise complement"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:27 ui/dispctrl_right.glade.h:4
-#: ui/dispctrl_bottom.glade.h:4
-msgid "C"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:28
-msgid "CMP"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:29 ui/basic_buttons.glade.h:23
-msgid "Change sign"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:31 ui/prefs.glade.h:28
-msgid "Constants"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:32
-msgid "Cosine"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:33
-msgid "D"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:34 ui/basic_buttons.glade.h:25
-msgid "Decimal point"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:35 ui/basic_buttons.glade.h:26
-msgid "Divide"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:36
-msgid "E"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:37
-msgid "EE"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:38 ui/basic_buttons.glade.h:27
-msgid "Eight"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:40
-msgid "Enter exponent (base: 10)"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:41
-msgid "F"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:42
-msgid "Factorial"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:43 ui/basic_buttons.glade.h:29
-msgid "Five"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:44 ui/basic_buttons.glade.h:30
-msgid "Four"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:45
-msgid "Hexadecimal 0xA"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:46
-msgid "Hexadecimal 0xB"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:47
-msgid "Hexadecimal 0xC"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:48
-msgid "Hexadecimal 0xD"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:49
-msgid "Hexadecimal 0xE"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:50
-msgid "Hexadecimal 0xF"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:51
-msgid "Hyperbolic mode"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:52
-msgid "Inverse mode"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:53
-msgid "LSH"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:54
-msgid "Left shift"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:55
-msgid "Logarithm (base: 10)"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:56
-msgid "Logical AND"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:57
-msgid "Logical OR"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:58
-msgid "Logical XOR"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:59 ui/basic_buttons.glade.h:31
-msgid "M+"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:60
-msgid "MOD"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:61 ui/basic_buttons.glade.h:32
-msgid "MR"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:62 ui/basic_buttons.glade.h:33
-msgid "MS"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:63
-msgid "Modulus"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:64 ui/basic_buttons.glade.h:34
-msgid "Multiply"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:65
-msgid "Natural logarithm (base: e)"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:66 ui/basic_buttons.glade.h:35
-msgid "Nine"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:67
-msgid "OR"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:68 ui/basic_buttons.glade.h:36
-msgid "One"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:70 ui/basic_buttons.glade.h:38
+#: ../ui/basic_buttons_gtk2.ui.h:49 ../ui/basic_buttons_gtk3.ui.h:49
+#: ../ui/scientific_buttons_gtk2.ui.h:25 ../ui/scientific_buttons_gtk3.ui.h:25
 msgid "Percent"
 msgstr ""
 
-#: ui/scientific_buttons.glade.h:72 ui/basic_buttons.glade.h:39
-msgid "Read from memory"
+#: ../ui/classic_view.ui.h:1 ../ui/main_frame.ui.h:1
+#: ../ui/main_frame_hildon.ui.h:35 ../ui/paper_view.ui.h:1
+msgid "The main program window."
 msgstr ""
 
-#: ui/scientific_buttons.glade.h:73 ui/basic_buttons.glade.h:40
-msgid "Save to memory"
+#: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
+msgid "Formula entry text field - enter string expression to compute here."
 msgstr ""
 
-#: ui/scientific_buttons.glade.h:74 ui/basic_buttons.glade.h:41
-msgid "Seven"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:75
-msgid "Sine"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:76 ui/basic_buttons.glade.h:42
-msgid "Six"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:77
-msgid "Square"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:78 ui/basic_buttons.glade.h:43
-msgid "Square root"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:79 ui/basic_buttons.glade.h:44
-msgid "Subtract"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:80 ui/basic_buttons.glade.h:45
-msgid "Sum"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:81
-msgid "Tangent"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:82 ui/basic_buttons.glade.h:46
-msgid "Three"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:83 ui/basic_buttons.glade.h:47
-msgid "Two"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:84
-msgid "User defined functions"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:85
-msgid "XOR"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:86 ui/basic_buttons.glade.h:48
-msgid "Zero"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:87
-msgid "con"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:88
-msgid "cos"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:89
-msgid "fun"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:90
-msgid "hyp"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:91
-msgid "inv"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:92
-msgid "ln"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:93
-msgid "log"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:94
-msgid "n!"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:95
-msgid "sin"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:96 ui/basic_buttons.glade.h:49
-msgid "sqrt"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:97
-msgid "tan"
-msgstr ""
-
-#: ui/scientific_buttons.glade.h:98
-msgid "x^2"
-msgstr ""
-
-#: ui/about.glade.h:1
-msgid "A dialog that shows information about this program."
-msgstr ""
-
-#: ui/about.glade.h:2 ui/prefs.glade.h:26
-msgid "Closes the dialog."
-msgstr ""
-
-#: ui/about.glade.h:3
-msgid "Shows information about the program."
-msgstr ""
-
-#: ui/about.glade.h:4
-msgid "fill_me"
-msgstr ""
-
-#: ui/color.glade.h:1
-msgid "A dialog that is used to change a color setting."
-msgstr ""
-
-#: ui/color.glade.h:2 ui/font.glade.h:2
-msgid "Applies all changes and closes the dialog."
-msgstr ""
-
-#: ui/color.glade.h:3 ui/font.glade.h:4
-msgid "Cancels all changes and closes the dialog."
-msgstr ""
-
-#: ui/color.glade.h:4
-msgid "Contains various widgets to select a color value."
-msgstr ""
-
-#: ui/color.glade.h:5
-msgid "Select Color"
-msgstr ""
-
-#: ui/color.glade.h:6
-msgid "Shows some help about the dialog."
-msgstr ""
-
-#: ui/font.glade.h:1
-msgid "A dialog that is used to change a font setting."
-msgstr ""
-
-#: ui/font.glade.h:3
-msgid "Applies all changes."
-msgstr ""
-
-#: ui/font.glade.h:5
-msgid "Displays various fonts and font sizes to select from."
-msgstr ""
-
-#: ui/font.glade.h:6
-msgid "Select Font"
-msgstr ""
-
-#: ui/font.glade.h:7
-msgid "decimal PI 3.14159265359"
-msgstr ""
-
-#: ui/prefs.glade.h:1
-msgid " "
-msgstr ""
-
-#: ui/prefs.glade.h:2
-msgid "    "
-msgstr ""
-
-#: ui/prefs.glade.h:3
-msgid "<b>Appearance</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:4
-msgid "<b>Binary Settings</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:5
-msgid "<b>Decimal Settings</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:6
-msgid "<b>Dimension</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:7
-msgid "<b>Font</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:8
-msgid "<b>Hexadecimal Settings</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:9
-msgid "<b>Modules Visibility</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:10
-msgid "<b>Octal Settings</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:11
-msgid "<b>RPN</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:12
-msgid "<b>Startup</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:13
-msgid "<b>User defined constants:</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:14
-msgid "<b>User defined functions:</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:15
-msgid "<b>Visibility</b>"
-msgstr ""
-
-#: ui/prefs.glade.h:16
-msgid "A dialog that is used to change preferences settings."
-msgstr ""
-
-#: ui/prefs.glade.h:17
-msgid "Active module color:"
-msgstr ""
-
-#: ui/prefs.glade.h:18
-msgid "Add"
-msgstr ""
-
-#: ui/prefs.glade.h:19
-msgid "Angle base units"
-msgstr ""
-
-#: ui/prefs.glade.h:20
-msgid "Arithmetic operation"
-msgstr ""
-
-#: ui/prefs.glade.h:21
-msgid "Background color:"
-msgstr ""
-
-#: ui/prefs.glade.h:22
-msgid "Binary"
-msgstr ""
-
-#: ui/prefs.glade.h:23
-msgid "Button font:"
-msgstr ""
-
-#: ui/prefs.glade.h:25
-msgid "Clear"
-msgstr ""
-
-#: ui/prefs.glade.h:27
-msgid "Configure number base: "
-msgstr ""
-
-#: ui/prefs.glade.h:29
-msgid "Decimal"
-msgstr ""
-
-#: ui/prefs.glade.h:30
-msgid "Delete"
-msgstr ""
-
-#: ui/prefs.glade.h:31
-msgid "Description:"
-msgstr ""
-
-#: ui/prefs.glade.h:32
-msgid "Display"
-msgstr ""
-
-#: ui/prefs.glade.h:33
-msgid "Expression:"
-msgstr ""
-
-#: ui/prefs.glade.h:34
-msgid "Fix length to a multiple of"
-msgstr ""
-
-#: ui/prefs.glade.h:36
-msgid "General"
-msgstr ""
-
-#: ui/prefs.glade.h:37
-msgid "Hexadecimal"
-msgstr ""
-
-#: ui/prefs.glade.h:38
-msgid "Inactive module color:"
-msgstr ""
-
-#: ui/prefs.glade.h:39
-msgid "Minimal button height:"
-msgstr ""
-
-#: ui/prefs.glade.h:40
-msgid "Minimal button width:"
-msgstr ""
-
-#: ui/prefs.glade.h:41
-msgid "Module font:"
-msgstr ""
-
-#: ui/prefs.glade.h:42
-msgid "Name:"
-msgstr ""
-
-#: ui/prefs.glade.h:43
-msgid "Notation"
-msgstr ""
-
-#: ui/prefs.glade.h:44
-msgid "Number base units"
-msgstr ""
-
-#: ui/prefs.glade.h:45
-msgid "Number of bits: "
-msgstr ""
-
-#: ui/prefs.glade.h:46
-msgid "Numbers"
-msgstr ""
-
-#: ui/prefs.glade.h:47
-msgid "Octal"
-msgstr ""
-
-#: ui/prefs.glade.h:48
-msgid "Open brackets"
-msgstr ""
-
-#: ui/prefs.glade.h:49
-msgid "RPN stack color:"
-msgstr ""
-
-#: ui/prefs.glade.h:50
-msgid "RPN stack font:"
-msgstr ""
-
-#: ui/prefs.glade.h:51
-msgid "Remember display value on exit"
-msgstr ""
-
-#: ui/prefs.glade.h:52
-msgid "Result font color:"
-msgstr ""
-
-#: ui/prefs.glade.h:53
-msgid "Result font:"
-msgstr ""
-
-#: ui/prefs.glade.h:54
-msgid "Separator block length:"
-msgstr ""
-
-#: ui/prefs.glade.h:55
-msgid "Separator character:"
-msgstr ""
-
-#: ui/prefs.glade.h:56
-msgid "Show menu bar"
-msgstr ""
-
-#: ui/prefs.glade.h:57
-msgid "Show separator"
-msgstr ""
-
-#: ui/prefs.glade.h:58
-msgid "Show thousands separator"
-msgstr ""
-
-#: ui/prefs.glade.h:59
-msgid "Signed"
-msgstr ""
-
-#: ui/prefs.glade.h:60
-msgid "Update"
-msgstr ""
-
-#: ui/prefs.glade.h:61
-msgid "Use custom button font"
-msgstr ""
-
-#: ui/prefs.glade.h:62
-msgid "Value:"
-msgstr ""
-
-#: ui/prefs.glade.h:63
-msgid "Variable:"
-msgstr ""
-
-#: ui/prefs.glade.h:64
-msgid "finite stack size (x, y, z, t)"
-msgstr ""
-
-#: ui/prefs.glade.h:65
-msgid "galculator - Preferences"
-msgstr ""
-
-#: ui/prefs.glade.h:66
-msgid "infinite stack size"
-msgstr ""
-
-#: ui/dispctrl_right.glade.h:1 ui/dispctrl_bottom.glade.h:1
-msgid "<-"
-msgstr ""
-
-#: ui/dispctrl_right.glade.h:2 ui/dispctrl_bottom.glade.h:2
+#: ../ui/dispctrl_bottom_gtk2.ui.h:1 ../ui/dispctrl_bottom_gtk3.ui.h:1
+#: ../ui/dispctrl_right_gtk2.ui.h:1 ../ui/dispctrl_right_gtk3.ui.h:1
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:5
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:5
 msgid "AC"
 msgstr ""
 
-#: ui/dispctrl_right.glade.h:3 ui/dispctrl_bottom.glade.h:3
-msgid "Backspace"
+#: ../ui/dispctrl_bottom_gtk2.ui.h:2 ../ui/dispctrl_bottom_gtk3.ui.h:2
+#: ../ui/dispctrl_right_gtk2.ui.h:2 ../ui/dispctrl_right_gtk3.ui.h:2
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:6
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:6
+msgid "Reset calculator (clear all)"
 msgstr ""
 
-#: ui/dispctrl_right.glade.h:5 ui/dispctrl_bottom.glade.h:5
+#: ../ui/dispctrl_bottom_gtk2.ui.h:3 ../ui/dispctrl_bottom_gtk3.ui.h:3
+#: ../ui/dispctrl_right_gtk2.ui.h:5 ../ui/dispctrl_right_gtk3.ui.h:5
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:3
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:3
+#: ../ui/scientific_buttons_gtk2.ui.h:40 ../ui/scientific_buttons_gtk3.ui.h:40
+msgid "C"
+msgstr ""
+
+#: ../ui/dispctrl_bottom_gtk2.ui.h:4 ../ui/dispctrl_bottom_gtk3.ui.h:4
+#: ../ui/dispctrl_right_gtk2.ui.h:6 ../ui/dispctrl_right_gtk3.ui.h:6
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:4
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:4
 msgid "Clear display"
 msgstr ""
 
-#: ui/dispctrl_right.glade.h:6 ui/dispctrl_bottom.glade.h:6
-msgid "Reset calculator (clear all)"
+#: ../ui/dispctrl_bottom_gtk2.ui.h:5 ../ui/dispctrl_bottom_gtk3.ui.h:5
+#: ../ui/dispctrl_right_gtk2.ui.h:3 ../ui/dispctrl_right_gtk3.ui.h:3
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:1
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:1
+msgid "<-"
 msgstr ""
+
+#: ../ui/dispctrl_bottom_gtk2.ui.h:6 ../ui/dispctrl_bottom_gtk3.ui.h:6
+#: ../ui/dispctrl_right_gtk2.ui.h:4 ../ui/dispctrl_right_gtk3.ui.h:4
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:2
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:2
+msgid "Backspace"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:2 ../ui/main_frame_hildon.ui.h:1
+msgid "_File"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:3 ../ui/main_frame_hildon.ui.h:3
+msgid "_Edit"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:4 ../ui/main_frame_hildon.ui.h:4
+msgid "Cu_t Display Value"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:5 ../ui/main_frame_hildon.ui.h:5
+msgid "_Copy Display Value"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:6
+msgid "_Paste and Append to Display Value"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
+msgid "_Preferences..."
+msgstr ""
+
+#: ../ui/main_frame.ui.h:8 ../ui/main_frame_hildon.ui.h:8
+msgid "_View"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:9 ../ui/main_frame_hildon.ui.h:9
+msgid "_Basic Mode"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:10 ../ui/main_frame_hildon.ui.h:10
+msgid "_Scientific Mode"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:11
+msgid "_Paper Mode"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:12 ../ui/main_frame_hildon.ui.h:11
+#: ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
+msgid "Buttons"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:13 ../ui/main_frame_hildon.ui.h:12
+msgid "Display Control"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:14 ../ui/main_frame_hildon.ui.h:13
+#: ../ui/prefs_gtk2.ui.h:53 ../ui/prefs_gtk3.ui.h:53
+msgid "Functions"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:15 ../ui/main_frame_hildon.ui.h:14
+msgid "Logical"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:16 ../ui/main_frame_hildon.ui.h:15
+msgid "Standard"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:18 ../ui/main_frame_hildon.ui.h:17
+msgid "_Calculator"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:19 ../ui/main_frame_hildon.ui.h:18
+msgid "_Number bases"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:20 ../ui/main_frame_hildon.ui.h:19
+msgid "_Decimal"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:21 ../ui/main_frame_hildon.ui.h:20
+msgid "_Hexadecimal"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:22 ../ui/main_frame_hildon.ui.h:21
+msgid "_Octal"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:23 ../ui/main_frame_hildon.ui.h:22
+msgid "_Binary"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:24 ../ui/main_frame_hildon.ui.h:23
+msgid "Angle _units"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:25 ../ui/main_frame_hildon.ui.h:24
+msgid "D_egrees"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:26 ../ui/main_frame_hildon.ui.h:25
+msgid "_Radians"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:27 ../ui/main_frame_hildon.ui.h:26
+msgid "_Gradians"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:28 ../ui/main_frame_hildon.ui.h:27
+msgid "Notation _modes"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:29 ../ui/main_frame_hildon.ui.h:28
+msgid "_Algebraic"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:30 ../ui/main_frame_hildon.ui.h:29
+msgid "_Reverse Polish (RPN)"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:31 ../ui/main_frame_hildon.ui.h:30
+msgid "_Formula Entry"
+msgstr ""
+
+#: ../ui/main_frame.ui.h:32 ../ui/main_frame_hildon.ui.h:31
+msgid "_Help"
+msgstr ""
+
+#: ../ui/main_frame_hildon.ui.h:2
+msgid "_Quit"
+msgstr ""
+
+#: ../ui/main_frame_hildon.ui.h:6
+msgid "_Paste As Display Value"
+msgstr ""
+
+#: ../ui/main_frame_hildon.ui.h:32
+msgid "_About..."
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:1 ../ui/prefs_gtk3.ui.h:1
+msgid "Decimal"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:2 ../ui/prefs_gtk3.ui.h:2
+msgid "Hexadecimal"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:3 ../ui/prefs_gtk3.ui.h:3
+msgid "Octal"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:4 ../ui/prefs_gtk3.ui.h:4
+msgid "Binary"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:5 ../ui/prefs_gtk3.ui.h:5 ../ui/prefs-ume.ui.h:1
+msgid "galculator - Preferences"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:6 ../ui/prefs_gtk3.ui.h:6 ../ui/prefs-ume.ui.h:2
+msgid "A dialog that is used to change preferences settings."
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:7 ../ui/prefs_gtk3.ui.h:7 ../ui/prefs-ume.ui.h:3
+msgid "Closes the dialog."
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:8 ../ui/prefs_gtk3.ui.h:8
+msgid "<b>Appearance</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:9 ../ui/prefs_gtk3.ui.h:9 ../ui/prefs-ume.ui.h:5
+msgid "    "
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:10 ../ui/prefs_gtk3.ui.h:10
+msgid "Result font:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:11 ../ui/prefs_gtk3.ui.h:11
+msgid "Inactive module color:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:12 ../ui/prefs_gtk3.ui.h:12
+msgid "Active module color:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:13 ../ui/prefs_gtk3.ui.h:13
+msgid "Result font color:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:14 ../ui/prefs_gtk3.ui.h:14
+msgid "Background color:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:15 ../ui/prefs_gtk3.ui.h:15
+msgid "Module font:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:16 ../ui/prefs_gtk3.ui.h:16
+msgid "RPN stack font:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:17 ../ui/prefs_gtk3.ui.h:17
+msgid "RPN stack color:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:18 ../ui/prefs_gtk3.ui.h:18
+msgid "Pick a Display Background Color"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
+msgid "Pick a Display Result Font Color"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
+msgid "Pick a RPN Stack Color"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
+#, fuzzy
+msgid "Pick a Inactive Module Color"
+msgstr "Vælg inaktiv modul farve"
+
+#: ../ui/prefs_gtk2.ui.h:22 ../ui/prefs_gtk3.ui.h:22
+#, fuzzy
+msgid "Pick a Active Module Color"
+msgstr "Vælg aktiv modul farve"
+
+#: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
+#, fuzzy
+msgid "Pick a Result Font"
+msgstr "Vælg resultat font"
+
+#: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
+msgid "Pick a RPN Stack Font"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
+#, fuzzy
+msgid "Pick a Module Font"
+msgstr "Vælg modul font"
+
+#: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
+msgid "<b>Modules Visibility</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:27 ../ui/prefs_gtk3.ui.h:27 ../ui/prefs-ume.ui.h:6
+msgid "Angle base units"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:28 ../ui/prefs_gtk3.ui.h:28 ../ui/prefs-ume.ui.h:7
+msgid "Notation"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:29 ../ui/prefs_gtk3.ui.h:29 ../ui/prefs-ume.ui.h:8
+msgid "Arithmetic operation"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:30 ../ui/prefs_gtk3.ui.h:30 ../ui/prefs-ume.ui.h:9
+msgid "Open brackets"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:31 ../ui/prefs_gtk3.ui.h:31 ../ui/prefs-ume.ui.h:10
+msgid "Number base units"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:32 ../ui/prefs_gtk3.ui.h:32 ../ui/prefs-ume.ui.h:11
+msgid "Display"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:33 ../ui/prefs_gtk3.ui.h:33 ../ui/prefs-ume.ui.h:12
+msgid "<b>Font</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:34 ../ui/prefs_gtk3.ui.h:34 ../ui/prefs-ume.ui.h:13
+msgid "Use custom button font"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:35 ../ui/prefs_gtk3.ui.h:35 ../ui/prefs-ume.ui.h:14
+msgid "Button font:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:36 ../ui/prefs_gtk3.ui.h:36 ../ui/prefs-ume.ui.h:15
+#, fuzzy
+msgid "Pick a Button Font"
+msgstr "Vælg knap farve"
+
+#: ../ui/prefs_gtk2.ui.h:37 ../ui/prefs_gtk3.ui.h:37 ../ui/prefs-ume.ui.h:16
+msgid "<b>Dimension</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:38 ../ui/prefs_gtk3.ui.h:38 ../ui/prefs-ume.ui.h:17
+msgid "Minimal button width:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:39 ../ui/prefs_gtk3.ui.h:39 ../ui/prefs-ume.ui.h:18
+msgid "Minimal button height:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:41 ../ui/prefs_gtk3.ui.h:41
+msgid "<b>User defined constants:</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:42 ../ui/prefs_gtk3.ui.h:42
+msgid "Name:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:43 ../ui/prefs_gtk3.ui.h:43
+msgid "Value:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:44 ../ui/prefs_gtk3.ui.h:44
+msgid "Description:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:45 ../ui/prefs_gtk3.ui.h:45
+msgid "Add"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:46 ../ui/prefs_gtk3.ui.h:46
+msgid "Update"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:47 ../ui/prefs_gtk3.ui.h:47
+msgid "Delete"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:48 ../ui/prefs_gtk3.ui.h:48
+msgid "Clear"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:49 ../ui/prefs_gtk3.ui.h:49
+#: ../ui/scientific_buttons_gtk2.ui.h:21 ../ui/scientific_buttons_gtk3.ui.h:21
+msgid "Constants"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:50 ../ui/prefs_gtk3.ui.h:50
+msgid "<b>User defined functions:</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:51 ../ui/prefs_gtk3.ui.h:51
+msgid "Variable:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:52 ../ui/prefs_gtk3.ui.h:52
+msgid "Expression:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:54 ../ui/prefs_gtk3.ui.h:54 ../ui/prefs-ume.ui.h:20
+msgid "Configure number base: "
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:55 ../ui/prefs_gtk3.ui.h:55
+msgid "<b>Decimal Settings</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:56 ../ui/prefs_gtk3.ui.h:56
+msgid "Show thousands separator"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:57 ../ui/prefs_gtk3.ui.h:57
+msgid "Separator character:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:58 ../ui/prefs_gtk3.ui.h:58
+msgid "Separator block length:"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:59 ../ui/prefs_gtk3.ui.h:59
+msgid " "
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:60 ../ui/prefs_gtk3.ui.h:60
+msgid "<b>Hexadecimal Settings</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:61 ../ui/prefs_gtk3.ui.h:61
+msgid "Signed"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:62 ../ui/prefs_gtk3.ui.h:62
+msgid "Show separator"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:63 ../ui/prefs_gtk3.ui.h:63
+msgid "Number of bits: "
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:64 ../ui/prefs_gtk3.ui.h:64
+msgid "<b>Octal Settings</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:65 ../ui/prefs_gtk3.ui.h:65
+msgid "<b>Binary Settings</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:66 ../ui/prefs_gtk3.ui.h:66
+msgid "Fix length to a multiple of"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:67 ../ui/prefs_gtk3.ui.h:67 ../ui/prefs-ume.ui.h:21
+msgid "Numbers"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:68 ../ui/prefs_gtk3.ui.h:68 ../ui/prefs-ume.ui.h:22
+msgid "<b>RPN</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:69 ../ui/prefs_gtk3.ui.h:69 ../ui/prefs-ume.ui.h:23
+msgid "finite stack size (x, y, z, t)"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:70 ../ui/prefs_gtk3.ui.h:70 ../ui/prefs-ume.ui.h:24
+msgid "infinite stack size"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:71 ../ui/prefs_gtk3.ui.h:71 ../ui/prefs-ume.ui.h:25
+msgid "<b>Startup</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:72 ../ui/prefs_gtk3.ui.h:72 ../ui/prefs-ume.ui.h:26
+msgid "Remember display value on exit"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:73 ../ui/prefs_gtk3.ui.h:73
+msgid "<b>Visibility</b>"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:74 ../ui/prefs_gtk3.ui.h:74
+msgid "Show menu bar"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:75 ../ui/prefs_gtk3.ui.h:75 ../ui/prefs-ume.ui.h:27
+msgid "General"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:1 ../ui/scientific_buttons_gtk3.ui.h:1
+msgid "tan"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:2 ../ui/scientific_buttons_gtk3.ui.h:2
+msgid "Tangent"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:3 ../ui/scientific_buttons_gtk3.ui.h:3
+msgid "ln"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:4 ../ui/scientific_buttons_gtk3.ui.h:4
+msgid "Natural logarithm (base: e)"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:7 ../ui/scientific_buttons_gtk3.ui.h:7
+msgid "n!"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:8 ../ui/scientific_buttons_gtk3.ui.h:8
+msgid "Factorial"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:9 ../ui/scientific_buttons_gtk3.ui.h:9
+msgid "EE"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:10 ../ui/scientific_buttons_gtk3.ui.h:10
+msgid "Enter exponent (base: 10)"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:11 ../ui/scientific_buttons_gtk3.ui.h:11
+msgid "cos"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:12 ../ui/scientific_buttons_gtk3.ui.h:12
+msgid "Cosine"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:13 ../ui/scientific_buttons_gtk3.ui.h:13
+msgid "log"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:14 ../ui/scientific_buttons_gtk3.ui.h:14
+msgid "Logarithm (base: 10)"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:15 ../ui/scientific_buttons_gtk3.ui.h:15
+msgid "x^2"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:16 ../ui/scientific_buttons_gtk3.ui.h:16
+msgid "Square"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:19 ../ui/scientific_buttons_gtk3.ui.h:19
+msgid "User defined functions"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:20 ../ui/scientific_buttons_gtk3.ui.h:20
+msgid "fun"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:22 ../ui/scientific_buttons_gtk3.ui.h:22
+msgid "con"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:26 ../ui/scientific_buttons_gtk3.ui.h:26
+msgid "inv"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:27 ../ui/scientific_buttons_gtk3.ui.h:27
+msgid "Inverse mode"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:28 ../ui/scientific_buttons_gtk3.ui.h:28
+msgid "hyp"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:29 ../ui/scientific_buttons_gtk3.ui.h:29
+msgid "Hyperbolic mode"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:30 ../ui/scientific_buttons_gtk3.ui.h:30
+msgid "sin"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:31 ../ui/scientific_buttons_gtk3.ui.h:31
+msgid "Sine"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:32 ../ui/scientific_buttons_gtk3.ui.h:32
+msgid "AND"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:33 ../ui/scientific_buttons_gtk3.ui.h:33
+msgid "Logical AND"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:34 ../ui/scientific_buttons_gtk3.ui.h:34
+msgid "OR"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:35 ../ui/scientific_buttons_gtk3.ui.h:35
+msgid "Logical OR"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:36 ../ui/scientific_buttons_gtk3.ui.h:36
+msgid "XOR"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:37 ../ui/scientific_buttons_gtk3.ui.h:37
+msgid "Logical XOR"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:38 ../ui/scientific_buttons_gtk3.ui.h:38
+msgid "CMP"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:39 ../ui/scientific_buttons_gtk3.ui.h:39
+msgid "Bitwise complement"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:41 ../ui/scientific_buttons_gtk3.ui.h:41
+msgid "Hexadecimal 0xC"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:42 ../ui/scientific_buttons_gtk3.ui.h:42
+msgid "D"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:43 ../ui/scientific_buttons_gtk3.ui.h:43
+msgid "Hexadecimal 0xD"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:44 ../ui/scientific_buttons_gtk3.ui.h:44
+msgid "E"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:45 ../ui/scientific_buttons_gtk3.ui.h:45
+msgid "Hexadecimal 0xE"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:46 ../ui/scientific_buttons_gtk3.ui.h:46
+msgid "F"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:47 ../ui/scientific_buttons_gtk3.ui.h:47
+msgid "Hexadecimal 0xF"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:48 ../ui/scientific_buttons_gtk3.ui.h:48
+msgid "B"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:49 ../ui/scientific_buttons_gtk3.ui.h:49
+msgid "Hexadecimal 0xB"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:50 ../ui/scientific_buttons_gtk3.ui.h:50
+msgid "A"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:51 ../ui/scientific_buttons_gtk3.ui.h:51
+msgid "Hexadecimal 0xA"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:60 ../ui/scientific_buttons_gtk3.ui.h:60
+msgid "MOD"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:61 ../ui/scientific_buttons_gtk3.ui.h:61
+msgid "Modulus"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:74 ../ui/scientific_buttons_gtk3.ui.h:74
+msgid "LSH"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:75 ../ui/scientific_buttons_gtk3.ui.h:75
+msgid "Left shift"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Select stack font"
+#~ msgstr "Vælg xx font"
+
+#~ msgid "Select result font color"
+#~ msgstr "Vælg resultat font farve"
+
+#, fuzzy
+#~ msgid "Select stack color"
+#~ msgstr "Vælg xx farve"
+
+#~ msgid "Select background color"
+#~ msgstr "Vælg baggrundsfarve"
+
+#~ msgid "About %s"
+#~ msgstr "Om %s"
+
+#~ msgid ""
+#~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
+#~ "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
+#~ "\n"
+#~ "(c) 2002-2005 by Simon Flöry (simon.floery@rechenraum.com)"
+#~ msgstr ""
+#~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
+#~ "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
+#~ "\n"
+#~ "(c) 2002-2005 by Simon Flöry (simon.floery@rechenraum.com)"

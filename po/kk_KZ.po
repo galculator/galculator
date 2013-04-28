@@ -7,12 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.2.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-07 21:31+0100\n"
+"POT-Creation-Date: 2013-04-28 12:51+0200\n"
 "PO-Revision-Date: 2009-07-20 20:56+0600\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
+"Language: kk\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
@@ -20,33 +21,25 @@ msgstr ""
 msgid "Perform simple and scientific calculations"
 msgstr "Қарапайым және инженерлік санауларға арналған"
 
-#: ../src/callbacks.c:89
-#, c-format
-msgid "About %s"
-msgstr "%s туралы"
-
-#: ../src/callbacks.c:92
-#, c-format
-msgid ""
-"<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-"<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
-"\n"
-"(c) 2002-2007 by Simon Flöry (simon.floery@rechenraum.com)"
-msgstr ""
-"<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-"<span size=\"large\">GTK 2 негізіндегі инженерлік калькулятор</span>\n"
-"\n"
-"(c) 2002-2007 Simon Flöry өндірген (simon.floery@rechenraum.com)"
-
-#: ../src/callbacks.c:1004
+#: ../src/callbacks.c:1047
 msgid "save here"
 msgstr "осында сақталады"
 
-#: ../src/main.c:59
+#: ../src/callbacks.c:1423
 #, c-format
+msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
+msgstr ""
+
+#: ../src/callbacks.c:1586
+#, c-format
+msgid "[%s] on_main_window_check_resize should not get called. %s\n"
+msgstr ""
+
+#: ../src/main.c:61
+#, fuzzy, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2007 Simon Flöry\n"
+"%s v%s, (c) 2002-2013 Simon Flöry\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -55,6 +48,9 @@ msgid ""
 " -h, --help\t\tShow this usage message\n"
 " -v, --version\t\tShow version information\n"
 "\n"
+"Compiled against GTK version %i.%i.%i\n"
+"Linked against GTK version %i.%i.%i\n"
+"%s-precision floating point numbers.\n"
 msgstr ""
 "\n"
 "%s v%s, (c) 2002-2007 Simon Flöry\n"
@@ -67,13 +63,42 @@ msgstr ""
 " -v, --version\t\tНұсқа туралы ақпаратты көрсету\n"
 "\n"
 
-#: ../src/galculator.h:60
+#: ../src/main.c:196
+#, c-format
+msgid "[%s] configuration file: Failed to create directory %s.\n"
+msgstr ""
+
+#: ../src/main.c:201
+#, c-format
+msgid ""
+"[%s] configuration file: We will move the configuration file from %s to %s. "
+"After you quit %s, you may remove the configuration file from its old "
+"location %s.\n"
+msgstr ""
+
+#: ../src/galculator.h:92
 msgid "Please submit a bugreport."
 msgstr "Ақаулық жөнінде хабарласыңыз."
 
-#: ../src/calc_basic.c:149
+#: ../src/calc_basic.c:300
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
+msgstr ""
+
+#: ../src/calc_basic.c:687
+#, c-format
+msgid ""
+"[%s] Conversion of floating point number in float2string failed because "
+"buffer was too small. %s\n"
+")"
+msgstr ""
+
+#: ../src/calc_basic.c:716
+#, c-format
+msgid ""
+"[%s] Conversion of floating point number in float2stringP failed because "
+"buffer was too small. %s\n"
+")"
 msgstr ""
 
 #: ../src/config_file.c:180
@@ -99,50 +124,73 @@ msgstr ""
 
 #: ../src/config_file.c:256
 #, c-format
-msgid "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
+msgid ""
+"[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
 msgstr ""
 
 #: ../src/config_file.c:262
 #, c-format
-msgid "[%s] configuration file: failed to convert %s to a number properly. Have you changed your locales? %s\n"
+msgid ""
+"[%s] configuration file: failed to convert %s to a number properly. Have you "
+"changed your locales? %s\n"
 msgstr ""
 
 #: ../src/config_file.c:265
 #, c-format
-msgid "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
+msgid ""
+"[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
 msgstr ""
 
 #: ../src/config_file.c:284
 #, c-format
-msgid "[%s] found unknown section %s in configuration file %s. Using preceding section.\n"
+msgid ""
+"[%s] found unknown section %s in configuration file %s. Using preceding "
+"section.\n"
 msgstr ""
 
 #: ../src/config_file.c:403
 #, c-format
-msgid "[%s] configuration file: couldn't open configuration file %s for reading. Nothing to worry about if you are starting %s for the first time. Using defaults.\n"
+msgid ""
+"[%s] configuration file: couldn't open configuration file %s for reading. "
+"Nothing to worry about if you are starting %s for the first time. Using "
+"defaults.\n"
 msgstr ""
 
-#: ../src/config_file.c:441
+#: ../src/config_file.c:432
 #, c-format
-msgid "[%s] configuration file: strange boolean when writing. Skipping this key. %s\n"
+msgid ""
+"[%s] configuration file - We reset at least one separator character as it "
+"coincides with the decimal point. If you recently changed your locales "
+"settings, this is nothing to worry about.\n"
 msgstr ""
 
-#: ../src/config_file.c:449
+#: ../src/config_file.c:470
 #, c-format
-msgid "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure\". %s\n"
+msgid ""
+"[%s] configuration file: strange boolean when writing. Skipping this key. "
+"%s\n"
 msgstr ""
 
-#: ../src/config_file.c:472
+#: ../src/config_file.c:478
 #, c-format
-msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
+msgid ""
+"[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
+"\". %s\n"
 msgstr ""
 
-#: ../src/display.c:407
+#: ../src/config_file.c:501
 #, c-format
-msgid "[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
+msgid ""
+"[%s] configuration file: couldn't save/write to configuration file %s.\n"
 msgstr ""
 
-#: ../src/display.c:575
+#: ../src/display.c:420
+#, c-format
+msgid ""
+"[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
+msgstr ""
+
+#: ../src/display.c:598
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
 msgstr ""
@@ -165,75 +213,80 @@ msgstr ""
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
 
-#: ../src/general_functions.c:190
+#: ../src/general_functions.c:192
 #, c-format
-msgid "[%s] failed to convert %f in function \"ftoax\". %s\n"
+msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
 msgstr ""
 
-#: ../src/general_functions.c:397
+#: ../src/general_functions.c:272
+#, c-format
+msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:389
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr ""
 
-#: ../src/general_functions.c:425
+#: ../src/general_functions.c:431
 msgid "unknown number base"
 msgstr "белгісіз санақ жүйесі"
 
-#: ../src/general_functions.c:426
+#: ../src/general_functions.c:432
 #, c-format
-msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
+msgid ""
+"[%s] unknown number base in function \"get_display_number_string\". %s\n"
 msgstr ""
 
-#: ../src/general_functions.c:447
+#: ../src/general_functions.c:453
 #, c-format
-msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
+msgid ""
+"[%s] unknown number base in function \"get_display_number_length\". %s\n"
 msgstr ""
 
-#: ../src/general_functions.c:556
+#: ../src/general_functions.c:562
 #, c-format
-msgid "[%s] failed to convert %s to a number properly in function \"string2double\". Have you changed your locales? %s\n"
+msgid ""
+"[%s] failed to convert %s to a number properly in function \"string2double"
+"\". Have you changed your locales? Deleting your configuration file might "
+"solve this problem. %s\n"
 msgstr ""
 
-#: ../src/general_functions.c:572
+#: ../src/general_functions.c:580
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr ""
 
-#: ../src/general_functions.c:732
+#: ../src/general_functions.c:735
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr ""
 
-#: ../src/general_functions.c:747
+#: ../src/general_functions.c:750
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr ""
 
-#: ../src/general_functions.c:764
+#: ../src/general_functions.c:767
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr ""
 
-#: ../src/general_functions.c:781
+#: ../src/general_functions.c:784
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
 msgstr ""
 
-#: ../src/general_functions.c:798
+#: ../src/general_functions.c:801
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
 msgstr ""
 
-#: ../src/general_functions.c:860
+#: ../src/general_functions.c:869
 msgid "unknown display option in function \"change_option\""
 msgstr ""
 
-#: ../src/ui.c:89
-#, c-format
-msgid "[%s] Couldn't load %s. This file is necessary to build galculator's user interface. Make sure you did a make install and the file is accessible!\n"
-msgstr ""
-
-#: ../src/ui.c:413
+#: ../src/general_functions.c:909
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
@@ -241,986 +294,1068 @@ msgid ""
 ")"
 msgstr ""
 
-#: ../src/ui.c:871
-#: ../ui/main_frame.glade.h:9
+#: ../src/ui.c:89
+#, c-format
+msgid ""
+"[%s] Couldn't load %s. This file is necessary     to build galculator's user "
+"interface. Make sure you did a make install and the file     is accessible!\n"
+msgstr ""
+
+#: ../src/ui.c:951 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
 msgstr "Мәзірді көр_сету"
 
-#: ../src/ui.c:898
+#: ../src/ui.c:991
 #, c-format
 msgid "%s Preferences"
 msgstr "%s баптаулары"
 
-#: ../src/ui.c:1090
-#: ../ui/scientific_buttons.glade.h:21
-#: ../ui/basic_buttons.glade.h:21
+#: ../src/ui.c:1035 ../src/ui.c:1067
+#, fuzzy
+msgid "Name"
+msgstr "Аты:"
+
+#: ../src/ui.c:1038
+#, fuzzy
+msgid "Value"
+msgstr "Мәні:"
+
+#: ../src/ui.c:1041
+#, fuzzy
+msgid "Description"
+msgstr "Анықтамасы:"
+
+#: ../src/ui.c:1070
+#, fuzzy
+msgid "Variable"
+msgstr "Айнымалы:"
+
+#: ../src/ui.c:1073
+#, fuzzy
+msgid "Expression"
+msgstr "Өрнек:"
+
+#: ../src/ui.c:1203 ../ui/basic_buttons_gtk2.ui.h:43
+#: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
+#: ../ui/scientific_buttons_gtk3.ui.h:98
 msgid "="
 msgstr "="
 
-#: ../src/ui.c:1090
-#: ../src/ui.c:1102
-#: ../ui/paper_view.glade.h:1
-#: ../ui/scientific_buttons.glade.h:39
-#: ../ui/basic_buttons.glade.h:28
+#: ../src/ui.c:1203 ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:44
+#: ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
+#: ../ui/scientific_buttons_gtk2.ui.h:99 ../ui/scientific_buttons_gtk3.ui.h:99
 msgid "Enter"
 msgstr "Есептеу"
 
-#: ../src/ui.c:1092
-#: ../ui/scientific_buttons.glade.h:99
+#: ../src/ui.c:1205 ../ui/scientific_buttons_gtk2.ui.h:17
+#: ../ui/scientific_buttons_gtk3.ui.h:17
 msgid "x^y"
 msgstr "x^y"
 
-#: ../src/ui.c:1092
-#: ../src/ui.c:1104
-#: ../ui/scientific_buttons.glade.h:71
+#: ../src/ui.c:1205 ../src/ui.c:1217 ../ui/scientific_buttons_gtk2.ui.h:18
+#: ../ui/scientific_buttons_gtk3.ui.h:18
 msgid "Power"
 msgstr "Дәрежеге енгізу"
 
-#: ../src/ui.c:1094
-#: ../ui/scientific_buttons.glade.h:3
-#: ../ui/basic_buttons.glade.h:3
+#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:33
+#: ../ui/basic_buttons_gtk3.ui.h:33 ../ui/scientific_buttons_gtk2.ui.h:88
+#: ../ui/scientific_buttons_gtk3.ui.h:88
 msgid "("
 msgstr "("
 
-#: ../src/ui.c:1094
-#: ../ui/scientific_buttons.glade.h:69
-#: ../ui/basic_buttons.glade.h:37
+#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:34
+#: ../ui/basic_buttons_gtk3.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:89
+#: ../ui/scientific_buttons_gtk3.ui.h:89
 msgid "Open Bracket"
 msgstr "Ашатын жақжа"
 
-#: ../src/ui.c:1096
-#: ../ui/scientific_buttons.glade.h:4
-#: ../ui/basic_buttons.glade.h:4
+#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:31
+#: ../ui/basic_buttons_gtk3.ui.h:31 ../ui/scientific_buttons_gtk2.ui.h:86
+#: ../ui/scientific_buttons_gtk3.ui.h:86
 msgid ")"
 msgstr ")"
 
-#: ../src/ui.c:1096
-#: ../ui/scientific_buttons.glade.h:30
-#: ../ui/basic_buttons.glade.h:24
+#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:32
+#: ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
+#: ../ui/scientific_buttons_gtk3.ui.h:87
 msgid "Close Bracket"
 msgstr "Жабатын жақша"
 
-#: ../src/ui.c:1102
+#: ../src/ui.c:1215
 msgid "ENT"
 msgstr ""
 
-#: ../src/ui.c:1104
+#: ../src/ui.c:1217
 msgid "y^x"
 msgstr "y^x"
 
-#: ../src/ui.c:1106
+#: ../src/ui.c:1219
 msgid "x<>y"
 msgstr "x<>y"
 
-#: ../src/ui.c:1106
+#: ../src/ui.c:1219
 msgid "swap current number with top of stack"
 msgstr ""
 
-#: ../src/ui.c:1108
+#: ../src/ui.c:1221
 msgid "roll"
 msgstr ""
 
-#: ../src/ui.c:1108
+#: ../src/ui.c:1221
 msgid "roll down stack"
 msgstr ""
 
-#: flex_parser.l:219
+#: ../src/ui.c:1292
+#, fuzzy
+msgid "Result Display"
+msgstr "Сыртқы түрі"
+
+#: flex_parser.l:234
 #, c-format
-msgid "[%s] flex parser was called more than %i times. Do you know what you are doing? If not: %s\n"
+msgid ""
+"[%s] flex parser was called more than %i times. Do you know what you are "
+"doing? If not: %s\n"
 msgstr ""
 
-#: ../ui/main_frame.glade.h:1
-msgid "Angle _units"
-msgstr "_Бұрыштарды өлшеу"
-
-#: ../ui/main_frame.glade.h:2
-#: ../ui/prefs.glade.h:24
-msgid "Buttons"
-msgstr "Батырмалар"
-
-#: ../ui/main_frame.glade.h:3
-msgid "Cu_t Display Value"
-msgstr "Қ_иып алу"
-
-#: ../ui/main_frame.glade.h:4
-msgid "D_egrees"
-msgstr "Граду_стар"
-
-#: ../ui/main_frame.glade.h:5
-msgid "Display Control"
-msgstr "Басқару"
-
-#: ../ui/main_frame.glade.h:6
-#: ../ui/prefs.glade.h:35
-msgid "Functions"
-msgstr "Функциялар"
-
-#: ../ui/main_frame.glade.h:7
-msgid "Logical"
-msgstr "Логикалық амалдар"
-
-#: ../ui/main_frame.glade.h:8
-msgid "Notation _modes"
-msgstr "_Енгізу режимдері"
-
-#: ../ui/main_frame.glade.h:10
-msgid "Standard"
-msgstr "Қалыпты"
-
-#: ../ui/main_frame.glade.h:11
-#: ../ui/classic_view.glade.h:2
-#: ../ui/paper_view.glade.h:2
-msgid "The main program window."
-msgstr "Бағдарламаның басты терезесі."
-
-#: ../ui/main_frame.glade.h:12
-msgid "_About..."
-msgstr "_About..."
-
-#: ../ui/main_frame.glade.h:13
-msgid "_Algebraic"
-msgstr "_Алгебралық"
-
-#: ../ui/main_frame.glade.h:14
-msgid "_Basic Mode"
-msgstr "Қ_алыпты"
-
-#: ../ui/main_frame.glade.h:15
-msgid "_Binary"
-msgstr "_Екілік"
-
-#: ../ui/main_frame.glade.h:16
-msgid "_Calculator"
+#: ../ui/about.ui.in.h:1
+#, fuzzy
+msgid "About galculator"
 msgstr "_Калькулятор"
 
-#: ../ui/main_frame.glade.h:17
-msgid "_Copy Display Value"
-msgstr "_Көшіру"
+#: ../ui/about.ui.in.h:2
+msgid "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
+msgstr ""
 
-#: ../ui/main_frame.glade.h:18
-msgid "_Decimal"
-msgstr "Онд_ық"
+#: ../ui/about.ui.in.h:3
+#, fuzzy
+msgid "a GTK+ based scientific calculator"
+msgstr "Қарапайым және инженерлік санауларға арналған"
 
-#: ../ui/main_frame.glade.h:19
-msgid "_Edit"
-msgstr "Тү_зету"
+#: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1
+#: ../ui/scientific_buttons_gtk2.ui.h:52 ../ui/scientific_buttons_gtk3.ui.h:52
+msgid "7"
+msgstr "7"
 
-#: ../ui/main_frame.glade.h:20
-msgid "_File"
-msgstr "_Файл"
+#: ../ui/basic_buttons_gtk2.ui.h:2 ../ui/basic_buttons_gtk3.ui.h:2
+#: ../ui/scientific_buttons_gtk2.ui.h:53 ../ui/scientific_buttons_gtk3.ui.h:53
+msgid "Seven"
+msgstr "Жеті"
 
-#: ../ui/main_frame.glade.h:21
-msgid "_Formula Entry"
-msgstr "_Формула енгізу"
+#: ../ui/basic_buttons_gtk2.ui.h:3 ../ui/basic_buttons_gtk3.ui.h:3
+#: ../ui/scientific_buttons_gtk2.ui.h:54 ../ui/scientific_buttons_gtk3.ui.h:54
+msgid "8"
+msgstr "8"
 
-#: ../ui/main_frame.glade.h:22
-msgid "_Gradians"
-msgstr "_Градтар"
+#: ../ui/basic_buttons_gtk2.ui.h:4 ../ui/basic_buttons_gtk3.ui.h:4
+#: ../ui/scientific_buttons_gtk2.ui.h:55 ../ui/scientific_buttons_gtk3.ui.h:55
+msgid "Eight"
+msgstr "Сегіз"
 
-#: ../ui/main_frame.glade.h:23
-msgid "_Help"
-msgstr "Көм_ек"
+#: ../ui/basic_buttons_gtk2.ui.h:5 ../ui/basic_buttons_gtk3.ui.h:5
+#: ../ui/scientific_buttons_gtk2.ui.h:56 ../ui/scientific_buttons_gtk3.ui.h:56
+msgid "9"
+msgstr "9"
 
-#: ../ui/main_frame.glade.h:24
-msgid "_Hexadecimal"
-msgstr "_Оналтылық"
+#: ../ui/basic_buttons_gtk2.ui.h:6 ../ui/basic_buttons_gtk3.ui.h:6
+#: ../ui/scientific_buttons_gtk2.ui.h:57 ../ui/scientific_buttons_gtk3.ui.h:57
+msgid "Nine"
+msgstr "Тоғыз"
 
-#: ../ui/main_frame.glade.h:25
-msgid "_Number bases"
-msgstr "_Санақ жүйесі"
+#: ../ui/basic_buttons_gtk2.ui.h:7 ../ui/basic_buttons_gtk3.ui.h:7
+#: ../ui/scientific_buttons_gtk2.ui.h:58 ../ui/scientific_buttons_gtk3.ui.h:58
+msgid "/"
+msgstr "/"
 
-#: ../ui/main_frame.glade.h:26
-msgid "_Octal"
-msgstr "_Сегіздік"
+#: ../ui/basic_buttons_gtk2.ui.h:8 ../ui/basic_buttons_gtk3.ui.h:8
+#: ../ui/scientific_buttons_gtk2.ui.h:59 ../ui/scientific_buttons_gtk3.ui.h:59
+msgid "Divide"
+msgstr "Бөлу"
 
-#: ../ui/main_frame.glade.h:27
-msgid "_Paper Mode"
-msgstr "Қарапа_йым"
+#: ../ui/basic_buttons_gtk2.ui.h:9 ../ui/basic_buttons_gtk3.ui.h:9
+#: ../ui/scientific_buttons_gtk2.ui.h:62 ../ui/scientific_buttons_gtk3.ui.h:62
+msgid "4"
+msgstr "4"
 
-#: ../ui/main_frame.glade.h:28
-msgid "_Paste As Display Value"
-msgstr "Кірі_стіру"
+#: ../ui/basic_buttons_gtk2.ui.h:10 ../ui/basic_buttons_gtk3.ui.h:10
+#: ../ui/scientific_buttons_gtk2.ui.h:63 ../ui/scientific_buttons_gtk3.ui.h:63
+msgid "Four"
+msgstr "Төрт"
 
-#: ../ui/main_frame.glade.h:29
-msgid "_Preferences..."
-msgstr "_Баптаулар..."
+#: ../ui/basic_buttons_gtk2.ui.h:11 ../ui/basic_buttons_gtk3.ui.h:11
+#: ../ui/scientific_buttons_gtk2.ui.h:64 ../ui/scientific_buttons_gtk3.ui.h:64
+msgid "5"
+msgstr "5"
 
-#: ../ui/main_frame.glade.h:30
-msgid "_Quit"
-msgstr "_Шығу"
+#: ../ui/basic_buttons_gtk2.ui.h:12 ../ui/basic_buttons_gtk3.ui.h:12
+#: ../ui/scientific_buttons_gtk2.ui.h:65 ../ui/scientific_buttons_gtk3.ui.h:65
+msgid "Five"
+msgstr "Бес"
 
-#: ../ui/main_frame.glade.h:31
-msgid "_Radians"
-msgstr "_Радиандар"
+#: ../ui/basic_buttons_gtk2.ui.h:13 ../ui/basic_buttons_gtk3.ui.h:13
+#: ../ui/scientific_buttons_gtk2.ui.h:66 ../ui/scientific_buttons_gtk3.ui.h:66
+msgid "6"
+msgstr "6"
 
-#: ../ui/main_frame.glade.h:32
-msgid "_Reverse Polish (RPN)"
-msgstr "_Кері польша жазуы (RPN)"
+#: ../ui/basic_buttons_gtk2.ui.h:14 ../ui/basic_buttons_gtk3.ui.h:14
+#: ../ui/scientific_buttons_gtk2.ui.h:67 ../ui/scientific_buttons_gtk3.ui.h:67
+msgid "Six"
+msgstr "Алты"
 
-#: ../ui/main_frame.glade.h:33
-msgid "_Scientific Mode"
-msgstr "_Инженерлік"
+#: ../ui/basic_buttons_gtk2.ui.h:15 ../ui/basic_buttons_gtk3.ui.h:15
+#: ../ui/scientific_buttons_gtk2.ui.h:68 ../ui/scientific_buttons_gtk3.ui.h:68
+msgid "3"
+msgstr "3"
 
-#: ../ui/main_frame.glade.h:34
-msgid "_View"
-msgstr "_Түрі"
+#: ../ui/basic_buttons_gtk2.ui.h:16 ../ui/basic_buttons_gtk3.ui.h:16
+#: ../ui/scientific_buttons_gtk2.ui.h:69 ../ui/scientific_buttons_gtk3.ui.h:69
+msgid "Three"
+msgstr "Үш"
 
-#: ../ui/classic_view.glade.h:1
-msgid "Formula entry text field - enter string expression to compute here."
-msgstr "Формула енгізу өрісі"
+#: ../ui/basic_buttons_gtk2.ui.h:17 ../ui/basic_buttons_gtk3.ui.h:17
+#: ../ui/scientific_buttons_gtk2.ui.h:70 ../ui/scientific_buttons_gtk3.ui.h:70
+msgid "-"
+msgstr "-"
 
-#: ../ui/scientific_buttons.glade.h:2
-#: ../ui/basic_buttons.glade.h:2
+#: ../ui/basic_buttons_gtk2.ui.h:18 ../ui/basic_buttons_gtk3.ui.h:18
+#: ../ui/scientific_buttons_gtk2.ui.h:71 ../ui/scientific_buttons_gtk3.ui.h:71
+msgid "Subtract"
+msgstr "Алу"
+
+#: ../ui/basic_buttons_gtk2.ui.h:19 ../ui/basic_buttons_gtk3.ui.h:19
+#: ../ui/scientific_buttons_gtk2.ui.h:72 ../ui/scientific_buttons_gtk3.ui.h:72
+msgid "+"
+msgstr "+"
+
+#: ../ui/basic_buttons_gtk2.ui.h:20 ../ui/basic_buttons_gtk3.ui.h:20
+#: ../ui/scientific_buttons_gtk2.ui.h:73 ../ui/scientific_buttons_gtk3.ui.h:73
+msgid "Sum"
+msgstr "Қосу"
+
+#: ../ui/basic_buttons_gtk2.ui.h:21 ../ui/basic_buttons_gtk3.ui.h:21
+#: ../ui/scientific_buttons_gtk2.ui.h:76 ../ui/scientific_buttons_gtk3.ui.h:76
+msgid "+/-"
+msgstr "+/-"
+
+#: ../ui/basic_buttons_gtk2.ui.h:22 ../ui/basic_buttons_gtk3.ui.h:22
+#: ../ui/scientific_buttons_gtk2.ui.h:77 ../ui/scientific_buttons_gtk3.ui.h:77
+msgid "Change sign"
+msgstr "Таңбасын өзгерту"
+
+#: ../ui/basic_buttons_gtk2.ui.h:23 ../ui/basic_buttons_gtk3.ui.h:23
+#: ../ui/main_frame_hildon.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:78
+#: ../ui/scientific_buttons_gtk3.ui.h:78
+msgid "*"
+msgstr "*"
+
+#: ../ui/basic_buttons_gtk2.ui.h:24 ../ui/basic_buttons_gtk3.ui.h:24
+#: ../ui/scientific_buttons_gtk2.ui.h:79 ../ui/scientific_buttons_gtk3.ui.h:79
+msgid "Multiply"
+msgstr "Көбейту"
+
+#: ../ui/basic_buttons_gtk2.ui.h:25 ../ui/basic_buttons_gtk3.ui.h:25
+#: ../ui/scientific_buttons_gtk2.ui.h:80 ../ui/scientific_buttons_gtk3.ui.h:80
+msgid "Add current display value to memory"
+msgstr "Ағымдағы мәнді жадыдағыға қосу"
+
+#: ../ui/basic_buttons_gtk2.ui.h:26 ../ui/basic_buttons_gtk3.ui.h:26
+#: ../ui/scientific_buttons_gtk2.ui.h:81 ../ui/scientific_buttons_gtk3.ui.h:81
+msgid "M+"
+msgstr "M+"
+
+#: ../ui/basic_buttons_gtk2.ui.h:27 ../ui/basic_buttons_gtk3.ui.h:27
+#: ../ui/scientific_buttons_gtk2.ui.h:82 ../ui/scientific_buttons_gtk3.ui.h:82
+msgid "Read from memory"
+msgstr "Жадыдан оқу"
+
+#: ../ui/basic_buttons_gtk2.ui.h:28 ../ui/basic_buttons_gtk3.ui.h:28
+#: ../ui/scientific_buttons_gtk2.ui.h:83 ../ui/scientific_buttons_gtk3.ui.h:83
+msgid "MR"
+msgstr "MR"
+
+#: ../ui/basic_buttons_gtk2.ui.h:29 ../ui/basic_buttons_gtk3.ui.h:29
+#: ../ui/scientific_buttons_gtk2.ui.h:84 ../ui/scientific_buttons_gtk3.ui.h:84
+msgid "Save to memory"
+msgstr "Жадыға сақтау"
+
+#: ../ui/basic_buttons_gtk2.ui.h:30 ../ui/basic_buttons_gtk3.ui.h:30
+#: ../ui/scientific_buttons_gtk2.ui.h:85 ../ui/scientific_buttons_gtk3.ui.h:85
+msgid "MS"
+msgstr "MS"
+
+#: ../ui/basic_buttons_gtk2.ui.h:35 ../ui/basic_buttons_gtk3.ui.h:35
+#: ../ui/scientific_buttons_gtk2.ui.h:90 ../ui/scientific_buttons_gtk3.ui.h:90
+msgid "0"
+msgstr "0"
+
+#: ../ui/basic_buttons_gtk2.ui.h:36 ../ui/basic_buttons_gtk3.ui.h:36
+#: ../ui/scientific_buttons_gtk2.ui.h:91 ../ui/scientific_buttons_gtk3.ui.h:91
+msgid "Zero"
+msgstr "Нөл"
+
+#: ../ui/basic_buttons_gtk2.ui.h:37 ../ui/basic_buttons_gtk3.ui.h:37
+#: ../ui/scientific_buttons_gtk2.ui.h:92 ../ui/scientific_buttons_gtk3.ui.h:92
+msgid "."
+msgstr "."
+
+#: ../ui/basic_buttons_gtk2.ui.h:38 ../ui/basic_buttons_gtk3.ui.h:38
+#: ../ui/scientific_buttons_gtk2.ui.h:93 ../ui/scientific_buttons_gtk3.ui.h:93
+msgid "Decimal point"
+msgstr "Ондық нүкте"
+
+#: ../ui/basic_buttons_gtk2.ui.h:39 ../ui/basic_buttons_gtk3.ui.h:39
+#: ../ui/scientific_buttons_gtk2.ui.h:94 ../ui/scientific_buttons_gtk3.ui.h:94
+msgid "1"
+msgstr "1"
+
+#: ../ui/basic_buttons_gtk2.ui.h:40 ../ui/basic_buttons_gtk3.ui.h:40
+#: ../ui/scientific_buttons_gtk2.ui.h:95 ../ui/scientific_buttons_gtk3.ui.h:95
+msgid "One"
+msgstr "Бір"
+
+#: ../ui/basic_buttons_gtk2.ui.h:41 ../ui/basic_buttons_gtk3.ui.h:41
+#: ../ui/scientific_buttons_gtk2.ui.h:96 ../ui/scientific_buttons_gtk3.ui.h:96
+msgid "2"
+msgstr "2"
+
+#: ../ui/basic_buttons_gtk2.ui.h:42 ../ui/basic_buttons_gtk3.ui.h:42
+#: ../ui/scientific_buttons_gtk2.ui.h:97 ../ui/scientific_buttons_gtk3.ui.h:97
+msgid "Two"
+msgstr "Екі"
+
+#: ../ui/basic_buttons_gtk2.ui.h:45 ../ui/basic_buttons_gtk3.ui.h:45
+#: ../ui/scientific_buttons_gtk2.ui.h:5 ../ui/scientific_buttons_gtk3.ui.h:5
+msgid "sqrt"
+msgstr "sqrt"
+
+#: ../ui/basic_buttons_gtk2.ui.h:46 ../ui/basic_buttons_gtk3.ui.h:46
+#: ../ui/scientific_buttons_gtk2.ui.h:6 ../ui/scientific_buttons_gtk3.ui.h:6
+msgid "Square root"
+msgstr "Шаршы түбірін алу"
+
+#: ../ui/basic_buttons_gtk2.ui.h:48 ../ui/basic_buttons_gtk3.ui.h:48
+#: ../ui/scientific_buttons_gtk2.ui.h:24 ../ui/scientific_buttons_gtk3.ui.h:24
 #, no-c-format
 msgid "%"
 msgstr "%"
 
-#: ../ui/scientific_buttons.glade.h:5
-#: ../ui/basic_buttons.glade.h:5
-msgid "*"
-msgstr "*"
-
-#: ../ui/scientific_buttons.glade.h:6
-#: ../ui/basic_buttons.glade.h:6
-msgid "+"
-msgstr "+"
-
-#: ../ui/scientific_buttons.glade.h:7
-#: ../ui/basic_buttons.glade.h:7
-msgid "+/-"
-msgstr "+/-"
-
-#: ../ui/scientific_buttons.glade.h:8
-#: ../ui/basic_buttons.glade.h:8
-msgid "-"
-msgstr "-"
-
-#: ../ui/scientific_buttons.glade.h:9
-#: ../ui/basic_buttons.glade.h:9
-msgid "."
-msgstr "."
-
-#: ../ui/scientific_buttons.glade.h:10
-#: ../ui/basic_buttons.glade.h:10
-msgid "/"
-msgstr "/"
-
-#: ../ui/scientific_buttons.glade.h:11
-#: ../ui/basic_buttons.glade.h:11
-msgid "0"
-msgstr "0"
-
-#: ../ui/scientific_buttons.glade.h:12
-#: ../ui/basic_buttons.glade.h:12
-msgid "1"
-msgstr "1"
-
-#: ../ui/scientific_buttons.glade.h:13
-#: ../ui/basic_buttons.glade.h:13
-msgid "2"
-msgstr "2"
-
-#: ../ui/scientific_buttons.glade.h:14
-#: ../ui/basic_buttons.glade.h:14
-msgid "3"
-msgstr "3"
-
-#: ../ui/scientific_buttons.glade.h:15
-#: ../ui/basic_buttons.glade.h:15
-msgid "4"
-msgstr "4"
-
-#: ../ui/scientific_buttons.glade.h:16
-#: ../ui/basic_buttons.glade.h:16
-msgid "5"
-msgstr "5"
-
-#: ../ui/scientific_buttons.glade.h:17
-#: ../ui/basic_buttons.glade.h:17
-msgid "6"
-msgstr "6"
-
-#: ../ui/scientific_buttons.glade.h:18
-#: ../ui/basic_buttons.glade.h:18
-msgid "7"
-msgstr "7"
-
-#: ../ui/scientific_buttons.glade.h:19
-#: ../ui/basic_buttons.glade.h:19
-msgid "8"
-msgstr "8"
-
-#: ../ui/scientific_buttons.glade.h:20
-#: ../ui/basic_buttons.glade.h:20
-msgid "9"
-msgstr "9"
-
-#: ../ui/scientific_buttons.glade.h:22
-msgid "A"
-msgstr "A"
-
-#: ../ui/scientific_buttons.glade.h:23
-msgid "AND"
-msgstr "AND"
-
-#: ../ui/scientific_buttons.glade.h:24
-#: ../ui/basic_buttons.glade.h:22
-msgid "Add current display value to memory"
-msgstr "Ағымдағы мәнді жадыдағыға қосу"
-
-#: ../ui/scientific_buttons.glade.h:25
-msgid "B"
-msgstr "B"
-
-#: ../ui/scientific_buttons.glade.h:26
-msgid "Bitwise complement"
-msgstr "Логикалық бит бойынша терістеу"
-
-#: ../ui/scientific_buttons.glade.h:27
-#: ../ui/dispctrl_right.glade.h:4
-#: ../ui/dispctrl_bottom.glade.h:4
-msgid "C"
-msgstr "C"
-
-#: ../ui/scientific_buttons.glade.h:28
-msgid "CMP"
-msgstr "NOT"
-
-#: ../ui/scientific_buttons.glade.h:29
-#: ../ui/basic_buttons.glade.h:23
-msgid "Change sign"
-msgstr "Таңбасын өзгерту"
-
-#: ../ui/scientific_buttons.glade.h:31
-#: ../ui/prefs.glade.h:28
-msgid "Constants"
-msgstr "Константтар"
-
-#: ../ui/scientific_buttons.glade.h:32
-msgid "Cosine"
-msgstr "Косинус"
-
-#: ../ui/scientific_buttons.glade.h:33
-msgid "D"
-msgstr "D"
-
-#: ../ui/scientific_buttons.glade.h:34
-#: ../ui/basic_buttons.glade.h:25
-msgid "Decimal point"
-msgstr "Ондық нүкте"
-
-#: ../ui/scientific_buttons.glade.h:35
-#: ../ui/basic_buttons.glade.h:26
-msgid "Divide"
-msgstr "Бөлу"
-
-#: ../ui/scientific_buttons.glade.h:36
-msgid "E"
-msgstr "E"
-
-#: ../ui/scientific_buttons.glade.h:37
-msgid "EE"
-msgstr "EE"
-
-#: ../ui/scientific_buttons.glade.h:38
-#: ../ui/basic_buttons.glade.h:27
-msgid "Eight"
-msgstr "Сегіз"
-
-#: ../ui/scientific_buttons.glade.h:40
-msgid "Enter exponent (base: 10)"
-msgstr "Экспонента енгізу (негізі: 10)"
-
-#: ../ui/scientific_buttons.glade.h:41
-msgid "F"
-msgstr "F"
-
-#: ../ui/scientific_buttons.glade.h:42
-msgid "Factorial"
-msgstr "Факториал"
-
-#: ../ui/scientific_buttons.glade.h:43
-#: ../ui/basic_buttons.glade.h:29
-msgid "Five"
-msgstr "Бес"
-
-#: ../ui/scientific_buttons.glade.h:44
-#: ../ui/basic_buttons.glade.h:30
-msgid "Four"
-msgstr "Төрт"
-
-#: ../ui/scientific_buttons.glade.h:45
-msgid "Hexadecimal 0xA"
-msgstr "Оналтылық 0xA"
-
-#: ../ui/scientific_buttons.glade.h:46
-msgid "Hexadecimal 0xB"
-msgstr "Оналтылық 0xB"
-
-#: ../ui/scientific_buttons.glade.h:47
-msgid "Hexadecimal 0xC"
-msgstr "Оналтылық 0xC"
-
-#: ../ui/scientific_buttons.glade.h:48
-msgid "Hexadecimal 0xD"
-msgstr "Оналтылық  0xD"
-
-#: ../ui/scientific_buttons.glade.h:49
-msgid "Hexadecimal 0xE"
-msgstr "Оналтылық 0xE"
-
-#: ../ui/scientific_buttons.glade.h:50
-msgid "Hexadecimal 0xF"
-msgstr "Оналтылық 0xF"
-
-#: ../ui/scientific_buttons.glade.h:51
-msgid "Hyperbolic mode"
-msgstr "Гиперболикалық режимі"
-
-#: ../ui/scientific_buttons.glade.h:52
-msgid "Inverse mode"
-msgstr "Инверсті режим"
-
-#: ../ui/scientific_buttons.glade.h:53
-msgid "LSH"
-msgstr "LSH"
-
-#: ../ui/scientific_buttons.glade.h:54
-msgid "Left shift"
-msgstr "Солға жылжыту"
-
-#: ../ui/scientific_buttons.glade.h:55
-msgid "Logarithm (base: 10)"
-msgstr "Ондық логарифм"
-
-#: ../ui/scientific_buttons.glade.h:56
-msgid "Logical AND"
-msgstr "Логикалық AND"
-
-#: ../ui/scientific_buttons.glade.h:57
-msgid "Logical OR"
-msgstr "Логикалық OR"
-
-#: ../ui/scientific_buttons.glade.h:58
-msgid "Logical XOR"
-msgstr "Логикалық XOR"
-
-#: ../ui/scientific_buttons.glade.h:59
-#: ../ui/basic_buttons.glade.h:31
-msgid "M+"
-msgstr "M+"
-
-#: ../ui/scientific_buttons.glade.h:60
-msgid "MOD"
-msgstr "MOD"
-
-#: ../ui/scientific_buttons.glade.h:61
-#: ../ui/basic_buttons.glade.h:32
-msgid "MR"
-msgstr "MR"
-
-#: ../ui/scientific_buttons.glade.h:62
-#: ../ui/basic_buttons.glade.h:33
-msgid "MS"
-msgstr "MS"
-
-#: ../ui/scientific_buttons.glade.h:63
-msgid "Modulus"
-msgstr "Бөлуден қалдығы"
-
-#: ../ui/scientific_buttons.glade.h:64
-#: ../ui/basic_buttons.glade.h:34
-msgid "Multiply"
-msgstr "Көбейту"
-
-#: ../ui/scientific_buttons.glade.h:65
-msgid "Natural logarithm (base: e)"
-msgstr "Натуралды логарифм"
-
-#: ../ui/scientific_buttons.glade.h:66
-#: ../ui/basic_buttons.glade.h:35
-msgid "Nine"
-msgstr "Тоғыз"
-
-#: ../ui/scientific_buttons.glade.h:67
-msgid "OR"
-msgstr "OR"
-
-#: ../ui/scientific_buttons.glade.h:68
-#: ../ui/basic_buttons.glade.h:36
-msgid "One"
-msgstr "Бір"
-
-#: ../ui/scientific_buttons.glade.h:70
-#: ../ui/basic_buttons.glade.h:38
+#: ../ui/basic_buttons_gtk2.ui.h:49 ../ui/basic_buttons_gtk3.ui.h:49
+#: ../ui/scientific_buttons_gtk2.ui.h:25 ../ui/scientific_buttons_gtk3.ui.h:25
 msgid "Percent"
 msgstr "Пайыз"
 
-#: ../ui/scientific_buttons.glade.h:72
-#: ../ui/basic_buttons.glade.h:39
-msgid "Read from memory"
-msgstr "Жадыдан оқу"
-
-#: ../ui/scientific_buttons.glade.h:73
-#: ../ui/basic_buttons.glade.h:40
-msgid "Save to memory"
-msgstr "Жадыға сақтау"
-
-#: ../ui/scientific_buttons.glade.h:74
-#: ../ui/basic_buttons.glade.h:41
-msgid "Seven"
-msgstr "Жеті"
-
-#: ../ui/scientific_buttons.glade.h:75
-msgid "Sine"
-msgstr "Синус"
-
-#: ../ui/scientific_buttons.glade.h:76
-#: ../ui/basic_buttons.glade.h:42
-msgid "Six"
-msgstr "Алты"
-
-#: ../ui/scientific_buttons.glade.h:77
-msgid "Square"
-msgstr "Өз өзіне көбейту"
-
-#: ../ui/scientific_buttons.glade.h:78
-#: ../ui/basic_buttons.glade.h:43
-msgid "Square root"
-msgstr "Шаршы түбірін алу"
-
-#: ../ui/scientific_buttons.glade.h:79
-#: ../ui/basic_buttons.glade.h:44
-msgid "Subtract"
-msgstr "Алу"
-
-#: ../ui/scientific_buttons.glade.h:80
-#: ../ui/basic_buttons.glade.h:45
-msgid "Sum"
-msgstr "Қосу"
-
-#: ../ui/scientific_buttons.glade.h:81
-msgid "Tangent"
-msgstr "Тангенс"
-
-#: ../ui/scientific_buttons.glade.h:82
-#: ../ui/basic_buttons.glade.h:46
-msgid "Three"
-msgstr "Үш"
-
-#: ../ui/scientific_buttons.glade.h:83
-#: ../ui/basic_buttons.glade.h:47
-msgid "Two"
-msgstr "Екі"
-
-#: ../ui/scientific_buttons.glade.h:84
-msgid "User defined functions"
-msgstr "Пайдаланушы функциялары"
-
-#: ../ui/scientific_buttons.glade.h:85
-msgid "XOR"
-msgstr "XOR"
-
-#: ../ui/scientific_buttons.glade.h:86
-#: ../ui/basic_buttons.glade.h:48
-msgid "Zero"
-msgstr "Нөл"
-
-#: ../ui/scientific_buttons.glade.h:87
-msgid "con"
-msgstr "con"
-
-#: ../ui/scientific_buttons.glade.h:88
-msgid "cos"
-msgstr "cos"
-
-#: ../ui/scientific_buttons.glade.h:89
-msgid "fun"
-msgstr "fun"
-
-#: ../ui/scientific_buttons.glade.h:90
-msgid "hyp"
-msgstr "hyp"
-
-#: ../ui/scientific_buttons.glade.h:91
-msgid "inv"
-msgstr "inv"
-
-#: ../ui/scientific_buttons.glade.h:92
-msgid "ln"
-msgstr "ln"
-
-#: ../ui/scientific_buttons.glade.h:93
-msgid "log"
-msgstr "log"
-
-#: ../ui/scientific_buttons.glade.h:94
-msgid "n!"
-msgstr "n!"
-
-#: ../ui/scientific_buttons.glade.h:95
-msgid "sin"
-msgstr "sin"
-
-#: ../ui/scientific_buttons.glade.h:96
-#: ../ui/basic_buttons.glade.h:49
-msgid "sqrt"
-msgstr "sqrt"
-
-#: ../ui/scientific_buttons.glade.h:97
-msgid "tan"
-msgstr "tan"
-
-#: ../ui/scientific_buttons.glade.h:98
-msgid "x^2"
-msgstr "x^2"
-
-#: ../ui/about.glade.h:1
-msgid "A dialog that shows information about this program."
-msgstr "Бағдарлама туралы ақпаратын көрсететін сұхбар терезесі."
-
-#: ../ui/about.glade.h:2
-#: ../ui/prefs.glade.h:26
-msgid "Closes the dialog."
-msgstr "Сұхбат терезесін жабады."
-
-#: ../ui/about.glade.h:3
-msgid "Shows information about the program."
-msgstr "Бағдарлама туралы ақпаратты көрсетеді."
-
-#: ../ui/about.glade.h:4
-msgid "fill_me"
-msgstr ""
-
-#: ../ui/prefs.glade.h:1
-msgid " "
-msgstr " "
-
-#: ../ui/prefs.glade.h:2
-msgid "    "
-msgstr "    "
-
-#: ../ui/prefs.glade.h:3
-msgid "<b>Appearance</b>"
-msgstr "<b>Сыртқы түрі</b>"
-
-#: ../ui/prefs.glade.h:4
-msgid "<b>Binary Settings</b>"
-msgstr "<b>Екілік</b>"
-
-#: ../ui/prefs.glade.h:5
-msgid "<b>Decimal Settings</b>"
-msgstr "<b>Ондық</b>"
-
-#: ../ui/prefs.glade.h:6
-msgid "<b>Dimension</b>"
-msgstr "<b>Өлшемдер</b>"
-
-#: ../ui/prefs.glade.h:7
-msgid "<b>Font</b>"
-msgstr "<b>Қаріп</b>"
-
-#: ../ui/prefs.glade.h:8
-msgid "<b>Hexadecimal Settings</b>"
-msgstr "<b>Оналтылық</b>"
-
-#: ../ui/prefs.glade.h:9
-msgid "<b>Modules Visibility</b>"
-msgstr "<b>Модульдер</b>"
-
-#: ../ui/prefs.glade.h:10
-msgid "<b>Octal Settings</b>"
-msgstr "<b>Сегіздік</b>"
-
-#: ../ui/prefs.glade.h:11
-msgid "<b>RPN</b>"
-msgstr "<b>RPN</b>"
-
-#: ../ui/prefs.glade.h:12
-msgid "<b>Startup</b>"
-msgstr "<b>Қосылу</b>"
-
-#: ../ui/prefs.glade.h:13
-msgid "<b>User defined constants:</b>"
-msgstr "<b>Пайдаланушы константтары:</b>"
-
-#: ../ui/prefs.glade.h:14
-msgid "<b>User defined functions:</b>"
-msgstr "<b>Пайдаланушы функциялары</b>"
-
-#: ../ui/prefs.glade.h:15
-msgid "<b>Visibility</b>"
-msgstr "<b>Сыртқы түрі</b>"
-
-#: ../ui/prefs.glade.h:16
-msgid "A dialog that is used to change preferences settings."
-msgstr "Баптауларды өзгерту терезесі"
-
-#: ../ui/prefs.glade.h:17
-msgid "Active module color:"
-msgstr "Белсенді модуль түсі:"
-
-#: ../ui/prefs.glade.h:18
-msgid "Add"
-msgstr "Қосу"
-
-#: ../ui/prefs.glade.h:19
-msgid "Angle base units"
-msgstr "Бұрыштарды өлшеу бірліктері"
-
-#: ../ui/prefs.glade.h:20
-msgid "Arithmetic operation"
-msgstr "Арифметикалық амал"
-
-#: ../ui/prefs.glade.h:21
-msgid "Background color:"
-msgstr "Фон түсі:"
-
-#: ../ui/prefs.glade.h:22
-msgid "Binary"
-msgstr "Екілік"
-
-#: ../ui/prefs.glade.h:23
-msgid "Button font:"
-msgstr "Жазулар қарібі:"
-
-#: ../ui/prefs.glade.h:25
-msgid "Clear"
-msgstr "Тазарту"
-
-#: ../ui/prefs.glade.h:27
-msgid "Configure number base: "
-msgstr "Санақ жүйесі"
-
-#: ../ui/prefs.glade.h:29
-msgid "Decimal"
-msgstr "Ондық"
-
-#: ../ui/prefs.glade.h:30
-msgid "Delete"
-msgstr "Өшіру"
-
-#: ../ui/prefs.glade.h:31
-msgid "Description:"
-msgstr "Анықтамасы:"
-
-#: ../ui/prefs.glade.h:32
-msgid "Display"
-msgstr "Сыртқы түрі"
-
-#: ../ui/prefs.glade.h:33
-msgid "Expression:"
-msgstr "Өрнек:"
-
-#: ../ui/prefs.glade.h:34
-msgid "Fix length to a multiple of"
-msgstr "Разрядтылық еселіктің мәні:"
-
-#: ../ui/prefs.glade.h:36
-msgid "General"
-msgstr "Жалпы"
-
-#: ../ui/prefs.glade.h:37
-msgid "Hexadecimal"
-msgstr "Он алтылық"
-
-#: ../ui/prefs.glade.h:38
-msgid "Inactive module color:"
-msgstr "Белсенді емес модуль түсі:"
-
-#: ../ui/prefs.glade.h:39
-msgid "Minimal button height:"
-msgstr "Минималды биіктігі:"
-
-#: ../ui/prefs.glade.h:40
-msgid "Minimal button width:"
-msgstr "Минималды ені:"
-
-#: ../ui/prefs.glade.h:41
-msgid "Module font:"
-msgstr "Модульдер қарібі:"
-
-#: ../ui/prefs.glade.h:42
-msgid "Name:"
-msgstr "Аты:"
-
-#: ../ui/prefs.glade.h:43
-msgid "Notation"
-msgstr "Енгізу режимі"
-
-#: ../ui/prefs.glade.h:44
-msgid "Number base units"
-msgstr "Санақ жүйелері"
-
-#: ../ui/prefs.glade.h:45
-msgid "Number of bits: "
-msgstr "Биттер саны: "
-
-#: ../ui/prefs.glade.h:46
-msgid "Numbers"
-msgstr "Сандар"
-
-#: ../ui/prefs.glade.h:47
-msgid "Octal"
-msgstr "Сегіздік"
-
-#: ../ui/prefs.glade.h:48
-msgid "Open brackets"
-msgstr "Ашық жақшалар"
-
-#: ../ui/prefs.glade.h:49
-msgid "Pick a Active Module Color"
-msgstr "Белсенді модуль түсі:"
-
-#: ../ui/prefs.glade.h:50
-msgid "Pick a Button Font"
-msgstr "Батырма қаріп түсі:"
-
-#: ../ui/prefs.glade.h:51
-msgid "Pick a Display Background Color"
-msgstr "Фон түсі:"
-
-#: ../ui/prefs.glade.h:52
-msgid "Pick a Display Result Font Color"
-msgstr "Нәтиже түсі:"
-
-#: ../ui/prefs.glade.h:53
-msgid "Pick a Inactive Module Color"
-msgstr "Белсенді емес модуль түсі:"
-
-#: ../ui/prefs.glade.h:54
-msgid "Pick a Module Font"
-msgstr "Модульдер қарібі:"
-
-#: ../ui/prefs.glade.h:55
-msgid "Pick a RPN Stack Color"
-msgstr "RPN стектің түсі:"
-
-#: ../ui/prefs.glade.h:56
-msgid "Pick a RPN Stack Font"
-msgstr "RPN стектің қарібі:"
-
-#: ../ui/prefs.glade.h:57
-msgid "Pick a Result Font"
-msgstr "Нәтиженің қарібі:"
-
-#: ../ui/prefs.glade.h:58
-msgid "RPN stack color:"
-msgstr "RPN стек қарібінің түсі:"
-
-#: ../ui/prefs.glade.h:59
-msgid "RPN stack font:"
-msgstr "RPN стектің қарібі:"
-
-#: ../ui/prefs.glade.h:60
-msgid "Remember display value on exit"
-msgstr "Сөндіргенде дисплей мәнін есте сақтау"
-
-#: ../ui/prefs.glade.h:61
-msgid "Result font color:"
-msgstr "Нәтиже қарібінің түсі:"
-
-#: ../ui/prefs.glade.h:62
-msgid "Result font:"
-msgstr "Нәтиже қарібі:"
-
-#: ../ui/prefs.glade.h:63
-msgid "Separator block length:"
-msgstr "Ұзындығы келесідей топтау:"
-
-#: ../ui/prefs.glade.h:64
-msgid "Separator character:"
-msgstr "Ажырағыш белгі:"
-
-#: ../ui/prefs.glade.h:65
-msgid "Show menu bar"
-msgstr "Мәзір жолағын көрсету"
-
-#: ../ui/prefs.glade.h:66
-msgid "Show separator"
-msgstr "Ажырағышты көрсету"
-
-#: ../ui/prefs.glade.h:67
-msgid "Show thousands separator"
-msgstr "Мыңдықтар ажырағышты көрсету"
-
-#: ../ui/prefs.glade.h:68
-msgid "Signed"
-msgstr "Таңбасы бар"
-
-#: ../ui/prefs.glade.h:69
-msgid "Update"
-msgstr "Жаңарту"
-
-#: ../ui/prefs.glade.h:70
-msgid "Use custom button font"
-msgstr "Басқа қаріпті қолдану"
-
-#: ../ui/prefs.glade.h:71
-msgid "Value:"
-msgstr "Мәні:"
-
-#: ../ui/prefs.glade.h:72
-msgid "Variable:"
-msgstr "Айнымалы:"
-
-#: ../ui/prefs.glade.h:73
-msgid "finite stack size (x, y, z, t)"
-msgstr "стек көлемі шектелген (x, y, z, t)"
-
-#: ../ui/prefs.glade.h:74
-msgid "galculator - Preferences"
-msgstr "galculator - Баптаулар"
-
-#: ../ui/prefs.glade.h:75
-msgid "infinite stack size"
-msgstr "стек көлемі шексіз"
-
-#: ../ui/dispctrl_right.glade.h:1
-#: ../ui/dispctrl_bottom.glade.h:1
-msgid "<-"
-msgstr "<-"
-
-#: ../ui/dispctrl_right.glade.h:2
-#: ../ui/dispctrl_bottom.glade.h:2
+#: ../ui/classic_view.ui.h:1 ../ui/main_frame.ui.h:1
+#: ../ui/main_frame_hildon.ui.h:35 ../ui/paper_view.ui.h:1
+msgid "The main program window."
+msgstr "Бағдарламаның басты терезесі."
+
+#: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
+msgid "Formula entry text field - enter string expression to compute here."
+msgstr "Формула енгізу өрісі"
+
+#: ../ui/dispctrl_bottom_gtk2.ui.h:1 ../ui/dispctrl_bottom_gtk3.ui.h:1
+#: ../ui/dispctrl_right_gtk2.ui.h:1 ../ui/dispctrl_right_gtk3.ui.h:1
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:5
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:5
 msgid "AC"
 msgstr "AC"
 
-#: ../ui/dispctrl_right.glade.h:3
-#: ../ui/dispctrl_bottom.glade.h:3
-msgid "Backspace"
-msgstr "Backspace"
-
-#: ../ui/dispctrl_right.glade.h:5
-#: ../ui/dispctrl_bottom.glade.h:5
-msgid "Clear display"
-msgstr "Дисплейді тазарту"
-
-#: ../ui/dispctrl_right.glade.h:6
-#: ../ui/dispctrl_bottom.glade.h:6
+#: ../ui/dispctrl_bottom_gtk2.ui.h:2 ../ui/dispctrl_bottom_gtk3.ui.h:2
+#: ../ui/dispctrl_right_gtk2.ui.h:2 ../ui/dispctrl_right_gtk3.ui.h:2
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:6
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:6
 msgid "Reset calculator (clear all)"
 msgstr "Тастау (барлығын өшіру)"
 
+#: ../ui/dispctrl_bottom_gtk2.ui.h:3 ../ui/dispctrl_bottom_gtk3.ui.h:3
+#: ../ui/dispctrl_right_gtk2.ui.h:5 ../ui/dispctrl_right_gtk3.ui.h:5
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:3
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:3
+#: ../ui/scientific_buttons_gtk2.ui.h:40 ../ui/scientific_buttons_gtk3.ui.h:40
+msgid "C"
+msgstr "C"
+
+#: ../ui/dispctrl_bottom_gtk2.ui.h:4 ../ui/dispctrl_bottom_gtk3.ui.h:4
+#: ../ui/dispctrl_right_gtk2.ui.h:6 ../ui/dispctrl_right_gtk3.ui.h:6
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:4
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:4
+msgid "Clear display"
+msgstr "Дисплейді тазарту"
+
+#: ../ui/dispctrl_bottom_gtk2.ui.h:5 ../ui/dispctrl_bottom_gtk3.ui.h:5
+#: ../ui/dispctrl_right_gtk2.ui.h:3 ../ui/dispctrl_right_gtk3.ui.h:3
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:1
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:1
+msgid "<-"
+msgstr "<-"
+
+#: ../ui/dispctrl_bottom_gtk2.ui.h:6 ../ui/dispctrl_bottom_gtk3.ui.h:6
+#: ../ui/dispctrl_right_gtk2.ui.h:4 ../ui/dispctrl_right_gtk3.ui.h:4
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:2
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:2
+msgid "Backspace"
+msgstr "Backspace"
+
+#: ../ui/main_frame.ui.h:2 ../ui/main_frame_hildon.ui.h:1
+msgid "_File"
+msgstr "_Файл"
+
+#: ../ui/main_frame.ui.h:3 ../ui/main_frame_hildon.ui.h:3
+msgid "_Edit"
+msgstr "Тү_зету"
+
+#: ../ui/main_frame.ui.h:4 ../ui/main_frame_hildon.ui.h:4
+msgid "Cu_t Display Value"
+msgstr "Қ_иып алу"
+
+#: ../ui/main_frame.ui.h:5 ../ui/main_frame_hildon.ui.h:5
+msgid "_Copy Display Value"
+msgstr "_Көшіру"
+
+#: ../ui/main_frame.ui.h:6
+#, fuzzy
+msgid "_Paste and Append to Display Value"
+msgstr "Кірі_стіру"
+
+#: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
+msgid "_Preferences..."
+msgstr "_Баптаулар..."
+
+#: ../ui/main_frame.ui.h:8 ../ui/main_frame_hildon.ui.h:8
+msgid "_View"
+msgstr "_Түрі"
+
+#: ../ui/main_frame.ui.h:9 ../ui/main_frame_hildon.ui.h:9
+msgid "_Basic Mode"
+msgstr "Қ_алыпты"
+
+#: ../ui/main_frame.ui.h:10 ../ui/main_frame_hildon.ui.h:10
+msgid "_Scientific Mode"
+msgstr "_Инженерлік"
+
+#: ../ui/main_frame.ui.h:11
+msgid "_Paper Mode"
+msgstr "Қарапа_йым"
+
+#: ../ui/main_frame.ui.h:12 ../ui/main_frame_hildon.ui.h:11
+#: ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
+msgid "Buttons"
+msgstr "Батырмалар"
+
+#: ../ui/main_frame.ui.h:13 ../ui/main_frame_hildon.ui.h:12
+msgid "Display Control"
+msgstr "Басқару"
+
+#: ../ui/main_frame.ui.h:14 ../ui/main_frame_hildon.ui.h:13
+#: ../ui/prefs_gtk2.ui.h:53 ../ui/prefs_gtk3.ui.h:53
+msgid "Functions"
+msgstr "Функциялар"
+
+#: ../ui/main_frame.ui.h:15 ../ui/main_frame_hildon.ui.h:14
+msgid "Logical"
+msgstr "Логикалық амалдар"
+
+#: ../ui/main_frame.ui.h:16 ../ui/main_frame_hildon.ui.h:15
+msgid "Standard"
+msgstr "Қалыпты"
+
+#: ../ui/main_frame.ui.h:18 ../ui/main_frame_hildon.ui.h:17
+msgid "_Calculator"
+msgstr "_Калькулятор"
+
+#: ../ui/main_frame.ui.h:19 ../ui/main_frame_hildon.ui.h:18
+msgid "_Number bases"
+msgstr "_Санақ жүйесі"
+
+#: ../ui/main_frame.ui.h:20 ../ui/main_frame_hildon.ui.h:19
+msgid "_Decimal"
+msgstr "Онд_ық"
+
+#: ../ui/main_frame.ui.h:21 ../ui/main_frame_hildon.ui.h:20
+msgid "_Hexadecimal"
+msgstr "_Оналтылық"
+
+#: ../ui/main_frame.ui.h:22 ../ui/main_frame_hildon.ui.h:21
+msgid "_Octal"
+msgstr "_Сегіздік"
+
+#: ../ui/main_frame.ui.h:23 ../ui/main_frame_hildon.ui.h:22
+msgid "_Binary"
+msgstr "_Екілік"
+
+#: ../ui/main_frame.ui.h:24 ../ui/main_frame_hildon.ui.h:23
+msgid "Angle _units"
+msgstr "_Бұрыштарды өлшеу"
+
+#: ../ui/main_frame.ui.h:25 ../ui/main_frame_hildon.ui.h:24
+msgid "D_egrees"
+msgstr "Граду_стар"
+
+#: ../ui/main_frame.ui.h:26 ../ui/main_frame_hildon.ui.h:25
+msgid "_Radians"
+msgstr "_Радиандар"
+
+#: ../ui/main_frame.ui.h:27 ../ui/main_frame_hildon.ui.h:26
+msgid "_Gradians"
+msgstr "_Градтар"
+
+#: ../ui/main_frame.ui.h:28 ../ui/main_frame_hildon.ui.h:27
+msgid "Notation _modes"
+msgstr "_Енгізу режимдері"
+
+#: ../ui/main_frame.ui.h:29 ../ui/main_frame_hildon.ui.h:28
+msgid "_Algebraic"
+msgstr "_Алгебралық"
+
+#: ../ui/main_frame.ui.h:30 ../ui/main_frame_hildon.ui.h:29
+msgid "_Reverse Polish (RPN)"
+msgstr "_Кері польша жазуы (RPN)"
+
+#: ../ui/main_frame.ui.h:31 ../ui/main_frame_hildon.ui.h:30
+msgid "_Formula Entry"
+msgstr "_Формула енгізу"
+
+#: ../ui/main_frame.ui.h:32 ../ui/main_frame_hildon.ui.h:31
+msgid "_Help"
+msgstr "Көм_ек"
+
+#: ../ui/main_frame_hildon.ui.h:2
+msgid "_Quit"
+msgstr "_Шығу"
+
+#: ../ui/main_frame_hildon.ui.h:6
+msgid "_Paste As Display Value"
+msgstr "Кірі_стіру"
+
+#: ../ui/main_frame_hildon.ui.h:32
+msgid "_About..."
+msgstr "_About..."
+
+#: ../ui/prefs_gtk2.ui.h:1 ../ui/prefs_gtk3.ui.h:1
+msgid "Decimal"
+msgstr "Ондық"
+
+#: ../ui/prefs_gtk2.ui.h:2 ../ui/prefs_gtk3.ui.h:2
+msgid "Hexadecimal"
+msgstr "Он алтылық"
+
+#: ../ui/prefs_gtk2.ui.h:3 ../ui/prefs_gtk3.ui.h:3
+msgid "Octal"
+msgstr "Сегіздік"
+
+#: ../ui/prefs_gtk2.ui.h:4 ../ui/prefs_gtk3.ui.h:4
+msgid "Binary"
+msgstr "Екілік"
+
+#: ../ui/prefs_gtk2.ui.h:5 ../ui/prefs_gtk3.ui.h:5 ../ui/prefs-ume.ui.h:1
+msgid "galculator - Preferences"
+msgstr "galculator - Баптаулар"
+
+#: ../ui/prefs_gtk2.ui.h:6 ../ui/prefs_gtk3.ui.h:6 ../ui/prefs-ume.ui.h:2
+msgid "A dialog that is used to change preferences settings."
+msgstr "Баптауларды өзгерту терезесі"
+
+#: ../ui/prefs_gtk2.ui.h:7 ../ui/prefs_gtk3.ui.h:7 ../ui/prefs-ume.ui.h:3
+msgid "Closes the dialog."
+msgstr "Сұхбат терезесін жабады."
+
+#: ../ui/prefs_gtk2.ui.h:8 ../ui/prefs_gtk3.ui.h:8
+msgid "<b>Appearance</b>"
+msgstr "<b>Сыртқы түрі</b>"
+
+#: ../ui/prefs_gtk2.ui.h:9 ../ui/prefs_gtk3.ui.h:9 ../ui/prefs-ume.ui.h:5
+msgid "    "
+msgstr "    "
+
+#: ../ui/prefs_gtk2.ui.h:10 ../ui/prefs_gtk3.ui.h:10
+msgid "Result font:"
+msgstr "Нәтиже қарібі:"
+
+#: ../ui/prefs_gtk2.ui.h:11 ../ui/prefs_gtk3.ui.h:11
+msgid "Inactive module color:"
+msgstr "Белсенді емес модуль түсі:"
+
+#: ../ui/prefs_gtk2.ui.h:12 ../ui/prefs_gtk3.ui.h:12
+msgid "Active module color:"
+msgstr "Белсенді модуль түсі:"
+
+#: ../ui/prefs_gtk2.ui.h:13 ../ui/prefs_gtk3.ui.h:13
+msgid "Result font color:"
+msgstr "Нәтиже қарібінің түсі:"
+
+#: ../ui/prefs_gtk2.ui.h:14 ../ui/prefs_gtk3.ui.h:14
+msgid "Background color:"
+msgstr "Фон түсі:"
+
+#: ../ui/prefs_gtk2.ui.h:15 ../ui/prefs_gtk3.ui.h:15
+msgid "Module font:"
+msgstr "Модульдер қарібі:"
+
+#: ../ui/prefs_gtk2.ui.h:16 ../ui/prefs_gtk3.ui.h:16
+msgid "RPN stack font:"
+msgstr "RPN стектің қарібі:"
+
+#: ../ui/prefs_gtk2.ui.h:17 ../ui/prefs_gtk3.ui.h:17
+msgid "RPN stack color:"
+msgstr "RPN стек қарібінің түсі:"
+
+#: ../ui/prefs_gtk2.ui.h:18 ../ui/prefs_gtk3.ui.h:18
+msgid "Pick a Display Background Color"
+msgstr "Фон түсі:"
+
+#: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
+msgid "Pick a Display Result Font Color"
+msgstr "Нәтиже түсі:"
+
+#: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
+msgid "Pick a RPN Stack Color"
+msgstr "RPN стектің түсі:"
+
+#: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
+msgid "Pick a Inactive Module Color"
+msgstr "Белсенді емес модуль түсі:"
+
+#: ../ui/prefs_gtk2.ui.h:22 ../ui/prefs_gtk3.ui.h:22
+msgid "Pick a Active Module Color"
+msgstr "Белсенді модуль түсі:"
+
+#: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
+msgid "Pick a Result Font"
+msgstr "Нәтиженің қарібі:"
+
+#: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
+msgid "Pick a RPN Stack Font"
+msgstr "RPN стектің қарібі:"
+
+#: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
+msgid "Pick a Module Font"
+msgstr "Модульдер қарібі:"
+
+#: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
+msgid "<b>Modules Visibility</b>"
+msgstr "<b>Модульдер</b>"
+
+#: ../ui/prefs_gtk2.ui.h:27 ../ui/prefs_gtk3.ui.h:27 ../ui/prefs-ume.ui.h:6
+msgid "Angle base units"
+msgstr "Бұрыштарды өлшеу бірліктері"
+
+#: ../ui/prefs_gtk2.ui.h:28 ../ui/prefs_gtk3.ui.h:28 ../ui/prefs-ume.ui.h:7
+msgid "Notation"
+msgstr "Енгізу режимі"
+
+#: ../ui/prefs_gtk2.ui.h:29 ../ui/prefs_gtk3.ui.h:29 ../ui/prefs-ume.ui.h:8
+msgid "Arithmetic operation"
+msgstr "Арифметикалық амал"
+
+#: ../ui/prefs_gtk2.ui.h:30 ../ui/prefs_gtk3.ui.h:30 ../ui/prefs-ume.ui.h:9
+msgid "Open brackets"
+msgstr "Ашық жақшалар"
+
+#: ../ui/prefs_gtk2.ui.h:31 ../ui/prefs_gtk3.ui.h:31 ../ui/prefs-ume.ui.h:10
+msgid "Number base units"
+msgstr "Санақ жүйелері"
+
+#: ../ui/prefs_gtk2.ui.h:32 ../ui/prefs_gtk3.ui.h:32 ../ui/prefs-ume.ui.h:11
+msgid "Display"
+msgstr "Сыртқы түрі"
+
+#: ../ui/prefs_gtk2.ui.h:33 ../ui/prefs_gtk3.ui.h:33 ../ui/prefs-ume.ui.h:12
+msgid "<b>Font</b>"
+msgstr "<b>Қаріп</b>"
+
+#: ../ui/prefs_gtk2.ui.h:34 ../ui/prefs_gtk3.ui.h:34 ../ui/prefs-ume.ui.h:13
+msgid "Use custom button font"
+msgstr "Басқа қаріпті қолдану"
+
+#: ../ui/prefs_gtk2.ui.h:35 ../ui/prefs_gtk3.ui.h:35 ../ui/prefs-ume.ui.h:14
+msgid "Button font:"
+msgstr "Жазулар қарібі:"
+
+#: ../ui/prefs_gtk2.ui.h:36 ../ui/prefs_gtk3.ui.h:36 ../ui/prefs-ume.ui.h:15
+msgid "Pick a Button Font"
+msgstr "Батырма қаріп түсі:"
+
+#: ../ui/prefs_gtk2.ui.h:37 ../ui/prefs_gtk3.ui.h:37 ../ui/prefs-ume.ui.h:16
+msgid "<b>Dimension</b>"
+msgstr "<b>Өлшемдер</b>"
+
+#: ../ui/prefs_gtk2.ui.h:38 ../ui/prefs_gtk3.ui.h:38 ../ui/prefs-ume.ui.h:17
+msgid "Minimal button width:"
+msgstr "Минималды ені:"
+
+#: ../ui/prefs_gtk2.ui.h:39 ../ui/prefs_gtk3.ui.h:39 ../ui/prefs-ume.ui.h:18
+msgid "Minimal button height:"
+msgstr "Минималды биіктігі:"
+
+#: ../ui/prefs_gtk2.ui.h:41 ../ui/prefs_gtk3.ui.h:41
+msgid "<b>User defined constants:</b>"
+msgstr "<b>Пайдаланушы константтары:</b>"
+
+#: ../ui/prefs_gtk2.ui.h:42 ../ui/prefs_gtk3.ui.h:42
+msgid "Name:"
+msgstr "Аты:"
+
+#: ../ui/prefs_gtk2.ui.h:43 ../ui/prefs_gtk3.ui.h:43
+msgid "Value:"
+msgstr "Мәні:"
+
+#: ../ui/prefs_gtk2.ui.h:44 ../ui/prefs_gtk3.ui.h:44
+msgid "Description:"
+msgstr "Анықтамасы:"
+
+#: ../ui/prefs_gtk2.ui.h:45 ../ui/prefs_gtk3.ui.h:45
+msgid "Add"
+msgstr "Қосу"
+
+#: ../ui/prefs_gtk2.ui.h:46 ../ui/prefs_gtk3.ui.h:46
+msgid "Update"
+msgstr "Жаңарту"
+
+#: ../ui/prefs_gtk2.ui.h:47 ../ui/prefs_gtk3.ui.h:47
+msgid "Delete"
+msgstr "Өшіру"
+
+#: ../ui/prefs_gtk2.ui.h:48 ../ui/prefs_gtk3.ui.h:48
+msgid "Clear"
+msgstr "Тазарту"
+
+#: ../ui/prefs_gtk2.ui.h:49 ../ui/prefs_gtk3.ui.h:49
+#: ../ui/scientific_buttons_gtk2.ui.h:21 ../ui/scientific_buttons_gtk3.ui.h:21
+msgid "Constants"
+msgstr "Константтар"
+
+#: ../ui/prefs_gtk2.ui.h:50 ../ui/prefs_gtk3.ui.h:50
+msgid "<b>User defined functions:</b>"
+msgstr "<b>Пайдаланушы функциялары</b>"
+
+#: ../ui/prefs_gtk2.ui.h:51 ../ui/prefs_gtk3.ui.h:51
+msgid "Variable:"
+msgstr "Айнымалы:"
+
+#: ../ui/prefs_gtk2.ui.h:52 ../ui/prefs_gtk3.ui.h:52
+msgid "Expression:"
+msgstr "Өрнек:"
+
+#: ../ui/prefs_gtk2.ui.h:54 ../ui/prefs_gtk3.ui.h:54 ../ui/prefs-ume.ui.h:20
+msgid "Configure number base: "
+msgstr "Санақ жүйесі"
+
+#: ../ui/prefs_gtk2.ui.h:55 ../ui/prefs_gtk3.ui.h:55
+msgid "<b>Decimal Settings</b>"
+msgstr "<b>Ондық</b>"
+
+#: ../ui/prefs_gtk2.ui.h:56 ../ui/prefs_gtk3.ui.h:56
+msgid "Show thousands separator"
+msgstr "Мыңдықтар ажырағышты көрсету"
+
+#: ../ui/prefs_gtk2.ui.h:57 ../ui/prefs_gtk3.ui.h:57
+msgid "Separator character:"
+msgstr "Ажырағыш белгі:"
+
+#: ../ui/prefs_gtk2.ui.h:58 ../ui/prefs_gtk3.ui.h:58
+msgid "Separator block length:"
+msgstr "Ұзындығы келесідей топтау:"
+
+#: ../ui/prefs_gtk2.ui.h:59 ../ui/prefs_gtk3.ui.h:59
+msgid " "
+msgstr " "
+
+#: ../ui/prefs_gtk2.ui.h:60 ../ui/prefs_gtk3.ui.h:60
+msgid "<b>Hexadecimal Settings</b>"
+msgstr "<b>Оналтылық</b>"
+
+#: ../ui/prefs_gtk2.ui.h:61 ../ui/prefs_gtk3.ui.h:61
+msgid "Signed"
+msgstr "Таңбасы бар"
+
+#: ../ui/prefs_gtk2.ui.h:62 ../ui/prefs_gtk3.ui.h:62
+msgid "Show separator"
+msgstr "Ажырағышты көрсету"
+
+#: ../ui/prefs_gtk2.ui.h:63 ../ui/prefs_gtk3.ui.h:63
+msgid "Number of bits: "
+msgstr "Биттер саны: "
+
+#: ../ui/prefs_gtk2.ui.h:64 ../ui/prefs_gtk3.ui.h:64
+msgid "<b>Octal Settings</b>"
+msgstr "<b>Сегіздік</b>"
+
+#: ../ui/prefs_gtk2.ui.h:65 ../ui/prefs_gtk3.ui.h:65
+msgid "<b>Binary Settings</b>"
+msgstr "<b>Екілік</b>"
+
+#: ../ui/prefs_gtk2.ui.h:66 ../ui/prefs_gtk3.ui.h:66
+msgid "Fix length to a multiple of"
+msgstr "Разрядтылық еселіктің мәні:"
+
+#: ../ui/prefs_gtk2.ui.h:67 ../ui/prefs_gtk3.ui.h:67 ../ui/prefs-ume.ui.h:21
+msgid "Numbers"
+msgstr "Сандар"
+
+#: ../ui/prefs_gtk2.ui.h:68 ../ui/prefs_gtk3.ui.h:68 ../ui/prefs-ume.ui.h:22
+msgid "<b>RPN</b>"
+msgstr "<b>RPN</b>"
+
+#: ../ui/prefs_gtk2.ui.h:69 ../ui/prefs_gtk3.ui.h:69 ../ui/prefs-ume.ui.h:23
+msgid "finite stack size (x, y, z, t)"
+msgstr "стек көлемі шектелген (x, y, z, t)"
+
+#: ../ui/prefs_gtk2.ui.h:70 ../ui/prefs_gtk3.ui.h:70 ../ui/prefs-ume.ui.h:24
+msgid "infinite stack size"
+msgstr "стек көлемі шексіз"
+
+#: ../ui/prefs_gtk2.ui.h:71 ../ui/prefs_gtk3.ui.h:71 ../ui/prefs-ume.ui.h:25
+msgid "<b>Startup</b>"
+msgstr "<b>Қосылу</b>"
+
+#: ../ui/prefs_gtk2.ui.h:72 ../ui/prefs_gtk3.ui.h:72 ../ui/prefs-ume.ui.h:26
+msgid "Remember display value on exit"
+msgstr "Сөндіргенде дисплей мәнін есте сақтау"
+
+#: ../ui/prefs_gtk2.ui.h:73 ../ui/prefs_gtk3.ui.h:73
+msgid "<b>Visibility</b>"
+msgstr "<b>Сыртқы түрі</b>"
+
+#: ../ui/prefs_gtk2.ui.h:74 ../ui/prefs_gtk3.ui.h:74
+msgid "Show menu bar"
+msgstr "Мәзір жолағын көрсету"
+
+#: ../ui/prefs_gtk2.ui.h:75 ../ui/prefs_gtk3.ui.h:75 ../ui/prefs-ume.ui.h:27
+msgid "General"
+msgstr "Жалпы"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:1 ../ui/scientific_buttons_gtk3.ui.h:1
+msgid "tan"
+msgstr "tan"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:2 ../ui/scientific_buttons_gtk3.ui.h:2
+msgid "Tangent"
+msgstr "Тангенс"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:3 ../ui/scientific_buttons_gtk3.ui.h:3
+msgid "ln"
+msgstr "ln"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:4 ../ui/scientific_buttons_gtk3.ui.h:4
+msgid "Natural logarithm (base: e)"
+msgstr "Натуралды логарифм"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:7 ../ui/scientific_buttons_gtk3.ui.h:7
+msgid "n!"
+msgstr "n!"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:8 ../ui/scientific_buttons_gtk3.ui.h:8
+msgid "Factorial"
+msgstr "Факториал"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:9 ../ui/scientific_buttons_gtk3.ui.h:9
+msgid "EE"
+msgstr "EE"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:10 ../ui/scientific_buttons_gtk3.ui.h:10
+msgid "Enter exponent (base: 10)"
+msgstr "Экспонента енгізу (негізі: 10)"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:11 ../ui/scientific_buttons_gtk3.ui.h:11
+msgid "cos"
+msgstr "cos"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:12 ../ui/scientific_buttons_gtk3.ui.h:12
+msgid "Cosine"
+msgstr "Косинус"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:13 ../ui/scientific_buttons_gtk3.ui.h:13
+msgid "log"
+msgstr "log"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:14 ../ui/scientific_buttons_gtk3.ui.h:14
+msgid "Logarithm (base: 10)"
+msgstr "Ондық логарифм"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:15 ../ui/scientific_buttons_gtk3.ui.h:15
+msgid "x^2"
+msgstr "x^2"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:16 ../ui/scientific_buttons_gtk3.ui.h:16
+msgid "Square"
+msgstr "Өз өзіне көбейту"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:19 ../ui/scientific_buttons_gtk3.ui.h:19
+msgid "User defined functions"
+msgstr "Пайдаланушы функциялары"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:20 ../ui/scientific_buttons_gtk3.ui.h:20
+msgid "fun"
+msgstr "fun"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:22 ../ui/scientific_buttons_gtk3.ui.h:22
+msgid "con"
+msgstr "con"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:26 ../ui/scientific_buttons_gtk3.ui.h:26
+msgid "inv"
+msgstr "inv"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:27 ../ui/scientific_buttons_gtk3.ui.h:27
+msgid "Inverse mode"
+msgstr "Инверсті режим"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:28 ../ui/scientific_buttons_gtk3.ui.h:28
+msgid "hyp"
+msgstr "hyp"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:29 ../ui/scientific_buttons_gtk3.ui.h:29
+msgid "Hyperbolic mode"
+msgstr "Гиперболикалық режимі"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:30 ../ui/scientific_buttons_gtk3.ui.h:30
+msgid "sin"
+msgstr "sin"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:31 ../ui/scientific_buttons_gtk3.ui.h:31
+msgid "Sine"
+msgstr "Синус"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:32 ../ui/scientific_buttons_gtk3.ui.h:32
+msgid "AND"
+msgstr "AND"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:33 ../ui/scientific_buttons_gtk3.ui.h:33
+msgid "Logical AND"
+msgstr "Логикалық AND"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:34 ../ui/scientific_buttons_gtk3.ui.h:34
+msgid "OR"
+msgstr "OR"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:35 ../ui/scientific_buttons_gtk3.ui.h:35
+msgid "Logical OR"
+msgstr "Логикалық OR"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:36 ../ui/scientific_buttons_gtk3.ui.h:36
+msgid "XOR"
+msgstr "XOR"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:37 ../ui/scientific_buttons_gtk3.ui.h:37
+msgid "Logical XOR"
+msgstr "Логикалық XOR"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:38 ../ui/scientific_buttons_gtk3.ui.h:38
+msgid "CMP"
+msgstr "NOT"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:39 ../ui/scientific_buttons_gtk3.ui.h:39
+msgid "Bitwise complement"
+msgstr "Логикалық бит бойынша терістеу"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:41 ../ui/scientific_buttons_gtk3.ui.h:41
+msgid "Hexadecimal 0xC"
+msgstr "Оналтылық 0xC"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:42 ../ui/scientific_buttons_gtk3.ui.h:42
+msgid "D"
+msgstr "D"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:43 ../ui/scientific_buttons_gtk3.ui.h:43
+msgid "Hexadecimal 0xD"
+msgstr "Оналтылық  0xD"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:44 ../ui/scientific_buttons_gtk3.ui.h:44
+msgid "E"
+msgstr "E"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:45 ../ui/scientific_buttons_gtk3.ui.h:45
+msgid "Hexadecimal 0xE"
+msgstr "Оналтылық 0xE"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:46 ../ui/scientific_buttons_gtk3.ui.h:46
+msgid "F"
+msgstr "F"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:47 ../ui/scientific_buttons_gtk3.ui.h:47
+msgid "Hexadecimal 0xF"
+msgstr "Оналтылық 0xF"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:48 ../ui/scientific_buttons_gtk3.ui.h:48
+msgid "B"
+msgstr "B"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:49 ../ui/scientific_buttons_gtk3.ui.h:49
+msgid "Hexadecimal 0xB"
+msgstr "Оналтылық 0xB"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:50 ../ui/scientific_buttons_gtk3.ui.h:50
+msgid "A"
+msgstr "A"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:51 ../ui/scientific_buttons_gtk3.ui.h:51
+msgid "Hexadecimal 0xA"
+msgstr "Оналтылық 0xA"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:60 ../ui/scientific_buttons_gtk3.ui.h:60
+msgid "MOD"
+msgstr "MOD"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:61 ../ui/scientific_buttons_gtk3.ui.h:61
+msgid "Modulus"
+msgstr "Бөлуден қалдығы"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:74 ../ui/scientific_buttons_gtk3.ui.h:74
+msgid "LSH"
+msgstr "LSH"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:75 ../ui/scientific_buttons_gtk3.ui.h:75
+msgid "Left shift"
+msgstr "Солға жылжыту"
+
+#~ msgid "About %s"
+#~ msgstr "%s туралы"
+
+#~ msgid ""
+#~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
+#~ "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
+#~ "\n"
+#~ "(c) 2002-2007 by Simon Flöry (simon.floery@rechenraum.com)"
+#~ msgstr ""
+#~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
+#~ "<span size=\"large\">GTK 2 негізіндегі инженерлік калькулятор</span>\n"
+#~ "\n"
+#~ "(c) 2002-2007 Simon Flöry өндірген (simon.floery@rechenraum.com)"
+
+#~ msgid "A dialog that shows information about this program."
+#~ msgstr "Бағдарлама туралы ақпаратын көрсететін сұхбар терезесі."
+
+#~ msgid "Shows information about the program."
+#~ msgstr "Бағдарлама туралы ақпаратты көрсетеді."
+
 #~ msgid "Select Color"
 #~ msgstr "Выберите цвет"
+
 #~ msgid "A dialog that is used to change a color setting."
 #~ msgstr "Диалог, предназначенный для выбора цвета."
+
 #~ msgid "Cancels all changes and closes the dialog."
 #~ msgstr "Отменяет все изменения и закрывает диалог."
+
 #~ msgid "Applies all changes and closes the dialog."
 #~ msgstr "Сохраняет все изменения и закрывает диалог."
+
 #~ msgid "Shows some help about the dialog."
 #~ msgstr "Показывает небольшую помощь о диалоге."
+
 #~ msgid "Contains various widgets to select a color value."
 #~ msgstr "Содержит различные элементы для выбора цвета."
+
 #~ msgid "Select Font"
 #~ msgstr "Выберите шрифт"
+
 #~ msgid "A dialog that is used to change a font setting."
 #~ msgstr "Диалог для выбора шрифта."
+
 #~ msgid "Applies all changes."
 #~ msgstr "Сохранить изменения"
+
 #~ msgid "decimal PI 3.14159265359"
 #~ msgstr "десятичное ПИ 3.14159265359"
+
 #~ msgid "Displays various fonts and font sizes to select from."
 #~ msgstr "Показывает доступные шрифты для выбора."
-

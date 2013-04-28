@@ -8,12 +8,21 @@ src/display.c
 src/general_functions.c
 src/ui.c
 src/flex_parser.c
-[type: gettext/glade]ui/main_frame.ui
-[type: gettext/glade]ui/classic_view.ui
-[type: gettext/glade]ui/paper_view.ui
-[type: gettext/glade]ui/scientific_buttons.ui
-[type: gettext/glade]ui/basic_buttons.ui
 [type: gettext/glade]ui/about.ui.in
-[type: gettext/glade]ui/prefs.ui
-[type: gettext/glade]ui/dispctrl_right.ui
-[type: gettext/glade]ui/dispctrl_bottom.ui
+[type: gettext/glade]ui/basic_buttons_gtk2.ui
+[type: gettext/glade]ui/basic_buttons_gtk3.ui
+[type: gettext/glade]ui/classic_view.ui
+[type: gettext/glade]ui/dispctrl_bottom_gtk2.ui
+[type: gettext/glade]ui/dispctrl_bottom_gtk3.ui
+[type: gettext/glade]ui/dispctrl_right_gtk2.ui
+[type: gettext/glade]ui/dispctrl_right_gtk3.ui
+[type: gettext/glade]ui/dispctrl_right_vertical_gtk2.ui
+[type: gettext/glade]ui/dispctrl_right_vertical_gtk3.ui
+[type: gettext/glade]ui/main_frame.ui
+[type: gettext/glade]ui/main_frame_hildon.ui
+[type: gettext/glade]ui/paper_view.ui
+[type: gettext/glade]ui/prefs_gtk2.ui
+[type: gettext/glade]ui/prefs_gtk3.ui
+[type: gettext/glade]ui/prefs-ume.ui
+[type: gettext/glade]ui/scientific_buttons_gtk2.ui
+[type: gettext/glade]ui/scientific_buttons_gtk3.ui
