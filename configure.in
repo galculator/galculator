@@ -1,9 +1,10 @@
 dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT(configure.in)
-AM_INIT_AUTOMAKE([galculator], [2.1.2])
+AM_INIT_AUTOMAKE([galculator], [2.1.3beta])
 AM_MAINTAINER_MODE
 
+AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_HEADER(config.h)
 
 AC_PROG_CC
@@ -61,6 +62,8 @@ dnl Check for (f)lex
 AM_PROG_LEX
 
 AM_PROG_LIBTOOL
+
+AM_PROG_CC_C_O
 
 dnl Add the languages which your application supports here.
 ALL_LINGUAS="de fr ja pt pt_BR pl ro sk es_MX ru zh_TW zh_CN da_DK kk_KZ sv tr lt"

@@ -1,5 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 
+ACLOCAL_AMFLAGS=-I m4
+
 desktopdir = $(datadir)/applications
 desktop_in_files = galculator.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
