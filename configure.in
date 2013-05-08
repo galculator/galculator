@@ -13,9 +13,9 @@ AC_ISC_POSIX
 
 AC_HEADER_STDC
 
-PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
-AC_SUBST(PACKAGE_CFLAGS)
-AC_SUBST(PACKAGE_LIBS)
+dnl
+dnl libm
+dnl 
 
 AC_CHECK_LIBM
 AC_SUBST(LIBM)
@@ -37,6 +37,10 @@ else
     pkg_modules="gtk+-2.0 >= 2.16.0"
 fi
 
+PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
+AC_SUBST(PACKAGE_CFLAGS)
+AC_SUBST(PACKAGE_LIBS)
+
 dnl
 dnl double- or quad-precision arithmetics
 dnl
@@ -54,16 +58,18 @@ if test x"$enable_quadmath" = x"yes"; then
 	AC_CHECK_LIB(quadmath,sinhq)
 fi
 
+dnl
+dnl (f)lex
+dnl
+AM_PROG_LEX
+
+AM_PROG_CC_C_O
+
 GETTEXT_PACKAGE=galculator
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Name of gettext package])
 AC_SUBST(GETTEXT_PACKAGE)
 
-dnl Check for (f)lex
-AM_PROG_LEX
-
 AM_PROG_LIBTOOL
-
-AM_PROG_CC_C_O
 
 dnl Add the languages which your application supports here.
 ALL_LINGUAS="de fr ja pt pt_BR pl ro sk es_MX ru zh_TW zh_CN da_DK kk_KZ sv tr lt"
