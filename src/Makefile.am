@@ -23,10 +23,10 @@ galculator_SOURCES = \
 	g_real.h
 
 galculator_CFLAGS = \
-	$(PACKAGE_CFLAGS)
+	$(GTK_CFLAGS)
 
 galculator_LDADD = \
-	$(PACKAGE_LIBS) $(LIBM)
+	$(GTK_LIBS) $(LIBM)
 
 galculator_LDFLAGS = -export-dynamic
 

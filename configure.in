@@ -37,9 +37,9 @@ else
     pkg_modules="gtk+-2.0 >= 2.16.0"
 fi
 
-PKG_CHECK_MODULES(PACKAGE, [$pkg_modules])
-AC_SUBST(PACKAGE_CFLAGS)
-AC_SUBST(PACKAGE_LIBS)
+PKG_CHECK_MODULES(GTK, [$pkg_modules])
+AC_SUBST(GTK_CFLAGS)
+AC_SUBST(GTK_LIBS)
 
 dnl
 dnl double- or quad-precision arithmetics
