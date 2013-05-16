@@ -392,9 +392,9 @@ static G_REAL alg_stack_pool (s_alg_stack *stack)
 
 static void alg_stack_free (s_alg_stack *stack)
 {
-	if (!stack) {
-		if (!stack->number) free (stack->number);
-		if (!stack->operation) free (stack->operation);
+	if (stack) {
+		if (stack->number) free (stack->number);
+		if (stack->operation) free (stack->operation);
 		free (stack);
 	}
 }
@@ -477,7 +477,7 @@ ALG_OBJECT *alg_init (int debug_level)
 
 void alg_free (ALG_OBJECT *alg)
 {
-	if (!alg) {
+	if (alg) {
 		g_slist_foreach (alg, alg_stack_free_gfunc, NULL);
 		g_slist_free (alg);
 		alg = NULL;
