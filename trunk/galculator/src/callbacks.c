@@ -603,8 +603,10 @@ on_paste_activate (GtkMenuItem     *menuitem,
     if (cp_text) {
         if ((formula_entry = formula_entry_is_active_no_toplevel_check ()) != NULL) {
             gtk_editable_paste_clipboard((GtkEditable *)formula_entry);
-        }
-        else display_result_feed (cp_text, current_status.number);
+        } else {
+			rpn_stack_lift();
+			display_result_feed (cp_text, current_status.number);
+		}
         g_free (cp_text);
     }
 }
