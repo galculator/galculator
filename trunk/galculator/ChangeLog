@@ -1,3 +1,6 @@
+2013-09-01 Simon Flöry <simon.floery@rechenraum.com>
+	* added Hungarian translation (thanks to Zoltan)
+
 2013-08-14 Simon Flöry <simon.floery@rechenraum.com>
 	* rpn_stack_list when pasting (fixes sf.net #98, thanks to  Don Allen for
 		reporting).
