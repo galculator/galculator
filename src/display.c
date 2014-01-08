@@ -863,9 +863,18 @@ void display_result_toggle_sign (GtkToggleButton *button)
 	result_field = display_result_get();
 	/* if there is no e? we toggle the leading sign, otherwise the sign after e */
 	if ((e_pointer = strchr (result_field, 'e')) == NULL || current_status.calc_entry_start_new) {
-		if (*result_field == '-') g_stpcpy (result_field, result_field + sizeof(char));
+		if (*result_field == '-') 
+		{
+			/* FIXED on 20140108 by simon. g_stpcpy calls stpcpy, if available,
+			* and for stpcpy, the memory must not overlap.
+			*/
+			// g_stpcpy (result_field, result_field + sizeof(char));
+			memmove(result_field, result_field + sizeof(char), strlen(result_field));
+		}
 		else if (strcmp (result_field, "0") != 0)
+		{
 			result_field = g_strdup_printf ("-%s", result_field);
+		}
 		display_value *= (-1);
 	} else {
 		if (*(++e_pointer) == '-') *e_pointer = '+';

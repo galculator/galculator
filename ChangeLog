@@ -1,3 +1,7 @@
+2014-01-08 Simon Flöry <simon.floery@rechenraum.com>
+	* Fixing result string corruption when toggling sign (thanks to Juha 
+		Kylliäinen for reporting)
+
 2013-09-01 Simon Flöry <simon.floery@rechenraum.com>
 	* added Hungarian translation (thanks to Zoltan)
 
