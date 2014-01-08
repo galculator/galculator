@@ -833,7 +833,7 @@ on_show_menubar1_toggled              (GtkMenuItem     *menuitem,
 #ifdef WITH_HILDON
     set_widget_visibility (main_window_xml, "main_menu", prefs.show_menu);
 #else
-     set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
+	set_widget_visibility (main_window_xml, "menubar", prefs.show_menu);
 #endif
 
     /* in case this cb is called by the right button mouse click menu */

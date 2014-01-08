@@ -323,6 +323,10 @@ void apply_preferences (s_preferences prefs)
 
     menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "show_menubar1"));
 	gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM(menu_item), prefs.show_menu);
+	/* If set_active does not toggle the current setting, than no callback gets
+	 * called and the menu bar might be in a wrong state.
+	 */
+	gtk_check_menu_item_toggled (GTK_CHECK_MENU_ITEM(menu_item));
 
 	switch (prefs.mode) {
 	case BASIC_MODE:
