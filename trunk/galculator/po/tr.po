@@ -6,25 +6,26 @@
 # Zeki Bildirici <kobzeci@gmail.com>, 2012.
 # Necdet Yücel <necdetyucel@gmail.com>, 2012.
 # Murat Soysal <soysalim@gmail.com>, 2012.
+# Volkan Gezer <volkangezer@gmail.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: galculator 1.01\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-28 12:51+0200\n"
-"PO-Revision-Date: 2012-12-14 15:48+0200\n"
-"Last-Translator: oguzy <oguzyarimtepe@gmail.com>\n"
-"Language-Team: Turkish Localization Team <yerellestirme-ekibi@googlegroups."
+"PO-Revision-Date: 2014-01-13 13:11+0100\n"
+"Last-Translator: Volkan Gezer <volkangezer@gmail.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "com>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.6\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: ../galculator.desktop.in.h:1
 msgid "Perform simple and scientific calculations"
-msgstr "Basit ve bilimsel hesaplamalar gerçekleştirir"
+msgstr "Basit ve bilimsel hesaplamalar gerçekleştir"
 
 #: ../src/callbacks.c:1047
 msgid "save here"
@@ -33,15 +34,15 @@ msgstr "buraya kaydet"
 #: ../src/callbacks.c:1423
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
-msgstr ""
+msgstr "[%s] on_prefs_number_combo_changed %s iteratörünü getiremedi\n"
 
 #: ../src/callbacks.c:1586
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
-msgstr ""
+msgstr "[%s] on_main_window_check_resize çağırılmamalı. %s\n"
 
 #: ../src/main.c:61
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "\n"
 "%s v%s, (c) 2002-2013 Simon Flöry\n"
@@ -58,22 +59,23 @@ msgid ""
 "%s-precision floating point numbers.\n"
 msgstr ""
 "\n"
-"%s v%s, (c) 2002-2007 Simon Floery\n"
+"%s v%s, (c) 2002-2013 Simon Flöry\n"
 "\n"
 "Kullanım: %s [seçenekler]\n"
 "\n"
-"options:\n"
-"(GTK options)\n"
+"seçenekler:\n"
+"(GTK seçenekleri)\n"
 " -h, --help\t\tBu kullanım mesajını göster\n"
 " -v, --version\t\tSürüm bilgisini göster\n"
 "\n"
+"Derlenen GTK sürümü %i.%i.%i\n"
+"Bağlanan GTK sürümü %i.%i.%i\n"
+"%s-hassasiyetli kayan nokta sayıları.\n"
 
 #: ../src/main.c:196
-#, fuzzy, c-format
+#, c-format
 msgid "[%s] configuration file: Failed to create directory %s.\n"
-msgstr ""
-"[%s] yapılandırma dosyası: yapılandırma dosyasına kaydedilemiyor/yazılamıyor "
-"%s.\n"
+msgstr "[%s] yapılandırma dosyası: %s dizini oluşturulamadı.\n"
 
 #: ../src/main.c:201
 #, c-format
@@ -82,10 +84,13 @@ msgid ""
 "After you quit %s, you may remove the configuration file from its old "
 "location %s.\n"
 msgstr ""
+"[%s] yapılandırma dosyası: Yapılandırma dosyasını %s konumundan %s konumuna "
+"taşıyacağız. %s kapatıldıktan sonra, eski %s konumundan yapılandırma "
+"dosyasını kaldırabilirsiniz.\n"
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
-msgstr "Lütfen bir hata kaydı girin."
+msgstr "Lütfen bir hata kaydı gönderin."
 
 #: ../src/calc_basic.c:300
 #, c-format
@@ -99,6 +104,9 @@ msgid ""
 "buffer was too small. %s\n"
 ")"
 msgstr ""
+"[%s] Kayan nokta sayısının float2string içerisinde dönüşümü tamponun çok "
+"küçük olmasından başarısız oldu. %s\n"
+")"
 
 #: ../src/calc_basic.c:716
 #, c-format
@@ -107,6 +115,9 @@ msgid ""
 "buffer was too small. %s\n"
 ")"
 msgstr ""
+"[%s] Kayan nokta sayısının float2stringP içerisinde dönüşümü tamponun çok "
+"küçük olmasından başarısız oldu. %s\n"
+")"
 
 #: ../src/config_file.c:180
 msgid "Pi"
@@ -182,6 +193,9 @@ msgid ""
 "coincides with the decimal point. If you recently changed your locales "
 "settings, this is nothing to worry about.\n"
 msgstr ""
+"[%s] yapılandırma dosyası: - Ondalık noktasına rastladığından en az bir "
+"ayırıcı karakteri sıfırlıyoruz. Eğer yakın zamanda dil ayarlarınızı "
+"değiştirdiyseniz, telaşlanacak hiçbir şey yok.\n"
 
 #: ../src/config_file.c:470
 #, c-format
@@ -229,7 +243,7 @@ msgstr "desteklenmeyen tersini alma fonksiyonu"
 
 #: ../src/general_functions.c:49
 msgid "unsupported hyperbolic function"
-msgstr "desteklenmeyen hyperbolic fonksiyon"
+msgstr "desteklenmeyen hiperbolik fonksiyon"
 
 #: ../src/general_functions.c:110
 #, c-format
@@ -243,22 +257,21 @@ msgstr ""
 "[%s] char %c ifadesinin \"axtof\" fonksiyonu içerisinde dönüşünde hata. %s\n"
 
 #: ../src/general_functions.c:192
-#, fuzzy, c-format
+#, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr ""
-"[%s] %f ifadesinin \"ftoax\" fonksiyonu içerisinde dönüşümünde hata. %s\n"
+msgstr "[%s] \"ftoax\" fonksiyonu içerisinde dönüşümünde hata. %s\n"
 
 #: ../src/general_functions.c:272
-#, fuzzy, c-format
+#, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
 msgstr ""
-"[%s] char %c ifadesinin \"axtof\" fonksiyonu içerisinde dönüşünde hata. %s\n"
+"[%s] renk %s \"set_button_color\" fonksiyon içerisinde dönüştürülemedi. %s\n"
 
 #: ../src/general_functions.c:389
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr ""
-"[%s] %s parçacığını \"activate_menu_item\" fonksiyonu içerisinde bulmada "
+"[%s] %s gerecini \"activate_menu_item\" fonksiyonu içerisinde bulmada "
 "hata oluştu. %s\n"
 
 #: ../src/general_functions.c:431
@@ -282,14 +295,15 @@ msgstr ""
 "tabanı. %s\n"
 
 #: ../src/general_functions.c:562
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "[%s] failed to convert %s to a number properly in function \"string2double"
 "\". Have you changed your locales? Deleting your configuration file might "
 "solve this problem. %s\n"
 msgstr ""
 "[%s] %s ifadesini \"string2double\" fonksiyonu içerisinde uygun bir sayıya "
-"dönüştürmede hata oluştu. Yerellerinizi değiştirdiniz mi? %s\n"
+"dönüştürmede hata oluştu. Dil ayarlarınızı değiştirdiniz mi? Yapılandırma "
+"dosyanızı silmek bu sorunu çözebilir. %s\n"
 
 #: ../src/general_functions.c:580
 #, c-format
@@ -340,7 +354,7 @@ msgstr ""
 ")"
 
 #: ../src/ui.c:89
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "[%s] Couldn't load %s. This file is necessary     to build galculator's user "
 "interface. Make sure you did a make install and the file     is accessible!\n"
@@ -356,32 +370,27 @@ msgstr "_Menü çubuğunu göster"
 #: ../src/ui.c:991
 #, c-format
 msgid "%s Preferences"
-msgstr "%s Tercihler"
+msgstr "%s Tercihleri"
 
 #: ../src/ui.c:1035 ../src/ui.c:1067
-#, fuzzy
 msgid "Name"
-msgstr "İsim:"
+msgstr "İsim"
 
 #: ../src/ui.c:1038
-#, fuzzy
 msgid "Value"
-msgstr "Değer:"
+msgstr "Değer"
 
 #: ../src/ui.c:1041
-#, fuzzy
 msgid "Description"
-msgstr "Tanım:"
+msgstr "Açıklama"
 
 #: ../src/ui.c:1070
-#, fuzzy
 msgid "Variable"
-msgstr "Değişken:"
+msgstr "Değişken"
 
 #: ../src/ui.c:1073
-#, fuzzy
 msgid "Expression"
-msgstr "İfade:"
+msgstr "İfade"
 
 #: ../src/ui.c:1203 ../ui/basic_buttons_gtk2.ui.h:43
 #: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
@@ -393,7 +402,7 @@ msgstr "="
 #: ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons_gtk2.ui.h:99 ../ui/scientific_buttons_gtk3.ui.h:99
 msgid "Enter"
-msgstr "Enter"
+msgstr "Eşittir"
 
 #: ../src/ui.c:1205 ../ui/scientific_buttons_gtk2.ui.h:17
 #: ../ui/scientific_buttons_gtk3.ui.h:17
@@ -454,9 +463,8 @@ msgid "roll down stack"
 msgstr "yığını aşağı döndür"
 
 #: ../src/ui.c:1292
-#, fuzzy
 msgid "Result Display"
-msgstr "Görüntü"
+msgstr "Sonuç Gösterimi"
 
 #: flex_parser.l:234
 #, c-format
@@ -468,18 +476,16 @@ msgstr ""
 "biliyor musunuz? Bilmiyorsanız: %s\n"
 
 #: ../ui/about.ui.in.h:1
-#, fuzzy
 msgid "About galculator"
-msgstr "_Hesap Makinesi"
+msgstr "galculator Hakkında"
 
 #: ../ui/about.ui.in.h:2
 msgid "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
-msgstr ""
+msgstr "Telif Hakkı (c) 2002-2013 Simon Flöry <simon.floery@rechenraum.com>"
 
 #: ../ui/about.ui.in.h:3
-#, fuzzy
 msgid "a GTK+ based scientific calculator"
-msgstr "Basit ve bilimsel hesaplamalar gerçekleştirir"
+msgstr "GTK+ tabanlı bir bilimsel hesap makinesi"
 
 #: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1
 #: ../ui/scientific_buttons_gtk2.ui.h:52 ../ui/scientific_buttons_gtk3.ui.h:52
@@ -620,7 +626,7 @@ msgstr "Bellekten oku"
 #: ../ui/basic_buttons_gtk2.ui.h:28 ../ui/basic_buttons_gtk3.ui.h:28
 #: ../ui/scientific_buttons_gtk2.ui.h:83 ../ui/scientific_buttons_gtk3.ui.h:83
 msgid "MR"
-msgstr "BAY"
+msgstr "MR"
 
 #: ../ui/basic_buttons_gtk2.ui.h:29 ../ui/basic_buttons_gtk3.ui.h:29
 #: ../ui/scientific_buttons_gtk2.ui.h:84 ../ui/scientific_buttons_gtk3.ui.h:84
@@ -630,7 +636,7 @@ msgstr "Belleğe kaydet"
 #: ../ui/basic_buttons_gtk2.ui.h:30 ../ui/basic_buttons_gtk3.ui.h:30
 #: ../ui/scientific_buttons_gtk2.ui.h:85 ../ui/scientific_buttons_gtk3.ui.h:85
 msgid "MS"
-msgstr "BAYAN"
+msgstr "MS"
 
 #: ../ui/basic_buttons_gtk2.ui.h:35 ../ui/basic_buttons_gtk3.ui.h:35
 #: ../ui/scientific_buttons_gtk2.ui.h:90 ../ui/scientific_buttons_gtk3.ui.h:90
@@ -764,9 +770,8 @@ msgid "_Copy Display Value"
 msgstr "Görüntülenen Değeri _Kopyala"
 
 #: ../ui/main_frame.ui.h:6
-#, fuzzy
 msgid "_Paste and Append to Display Value"
-msgstr "Görüntülenen Değer Olarak _Yapıştır"
+msgstr "_Yapıştır ve Gösterilen Değere Ekle"
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
@@ -920,7 +925,7 @@ msgstr "    "
 
 #: ../ui/prefs_gtk2.ui.h:10 ../ui/prefs_gtk3.ui.h:10
 msgid "Result font:"
-msgstr "Sonuç yazıtipi:"
+msgstr "Sonuç yazı tipi:"
 
 #: ../ui/prefs_gtk2.ui.h:11 ../ui/prefs_gtk3.ui.h:11
 msgid "Inactive module color:"
@@ -932,7 +937,7 @@ msgstr "Etkin modül rengi:"
 
 #: ../ui/prefs_gtk2.ui.h:13 ../ui/prefs_gtk3.ui.h:13
 msgid "Result font color:"
-msgstr "Sonuç yazıtipi rengi:"
+msgstr "Sonuç yazı tipi rengi:"
 
 #: ../ui/prefs_gtk2.ui.h:14 ../ui/prefs_gtk3.ui.h:14
 msgid "Background color:"
@@ -944,7 +949,7 @@ msgstr "Modül yazı tipi:"
 
 #: ../ui/prefs_gtk2.ui.h:16 ../ui/prefs_gtk3.ui.h:16
 msgid "RPN stack font:"
-msgstr "RPN yığın yazıtipi:"
+msgstr "RPN yığın yazı tipi:"
 
 #: ../ui/prefs_gtk2.ui.h:17 ../ui/prefs_gtk3.ui.h:17
 msgid "RPN stack color:"
@@ -956,7 +961,7 @@ msgstr "Görüntü Arkaplan Rengi Seç"
 
 #: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
 msgid "Pick a Display Result Font Color"
-msgstr "Görüntü Sonuç Yazıtipi Rengi Seç"
+msgstr "Görüntü Sonuç Yazı Tipi Rengi Seç"
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
 msgid "Pick a RPN Stack Color"
@@ -972,15 +977,15 @@ msgstr "Bir Etkin Modül Rengi Seç"
 
 #: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
 msgid "Pick a Result Font"
-msgstr "Sonu. Yazıtipi Seç"
+msgstr "Sonuç Yazı Tipi Seç"
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
 msgid "Pick a RPN Stack Font"
-msgstr "RPN Yığın Yazıtipi Seç"
+msgstr "RPN Yığın Yazı Tipi Seç"
 
 #: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
 msgid "Pick a Module Font"
-msgstr "Modül Yazıtipi Seç"
+msgstr "Modül Yazı Tipi Seç"
 
 #: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
 msgid "<b>Modules Visibility</b>"
@@ -1016,7 +1021,7 @@ msgstr "<b>Yazı tipi</b>"
 
 #: ../ui/prefs_gtk2.ui.h:34 ../ui/prefs_gtk3.ui.h:34 ../ui/prefs-ume.ui.h:13
 msgid "Use custom button font"
-msgstr "Özel düğme yazıtipini kullan"
+msgstr "Özel düğme yazı tipini kullan"
 
 #: ../ui/prefs_gtk2.ui.h:35 ../ui/prefs_gtk3.ui.h:35 ../ui/prefs-ume.ui.h:14
 msgid "Button font:"
