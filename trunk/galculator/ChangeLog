@@ -1,3 +1,6 @@
+2014-01-13 Simon Flöry <simon.floery@rechenraum.com>
+	* Updated Turkish translations (thanks to Volkan, fixes sf.net #103)
+
 2014-01-08 Simon Flöry <simon.floery@rechenraum.com>
 	* Fixing result string corruption when toggling sign (thanks to Juha 
 		Kylliäinen for reporting)
