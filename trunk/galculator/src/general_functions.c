@@ -103,6 +103,8 @@ void all_clear ()
 			break;
 		case CS_FORMULA:
 			alg_free(main_alg);
+			/* 20140219, simon */
+			main_alg = NULL;
 			rpn_free();
 			display_stack_remove();
 			break;

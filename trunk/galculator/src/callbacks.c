@@ -371,6 +371,8 @@ on_rpn_toggled                       (GtkMenuItem     *menuitem,
     
     set_widget_visibility (view_xml, "formula_entry_hbox", FALSE);
     alg_free(main_alg);
+    /* 20140219, simon */
+    main_alg = NULL;
     all_clear();
     ui_button_set_rpn();
     /* stack is created by all_clear */
