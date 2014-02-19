@@ -341,6 +341,7 @@ static s_alg_stack *alg_stack_new (s_cb_token this_token)
 	new_stack->number = NULL;
 	new_stack->operation = NULL;
 	new_stack->size = 0;
+	
 	return new_stack;	
 }
 
@@ -436,6 +437,8 @@ G_REAL alg_add_token (ALG_OBJECT **alg, s_cb_token this_token)
 		if (this_token.func != NULL)
 			return_value = this_token.func(return_value);
 		alg_stack_free (current_stack);
+		/* simon, 20140219 */
+		current_stack = NULL;
 		*alg = g_slist_delete_link (*alg, *alg);
 		break;
 	case '=':
