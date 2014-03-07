@@ -1,4 +1,7 @@
-2014-03-19 Simon Flöry <simon.floery@rechenraum.com>
+2014-03-07 Simon Flöry <simon.floery@rechenraum.com>
+	* Added Spanish tranlsation (thanks to jcsl, sf.net patch #8)
+
+2014-02-19 Simon Flöry <simon.floery@rechenraum.com>
 	* Fixed segfault introduced in r134
 
 2014-01-13 Simon Flöry <simon.floery@rechenraum.com>
