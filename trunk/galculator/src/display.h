@@ -1,7 +1,7 @@
 /*
  *  display.h
  *	part of galculator
- *  	(c) 2002-2013 Simon Flöry (simon.floery@rechenraum.com)
+ *  	(c) 2002-2014 Simon Flöry (simon.floery@rechenraum.com)
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
