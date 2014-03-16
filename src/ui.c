@@ -151,7 +151,11 @@ static void apply_object_data (s_operation_map operation_map[],
 
 static void set_scientific_object_data ()
 {
-	s_operation_map	operation_map[] = {
+	/* 20140316, simon: all these structs shall be static to have global scope.
+	 * fixes sf.net #104.
+	 */
+	 
+	static s_operation_map	operation_map[] = {
 		{"button_pow", "^", '^'},
 		{"button_lsh", "<<", '<'},
 		{"button_mod", "MOD", 'm'},
@@ -169,7 +173,7 @@ static void set_scientific_object_data ()
 		{NULL}
 	};
 	
-	s_gfunc_map gfunc_map[] = {
+	static s_gfunc_map gfunc_map[] = {
 		{"button_sign", "-", display_result_toggle_sign},
 		{"button_ee", "e", display_append_e},
 		{"button_f1", "(", gfunc_f1},	/* paropen or swapxy */
@@ -201,7 +205,11 @@ static void set_scientific_object_data ()
 
 static void set_basic_object_data ()
 {
-	s_operation_map	operation_map[] = {
+	/* 20140316, simon: all these structs shall be static to have global scope.
+	 * fixes sf.net #104.
+	 */
+	
+	static s_operation_map operation_map[] = {
 		{"button_enter", "=", '='},
 		{"button_plus", "+", '+'},
 		{"button_minus", "-", '-'},
@@ -213,15 +221,15 @@ static void set_basic_object_data ()
 		{NULL}
 	};
 	
-	s_gfunc_map gfunc_map[] = {
+	static s_gfunc_map gfunc_map[] = {
 		{"button_sign", "-", display_result_toggle_sign},
 		{"button_f1", "(", gfunc_f1},	/* paropen or swapxy */
 		{"button_f2", ")", gfunc_f2},	/* parclose or rolldn */
 		{NULL}
 	};
 	
-	s_function_map function_map[] = {
-		{"button_sqrt", {"sqrt", "^2", "sqrt", "sqrt"}, {G_SQRT, powx2, G_SQRT, G_SQRT}},
+	static s_function_map function_map[] = {
+		{"button_sqrt", {"sqrt(", "^2", "sqrt(", "sqrt("}, {G_SQRT, powx2, G_SQRT, G_SQRT}},
 		{NULL}
 	};
 	

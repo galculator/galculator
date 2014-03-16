@@ -1,3 +1,8 @@
+
+2014-03-16 Simon Flöry <simon.floery@rechenraum.com>
+	* set_basic_object_data/set_scientific_object_data make structs static 
+		(fixes sf.net bug #104, thanks to Campbell Barton for reporting)
+
 ##############################################
 # 2013-03-13 galculator 2.1.3 released       #
 ##############################################
