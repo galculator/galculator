@@ -1,44 +1,46 @@
-# Swedish translation for galculator.
-# Copyright (C) 2009 Free Software Foundation, Inc.
-# This file is distributed under the same license as the galculator package.
-# Daniel Nylander <po@danielnylander.se>, 2009.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Daniel Nylander <po@danielnylander.se>, 2009
 msgid ""
 msgstr ""
-"Project-Id-Version: galculator\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-28 12:51+0200\n"
-"PO-Revision-Date: 2009-03-08 19:48+0100\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
-"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
-"Language: sv\n"
+"POT-Creation-Date: 2014-03-17 16:18+0100\n"
+"PO-Revision-Date: 2014-03-17 15:22+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"Language-Team: Swedish (http://www.transifex.com/projects/p/MATE/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../galculator.desktop.in.h:1
 msgid "Perform simple and scientific calculations"
 msgstr "Genomför enkla och vetenskapliga beräkningar"
 
-#: ../src/callbacks.c:1047
+#: ../src/callbacks.c:1051
 msgid "save here"
 msgstr "spara här"
 
-#: ../src/callbacks.c:1423
+#: ../src/callbacks.c:1427
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
 msgstr ""
 
-#: ../src/callbacks.c:1586
+#: ../src/callbacks.c:1590
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
 msgstr "[%s] on_main_window_check_resize ska inte anropas. %s\n"
 
 #: ../src/main.c:61
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2013 Simon Flöry\n"
+"%s v%s, (c) 2002-2014 Simon Flöry\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -51,23 +53,11 @@ msgid ""
 "Linked against GTK version %i.%i.%i\n"
 "%s-precision floating point numbers.\n"
 msgstr ""
-"\n"
-"%s v%s, © 2002-2013 Simon Flöry\n"
-"\n"
-"Användning: %s [options]\n"
-"\n"
-"flaggor:\n"
-"(GTK-flaggor)\n"
-" -h, --help\t\tVisa detta användningsmeddelande\n"
-" -v, --version\t\tVisa versionsinformation\n"
-"\n"
 
 #: ../src/main.c:196
-#, fuzzy, c-format
+#, c-format
 msgid "[%s] configuration file: Failed to create directory %s.\n"
 msgstr ""
-"[%s] konfigurationsfil: kunde inte spara/skriva till konfigurationsfilen "
-"%s.\n"
 
 #: ../src/main.c:201
 #, c-format
@@ -86,19 +76,17 @@ msgstr "Skicka in en felrapport."
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr "[%s] %c - okänd operationstecken. %s\n"
 
-#: ../src/calc_basic.c:687
+#: ../src/calc_basic.c:690
 #, c-format
 msgid ""
-"[%s] Conversion of floating point number in float2string failed because "
-"buffer was too small. %s\n"
+"[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
 ")"
 msgstr ""
 
-#: ../src/calc_basic.c:716
+#: ../src/calc_basic.c:719
 #, c-format
 msgid ""
-"[%s] Conversion of floating point number in float2stringP failed because "
-"buffer was too small. %s\n"
+"[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
 ")"
 msgstr ""
 
@@ -127,35 +115,27 @@ msgstr "[%s] konfigurationsfil: ignorerar okänd post %s=%s. %s\n"
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
-msgstr ""
-"[%s] konfigurationsfil: %s måste vara TRUE eller FALSE. Använder "
-"standardvärde. %s\n"
+msgstr "[%s] konfigurationsfil: %s måste vara TRUE eller FALSE. Använder standardvärde. %s\n"
 
 #: ../src/config_file.c:262
 #, c-format
 msgid ""
-"[%s] configuration file: failed to convert %s to a number properly. Have you "
-"changed your locales? %s\n"
-msgstr ""
-"[%s] konfigurationsfil: misslyckades med att konvertera %s till ett tal. Har "
-"du ändrat dina lokalanpassningar? %s\n"
+"[%s] configuration file: failed to convert %s to a number properly. Have you"
+" changed your locales? %s\n"
+msgstr "[%s] konfigurationsfil: misslyckades med att konvertera %s till ett tal. Har du ändrat dina lokalanpassningar? %s\n"
 
 #: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr ""
-"[%s] konfigurationsfil: ignorerar okänd key_type i konfigurationsstruktur. "
-"%s\n"
+msgstr "[%s] konfigurationsfil: ignorerar okänd key_type i konfigurationsstruktur. %s\n"
 
 #: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
-msgstr ""
-"[%s] hittade okänd sektion %s i konfigurationsfilen %s. Använder föregående "
-"sektion.\n"
+msgstr "[%s] hittade okänd sektion %s i konfigurationsfilen %s. Använder föregående sektion.\n"
 
 #: ../src/config_file.c:403
 #, c-format
@@ -163,10 +143,7 @@ msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
-msgstr ""
-"[%s] konfigurationsfil: kunde inte öppna konfigurationsfilen %s för läsning. "
-"Ingenting att oroa sig för om du startar %s för första gången. Använder "
-"standardvärden.\n"
+msgstr "[%s] konfigurationsfil: kunde inte öppna konfigurationsfilen %s för läsning. Ingenting att oroa sig för om du startar %s för första gången. Använder standardvärden.\n"
 
 #: ../src/config_file.c:432
 #, c-format
@@ -181,34 +158,26 @@ msgstr ""
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr ""
-"[%s] konfigurationsfil: konstig boolesk vid skrivning. Hoppar över denna "
-"nyckel. %s\n"
+msgstr "[%s] konfigurationsfil: konstig boolesk vid skrivning. Hoppar över denna nyckel. %s\n"
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
-"[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
-"\". %s\n"
-msgstr ""
-"[%s] konfigurationsfil: ignorerar okänd \"key_type\" i \"config_structure\". "
-"%s\n"
+"[%s] configuration file: ignoring unknown \"key_type\" in "
+"\"config_structure\". %s\n"
+msgstr "[%s] konfigurationsfil: ignorerar okänd \"key_type\" i \"config_structure\". %s\n"
 
 #: ../src/config_file.c:501
 #, c-format
-msgid ""
-"[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr ""
-"[%s] konfigurationsfil: kunde inte spara/skriva till konfigurationsfilen "
-"%s.\n"
+msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
+msgstr "[%s] konfigurationsfil: kunde inte spara/skriva till konfigurationsfilen %s.\n"
 
 #: ../src/display.c:420
 #, c-format
 msgid ""
-"[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
-msgstr ""
-"[%s] Line_index överstiger giltigt intervall i funktionen "
-"\"display_delete_line\". %s\n"
+"[%s] Line_index exceeds valid range in function \"display_delete_line\". "
+"%s\n"
+msgstr "[%s] Line_index överstiger giltigt intervall i funktionen \"display_delete_line\". %s\n"
 
 #: ../src/display.c:598
 #, c-format
@@ -223,227 +192,207 @@ msgstr "invers funktion stöds inte"
 msgid "unsupported hyperbolic function"
 msgstr "hyperbolisk funktion stöds inte"
 
-#: ../src/general_functions.c:110
+#: ../src/general_functions.c:112
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
 msgstr "[%s] okänt notationsläge i funktionen \"all_clear\". %s\n"
 
-#: ../src/general_functions.c:136
+#: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr ""
-"[%s] misslyckades med att konvertera char %c i funktionen \"axtof\". %s\n"
+msgstr "[%s] misslyckades med att konvertera char %c i funktionen \"axtof\". %s\n"
 
-#: ../src/general_functions.c:192
-#, fuzzy, c-format
+#: ../src/general_functions.c:194
+#, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr "[%s] misslyckades med att konvertera %f i funktionen \"ftoax\". %s\n"
+msgstr ""
 
-#: ../src/general_functions.c:272
-#, fuzzy, c-format
+#: ../src/general_functions.c:274
+#, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
 msgstr ""
-"[%s] misslyckades med att konvertera char %c i funktionen \"axtof\". %s\n"
 
-#: ../src/general_functions.c:389
+#: ../src/general_functions.c:395
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr ""
-"[%s] misslyckades med att hitta widgeten %s i funktionen \"activate_menu_item"
-"\". %s\n"
+msgstr "[%s] misslyckades med att hitta widgeten %s i funktionen \"activate_menu_item\". %s\n"
 
-#: ../src/general_functions.c:431
+#: ../src/general_functions.c:437
 msgid "unknown number base"
 msgstr "okänd talbas"
 
-#: ../src/general_functions.c:432
+#: ../src/general_functions.c:438
 #, c-format
-msgid ""
-"[%s] unknown number base in function \"get_display_number_string\". %s\n"
+msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
 msgstr "[%s] okänd talbas i funktionen \"get_display_number_string\". %s\n"
 
-#: ../src/general_functions.c:453
+#: ../src/general_functions.c:459
 #, c-format
-msgid ""
-"[%s] unknown number base in function \"get_display_number_length\". %s\n"
+msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
 msgstr "[%s] okänd talbas i funktionen \"get_display_number_length\". %s\n"
 
-#: ../src/general_functions.c:562
+#: ../src/general_functions.c:568
 #, c-format
 msgid ""
-"[%s] failed to convert %s to a number properly in function \"string2double"
-"\". Have you changed your locales? Deleting your configuration file might "
-"solve this problem. %s\n"
-msgstr ""
-"[%s] misslyckades med att konvertera %s till ett tal i funktionen "
-"\"string2double\". Har du ändrat dina lokalanpassningar? Ta bort din "
-"konfigurationsfil kan lösa detta problem. %s\n"
+"[%s] failed to convert %s to a number properly in function "
+"\"string2double\". Have you changed your locales? Deleting your "
+"configuration file might solve this problem. %s\n"
+msgstr "[%s] misslyckades med att konvertera %s till ett tal i funktionen \"string2double\". Har du ändrat dina lokalanpassningar? Ta bort din konfigurationsfil kan lösa detta problem. %s\n"
 
-#: ../src/general_functions.c:580
+#: ../src/general_functions.c:586
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr "[%s] okänd talbas i funktionen \"string2double\". %s\n"
 
-#: ../src/general_functions.c:735
+#: ../src/general_functions.c:741
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr "[%s] okänd vinkelbas i funktionen \"x2rad\". %s\n"
 
-#: ../src/general_functions.c:750
+#: ../src/general_functions.c:756
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr "[%s] okänd vinkelbas i funktionen \"rad2x\". %s\n"
 
-#: ../src/general_functions.c:767
+#: ../src/general_functions.c:773
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr "[%s] okänd talbas i funktionen \"get_sep\". %s\n"
 
-#: ../src/general_functions.c:784
+#: ../src/general_functions.c:790
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
 msgstr "[%s] okänd talbas i funktionen \"get_sep_length\". %s\n"
 
-#: ../src/general_functions.c:801
+#: ../src/general_functions.c:807
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
 msgstr "[%s] okänd talbas i funktionen \"get_sep_char\". %s\n"
 
-#: ../src/general_functions.c:869
+#: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
 msgstr "okänt skärmalternativ i funktionen \"change_option\""
 
-#: ../src/general_functions.c:909
+#: ../src/general_functions.c:915
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
 "You might face problems when using %s! %s\n"
 ")"
-msgstr ""
-"[%s] längd för decimalpunkt (i lokalanpassning) stöds inte: >%s<\n"
-"Du kan uppleva problem när du använder %s! %s\n"
-")"
+msgstr "[%s] längd för decimalpunkt (i lokalanpassning) stöds inte: >%s<\nDu kan uppleva problem när du använder %s! %s\n)"
 
 #: ../src/ui.c:89
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"[%s] Couldn't load %s. This file is necessary     to build galculator's user "
-"interface. Make sure you did a make install and the file     is accessible!\n"
+"[%s] Couldn't load %s. This file is necessary     to build galculator's user"
+" interface. Make sure you did a make install and the file     is "
+"accessible!\n"
 msgstr ""
-"[%s] Kunde inte läsa in %s. Denna fil är nödvändig för att bygga galculators "
-"användargränssnitt. Försäkra dig om att du körde en make install och filen "
-"är åtkomlig!\n"
 
-#: ../src/ui.c:951 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
+#: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
 msgstr "Visa _menyrad"
 
-#: ../src/ui.c:991
+#: ../src/ui.c:999
 #, c-format
 msgid "%s Preferences"
 msgstr "Inställningar för %s"
 
-#: ../src/ui.c:1035 ../src/ui.c:1067
-#, fuzzy
+#: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
-msgstr "Namn:"
+msgstr ""
 
-#: ../src/ui.c:1038
-#, fuzzy
+#: ../src/ui.c:1046
 msgid "Value"
-msgstr "Värde:"
+msgstr ""
 
-#: ../src/ui.c:1041
-#, fuzzy
+#: ../src/ui.c:1049
 msgid "Description"
-msgstr "Beskrivning:"
+msgstr ""
 
-#: ../src/ui.c:1070
-#, fuzzy
+#: ../src/ui.c:1078
 msgid "Variable"
-msgstr "Variabel:"
+msgstr ""
 
-#: ../src/ui.c:1073
-#, fuzzy
+#: ../src/ui.c:1081
 msgid "Expression"
-msgstr "Uttryck:"
+msgstr ""
 
-#: ../src/ui.c:1203 ../ui/basic_buttons_gtk2.ui.h:43
+#: ../src/ui.c:1211 ../ui/basic_buttons_gtk2.ui.h:43
 #: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
 #: ../ui/scientific_buttons_gtk3.ui.h:98
 msgid "="
 msgstr "="
 
-#: ../src/ui.c:1203 ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:44
+#: ../src/ui.c:1211 ../src/ui.c:1223 ../ui/basic_buttons_gtk2.ui.h:44
 #: ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons_gtk2.ui.h:99 ../ui/scientific_buttons_gtk3.ui.h:99
 msgid "Enter"
 msgstr "Enter"
 
-#: ../src/ui.c:1205 ../ui/scientific_buttons_gtk2.ui.h:17
+#: ../src/ui.c:1213 ../ui/scientific_buttons_gtk2.ui.h:17
 #: ../ui/scientific_buttons_gtk3.ui.h:17
 msgid "x^y"
 msgstr "x^y"
 
-#: ../src/ui.c:1205 ../src/ui.c:1217 ../ui/scientific_buttons_gtk2.ui.h:18
+#: ../src/ui.c:1213 ../src/ui.c:1225 ../ui/scientific_buttons_gtk2.ui.h:18
 #: ../ui/scientific_buttons_gtk3.ui.h:18
 msgid "Power"
 msgstr "Exponent"
 
-#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:33
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:33
 #: ../ui/basic_buttons_gtk3.ui.h:33 ../ui/scientific_buttons_gtk2.ui.h:88
 #: ../ui/scientific_buttons_gtk3.ui.h:88
 msgid "("
 msgstr "("
 
-#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:34
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:34
 #: ../ui/basic_buttons_gtk3.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:89
 #: ../ui/scientific_buttons_gtk3.ui.h:89
 msgid "Open Bracket"
 msgstr "Inledande parantes"
 
-#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:31
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:31
 #: ../ui/basic_buttons_gtk3.ui.h:31 ../ui/scientific_buttons_gtk2.ui.h:86
 #: ../ui/scientific_buttons_gtk3.ui.h:86
 msgid ")"
 msgstr ")"
 
-#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:32
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:32
 #: ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
 #: ../ui/scientific_buttons_gtk3.ui.h:87
 msgid "Close Bracket"
 msgstr "Avslutande parantes"
 
-#: ../src/ui.c:1215
+#: ../src/ui.c:1223
 msgid "ENT"
 msgstr "ENT"
 
-#: ../src/ui.c:1217
+#: ../src/ui.c:1225
 msgid "y^x"
 msgstr "y^x"
 
-#: ../src/ui.c:1219
+#: ../src/ui.c:1227
 msgid "x<>y"
 msgstr "x<>y"
 
-#: ../src/ui.c:1219
+#: ../src/ui.c:1227
 msgid "swap current number with top of stack"
 msgstr "växla aktuellt tal med stackens övre"
 
-#: ../src/ui.c:1221
+#: ../src/ui.c:1229
 msgid "roll"
 msgstr ""
 
-#: ../src/ui.c:1221
+#: ../src/ui.c:1229
 msgid "roll down stack"
 msgstr ""
 
-#: ../src/ui.c:1292
-#, fuzzy
+#: ../src/ui.c:1300
 msgid "Result Display"
-msgstr "Skärm"
+msgstr ""
 
-#: flex_parser.l:234
+#: ../src/flex_parser.l:233
 #, c-format
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
@@ -451,18 +400,16 @@ msgid ""
 msgstr ""
 
 #: ../ui/about.ui.in.h:1
-#, fuzzy
 msgid "About galculator"
-msgstr "_Miniräknare"
+msgstr ""
 
 #: ../ui/about.ui.in.h:2
-msgid "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
+msgid "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
 msgstr ""
 
 #: ../ui/about.ui.in.h:3
-#, fuzzy
 msgid "a GTK+ based scientific calculator"
-msgstr "Genomför enkla och vetenskapliga beräkningar"
+msgstr ""
 
 #: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1
 #: ../ui/scientific_buttons_gtk2.ui.h:52 ../ui/scientific_buttons_gtk3.ui.h:52
@@ -745,9 +692,8 @@ msgid "_Copy Display Value"
 msgstr "_Kopiera skärmvärde"
 
 #: ../ui/main_frame.ui.h:6
-#, fuzzy
 msgid "_Paste and Append to Display Value"
-msgstr "Klistra _in som skärmvärde"
+msgstr ""
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
@@ -1339,26 +1285,3 @@ msgstr "LSH"
 #: ../ui/scientific_buttons_gtk2.ui.h:75 ../ui/scientific_buttons_gtk3.ui.h:75
 msgid "Left shift"
 msgstr "Skifta vänster"
-
-#~ msgid "About %s"
-#~ msgstr "Om %s"
-
-#~ msgid ""
-#~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-#~ "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
-#~ "\n"
-#~ "(c) 2002-2013 by Simon Flöry (simon.floery@rechenraum.com)"
-#~ msgstr ""
-#~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-#~ "<span size=\"large\">en GTK 2-baserad vetenskaplig miniräknare</span>\n"
-#~ "\n"
-#~ "© 2002-2013 Simon Flöry (simon.floery@rechenraum.com)"
-
-#~ msgid "A dialog that shows information about this program."
-#~ msgstr "En dialogruta som visar information om detta program."
-
-#~ msgid "Shows information about the program."
-#~ msgstr "Visar information om programmet."
-
-#~ msgid "fill_me"
-#~ msgstr "fyll_i_mig"

@@ -256,11 +256,6 @@ msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
 "[%s] char %c ifadesinin \"axtof\" fonksiyonu içerisinde dönüşünde hata. %s\n"
 
-#: ../src/general_functions.c:192
-#, c-format
-msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr "[%s] \"ftoax\" fonksiyonu içerisinde dönüşümünde hata. %s\n"
-
 #: ../src/general_functions.c:272
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"

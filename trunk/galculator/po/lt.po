@@ -1,36 +1,37 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2013.
-#
+# 
+# Translators:
+# Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: galculator\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-28 12:51+0200\n"
-"PO-Revision-Date: 2013-03-14 18:42+0200\n"
-"Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
-"Language-Team: Lietuvių <>\n"
-"Language: \n"
+"POT-Creation-Date: 2014-03-17 16:18+0100\n"
+"PO-Revision-Date: 2014-03-17 15:22+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"Language-Team: Lithuanian (http://www.transifex.com/projects/p/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"Language: lt\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../galculator.desktop.in.h:1
 msgid "Perform simple and scientific calculations"
 msgstr "Atlikite paprastus ir mokslinius skaičiavimus"
 
-#: ../src/callbacks.c:1047
+#: ../src/callbacks.c:1051
 msgid "save here"
 msgstr "išsaugoti čia"
 
-#: ../src/callbacks.c:1423
+#: ../src/callbacks.c:1427
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
 msgstr "[%s] on_prefs_number_combo_changed nepavyko gauti iter. %s\n"
 
-#: ../src/callbacks.c:1586
+#: ../src/callbacks.c:1590
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
 msgstr "[%s] on_main_window_check_resize neturėtų būti kviečiama. %s\n"
@@ -39,7 +40,7 @@ msgstr "[%s] on_main_window_check_resize neturėtų būti kviečiama. %s\n"
 #, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2013 Simon Flöry\n"
+"%s v%s, (c) 2002-2014 Simon Flöry\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -52,19 +53,6 @@ msgid ""
 "Linked against GTK version %i.%i.%i\n"
 "%s-precision floating point numbers.\n"
 msgstr ""
-"\n"
-"%s v%s, (c) 2002-2013 Simon Flöry\n"
-"\n"
-"Naudojimas: %s [parinktys]\n"
-"\n"
-"parinktys:\n"
-"(GTK parinktys)\n"
-" -h, --help\t\tParodyti šį pranešimą\n"
-" -v, --version\t\tParodyti versijos informaciją\n"
-"\n"
-"Sukompiliuota su GTK versija %i.%i.%i\n"
-"Susieta su GTK versija %i.%i.%i\n"
-"%s-tikslumo plaukiojantis skaičius.\n"
 
 #: ../src/main.c:196
 #, c-format
@@ -77,10 +65,7 @@ msgid ""
 "[%s] configuration file: We will move the configuration file from %s to %s. "
 "After you quit %s, you may remove the configuration file from its old "
 "location %s.\n"
-msgstr ""
-"[%s] konfigūracijos failas: Neperkelsime konfigūracijos failo iš %s į %s. "
-"Kai uždarysite %s, galėsite perkelti konfigūracijos failą iš jo senosios "
-"vietos %s.\n"
+msgstr "[%s] konfigūracijos failas: Neperkelsime konfigūracijos failo iš %s į %s. Kai uždarysite %s, galėsite perkelti konfigūracijos failą iš jo senosios vietos %s.\n"
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
@@ -91,27 +76,19 @@ msgstr "Praneškite apie klaidą."
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr "[%s] %c - nežinomas operacijos simbolis. %s\n"
 
-#: ../src/calc_basic.c:687
+#: ../src/calc_basic.c:690
 #, c-format
 msgid ""
-"[%s] Conversion of floating point number in float2string failed because "
-"buffer was too small. %s\n"
+"[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
 ")"
-msgstr ""
-"[%s] Slankiojančio skaičiaus konvertavimas nepavyko, nes buferis per mažas. "
-"%s\n"
-")"
+msgstr "[%s] Slankiojančio skaičiaus konvertavimas nepavyko, nes buferis per mažas. %s\n)"
 
-#: ../src/calc_basic.c:716
+#: ../src/calc_basic.c:719
 #, c-format
 msgid ""
-"[%s] Conversion of floating point number in float2stringP failed because "
-"buffer was too small. %s\n"
+"[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
 ")"
-msgstr ""
-"[%s] Slankiojančio skaičiaus konvertavimas nepavyko, nes buferis per mažas. "
-"%s\n"
-")"
+msgstr "[%s] Slankiojančio skaičiaus konvertavimas nepavyko, nes buferis per mažas. %s\n)"
 
 #: ../src/config_file.c:180
 msgid "Pi"
@@ -138,35 +115,27 @@ msgstr "[%s] konfigūracijos failas: nepaisomas nežinomas raktas %s=%s. %s\n"
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
-msgstr ""
-"[%s] konfigūracijos failas: %s turi būti TRUE ar FALSE. Naudojami "
-"numatytieji. %s\n"
+msgstr "[%s] konfigūracijos failas: %s turi būti TRUE ar FALSE. Naudojami numatytieji. %s\n"
 
 #: ../src/config_file.c:262
 #, c-format
 msgid ""
-"[%s] configuration file: failed to convert %s to a number properly. Have you "
-"changed your locales? %s\n"
-msgstr ""
-"[%s] konfigūracijos failas: %s konvertuoti į skaičių nepavyko. Ar pakeitėt "
-"kalbą? %s\n"
+"[%s] configuration file: failed to convert %s to a number properly. Have you"
+" changed your locales? %s\n"
+msgstr "[%s] konfigūracijos failas: %s konvertuoti į skaičių nepavyko. Ar pakeitėt kalbą? %s\n"
 
 #: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr ""
-"[%s] konfigūracijos failas: konfigūracijos struktūroj nepaisomas nežinomas "
-"key_type. %s\n"
+msgstr "[%s] konfigūracijos failas: konfigūracijos struktūroj nepaisomas nežinomas key_type. %s\n"
 
 #: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
-msgstr ""
-"[%s] rastas nežinomas skyrius %s, konfigūracijos faile %s. Naudojamas "
-"ansktesnis skyrius.\n"
+msgstr "[%s] rastas nežinomas skyrius %s, konfigūracijos faile %s. Naudojamas ansktesnis skyrius.\n"
 
 #: ../src/config_file.c:403
 #, c-format
@@ -174,10 +143,7 @@ msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
-msgstr ""
-"[%s] konfigūracijos failas: atverti konfigūracijos failo %s skaitymui, "
-"nepavyko. Nėra ko jaudintis jei %s paleidžiate pirmą kartą. Naudojama "
-"numatyta.\n"
+msgstr "[%s] konfigūracijos failas: atverti konfigūracijos failo %s skaitymui, nepavyko. Nėra ko jaudintis jei %s paleidžiate pirmą kartą. Naudojama numatyta.\n"
 
 #: ../src/config_file.c:432
 #, c-format
@@ -185,44 +151,33 @@ msgid ""
 "[%s] configuration file - We reset at least one separator character as it "
 "coincides with the decimal point. If you recently changed your locales "
 "settings, this is nothing to worry about.\n"
-msgstr ""
-"[%s] konfigūracijos failas - Mes atstatome bent vieną skirtuko simbolį, nes "
-"jis sutampa su dešimtainiu tašku. Jei nesenai keitėte kalbą, nėra ko "
-"jaudintis.\n"
+msgstr "[%s] konfigūracijos failas - Mes atstatome bent vieną skirtuko simbolį, nes jis sutampa su dešimtainiu tašku. Jei nesenai keitėte kalbą, nėra ko jaudintis.\n"
 
 #: ../src/config_file.c:470
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr ""
-"[%s] konfigūracijos failas: rašant rastas keista loginė reikšmė. "
-"Praleidžiamas raktas. %s\n"
+msgstr "[%s] konfigūracijos failas: rašant rastas keista loginė reikšmė. Praleidžiamas raktas. %s\n"
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
-"[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
-"\". %s\n"
-msgstr ""
-"[%s] konfigūracijos failas: nepaisomas nežinomas raktas „key_type“ "
-"“config_structure“. %s\n"
+"[%s] configuration file: ignoring unknown \"key_type\" in "
+"\"config_structure\". %s\n"
+msgstr "[%s] konfigūracijos failas: nepaisomas nežinomas raktas „key_type“ “config_structure“. %s\n"
 
 #: ../src/config_file.c:501
 #, c-format
-msgid ""
-"[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr ""
-"[%s] konfigūracijos failas: nepavyko įrašyti/išsaugoti konfigūracijos failo "
-"%s.\n"
+msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
+msgstr "[%s] konfigūracijos failas: nepavyko įrašyti/išsaugoti konfigūracijos failo %s.\n"
 
 #: ../src/display.c:420
 #, c-format
 msgid ""
-"[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
-msgstr ""
-"[%s] Line_index viršija leidžiamą ilgį, funkcijoje „display_delete_line“. "
+"[%s] Line_index exceeds valid range in function \"display_delete_line\". "
 "%s\n"
+msgstr "[%s] Line_index viršija leidžiamą ilgį, funkcijoje „display_delete_line“. %s\n"
 
 #: ../src/display.c:598
 #, c-format
@@ -237,231 +192,220 @@ msgstr "nepalaikoma invertavimo funkcija"
 msgid "unsupported hyperbolic function"
 msgstr "nepalaikoma hiperbolinė funkcija"
 
-#: ../src/general_functions.c:110
+#: ../src/general_functions.c:112
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
 msgstr "[%s] funkcijoje „all_clear“ nežinomas užrašymo režimas. %s\n"
 
-#: ../src/general_functions.c:136
+#: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr "[%s] funkcijoje „axtof“ konvertuoti simbolį %c nepavyko. %s\n"
 
-#: ../src/general_functions.c:192
+#: ../src/general_functions.c:194
 #, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
 msgstr "[%s] funkcijoje „ftoax“ konvertuoti simbolį %s nepavyko. %s\n"
 
-#: ../src/general_functions.c:272
+#: ../src/general_functions.c:274
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr ""
-"[%s] funkcijoje „set_button_color“ konvertuoti spalvos %s nepavyko. %s\n"
+msgstr "[%s] funkcijoje „set_button_color“ konvertuoti spalvos %s nepavyko. %s\n"
 
-#: ../src/general_functions.c:389
+#: ../src/general_functions.c:395
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
 msgstr "[%s] funkcijoje „activate_menu_item“ rasti valdiklio %s nepavyko. %s\n"
 
-#: ../src/general_functions.c:431
+#: ../src/general_functions.c:437
 msgid "unknown number base"
 msgstr "nežinomas skaičių pagrindas"
 
-#: ../src/general_functions.c:432
+#: ../src/general_functions.c:438
 #, c-format
-msgid ""
-"[%s] unknown number base in function \"get_display_number_string\". %s\n"
+msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
 msgstr "[%s] „get_display_number_string“ nežinomas skaičių pagrindas. %s\n"
 
-#: ../src/general_functions.c:453
+#: ../src/general_functions.c:459
 #, c-format
-msgid ""
-"[%s] unknown number base in function \"get_display_number_length\". %s\n"
+msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
 msgstr "[%s] „get_display_number_length“ nežinomas skaičių pagrindas. %s\n"
 
-#: ../src/general_functions.c:562
+#: ../src/general_functions.c:568
 #, c-format
 msgid ""
-"[%s] failed to convert %s to a number properly in function \"string2double"
-"\". Have you changed your locales? Deleting your configuration file might "
-"solve this problem. %s\n"
-msgstr ""
-"[%s] nepavyko konvertuoti %s į skaičių, funkcija „string2double“. Ar nesenai "
-"keitėte kalbą? Konfigūracijos failo pašalinimas galėtų padėti. %s\n"
+"[%s] failed to convert %s to a number properly in function "
+"\"string2double\". Have you changed your locales? Deleting your "
+"configuration file might solve this problem. %s\n"
+msgstr "[%s] nepavyko konvertuoti %s į skaičių, funkcija „string2double“. Ar nesenai keitėte kalbą? Konfigūracijos failo pašalinimas galėtų padėti. %s\n"
 
-#: ../src/general_functions.c:580
+#: ../src/general_functions.c:586
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr "[%s] „string2double“ nežinomas skaičių pagrindas. %s\n"
 
-#: ../src/general_functions.c:735
+#: ../src/general_functions.c:741
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr "[%s] funkcijoje „x2rad“ nežinomas skaičių pagrindas. %s\n"
 
-#: ../src/general_functions.c:750
+#: ../src/general_functions.c:756
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr "[%s] funkcijoje „rad2x“ nežinomas skaičių pagrindas. %s\n"
 
-#: ../src/general_functions.c:767
+#: ../src/general_functions.c:773
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr "[%s] „get_sep“ nežinomas skaičių pagrindas. %s\n"
 
-#: ../src/general_functions.c:784
+#: ../src/general_functions.c:790
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
 msgstr "[%s] „get_sep_length“ nežinomas skaičių pagrindas. %s\n"
 
-#: ../src/general_functions.c:801
+#: ../src/general_functions.c:807
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
 msgstr "[%s] „get_sep_char“ nežinomas skaičių pagrindas. %s\n"
 
-#: ../src/general_functions.c:869
+#: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
 msgstr "nežinoma rodymo parinktis, funkcijoje „change_option“"
 
-#: ../src/general_functions.c:909
+#: ../src/general_functions.c:915
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
 "You might face problems when using %s! %s\n"
 ")"
-msgstr ""
-"[%s] dešimtainio skaičiaus ilgis nepalaikomas: >%s<\n"
-"Galite susidurti su bėdomis naudojant %s! %s\n"
-")"
+msgstr "[%s] dešimtainio skaičiaus ilgis nepalaikomas: >%s<\nGalite susidurti su bėdomis naudojant %s! %s\n)"
 
 #: ../src/ui.c:89
 #, c-format
 msgid ""
-"[%s] Couldn't load %s. This file is necessary     to build galculator's user "
-"interface. Make sure you did a make install and the file     is accessible!\n"
-msgstr ""
-"[%s] Įkelti %s nepavyko. Šis failas būtinas     sukurti galculator naudotojo "
-"sąsają. Įsitikinkite jog įdiegėte failą ir     jis prieinamas!\n"
+"[%s] Couldn't load %s. This file is necessary     to build galculator's user"
+" interface. Make sure you did a make install and the file     is "
+"accessible!\n"
+msgstr "[%s] Įkelti %s nepavyko. Šis failas būtinas     sukurti galculator naudotojo sąsają. Įsitikinkite jog įdiegėte failą ir     jis prieinamas!\n"
 
-#: ../src/ui.c:951 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
+#: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
 msgstr "Rodyti _meniu juostą"
 
-#: ../src/ui.c:991
+#: ../src/ui.c:999
 #, c-format
 msgid "%s Preferences"
 msgstr "%s nustatymai"
 
-#: ../src/ui.c:1035 ../src/ui.c:1067
+#: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
 msgstr "Pavadinimas"
 
-#: ../src/ui.c:1038
+#: ../src/ui.c:1046
 msgid "Value"
 msgstr "Reikšmė"
 
-#: ../src/ui.c:1041
+#: ../src/ui.c:1049
 msgid "Description"
 msgstr "Aprašymas"
 
-#: ../src/ui.c:1070
+#: ../src/ui.c:1078
 msgid "Variable"
 msgstr "Kintamasis"
 
-#: ../src/ui.c:1073
+#: ../src/ui.c:1081
 msgid "Expression"
 msgstr "Išraiška"
 
-#: ../src/ui.c:1203 ../ui/basic_buttons_gtk2.ui.h:43
+#: ../src/ui.c:1211 ../ui/basic_buttons_gtk2.ui.h:43
 #: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
 #: ../ui/scientific_buttons_gtk3.ui.h:98
 msgid "="
 msgstr "="
 
-#: ../src/ui.c:1203 ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:44
+#: ../src/ui.c:1211 ../src/ui.c:1223 ../ui/basic_buttons_gtk2.ui.h:44
 #: ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons_gtk2.ui.h:99 ../ui/scientific_buttons_gtk3.ui.h:99
 msgid "Enter"
 msgstr "Įvesti"
 
-#: ../src/ui.c:1205 ../ui/scientific_buttons_gtk2.ui.h:17
+#: ../src/ui.c:1213 ../ui/scientific_buttons_gtk2.ui.h:17
 #: ../ui/scientific_buttons_gtk3.ui.h:17
 msgid "x^y"
 msgstr "x^y"
 
-#: ../src/ui.c:1205 ../src/ui.c:1217 ../ui/scientific_buttons_gtk2.ui.h:18
+#: ../src/ui.c:1213 ../src/ui.c:1225 ../ui/scientific_buttons_gtk2.ui.h:18
 #: ../ui/scientific_buttons_gtk3.ui.h:18
 msgid "Power"
 msgstr "Kelti laipsniu"
 
-#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:33
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:33
 #: ../ui/basic_buttons_gtk3.ui.h:33 ../ui/scientific_buttons_gtk2.ui.h:88
 #: ../ui/scientific_buttons_gtk3.ui.h:88
 msgid "("
 msgstr "("
 
-#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:34
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:34
 #: ../ui/basic_buttons_gtk3.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:89
 #: ../ui/scientific_buttons_gtk3.ui.h:89
 msgid "Open Bracket"
 msgstr "Atidaromasis skliaustas"
 
-#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:31
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:31
 #: ../ui/basic_buttons_gtk3.ui.h:31 ../ui/scientific_buttons_gtk2.ui.h:86
 #: ../ui/scientific_buttons_gtk3.ui.h:86
 msgid ")"
 msgstr ")"
 
-#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:32
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:32
 #: ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
 #: ../ui/scientific_buttons_gtk3.ui.h:87
 msgid "Close Bracket"
 msgstr "Uždaromasis skliaustas"
 
-#: ../src/ui.c:1215
+#: ../src/ui.c:1223
 msgid "ENT"
 msgstr "ENT"
 
-#: ../src/ui.c:1217
+#: ../src/ui.c:1225
 msgid "y^x"
 msgstr "y^x"
 
-#: ../src/ui.c:1219
+#: ../src/ui.c:1227
 msgid "x<>y"
 msgstr "x<>y"
 
-#: ../src/ui.c:1219
+#: ../src/ui.c:1227
 msgid "swap current number with top of stack"
 msgstr "pakeisti esamą skaičių su paskutiniu rietuvės"
 
-#: ../src/ui.c:1221
+#: ../src/ui.c:1229
 msgid "roll"
 msgstr "susukti"
 
-#: ../src/ui.c:1221
+#: ../src/ui.c:1229
 msgid "roll down stack"
 msgstr "išvynioti rietuvę"
 
-#: ../src/ui.c:1292
+#: ../src/ui.c:1300
 msgid "Result Display"
 msgstr "Rezultatų rodymas"
 
-#: flex_parser.l:234
+#: ../src/flex_parser.l:233
 #, c-format
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
 "doing? If not: %s\n"
-msgstr ""
-"[%s] „flex parser“ buvo iškviestas daugiau nei %i kartus. Ar žinote ką "
-"darote? Jei ne: %s\n"
+msgstr "[%s] „flex parser“ buvo iškviestas daugiau nei %i kartus. Ar žinote ką darote? Jei ne: %s\n"
 
 #: ../ui/about.ui.in.h:1
 msgid "About galculator"
 msgstr "Apie galculator"
 
 #: ../ui/about.ui.in.h:2
-msgid "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
-msgstr "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
+msgid "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
+msgstr ""
 
 #: ../ui/about.ui.in.h:3
 msgid "a GTK+ based scientific calculator"

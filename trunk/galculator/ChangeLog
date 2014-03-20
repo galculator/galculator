@@ -1,4 +1,6 @@
-
+2014-03-20 Simon Flöry <simon.floery@rechenraum.com>
+	* translations are now served through transifex (thanks to the MATE project,
+		in particular to Stefano and Martin)
 2014-03-16 Simon Flöry <simon.floery@rechenraum.com>
 	* set_basic_object_data/set_scientific_object_data make structs static 
 		(fixes sf.net bug #104, thanks to Campbell Barton for reporting)

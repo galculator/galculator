@@ -71,17 +71,6 @@ msgstr ""
 "[%s] Konfigurationsdatei: Die Einstellungen konnten nicht gespeichert werden "
 "%s.\n"
 
-#: ../src/main.c:201
-#, c-format
-msgid ""
-"[%s] configuration file: We will move the configuration file from %s to %s. "
-"After you quit %s, you may remove the configuration file from its old "
-"location %s.\n"
-msgstr ""
-"[%s] Konfigurationsdatei: Wir werden die Konfigurationsdatei von %s nach %s "
-"verschieben. Nach dem Beenden kann die alte Konfigurationsdatei in %s "
-"gelöscht werden.\n"
-
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
 msgstr "Kérem küldjön egy hibajelentést."

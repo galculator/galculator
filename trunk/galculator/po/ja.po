@@ -1,44 +1,45 @@
-# galculator ja.po.
-# Copyright (C) 2003-2004 Free Software Foundation, Inc.
-# This file is distributed under the same license as the galculator package.
-# Takeshi AIHANA <aihana@gnome.gr.jp>, 2003-2004.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: galculator HEAD\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-28 12:51+0200\n"
-"PO-Revision-Date: 2004-10-25 09:01+0900\n"
-"Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
-"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
-"Language: ja\n"
+"POT-Creation-Date: 2014-03-17 16:18+0100\n"
+"PO-Revision-Date: 2014-03-17 15:22+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/MATE/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../galculator.desktop.in.h:1
 msgid "Perform simple and scientific calculations"
 msgstr "単純な科学計算を実行します"
 
-#: ../src/callbacks.c:1047
+#: ../src/callbacks.c:1051
 msgid "save here"
 msgstr "ここに保存する"
 
-#: ../src/callbacks.c:1423
+#: ../src/callbacks.c:1427
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
 msgstr ""
 
-#: ../src/callbacks.c:1586
+#: ../src/callbacks.c:1590
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
 msgstr ""
 
 #: ../src/main.c:61
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2013 Simon Flöry\n"
+"%s v%s, (c) 2002-2014 Simon Flöry\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -51,23 +52,11 @@ msgid ""
 "Linked against GTK version %i.%i.%i\n"
 "%s-precision floating point numbers.\n"
 msgstr ""
-"\n"
-"%s v%s, (c) 2002-2004 Simon Flöry\n"
-"\n"
-"用法: %s [オプション]\n"
-"\n"
-"オプション:\n"
-"(GTK+ のオプション)\n"
-" -h, --help\t\tこのメッセージを表示する\n"
-" -v, --version\t\tバージョン情報を表示する\n"
-"\n"
 
 #: ../src/main.c:196
-#, fuzzy, c-format
+#, c-format
 msgid "[%s] configuration file: Failed to create directory %s.\n"
 msgstr ""
-"[%s] 設定ファイル: 設定ファイル %s へ保存または書き込むことができませんでし"
-"た。\n"
 
 #: ../src/main.c:201
 #, c-format
@@ -86,19 +75,17 @@ msgstr "バグの報告をして下さい。"
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr "[%s] %c - 不明な操作文字です。%s\n"
 
-#: ../src/calc_basic.c:687
+#: ../src/calc_basic.c:690
 #, c-format
 msgid ""
-"[%s] Conversion of floating point number in float2string failed because "
-"buffer was too small. %s\n"
+"[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
 ")"
 msgstr ""
 
-#: ../src/calc_basic.c:716
+#: ../src/calc_basic.c:719
 #, c-format
 msgid ""
-"[%s] Conversion of floating point number in float2stringP failed because "
-"buffer was too small. %s\n"
+"[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
 ")"
 msgstr ""
 
@@ -127,34 +114,27 @@ msgstr "設定ファイル [%s]: 不明なエントリ %s=%s を無視します�
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
-msgstr ""
-"[%s] 設定ファイル: %s は TRUE または FALSE にして下さい。デフォルト値を使用し"
-"ます。%s\n"
+msgstr "[%s] 設定ファイル: %s は TRUE または FALSE にして下さい。デフォルト値を使用します。%s\n"
 
 #: ../src/config_file.c:262
 #, c-format
 msgid ""
-"[%s] configuration file: failed to convert %s to a number properly. Have you "
-"changed your locales? %s\n"
-msgstr ""
-"[%s] 設定ファイル: %s を適切な数値に変換できませんでした。お使いのロケールを"
-"変更しました？ %s\n"
+"[%s] configuration file: failed to convert %s to a number properly. Have you"
+" changed your locales? %s\n"
+msgstr "[%s] 設定ファイル: %s を適切な数値に変換できませんでした。お使いのロケールを変更しました？ %s\n"
 
 #: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr ""
-"[%s] 設定ファイル: config 構造体の中にある不明な key_type を無視します。%s\n"
+msgstr "[%s] 設定ファイル: config 構造体の中にある不明な key_type を無視します。%s\n"
 
 #: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
-msgstr ""
-"[%s] 不明なセクション %s が設定ファイル %s の中にあります。前のセクションを使"
-"用します。\n"
+msgstr "[%s] 不明なセクション %s が設定ファイル %s の中にあります。前のセクションを使用します。\n"
 
 #: ../src/config_file.c:403
 #, c-format
@@ -162,9 +142,7 @@ msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
-msgstr ""
-"[%s] 設定ファイル: 設定ファイル %s を読み込めません。初めて %s を起動した場合"
-"は何も心配ありません。デフォルト値を使用します。\n"
+msgstr "[%s] 設定ファイル: 設定ファイル %s を読み込めません。初めて %s を起動した場合は何も心配ありません。デフォルト値を使用します。\n"
 
 #: ../src/config_file.c:432
 #, c-format
@@ -179,40 +157,31 @@ msgstr ""
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr ""
-"[%s] 設定ファイル: 書き込む際におかしな論理値がありました。このキーをスキップ"
-"します。%s\n"
+msgstr "[%s] 設定ファイル: 書き込む際におかしな論理値がありました。このキーをスキップします。%s\n"
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
-"[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
-"\". %s\n"
-msgstr ""
-"[%s] 設定ファイル: \"config_structure\" の中にある不明な \"key_type\" を無視"
-"します。%s\n"
+"[%s] configuration file: ignoring unknown \"key_type\" in "
+"\"config_structure\". %s\n"
+msgstr "[%s] 設定ファイル: \"config_structure\" の中にある不明な \"key_type\" を無視します。%s\n"
 
 #: ../src/config_file.c:501
 #, c-format
-msgid ""
-"[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr ""
-"[%s] 設定ファイル: 設定ファイル %s へ保存または書き込むことができませんでし"
-"た。\n"
+msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
+msgstr "[%s] 設定ファイル: 設定ファイル %s へ保存または書き込むことができませんでした。\n"
 
 #: ../src/display.c:420
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
+"[%s] Line_index exceeds valid range in function \"display_delete_line\". "
+"%s\n"
 msgstr ""
-"[%s] 関数 \"get_display_number_string\" に不明な基数が渡されました。%s\n"
 
 #: ../src/display.c:598
-#, fuzzy, c-format
+#, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
 msgstr ""
-"[%s] 関数 \"display_change_option\" に不明な表示オプションが渡されまし"
-"た。%s\n"
 
 #: ../src/general_functions.c:43
 msgid "unsupported inverse function"
@@ -222,229 +191,207 @@ msgstr "サポートしていない反転関数"
 msgid "unsupported hyperbolic function"
 msgstr "サポートしていない双曲線関数"
 
-#: ../src/general_functions.c:110
+#: ../src/general_functions.c:112
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
 msgstr "[%s] 関数 \"all_clear\" の中で不明な記法モードです。%s\n"
 
-#: ../src/general_functions.c:136
-#, fuzzy, c-format
+#: ../src/general_functions.c:138
+#, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr "[%s] 関数 \"axtof\" で文字 %c の変換に失敗しました。%s\n"
+msgstr ""
 
-#: ../src/general_functions.c:192
-#, fuzzy, c-format
+#: ../src/general_functions.c:194
+#, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr "[%s] 関数 \"ftoax\" で数値 %f の変換に失敗しました。%s\n"
+msgstr ""
 
-#: ../src/general_functions.c:272
-#, fuzzy, c-format
+#: ../src/general_functions.c:274
+#, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr "[%s] 関数 \"axtof\" で文字 %c の変換に失敗しました。%s\n"
+msgstr ""
 
-#: ../src/general_functions.c:389
+#: ../src/general_functions.c:395
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr ""
-"[%s] 関数 \"activation_menu_item\" でウィジット %s が見つかりませんでし"
-"た。%s\n"
+msgstr "[%s] 関数 \"activation_menu_item\" でウィジット %s が見つかりませんでした。%s\n"
 
-#: ../src/general_functions.c:431
+#: ../src/general_functions.c:437
 msgid "unknown number base"
 msgstr "基数が不明です"
 
-#: ../src/general_functions.c:432
+#: ../src/general_functions.c:438
+#, c-format
+msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
+msgstr "[%s] 関数 \"get_display_number_string\" に不明な基数が渡されました。%s\n"
+
+#: ../src/general_functions.c:459
+#, c-format
+msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
+msgstr "[%s] 関数 \"get_display_number_length\" に不明な基数が渡されました。%s\n"
+
+#: ../src/general_functions.c:568
 #, c-format
 msgid ""
-"[%s] unknown number base in function \"get_display_number_string\". %s\n"
+"[%s] failed to convert %s to a number properly in function "
+"\"string2double\". Have you changed your locales? Deleting your "
+"configuration file might solve this problem. %s\n"
 msgstr ""
-"[%s] 関数 \"get_display_number_string\" に不明な基数が渡されました。%s\n"
 
-#: ../src/general_functions.c:453
-#, c-format
-msgid ""
-"[%s] unknown number base in function \"get_display_number_length\". %s\n"
-msgstr ""
-"[%s] 関数 \"get_display_number_length\" に不明な基数が渡されました。%s\n"
-
-#: ../src/general_functions.c:562
-#, fuzzy, c-format
-msgid ""
-"[%s] failed to convert %s to a number properly in function \"string2double"
-"\". Have you changed your locales? Deleting your configuration file might "
-"solve this problem. %s\n"
-msgstr ""
-"[%s] 関数 \"string2double\" の中で %s を適切な数値に変換できませんでした。ロ"
-"ケールを変更しました？ %s\n"
-
-#: ../src/general_functions.c:580
+#: ../src/general_functions.c:586
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr "[%s] 関数 \"string2double\" に不明な基数が渡されました。%s\n"
 
-#: ../src/general_functions.c:735
+#: ../src/general_functions.c:741
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr "[%s] 関数 \"x2rad\" に不明な角度の単位が渡されました。%s\n"
 
-#: ../src/general_functions.c:750
+#: ../src/general_functions.c:756
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr "[%s] 関数 \"rad2x\" に不明な角度の単位が渡されました。%s\n"
 
-#: ../src/general_functions.c:767
+#: ../src/general_functions.c:773
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr "[%s] 関数 \"get_sep\" に不明な基数が渡されました。%s\n"
 
-#: ../src/general_functions.c:784
+#: ../src/general_functions.c:790
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
 msgstr "[%s] 関数 \"get_sep_length\" に不明な基数が渡されました。%s\n"
 
-#: ../src/general_functions.c:801
+#: ../src/general_functions.c:807
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
 msgstr "[%s] 関数 \"get_sep_char\" に不明な基数が渡されました。%s\n"
 
-#: ../src/general_functions.c:869
-#, fuzzy
+#: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
 msgstr ""
-"[%s] 関数 \"display_change_option\" に不明な表示オプションが渡されまし"
-"た。%s\n"
 
-#: ../src/general_functions.c:909
+#: ../src/general_functions.c:915
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
 "You might face problems when using %s! %s\n"
 ")"
-msgstr ""
-"[%s] (お使いのロケールでの) 小数点の位置はサポートしていません: >%s<\n"
-"%s を使用すると問題が発生するかもしれません！ %s\n"
-")"
+msgstr "[%s] (お使いのロケールでの) 小数点の位置はサポートしていません: >%s<\n%s を使用すると問題が発生するかもしれません！ %s\n)"
 
 #: ../src/ui.c:89
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"[%s] Couldn't load %s. This file is necessary     to build galculator's user "
-"interface. Make sure you did a make install and the file     is accessible!\n"
+"[%s] Couldn't load %s. This file is necessary     to build galculator's user"
+" interface. Make sure you did a make install and the file     is "
+"accessible!\n"
 msgstr ""
-"[%s] %s を読み込めませんでした。このファイルは galculator のユーザ・インタ"
-"フェースを構築するために必要です。正しくインストールされたか、さらにそのファ"
-"イルの権限をそれぞれ確認して下さい！\n"
 
-#: ../src/ui.c:951 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
+#: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
 msgstr "メニュー・バーを表示する(_M)"
 
-#: ../src/ui.c:991
+#: ../src/ui.c:999
 #, c-format
 msgid "%s Preferences"
 msgstr "%s の設定"
 
-#: ../src/ui.c:1035 ../src/ui.c:1067
-#, fuzzy
+#: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
-msgstr "名前:"
+msgstr ""
 
-#: ../src/ui.c:1038
-#, fuzzy
+#: ../src/ui.c:1046
 msgid "Value"
-msgstr "値:"
+msgstr ""
 
-#: ../src/ui.c:1041
-#, fuzzy
+#: ../src/ui.c:1049
 msgid "Description"
-msgstr "説明:"
+msgstr ""
 
-#: ../src/ui.c:1070
-#, fuzzy
+#: ../src/ui.c:1078
 msgid "Variable"
-msgstr "変数:"
+msgstr ""
 
-#: ../src/ui.c:1073
-#, fuzzy
+#: ../src/ui.c:1081
 msgid "Expression"
-msgstr "式:"
+msgstr ""
 
-#: ../src/ui.c:1203 ../ui/basic_buttons_gtk2.ui.h:43
+#: ../src/ui.c:1211 ../ui/basic_buttons_gtk2.ui.h:43
 #: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
 #: ../ui/scientific_buttons_gtk3.ui.h:98
 msgid "="
 msgstr "="
 
-#: ../src/ui.c:1203 ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:44
+#: ../src/ui.c:1211 ../src/ui.c:1223 ../ui/basic_buttons_gtk2.ui.h:44
 #: ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons_gtk2.ui.h:99 ../ui/scientific_buttons_gtk3.ui.h:99
 msgid "Enter"
 msgstr "計算結果を算出します"
 
-#: ../src/ui.c:1205 ../ui/scientific_buttons_gtk2.ui.h:17
+#: ../src/ui.c:1213 ../ui/scientific_buttons_gtk2.ui.h:17
 #: ../ui/scientific_buttons_gtk3.ui.h:17
 msgid "x^y"
 msgstr "x^y"
 
-#: ../src/ui.c:1205 ../src/ui.c:1217 ../ui/scientific_buttons_gtk2.ui.h:18
+#: ../src/ui.c:1213 ../src/ui.c:1225 ../ui/scientific_buttons_gtk2.ui.h:18
 #: ../ui/scientific_buttons_gtk3.ui.h:18
 msgid "Power"
 msgstr "累乗を計算します"
 
-#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:33
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:33
 #: ../ui/basic_buttons_gtk3.ui.h:33 ../ui/scientific_buttons_gtk2.ui.h:88
 #: ../ui/scientific_buttons_gtk3.ui.h:88
 msgid "("
 msgstr "("
 
-#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:34
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:34
 #: ../ui/basic_buttons_gtk3.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:89
 #: ../ui/scientific_buttons_gtk3.ui.h:89
 msgid "Open Bracket"
 msgstr "開きカッコ"
 
-#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:31
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:31
 #: ../ui/basic_buttons_gtk3.ui.h:31 ../ui/scientific_buttons_gtk2.ui.h:86
 #: ../ui/scientific_buttons_gtk3.ui.h:86
 msgid ")"
 msgstr ")"
 
-#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:32
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:32
 #: ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
 #: ../ui/scientific_buttons_gtk3.ui.h:87
 msgid "Close Bracket"
 msgstr "閉じカッコ"
 
-#: ../src/ui.c:1215
+#: ../src/ui.c:1223
 msgid "ENT"
 msgstr "ENT"
 
-#: ../src/ui.c:1217
+#: ../src/ui.c:1225
 msgid "y^x"
 msgstr "y^x"
 
-#: ../src/ui.c:1219
+#: ../src/ui.c:1227
 msgid "x<>y"
 msgstr "x<>y"
 
-#: ../src/ui.c:1219
+#: ../src/ui.c:1227
 msgid "swap current number with top of stack"
 msgstr "現在の数値を一番上のスタックと交換します"
 
-#: ../src/ui.c:1221
+#: ../src/ui.c:1229
 msgid "roll"
 msgstr "roll"
 
-#: ../src/ui.c:1221
+#: ../src/ui.c:1229
 msgid "roll down stack"
 msgstr "スタックを下げます"
 
-#: ../src/ui.c:1292
-#, fuzzy
+#: ../src/ui.c:1300
 msgid "Result Display"
-msgstr "表示"
+msgstr ""
 
-#: flex_parser.l:234
+#: ../src/flex_parser.l:233
 #, c-format
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
@@ -452,18 +399,16 @@ msgid ""
 msgstr ""
 
 #: ../ui/about.ui.in.h:1
-#, fuzzy
 msgid "About galculator"
-msgstr "計算機(_C)"
+msgstr ""
 
 #: ../ui/about.ui.in.h:2
-msgid "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
+msgid "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
 msgstr ""
 
 #: ../ui/about.ui.in.h:3
-#, fuzzy
 msgid "a GTK+ based scientific calculator"
-msgstr "単純な科学計算を実行します"
+msgstr ""
 
 #: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1
 #: ../ui/scientific_buttons_gtk2.ui.h:52 ../ui/scientific_buttons_gtk3.ui.h:52
@@ -746,9 +691,8 @@ msgid "_Copy Display Value"
 msgstr "表示値のコピー(_C)"
 
 #: ../ui/main_frame.ui.h:6
-#, fuzzy
 msgid "_Paste and Append to Display Value"
-msgstr "表示値へ貼り付け(_P)"
+msgstr ""
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
@@ -767,9 +711,8 @@ msgid "_Scientific Mode"
 msgstr "科学計算モード(_S)"
 
 #: ../ui/main_frame.ui.h:11
-#, fuzzy
 msgid "_Paper Mode"
-msgstr "基本モード(_B)"
+msgstr ""
 
 #: ../ui/main_frame.ui.h:12 ../ui/main_frame_hildon.ui.h:11
 #: ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
@@ -934,44 +877,36 @@ msgid "RPN stack color:"
 msgstr "RPN スタックの色:"
 
 #: ../ui/prefs_gtk2.ui.h:18 ../ui/prefs_gtk3.ui.h:18
-#, fuzzy
 msgid "Pick a Display Background Color"
-msgstr "背景色:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
-#, fuzzy
 msgid "Pick a Display Result Font Color"
-msgstr "計算結果のフォントの色:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
-#, fuzzy
 msgid "Pick a RPN Stack Color"
-msgstr "RPN スタックの色:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
-#, fuzzy
 msgid "Pick a Inactive Module Color"
-msgstr "利用不可のモジュールの色:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:22 ../ui/prefs_gtk3.ui.h:22
-#, fuzzy
 msgid "Pick a Active Module Color"
-msgstr "利用可能なモジュールの色:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
-#, fuzzy
 msgid "Pick a Result Font"
-msgstr "計算結果のフォント:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
-#, fuzzy
 msgid "Pick a RPN Stack Font"
-msgstr "RPN スタックのフォント:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
-#, fuzzy
 msgid "Pick a Module Font"
-msgstr "モジュールのフォント:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
 msgid "<b>Modules Visibility</b>"
@@ -1014,9 +949,8 @@ msgid "Button font:"
 msgstr "ボタンのフォント:"
 
 #: ../ui/prefs_gtk2.ui.h:36 ../ui/prefs_gtk3.ui.h:36 ../ui/prefs-ume.ui.h:15
-#, fuzzy
 msgid "Pick a Button Font"
-msgstr "ボタンのフォント:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:37 ../ui/prefs_gtk3.ui.h:37 ../ui/prefs-ume.ui.h:16
 msgid "<b>Dimension</b>"
@@ -1350,87 +1284,3 @@ msgstr "LSH"
 #: ../ui/scientific_buttons_gtk2.ui.h:75 ../ui/scientific_buttons_gtk3.ui.h:75
 msgid "Left shift"
 msgstr "左にシフトします"
-
-#~ msgid "About %s"
-#~ msgstr "%s について"
-
-#, fuzzy
-#~ msgid ""
-#~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-#~ "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
-#~ "\n"
-#~ "(c) 2002-2007 by Simon Flöry (simon.floery@rechenraum.com)"
-#~ msgstr ""
-#~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-#~ "<span size=\"large\">GTK+ 2 版の科学計算用の電卓です。</span>\n"
-#~ "\n"
-#~ "(c) 2002-2004 by Simon Flöry (simon.floery@rechenraum.com)"
-
-#~ msgid "A dialog that shows information about this program."
-#~ msgstr "このプログラムについての情報を表示するダイアログです"
-
-#~ msgid "Shows information about the program."
-#~ msgstr "プログラムの情報を表示します"
-
-#~ msgid "fill_me"
-#~ msgstr "fill_me"
-
-#~ msgid "Select result font"
-#~ msgstr "計算結果用フォントの選択"
-
-#~ msgid "Select stack font"
-#~ msgstr "スタック用フォントの選択"
-
-#~ msgid "Select module font"
-#~ msgstr "モジュール用フォントの選択"
-
-#~ msgid "Select active module color"
-#~ msgstr "アクティブなモジュールの色の選択"
-
-#~ msgid "Select inactive module color"
-#~ msgstr "アクティブではないモジュールの色の選択"
-
-#~ msgid "Select result font color"
-#~ msgstr "計算結果用フォントの色の選択"
-
-#~ msgid "Select stack color"
-#~ msgstr "スタック用の色の選択"
-
-#~ msgid "Select background color"
-#~ msgstr "背景色の選択"
-
-#~ msgid "Select button font"
-#~ msgstr "ボタン用フォントの選択"
-
-#~ msgid "A dialog that is used to change a color setting."
-#~ msgstr "色の設定を変更する際に使用するダイアログです"
-
-#~ msgid "Applies all changes and closes the dialog."
-#~ msgstr "全ての変更を適用してダイアログを閉じます"
-
-#~ msgid "Cancels all changes and closes the dialog."
-#~ msgstr "全ての変更をキャンセルしてダイアログを閉じます"
-
-#~ msgid "Contains various widgets to select a color value."
-#~ msgstr "色の値を選択するためのいろいろなウィジットを含んでいます"
-
-#~ msgid "Select Color"
-#~ msgstr "色の選択"
-
-#~ msgid "Shows some help about the dialog."
-#~ msgstr "ダイアログについてのヘルプを表示します"
-
-#~ msgid "A dialog that is used to change a font setting."
-#~ msgstr "フォント設定を変更する際に使用するダイアログです"
-
-#~ msgid "Applies all changes."
-#~ msgstr "全ての変更を適用します"
-
-#~ msgid "Displays various fonts and font sizes to select from."
-#~ msgstr "設定するいろいろなフォントとフォント・サイズを表示します"
-
-#~ msgid "Select Font"
-#~ msgstr "フォントの選択"
-
-#~ msgid "decimal PI 3.14159265359"
-#~ msgstr "decimal PI 3.14159265359"

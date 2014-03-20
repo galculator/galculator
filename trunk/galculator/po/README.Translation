@@ -1,3 +1,33 @@
+We were kindly invited by the MATE project to use their transifex ressources 
+for galculator:
+
+https://www.transifex.com/projects/p/MATE/resource/galculator/
+
+For short instruction on how to use transifex, see
+
+http://wiki.mate-desktop.org/translation
+
+So if you are interested in translating galculator, please register at 
+transifex and provide your translation through transifex. If this is not an
+option for you, follow the old instructions below and submit your translations
+on sourceforge as patch or feature request.
+
+If there are new strings to translate, run
+	intltool-update -p
+to update the po/galculator.pot file and
+	tx push -s
+to push the new source file (configure in .tx/config) to transifex.
+
+Before a release, do a 
+	tx pull -a --minimum-perc=10
+to get all translations with a minimum translation count of 10%.
+
+Add all to SVN, and add the resp. language codes to configure.in!
+
+------------------------------------------------------------------------
+
+This is the old instructions before we use transifex
+
 xgettext -f POTFILES.in -k=_ -o package.pot
 	creates a new package.pot. please note that file galculator.pot exists
 	and that you don't need this step therefore. resume with:
