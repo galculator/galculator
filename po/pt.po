@@ -250,7 +250,7 @@ msgstr "[%s] falha ao converter caractere %c na função \"axtof\". %s\n"
 #: ../src/general_functions.c:389
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr "[%s] falha ao converter %f na função \"ftoax\". %s\n"
+msgstr "[%s] falha ao converter %s na função \"ftoax\". %s\n"
 
 #: ../src/general_functions.c:431
 msgid "unknown number base"

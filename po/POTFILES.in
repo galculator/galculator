@@ -7,7 +7,7 @@ src/config_file.c
 src/display.c
 src/general_functions.c
 src/ui.c
-src/flex_parser.c
+src/flex_parser.l
 [type: gettext/glade]ui/about.ui.in
 [type: gettext/glade]ui/basic_buttons_gtk2.ui
 [type: gettext/glade]ui/basic_buttons_gtk3.ui

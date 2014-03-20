@@ -1,39 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# JeffBai <jeffbaichina@members.fsf.org>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: galculator 1.2.5.2\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-28 12:51+0200\n"
-"PO-Revision-Date: 2010-06-29 11:09+0800\n"
-"Last-Translator: Athurg.Feng <athurg@fengs.de>\n"
-"Language-Team: Simplify Chinese<athurg@fengs.de>\n"
-"Language: \n"
+"POT-Creation-Date: 2014-03-17 16:18+0100\n"
+"PO-Revision-Date: 2014-03-18 20:16+0000\n"
+"Last-Translator: JeffBai <jeffbaichina@members.fsf.org>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/MATE/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../galculator.desktop.in.h:1
 msgid "Perform simple and scientific calculations"
-msgstr ""
+msgstr "执行简单和科学级别的计算"
 
-#: ../src/callbacks.c:1047
+#: ../src/callbacks.c:1051
 msgid "save here"
-msgstr ""
+msgstr "在此保存"
 
-#: ../src/callbacks.c:1423
+#: ../src/callbacks.c:1427
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
-msgstr ""
+msgstr "[%s] on_prefs_number_combo_changed 获取 iter 失败。%s\n"
 
-#: ../src/callbacks.c:1586
+#: ../src/callbacks.c:1590
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
-msgstr ""
+msgstr "[%s] on_main_window_check_resize 不应被调用。%s\n"
 
 #: ../src/main.c:61
 #, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2013 Simon Flöry\n"
+"%s v%s, (c) 2002-2014 Simon Flöry\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -45,12 +52,12 @@ msgid ""
 "Compiled against GTK version %i.%i.%i\n"
 "Linked against GTK version %i.%i.%i\n"
 "%s-precision floating point numbers.\n"
-msgstr ""
+msgstr "\n%s v%s, (c) 2002-2014 Simon Flöry\n\n用法: %s [选项]\n\n选项:\n(GTK 选项)\n-h, --helpShow        显示此用法信息\n-v, --version        显示版本信息\n\n编译于 GTK+ 版本 %i.%i.%i\n链接于 GTK+ 版本 %i.%i.%i\n%s-精度浮点数字。\n"
 
 #: ../src/main.c:196
 #, c-format
 msgid "[%s] configuration file: Failed to create directory %s.\n"
-msgstr ""
+msgstr "[%s] 配置文件: 创建目录 %s 失败。\n"
 
 #: ../src/main.c:201
 #, c-format
@@ -58,79 +65,77 @@ msgid ""
 "[%s] configuration file: We will move the configuration file from %s to %s. "
 "After you quit %s, you may remove the configuration file from its old "
 "location %s.\n"
-msgstr ""
+msgstr "[%s] 配置文件: 我们将会从 %s 移动配置文件到 %s。在你退出 %s 后，你可以在 %s 删除旧的配置文件。\n"
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
-msgstr ""
+msgstr "请提交一个 Bug 报告"
 
 #: ../src/calc_basic.c:300
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
-msgstr ""
+msgstr "[%s] %c - 未知运算符。%s\n"
 
-#: ../src/calc_basic.c:687
+#: ../src/calc_basic.c:690
 #, c-format
 msgid ""
-"[%s] Conversion of floating point number in float2string failed because "
-"buffer was too small. %s\n"
+"[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
 ")"
-msgstr ""
+msgstr "[%s] 使用 float2string 进行的浮点数转换失败，因为缓冲区太小。%s\n)"
 
-#: ../src/calc_basic.c:716
+#: ../src/calc_basic.c:719
 #, c-format
 msgid ""
-"[%s] Conversion of floating point number in float2stringP failed because "
-"buffer was too small. %s\n"
+"[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
 ")"
-msgstr ""
+msgstr "[%s] 使用 float2stringP 进行的浮点数转换失败，因为缓冲区太小。%s\n)"
 
 #: ../src/config_file.c:180
 msgid "Pi"
-msgstr ""
+msgstr "Pi"
 
 #: ../src/config_file.c:181
 msgid "pi"
-msgstr ""
+msgstr "pi"
 
 #: ../src/config_file.c:183
 msgid "Euler's Number"
-msgstr ""
+msgstr "欧拉数"
 
 #: ../src/config_file.c:184
 msgid "e"
-msgstr ""
+msgstr "e"
 
 #: ../src/config_file.c:232
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
-msgstr ""
+msgstr "[%s] 配置文件: 忽略未知输入 %s=%s . %s\n"
 
 #: ../src/config_file.c:256
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
-msgstr ""
+msgstr "[%s] 配置文件: %s 必须为 TRUE 或 FALSE。使用默认值。%s\n"
 
 #: ../src/config_file.c:262
 #, c-format
 msgid ""
-"[%s] configuration file: failed to convert %s to a number properly. Have you "
-"changed your locales? %s\n"
-msgstr ""
+"[%s] configuration file: failed to convert %s to a number properly. Have you"
+" changed your locales? %s\n"
+msgstr "[%s] 配置文件: 无法正确转换 %s 为一个数字。你是否更换了地区配置？%s\n"
 
 #: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr ""
+msgstr "[%s] 配置文件: 忽略配置构架中的未知 key_type . %s\n"
 
 #: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
-msgstr ""
+msgstr "[%s] 在配置文件 %s 找到了一个未知区块 %s . 使用前一个区块。\n"
 
 #: ../src/config_file.c:403
 #, c-format
@@ -138,7 +143,7 @@ msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
-msgstr ""
+msgstr "[%s] 配置文件: 无法打开配置文件 %s 以读取。如果你是首次运行 %s 则大可忽略此消息。使用默认值。\n"
 
 #: ../src/config_file.c:432
 #, c-format
@@ -146,270 +151,265 @@ msgid ""
 "[%s] configuration file - We reset at least one separator character as it "
 "coincides with the decimal point. If you recently changed your locales "
 "settings, this is nothing to worry about.\n"
-msgstr ""
+msgstr "[%s] 配置文件 - 我们重置了至少一个分隔符，因为它和一个小数点重合。如果你最近更改了地域配置，则无需担心。\n"
 
 #: ../src/config_file.c:470
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr ""
+msgstr "[%s] 配置文件: 在写入时发现陌生布理值。跳过这个键值。%s\n"
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
-"[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
-"\". %s\n"
-msgstr ""
+"[%s] configuration file: ignoring unknown \"key_type\" in "
+"\"config_structure\". %s\n"
+msgstr "[%s] 配置文件: 忽略 \"config_structure\" 中的未知 \"key_type\" . %s\n"
 
 #: ../src/config_file.c:501
 #, c-format
-msgid ""
-"[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr ""
+msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
+msgstr "[%s] 配置文件: 无法保存/写入到配置文件 %s .\n"
 
 #: ../src/display.c:420
 #, c-format
 msgid ""
-"[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
-msgstr ""
+"[%s] Line_index exceeds valid range in function \"display_delete_line\". "
+"%s\n"
+msgstr "[%s] Line_index 超出了函数 \"display_delete_line\" 的有效范围。%s\n"
 
 #: ../src/display.c:598
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
-msgstr ""
+msgstr "[%s] 在函数 \"display_change_options\" 中存在未知显示选项。"
 
 #: ../src/general_functions.c:43
-#, fuzzy
 msgid "unsupported inverse function"
-msgstr "用户定义功能"
+msgstr "不支持的反函数"
 
 #: ../src/general_functions.c:49
 msgid "unsupported hyperbolic function"
-msgstr ""
+msgstr "不支持的双曲函数"
 
-#: ../src/general_functions.c:110
+#: ../src/general_functions.c:112
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
-msgstr ""
+msgstr "[%s] 函数 \"all_clear\" 中存在未知符号模式。%s\n"
 
-#: ../src/general_functions.c:136
+#: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr ""
+msgstr "[%s] 在函数 \"axtof\" 中转换 char %c 失败。%s\n"
 
-#: ../src/general_functions.c:192
+#: ../src/general_functions.c:194
 #, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr ""
+msgstr "[%s] 在函数 \"ftoax\" 中转换 %s 失败。%s\n"
 
-#: ../src/general_functions.c:272
+#: ../src/general_functions.c:274
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr ""
+msgstr "[%s] 在函数 \"set_button_color\" 中转换颜色 %s 失败。%s\n"
 
-#: ../src/general_functions.c:389
+#: ../src/general_functions.c:395
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr ""
+msgstr "[%s] 在函数 \"activate_menu_item\" 中寻找挂件 %s 失败。%s\n"
 
-#: ../src/general_functions.c:431
-#, fuzzy
+#: ../src/general_functions.c:437
 msgid "unknown number base"
-msgstr "配置数值进制"
+msgstr "未知基数"
 
-#: ../src/general_functions.c:432
+#: ../src/general_functions.c:438
+#, c-format
+msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
+msgstr "[%s] 在函数 \"get_display_number_string\" 中存在未知基数。%s\n"
+
+#: ../src/general_functions.c:459
+#, c-format
+msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
+msgstr "[%s] 在 \"get_display_number_length\" 中存在未知基数。%s\n"
+
+#: ../src/general_functions.c:568
 #, c-format
 msgid ""
-"[%s] unknown number base in function \"get_display_number_string\". %s\n"
-msgstr ""
+"[%s] failed to convert %s to a number properly in function "
+"\"string2double\". Have you changed your locales? Deleting your "
+"configuration file might solve this problem. %s\n"
+msgstr "[%s] 在函数 \"string2double\" 中转换 %s 到一个数字失败。你是否更换了地区设置？删除你的配置文件也许可以解决此问题。%s\n"
 
-#: ../src/general_functions.c:453
-#, c-format
-msgid ""
-"[%s] unknown number base in function \"get_display_number_length\". %s\n"
-msgstr ""
-
-#: ../src/general_functions.c:562
-#, c-format
-msgid ""
-"[%s] failed to convert %s to a number properly in function \"string2double"
-"\". Have you changed your locales? Deleting your configuration file might "
-"solve this problem. %s\n"
-msgstr ""
-
-#: ../src/general_functions.c:580
+#: ../src/general_functions.c:586
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
-msgstr ""
+msgstr "[%s] 在函数 \"string2double\" 中存在未知基数。%s\n"
 
-#: ../src/general_functions.c:735
+#: ../src/general_functions.c:741
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
-msgstr ""
+msgstr "[%s] 在函数 \"x2rad\" 中存在未知基角。%s\n"
 
-#: ../src/general_functions.c:750
+#: ../src/general_functions.c:756
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
-msgstr ""
+msgstr "[%s] 在函数 \"rad2x\" 中存在未知基角。%s\n"
 
-#: ../src/general_functions.c:767
+#: ../src/general_functions.c:773
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
-msgstr ""
+msgstr "[%s] 在函数 \"get_sep\" 中存在未知基数。%s\n"
 
-#: ../src/general_functions.c:784
+#: ../src/general_functions.c:790
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
-msgstr ""
+msgstr "[%s] 在函数 \"get_sep_length\" 中存在未知基数。%s\n"
 
-#: ../src/general_functions.c:801
+#: ../src/general_functions.c:807
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
-msgstr ""
+msgstr "[%s] 在函数 \"get_sep_char\" 中存在未知基数。%s\n"
 
-#: ../src/general_functions.c:869
+#: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
-msgstr ""
+msgstr "在函数 \"change_option\" 中存在未知显示选项"
 
-#: ../src/general_functions.c:909
+#: ../src/general_functions.c:915
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
 "You might face problems when using %s! %s\n"
 ")"
-msgstr ""
+msgstr "[%s] (在地区配置中的) 小数点长度不被支持: >%s<\n你在使用 %s 时很可能遇到麻烦！%s\n)"
 
 #: ../src/ui.c:89
 #, c-format
 msgid ""
-"[%s] Couldn't load %s. This file is necessary     to build galculator's user "
-"interface. Make sure you did a make install and the file     is accessible!\n"
-msgstr ""
+"[%s] Couldn't load %s. This file is necessary     to build galculator's user"
+" interface. Make sure you did a make install and the file     is "
+"accessible!\n"
+msgstr "[%s] 无法载入 %s . 这个文件在构建 galculator 的用户界面时是必须的。请确定你已经运行 make install 并且此文件可以访问！\n"
 
-#: ../src/ui.c:951 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
+#: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
 msgstr "显示菜单栏（_m）"
 
-#: ../src/ui.c:991
-#, fuzzy, c-format
+#: ../src/ui.c:999
+#, c-format
 msgid "%s Preferences"
-msgstr "个性设置（_P）……"
+msgstr "%s 首选项"
 
-#: ../src/ui.c:1035 ../src/ui.c:1067
+#: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
 msgstr "名字"
 
-#: ../src/ui.c:1038
+#: ../src/ui.c:1046
 msgid "Value"
 msgstr "值"
 
-#: ../src/ui.c:1041
+#: ../src/ui.c:1049
 msgid "Description"
 msgstr "说明"
 
-#: ../src/ui.c:1070
+#: ../src/ui.c:1078
 msgid "Variable"
 msgstr "变量"
 
-#: ../src/ui.c:1073
+#: ../src/ui.c:1081
 msgid "Expression"
 msgstr "表达式"
 
-#: ../src/ui.c:1203 ../ui/basic_buttons_gtk2.ui.h:43
+#: ../src/ui.c:1211 ../ui/basic_buttons_gtk2.ui.h:43
 #: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
 #: ../ui/scientific_buttons_gtk3.ui.h:98
 msgid "="
 msgstr "="
 
-#: ../src/ui.c:1203 ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:44
+#: ../src/ui.c:1211 ../src/ui.c:1223 ../ui/basic_buttons_gtk2.ui.h:44
 #: ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons_gtk2.ui.h:99 ../ui/scientific_buttons_gtk3.ui.h:99
 msgid "Enter"
 msgstr "计算"
 
-#: ../src/ui.c:1205 ../ui/scientific_buttons_gtk2.ui.h:17
+#: ../src/ui.c:1213 ../ui/scientific_buttons_gtk2.ui.h:17
 #: ../ui/scientific_buttons_gtk3.ui.h:17
 msgid "x^y"
 msgstr "x^y"
 
-#: ../src/ui.c:1205 ../src/ui.c:1217 ../ui/scientific_buttons_gtk2.ui.h:18
+#: ../src/ui.c:1213 ../src/ui.c:1225 ../ui/scientific_buttons_gtk2.ui.h:18
 #: ../ui/scientific_buttons_gtk3.ui.h:18
 msgid "Power"
 msgstr "乘方"
 
-#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:33
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:33
 #: ../ui/basic_buttons_gtk3.ui.h:33 ../ui/scientific_buttons_gtk2.ui.h:88
 #: ../ui/scientific_buttons_gtk3.ui.h:88
 msgid "("
 msgstr "("
 
-#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:34
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:34
 #: ../ui/basic_buttons_gtk3.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:89
 #: ../ui/scientific_buttons_gtk3.ui.h:89
 msgid "Open Bracket"
 msgstr "打开的括号"
 
-#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:31
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:31
 #: ../ui/basic_buttons_gtk3.ui.h:31 ../ui/scientific_buttons_gtk2.ui.h:86
 #: ../ui/scientific_buttons_gtk3.ui.h:86
 msgid ")"
 msgstr ")"
 
-#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:32
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:32
 #: ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
 #: ../ui/scientific_buttons_gtk3.ui.h:87
 msgid "Close Bracket"
-msgstr ""
+msgstr "关闭括号"
 
-#: ../src/ui.c:1215
+#: ../src/ui.c:1223
 msgid "ENT"
-msgstr ""
+msgstr "ENT"
 
-#: ../src/ui.c:1217
+#: ../src/ui.c:1225
 msgid "y^x"
-msgstr ""
+msgstr "y^x"
 
-#: ../src/ui.c:1219
+#: ../src/ui.c:1227
 msgid "x<>y"
-msgstr ""
+msgstr "x<>y"
 
-#: ../src/ui.c:1219
+#: ../src/ui.c:1227
 msgid "swap current number with top of stack"
-msgstr ""
+msgstr "使用栈顶端替换当前数字"
 
-#: ../src/ui.c:1221
+#: ../src/ui.c:1229
 msgid "roll"
-msgstr ""
+msgstr "滚动"
 
-#: ../src/ui.c:1221
+#: ../src/ui.c:1229
 msgid "roll down stack"
-msgstr ""
+msgstr "下滚栈"
 
-#: ../src/ui.c:1292
-#, fuzzy
+#: ../src/ui.c:1300
 msgid "Result Display"
-msgstr "显示"
+msgstr "结果显示"
 
-#: flex_parser.l:234
+#: ../src/flex_parser.l:233
 #, c-format
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
 "doing? If not: %s\n"
-msgstr ""
+msgstr "[%s] flex 解析器已经被调用超过 %i 次。你确定你自己在做什么吗？否则: %s\n"
 
 #: ../ui/about.ui.in.h:1
-#, fuzzy
 msgid "About galculator"
-msgstr "计算器（_C）"
+msgstr "关于 galculator"
 
 #: ../ui/about.ui.in.h:2
-msgid "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
-msgstr ""
+msgid "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
+msgstr "版权所有 (c) 2002-2014 - Simon Flöry <simon.floery@rechenraum.com>"
 
 #: ../ui/about.ui.in.h:3
 msgid "a GTK+ based scientific calculator"
-msgstr ""
+msgstr "一个基于 GTK+ 的科学计算器"
 
 #: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1
 #: ../ui/scientific_buttons_gtk2.ui.h:52 ../ui/scientific_buttons_gtk3.ui.h:52
@@ -449,7 +449,7 @@ msgstr "/"
 #: ../ui/basic_buttons_gtk2.ui.h:8 ../ui/basic_buttons_gtk3.ui.h:8
 #: ../ui/scientific_buttons_gtk2.ui.h:59 ../ui/scientific_buttons_gtk3.ui.h:59
 msgid "Divide"
-msgstr ""
+msgstr "除法"
 
 #: ../ui/basic_buttons_gtk2.ui.h:9 ../ui/basic_buttons_gtk3.ui.h:9
 #: ../ui/scientific_buttons_gtk2.ui.h:62 ../ui/scientific_buttons_gtk3.ui.h:62
@@ -580,7 +580,7 @@ msgstr "."
 #: ../ui/basic_buttons_gtk2.ui.h:38 ../ui/basic_buttons_gtk3.ui.h:38
 #: ../ui/scientific_buttons_gtk2.ui.h:93 ../ui/scientific_buttons_gtk3.ui.h:93
 msgid "Decimal point"
-msgstr ""
+msgstr "小数点"
 
 #: ../ui/basic_buttons_gtk2.ui.h:39 ../ui/basic_buttons_gtk3.ui.h:39
 #: ../ui/scientific_buttons_gtk2.ui.h:94 ../ui/scientific_buttons_gtk3.ui.h:94
@@ -630,7 +630,7 @@ msgstr "主程序窗口。"
 
 #: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
 msgid "Formula entry text field - enter string expression to compute here."
-msgstr ""
+msgstr "公式文字输入栏 - 输入一个表达式字符串以在此计算。"
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:1 ../ui/dispctrl_bottom_gtk3.ui.h:1
 #: ../ui/dispctrl_right_gtk2.ui.h:1 ../ui/dispctrl_right_gtk3.ui.h:1
@@ -692,9 +692,8 @@ msgid "_Copy Display Value"
 msgstr "复制（_C）"
 
 #: ../ui/main_frame.ui.h:6
-#, fuzzy
 msgid "_Paste and Append to Display Value"
-msgstr "粘贴（_P）"
+msgstr "粘贴并追加到显示值 (_P)"
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
@@ -879,44 +878,36 @@ msgid "RPN stack color:"
 msgstr "【逆波兰式】栈颜色："
 
 #: ../ui/prefs_gtk2.ui.h:18 ../ui/prefs_gtk3.ui.h:18
-#, fuzzy
 msgid "Pick a Display Background Color"
-msgstr "背景色："
+msgstr "选择一个背景显示颜色"
 
 #: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
-#, fuzzy
 msgid "Pick a Display Result Font Color"
-msgstr "结果字体颜色："
+msgstr "选择一个结果显示字体颜色"
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
-#, fuzzy
 msgid "Pick a RPN Stack Color"
-msgstr "【逆波兰式】栈颜色："
+msgstr "选择一个 RPN 栈颜色"
 
 #: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
-#, fuzzy
 msgid "Pick a Inactive Module Color"
-msgstr "未启用模块颜色："
+msgstr "选择一个非活动模块颜色"
 
 #: ../ui/prefs_gtk2.ui.h:22 ../ui/prefs_gtk3.ui.h:22
-#, fuzzy
 msgid "Pick a Active Module Color"
-msgstr "激活模块颜色:"
+msgstr "选择一个活动模块颜色"
 
 #: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
-#, fuzzy
 msgid "Pick a Result Font"
-msgstr "结果字体："
+msgstr "选择一个结果zi ti"
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
-#, fuzzy
 msgid "Pick a RPN Stack Font"
-msgstr "【逆波兰式】栈字体"
+msgstr "选择一个 RPN 栈字体"
 
 #: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
-#, fuzzy
 msgid "Pick a Module Font"
-msgstr "模块字体："
+msgstr "选择一个模块字体"
 
 #: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
 msgid "<b>Modules Visibility</b>"
@@ -959,9 +950,8 @@ msgid "Button font:"
 msgstr "按钮字体："
 
 #: ../ui/prefs_gtk2.ui.h:36 ../ui/prefs_gtk3.ui.h:36 ../ui/prefs-ume.ui.h:15
-#, fuzzy
 msgid "Pick a Button Font"
-msgstr "按钮字体："
+msgstr "选择一个an niu zi ti"
 
 #: ../ui/prefs_gtk2.ui.h:37 ../ui/prefs_gtk3.ui.h:37 ../ui/prefs-ume.ui.h:16
 msgid "<b>Dimension</b>"
@@ -1074,7 +1064,7 @@ msgstr "<b>二进制设置</b>"
 
 #: ../ui/prefs_gtk2.ui.h:66 ../ui/prefs_gtk3.ui.h:66
 msgid "Fix length to a multiple of"
-msgstr ""
+msgstr "修正长度到该数字的倍数: "
 
 #: ../ui/prefs_gtk2.ui.h:67 ../ui/prefs_gtk3.ui.h:67 ../ui/prefs-ume.ui.h:21
 msgid "Numbers"
@@ -1194,7 +1184,7 @@ msgstr "hyp"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:29 ../ui/scientific_buttons_gtk3.ui.h:29
 msgid "Hyperbolic mode"
-msgstr ""
+msgstr "双曲模式"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:30 ../ui/scientific_buttons_gtk3.ui.h:30
 msgid "sin"
@@ -1295,9 +1285,3 @@ msgstr "LSH"
 #: ../ui/scientific_buttons_gtk2.ui.h:75 ../ui/scientific_buttons_gtk3.ui.h:75
 msgid "Left shift"
 msgstr "左移位"
-
-#~ msgid "A dialog that shows information about this program."
-#~ msgstr "显示程序信息的对话框"
-
-#~ msgid "Shows information about the program."
-#~ msgstr "显示程序信息。"

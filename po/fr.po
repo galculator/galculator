@@ -1,45 +1,46 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+# Translators:
+# Tubuntu <tubuntu@testimonium.be>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: galculator 1.01\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-28 12:51+0200\n"
-"PO-Revision-Date: 2003-10-08 01:50+0200\n"
-"Last-Translator:\n"
-"Language-Team: \n"
-"Language: \n"
+"POT-Creation-Date: 2014-03-17 16:18+0100\n"
+"PO-Revision-Date: 2014-03-17 15:53+0000\n"
+"Last-Translator: Tubuntu <tubuntu@testimonium.be>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/MATE/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../galculator.desktop.in.h:1
-#, fuzzy
 msgid "Perform simple and scientific calculations"
-msgstr "Calculatrice Scientifique"
+msgstr "Effectuer des calculs simples et scientifiques"
 
-#: ../src/callbacks.c:1047
+#: ../src/callbacks.c:1051
 msgid "save here"
 msgstr "sauvegarder ici"
 
-#: ../src/callbacks.c:1423
+#: ../src/callbacks.c:1427
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
 msgstr ""
 
-#: ../src/callbacks.c:1586
+#: ../src/callbacks.c:1590
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
 msgstr ""
 
 #: ../src/main.c:61
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2013 Simon Flöry\n"
+"%s v%s, (c) 2002-2014 Simon Flöry\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -52,23 +53,11 @@ msgid ""
 "Linked against GTK version %i.%i.%i\n"
 "%s-precision floating point numbers.\n"
 msgstr ""
-"\n"
-"%s v%s, (c) 2002-2003 Simon Flöry\n"
-"\n"
-"Utilisation: %s [options]\n"
-"\n"
-"options:\n"
-"(GTK options)\n"
-" -h, --help\t\tAffiche ce message d'aide\n"
-" -v, --version\t\tAffiche le numéro de version\n"
-"\n"
 
 #: ../src/main.c:196
-#, fuzzy, c-format
+#, c-format
 msgid "[%s] configuration file: Failed to create directory %s.\n"
-msgstr ""
-"[%s] fichier de configuration: impossible d'écrire le fichier de "
-"configuration %s.\n"
+msgstr "[%s] fichier de configuration: Échec de la création du répertoire %s.\n"
 
 #: ../src/main.c:201
 #, c-format
@@ -76,7 +65,7 @@ msgid ""
 "[%s] configuration file: We will move the configuration file from %s to %s. "
 "After you quit %s, you may remove the configuration file from its old "
 "location %s.\n"
-msgstr ""
+msgstr "[%s] fichier de configuration: Le fichier de configuration va être déplacé de %s vers %s. Après avoir quitté %s, vous pourrez supprimer le fichier de configuration de son ancien emplacement %s.\n"
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
@@ -87,19 +76,17 @@ msgstr "Remplissez un rapport de bug s'il vous plait"
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr "[%s] %c - Caractère d'opération inconnu. %s\n"
 
-#: ../src/calc_basic.c:687
+#: ../src/calc_basic.c:690
 #, c-format
 msgid ""
-"[%s] Conversion of floating point number in float2string failed because "
-"buffer was too small. %s\n"
+"[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
 ")"
 msgstr ""
 
-#: ../src/calc_basic.c:716
+#: ../src/calc_basic.c:719
 #, c-format
 msgid ""
-"[%s] Conversion of floating point number in float2stringP failed because "
-"buffer was too small. %s\n"
+"[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
 ")"
 msgstr ""
 
@@ -128,33 +115,27 @@ msgstr "[%s] fichier de configuration: entrée inconnue ignorée %s=%s. %s\n"
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
-msgstr ""
-"[%s] fichier de configuration: %s doit être TRUE ou FALSE. Utilisation de "
-"defaults. %s\n"
+msgstr "[%s] fichier de configuration: %s doit être TRUE ou FALSE. Utilisation de defaults. %s\n"
 
 #: ../src/config_file.c:262
 #, c-format
 msgid ""
-"[%s] configuration file: failed to convert %s to a number properly. Have you "
-"changed your locales? %s\n"
+"[%s] configuration file: failed to convert %s to a number properly. Have you"
+" changed your locales? %s\n"
 msgstr ""
 
 #: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr ""
-"[%s] fichier de configuration: key_type inconnue dans la structure de "
-"configuration ignorée. %s\n"
+msgstr "[%s] fichier de configuration: key_type inconnue dans la structure de configuration ignorée. %s\n"
 
 #: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
-msgstr ""
-"[%s] a trouvé une section inconnue %s dans le fichier de configuration %s."
-"Utilisation de la section précédente.\n"
+msgstr "[%s] a trouvé une section inconnue %s dans le fichier de configuration %s.Utilisation de la section précédente.\n"
 
 #: ../src/config_file.c:403
 #, c-format
@@ -162,10 +143,7 @@ msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
-msgstr ""
-"[%s] fichier de configuration: impossible d'ouvrir le fichier de "
-"configuration %s en lecture. Ignorez ce message si vous lancez %s pour la "
-"première fois. Utilisation des paramètrespar défauts.\n"
+msgstr "[%s] fichier de configuration: impossible d'ouvrir le fichier de configuration %s en lecture. Ignorez ce message si vous lancez %s pour la première fois. Utilisation des paramètrespar défauts.\n"
 
 #: ../src/config_file.c:432
 #, c-format
@@ -180,40 +158,31 @@ msgstr ""
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr ""
-"[%s] fichier de configuration: étrange boolean à l'écriture. Clé ignorée. "
-"%s\n"
+msgstr "[%s] fichier de configuration: étrange boolean à l'écriture. Clé ignorée. %s\n"
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
-"[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
-"\". %s\n"
-msgstr ""
-"[%s] fichier de configuration: \"key_type\" inconnu ignoré dans "
+"[%s] configuration file: ignoring unknown \"key_type\" in "
 "\"config_structure\". %s\n"
+msgstr "[%s] fichier de configuration: \"key_type\" inconnu ignoré dans \"config_structure\". %s\n"
 
 #: ../src/config_file.c:501
 #, c-format
-msgid ""
-"[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr ""
-"[%s] fichier de configuration: impossible d'écrire le fichier de "
-"configuration %s.\n"
+msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
+msgstr "[%s] fichier de configuration: impossible d'écrire le fichier de configuration %s.\n"
 
 #: ../src/display.c:420
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
+"[%s] Line_index exceeds valid range in function \"display_delete_line\". "
+"%s\n"
 msgstr ""
-"[%s] Type d'angle inconnu dans la fonction \"display_result_set_angle\". %s\n"
 
 #: ../src/display.c:598
-#, fuzzy, c-format
+#, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
 msgstr ""
-"[%s] option d'affichage inconnue dans la fonction \"display_change_option\". "
-"%s\n"
 
 #: ../src/general_functions.c:43
 msgid "unsupported inverse function"
@@ -223,243 +192,207 @@ msgstr "Fonction inverse non supportée"
 msgid "unsupported hyperbolic function"
 msgstr "Fonction hyperbolique non supportée"
 
-#: ../src/general_functions.c:110
-#, fuzzy, c-format
+#: ../src/general_functions.c:112
+#, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
 msgstr ""
-"[%s] Type d'angle inconnu dans la fonction \"display_result_set_angle\". %s\n"
 
-#: ../src/general_functions.c:136
-#, fuzzy, c-format
+#: ../src/general_functions.c:138
+#, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
 msgstr ""
-"[%s] échec de la conversion du caractère %c dans la fonction \"axtof\". %s\n"
 
-#: ../src/general_functions.c:192
-#, fuzzy, c-format
+#: ../src/general_functions.c:194
+#, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr "[%s] échec de la conversion de %f dans la fonction \"ftoax\". %s\n"
+msgstr ""
 
-#: ../src/general_functions.c:272
-#, fuzzy, c-format
+#: ../src/general_functions.c:274
+#, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
 msgstr ""
-"[%s] échec de la conversion du caractère %c dans la fonction \"axtof\". %s\n"
 
-#: ../src/general_functions.c:389
-#, fuzzy, c-format
+#: ../src/general_functions.c:395
+#, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr "[%s] échec de la conversion de %f dans la fonction \"ftoax\". %s\n"
+msgstr ""
 
-#: ../src/general_functions.c:431
+#: ../src/general_functions.c:437
 msgid "unknown number base"
 msgstr "base de numérotation inconnue"
 
-#: ../src/general_functions.c:432
+#: ../src/general_functions.c:438
+#, c-format
+msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
+msgstr "[%s] base de numérotation inconnue dans la fonction 'get_display_number_string'. %s\n"
+
+#: ../src/general_functions.c:459
+#, c-format
+msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
+msgstr "[%s] base de numérotation inconnue dans la fonction 'get_display_number_length. %s\n"
+
+#: ../src/general_functions.c:568
 #, c-format
 msgid ""
-"[%s] unknown number base in function \"get_display_number_string\". %s\n"
+"[%s] failed to convert %s to a number properly in function "
+"\"string2double\". Have you changed your locales? Deleting your "
+"configuration file might solve this problem. %s\n"
 msgstr ""
-"[%s] base de numérotation inconnue dans la fonction "
-"'get_display_number_string'. %s\n"
 
-#: ../src/general_functions.c:453
+#: ../src/general_functions.c:586
 #, c-format
-msgid ""
-"[%s] unknown number base in function \"get_display_number_length\". %s\n"
-msgstr ""
-"[%s] base de numérotation inconnue dans la fonction "
-"'get_display_number_length. %s\n"
-
-#: ../src/general_functions.c:562
-#, c-format
-msgid ""
-"[%s] failed to convert %s to a number properly in function \"string2double"
-"\". Have you changed your locales? Deleting your configuration file might "
-"solve this problem. %s\n"
-msgstr ""
-
-#: ../src/general_functions.c:580
-#, fuzzy, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
 msgstr ""
-"[%s] base de numérotation inconnue dans la fonction "
-"\"display_result_get_double\". %s\n"
 
-#: ../src/general_functions.c:735
-#, fuzzy, c-format
+#: ../src/general_functions.c:741
+#, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr ""
-"[%s] base de numérotation inconnue dans la fonction "
-"\"display_result_get_double\". %s\n"
 
-#: ../src/general_functions.c:750
-#, fuzzy, c-format
+#: ../src/general_functions.c:756
+#, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr ""
-"[%s] base de numérotation inconnue dans la fonction "
-"\"display_result_get_double\". %s\n"
 
-#: ../src/general_functions.c:767
-#, fuzzy, c-format
+#: ../src/general_functions.c:773
+#, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr ""
-"[%s] base de numérotation inconnue dans la fonction "
-"\"display_result_get_double\". %s\n"
 
-#: ../src/general_functions.c:784
-#, fuzzy, c-format
+#: ../src/general_functions.c:790
+#, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
 msgstr ""
-"[%s] base de numérotation inconnue dans la fonction "
-"'get_display_number_length. %s\n"
 
-#: ../src/general_functions.c:801
-#, fuzzy, c-format
+#: ../src/general_functions.c:807
+#, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
 msgstr ""
-"[%s] base de numérotation inconnue dans la fonction "
-"'get_display_number_length. %s\n"
 
-#: ../src/general_functions.c:869
-#, fuzzy
+#: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
 msgstr ""
-"[%s] option d'affichage inconnue dans la fonction \"display_change_option\". "
-"%s\n"
 
-#: ../src/general_functions.c:909
+#: ../src/general_functions.c:915
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
 "You might face problems when using %s! %s\n"
 ")"
-msgstr ""
-"[%s] la longueur du point décimal (dans la locale) n'est pas supportée: >"
-"%s<\n"
-"Vous devriez régler le problème en utilisant %s! %s\n"
-")"
+msgstr "[%s] la longueur du point décimal (dans la locale) n'est pas supportée: >%s<\nVous devriez régler le problème en utilisant %s! %s\n)"
 
 #: ../src/ui.c:89
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"[%s] Couldn't load %s. This file is necessary     to build galculator's user "
-"interface. Make sure you did a make install and the file     is accessible!\n"
+"[%s] Couldn't load %s. This file is necessary     to build galculator's user"
+" interface. Make sure you did a make install and the file     is "
+"accessible!\n"
 msgstr ""
-"[%s] Ne peut pas charger %s. Ce fichier est nécessaire pour construire "
-"l'interface utilisateur.Vérifiez que le make install a été effectué et que "
-"le fichier est accessible!\n"
 
-#: ../src/ui.c:951 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
-#, fuzzy
+#: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
-msgstr "Afficher la barre de menu"
+msgstr "Afficher la barre du _menu"
 
-#: ../src/ui.c:991
+#: ../src/ui.c:999
 #, c-format
 msgid "%s Preferences"
 msgstr "Préférences de %s"
 
-#: ../src/ui.c:1035 ../src/ui.c:1067
-#, fuzzy
+#: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
-msgstr "Nom:"
+msgstr "Nom"
 
-#: ../src/ui.c:1038
-#, fuzzy
+#: ../src/ui.c:1046
 msgid "Value"
-msgstr "Valeur:"
+msgstr "Valeur"
 
-#: ../src/ui.c:1041
-#, fuzzy
+#: ../src/ui.c:1049
 msgid "Description"
 msgstr "Description"
 
-#: ../src/ui.c:1070
-#, fuzzy
+#: ../src/ui.c:1078
 msgid "Variable"
-msgstr "Valeur:"
+msgstr "Variable"
 
-#: ../src/ui.c:1073
+#: ../src/ui.c:1081
 msgid "Expression"
-msgstr ""
+msgstr "Expression"
 
-#: ../src/ui.c:1203 ../ui/basic_buttons_gtk2.ui.h:43
+#: ../src/ui.c:1211 ../ui/basic_buttons_gtk2.ui.h:43
 #: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
 #: ../ui/scientific_buttons_gtk3.ui.h:98
 msgid "="
 msgstr "="
 
-#: ../src/ui.c:1203 ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:44
+#: ../src/ui.c:1211 ../src/ui.c:1223 ../ui/basic_buttons_gtk2.ui.h:44
 #: ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons_gtk2.ui.h:99 ../ui/scientific_buttons_gtk3.ui.h:99
 msgid "Enter"
 msgstr "Entrée"
 
-#: ../src/ui.c:1205 ../ui/scientific_buttons_gtk2.ui.h:17
+#: ../src/ui.c:1213 ../ui/scientific_buttons_gtk2.ui.h:17
 #: ../ui/scientific_buttons_gtk3.ui.h:17
 msgid "x^y"
 msgstr "x^y"
 
-#: ../src/ui.c:1205 ../src/ui.c:1217 ../ui/scientific_buttons_gtk2.ui.h:18
+#: ../src/ui.c:1213 ../src/ui.c:1225 ../ui/scientific_buttons_gtk2.ui.h:18
 #: ../ui/scientific_buttons_gtk3.ui.h:18
 msgid "Power"
 msgstr "Puissance"
 
-#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:33
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:33
 #: ../ui/basic_buttons_gtk3.ui.h:33 ../ui/scientific_buttons_gtk2.ui.h:88
 #: ../ui/scientific_buttons_gtk3.ui.h:88
 msgid "("
 msgstr "("
 
-#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:34
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:34
 #: ../ui/basic_buttons_gtk3.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:89
 #: ../ui/scientific_buttons_gtk3.ui.h:89
 msgid "Open Bracket"
 msgstr "Ouvrir la parenthèse"
 
-#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:31
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:31
 #: ../ui/basic_buttons_gtk3.ui.h:31 ../ui/scientific_buttons_gtk2.ui.h:86
 #: ../ui/scientific_buttons_gtk3.ui.h:86
 msgid ")"
 msgstr ")"
 
-#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:32
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:32
 #: ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
 #: ../ui/scientific_buttons_gtk3.ui.h:87
 msgid "Close Bracket"
 msgstr "Fermer la parenthèse"
 
-#: ../src/ui.c:1215
+#: ../src/ui.c:1223
 msgid "ENT"
 msgstr "ENT"
 
-#: ../src/ui.c:1217
+#: ../src/ui.c:1225
 msgid "y^x"
 msgstr "y^x"
 
-#: ../src/ui.c:1219
+#: ../src/ui.c:1227
 msgid "x<>y"
 msgstr "x<>y"
 
-#: ../src/ui.c:1219
+#: ../src/ui.c:1227
 msgid "swap current number with top of stack"
 msgstr ""
 
-#: ../src/ui.c:1221
+#: ../src/ui.c:1229
 msgid "roll"
 msgstr "roll"
 
-#: ../src/ui.c:1221
+#: ../src/ui.c:1229
 msgid "roll down stack"
 msgstr ""
 
-#: ../src/ui.c:1292
-#, fuzzy
+#: ../src/ui.c:1300
 msgid "Result Display"
-msgstr "Affichage"
+msgstr "Affichage du résultat"
 
-#: flex_parser.l:234
+#: ../src/flex_parser.l:233
 #, c-format
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
@@ -467,18 +400,16 @@ msgid ""
 msgstr ""
 
 #: ../ui/about.ui.in.h:1
-#, fuzzy
 msgid "About galculator"
-msgstr "_Calculatrice"
+msgstr "À propos de galculator"
 
 #: ../ui/about.ui.in.h:2
-msgid "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
-msgstr ""
+msgid "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
+msgstr "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
 
 #: ../ui/about.ui.in.h:3
-#, fuzzy
 msgid "a GTK+ based scientific calculator"
-msgstr "Calculatrice Scientifique"
+msgstr "une calculatrice scientifique basée sur GTK+"
 
 #: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1
 #: ../ui/scientific_buttons_gtk2.ui.h:52 ../ui/scientific_buttons_gtk3.ui.h:52
@@ -578,7 +509,7 @@ msgstr "+"
 #: ../ui/basic_buttons_gtk2.ui.h:20 ../ui/basic_buttons_gtk3.ui.h:20
 #: ../ui/scientific_buttons_gtk2.ui.h:73 ../ui/scientific_buttons_gtk3.ui.h:73
 msgid "Sum"
-msgstr ""
+msgstr "Somme"
 
 #: ../ui/basic_buttons_gtk2.ui.h:21 ../ui/basic_buttons_gtk3.ui.h:21
 #: ../ui/scientific_buttons_gtk2.ui.h:76 ../ui/scientific_buttons_gtk3.ui.h:76
@@ -699,7 +630,7 @@ msgstr "Fenêtre principale"
 
 #: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
 msgid "Formula entry text field - enter string expression to compute here."
-msgstr ""
+msgstr "Champs d'entrée de texte de formule - entrer l'expression de la chaîne à calculer ici."
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:1 ../ui/dispctrl_bottom_gtk3.ui.h:1
 #: ../ui/dispctrl_right_gtk2.ui.h:1 ../ui/dispctrl_right_gtk3.ui.h:1
@@ -761,9 +692,8 @@ msgid "_Copy Display Value"
 msgstr "Copier la valeur affichée"
 
 #: ../ui/main_frame.ui.h:6
-#, fuzzy
 msgid "_Paste and Append to Display Value"
-msgstr "Coller comme valeur affichée"
+msgstr "Coller et ajouter _pour afficher la valeur"
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
@@ -782,9 +712,8 @@ msgid "_Scientific Mode"
 msgstr "Mode Scientifique"
 
 #: ../ui/main_frame.ui.h:11
-#, fuzzy
 msgid "_Paper Mode"
-msgstr "Mode _Basic"
+msgstr "Mode _papier"
 
 #: ../ui/main_frame.ui.h:12 ../ui/main_frame_hildon.ui.h:11
 #: ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
@@ -862,7 +791,7 @@ msgstr "Logique Polonaise Inve_rse (RPN)"
 
 #: ../ui/main_frame.ui.h:31 ../ui/main_frame_hildon.ui.h:30
 msgid "_Formula Entry"
-msgstr ""
+msgstr "Entrée de la _formule"
 
 #: ../ui/main_frame.ui.h:32 ../ui/main_frame_hildon.ui.h:31
 msgid "_Help"
@@ -881,24 +810,20 @@ msgid "_About..."
 msgstr "_À propos..."
 
 #: ../ui/prefs_gtk2.ui.h:1 ../ui/prefs_gtk3.ui.h:1
-#, fuzzy
 msgid "Decimal"
-msgstr "_Décimale"
+msgstr "Decimal"
 
 #: ../ui/prefs_gtk2.ui.h:2 ../ui/prefs_gtk3.ui.h:2
-#, fuzzy
 msgid "Hexadecimal"
-msgstr "_hexadécimale"
+msgstr "Hexadecimal"
 
 #: ../ui/prefs_gtk2.ui.h:3 ../ui/prefs_gtk3.ui.h:3
-#, fuzzy
 msgid "Octal"
-msgstr "_Octale"
+msgstr "Octal"
 
 #: ../ui/prefs_gtk2.ui.h:4 ../ui/prefs_gtk3.ui.h:4
-#, fuzzy
 msgid "Binary"
-msgstr "_Binaire"
+msgstr "Binaire"
 
 #: ../ui/prefs_gtk2.ui.h:5 ../ui/prefs_gtk3.ui.h:5 ../ui/prefs-ume.ui.h:1
 msgid "galculator - Preferences"
@@ -953,44 +878,36 @@ msgid "RPN stack color:"
 msgstr "Couleur de la pile du mode RPN:"
 
 #: ../ui/prefs_gtk2.ui.h:18 ../ui/prefs_gtk3.ui.h:18
-#, fuzzy
 msgid "Pick a Display Background Color"
-msgstr "Couleur d'arrière-plan:"
+msgstr "Choisissez une couleur d'affichage d'arrière-plan"
 
 #: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
-#, fuzzy
 msgid "Pick a Display Result Font Color"
-msgstr "Couleur de la police des résultats:"
+msgstr "Choisissez une couleur pour la police d'affichage du résultat"
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
-#, fuzzy
 msgid "Pick a RPN Stack Color"
-msgstr "Couleur de la pile du mode RPN:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
-#, fuzzy
 msgid "Pick a Inactive Module Color"
-msgstr "Couleur des modules inactifs"
+msgstr "Choisissez une couleur pour les modules inactifs"
 
 #: ../ui/prefs_gtk2.ui.h:22 ../ui/prefs_gtk3.ui.h:22
-#, fuzzy
 msgid "Pick a Active Module Color"
-msgstr "Couleur des modules actifs."
+msgstr "Choisissez une couleur pour les modules actifs"
 
 #: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
-#, fuzzy
 msgid "Pick a Result Font"
-msgstr "Police des résultats:"
+msgstr "Choisissez une police pour les résultats"
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
-#, fuzzy
 msgid "Pick a RPN Stack Font"
-msgstr "Police de la pile du mode RPN:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
-#, fuzzy
 msgid "Pick a Module Font"
-msgstr "Police des modules:"
+msgstr "Choisissez une police pour les modules"
 
 #: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
 msgid "<b>Modules Visibility</b>"
@@ -1033,9 +950,8 @@ msgid "Button font:"
 msgstr "Police des boutons:"
 
 #: ../ui/prefs_gtk2.ui.h:36 ../ui/prefs_gtk3.ui.h:36 ../ui/prefs-ume.ui.h:15
-#, fuzzy
 msgid "Pick a Button Font"
-msgstr "Police des boutons:"
+msgstr "Choisissez une police pour les boutons"
 
 #: ../ui/prefs_gtk2.ui.h:37 ../ui/prefs_gtk3.ui.h:37 ../ui/prefs-ume.ui.h:16
 msgid "<b>Dimension</b>"
@@ -1087,36 +1003,32 @@ msgid "Constants"
 msgstr "Constantes"
 
 #: ../ui/prefs_gtk2.ui.h:50 ../ui/prefs_gtk3.ui.h:50
-#, fuzzy
 msgid "<b>User defined functions:</b>"
-msgstr "Fonctions définies par l'utilisateur"
+msgstr "<b>Fonctions définies par l'utilisateur:</b>"
 
 #: ../ui/prefs_gtk2.ui.h:51 ../ui/prefs_gtk3.ui.h:51
-#, fuzzy
 msgid "Variable:"
-msgstr "Valeur:"
+msgstr "Variable:"
 
 #: ../ui/prefs_gtk2.ui.h:52 ../ui/prefs_gtk3.ui.h:52
 msgid "Expression:"
-msgstr ""
+msgstr "Expression:"
 
 #: ../ui/prefs_gtk2.ui.h:54 ../ui/prefs_gtk3.ui.h:54 ../ui/prefs-ume.ui.h:20
-#, fuzzy
 msgid "Configure number base: "
-msgstr "base de numérotation inconnue"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:55 ../ui/prefs_gtk3.ui.h:55
-#, fuzzy
 msgid "<b>Decimal Settings</b>"
-msgstr "<b>Dimension</b>"
+msgstr "<b>Réglages décimal</b>"
 
 #: ../ui/prefs_gtk2.ui.h:56 ../ui/prefs_gtk3.ui.h:56
 msgid "Show thousands separator"
-msgstr ""
+msgstr "Afficher le séparateur de milliers"
 
 #: ../ui/prefs_gtk2.ui.h:57 ../ui/prefs_gtk3.ui.h:57
 msgid "Separator character:"
-msgstr ""
+msgstr "Charactère du séparateur:"
 
 #: ../ui/prefs_gtk2.ui.h:58 ../ui/prefs_gtk3.ui.h:58
 msgid "Separator block length:"
@@ -1127,38 +1039,32 @@ msgid " "
 msgstr " "
 
 #: ../ui/prefs_gtk2.ui.h:60 ../ui/prefs_gtk3.ui.h:60
-#, fuzzy
 msgid "<b>Hexadecimal Settings</b>"
-msgstr "<b>Hexadécimale</b>"
+msgstr "<b>Réglages hexadecimal</b>"
 
 #: ../ui/prefs_gtk2.ui.h:61 ../ui/prefs_gtk3.ui.h:61
-#, fuzzy
 msgid "Signed"
-msgstr "signé"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:62 ../ui/prefs_gtk3.ui.h:62
 msgid "Show separator"
-msgstr ""
+msgstr "Afficher le séparateur"
 
 #: ../ui/prefs_gtk2.ui.h:63 ../ui/prefs_gtk3.ui.h:63
-#, fuzzy
 msgid "Number of bits: "
-msgstr "Nombre de bits:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:64 ../ui/prefs_gtk3.ui.h:64
-#, fuzzy
 msgid "<b>Octal Settings</b>"
-msgstr "<b>Octale</b>"
+msgstr "<b>Réglages octal</b>"
 
 #: ../ui/prefs_gtk2.ui.h:65 ../ui/prefs_gtk3.ui.h:65
-#, fuzzy
 msgid "<b>Binary Settings</b>"
-msgstr "<b>Binaire</b>"
+msgstr "<b>Réglages binaire</b>"
 
 #: ../ui/prefs_gtk2.ui.h:66 ../ui/prefs_gtk3.ui.h:66
-#, fuzzy
 msgid "Fix length to a multiple of"
-msgstr "Fixer la longueur comme multiple de"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:67 ../ui/prefs_gtk3.ui.h:67 ../ui/prefs-ume.ui.h:21
 msgid "Numbers"
@@ -1379,98 +1285,3 @@ msgstr "LSH"
 #: ../ui/scientific_buttons_gtk2.ui.h:75 ../ui/scientific_buttons_gtk3.ui.h:75
 msgid "Left shift"
 msgstr "Décalage à gauche"
-
-#~ msgid "About %s"
-#~ msgstr "À propos de %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-#~ "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
-#~ "\n"
-#~ "(c) 2002-2007 by Simon Flöry (simon.floery@rechenraum.com)"
-#~ msgstr ""
-#~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-#~ "<span size=\"large\">Une calculatrice scientifique basée sur GTK 2</"
-#~ "span>\n"
-#~ "\n"
-#~ "© 2002-2003 par Simon Flöry (simon.floery@rechenraum.com)"
-
-#~ msgid "A dialog that shows information about this program."
-#~ msgstr "Une fenêtre qui affiche des informations à proros du logiciel"
-
-#~ msgid "Shows information about the program."
-#~ msgstr "Affiche des informations à propos du logiciel."
-
-#~ msgid "fill_me"
-#~ msgstr "fill_me"
-
-#~ msgid "Select result font"
-#~ msgstr "Police du résultat"
-
-#~ msgid "Select stack font"
-#~ msgstr "Police de la pile"
-
-#~ msgid "Select module font"
-#~ msgstr "Police du module"
-
-#~ msgid "Select active module color"
-#~ msgstr "Choix de la couleur du module actif"
-
-#~ msgid "Select inactive module color"
-#~ msgstr "Choix de la couleur du module inactif"
-
-#~ msgid "Select result font color"
-#~ msgstr "Choix de la couleur de la police du résultat"
-
-#~ msgid "Select stack color"
-#~ msgstr "Choix de la couleur de la pile"
-
-#~ msgid "Select background color"
-#~ msgstr "Choix de la couleur de l'arrière-plan"
-
-#~ msgid "Select button font"
-#~ msgstr "Choix de la police des boutons"
-
-#~ msgid "A dialog that is used to change a color setting."
-#~ msgstr "Une fenêtre utilisée pour changer les propriétés des couleurs"
-
-#~ msgid "Applies all changes and closes the dialog."
-#~ msgstr "Appliquer tous les changement et fermer la fenêtre."
-
-#~ msgid "Cancels all changes and closes the dialog."
-#~ msgstr "Annuler tous les changement et fermer la fenêtre"
-
-#~ msgid "Contains various widgets to select a color value."
-#~ msgstr "Contient différents composants pour choisir une valeur de couleur"
-
-#~ msgid "Select Color"
-#~ msgstr "Choix d'une couleur"
-
-#~ msgid "Shows some help about the dialog."
-#~ msgstr "Affiche de l'aide à propos de la fenêtre"
-
-#~ msgid "A dialog that is used to change a font setting."
-#~ msgstr "Une fenêtre utilisée pour changer les propriétés des polices."
-
-#~ msgid "Applies all changes."
-#~ msgstr "Appliquer tous les changements."
-
-#~ msgid "Displays various fonts and font sizes to select from."
-#~ msgstr ""
-#~ "Afficher différentes polices et tailles de polices pour la sélection."
-
-#~ msgid "Select Font"
-#~ msgstr "Choix d'une police"
-
-#~ msgid "decimal PI 3.14159265359"
-#~ msgstr "decimal PI 3.14159265359"
-
-#~ msgid ""
-#~ "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
-#~ msgstr ""
-#~ "[%s] Type d'angle inconnu dans la fonction \"display_result_get_rad_angle"
-#~ "\". %s\n"
-
-#~ msgid "_Show menu bar"
-#~ msgstr "_Afficher la barre de menu"
