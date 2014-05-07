@@ -412,7 +412,7 @@ on_logical_toggled (GtkMenuItem     *menuitem,
     if (prefs.mode == BASIC_MODE) return;
     if (prefs.mode == PAPER_MODE) return;
 
-    prefs.vis_logic = 
+	prefs.vis_logic = 
         gtk_check_menu_item_get_active((GtkCheckMenuItem *) menuitem);
     set_widget_visibility (button_box_xml, "table_bin_buttons",
         prefs.vis_logic);
@@ -476,7 +476,8 @@ on_basic_mode_toggled (GtkMenuItem     *menuitem,
     display_module_notation_activate (current_status.notation);
 
     menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "display_control"));
-    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menuitem), prefs.vis_dispctrl);
+    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_dispctrl);
+    gtk_check_menu_item_toggled (GTK_CHECK_MENU_ITEM(menu_item));
 
     update_active_buttons (current_status.number, current_status.notation);
     menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "functions"));
@@ -529,17 +530,21 @@ on_scientific_mode_toggled (GtkMenuItem *menuitem,
     menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "functions"));
     gtk_widget_set_sensitive (menu_item, TRUE);
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_funcs);
+    gtk_check_menu_item_toggled (GTK_CHECK_MENU_ITEM(menu_item));
     
     menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "display_control"));
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_dispctrl);
+    gtk_check_menu_item_toggled (GTK_CHECK_MENU_ITEM(menu_item));
     
     menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "logical"));
     gtk_widget_set_sensitive (menu_item, TRUE);
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_logic);
+    gtk_check_menu_item_toggled (GTK_CHECK_MENU_ITEM(menu_item));
     
     menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "standard"));
     gtk_widget_set_sensitive (menu_item, TRUE);
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menu_item), prefs.vis_standard);
+    gtk_check_menu_item_toggled (GTK_CHECK_MENU_ITEM(menu_item));
     
     menu_item = GTK_WIDGET(gtk_builder_get_object (main_window_xml, "base_units"));
     gtk_widget_set_sensitive (menu_item, TRUE);
