@@ -1,3 +1,9 @@
+2014-05-07 Simon Flöry <simon.floery@rechenraum.com>
+	* In callbacks.c and general_functions.c, team up every 
+		gtk_check_menu_item_set_active with a gtk_check_menu_item_toggled. See
+		also 2014-01-08 and sf.net bug #99.
+		(fixes sf.net bug #105, thanks to Don for reporting)
+
 2014-03-20 Simon Flöry <simon.floery@rechenraum.com>
 	* translations are now served through transifex (thanks to the MATE project,
 		in particular to Stefano and Martin)
