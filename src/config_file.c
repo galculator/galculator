@@ -176,7 +176,7 @@ static void config_file_get_default_prefs (s_preferences *this_prefs)
 
 static void config_file_get_default_consts (s_constant **consts)
 {
-	*consts = (s_constant *) malloc (3 * sizeof (s_constant));
+	*consts = (s_constant *) g_malloc (3 * sizeof (s_constant));
 	(*consts)[0].desc = g_strdup (_("Pi"));
 	(*consts)[0].name = g_strdup (_("pi"));
 	(*consts)[0].value = g_strdup_printf ("%.11f", G_PI);
@@ -192,7 +192,7 @@ static void config_file_get_default_consts (s_constant **consts)
 
 static void config_file_get_default_user_functions (s_user_function **this_user_funcs)
 {
-	*this_user_funcs = (s_user_function *) malloc (4 * sizeof (s_user_function));
+	*this_user_funcs = (s_user_function *) g_malloc (4 * sizeof (s_user_function));
 	(*this_user_funcs)[0].name = g_strdup ("abs");
 	(*this_user_funcs)[0].variable = g_strdup ("x");
 	(*this_user_funcs)[0].expression = g_strdup_printf ("sqrt(x^2)");
@@ -311,7 +311,7 @@ void config_file_set_constants (char *line)
 	/* allowing desc and name to be "" */
 	if (strlen(value) == 0) return;
 	nr_consts++;
-	cf_constant = (s_constant *) realloc (cf_constant, (nr_consts + 1) * sizeof(s_constant));
+	cf_constant = (s_constant *) g_realloc (cf_constant, (nr_consts + 1) * sizeof(s_constant));
 	cf_constant[nr_consts-1].desc = g_strdup (desc);
 	cf_constant[nr_consts-1].name = g_strdup (name);
 	cf_constant[nr_consts-1].value = g_strdup (value);
@@ -346,7 +346,7 @@ void config_file_set_user_functions (char *line)
 	/* allowing name to be "" */
 	if ((strlen(variable) == 0) || (strlen(expression) == 0)) return;
 	nr_user_functions++;
-	cf_user_function = (s_user_function *) realloc (cf_user_function, 
+	cf_user_function = (s_user_function *) g_realloc (cf_user_function, 
 		(nr_user_functions + 1) * sizeof(s_user_function));
 	cf_user_function[nr_user_functions-1].name = g_strdup (name);
 	cf_user_function[nr_user_functions-1].variable = g_strdup (variable);
@@ -370,7 +370,7 @@ s_preferences config_file_read (char *filename)
 	
 	this_file = fopen (filename, "r");
 	config_file_get_default_prefs (&prefs);
-	cf_constant = (s_constant *) malloc (sizeof(s_constant));
+	cf_constant = (s_constant *) g_malloc (sizeof(s_constant));
 	cf_constant->desc = NULL;
 	if (this_file != NULL) {
 		while (fgets (line, MAX_FILE_LINE_LENGTH, this_file) != NULL) {

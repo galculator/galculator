@@ -307,9 +307,9 @@ character. %s\n"), PROG_NAME, operator, BUG_REPORT);
 		char *srh = float2string("%"G_LMOD"f", right_hand);
 		char *sr = float2string("%"G_LMOD"f", result);
 		fprintf (stderr, "[%s] computing: %s %c %s = %s\n", PROG_NAME, slh, operator, srh, sr);
-		free(slh);
-		free(srh);
-		free(sr);
+		g_free(slh);
+		g_free(srh);
+		g_free(sr);
 	}
 	return result;
 }
@@ -336,7 +336,7 @@ static s_alg_stack *alg_stack_new (s_cb_token this_token)
 {
 	s_alg_stack	*new_stack;
 	
-	new_stack = (s_alg_stack *) malloc (sizeof(s_alg_stack));
+	new_stack = (s_alg_stack *) g_malloc (sizeof(s_alg_stack));
 	new_stack->func = this_token.func;
 	new_stack->number = NULL;
 	new_stack->operation = NULL;
@@ -352,10 +352,10 @@ static s_alg_stack *alg_stack_new (s_cb_token this_token)
 static void alg_stack_append (s_alg_stack *stack, s_cb_token token)
 {
 	stack->size++;
-	stack->number = (G_REAL *) realloc (stack->number, 
+	stack->number = (G_REAL *) g_realloc (stack->number, 
 		stack->size * sizeof(G_REAL));
 	stack->number[stack->size-1] = token.number;
-	stack->operation = (char *) realloc (stack->operation,
+	stack->operation = (char *) g_realloc (stack->operation,
 		stack->size * sizeof(char));
 	stack->operation[stack->size-1] = token.operation;
 }
@@ -380,9 +380,9 @@ static G_REAL alg_stack_pool (s_alg_stack *stack)
 	}
 	if (stack->size != (index + 1)) {
 		stack->size = index + 1;
-		stack->number = (G_REAL *) realloc (stack->number,
+		stack->number = (G_REAL *) g_realloc (stack->number,
 			sizeof(G_REAL) * stack->size);
-		stack->operation = (char *) realloc (stack->operation, 
+		stack->operation = (char *) g_realloc (stack->operation, 
 			sizeof(char) * stack->size);
 	}
 	return stack->number[stack->size-1];
@@ -394,9 +394,15 @@ static G_REAL alg_stack_pool (s_alg_stack *stack)
 static void alg_stack_free (s_alg_stack *stack)
 {
 	if (stack) {
-		if (stack->number) free (stack->number);
-		if (stack->operation) free (stack->operation);
-		free (stack);
+		if (stack->number) 
+		{
+			g_free (stack->number);
+		}
+		if (stack->operation) 
+		{
+			g_free (stack->operation);
+		}
+		g_free (stack);
 	}
 }
 
@@ -514,9 +520,9 @@ void debug_rpn_stack_print ()
 	for (counter = 0; counter < MAX(rpn_stack_size, (int)rpn_stack->len); counter++) {
 		str = float2string("%"G_LMOD"f", stack[counter]);
 		fprintf (stderr, "[%s]\t %02i: %s\n", PROG_NAME, counter, str);
-		free(str);
+		g_free(str);
 	}
-	free (stack);
+	g_free (stack);
 }
 
 /* rpn_stack_push. new values is prepended! then, if finite stack size, 
@@ -623,7 +629,7 @@ G_REAL *rpn_stack_get (int length)
 	int		counter;
 	
 	if (length <= 0) length = (int)rpn_stack->len;
-	return_array = (G_REAL *) malloc (length*sizeof(G_REAL));
+	return_array = (G_REAL *) g_malloc (length*sizeof(G_REAL));
 	for (counter = 0; counter < MIN (length, (int)rpn_stack->len); counter++)
 		return_array[counter] = g_array_index (rpn_stack, G_REAL, counter);
 	for (; counter < length; counter++) 
@@ -648,7 +654,10 @@ void rpn_stack_set_size (int size)
 
 void rpn_free ()
 {
-	if (!rpn_stack) g_array_free (rpn_stack, TRUE);
+	if (!rpn_stack) 
+	{
+		g_array_free (rpn_stack, TRUE);
+	}
 }
 
 /*
@@ -677,7 +686,7 @@ int main (int argc, char *argv[])
  */ 
 char *float2string(const char* formatString, G_REAL x)
 {
-	char *s = (char *) malloc(128*sizeof(char));
+	char *s = (char *) g_malloc(128*sizeof(char));
 	int len = 0;
 
 #if USE_LIBQUADMATH
@@ -706,7 +715,7 @@ failed because buffer was too small. %s\n)"), PACKAGE, BUG_REPORT);
  */ 
 char *float2stringP(const char* formatString, int prec, G_REAL x)
 {
-	char *s = (char *) malloc(128*sizeof(char));
+	char *s = (char *) g_malloc(128*sizeof(char));
 	int len = 0;
 
 #if USE_LIBQUADMATH

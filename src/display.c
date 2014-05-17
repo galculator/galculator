@@ -682,7 +682,7 @@ static void display_set_line (char *string, int line, char *tag)
 		get_sep_length(current_status.number), get_sep_char(current_status.number), dec_point[0]);
 	/* DISPLAY RESULT MODIFIED */
 	gtk_text_buffer_insert_with_tags_by_name (buffer, &start, separator_string, -1, tag, NULL);
-	free (separator_string);
+	g_free (separator_string);
 	if (line == display_result_line) {
 		display_result_counter = strlen (string);
 		/* this is some cosmetics. try to keep counter up2date */
@@ -998,7 +998,7 @@ char **display_stack_get_yzt ()
 	char 		**stack;
 	int 		counter;
 	
-	stack = (char **) malloc (3* sizeof (char *));
+	stack = (char **) g_malloc (3* sizeof (char *));
 	for (counter = 0; counter < 3; counter++) {
 		/*  DISPLAY RESULT GET 
 		display_get_line_iters (buffer, display_result_line - counter - 1, &start, &end);
@@ -1020,7 +1020,7 @@ G_REAL *display_stack_get_yzt_double (int number_base_status)
 	G_REAL	*G_REAL_stack;
 	int	counter;
 	
-	G_REAL_stack = (G_REAL *) malloc (display_result_line * sizeof(G_REAL));
+	G_REAL_stack = (G_REAL *) g_malloc (display_result_line * sizeof(G_REAL));
 	string_stack = display_stack_get_yzt();
 	for (counter = 0; counter < display_result_line; counter++)
 		G_REAL_stack[counter] = string2double (string_stack[counter], number_base_status);
