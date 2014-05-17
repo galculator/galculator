@@ -135,7 +135,7 @@ static void apply_object_data (s_operation_map operation_map[],
 	
 	counter = 0;
 	while (function_map[counter].button_name != NULL) {
-		func = (void *) malloc (sizeof (function_map[counter].func));
+		func = (void *) g_malloc (sizeof (function_map[counter].func));
 		memcpy (func, function_map[counter].func, sizeof (function_map[counter].func));
 		object = G_OBJECT (gtk_builder_get_object (button_box_xml, 
 			function_map[counter].button_name));

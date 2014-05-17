@@ -1,6 +1,8 @@
 2014-05-17 Simon Flöry <simon.floery@rechenraum.com>
 	* in ui.c::set_all_dispctrl_buttons_property check for table_children != NULL
 		(fixes sf.net bug #107, thanks to Chris LaFleur for reporting)
+	* *.c: all dynamic memory allocation and free'ing is done via glib now.
+	* Changed default background color for the display to white. 
 
 2014-05-07 Simon Flöry <simon.floery@rechenraum.com>
 	* In callbacks.c and general_functions.c, team up every 

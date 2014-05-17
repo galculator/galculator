@@ -32,7 +32,7 @@
 #define SECTION_CONSTANTS "[constants]"
 #define SECTION_USER_FUNCTIONS "[user functions]"
 
-#define DEFAULT_BKG_COLOR			"#f2ffc2"
+#define DEFAULT_BKG_COLOR			"#ffffff"
 #define DEFAULT_RESULT_FONT			"Sans Bold 26"
 #define	DEFAULT_RESULT_COLOR 		"black"
 #define DEFAULT_STACK_FONT			"Sans Bold 11"

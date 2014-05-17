@@ -1030,7 +1030,7 @@ void ms_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
     index = GPOINTER_TO_INT(user_data);
     if (index >= memory.len) {
         index = memory.len;
-        memory.data = (G_REAL *) realloc (memory.data, (index + 1) * sizeof(G_REAL));
+        memory.data = (G_REAL *) g_realloc (memory.data, (index + 1) * sizeof(G_REAL));
         memory.len++;
     }
     memory.data[index] = display_result_get_double(current_status.number);
@@ -1116,7 +1116,7 @@ void mc_menu_handler (GtkMenuItem *menuitem, gpointer user_data)
         for (counter = index; counter < (memory.len - 1); counter++) 
             memory.data[counter] = memory.data[counter + 1];
         memory.len--;
-        memory.data = (G_REAL *) realloc (memory.data, memory.len * sizeof(G_REAL));
+        memory.data = (G_REAL *) g_realloc (memory.data, memory.len * sizeof(G_REAL));
     }
 }
 
@@ -1192,7 +1192,7 @@ void on_prefs_ufadd_clicked (GtkButton *button, gpointer user_data)
     }
         
     nr_user_functions = gtk_tree_model_iter_n_children(GTK_TREE_MODEL(prefs_user_function_store), NULL);
-    user_function = (s_user_function *) realloc (user_function, (nr_user_functions + 2) * sizeof(s_user_function));
+    user_function = (s_user_function *) g_realloc (user_function, (nr_user_functions + 2) * sizeof(s_user_function));
     user_function[nr_user_functions + 1].name = NULL;
     
     user_function[nr_user_functions].name = name;
@@ -1229,7 +1229,7 @@ void on_prefs_ufdelete_clicked (GtkButton *button, gpointer user_data)
         memcpy (&user_function[counter], &user_function[counter+1], sizeof(s_user_function));
     
     nr_user_functions--;
-    user_function = (s_user_function *) realloc (user_function, (nr_user_functions + 1) * sizeof(s_user_function));
+    user_function = (s_user_function *) g_realloc (user_function, (nr_user_functions + 1) * sizeof(s_user_function));
     
     user_function[nr_user_functions].name = NULL;
 }
@@ -1297,7 +1297,7 @@ void on_prefs_cadd_clicked (GtkButton *button, gpointer user_data)
     }
         
     nr_consts = gtk_tree_model_iter_n_children(GTK_TREE_MODEL(prefs_constant_store), NULL);
-    constant = (s_constant *) realloc (constant, (nr_consts + 2) * sizeof(s_constant));
+    constant = (s_constant *) g_realloc (constant, (nr_consts + 2) * sizeof(s_constant));
     constant[nr_consts + 1].name = NULL;
     
     constant[nr_consts].name = name;
@@ -1333,7 +1333,7 @@ void on_prefs_cdelete_clicked (GtkButton *button, gpointer user_data)
         memcpy (&constant[counter], &constant[counter+1], sizeof(s_constant));
     
     nr_consts--;
-    constant = (s_constant *) realloc (constant, (nr_consts + 1) * sizeof(s_constant));
+    constant = (s_constant *) g_realloc (constant, (nr_consts + 1) * sizeof(s_constant));
     
     constant[nr_consts].name = NULL;
 }

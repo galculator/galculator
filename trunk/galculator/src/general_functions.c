@@ -183,7 +183,7 @@ char *ftoax (G_REAL x, int base, int nr_bits, gboolean is_signed)
 	length+=2;
 	
 	localx = x;
-	return_string = (char *) malloc (length * sizeof(char));
+	return_string = (char *) g_malloc (length * sizeof(char));
 	return_string [length-1] = '\0';
 	for (counter = length-2; counter >= 0; counter--) {
 		remainder = rem (localx, base);
@@ -192,7 +192,7 @@ char *ftoax (G_REAL x, int base, int nr_bits, gboolean is_signed)
 		else {
 			char *sx = float2string("%"G_LMOD"f", x);
 			fprintf (stderr, _("[%s] failed to convert %s in function \"ftoax\". %s\n"), PROG_NAME, sx, BUG_REPORT);
-			free(sx);
+			g_free(sx);
 		}
 		localx = G_FLOOR (localx / (G_REAL)base);
 	}
@@ -210,12 +210,12 @@ char *add_leading_zeros (char *string, int multiple)
 	length = strlen(string);
 	offset = (multiple - length%multiple)%multiple;
 	length += offset;
-	new_string = (char *) malloc ((length + 1) * sizeof(char));
+	new_string = (char *) g_malloc ((length + 1) * sizeof(char));
 	for (counter = 0; counter < offset; counter++)
 		new_string[counter] = '0';
 	for (counter = offset; counter <= length; counter++)
 		new_string[counter] = string[counter-offset];
-	free (string);
+	g_free (string);
 	return new_string;
 }
 
@@ -484,7 +484,7 @@ void gfunc_f1 (GtkToggleButton *button)
 			display_result_get_double(current_status.number)), current_status.number);
 		stack = rpn_stack_get (RPN_FINITE_STACK);
 		display_stack_set_yzt_double (stack, current_status.number);
-		free (stack);
+		g_free (stack);
 		current_status.rpn_stack_lift_enabled = TRUE;
 		current_status.calc_entry_start_new = TRUE;
 	}
@@ -504,7 +504,7 @@ void gfunc_f2 (GtkToggleButton *button)
 			display_result_get_double(current_status.number)), current_status.number);
 				stack = rpn_stack_get (RPN_FINITE_STACK);
 		display_stack_set_yzt_double (stack, current_status.number);
-		free (stack);
+		g_free (stack);
 		current_status.rpn_stack_lift_enabled = TRUE;
 		current_status.calc_entry_start_new = TRUE;
 	}
@@ -527,7 +527,7 @@ void rpn_stack_lift ()
 		rpn_stack_push (display_result_get_double (current_status.number));
 		stack = rpn_stack_get (RPN_FINITE_STACK);
 		display_stack_set_yzt_double (stack, current_status.number);
-		free (stack);
+		g_free (stack);
 		current_status.rpn_stack_lift_enabled = FALSE;
 	}
 }
@@ -612,7 +612,7 @@ char *string_add_separator (char* string, gboolean separate, int block_length, c
 	if (string[int_length] == dpoint)
 		while ((string[int_length + frac_length + 1] != '\0') && (string[int_length + frac_length + 1] != 'e')) frac_length++;
 	/* then allocate memory for new string holding separators */
-	new_string = (char *) malloc ((strlen(string) + (int_length-1)/block_length +
+	new_string = (char *) g_malloc ((strlen(string) + (int_length-1)/block_length +
 		(frac_length-1)/block_length + 1) * sizeof(char));
 	/* then copy from string to new_string and insert separators */
 	while ((string[counter] != '\0') && (string[counter] != dpoint) && (string[counter] != 'e')) {
@@ -717,7 +717,7 @@ s_flex_parser_result compute_user_function (char *expression, char *variable, ch
 	
 	nr_constants = 0;
 	while (constant[nr_constants].name != NULL) nr_constants++;
-	constant = (s_constant *) realloc (constant, (nr_constants + 2) * sizeof(s_constant));
+	constant = (s_constant *) g_realloc (constant, (nr_constants + 2) * sizeof(s_constant));
 	constant[nr_constants + 1].name = NULL;
 	
 	constant[nr_constants].name = variable;
@@ -726,7 +726,7 @@ s_flex_parser_result compute_user_function (char *expression, char *variable, ch
 	
 	result = flex_parser(expression);
 	
-	constant = (s_constant *) realloc (constant, (nr_constants + 1) * sizeof(s_constant));
+	constant = (s_constant *) g_realloc (constant, (nr_constants + 1) * sizeof(s_constant));
 	constant[nr_constants].name = NULL;
 	return result;
 }
