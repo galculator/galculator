@@ -1,3 +1,7 @@
+2014-05-17 Simon Flöry <simon.floery@rechenraum.com>
+	* in ui.c::set_all_dispctrl_buttons_property check for table_children != NULL
+		(fixes sf.net bug #107, thanks to Chris LaFleur for reporting)
+
 2014-05-07 Simon Flöry <simon.floery@rechenraum.com>
 	* In callbacks.c and general_functions.c, team up every 
 		gtk_check_menu_item_set_active with a gtk_check_menu_item_toggled. See

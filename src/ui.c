@@ -599,6 +599,9 @@ static void set_all_dispctrl_buttons_property (GtkCallback func, gpointer data)
 	if (!table) return;
     
     table_children = gtk_container_get_children(GTK_CONTAINER(table));
+    /* this fixes sf.net #107 */
+	if (!table_children) return;
+
 	/* dispctrl_right has an extra table for cosmetic reasons. */
 	if (GTK_IS_TABLE_OR_GRID (table_children->data))
 		table = (GTK_TABLE_OR_GRID *) GTK_WIDGET(table_children->data);
