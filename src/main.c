@@ -121,6 +121,8 @@ int key_snooper (GtkWidget *grab_widget, GdkEventKey *event, gpointer func_data)
 	 * and it's a "simple" key press (is this the best solution?), then emit
 	 * the signal directly and return TRUE to prevent any further 
 	 * procession.
+	 * 
+	 * For GTK3 this is done in callbacks.c::on_button_event
 	 */
 	
 	if (((formula_entry = formula_entry_is_active(grab_widget)) != NULL) && 
