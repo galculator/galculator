@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# willysr <willysr@slackware-id.org>, 2014
+# Willy Sudiarto Raharjo <willysr@slackware-id.org>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-17 16:18+0100\n"
-"PO-Revision-Date: 2014-03-19 08:46+0000\n"
-"Last-Translator: willysr <willysr@slackware-id.org>\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/MATE/language/id/)\n"
+"PO-Revision-Date: 2014-04-17 03:07+0000\n"
+"Last-Translator: Willy Sudiarto Raharjo <willysr@slackware-id.org>\n"
+"Language-Team: Indonesian (http://www.transifex.com/mate/MATE/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,7 +65,7 @@ msgid ""
 "[%s] configuration file: We will move the configuration file from %s to %s. "
 "After you quit %s, you may remove the configuration file from its old "
 "location %s.\n"
-msgstr ""
+msgstr "[%s] berkas konfigurasi: Kami akan memindahkan berkas konfigurasi dari %s ke %s. Setelah Anda keluar dari %s, Anda boleh menghapus berkas konfigurasi dari lokasi lamanya %s.\n"
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
@@ -122,20 +122,20 @@ msgstr "[%s] berkas konfigurasi: %s harus bernilai TRUE atau FALSE. Menggunakan 
 msgid ""
 "[%s] configuration file: failed to convert %s to a number properly. Have you"
 " changed your locales? %s\n"
-msgstr ""
+msgstr "[%s] berkas konfigurasi: gagal mengkonversi %s ke angka. Apakah Anda mengubah pengaturan lokal Anda? %s\n"
 
 #: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr ""
+msgstr "[%s] berkas konfigurasi: mengabaikan kunci key_type yang tidak diketahui pada struktur konfigurasi. %s\n"
 
 #: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
-msgstr ""
+msgstr "[%s] menemukan bagian %s yang tidak diketahui pada berkas konfigurasi %s. Menggunakan bagian sebelumnya.\n"
 
 #: ../src/config_file.c:403
 #, c-format
@@ -143,7 +143,7 @@ msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
-msgstr ""
+msgstr "[%s] berkas konfigurasi: tidak bisa membuka berkas konfigurasi %s untuk dibaca. Tidak perlu Anda khawatirkan jika Anda menjalankan %s untuk pertama kalinya. Menggunakan nilai default.\n"
 
 #: ../src/config_file.c:432
 #, c-format
@@ -151,38 +151,38 @@ msgid ""
 "[%s] configuration file - We reset at least one separator character as it "
 "coincides with the decimal point. If you recently changed your locales "
 "settings, this is nothing to worry about.\n"
-msgstr ""
+msgstr "[%s] berkas konfigurasi - Kami mengembalikan paling tidak satu karakter pemisah karena bertabrakan dengan tanda desimal. Jika Anda baru saja mengganti setting lokal, maka hal ini tidak perlu Anda khawatirkan.\n"
 
 #: ../src/config_file.c:470
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr ""
+msgstr "[%s] berkas konfigurasi: boolean aneh ketika menyimpan. Mengabaikan kunci ini. %s\n"
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in "
 "\"config_structure\". %s\n"
-msgstr ""
+msgstr "[%s] berkas konfigurasi: mengabaikan \"key_type\" pada \"config_structure\". %s\n"
 
 #: ../src/config_file.c:501
 #, c-format
 msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr ""
+msgstr "[%s] berkas konfigurasi: tidak bisa menyimpan/menulis pada berkas konfigurasi %s.\n"
 
 #: ../src/display.c:420
 #, c-format
 msgid ""
 "[%s] Line_index exceeds valid range in function \"display_delete_line\". "
 "%s\n"
-msgstr ""
+msgstr "[%s] Line_index melebihi batas pada fungsi \"display_delete_line\". %s\n"
 
 #: ../src/display.c:598
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
-msgstr ""
+msgstr "[%s] opsi tampilan tidak diketahui pada fungsi \"display_change_option\""
 
 #: ../src/general_functions.c:43
 msgid "unsupported inverse function"
@@ -195,27 +195,27 @@ msgstr "fungsi hiperbolik tidak didukung"
 #: ../src/general_functions.c:112
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
-msgstr ""
+msgstr "[%s] mode notasi tidak diketahui pada fungsi \"all_clear\". %s\n"
 
 #: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr ""
+msgstr "[%s] gagal mengkonversi karakter %c pada fungsi \"axtof\". %s\n"
 
 #: ../src/general_functions.c:194
 #, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr ""
+msgstr "[%s] gagal mengkonversi %s pada fungsi \"ftoax\". %s\n"
 
 #: ../src/general_functions.c:274
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr ""
+msgstr "[%s] gagal mengkonversi warna %s pada fungsi \"set_button_color\". %s\n"
 
 #: ../src/general_functions.c:395
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr ""
+msgstr "[%s] gagal mencari widget %s pada fungsi \"activate_menu_item\". %s\n"
 
 #: ../src/general_functions.c:437
 msgid "unknown number base"
@@ -224,12 +224,12 @@ msgstr "basis angka tidak diketahui"
 #: ../src/general_functions.c:438
 #, c-format
 msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
-msgstr ""
+msgstr "[%s] basis angka tidak diketahui pada pada fungsi \"get_display_number_string\". %s\n"
 
 #: ../src/general_functions.c:459
 #, c-format
 msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
-msgstr ""
+msgstr "[%s] basis angka tidak diketahui pada fungsi \"get_display_number_length\". %s\n"
 
 #: ../src/general_functions.c:568
 #, c-format
@@ -237,37 +237,37 @@ msgid ""
 "[%s] failed to convert %s to a number properly in function "
 "\"string2double\". Have you changed your locales? Deleting your "
 "configuration file might solve this problem. %s\n"
-msgstr ""
+msgstr "[%s] gagal mengkonversi %s ke angka pada fungsi \"string2double\". Apakah Anda mengubah pengaturan lokal Anda? Menghapus berkas konfigurasi mungkin bisa menyelesaikan masalah ini. %s\n"
 
 #: ../src/general_functions.c:586
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
-msgstr ""
+msgstr "[%s] basis angka tidak diketahui pada fungsi \"string2double\". %s\n"
 
 #: ../src/general_functions.c:741
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
-msgstr ""
+msgstr "[%s] basis sudut tidak diketahui pada fungsi \"x2rad\". %s\n"
 
 #: ../src/general_functions.c:756
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
-msgstr ""
+msgstr "[%s] basis sudut tidak diketahui pada fungsi \"rad2x\". %s\n"
 
 #: ../src/general_functions.c:773
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
-msgstr ""
+msgstr "[%s] basis angka tidak diketahui pada fungsi \"get_sep\". %s\n"
 
 #: ../src/general_functions.c:790
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
-msgstr ""
+msgstr "[%s] basis angka tidak diketahui pada fungsi \"get_sep_length\". %s\n"
 
 #: ../src/general_functions.c:807
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
-msgstr ""
+msgstr "[%s] basis angka tidak diketahui pada fungsi \"get_sep_char\". %s\n"
 
 #: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
@@ -279,7 +279,7 @@ msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
 "You might face problems when using %s! %s\n"
 ")"
-msgstr ""
+msgstr "[%s] panjang titik desimal (pada lokal) tidak didukung: >%s<\nAnda mungkin akan mengalami masalah ketika menggunakan %s! %s\n)"
 
 #: ../src/ui.c:89
 #, c-format
@@ -287,7 +287,7 @@ msgid ""
 "[%s] Couldn't load %s. This file is necessary     to build galculator's user"
 " interface. Make sure you did a make install and the file     is "
 "accessible!\n"
-msgstr ""
+msgstr "[%s] Tidak bisa memuat %s. Berkas ini penting untuk membangun antarmuka galculator. Pastikan Anda menjalankan make install dan berkas dapat diakases!\n"
 
 #: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
@@ -397,7 +397,7 @@ msgstr "Tampilan Hasil"
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
 "doing? If not: %s\n"
-msgstr ""
+msgstr "[%s] parser berkas dipanggil lebih dari %i kali. Apakah Anda tahu apa yang Anda lakukan? Jika tidak: %s\n"
 
 #: ../ui/about.ui.in.h:1
 msgid "About galculator"
@@ -630,7 +630,7 @@ msgstr "Jendela program utama."
 
 #: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
 msgid "Formula entry text field - enter string expression to compute here."
-msgstr ""
+msgstr "Kolom teks input rumus - masukkan ekspresi string yang hendak dikomputasi disini."
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:1 ../ui/dispctrl_bottom_gtk3.ui.h:1
 #: ../ui/dispctrl_right_gtk2.ui.h:1 ../ui/dispctrl_right_gtk3.ui.h:1

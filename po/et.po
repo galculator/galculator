@@ -3,39 +3,38 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# dardin88 <linkin88mail@gmail.com>, 2014
-# Stefano Karapetsas <stefano@karapetsas.com>, 2014
+# Ivar Smolin <okul@linux.ee>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-17 16:18+0100\n"
-"PO-Revision-Date: 2014-03-20 16:26+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
-"Language-Team: Italian (http://www.transifex.com/mate/MATE/language/it/)\n"
+"PO-Revision-Date: 2015-03-22 11:48+0000\n"
+"Last-Translator: Ivar Smolin <okul@linux.ee>\n"
+"Language-Team: Estonian (http://www.transifex.com/mate/MATE/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
+"Language: et\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../galculator.desktop.in.h:1
 msgid "Perform simple and scientific calculations"
-msgstr "Esegue calcoli semplici e scientifici"
+msgstr "Lihtsate või teaduslike arvutuste tegemine"
 
 #: ../src/callbacks.c:1051
 msgid "save here"
-msgstr "salva qui"
+msgstr "salvesta siia"
 
 #: ../src/callbacks.c:1427
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
-msgstr "[%s] on_prefs_number_combo_changed ha fallito nel recuperare l'elemento. %s\n"
+msgstr ""
 
 #: ../src/callbacks.c:1590
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
-msgstr "[%s] on_main_window_check_resize non dovrebbe essere chiamato. %s\n"
+msgstr ""
 
 #: ../src/main.c:61
 #, c-format
@@ -53,12 +52,12 @@ msgid ""
 "Compiled against GTK version %i.%i.%i\n"
 "Linked against GTK version %i.%i.%i\n"
 "%s-precision floating point numbers.\n"
-msgstr "\n%s v%s, (c) 2002-2014 Simon Flöry\n\nUtilizzo: %s [opzioni]\n\nopzioni:\n(opzioni GTK)\n -h, --help\t\tMostra questo messaggio\n -v, --version\t\tMostra informazioni sulla versione\n\nCompilato con GTK versione %i.%i.%i\nLinking effettuato con GTK versione %i.%i.%i\n%s-precisione numeri a virgola mobile.\n"
+msgstr "\n%s v%s, (c) 2002-2014 Simon Flöry\n\nKasutamine: %s [võtmed]\n\nvõtmed:\n(GTK võtmed)\n -h, --help\t\tKäesoleva kasutusjuhise näitamine\n -v, --version\t\tVersiooniandmete näitamine\n\nKompileeritud GTK versiooniga %i.%i.%i\nLingitud GTK versiooniga %i.%i.%i\nUjukomaarvude täpsusaste: %s.\n"
 
 #: ../src/main.c:196
 #, c-format
 msgid "[%s] configuration file: Failed to create directory %s.\n"
-msgstr "[%s] file di configurazione: creazione cartella fallita %s.\n"
+msgstr "[%s] seadistusfail: Tõrge kataloogi %s loomisel.\n"
 
 #: ../src/main.c:201
 #, c-format
@@ -66,42 +65,42 @@ msgid ""
 "[%s] configuration file: We will move the configuration file from %s to %s. "
 "After you quit %s, you may remove the configuration file from its old "
 "location %s.\n"
-msgstr "[%s] file di configurazione: il file di configurazione sarà spostato da %s a %s. Dopo essere uscito %s, potresti rimuovere il file di configurazione dalla vecchia posizione %s.\n"
+msgstr ""
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
-msgstr "Si prega di inviare una segnalazione dell'errore."
+msgstr "Palun saada vearaport."
 
 #: ../src/calc_basic.c:300
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
-msgstr "[%s] %c - carattere di operatore sconosciuto. %s\n"
+msgstr ""
 
 #: ../src/calc_basic.c:690
 #, c-format
 msgid ""
 "[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
 ")"
-msgstr "[%s] Conversione di numero in virgola mobile in float2string fallita perchè il buffer è troppo piccolo. %s\n)"
+msgstr ""
 
 #: ../src/calc_basic.c:719
 #, c-format
 msgid ""
 "[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
 ")"
-msgstr "[%s] Conversione di numero in virgola mobile in float2stringP fallita perchè il buffer è troppo piccolo. %s\n)"
+msgstr ""
 
 #: ../src/config_file.c:180
 msgid "Pi"
-msgstr "Pi Greco"
+msgstr "Pii"
 
 #: ../src/config_file.c:181
 msgid "pi"
-msgstr "pi greco"
+msgstr "pii"
 
 #: ../src/config_file.c:183
 msgid "Euler's Number"
-msgstr "Numero di Eulero"
+msgstr "Euleri arv"
 
 #: ../src/config_file.c:184
 msgid "e"
@@ -110,33 +109,33 @@ msgstr "e"
 #: ../src/config_file.c:232
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
-msgstr "[%s] file di configurazione: lemma sconosciuto ignorato %s=%s. %s\n"
+msgstr ""
 
 #: ../src/config_file.c:256
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
-msgstr "[%s] file di configurazione: %s doveva essere TRUE o FALSE. Impostati i valori di default. %s\n"
+msgstr ""
 
 #: ../src/config_file.c:262
 #, c-format
 msgid ""
 "[%s] configuration file: failed to convert %s to a number properly. Have you"
 " changed your locales? %s\n"
-msgstr "[%s] file di configurazione: conversione di %s in un numero fallita. Hai cambiato la tua lingua? %s\n"
+msgstr ""
 
 #: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr "[%s] file di configurazione: key_type sconosciuto ignorato nella struttura della configurazione. %s\n"
+msgstr ""
 
 #: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
-msgstr "[%s] trovata sezione sconosciuta %s nel file di configurazione %s. Impostata la sezione precedente.\n"
+msgstr ""
 
 #: ../src/config_file.c:403
 #, c-format
@@ -144,7 +143,7 @@ msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
-msgstr "[%s] file di configurazione: impossibile aprire il file di configurazione %s per la lettura. Se stai aprendo %s per la prima volta non preoccuparti di questo. Impostati i valori di default.\n"
+msgstr ""
 
 #: ../src/config_file.c:432
 #, c-format
@@ -152,85 +151,85 @@ msgid ""
 "[%s] configuration file - We reset at least one separator character as it "
 "coincides with the decimal point. If you recently changed your locales "
 "settings, this is nothing to worry about.\n"
-msgstr "[%s] file di configurazione - resettato almeno un carattere separatore in quanto coincide con il punto decimale. Se hai recentemente cambiato le impostazioni della lingua, non preoccuparti di questo.\n"
+msgstr ""
 
 #: ../src/config_file.c:470
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr "[%s] file di configurazione: trovato strano booleano durante la scrittura. Sto saltando questa chiave. %s\n"
+msgstr ""
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in "
 "\"config_structure\". %s\n"
-msgstr "[%s]file di configurazione: \"key_type\" sconosciuta ignorata nel \"config_structure\". %s\n"
+msgstr ""
 
 #: ../src/config_file.c:501
 #, c-format
 msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr "[%s] file di configurazione: impossibile salvare/scrivere il file di configurazione %s.\n"
+msgstr ""
 
 #: ../src/display.c:420
 #, c-format
 msgid ""
 "[%s] Line_index exceeds valid range in function \"display_delete_line\". "
 "%s\n"
-msgstr "[%s] Line_index eccede l'intervallo nella funzione \"display_delete_line\". %s\n"
+msgstr ""
 
 #: ../src/display.c:598
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
-msgstr "[%s] opzione di visualizzazione sconosciuta nella funzione \"display_change_option\""
+msgstr ""
 
 #: ../src/general_functions.c:43
 msgid "unsupported inverse function"
-msgstr "funzione inversa non supportata"
+msgstr ""
 
 #: ../src/general_functions.c:49
 msgid "unsupported hyperbolic function"
-msgstr "funzione iperbolica non supportata"
+msgstr ""
 
 #: ../src/general_functions.c:112
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
-msgstr "[%s] notazione sconosciuta nella funzione \"all_clear\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr "[%s] conversione del carattere %c fallita nella funzione \"axtof\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:194
 #, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr "[%s] conversione di %s fallita nella funzione \"ftoax\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:274
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr "[%s] conversione del colore %s fallita nella funzione \"set_button_color\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:395
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr "[%s] impossibile trovare il widget %s nella funzione \"activate_menu_item\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:437
 msgid "unknown number base"
-msgstr "base numerica sconosciuta"
+msgstr ""
 
 #: ../src/general_functions.c:438
 #, c-format
 msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
-msgstr "[%s] base numerica sconosciuta nella funzione \"get_display_number_string\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:459
 #, c-format
 msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
-msgstr "[%s] base numerica sconosciuta nella funzione \"get_display_number_length\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:568
 #, c-format
@@ -238,41 +237,41 @@ msgid ""
 "[%s] failed to convert %s to a number properly in function "
 "\"string2double\". Have you changed your locales? Deleting your "
 "configuration file might solve this problem. %s\n"
-msgstr "[%s] conversione di %s in un numero nella funzione \"string2double\" fallita. Hai cambiato la tua lingua? Cancellare il tuo file di configurazione potrebbe risolvere il problema. %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:586
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
-msgstr "[%s] base numerica sconosciuta nella funzione \"string2double\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:741
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
-msgstr "[%s] base angolare sconosciuta nella funzione \"x2rad\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:756
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
-msgstr "[%s] base angolare sconosciuta nella funzione \"rad2x\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:773
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
-msgstr "[%s] base numerica sconosciuta nella funzione \"get_sep\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:790
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
-msgstr "[%s] base numerica sconosciuta nella funzione \"get_sep_length\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:807
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
-msgstr "[%s] base numerica sconosciuta nella funzione \"get_sep_char\". %s\n"
+msgstr ""
 
 #: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
-msgstr "opzione di visualizzazione sconosciuta nella funzione \"change_option\""
+msgstr ""
 
 #: ../src/general_functions.c:915
 #, c-format
@@ -280,7 +279,7 @@ msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
 "You might face problems when using %s! %s\n"
 ")"
-msgstr "[%s] lunghezza del punto decimale (nella lingua) non supportata: >%s<\nPotresti incontrare problemi utilizzando %s! %s\n)"
+msgstr ""
 
 #: ../src/ui.c:89
 #, c-format
@@ -288,36 +287,36 @@ msgid ""
 "[%s] Couldn't load %s. This file is necessary     to build galculator's user"
 " interface. Make sure you did a make install and the file     is "
 "accessible!\n"
-msgstr "[%s] Impossibile caricare %s. Questo file è necessario per compilare l'interfaccia grafica di galculator. Assicurati di aver installato con make e che il file sia accessibile!\n"
+msgstr ""
 
 #: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
-msgstr "_Mostra barra dei menu"
+msgstr "Näita _menüüriba"
 
 #: ../src/ui.c:999
 #, c-format
 msgid "%s Preferences"
-msgstr "Preferenze di %s"
+msgstr "%s eelistused"
 
 #: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
-msgstr "Nome"
+msgstr "Nimi"
 
 #: ../src/ui.c:1046
 msgid "Value"
-msgstr "Valore"
+msgstr "Väärtus"
 
 #: ../src/ui.c:1049
 msgid "Description"
-msgstr "Descrizione"
+msgstr "Kirjeldus"
 
 #: ../src/ui.c:1078
 msgid "Variable"
-msgstr "Variabile"
+msgstr "Muutuja"
 
 #: ../src/ui.c:1081
 msgid "Expression"
-msgstr "Espressione"
+msgstr "Avaldis"
 
 #: ../src/ui.c:1211 ../ui/basic_buttons_gtk2.ui.h:43
 #: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
@@ -329,7 +328,7 @@ msgstr "="
 #: ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons_gtk2.ui.h:99 ../ui/scientific_buttons_gtk3.ui.h:99
 msgid "Enter"
-msgstr "Invio"
+msgstr ""
 
 #: ../src/ui.c:1213 ../ui/scientific_buttons_gtk2.ui.h:17
 #: ../ui/scientific_buttons_gtk3.ui.h:17
@@ -339,7 +338,7 @@ msgstr "x^y"
 #: ../src/ui.c:1213 ../src/ui.c:1225 ../ui/scientific_buttons_gtk2.ui.h:18
 #: ../ui/scientific_buttons_gtk3.ui.h:18
 msgid "Power"
-msgstr "Potenza"
+msgstr "Astendamine"
 
 #: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:33
 #: ../ui/basic_buttons_gtk3.ui.h:33 ../ui/scientific_buttons_gtk2.ui.h:88
@@ -351,7 +350,7 @@ msgstr "("
 #: ../ui/basic_buttons_gtk3.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:89
 #: ../ui/scientific_buttons_gtk3.ui.h:89
 msgid "Open Bracket"
-msgstr "Apri parentesi"
+msgstr "Alustav sulg"
 
 #: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:31
 #: ../ui/basic_buttons_gtk3.ui.h:31 ../ui/scientific_buttons_gtk2.ui.h:86
@@ -363,11 +362,11 @@ msgstr ")"
 #: ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
 #: ../ui/scientific_buttons_gtk3.ui.h:87
 msgid "Close Bracket"
-msgstr "Chiudi parentesi"
+msgstr "Lõpetav sulg"
 
 #: ../src/ui.c:1223
 msgid "ENT"
-msgstr "ENT"
+msgstr ""
 
 #: ../src/ui.c:1225
 msgid "y^x"
@@ -379,38 +378,38 @@ msgstr "x<>y"
 
 #: ../src/ui.c:1227
 msgid "swap current number with top of stack"
-msgstr "scambia il numero corrente con il top dello stack"
+msgstr ""
 
 #: ../src/ui.c:1229
 msgid "roll"
-msgstr "rotola"
+msgstr ""
 
 #: ../src/ui.c:1229
 msgid "roll down stack"
-msgstr "rotola giù lo stack"
+msgstr ""
 
 #: ../src/ui.c:1300
 msgid "Result Display"
-msgstr "Visualizzazione del risultato"
+msgstr ""
 
 #: ../src/flex_parser.l:233
 #, c-format
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
 "doing? If not: %s\n"
-msgstr "[%s] il parser flex parser è stato chiamato più di %i volte. Sai cosa stai facendo? Se no: %s\n"
+msgstr ""
 
 #: ../ui/about.ui.in.h:1
 msgid "About galculator"
-msgstr "Informazioni su galculator"
+msgstr "Galculatorist lähemalt"
 
 #: ../ui/about.ui.in.h:2
 msgid "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
-msgstr "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
+msgstr "Autoriõigus (c) 2002-2014 Simon Flöry <simon.floery@rechenraum.com>"
 
 #: ../ui/about.ui.in.h:3
 msgid "a GTK+ based scientific calculator"
-msgstr "una calcolatrice scientifica basata su GTK+"
+msgstr "GTK+ teegil põhinev teaduslik kalkulaator"
 
 #: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1
 #: ../ui/scientific_buttons_gtk2.ui.h:52 ../ui/scientific_buttons_gtk3.ui.h:52
@@ -420,7 +419,7 @@ msgstr "7"
 #: ../ui/basic_buttons_gtk2.ui.h:2 ../ui/basic_buttons_gtk3.ui.h:2
 #: ../ui/scientific_buttons_gtk2.ui.h:53 ../ui/scientific_buttons_gtk3.ui.h:53
 msgid "Seven"
-msgstr "Sette"
+msgstr "Seitse"
 
 #: ../ui/basic_buttons_gtk2.ui.h:3 ../ui/basic_buttons_gtk3.ui.h:3
 #: ../ui/scientific_buttons_gtk2.ui.h:54 ../ui/scientific_buttons_gtk3.ui.h:54
@@ -430,7 +429,7 @@ msgstr "8"
 #: ../ui/basic_buttons_gtk2.ui.h:4 ../ui/basic_buttons_gtk3.ui.h:4
 #: ../ui/scientific_buttons_gtk2.ui.h:55 ../ui/scientific_buttons_gtk3.ui.h:55
 msgid "Eight"
-msgstr "Otto"
+msgstr "Kaheksa"
 
 #: ../ui/basic_buttons_gtk2.ui.h:5 ../ui/basic_buttons_gtk3.ui.h:5
 #: ../ui/scientific_buttons_gtk2.ui.h:56 ../ui/scientific_buttons_gtk3.ui.h:56
@@ -440,17 +439,17 @@ msgstr "9"
 #: ../ui/basic_buttons_gtk2.ui.h:6 ../ui/basic_buttons_gtk3.ui.h:6
 #: ../ui/scientific_buttons_gtk2.ui.h:57 ../ui/scientific_buttons_gtk3.ui.h:57
 msgid "Nine"
-msgstr "Nove"
+msgstr "Üheksa"
 
 #: ../ui/basic_buttons_gtk2.ui.h:7 ../ui/basic_buttons_gtk3.ui.h:7
 #: ../ui/scientific_buttons_gtk2.ui.h:58 ../ui/scientific_buttons_gtk3.ui.h:58
 msgid "/"
-msgstr "/"
+msgstr ""
 
 #: ../ui/basic_buttons_gtk2.ui.h:8 ../ui/basic_buttons_gtk3.ui.h:8
 #: ../ui/scientific_buttons_gtk2.ui.h:59 ../ui/scientific_buttons_gtk3.ui.h:59
 msgid "Divide"
-msgstr "Dividi"
+msgstr "Jagamine"
 
 #: ../ui/basic_buttons_gtk2.ui.h:9 ../ui/basic_buttons_gtk3.ui.h:9
 #: ../ui/scientific_buttons_gtk2.ui.h:62 ../ui/scientific_buttons_gtk3.ui.h:62
@@ -460,7 +459,7 @@ msgstr "4"
 #: ../ui/basic_buttons_gtk2.ui.h:10 ../ui/basic_buttons_gtk3.ui.h:10
 #: ../ui/scientific_buttons_gtk2.ui.h:63 ../ui/scientific_buttons_gtk3.ui.h:63
 msgid "Four"
-msgstr "Quattro"
+msgstr "Neli"
 
 #: ../ui/basic_buttons_gtk2.ui.h:11 ../ui/basic_buttons_gtk3.ui.h:11
 #: ../ui/scientific_buttons_gtk2.ui.h:64 ../ui/scientific_buttons_gtk3.ui.h:64
@@ -470,7 +469,7 @@ msgstr "5"
 #: ../ui/basic_buttons_gtk2.ui.h:12 ../ui/basic_buttons_gtk3.ui.h:12
 #: ../ui/scientific_buttons_gtk2.ui.h:65 ../ui/scientific_buttons_gtk3.ui.h:65
 msgid "Five"
-msgstr "Cinque"
+msgstr "Viis"
 
 #: ../ui/basic_buttons_gtk2.ui.h:13 ../ui/basic_buttons_gtk3.ui.h:13
 #: ../ui/scientific_buttons_gtk2.ui.h:66 ../ui/scientific_buttons_gtk3.ui.h:66
@@ -480,7 +479,7 @@ msgstr "6"
 #: ../ui/basic_buttons_gtk2.ui.h:14 ../ui/basic_buttons_gtk3.ui.h:14
 #: ../ui/scientific_buttons_gtk2.ui.h:67 ../ui/scientific_buttons_gtk3.ui.h:67
 msgid "Six"
-msgstr "Sei"
+msgstr "Kuus"
 
 #: ../ui/basic_buttons_gtk2.ui.h:15 ../ui/basic_buttons_gtk3.ui.h:15
 #: ../ui/scientific_buttons_gtk2.ui.h:68 ../ui/scientific_buttons_gtk3.ui.h:68
@@ -490,7 +489,7 @@ msgstr "3"
 #: ../ui/basic_buttons_gtk2.ui.h:16 ../ui/basic_buttons_gtk3.ui.h:16
 #: ../ui/scientific_buttons_gtk2.ui.h:69 ../ui/scientific_buttons_gtk3.ui.h:69
 msgid "Three"
-msgstr "Tre"
+msgstr "Kolm"
 
 #: ../ui/basic_buttons_gtk2.ui.h:17 ../ui/basic_buttons_gtk3.ui.h:17
 #: ../ui/scientific_buttons_gtk2.ui.h:70 ../ui/scientific_buttons_gtk3.ui.h:70
@@ -500,7 +499,7 @@ msgstr "-"
 #: ../ui/basic_buttons_gtk2.ui.h:18 ../ui/basic_buttons_gtk3.ui.h:18
 #: ../ui/scientific_buttons_gtk2.ui.h:71 ../ui/scientific_buttons_gtk3.ui.h:71
 msgid "Subtract"
-msgstr "Sottrai"
+msgstr "Lahutamine"
 
 #: ../ui/basic_buttons_gtk2.ui.h:19 ../ui/basic_buttons_gtk3.ui.h:19
 #: ../ui/scientific_buttons_gtk2.ui.h:72 ../ui/scientific_buttons_gtk3.ui.h:72
@@ -510,7 +509,7 @@ msgstr "+"
 #: ../ui/basic_buttons_gtk2.ui.h:20 ../ui/basic_buttons_gtk3.ui.h:20
 #: ../ui/scientific_buttons_gtk2.ui.h:73 ../ui/scientific_buttons_gtk3.ui.h:73
 msgid "Sum"
-msgstr "Somma"
+msgstr "Liitmine"
 
 #: ../ui/basic_buttons_gtk2.ui.h:21 ../ui/basic_buttons_gtk3.ui.h:21
 #: ../ui/scientific_buttons_gtk2.ui.h:76 ../ui/scientific_buttons_gtk3.ui.h:76
@@ -520,23 +519,23 @@ msgstr "+/-"
 #: ../ui/basic_buttons_gtk2.ui.h:22 ../ui/basic_buttons_gtk3.ui.h:22
 #: ../ui/scientific_buttons_gtk2.ui.h:77 ../ui/scientific_buttons_gtk3.ui.h:77
 msgid "Change sign"
-msgstr "Cambia segno"
+msgstr "Märgi muutmine"
 
 #: ../ui/basic_buttons_gtk2.ui.h:23 ../ui/basic_buttons_gtk3.ui.h:23
 #: ../ui/main_frame_hildon.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:78
 #: ../ui/scientific_buttons_gtk3.ui.h:78
 msgid "*"
-msgstr "*"
+msgstr ""
 
 #: ../ui/basic_buttons_gtk2.ui.h:24 ../ui/basic_buttons_gtk3.ui.h:24
 #: ../ui/scientific_buttons_gtk2.ui.h:79 ../ui/scientific_buttons_gtk3.ui.h:79
 msgid "Multiply"
-msgstr "Moltiplica"
+msgstr "Korrutamine"
 
 #: ../ui/basic_buttons_gtk2.ui.h:25 ../ui/basic_buttons_gtk3.ui.h:25
 #: ../ui/scientific_buttons_gtk2.ui.h:80 ../ui/scientific_buttons_gtk3.ui.h:80
 msgid "Add current display value to memory"
-msgstr "Aggiunge il valore corrente visualizzato alla memoria"
+msgstr "Hetkel kuvatava väärtuse liitmine mällu"
 
 #: ../ui/basic_buttons_gtk2.ui.h:26 ../ui/basic_buttons_gtk3.ui.h:26
 #: ../ui/scientific_buttons_gtk2.ui.h:81 ../ui/scientific_buttons_gtk3.ui.h:81
@@ -546,22 +545,22 @@ msgstr "M+"
 #: ../ui/basic_buttons_gtk2.ui.h:27 ../ui/basic_buttons_gtk3.ui.h:27
 #: ../ui/scientific_buttons_gtk2.ui.h:82 ../ui/scientific_buttons_gtk3.ui.h:82
 msgid "Read from memory"
-msgstr "Leggi dalla memoria"
+msgstr "Mälust lugemine"
 
 #: ../ui/basic_buttons_gtk2.ui.h:28 ../ui/basic_buttons_gtk3.ui.h:28
 #: ../ui/scientific_buttons_gtk2.ui.h:83 ../ui/scientific_buttons_gtk3.ui.h:83
 msgid "MR"
-msgstr "MR"
+msgstr ""
 
 #: ../ui/basic_buttons_gtk2.ui.h:29 ../ui/basic_buttons_gtk3.ui.h:29
 #: ../ui/scientific_buttons_gtk2.ui.h:84 ../ui/scientific_buttons_gtk3.ui.h:84
 msgid "Save to memory"
-msgstr "Salva sulla memoria"
+msgstr "Mällu salvestamine"
 
 #: ../ui/basic_buttons_gtk2.ui.h:30 ../ui/basic_buttons_gtk3.ui.h:30
 #: ../ui/scientific_buttons_gtk2.ui.h:85 ../ui/scientific_buttons_gtk3.ui.h:85
 msgid "MS"
-msgstr "MS"
+msgstr ""
 
 #: ../ui/basic_buttons_gtk2.ui.h:35 ../ui/basic_buttons_gtk3.ui.h:35
 #: ../ui/scientific_buttons_gtk2.ui.h:90 ../ui/scientific_buttons_gtk3.ui.h:90
@@ -571,17 +570,17 @@ msgstr "0"
 #: ../ui/basic_buttons_gtk2.ui.h:36 ../ui/basic_buttons_gtk3.ui.h:36
 #: ../ui/scientific_buttons_gtk2.ui.h:91 ../ui/scientific_buttons_gtk3.ui.h:91
 msgid "Zero"
-msgstr "Zero"
+msgstr "Null"
 
 #: ../ui/basic_buttons_gtk2.ui.h:37 ../ui/basic_buttons_gtk3.ui.h:37
 #: ../ui/scientific_buttons_gtk2.ui.h:92 ../ui/scientific_buttons_gtk3.ui.h:92
 msgid "."
-msgstr "."
+msgstr ""
 
 #: ../ui/basic_buttons_gtk2.ui.h:38 ../ui/basic_buttons_gtk3.ui.h:38
 #: ../ui/scientific_buttons_gtk2.ui.h:93 ../ui/scientific_buttons_gtk3.ui.h:93
 msgid "Decimal point"
-msgstr "Punto decimale"
+msgstr ""
 
 #: ../ui/basic_buttons_gtk2.ui.h:39 ../ui/basic_buttons_gtk3.ui.h:39
 #: ../ui/scientific_buttons_gtk2.ui.h:94 ../ui/scientific_buttons_gtk3.ui.h:94
@@ -591,7 +590,7 @@ msgstr "1"
 #: ../ui/basic_buttons_gtk2.ui.h:40 ../ui/basic_buttons_gtk3.ui.h:40
 #: ../ui/scientific_buttons_gtk2.ui.h:95 ../ui/scientific_buttons_gtk3.ui.h:95
 msgid "One"
-msgstr "Uno"
+msgstr "Üks"
 
 #: ../ui/basic_buttons_gtk2.ui.h:41 ../ui/basic_buttons_gtk3.ui.h:41
 #: ../ui/scientific_buttons_gtk2.ui.h:96 ../ui/scientific_buttons_gtk3.ui.h:96
@@ -601,17 +600,17 @@ msgstr "2"
 #: ../ui/basic_buttons_gtk2.ui.h:42 ../ui/basic_buttons_gtk3.ui.h:42
 #: ../ui/scientific_buttons_gtk2.ui.h:97 ../ui/scientific_buttons_gtk3.ui.h:97
 msgid "Two"
-msgstr "Due"
+msgstr "Kaks"
 
 #: ../ui/basic_buttons_gtk2.ui.h:45 ../ui/basic_buttons_gtk3.ui.h:45
 #: ../ui/scientific_buttons_gtk2.ui.h:5 ../ui/scientific_buttons_gtk3.ui.h:5
 msgid "sqrt"
-msgstr "sqrt"
+msgstr ""
 
 #: ../ui/basic_buttons_gtk2.ui.h:46 ../ui/basic_buttons_gtk3.ui.h:46
 #: ../ui/scientific_buttons_gtk2.ui.h:6 ../ui/scientific_buttons_gtk3.ui.h:6
 msgid "Square root"
-msgstr "Radice quadrata"
+msgstr "Ruutjuur"
 
 #: ../ui/basic_buttons_gtk2.ui.h:48 ../ui/basic_buttons_gtk3.ui.h:48
 #: ../ui/scientific_buttons_gtk2.ui.h:24 ../ui/scientific_buttons_gtk3.ui.h:24
@@ -622,30 +621,30 @@ msgstr "%"
 #: ../ui/basic_buttons_gtk2.ui.h:49 ../ui/basic_buttons_gtk3.ui.h:49
 #: ../ui/scientific_buttons_gtk2.ui.h:25 ../ui/scientific_buttons_gtk3.ui.h:25
 msgid "Percent"
-msgstr "Percentuale"
+msgstr "Protsent"
 
 #: ../ui/classic_view.ui.h:1 ../ui/main_frame.ui.h:1
 #: ../ui/main_frame_hildon.ui.h:35 ../ui/paper_view.ui.h:1
 msgid "The main program window."
-msgstr "La finestra principale del programma."
+msgstr ""
 
 #: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
 msgid "Formula entry text field - enter string expression to compute here."
-msgstr "Campo per l'inserimento di formule testuali - inserisci un'espressione da calcolare."
+msgstr "Valemi sisestusväli – arvutatava avaldise sisestamine stringina."
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:1 ../ui/dispctrl_bottom_gtk3.ui.h:1
 #: ../ui/dispctrl_right_gtk2.ui.h:1 ../ui/dispctrl_right_gtk3.ui.h:1
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:5
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:5
 msgid "AC"
-msgstr "AC"
+msgstr ""
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:2 ../ui/dispctrl_bottom_gtk3.ui.h:2
 #: ../ui/dispctrl_right_gtk2.ui.h:2 ../ui/dispctrl_right_gtk3.ui.h:2
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:6
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:6
 msgid "Reset calculator (clear all)"
-msgstr "Rest calcolatrice (pulisci tutto)"
+msgstr "Kalkulaatori lähtestamine (täielik puhastus)"
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:3 ../ui/dispctrl_bottom_gtk3.ui.h:3
 #: ../ui/dispctrl_right_gtk2.ui.h:5 ../ui/dispctrl_right_gtk3.ui.h:5
@@ -653,14 +652,14 @@ msgstr "Rest calcolatrice (pulisci tutto)"
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:3
 #: ../ui/scientific_buttons_gtk2.ui.h:40 ../ui/scientific_buttons_gtk3.ui.h:40
 msgid "C"
-msgstr "C"
+msgstr ""
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:4 ../ui/dispctrl_bottom_gtk3.ui.h:4
 #: ../ui/dispctrl_right_gtk2.ui.h:6 ../ui/dispctrl_right_gtk3.ui.h:6
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:4
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:4
 msgid "Clear display"
-msgstr "Pulisci il display."
+msgstr "Kuva nullimine"
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:5 ../ui/dispctrl_bottom_gtk3.ui.h:5
 #: ../ui/dispctrl_right_gtk2.ui.h:3 ../ui/dispctrl_right_gtk3.ui.h:3
@@ -674,402 +673,402 @@ msgstr "<-"
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:2
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:2
 msgid "Backspace"
-msgstr "Backspace"
+msgstr "Tagasivõtmine"
 
 #: ../ui/main_frame.ui.h:2 ../ui/main_frame_hildon.ui.h:1
 msgid "_File"
-msgstr "_File"
+msgstr "_Fail"
 
 #: ../ui/main_frame.ui.h:3 ../ui/main_frame_hildon.ui.h:3
 msgid "_Edit"
-msgstr "_Modifica"
+msgstr "_Redaktor"
 
 #: ../ui/main_frame.ui.h:4 ../ui/main_frame_hildon.ui.h:4
 msgid "Cu_t Display Value"
-msgstr "_Taglia Valore del Display"
+msgstr "_Lõika kuvatav väärtus"
 
 #: ../ui/main_frame.ui.h:5 ../ui/main_frame_hildon.ui.h:5
 msgid "_Copy Display Value"
-msgstr "_Copia il Valore del Display"
+msgstr "_Kopeeri kuvatav väärtus"
 
 #: ../ui/main_frame.ui.h:6
 msgid "_Paste and Append to Display Value"
-msgstr "_Incolla e collega al valore del display"
+msgstr "_Aseta ja lisa kuvatavale väärtusele"
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
-msgstr "_Preferenze..."
+msgstr "_Eelistused..."
 
 #: ../ui/main_frame.ui.h:8 ../ui/main_frame_hildon.ui.h:8
 msgid "_View"
-msgstr "_Visualizza"
+msgstr "_Vaade"
 
 #: ../ui/main_frame.ui.h:9 ../ui/main_frame_hildon.ui.h:9
 msgid "_Basic Mode"
-msgstr "Modalità della _Base"
+msgstr "_Põhirežiim"
 
 #: ../ui/main_frame.ui.h:10 ../ui/main_frame_hildon.ui.h:10
 msgid "_Scientific Mode"
-msgstr "Modalità _Scientifica"
+msgstr "_Teaduslik režiim"
 
 #: ../ui/main_frame.ui.h:11
 msgid "_Paper Mode"
-msgstr "Modalità _Carta"
+msgstr "Pa_berirežiim"
 
 #: ../ui/main_frame.ui.h:12 ../ui/main_frame_hildon.ui.h:11
 #: ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
 msgid "Buttons"
-msgstr "Pulsanti"
+msgstr "Nupud"
 
 #: ../ui/main_frame.ui.h:13 ../ui/main_frame_hildon.ui.h:12
 msgid "Display Control"
-msgstr "Controllo display"
+msgstr "Kuva juhtimine"
 
 #: ../ui/main_frame.ui.h:14 ../ui/main_frame_hildon.ui.h:13
 #: ../ui/prefs_gtk2.ui.h:53 ../ui/prefs_gtk3.ui.h:53
 msgid "Functions"
-msgstr "Funzioni"
+msgstr "Funktsioonid"
 
 #: ../ui/main_frame.ui.h:15 ../ui/main_frame_hildon.ui.h:14
 msgid "Logical"
-msgstr "Logico"
+msgstr "Loogika"
 
 #: ../ui/main_frame.ui.h:16 ../ui/main_frame_hildon.ui.h:15
 msgid "Standard"
-msgstr "Predefinito"
+msgstr "Standardsed"
 
 #: ../ui/main_frame.ui.h:18 ../ui/main_frame_hildon.ui.h:17
 msgid "_Calculator"
-msgstr "_Calcolatrice"
+msgstr "_Kalkulaator"
 
 #: ../ui/main_frame.ui.h:19 ../ui/main_frame_hildon.ui.h:18
 msgid "_Number bases"
-msgstr "Basi _Numeriche"
+msgstr ""
 
 #: ../ui/main_frame.ui.h:20 ../ui/main_frame_hildon.ui.h:19
 msgid "_Decimal"
-msgstr "_Decimale"
+msgstr ""
 
 #: ../ui/main_frame.ui.h:21 ../ui/main_frame_hildon.ui.h:20
 msgid "_Hexadecimal"
-msgstr "_Esadecimale"
+msgstr ""
 
 #: ../ui/main_frame.ui.h:22 ../ui/main_frame_hildon.ui.h:21
 msgid "_Octal"
-msgstr "_Ottale"
+msgstr ""
 
 #: ../ui/main_frame.ui.h:23 ../ui/main_frame_hildon.ui.h:22
 msgid "_Binary"
-msgstr "_Binaria"
+msgstr ""
 
 #: ../ui/main_frame.ui.h:24 ../ui/main_frame_hildon.ui.h:23
 msgid "Angle _units"
-msgstr "_Unità angolari"
+msgstr "N_urgaühikud"
 
 #: ../ui/main_frame.ui.h:25 ../ui/main_frame_hildon.ui.h:24
 msgid "D_egrees"
-msgstr "G_radi"
+msgstr "_Kraadid"
 
 #: ../ui/main_frame.ui.h:26 ../ui/main_frame_hildon.ui.h:25
 msgid "_Radians"
-msgstr "_Radianti"
+msgstr "_Radiaanid"
 
 #: ../ui/main_frame.ui.h:27 ../ui/main_frame_hildon.ui.h:26
 msgid "_Gradians"
-msgstr "_Gradianti"
+msgstr "_Goonid"
 
 #: ../ui/main_frame.ui.h:28 ../ui/main_frame_hildon.ui.h:27
 msgid "Notation _modes"
-msgstr "_Modalità notazione"
+msgstr ""
 
 #: ../ui/main_frame.ui.h:29 ../ui/main_frame_hildon.ui.h:28
 msgid "_Algebraic"
-msgstr "_Algebrica"
+msgstr "_Algebraline"
 
 #: ../ui/main_frame.ui.h:30 ../ui/main_frame_hildon.ui.h:29
 msgid "_Reverse Polish (RPN)"
-msgstr "_Notazione Polacca Inversa (RPN)"
+msgstr "_Pööratud Poola notatsioon (RPN)"
 
 #: ../ui/main_frame.ui.h:31 ../ui/main_frame_hildon.ui.h:30
 msgid "_Formula Entry"
-msgstr "_Campo Formula"
+msgstr "_Valemi sisestamine"
 
 #: ../ui/main_frame.ui.h:32 ../ui/main_frame_hildon.ui.h:31
 msgid "_Help"
-msgstr "_Aiuto"
+msgstr "A_bi"
 
 #: ../ui/main_frame_hildon.ui.h:2
 msgid "_Quit"
-msgstr "_Esci"
+msgstr ""
 
 #: ../ui/main_frame_hildon.ui.h:6
 msgid "_Paste As Display Value"
-msgstr "_Incolla Come Valore Display"
+msgstr ""
 
 #: ../ui/main_frame_hildon.ui.h:32
 msgid "_About..."
-msgstr "Inform_azioni su..."
+msgstr "_Programmist lähemalt"
 
 #: ../ui/prefs_gtk2.ui.h:1 ../ui/prefs_gtk3.ui.h:1
 msgid "Decimal"
-msgstr "Decimale"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:2 ../ui/prefs_gtk3.ui.h:2
 msgid "Hexadecimal"
-msgstr "Esadecimale"
+msgstr "Kuueteistkümnendsüsteem"
 
 #: ../ui/prefs_gtk2.ui.h:3 ../ui/prefs_gtk3.ui.h:3
 msgid "Octal"
-msgstr "Ottale"
+msgstr "Kaheksandsüsteem"
 
 #: ../ui/prefs_gtk2.ui.h:4 ../ui/prefs_gtk3.ui.h:4
 msgid "Binary"
-msgstr "Binaria"
+msgstr "Kahendsüsteem"
 
 #: ../ui/prefs_gtk2.ui.h:5 ../ui/prefs_gtk3.ui.h:5 ../ui/prefs-ume.ui.h:1
 msgid "galculator - Preferences"
-msgstr "galculator - Preferenze"
+msgstr "galculator - eelistused"
 
 #: ../ui/prefs_gtk2.ui.h:6 ../ui/prefs_gtk3.ui.h:6 ../ui/prefs-ume.ui.h:2
 msgid "A dialog that is used to change preferences settings."
-msgstr "Una finestra usata per modificare le preferenze."
+msgstr "Eelistuste muutmise dialoog."
 
 #: ../ui/prefs_gtk2.ui.h:7 ../ui/prefs_gtk3.ui.h:7 ../ui/prefs-ume.ui.h:3
 msgid "Closes the dialog."
-msgstr "Chiudi la finestra."
+msgstr "Dialoogi sulgemine."
 
 #: ../ui/prefs_gtk2.ui.h:8 ../ui/prefs_gtk3.ui.h:8
 msgid "<b>Appearance</b>"
-msgstr "<b>Aspetto</b>"
+msgstr "<b>Välimus</b>"
 
 #: ../ui/prefs_gtk2.ui.h:9 ../ui/prefs_gtk3.ui.h:9 ../ui/prefs-ume.ui.h:5
 msgid "    "
-msgstr "    "
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:10 ../ui/prefs_gtk3.ui.h:10
 msgid "Result font:"
-msgstr "Carattere risultato:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:11 ../ui/prefs_gtk3.ui.h:11
 msgid "Inactive module color:"
-msgstr "Colore modulo inattivo:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:12 ../ui/prefs_gtk3.ui.h:12
 msgid "Active module color:"
-msgstr "Colore modulo attivo:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:13 ../ui/prefs_gtk3.ui.h:13
 msgid "Result font color:"
-msgstr "Colore carattere risultato:"
+msgstr "Tulemuse kirjatüüp:"
 
 #: ../ui/prefs_gtk2.ui.h:14 ../ui/prefs_gtk3.ui.h:14
 msgid "Background color:"
-msgstr "Colore sfondo:"
+msgstr "Taustavärv:"
 
 #: ../ui/prefs_gtk2.ui.h:15 ../ui/prefs_gtk3.ui.h:15
 msgid "Module font:"
-msgstr "Carattere modulo:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:16 ../ui/prefs_gtk3.ui.h:16
 msgid "RPN stack font:"
-msgstr "Cattere stack RPN:"
+msgstr "RPN-i pinu kirjatüüp:"
 
 #: ../ui/prefs_gtk2.ui.h:17 ../ui/prefs_gtk3.ui.h:17
 msgid "RPN stack color:"
-msgstr "Colore stack RPN"
+msgstr "RPN-i pinu värv:"
 
 #: ../ui/prefs_gtk2.ui.h:18 ../ui/prefs_gtk3.ui.h:18
 msgid "Pick a Display Background Color"
-msgstr "Seleziona un Colore di Sfondo per il Display"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
 msgid "Pick a Display Result Font Color"
-msgstr "Seleziona un Colore per il Carattere del Display del Risultato"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
 msgid "Pick a RPN Stack Color"
-msgstr "Seleziona un Colore per lo Stack RPN"
+msgstr "RPN-i pinu värvuse valimine"
 
 #: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
 msgid "Pick a Inactive Module Color"
-msgstr "Seleziona un Colore per il Modulo Inattivo"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:22 ../ui/prefs_gtk3.ui.h:22
 msgid "Pick a Active Module Color"
-msgstr "Seleziona un Colore per il Modulo Attivo"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
 msgid "Pick a Result Font"
-msgstr "Seleziona un Carattere per il Risultato"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
 msgid "Pick a RPN Stack Font"
-msgstr "Seleziona un Carattere per lo Stack RPN"
+msgstr "RPN-i pinu kirjatüübi valimine"
 
 #: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
 msgid "Pick a Module Font"
-msgstr "Seleziona un Carattere per il Modulo"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
 msgid "<b>Modules Visibility</b>"
-msgstr "<b>Visibilità dei Moduli</b>"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:27 ../ui/prefs_gtk3.ui.h:27 ../ui/prefs-ume.ui.h:6
 msgid "Angle base units"
-msgstr "Unità angolari di base"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:28 ../ui/prefs_gtk3.ui.h:28 ../ui/prefs-ume.ui.h:7
 msgid "Notation"
-msgstr "Notazione"
+msgstr "Notatsioon"
 
 #: ../ui/prefs_gtk2.ui.h:29 ../ui/prefs_gtk3.ui.h:29 ../ui/prefs-ume.ui.h:8
 msgid "Arithmetic operation"
-msgstr "Operazione aritmetica"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:30 ../ui/prefs_gtk3.ui.h:30 ../ui/prefs-ume.ui.h:9
 msgid "Open brackets"
-msgstr "Apri parentesi"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:31 ../ui/prefs_gtk3.ui.h:31 ../ui/prefs-ume.ui.h:10
 msgid "Number base units"
-msgstr "Unità base numerica"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:32 ../ui/prefs_gtk3.ui.h:32 ../ui/prefs-ume.ui.h:11
 msgid "Display"
-msgstr "Display"
+msgstr "Kuva"
 
 #: ../ui/prefs_gtk2.ui.h:33 ../ui/prefs_gtk3.ui.h:33 ../ui/prefs-ume.ui.h:12
 msgid "<b>Font</b>"
-msgstr "<b>Carattere</b>"
+msgstr "<b>Kirjatüüp</b>"
 
 #: ../ui/prefs_gtk2.ui.h:34 ../ui/prefs_gtk3.ui.h:34 ../ui/prefs-ume.ui.h:13
 msgid "Use custom button font"
-msgstr "Usa carattere dei bottoni personalizzato"
+msgstr "Nuppudel kasutatakse kohandatud kirjatüüpi"
 
 #: ../ui/prefs_gtk2.ui.h:35 ../ui/prefs_gtk3.ui.h:35 ../ui/prefs-ume.ui.h:14
 msgid "Button font:"
-msgstr "Carattere bottoni:"
+msgstr "Nupu kirjatüüp:"
 
 #: ../ui/prefs_gtk2.ui.h:36 ../ui/prefs_gtk3.ui.h:36 ../ui/prefs-ume.ui.h:15
 msgid "Pick a Button Font"
-msgstr "Seleziona un Carattere per i Bottoni"
+msgstr "Nupu kirjatüübi valimine"
 
 #: ../ui/prefs_gtk2.ui.h:37 ../ui/prefs_gtk3.ui.h:37 ../ui/prefs-ume.ui.h:16
 msgid "<b>Dimension</b>"
-msgstr "<b>Dimensione</b>"
+msgstr "<b>Mõõtmed</b>"
 
 #: ../ui/prefs_gtk2.ui.h:38 ../ui/prefs_gtk3.ui.h:38 ../ui/prefs-ume.ui.h:17
 msgid "Minimal button width:"
-msgstr "Larghezza minima bottoni:"
+msgstr "Nupu vähim laius:"
 
 #: ../ui/prefs_gtk2.ui.h:39 ../ui/prefs_gtk3.ui.h:39 ../ui/prefs-ume.ui.h:18
 msgid "Minimal button height:"
-msgstr "Altezza minima bottoni:"
+msgstr "Nupu vähim kõrgus:"
 
 #: ../ui/prefs_gtk2.ui.h:41 ../ui/prefs_gtk3.ui.h:41
 msgid "<b>User defined constants:</b>"
-msgstr "<b>Costanti definite dall'utente:</b>"
+msgstr "<b>Kasutaja kirjeldatud konstandid</b>"
 
 #: ../ui/prefs_gtk2.ui.h:42 ../ui/prefs_gtk3.ui.h:42
 msgid "Name:"
-msgstr "Nome:"
+msgstr "Nimi:"
 
 #: ../ui/prefs_gtk2.ui.h:43 ../ui/prefs_gtk3.ui.h:43
 msgid "Value:"
-msgstr "Valore:"
+msgstr "Väärtus:"
 
 #: ../ui/prefs_gtk2.ui.h:44 ../ui/prefs_gtk3.ui.h:44
 msgid "Description:"
-msgstr "Descrizione:"
+msgstr "Kirjeldus:"
 
 #: ../ui/prefs_gtk2.ui.h:45 ../ui/prefs_gtk3.ui.h:45
 msgid "Add"
-msgstr "Aggiungi"
+msgstr "Lisa"
 
 #: ../ui/prefs_gtk2.ui.h:46 ../ui/prefs_gtk3.ui.h:46
 msgid "Update"
-msgstr "Aggiorna"
+msgstr "Uuenda"
 
 #: ../ui/prefs_gtk2.ui.h:47 ../ui/prefs_gtk3.ui.h:47
 msgid "Delete"
-msgstr "Elimina"
+msgstr "Kustuta"
 
 #: ../ui/prefs_gtk2.ui.h:48 ../ui/prefs_gtk3.ui.h:48
 msgid "Clear"
-msgstr "Pulisci"
+msgstr "Puhasta"
 
 #: ../ui/prefs_gtk2.ui.h:49 ../ui/prefs_gtk3.ui.h:49
 #: ../ui/scientific_buttons_gtk2.ui.h:21 ../ui/scientific_buttons_gtk3.ui.h:21
 msgid "Constants"
-msgstr "Costanti"
+msgstr "Konstandid"
 
 #: ../ui/prefs_gtk2.ui.h:50 ../ui/prefs_gtk3.ui.h:50
 msgid "<b>User defined functions:</b>"
-msgstr "<b>Funzioni definite dall'utente:</b>"
+msgstr "<b>Kasutaja kirjeldatud funktsioonid</b>"
 
 #: ../ui/prefs_gtk2.ui.h:51 ../ui/prefs_gtk3.ui.h:51
 msgid "Variable:"
-msgstr "Variabile:"
+msgstr "Muutuja:"
 
 #: ../ui/prefs_gtk2.ui.h:52 ../ui/prefs_gtk3.ui.h:52
 msgid "Expression:"
-msgstr "Espressione:"
+msgstr "Avaldis:"
 
 #: ../ui/prefs_gtk2.ui.h:54 ../ui/prefs_gtk3.ui.h:54 ../ui/prefs-ume.ui.h:20
 msgid "Configure number base: "
-msgstr "Configura base numerica:"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:55 ../ui/prefs_gtk3.ui.h:55
 msgid "<b>Decimal Settings</b>"
-msgstr "<b>Impostazioni Decimale</b>"
+msgstr "<b>Kümnendsüsteemi sätted</b>"
 
 #: ../ui/prefs_gtk2.ui.h:56 ../ui/prefs_gtk3.ui.h:56
 msgid "Show thousands separator"
-msgstr "Mostra separatore migliaia"
+msgstr "Tuhandike eraldaja on nähtaval"
 
 #: ../ui/prefs_gtk2.ui.h:57 ../ui/prefs_gtk3.ui.h:57
 msgid "Separator character:"
-msgstr "Carattere separatore:"
+msgstr "Eraldusmärk:"
 
 #: ../ui/prefs_gtk2.ui.h:58 ../ui/prefs_gtk3.ui.h:58
 msgid "Separator block length:"
-msgstr "Lunghezza blocco separatore:"
+msgstr "Eraldatava bloki pikkus:"
 
 #: ../ui/prefs_gtk2.ui.h:59 ../ui/prefs_gtk3.ui.h:59
 msgid " "
-msgstr " "
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:60 ../ui/prefs_gtk3.ui.h:60
 msgid "<b>Hexadecimal Settings</b>"
-msgstr "<b>Impostazioni Esadecimale</b>"
+msgstr "<b>Kuueteistkümnendsüsteemi sätted</b>"
 
 #: ../ui/prefs_gtk2.ui.h:61 ../ui/prefs_gtk3.ui.h:61
 msgid "Signed"
-msgstr "Segnato"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:62 ../ui/prefs_gtk3.ui.h:62
 msgid "Show separator"
-msgstr "Mostra separatore"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:63 ../ui/prefs_gtk3.ui.h:63
 msgid "Number of bits: "
-msgstr "Numero di bit:"
+msgstr "Bittide arv:"
 
 #: ../ui/prefs_gtk2.ui.h:64 ../ui/prefs_gtk3.ui.h:64
 msgid "<b>Octal Settings</b>"
-msgstr "<b>Impostazioni Ottale</b>"
+msgstr "<b>Kaheksandsüsteemi sätted</b>"
 
 #: ../ui/prefs_gtk2.ui.h:65 ../ui/prefs_gtk3.ui.h:65
 msgid "<b>Binary Settings</b>"
-msgstr "<b>Impostazioni Binario</b>"
+msgstr "<b>Kahendsüsteemi sätted</b>"
 
 #: ../ui/prefs_gtk2.ui.h:66 ../ui/prefs_gtk3.ui.h:66
 msgid "Fix length to a multiple of"
-msgstr "Aggiusta lunghezza a un multiplo di"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:67 ../ui/prefs_gtk3.ui.h:67 ../ui/prefs-ume.ui.h:21
 msgid "Numbers"
-msgstr "Numeri"
+msgstr "Arvud"
 
 #: ../ui/prefs_gtk2.ui.h:68 ../ui/prefs_gtk3.ui.h:68 ../ui/prefs-ume.ui.h:22
 msgid "<b>RPN</b>"
@@ -1077,31 +1076,31 @@ msgstr "<b>RPN</b>"
 
 #: ../ui/prefs_gtk2.ui.h:69 ../ui/prefs_gtk3.ui.h:69 ../ui/prefs-ume.ui.h:23
 msgid "finite stack size (x, y, z, t)"
-msgstr "dimensione stack finito (x, y, z, t)"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:70 ../ui/prefs_gtk3.ui.h:70 ../ui/prefs-ume.ui.h:24
 msgid "infinite stack size"
-msgstr "dimensione stack infinito"
+msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:71 ../ui/prefs_gtk3.ui.h:71 ../ui/prefs-ume.ui.h:25
 msgid "<b>Startup</b>"
-msgstr "<b>Avvio</b>"
+msgstr "<b>Käivitamine</b>"
 
 #: ../ui/prefs_gtk2.ui.h:72 ../ui/prefs_gtk3.ui.h:72 ../ui/prefs-ume.ui.h:26
 msgid "Remember display value on exit"
-msgstr "Salva il valore del display all'uscita"
+msgstr "Kuvatav väärtus jäetakse lõpetamisel meelde"
 
 #: ../ui/prefs_gtk2.ui.h:73 ../ui/prefs_gtk3.ui.h:73
 msgid "<b>Visibility</b>"
-msgstr "<b>Visibilitá</b>"
+msgstr "<b>Nähtavalolek</b>"
 
 #: ../ui/prefs_gtk2.ui.h:74 ../ui/prefs_gtk3.ui.h:74
 msgid "Show menu bar"
-msgstr "Mostra barra dei menu"
+msgstr "Menüüriba on nähtaval"
 
 #: ../ui/prefs_gtk2.ui.h:75 ../ui/prefs_gtk3.ui.h:75 ../ui/prefs-ume.ui.h:27
 msgid "General"
-msgstr "Generale"
+msgstr "Üldine"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:1 ../ui/scientific_buttons_gtk3.ui.h:1
 msgid "tan"
@@ -1109,7 +1108,7 @@ msgstr "tan"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:2 ../ui/scientific_buttons_gtk3.ui.h:2
 msgid "Tangent"
-msgstr "Tangente"
+msgstr "Tangens"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:3 ../ui/scientific_buttons_gtk3.ui.h:3
 msgid "ln"
@@ -1117,23 +1116,23 @@ msgstr "ln"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:4 ../ui/scientific_buttons_gtk3.ui.h:4
 msgid "Natural logarithm (base: e)"
-msgstr "Logaritmo naturale (base: e)"
+msgstr "Naturaallogaritm (alusel e)"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:7 ../ui/scientific_buttons_gtk3.ui.h:7
 msgid "n!"
-msgstr "n!"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:8 ../ui/scientific_buttons_gtk3.ui.h:8
 msgid "Factorial"
-msgstr "Fattoriale"
+msgstr "Faktoriaal"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:9 ../ui/scientific_buttons_gtk3.ui.h:9
 msgid "EE"
-msgstr "EE"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:10 ../ui/scientific_buttons_gtk3.ui.h:10
 msgid "Enter exponent (base: 10)"
-msgstr "Inserisci l'esponente (base: 10)"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:11 ../ui/scientific_buttons_gtk3.ui.h:11
 msgid "cos"
@@ -1141,7 +1140,7 @@ msgstr "cos"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:12 ../ui/scientific_buttons_gtk3.ui.h:12
 msgid "Cosine"
-msgstr "Coseno"
+msgstr "Koosinus"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:13 ../ui/scientific_buttons_gtk3.ui.h:13
 msgid "log"
@@ -1149,43 +1148,43 @@ msgstr "log"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:14 ../ui/scientific_buttons_gtk3.ui.h:14
 msgid "Logarithm (base: 10)"
-msgstr "Logaritmo (base: 10)"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:15 ../ui/scientific_buttons_gtk3.ui.h:15
 msgid "x^2"
-msgstr "x^2"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:16 ../ui/scientific_buttons_gtk3.ui.h:16
 msgid "Square"
-msgstr "Quadrato"
+msgstr "Ruut"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:19 ../ui/scientific_buttons_gtk3.ui.h:19
 msgid "User defined functions"
-msgstr "Funzioni definite dall'utente"
+msgstr "Kasutaja kirjeldatud funktsioonid"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:20 ../ui/scientific_buttons_gtk3.ui.h:20
 msgid "fun"
-msgstr "fun"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:22 ../ui/scientific_buttons_gtk3.ui.h:22
 msgid "con"
-msgstr "con"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:26 ../ui/scientific_buttons_gtk3.ui.h:26
 msgid "inv"
-msgstr "inv"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:27 ../ui/scientific_buttons_gtk3.ui.h:27
 msgid "Inverse mode"
-msgstr "Modalità inversa"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:28 ../ui/scientific_buttons_gtk3.ui.h:28
 msgid "hyp"
-msgstr "hyp"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:29 ../ui/scientific_buttons_gtk3.ui.h:29
 msgid "Hyperbolic mode"
-msgstr "Modalità iperbolica"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:30 ../ui/scientific_buttons_gtk3.ui.h:30
 msgid "sin"
@@ -1193,43 +1192,43 @@ msgstr "sin"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:31 ../ui/scientific_buttons_gtk3.ui.h:31
 msgid "Sine"
-msgstr "Seno"
+msgstr "Siinus"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:32 ../ui/scientific_buttons_gtk3.ui.h:32
 msgid "AND"
-msgstr "AND"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:33 ../ui/scientific_buttons_gtk3.ui.h:33
 msgid "Logical AND"
-msgstr "AND logico"
+msgstr "Loogiline JA"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:34 ../ui/scientific_buttons_gtk3.ui.h:34
 msgid "OR"
-msgstr "OR"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:35 ../ui/scientific_buttons_gtk3.ui.h:35
 msgid "Logical OR"
-msgstr "OR logico"
+msgstr "Loogiline VÕI"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:36 ../ui/scientific_buttons_gtk3.ui.h:36
 msgid "XOR"
-msgstr "XOR"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:37 ../ui/scientific_buttons_gtk3.ui.h:37
 msgid "Logical XOR"
-msgstr "XOR logico"
+msgstr "Loogiline VÄLISTAV VÕI"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:38 ../ui/scientific_buttons_gtk3.ui.h:38
 msgid "CMP"
-msgstr "CMP"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:39 ../ui/scientific_buttons_gtk3.ui.h:39
 msgid "Bitwise complement"
-msgstr "Complemento binario"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:41 ../ui/scientific_buttons_gtk3.ui.h:41
 msgid "Hexadecimal 0xC"
-msgstr "0xC esadecimale"
+msgstr "Kuueteistkümnendsüsteemi 0xC"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:42 ../ui/scientific_buttons_gtk3.ui.h:42
 msgid "D"
@@ -1237,7 +1236,7 @@ msgstr "D"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:43 ../ui/scientific_buttons_gtk3.ui.h:43
 msgid "Hexadecimal 0xD"
-msgstr "0xD esadecimale"
+msgstr "Kuueteistkümnendsüsteemi 0xD"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:44 ../ui/scientific_buttons_gtk3.ui.h:44
 msgid "E"
@@ -1245,7 +1244,7 @@ msgstr "E"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:45 ../ui/scientific_buttons_gtk3.ui.h:45
 msgid "Hexadecimal 0xE"
-msgstr "0xE esadecimale"
+msgstr "Kuueteistkümnendsüsteemi 0xE"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:46 ../ui/scientific_buttons_gtk3.ui.h:46
 msgid "F"
@@ -1253,7 +1252,7 @@ msgstr "F"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:47 ../ui/scientific_buttons_gtk3.ui.h:47
 msgid "Hexadecimal 0xF"
-msgstr "0xF esadecimale"
+msgstr "Kuueteistkümnendsüsteemi 0xF"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:48 ../ui/scientific_buttons_gtk3.ui.h:48
 msgid "B"
@@ -1261,7 +1260,7 @@ msgstr "B"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:49 ../ui/scientific_buttons_gtk3.ui.h:49
 msgid "Hexadecimal 0xB"
-msgstr "0xB esadecimale"
+msgstr "Kuueteistkümnendsüsteemi 0xB"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:50 ../ui/scientific_buttons_gtk3.ui.h:50
 msgid "A"
@@ -1269,20 +1268,20 @@ msgstr "A"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:51 ../ui/scientific_buttons_gtk3.ui.h:51
 msgid "Hexadecimal 0xA"
-msgstr "0xA esadecimale"
+msgstr "Kuueteistkümnendsüsteemi 0xA"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:60 ../ui/scientific_buttons_gtk3.ui.h:60
 msgid "MOD"
-msgstr "MOD"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:61 ../ui/scientific_buttons_gtk3.ui.h:61
 msgid "Modulus"
-msgstr "Modulo"
+msgstr "Jäägiga jagamine"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:74 ../ui/scientific_buttons_gtk3.ui.h:74
 msgid "LSH"
-msgstr "LSH"
+msgstr ""
 
 #: ../ui/scientific_buttons_gtk2.ui.h:75 ../ui/scientific_buttons_gtk3.ui.h:75
 msgid "Left shift"
-msgstr "Shift a Sinistra"
+msgstr ""

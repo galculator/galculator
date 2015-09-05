@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Ján Ďanovský <dagsoftware@yahoo.com>, 2014-2015
 # Peter Chabada <sk-i18n_chabada_sk>, 2005
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-17 16:18+0100\n"
-"PO-Revision-Date: 2014-03-18 20:09+0000\n"
-"Last-Translator: tibbi <tibbbi2@gmail.com>\n"
-"Language-Team: Slovak (http://www.transifex.com/projects/p/MATE/language/sk/)\n"
+"PO-Revision-Date: 2015-03-19 16:48+0000\n"
+"Last-Translator: Ján Ďanovský <dagsoftware@yahoo.com>\n"
+"Language-Team: Slovak (http://www.transifex.com/mate/MATE/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -57,7 +58,7 @@ msgstr "\n%s v%s, (c) 2002-2014 Simon Flöry\n\nPoužitie: %s [parametre]\n\npar
 #: ../src/main.c:196
 #, c-format
 msgid "[%s] configuration file: Failed to create directory %s.\n"
-msgstr "[%s] konfiguračný súbor: Nepodarilo sa vytvoriť adresár %s.\n"
+msgstr "[%s] konfiguračný súbor: Nepodarilo sa vytvoriť priečinok %s.\n"
 
 #: ../src/main.c:201
 #, c-format
@@ -291,12 +292,12 @@ msgstr "[%s] Nepodarilo sa načítať %s. Súbor je potrebný na zostavenie pou�
 
 #: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
-msgstr "Zobraziť ponuku _menu"
+msgstr "Zobraziť panel _menu"
 
 #: ../src/ui.c:999
 #, c-format
 msgid "%s Preferences"
-msgstr "Predvoľby programu %s"
+msgstr "Nastavenia programu %s"
 
 #: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
@@ -697,7 +698,7 @@ msgstr "_Vložiť a pripojiť zobrazenú hodnotu"
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
-msgstr "_Predvoľby..."
+msgstr "_Nastavenia..."
 
 #: ../ui/main_frame.ui.h:8 ../ui/main_frame_hildon.ui.h:8
 msgid "_View"
@@ -827,11 +828,11 @@ msgstr "dvojkovú"
 
 #: ../ui/prefs_gtk2.ui.h:5 ../ui/prefs_gtk3.ui.h:5 ../ui/prefs-ume.ui.h:1
 msgid "galculator - Preferences"
-msgstr "Predvoľby programu galculator"
+msgstr "Nastavenia programu galculator"
 
 #: ../ui/prefs_gtk2.ui.h:6 ../ui/prefs_gtk3.ui.h:6 ../ui/prefs-ume.ui.h:2
 msgid "A dialog that is used to change preferences settings."
-msgstr "Dialógové okno, ktoré je používané na zmenu nastavení predvolieb."
+msgstr "Dialógové okno, ktoré je používané na zmenu nastavení."
 
 #: ../ui/prefs_gtk2.ui.h:7 ../ui/prefs_gtk3.ui.h:7 ../ui/prefs-ume.ui.h:3
 msgid "Closes the dialog."
@@ -879,35 +880,35 @@ msgstr "Farba RPN zásobníka:"
 
 #: ../ui/prefs_gtk2.ui.h:18 ../ui/prefs_gtk3.ui.h:18
 msgid "Pick a Display Background Color"
-msgstr "Zvoľte farbu pozadia"
+msgstr "Vyberte farbu pozadia"
 
 #: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
 msgid "Pick a Display Result Font Color"
-msgstr "Zvoľte farbu výsledkového písma"
+msgstr "Vyberte farbu výsledkového písma"
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
 msgid "Pick a RPN Stack Color"
-msgstr "Zvoľte farbu RPN zásobníka"
+msgstr "Vyberte farbu RPN zásobníka"
 
 #: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
 msgid "Pick a Inactive Module Color"
-msgstr "Zvoľte farbu neaktívneho modulu"
+msgstr "Vyberte farbu neaktívneho modulu"
 
 #: ../ui/prefs_gtk2.ui.h:22 ../ui/prefs_gtk3.ui.h:22
 msgid "Pick a Active Module Color"
-msgstr "Zvoľte farbu"
+msgstr "Vyberte farbu"
 
 #: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
 msgid "Pick a Result Font"
-msgstr "Zvoľte farbu výsledku"
+msgstr "Vyberte farbu výsledku"
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
 msgid "Pick a RPN Stack Font"
-msgstr "Zvoľte farbu RPN zásobníka"
+msgstr "Vyberte farbu RPN zásobníka"
 
 #: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
 msgid "Pick a Module Font"
-msgstr "Zvoľte písmo modulu"
+msgstr "Vyberte písmo modulu"
 
 #: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
 msgid "<b>Modules Visibility</b>"
@@ -951,7 +952,7 @@ msgstr "Písmo tlačidiel:"
 
 #: ../ui/prefs_gtk2.ui.h:36 ../ui/prefs_gtk3.ui.h:36 ../ui/prefs-ume.ui.h:15
 msgid "Pick a Button Font"
-msgstr "Zvoľte písmo tlačidiel"
+msgstr "Vyberte písmo tlačidiel"
 
 #: ../ui/prefs_gtk2.ui.h:37 ../ui/prefs_gtk3.ui.h:37 ../ui/prefs-ume.ui.h:16
 msgid "<b>Dimension</b>"
@@ -1096,7 +1097,7 @@ msgstr "<b>Zobrazenie</b>"
 
 #: ../ui/prefs_gtk2.ui.h:74 ../ui/prefs_gtk3.ui.h:74
 msgid "Show menu bar"
-msgstr "Zobraziť ponuku menu"
+msgstr "Zobraziť panel menu"
 
 #: ../ui/prefs_gtk2.ui.h:75 ../ui/prefs_gtk3.ui.h:75 ../ui/prefs-ume.ui.h:27
 msgid "General"

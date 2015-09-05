@@ -3,15 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Richard Canonne <ubuntu.valombre@gmail.com>, 2014
+# Simsor <simsor@riseup.net>, 2014
 # Tubuntu <tubuntu@testimonium.be>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-17 16:18+0100\n"
-"PO-Revision-Date: 2014-03-17 15:53+0000\n"
-"Last-Translator: Tubuntu <tubuntu@testimonium.be>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/MATE/language/fr/)\n"
+"PO-Revision-Date: 2014-04-17 11:48+0000\n"
+"Last-Translator: Richard Canonne <ubuntu.valombre@gmail.com>\n"
+"Language-Team: French (http://www.transifex.com/mate/MATE/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,12 +31,12 @@ msgstr "sauvegarder ici"
 #: ../src/callbacks.c:1427
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
-msgstr ""
+msgstr "[%s] on_prefs_number_combo_changed impossible de récupérer l'occurrence. %s\n"
 
 #: ../src/callbacks.c:1590
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
-msgstr ""
+msgstr "[%s] on_main_window_check_resize ne devrais pas être appelée. %s\n"
 
 #: ../src/main.c:61
 #, c-format
@@ -52,7 +54,7 @@ msgid ""
 "Compiled against GTK version %i.%i.%i\n"
 "Linked against GTK version %i.%i.%i\n"
 "%s-precision floating point numbers.\n"
-msgstr ""
+msgstr "\n%s v%s, (c) 2002-2014 Simon Flöry\n\nUsage : %s [options]\n\noptions :\n(Options GTK)\n-h, --help  Afficher ce message\n-v, --version  Afficher les informations de version\n\nCompilé avec GTK version %i.%i.%i\nLié avec GTK version %i.%i.%i\nNombres à virgule flottante de précision %s\n"
 
 #: ../src/main.c:196
 #, c-format
@@ -81,14 +83,14 @@ msgstr "[%s] %c - Caractère d'opération inconnu. %s\n"
 msgid ""
 "[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
 ")"
-msgstr ""
+msgstr "[%s] La conversion du nombre en virgule flottante dans float2string a échoué car le tampon était trop petit. %s\n)"
 
 #: ../src/calc_basic.c:719
 #, c-format
 msgid ""
 "[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
 ")"
-msgstr ""
+msgstr "[%s] La conversion du nombre en virgule flottante dans float2stringP a échoué car le tampon était trop petit. %s\n)"
 
 #: ../src/config_file.c:180
 msgid "Pi"
@@ -122,7 +124,7 @@ msgstr "[%s] fichier de configuration: %s doit être TRUE ou FALSE. Utilisation 
 msgid ""
 "[%s] configuration file: failed to convert %s to a number properly. Have you"
 " changed your locales? %s\n"
-msgstr ""
+msgstr "[%s] fichier de configuration : échec de la conversion correcte de %s en nombre. Avez-vous changé votre locale? %s\n"
 
 #: ../src/config_file.c:265
 #, c-format
@@ -151,7 +153,7 @@ msgid ""
 "[%s] configuration file - We reset at least one separator character as it "
 "coincides with the decimal point. If you recently changed your locales "
 "settings, this is nothing to worry about.\n"
-msgstr ""
+msgstr "[%s] fichier de configration - Nous avons réinitialisé au moins un séparateur car il correspond à une virgule. Si vous avez récemment changé vos paramètres de langue, il n'y a pas de quoi s'inquiéter.\n"
 
 #: ../src/config_file.c:470
 #, c-format
@@ -177,12 +179,12 @@ msgstr "[%s] fichier de configuration: impossible d'écrire le fichier de config
 msgid ""
 "[%s] Line_index exceeds valid range in function \"display_delete_line\". "
 "%s\n"
-msgstr ""
+msgstr "[%s] Line_index dépasse l'intervalle valide dans la fonction \"display_delete_line\". %s\n"
 
 #: ../src/display.c:598
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
-msgstr ""
+msgstr "[%s] option d'affichage inconnue dans la fonction \"display_change_option\""
 
 #: ../src/general_functions.c:43
 msgid "unsupported inverse function"
@@ -195,27 +197,27 @@ msgstr "Fonction hyperbolique non supportée"
 #: ../src/general_functions.c:112
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
-msgstr ""
+msgstr "[%s] mode de notation inconnu dans la fonction \"all_clear\". %s\n"
 
 #: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr ""
+msgstr "[%s] échec de la conversion du caractère %c dans la fonction \"axtof\". %s\n"
 
 #: ../src/general_functions.c:194
 #, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr ""
+msgstr "[%s] échec de la conversion de %s dans la fonction \"ftoax\". %s\n"
 
 #: ../src/general_functions.c:274
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr ""
+msgstr "[%s] échec de la conversion de la couleur %s dans la fonction \"set_button_color\". %s\n"
 
 #: ../src/general_functions.c:395
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr ""
+msgstr "[%s] impossible de trouver le widget %s dans la fonction \"activate_menu_item\". %s\n"
 
 #: ../src/general_functions.c:437
 msgid "unknown number base"
@@ -237,41 +239,41 @@ msgid ""
 "[%s] failed to convert %s to a number properly in function "
 "\"string2double\". Have you changed your locales? Deleting your "
 "configuration file might solve this problem. %s\n"
-msgstr ""
+msgstr "[%s] échec de la conversion en nombre de %s dans la fonction \"string2double\". Avez-vous récemment changé vos locales ? Supprimer votre fichier de configuration pourrait régler le problème. %s\n"
 
 #: ../src/general_functions.c:586
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
-msgstr ""
+msgstr "[%s] base de numérotation inconnue dans la fonction \"string2double\". %s\n"
 
 #: ../src/general_functions.c:741
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
-msgstr ""
+msgstr "[%s] base angulaire inconnue dans la fonction \"x2rad\". %s\n"
 
 #: ../src/general_functions.c:756
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
-msgstr ""
+msgstr "[%s] base angulaire inconnue dans la fonction \"rad2x\". %s\n"
 
 #: ../src/general_functions.c:773
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
-msgstr ""
+msgstr "[%s] base de numérotation inconnue dans la fonction \"get_sep\". %s\n"
 
 #: ../src/general_functions.c:790
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
-msgstr ""
+msgstr "[%s] base de numérotation inconnue dans la fonction \"get_sep_length\". %s\n"
 
 #: ../src/general_functions.c:807
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
-msgstr ""
+msgstr "[%s] base de numérotation inconnue dans la fonction \"get_sep_char\". %s\n"
 
 #: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
-msgstr ""
+msgstr "option d'affichage inconnue dans la fonction \"change_option\""
 
 #: ../src/general_functions.c:915
 #, c-format
@@ -287,7 +289,7 @@ msgid ""
 "[%s] Couldn't load %s. This file is necessary     to build galculator's user"
 " interface. Make sure you did a make install and the file     is "
 "accessible!\n"
-msgstr ""
+msgstr "[%s] Impossible de charger %s. Ce fichier est nécessaire pour construire l'interface de galculator. Vérifiez que vous avez lancé make install et que le fichier est accessible !\n"
 
 #: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
@@ -378,7 +380,7 @@ msgstr "x<>y"
 
 #: ../src/ui.c:1227
 msgid "swap current number with top of stack"
-msgstr ""
+msgstr "échanger le nombre actuel avec le début de la pile"
 
 #: ../src/ui.c:1229
 msgid "roll"
@@ -386,7 +388,7 @@ msgstr "roll"
 
 #: ../src/ui.c:1229
 msgid "roll down stack"
-msgstr ""
+msgstr "faire tourner le contenu de la pile"
 
 #: ../src/ui.c:1300
 msgid "Result Display"
@@ -397,7 +399,7 @@ msgstr "Affichage du résultat"
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
 "doing? If not: %s\n"
-msgstr ""
+msgstr "[%s] l'analyseur de flex a été appelé plus de %i fois. Savez-vous ce que vous faites ? Si non : %s\n"
 
 #: ../ui/about.ui.in.h:1
 msgid "About galculator"
@@ -887,7 +889,7 @@ msgstr "Choisissez une couleur pour la police d'affichage du résultat"
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
 msgid "Pick a RPN Stack Color"
-msgstr ""
+msgstr "Choisissez une couleur pour la pile NPI"
 
 #: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
 msgid "Pick a Inactive Module Color"
@@ -903,7 +905,7 @@ msgstr "Choisissez une police pour les résultats"
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
 msgid "Pick a RPN Stack Font"
-msgstr ""
+msgstr "Choisissez une police pour la pile NPI"
 
 #: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
 msgid "Pick a Module Font"
@@ -1016,7 +1018,7 @@ msgstr "Expression:"
 
 #: ../ui/prefs_gtk2.ui.h:54 ../ui/prefs_gtk3.ui.h:54 ../ui/prefs-ume.ui.h:20
 msgid "Configure number base: "
-msgstr ""
+msgstr "Configurer la base de numération :"
 
 #: ../ui/prefs_gtk2.ui.h:55 ../ui/prefs_gtk3.ui.h:55
 msgid "<b>Decimal Settings</b>"
@@ -1032,7 +1034,7 @@ msgstr "Charactère du séparateur:"
 
 #: ../ui/prefs_gtk2.ui.h:58 ../ui/prefs_gtk3.ui.h:58
 msgid "Separator block length:"
-msgstr ""
+msgstr "Taille du bloc séparateur :"
 
 #: ../ui/prefs_gtk2.ui.h:59 ../ui/prefs_gtk3.ui.h:59
 msgid " "
@@ -1044,7 +1046,7 @@ msgstr "<b>Réglages hexadecimal</b>"
 
 #: ../ui/prefs_gtk2.ui.h:61 ../ui/prefs_gtk3.ui.h:61
 msgid "Signed"
-msgstr ""
+msgstr "Signé"
 
 #: ../ui/prefs_gtk2.ui.h:62 ../ui/prefs_gtk3.ui.h:62
 msgid "Show separator"
@@ -1052,7 +1054,7 @@ msgstr "Afficher le séparateur"
 
 #: ../ui/prefs_gtk2.ui.h:63 ../ui/prefs_gtk3.ui.h:63
 msgid "Number of bits: "
-msgstr ""
+msgstr "Nombre de bits:"
 
 #: ../ui/prefs_gtk2.ui.h:64 ../ui/prefs_gtk3.ui.h:64
 msgid "<b>Octal Settings</b>"
@@ -1064,7 +1066,7 @@ msgstr "<b>Réglages binaire</b>"
 
 #: ../ui/prefs_gtk2.ui.h:66 ../ui/prefs_gtk3.ui.h:66
 msgid "Fix length to a multiple of"
-msgstr ""
+msgstr "Fixer la longueur comme multiple de"
 
 #: ../ui/prefs_gtk2.ui.h:67 ../ui/prefs_gtk3.ui.h:67 ../ui/prefs-ume.ui.h:21
 msgid "Numbers"

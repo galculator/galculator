@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# vaibhav.dlv <vaibhav.dlv@gmail.com>, 2014
+# Vaibhav S Dalvi <vaibhav.dlv@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-17 16:18+0100\n"
-"PO-Revision-Date: 2014-03-19 06:37+0000\n"
-"Last-Translator: vaibhav.dlv <vaibhav.dlv@gmail.com>\n"
-"Language-Team: Marathi (http://www.transifex.com/projects/p/MATE/language/mr/)\n"
+"PO-Revision-Date: 2014-05-03 06:03+0000\n"
+"Last-Translator: Vaibhav S Dalvi <vaibhav.dlv@gmail.com>\n"
+"Language-Team: Marathi (http://www.transifex.com/mate/MATE/language/mr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +29,7 @@ msgstr "स्थापन करा"
 #: ../src/callbacks.c:1427
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
-msgstr ""
+msgstr "[%s] on_prefs_number_combo_changed ने iter मिळाला नाही. %s\n\n"
 
 #: ../src/callbacks.c:1590
 #, c-format
@@ -57,7 +57,7 @@ msgstr "\n%s v%s, (c) 2002-2014 Simon Flöry\n\nUsage: %s [options]\n\noptions:\
 #: ../src/main.c:196
 #, c-format
 msgid "[%s] configuration file: Failed to create directory %s.\n"
-msgstr ""
+msgstr "[%s] configuration file: डिरेक्टरी बनवू शकले नाही %s.\n"
 
 #: ../src/main.c:201
 #, c-format
@@ -65,7 +65,7 @@ msgid ""
 "[%s] configuration file: We will move the configuration file from %s to %s. "
 "After you quit %s, you may remove the configuration file from its old "
 "location %s.\n"
-msgstr ""
+msgstr "[%s] संयोजन फाईल: आपण संयोजन फाईल %s पासून %s ला हलवू. तुम्ही %s बंद केल्यावर, संयोजन फाईल जुन्या जागेवरून (%s) नष्ट करू शकता.\n"
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
@@ -81,14 +81,14 @@ msgstr "[%s] %c - अज्ञात कार्यपध्दती वर्
 msgid ""
 "[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
 ")"
-msgstr ""
+msgstr "[%s] बफर लहान असल्यामुळे float2string मधील floating point क्रमांकाचे रुपांतर झाले नाही. %s\n)"
 
 #: ../src/calc_basic.c:719
 #, c-format
 msgid ""
 "[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
 ")"
-msgstr ""
+msgstr "[%s] बफर लहान असल्यामुळे float2stringP मधील floating point क्रमांकाचे रुपांतर झाले नाही. %s\n)"
 
 #: ../src/config_file.c:180
 msgid "Pi"
@@ -109,33 +109,33 @@ msgstr "e"
 #: ../src/config_file.c:232
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
-msgstr ""
+msgstr "[%s] संयोजन फाईल: अज्ञात नोंदिकडे दुर्लक्ष करत आहे %s=%s. %s\n"
 
 #: ../src/config_file.c:256
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
-msgstr ""
+msgstr "[%s] संयोजन फाईल: %s TRUE किंवा  FALSE असले पाहिजे. पूर्वनिर्धारित मुल्य वापरत आहे. %s\n"
 
 #: ../src/config_file.c:262
 #, c-format
 msgid ""
 "[%s] configuration file: failed to convert %s to a number properly. Have you"
 " changed your locales? %s\n"
-msgstr ""
+msgstr "[%s] संयोजन फाईल: %s चे क्रमांकामध्ये बरोबर रुपांतर झाले नाही. तुम्ही संगणकाची लोकेल बदलली आहे का? %s\n"
 
 #: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr ""
+msgstr "[%s] संयोजन फाईल: संयोजन रचनेमधील अज्ञात key_type कडे दुर्लक्ष करीत आहे. %s\n"
 
 #: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
-msgstr ""
+msgstr "[%s]  %s संयोजन फाईलमध्ये अज्ञात भाग %s आढळला. आधीचाच भाग वापरत आहे.\n"
 
 #: ../src/config_file.c:403
 #, c-format
@@ -143,7 +143,7 @@ msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
-msgstr ""
+msgstr "[%s] संयोजन फाईल: संयोजन फाईल %s उघडू शकले नाही. तुम्ही  %s पहिल्यांदा सुरु करत असल्यास काळजी करण्यासारखे काही नाही. पूर्वनिर्धारित मुल्ये वापरत आहे.\n"
 
 #: ../src/config_file.c:432
 #, c-format
@@ -151,38 +151,38 @@ msgid ""
 "[%s] configuration file - We reset at least one separator character as it "
 "coincides with the decimal point. If you recently changed your locales "
 "settings, this is nothing to worry about.\n"
-msgstr ""
+msgstr "[%s] संयोजन फाईल - आम्ही पूर्णांकाशी जुळणारे किमान एक सेपरेटर अक्षर रिसेट करत आहोत. तुम्ही लोकेल संयोजन अलीकडेच बदलले असेल, तर काळजी करण्यासारखे काही नाही. \n"
 
 #: ../src/config_file.c:470
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr ""
+msgstr "[%s] संयोजन फाईल: लिहिताना चमत्कारिक बुलीअन सापडला. हि कळ लिहित नाहीये. %s\n"
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in "
 "\"config_structure\". %s\n"
-msgstr ""
+msgstr "[%s] संयोजन फाईल: \"config_structure\" मधील अज्ञात \"key_type\" कडे दुर्लक्ष करीत आहे. %s\n"
 
 #: ../src/config_file.c:501
 #, c-format
 msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr ""
+msgstr "[%s] संयोजन फाईल: संयोजन फाईलला साठवू / लिहू शकले नाही %s.\n"
 
 #: ../src/display.c:420
 #, c-format
 msgid ""
 "[%s] Line_index exceeds valid range in function \"display_delete_line\". "
 "%s\n"
-msgstr ""
+msgstr "[%s] \"display_delete_line\" फंक्शन मध्ये Line_index चे मुल्य दिलेल्या श्रेणीच्या बाहेर जात आहे. %s\n"
 
 #: ../src/display.c:598
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
-msgstr ""
+msgstr "[%s] \"display_change_option\" फंक्शनमध्ये अज्ञात प्रदर्शन पर्याय"
 
 #: ../src/general_functions.c:43
 msgid "unsupported inverse function"
@@ -195,41 +195,41 @@ msgstr "असमर्थित हायपरबोलिक कार्य"
 #: ../src/general_functions.c:112
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
-msgstr ""
+msgstr "[%s] \"all_clear\" फंक्शनमध्ये अज्ञात संकेतलिपी रीत. %s\n"
 
 #: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr ""
+msgstr "[%s] \"axtof\" फंक्शनमध्ये अक्षर %c चे रुपांतर करू शकले नाही. %s\n"
 
 #: ../src/general_functions.c:194
 #, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr ""
+msgstr "[%s] \"ftoax\" फंक्शनमध्ये %s चे रुपांतर करू शकले नाही. %s\n"
 
 #: ../src/general_functions.c:274
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr ""
+msgstr "[%s] \"set_button_color\" फंक्शनमध्ये %s रंगाचे रुपांतर करू शकले नाही. %s\n"
 
 #: ../src/general_functions.c:395
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr ""
+msgstr "[%s] \"set_button_color\" फंक्शनमध्ये %s  मध्ये विड्जेट सापडले नाही. %s\n"
 
 #: ../src/general_functions.c:437
 msgid "unknown number base"
-msgstr ""
+msgstr "आकड्यांचा बेस अज्ञात आहे"
 
 #: ../src/general_functions.c:438
 #, c-format
 msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
-msgstr ""
+msgstr "[%s] \"get_display_number_string\" फंक्शनमध्ये अज्ञात क्रमांक बेस. %s\n"
 
 #: ../src/general_functions.c:459
 #, c-format
 msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
-msgstr ""
+msgstr "[%s] \"get_display_number_length\" फंक्शनमध्ये अज्ञात क्रमांक बेस. %s\n"
 
 #: ../src/general_functions.c:568
 #, c-format
@@ -242,36 +242,36 @@ msgstr ""
 #: ../src/general_functions.c:586
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
-msgstr ""
+msgstr "[%s] \"string2double\" फंक्शनमध्ये अज्ञात क्रमांक बेस. %s\n"
 
 #: ../src/general_functions.c:741
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
-msgstr ""
+msgstr "[%s] \"x2rad\" फंक्शनमध्ये अज्ञात कोन बेस. %s\n"
 
 #: ../src/general_functions.c:756
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
-msgstr ""
+msgstr "[%s] \"rad2x\" फंक्शनमध्ये अज्ञात कोन बेस. %s\n"
 
 #: ../src/general_functions.c:773
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
-msgstr ""
+msgstr "[%s] \"get_sep\" फंक्शनमध्ये अज्ञात क्रमांक बेस. %s\n"
 
 #: ../src/general_functions.c:790
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
-msgstr ""
+msgstr "[%s] \"get_sep_length\" फंक्शनमध्ये अज्ञात क्रमांक बेस. %s\n"
 
 #: ../src/general_functions.c:807
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
-msgstr ""
+msgstr "[%s] \"get_sep_char\" फंक्शनमध्ये अज्ञात क्रमांक बेस. %s\n"
 
 #: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
-msgstr ""
+msgstr "\"change_option\" फंक्शनमध्ये अज्ञात प्रदर्शन पर्याय"
 
 #: ../src/general_functions.c:915
 #, c-format
@@ -279,7 +279,7 @@ msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
 "You might face problems when using %s! %s\n"
 ")"
-msgstr ""
+msgstr "[%s] दशांश पूर्णांकाची लांबी (लोकेल मधील) समर्थित नाही: >%s<\n%s वापरताना अडचणी येऊ शकतात! %s\n)"
 
 #: ../src/ui.c:89
 #, c-format
@@ -378,15 +378,15 @@ msgstr "x<>y"
 
 #: ../src/ui.c:1227
 msgid "swap current number with top of stack"
-msgstr ""
+msgstr "सध्याचा क्रमांक स्टॅकच्या टॉपशी बदला"
 
 #: ../src/ui.c:1229
 msgid "roll"
-msgstr ""
+msgstr "रोल"
 
 #: ../src/ui.c:1229
 msgid "roll down stack"
-msgstr ""
+msgstr "स्टॅक रोल डाउन करा"
 
 #: ../src/ui.c:1300
 msgid "Result Display"
@@ -626,7 +626,7 @@ msgstr "टक्के"
 #: ../ui/classic_view.ui.h:1 ../ui/main_frame.ui.h:1
 #: ../ui/main_frame_hildon.ui.h:35 ../ui/paper_view.ui.h:1
 msgid "The main program window."
-msgstr ""
+msgstr "मुख्य अनुप्रयोग पटल."
 
 #: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
 msgid "Formula entry text field - enter string expression to compute here."
@@ -644,7 +644,7 @@ msgstr "AC"
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:6
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:6
 msgid "Reset calculator (clear all)"
-msgstr ""
+msgstr "गणकाला रिसेट करा (सर्व काढून टाका)"
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:3 ../ui/dispctrl_bottom_gtk3.ui.h:3
 #: ../ui/dispctrl_right_gtk2.ui.h:5 ../ui/dispctrl_right_gtk3.ui.h:5
@@ -685,15 +685,15 @@ msgstr "संपादन (_E)"
 
 #: ../ui/main_frame.ui.h:4 ../ui/main_frame_hildon.ui.h:4
 msgid "Cu_t Display Value"
-msgstr ""
+msgstr "दृश्य मूल्य नकल करून काढून टाका (_U)"
 
 #: ../ui/main_frame.ui.h:5 ../ui/main_frame_hildon.ui.h:5
 msgid "_Copy Display Value"
-msgstr ""
+msgstr "दृश्य मूल्याची नकल करा (_C)"
 
 #: ../ui/main_frame.ui.h:6
 msgid "_Paste and Append to Display Value"
-msgstr ""
+msgstr "दृश्य मूल्याची नकल करून जोडा (_P)"
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
@@ -727,7 +727,7 @@ msgstr "दृश्य नियंत्रण"
 #: ../ui/main_frame.ui.h:14 ../ui/main_frame_hildon.ui.h:13
 #: ../ui/prefs_gtk2.ui.h:53 ../ui/prefs_gtk3.ui.h:53
 msgid "Functions"
-msgstr ""
+msgstr "फंक्शन्स"
 
 #: ../ui/main_frame.ui.h:15 ../ui/main_frame_hildon.ui.h:14
 msgid "Logical"
@@ -743,7 +743,7 @@ msgstr "गणनयंत्र (_C)"
 
 #: ../ui/main_frame.ui.h:19 ../ui/main_frame_hildon.ui.h:18
 msgid "_Number bases"
-msgstr ""
+msgstr "क्रमांक बेस (_N)"
 
 #: ../ui/main_frame.ui.h:20 ../ui/main_frame_hildon.ui.h:19
 msgid "_Decimal"
@@ -751,15 +751,15 @@ msgstr "दशांश (_D)"
 
 #: ../ui/main_frame.ui.h:21 ../ui/main_frame_hildon.ui.h:20
 msgid "_Hexadecimal"
-msgstr ""
+msgstr "हेग्झाडेसिमल (_H)"
 
 #: ../ui/main_frame.ui.h:22 ../ui/main_frame_hildon.ui.h:21
 msgid "_Octal"
-msgstr ""
+msgstr "ऑक्टल (_O)"
 
 #: ../ui/main_frame.ui.h:23 ../ui/main_frame_hildon.ui.h:22
 msgid "_Binary"
-msgstr ""
+msgstr "बायनरी (_B)"
 
 #: ../ui/main_frame.ui.h:24 ../ui/main_frame_hildon.ui.h:23
 msgid "Angle _units"
@@ -771,15 +771,15 @@ msgstr "अंश (_E)"
 
 #: ../ui/main_frame.ui.h:26 ../ui/main_frame_hildon.ui.h:25
 msgid "_Radians"
-msgstr ""
+msgstr "रॅडिअन्स (_R)"
 
 #: ../ui/main_frame.ui.h:27 ../ui/main_frame_hildon.ui.h:26
 msgid "_Gradians"
-msgstr ""
+msgstr "ग्रेडिअन्स (_G)"
 
 #: ../ui/main_frame.ui.h:28 ../ui/main_frame_hildon.ui.h:27
 msgid "Notation _modes"
-msgstr ""
+msgstr "संकेतलिपी मोड (_M)"
 
 #: ../ui/main_frame.ui.h:29 ../ui/main_frame_hildon.ui.h:28
 msgid "_Algebraic"
@@ -787,11 +787,11 @@ msgstr "भौमितिक (_A)"
 
 #: ../ui/main_frame.ui.h:30 ../ui/main_frame_hildon.ui.h:29
 msgid "_Reverse Polish (RPN)"
-msgstr ""
+msgstr "_Reverse Polish (RPN)"
 
 #: ../ui/main_frame.ui.h:31 ../ui/main_frame_hildon.ui.h:30
 msgid "_Formula Entry"
-msgstr ""
+msgstr "सूत्र नोंद (_F)"
 
 #: ../ui/main_frame.ui.h:32 ../ui/main_frame_hildon.ui.h:31
 msgid "_Help"
@@ -803,7 +803,7 @@ msgstr "बाहेर पडा (_Q)"
 
 #: ../ui/main_frame_hildon.ui.h:6
 msgid "_Paste As Display Value"
-msgstr ""
+msgstr "दृश्य मूल्याची नकल जोडा (_P)"
 
 #: ../ui/main_frame_hildon.ui.h:32
 msgid "_About..."
@@ -815,7 +815,7 @@ msgstr "दशांश "
 
 #: ../ui/prefs_gtk2.ui.h:2 ../ui/prefs_gtk3.ui.h:2
 msgid "Hexadecimal"
-msgstr ""
+msgstr "हेक्साडेसीमल"
 
 #: ../ui/prefs_gtk2.ui.h:3 ../ui/prefs_gtk3.ui.h:3
 msgid "Octal"
@@ -831,7 +831,7 @@ msgstr "galculator - प्राधान्यक्रम"
 
 #: ../ui/prefs_gtk2.ui.h:6 ../ui/prefs_gtk3.ui.h:6 ../ui/prefs-ume.ui.h:2
 msgid "A dialog that is used to change preferences settings."
-msgstr ""
+msgstr "पसंतीची संयोजना बदलण्यासाठी वापरायचा संवाद"
 
 #: ../ui/prefs_gtk2.ui.h:7 ../ui/prefs_gtk3.ui.h:7 ../ui/prefs-ume.ui.h:3
 msgid "Closes the dialog."
@@ -839,7 +839,7 @@ msgstr "संवाद बंद करा."
 
 #: ../ui/prefs_gtk2.ui.h:8 ../ui/prefs_gtk3.ui.h:8
 msgid "<b>Appearance</b>"
-msgstr ""
+msgstr "<b>पेहराव</b>"
 
 #: ../ui/prefs_gtk2.ui.h:9 ../ui/prefs_gtk3.ui.h:9 ../ui/prefs-ume.ui.h:5
 msgid "    "
@@ -847,19 +847,19 @@ msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:10 ../ui/prefs_gtk3.ui.h:10
 msgid "Result font:"
-msgstr ""
+msgstr "निकाल फॉन्ट:"
 
 #: ../ui/prefs_gtk2.ui.h:11 ../ui/prefs_gtk3.ui.h:11
 msgid "Inactive module color:"
-msgstr ""
+msgstr "अकार्यान्वित भागाचा रंग:"
 
 #: ../ui/prefs_gtk2.ui.h:12 ../ui/prefs_gtk3.ui.h:12
 msgid "Active module color:"
-msgstr ""
+msgstr "कार्यान्वित भागाचा रंग:"
 
 #: ../ui/prefs_gtk2.ui.h:13 ../ui/prefs_gtk3.ui.h:13
 msgid "Result font color:"
-msgstr ""
+msgstr "निकाल फॉन्टचा रंग:"
 
 #: ../ui/prefs_gtk2.ui.h:14 ../ui/prefs_gtk3.ui.h:14
 msgid "Background color:"
@@ -867,71 +867,71 @@ msgstr "पार्श्वभूमी रंग:"
 
 #: ../ui/prefs_gtk2.ui.h:15 ../ui/prefs_gtk3.ui.h:15
 msgid "Module font:"
-msgstr ""
+msgstr "भागाचा फॉन्ट:"
 
 #: ../ui/prefs_gtk2.ui.h:16 ../ui/prefs_gtk3.ui.h:16
 msgid "RPN stack font:"
-msgstr ""
+msgstr "RPN stack फॉन्ट:"
 
 #: ../ui/prefs_gtk2.ui.h:17 ../ui/prefs_gtk3.ui.h:17
 msgid "RPN stack color:"
-msgstr ""
+msgstr "RPN stack रंग:"
 
 #: ../ui/prefs_gtk2.ui.h:18 ../ui/prefs_gtk3.ui.h:18
 msgid "Pick a Display Background Color"
-msgstr ""
+msgstr "दृश्य पार्श्र्वभूमी रंग निवडा"
 
 #: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
 msgid "Pick a Display Result Font Color"
-msgstr ""
+msgstr "दृश्य निकाल फॉन्टचा रंग निवडा"
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
 msgid "Pick a RPN Stack Color"
-msgstr ""
+msgstr "RPN stack रंग निवडा"
 
 #: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
 msgid "Pick a Inactive Module Color"
-msgstr ""
+msgstr "अकार्यान्वित भागाचा रंग निवडा"
 
 #: ../ui/prefs_gtk2.ui.h:22 ../ui/prefs_gtk3.ui.h:22
 msgid "Pick a Active Module Color"
-msgstr ""
+msgstr "कार्यान्वित भागाचा रंग निवडा"
 
 #: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
 msgid "Pick a Result Font"
-msgstr ""
+msgstr "निकाल फॉन्ट निवडा"
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
 msgid "Pick a RPN Stack Font"
-msgstr ""
+msgstr "RPN stack फॉन्ट निवडा"
 
 #: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
 msgid "Pick a Module Font"
-msgstr ""
+msgstr "भागाचा फॉन्ट निवडा"
 
 #: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
 msgid "<b>Modules Visibility</b>"
-msgstr ""
+msgstr "<b>भागांची दृश्यता</b>"
 
 #: ../ui/prefs_gtk2.ui.h:27 ../ui/prefs_gtk3.ui.h:27 ../ui/prefs-ume.ui.h:6
 msgid "Angle base units"
-msgstr ""
+msgstr "कोन बेस युनिट्स्"
 
 #: ../ui/prefs_gtk2.ui.h:28 ../ui/prefs_gtk3.ui.h:28 ../ui/prefs-ume.ui.h:7
 msgid "Notation"
-msgstr ""
+msgstr "संकेतलिपी"
 
 #: ../ui/prefs_gtk2.ui.h:29 ../ui/prefs_gtk3.ui.h:29 ../ui/prefs-ume.ui.h:8
 msgid "Arithmetic operation"
-msgstr ""
+msgstr "बीजगणित संबंधी प्रक्रिया"
 
 #: ../ui/prefs_gtk2.ui.h:30 ../ui/prefs_gtk3.ui.h:30 ../ui/prefs-ume.ui.h:9
 msgid "Open brackets"
-msgstr ""
+msgstr "कंस उघडा"
 
 #: ../ui/prefs_gtk2.ui.h:31 ../ui/prefs_gtk3.ui.h:31 ../ui/prefs-ume.ui.h:10
 msgid "Number base units"
-msgstr ""
+msgstr "आकड्यांचा बेस एकक"
 
 #: ../ui/prefs_gtk2.ui.h:32 ../ui/prefs_gtk3.ui.h:32 ../ui/prefs-ume.ui.h:11
 msgid "Display"
@@ -939,7 +939,7 @@ msgstr "दृश्य"
 
 #: ../ui/prefs_gtk2.ui.h:33 ../ui/prefs_gtk3.ui.h:33 ../ui/prefs-ume.ui.h:12
 msgid "<b>Font</b>"
-msgstr ""
+msgstr "<b>फॉन्ट</b>"
 
 #: ../ui/prefs_gtk2.ui.h:34 ../ui/prefs_gtk3.ui.h:34 ../ui/prefs-ume.ui.h:13
 msgid "Use custom button font"
@@ -947,27 +947,27 @@ msgstr "इच्छिक बटण फॉन्ट वापरा"
 
 #: ../ui/prefs_gtk2.ui.h:35 ../ui/prefs_gtk3.ui.h:35 ../ui/prefs-ume.ui.h:14
 msgid "Button font:"
-msgstr ""
+msgstr "बटणाचा फॉन्ट:"
 
 #: ../ui/prefs_gtk2.ui.h:36 ../ui/prefs_gtk3.ui.h:36 ../ui/prefs-ume.ui.h:15
 msgid "Pick a Button Font"
-msgstr ""
+msgstr "बटणाचा फॉन्ट निवडा"
 
 #: ../ui/prefs_gtk2.ui.h:37 ../ui/prefs_gtk3.ui.h:37 ../ui/prefs-ume.ui.h:16
 msgid "<b>Dimension</b>"
-msgstr ""
+msgstr "<b>आकारमान </b>"
 
 #: ../ui/prefs_gtk2.ui.h:38 ../ui/prefs_gtk3.ui.h:38 ../ui/prefs-ume.ui.h:17
 msgid "Minimal button width:"
-msgstr ""
+msgstr "किमान बटण रुंदी:"
 
 #: ../ui/prefs_gtk2.ui.h:39 ../ui/prefs_gtk3.ui.h:39 ../ui/prefs-ume.ui.h:18
 msgid "Minimal button height:"
-msgstr ""
+msgstr "किमान बटण उंची:"
 
 #: ../ui/prefs_gtk2.ui.h:41 ../ui/prefs_gtk3.ui.h:41
 msgid "<b>User defined constants:</b>"
-msgstr ""
+msgstr "<b>वापरकर्ता व्याख्यीत स्थिरांक:</b>"
 
 #: ../ui/prefs_gtk2.ui.h:42 ../ui/prefs_gtk3.ui.h:42
 msgid "Name:"
@@ -1000,15 +1000,15 @@ msgstr "पुसून टाक"
 #: ../ui/prefs_gtk2.ui.h:49 ../ui/prefs_gtk3.ui.h:49
 #: ../ui/scientific_buttons_gtk2.ui.h:21 ../ui/scientific_buttons_gtk3.ui.h:21
 msgid "Constants"
-msgstr ""
+msgstr "स्थिरांक"
 
 #: ../ui/prefs_gtk2.ui.h:50 ../ui/prefs_gtk3.ui.h:50
 msgid "<b>User defined functions:</b>"
-msgstr ""
+msgstr "<b>वापरकर्ता व्याख्यीत फंक्शन:</b>"
 
 #: ../ui/prefs_gtk2.ui.h:51 ../ui/prefs_gtk3.ui.h:51
 msgid "Variable:"
-msgstr ""
+msgstr "चलन:"
 
 #: ../ui/prefs_gtk2.ui.h:52 ../ui/prefs_gtk3.ui.h:52
 msgid "Expression:"
@@ -1016,11 +1016,11 @@ msgstr "एक्सप्रेशन:"
 
 #: ../ui/prefs_gtk2.ui.h:54 ../ui/prefs_gtk3.ui.h:54 ../ui/prefs-ume.ui.h:20
 msgid "Configure number base: "
-msgstr ""
+msgstr "आकड्यांचा बेस संरचित करा:"
 
 #: ../ui/prefs_gtk2.ui.h:55 ../ui/prefs_gtk3.ui.h:55
 msgid "<b>Decimal Settings</b>"
-msgstr ""
+msgstr "<b>दशांश सेटिंग</b>"
 
 #: ../ui/prefs_gtk2.ui.h:56 ../ui/prefs_gtk3.ui.h:56
 msgid "Show thousands separator"
@@ -1032,7 +1032,7 @@ msgstr "विभाजक अक्षर:"
 
 #: ../ui/prefs_gtk2.ui.h:58 ../ui/prefs_gtk3.ui.h:58
 msgid "Separator block length:"
-msgstr ""
+msgstr "विभाजक ब्लॉक लांबी:"
 
 #: ../ui/prefs_gtk2.ui.h:59 ../ui/prefs_gtk3.ui.h:59
 msgid " "
@@ -1044,7 +1044,7 @@ msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:61 ../ui/prefs_gtk3.ui.h:61
 msgid "Signed"
-msgstr ""
+msgstr "साइन"
 
 #: ../ui/prefs_gtk2.ui.h:62 ../ui/prefs_gtk3.ui.h:62
 msgid "Show separator"
@@ -1052,15 +1052,15 @@ msgstr "विभाजक दाखवा"
 
 #: ../ui/prefs_gtk2.ui.h:63 ../ui/prefs_gtk3.ui.h:63
 msgid "Number of bits: "
-msgstr ""
+msgstr "बिट्सची संख्या:"
 
 #: ../ui/prefs_gtk2.ui.h:64 ../ui/prefs_gtk3.ui.h:64
 msgid "<b>Octal Settings</b>"
-msgstr ""
+msgstr "<b>अॉक्टल सेटिंग</b>"
 
 #: ../ui/prefs_gtk2.ui.h:65 ../ui/prefs_gtk3.ui.h:65
 msgid "<b>Binary Settings</b>"
-msgstr ""
+msgstr "<b>बायनरी सेटिंग</b>"
 
 #: ../ui/prefs_gtk2.ui.h:66 ../ui/prefs_gtk3.ui.h:66
 msgid "Fix length to a multiple of"
@@ -1072,7 +1072,7 @@ msgstr "आकडे"
 
 #: ../ui/prefs_gtk2.ui.h:68 ../ui/prefs_gtk3.ui.h:68 ../ui/prefs-ume.ui.h:22
 msgid "<b>RPN</b>"
-msgstr ""
+msgstr "<b>RPN</b>"
 
 #: ../ui/prefs_gtk2.ui.h:69 ../ui/prefs_gtk3.ui.h:69 ../ui/prefs-ume.ui.h:23
 msgid "finite stack size (x, y, z, t)"
@@ -1084,7 +1084,7 @@ msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:71 ../ui/prefs_gtk3.ui.h:71 ../ui/prefs-ume.ui.h:25
 msgid "<b>Startup</b>"
-msgstr ""
+msgstr "<b>सुरुवात</b>"
 
 #: ../ui/prefs_gtk2.ui.h:72 ../ui/prefs_gtk3.ui.h:72 ../ui/prefs-ume.ui.h:26
 msgid "Remember display value on exit"
@@ -1092,7 +1092,7 @@ msgstr ""
 
 #: ../ui/prefs_gtk2.ui.h:73 ../ui/prefs_gtk3.ui.h:73
 msgid "<b>Visibility</b>"
-msgstr ""
+msgstr "<b>दृश्यता</b>"
 
 #: ../ui/prefs_gtk2.ui.h:74 ../ui/prefs_gtk3.ui.h:74
 msgid "Show menu bar"
@@ -1104,39 +1104,39 @@ msgstr "सर्वसाधारण"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:1 ../ui/scientific_buttons_gtk3.ui.h:1
 msgid "tan"
-msgstr ""
+msgstr "टॅन"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:2 ../ui/scientific_buttons_gtk3.ui.h:2
 msgid "Tangent"
-msgstr ""
+msgstr "टांजेंट"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:3 ../ui/scientific_buttons_gtk3.ui.h:3
 msgid "ln"
-msgstr ""
+msgstr "इंच"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:4 ../ui/scientific_buttons_gtk3.ui.h:4
 msgid "Natural logarithm (base: e)"
-msgstr ""
+msgstr "नॅचरल लॉगरिदम (बेस: e)"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:7 ../ui/scientific_buttons_gtk3.ui.h:7
 msgid "n!"
-msgstr ""
+msgstr "n!"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:8 ../ui/scientific_buttons_gtk3.ui.h:8
 msgid "Factorial"
-msgstr ""
+msgstr "फॅक्टोरिअल"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:9 ../ui/scientific_buttons_gtk3.ui.h:9
 msgid "EE"
-msgstr ""
+msgstr "EE"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:10 ../ui/scientific_buttons_gtk3.ui.h:10
 msgid "Enter exponent (base: 10)"
-msgstr ""
+msgstr "एक्सपोनंट (बेस: 10) द्या"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:11 ../ui/scientific_buttons_gtk3.ui.h:11
 msgid "cos"
-msgstr ""
+msgstr "कॉस"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:12 ../ui/scientific_buttons_gtk3.ui.h:12
 msgid "Cosine"

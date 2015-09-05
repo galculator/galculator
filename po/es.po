@@ -3,15 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Adolfo Jayme Barrientos, 2014
+# Emiliano Fascetti, 2015
 # jcsl <trcs@gmx.com>, 2014
+# Lluís Tusquellas <lutusq@gmail.com>, 2014
+# Naresu Tenshi <naresutenshi@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-17 16:18+0100\n"
-"PO-Revision-Date: 2014-03-17 15:22+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/projects/p/MATE/language/es/)\n"
+"PO-Revision-Date: 2015-01-05 01:47+0000\n"
+"Last-Translator: Emiliano Fascetti\n"
+"Language-Team: Spanish (http://www.transifex.com/mate/MATE/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,7 +56,7 @@ msgid ""
 "Compiled against GTK version %i.%i.%i\n"
 "Linked against GTK version %i.%i.%i\n"
 "%s-precision floating point numbers.\n"
-msgstr ""
+msgstr "\n%s v%s, (c) 2002-2014 Simon Flöry\n\nUso: %s [options]\n\nopciones:\n(Opciones de GTK)\n -h, --help\t\tMuestra este mensaje\n -v, --version\t\tMuestra la información de la versión\n\nCompilado con la versión de GTK %i.%i.%i\nEnlazado con la versión de GTK %i.%i.%i\nNúmeros de coma flotante con precisión %s.\n"
 
 #: ../src/main.c:196
 #, c-format
@@ -69,7 +73,7 @@ msgstr "[%s] archivo de configuración: Moveremos este archivo de configuración
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
-msgstr "Por favor, envíe un informe de error."
+msgstr "Envíe un informe de error."
 
 #: ../src/calc_basic.c:300
 #, c-format
@@ -151,21 +155,21 @@ msgid ""
 "[%s] configuration file - We reset at least one separator character as it "
 "coincides with the decimal point. If you recently changed your locales "
 "settings, this is nothing to worry about.\n"
-msgstr ""
+msgstr "[%s] archivo de configuración - Nosotros reiniciamos al menos un carácter de separación, ya que coincide con el punto decimal. Si ha cambiado recientemente sus ajustes locales, esto no es nada de qué preocuparse.\n"
 
 #: ../src/config_file.c:470
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr ""
+msgstr "[%s] del archivo de configuración: booleano extraño al escribir. Saltarse esta clave. %s\n"
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in "
 "\"config_structure\". %s\n"
-msgstr ""
+msgstr "[%s] archivo de configuración: se ignora key_type desconocido en estructura de configuración. %s\n"
 
 #: ../src/config_file.c:501
 #, c-format
@@ -177,45 +181,45 @@ msgstr "[%s] archivo de configuración: no se pudo grabar o escribir en el archi
 msgid ""
 "[%s] Line_index exceeds valid range in function \"display_delete_line\". "
 "%s\n"
-msgstr ""
+msgstr "[%s] Line_index excede el rango valido en la función \"display_delete_line\". %s\n"
 
 #: ../src/display.c:598
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
-msgstr ""
+msgstr "[%s] opción de visualización desconocida en la función «change_option»"
 
 #: ../src/general_functions.c:43
 msgid "unsupported inverse function"
-msgstr "función inversa no soportada"
+msgstr "función inversa no admitida"
 
 #: ../src/general_functions.c:49
 msgid "unsupported hyperbolic function"
-msgstr "función hiperbólica no soportada"
+msgstr "función hiperbólica no admitida"
 
 #: ../src/general_functions.c:112
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
-msgstr "[%s] modo de notación desconocido en la función \"all_clear\". %s\n"
+msgstr "[%s] modo de notación desconocido en la función «all_clear». %s\n"
 
 #: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr "[%s] fallo al convertir el carácter %c en la función \"axtof\". %s\n"
+msgstr "[%s] fallo al convertir el carácter %c en la función «axtof». %s\n"
 
 #: ../src/general_functions.c:194
 #, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr "[%s] fallo al convertir %s en la función \"ftoax\". %s\n"
+msgstr "[%s] fallo al convertir %s en la función «ftoax». %s\n"
 
 #: ../src/general_functions.c:274
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr "[%s] fallo al convertir el color %s en la función \"set_button_color\". %s\n"
+msgstr "[%s] fallo al convertir el color %s en la función «set_button_color». %s\n"
 
 #: ../src/general_functions.c:395
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr "[%s] fallo al buscar el widget %s en la función \"activate_menu_item\". %s\n"
+msgstr "[%s] fallo al buscar el widget %s en la función «activate_menu_item». %s\n"
 
 #: ../src/general_functions.c:437
 msgid "unknown number base"
@@ -237,7 +241,7 @@ msgid ""
 "[%s] failed to convert %s to a number properly in function "
 "\"string2double\". Have you changed your locales? Deleting your "
 "configuration file might solve this problem. %s\n"
-msgstr ""
+msgstr "[%s] falló la conversión de %s a un número adecuado en la función «string2double». ¿Ha cambiado su configuración regional? Puede que eliminar el archivo de configuración resuelva este problema. %s\n"
 
 #: ../src/general_functions.c:586
 #, c-format
@@ -291,12 +295,12 @@ msgstr "[%s] No se ha podido cargar %s. Este archivo es necesario     para const
 
 #: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
-msgstr "Mostrar barra de _menu"
+msgstr "Mostrar barra de _menús"
 
 #: ../src/ui.c:999
 #, c-format
 msgid "%s Preferences"
-msgstr "%s Preferencias"
+msgstr "Preferencias de %s"
 
 #: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
@@ -405,7 +409,7 @@ msgstr "Acerca de galculator"
 
 #: ../ui/about.ui.in.h:2
 msgid "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
-msgstr ""
+msgstr "© 2002-2014 por Simon Flöry <simon.floery@rechenraum.com>"
 
 #: ../ui/about.ui.in.h:3
 msgid "a GTK+ based scientific calculator"
@@ -580,7 +584,7 @@ msgstr "."
 #: ../ui/basic_buttons_gtk2.ui.h:38 ../ui/basic_buttons_gtk3.ui.h:38
 #: ../ui/scientific_buttons_gtk2.ui.h:93 ../ui/scientific_buttons_gtk3.ui.h:93
 msgid "Decimal point"
-msgstr "Punto decimal"
+msgstr "Separador decimal"
 
 #: ../ui/basic_buttons_gtk2.ui.h:39 ../ui/basic_buttons_gtk3.ui.h:39
 #: ../ui/scientific_buttons_gtk2.ui.h:94 ../ui/scientific_buttons_gtk3.ui.h:94
@@ -697,11 +701,11 @@ msgstr "_Pegar y añadir al valor mostrado"
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
-msgstr "_Preferencias..."
+msgstr "_Preferencias…"
 
 #: ../ui/main_frame.ui.h:8 ../ui/main_frame_hildon.ui.h:8
 msgid "_View"
-msgstr "_Vista"
+msgstr "_Ver"
 
 #: ../ui/main_frame.ui.h:9 ../ui/main_frame_hildon.ui.h:9
 msgid "_Basic Mode"
@@ -795,7 +799,7 @@ msgstr "Introducción de fórmulas"
 
 #: ../ui/main_frame.ui.h:32 ../ui/main_frame_hildon.ui.h:31
 msgid "_Help"
-msgstr "A_yuda"
+msgstr "Ay_uda"
 
 #: ../ui/main_frame_hildon.ui.h:2
 msgid "_Quit"
@@ -807,7 +811,7 @@ msgstr "_Pegar como valor a mostrar"
 
 #: ../ui/main_frame_hildon.ui.h:32
 msgid "_About..."
-msgstr "_Acerca de..."
+msgstr "_Acerca de…"
 
 #: ../ui/prefs_gtk2.ui.h:1 ../ui/prefs_gtk3.ui.h:1
 msgid "Decimal"
@@ -827,7 +831,7 @@ msgstr "Binario"
 
 #: ../ui/prefs_gtk2.ui.h:5 ../ui/prefs_gtk3.ui.h:5 ../ui/prefs-ume.ui.h:1
 msgid "galculator - Preferences"
-msgstr "galculator - Preferencias"
+msgstr "Preferencias de galculator"
 
 #: ../ui/prefs_gtk2.ui.h:6 ../ui/prefs_gtk3.ui.h:6 ../ui/prefs-ume.ui.h:2
 msgid "A dialog that is used to change preferences settings."
@@ -835,7 +839,7 @@ msgstr "Un cuadro de diálogo que se utiliza para cambiar la configuración de p
 
 #: ../ui/prefs_gtk2.ui.h:7 ../ui/prefs_gtk3.ui.h:7 ../ui/prefs-ume.ui.h:3
 msgid "Closes the dialog."
-msgstr "Cierra el diálogo."
+msgstr "Cierra el cuadro de diálogo."
 
 #: ../ui/prefs_gtk2.ui.h:8 ../ui/prefs_gtk3.ui.h:8
 msgid "<b>Appearance</b>"
@@ -847,7 +851,7 @@ msgstr "    "
 
 #: ../ui/prefs_gtk2.ui.h:10 ../ui/prefs_gtk3.ui.h:10
 msgid "Result font:"
-msgstr "Fuente del resultado:"
+msgstr "Tipografía del resultado:"
 
 #: ../ui/prefs_gtk2.ui.h:11 ../ui/prefs_gtk3.ui.h:11
 msgid "Inactive module color:"
@@ -859,7 +863,7 @@ msgstr "Color del módulo activo:"
 
 #: ../ui/prefs_gtk2.ui.h:13 ../ui/prefs_gtk3.ui.h:13
 msgid "Result font color:"
-msgstr "Color de la fuente del resultado:"
+msgstr "Color de la tipografia del resultado:"
 
 #: ../ui/prefs_gtk2.ui.h:14 ../ui/prefs_gtk3.ui.h:14
 msgid "Background color:"
@@ -867,11 +871,11 @@ msgstr "Color de fondo:"
 
 #: ../ui/prefs_gtk2.ui.h:15 ../ui/prefs_gtk3.ui.h:15
 msgid "Module font:"
-msgstr "Fuente del módulo:"
+msgstr "Tipografía del módulo:"
 
 #: ../ui/prefs_gtk2.ui.h:16 ../ui/prefs_gtk3.ui.h:16
 msgid "RPN stack font:"
-msgstr "Fuente de la pila RPN:"
+msgstr "Tipografía de la pila RPN:"
 
 #: ../ui/prefs_gtk2.ui.h:17 ../ui/prefs_gtk3.ui.h:17
 msgid "RPN stack color:"
@@ -883,7 +887,7 @@ msgstr "Elija un color de fondo para la pantalla"
 
 #: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
 msgid "Pick a Display Result Font Color"
-msgstr "Elija un color para la fuente del resultado en la pantalla"
+msgstr "Elija un color para la tipografía del resultado en la pantalla"
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
 msgid "Pick a RPN Stack Color"
@@ -899,15 +903,15 @@ msgstr "Elija un color para el módulo activo"
 
 #: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
 msgid "Pick a Result Font"
-msgstr "Elija una fuente para los resultados"
+msgstr "Elija una tipografía para los resultados"
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
 msgid "Pick a RPN Stack Font"
-msgstr "Elija una fuente para la pila RPN"
+msgstr "Elija una tipografía para la pila RPN"
 
 #: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
 msgid "Pick a Module Font"
-msgstr "Elija una fuente para el módulo"
+msgstr "Elija una tipografía para el módulo"
 
 #: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
 msgid "<b>Modules Visibility</b>"
@@ -939,19 +943,19 @@ msgstr "Visualización"
 
 #: ../ui/prefs_gtk2.ui.h:33 ../ui/prefs_gtk3.ui.h:33 ../ui/prefs-ume.ui.h:12
 msgid "<b>Font</b>"
-msgstr "<b>Fuente</b>"
+msgstr "<b>Tipografía</b>"
 
 #: ../ui/prefs_gtk2.ui.h:34 ../ui/prefs_gtk3.ui.h:34 ../ui/prefs-ume.ui.h:13
 msgid "Use custom button font"
-msgstr "Usar fuente de botón personalizada"
+msgstr "Usar tipografía de botón personalizada"
 
 #: ../ui/prefs_gtk2.ui.h:35 ../ui/prefs_gtk3.ui.h:35 ../ui/prefs-ume.ui.h:14
 msgid "Button font:"
-msgstr "Fuente de botón:"
+msgstr "Tipografía de los botones:"
 
 #: ../ui/prefs_gtk2.ui.h:36 ../ui/prefs_gtk3.ui.h:36 ../ui/prefs-ume.ui.h:15
 msgid "Pick a Button Font"
-msgstr "Elija una fuente de botón"
+msgstr "Elija una tipografía de botón"
 
 #: ../ui/prefs_gtk2.ui.h:37 ../ui/prefs_gtk3.ui.h:37 ../ui/prefs-ume.ui.h:16
 msgid "<b>Dimension</b>"
@@ -1196,7 +1200,7 @@ msgstr "Seno"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:32 ../ui/scientific_buttons_gtk3.ui.h:32
 msgid "AND"
-msgstr "AND"
+msgstr "Y"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:33 ../ui/scientific_buttons_gtk3.ui.h:33
 msgid "Logical AND"
@@ -1204,7 +1208,7 @@ msgstr "«Y» lógico"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:34 ../ui/scientific_buttons_gtk3.ui.h:34
 msgid "OR"
-msgstr "OR"
+msgstr "O"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:35 ../ui/scientific_buttons_gtk3.ui.h:35
 msgid "Logical OR"
@@ -1216,7 +1220,7 @@ msgstr "XOR"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:37 ../ui/scientific_buttons_gtk3.ui.h:37
 msgid "Logical XOR"
-msgstr "«o» exclusivo lógico"
+msgstr "«O» exclusivo lógico"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:38 ../ui/scientific_buttons_gtk3.ui.h:38
 msgid "CMP"

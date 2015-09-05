@@ -1,42 +1,42 @@
-# Turkish translations for galculator package.
-# Copyright (C) 2003 THE galculator'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the galculator package.
-#
-# Oguz Yarimtepe <oguzyarimtepe@gmail.com>, 2012.
-# Zeki Bildirici <kobzeci@gmail.com>, 2012.
-# Necdet Yücel <necdetyucel@gmail.com>, 2012.
-# Murat Soysal <soysalim@gmail.com>, 2012.
-# Volkan Gezer <volkangezer@gmail.com>, 2014.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Atilla Öntaş <tarakbumba@gmail.com>, 2014
+# msoysal <soysalim@gmail.com>, 2012
+# Necdet Yücel <necdetyucel@gmail.com>, 2012
+# Oguz Yarimtepe <oguzyarimtepe@gmail.com>, 2012
+# Volkan Gezer <volkangezer@gmail.com>, 2014
+# Zeki Bildirici <kobzeci@gmail.com>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: galculator 1.01\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-28 12:51+0200\n"
-"PO-Revision-Date: 2014-01-13 13:11+0100\n"
-"Last-Translator: Volkan Gezer <volkangezer@gmail.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
-"com>\n"
-"Language: tr\n"
+"POT-Creation-Date: 2014-03-17 16:18+0100\n"
+"PO-Revision-Date: 2014-03-22 15:56+0000\n"
+"Last-Translator: Atilla Öntaş <tarakbumba@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/mate/MATE/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 1.5\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../galculator.desktop.in.h:1
 msgid "Perform simple and scientific calculations"
 msgstr "Basit ve bilimsel hesaplamalar gerçekleştir"
 
-#: ../src/callbacks.c:1047
+#: ../src/callbacks.c:1051
 msgid "save here"
 msgstr "buraya kaydet"
 
-#: ../src/callbacks.c:1423
+#: ../src/callbacks.c:1427
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
 msgstr "[%s] on_prefs_number_combo_changed %s iteratörünü getiremedi\n"
 
-#: ../src/callbacks.c:1586
+#: ../src/callbacks.c:1590
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
 msgstr "[%s] on_main_window_check_resize çağırılmamalı. %s\n"
@@ -45,7 +45,7 @@ msgstr "[%s] on_main_window_check_resize çağırılmamalı. %s\n"
 #, c-format
 msgid ""
 "\n"
-"%s v%s, (c) 2002-2013 Simon Flöry\n"
+"%s v%s, (c) 2002-2014 Simon Flöry\n"
 "\n"
 "Usage: %s [options]\n"
 "\n"
@@ -57,20 +57,7 @@ msgid ""
 "Compiled against GTK version %i.%i.%i\n"
 "Linked against GTK version %i.%i.%i\n"
 "%s-precision floating point numbers.\n"
-msgstr ""
-"\n"
-"%s v%s, (c) 2002-2013 Simon Flöry\n"
-"\n"
-"Kullanım: %s [seçenekler]\n"
-"\n"
-"seçenekler:\n"
-"(GTK seçenekleri)\n"
-" -h, --help\t\tBu kullanım mesajını göster\n"
-" -v, --version\t\tSürüm bilgisini göster\n"
-"\n"
-"Derlenen GTK sürümü %i.%i.%i\n"
-"Bağlanan GTK sürümü %i.%i.%i\n"
-"%s-hassasiyetli kayan nokta sayıları.\n"
+msgstr "\n%s v%s, (c) 2002-2014 Simon Flöry\n\nKullanımı: %s [seçenekler]\n\nseçenekler:\n(GTK seçenekleri)\n -h, --help\t\tBu kullanım iletisini görüntüler\n -v, --version\t\tSürüm bilgisini görüntüler\n\nDerlendiği GTK sürümü %i.%i.%i\nBağlantılı GTK sürümü %i.%i.%i\n%s-tamlı kayan noktalı sayılar.\n"
 
 #: ../src/main.c:196
 #, c-format
@@ -83,10 +70,7 @@ msgid ""
 "[%s] configuration file: We will move the configuration file from %s to %s. "
 "After you quit %s, you may remove the configuration file from its old "
 "location %s.\n"
-msgstr ""
-"[%s] yapılandırma dosyası: Yapılandırma dosyasını %s konumundan %s konumuna "
-"taşıyacağız. %s kapatıldıktan sonra, eski %s konumundan yapılandırma "
-"dosyasını kaldırabilirsiniz.\n"
+msgstr "[%s] yapılandırma dosyası: Yapılandırma dosyasını %s konumundan %s konumuna taşıyacağız. %s kapatıldıktan sonra, eski %s konumundan yapılandırma dosyasını kaldırabilirsiniz.\n"
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
@@ -97,27 +81,19 @@ msgstr "Lütfen bir hata kaydı gönderin."
 msgid "[%s] %c - unknown operation character. %s\n"
 msgstr "[%s] %c - bilinmeyen işlem karakteri. %s\n"
 
-#: ../src/calc_basic.c:687
+#: ../src/calc_basic.c:690
 #, c-format
 msgid ""
-"[%s] Conversion of floating point number in float2string failed because "
-"buffer was too small. %s\n"
+"[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
 ")"
-msgstr ""
-"[%s] Kayan nokta sayısının float2string içerisinde dönüşümü tamponun çok "
-"küçük olmasından başarısız oldu. %s\n"
-")"
+msgstr "[%s] Kayan nokta sayısının float2string içerisinde dönüşümü tamponun çok küçük olmasından başarısız oldu. %s\n)"
 
-#: ../src/calc_basic.c:716
+#: ../src/calc_basic.c:719
 #, c-format
 msgid ""
-"[%s] Conversion of floating point number in float2stringP failed because "
-"buffer was too small. %s\n"
+"[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
 ")"
-msgstr ""
-"[%s] Kayan nokta sayısının float2stringP içerisinde dönüşümü tamponun çok "
-"küçük olmasından başarısız oldu. %s\n"
-")"
+msgstr "[%s] Kayan nokta sayısının float2stringP içerisinde dönüşümü tamponun çok küçük olmasından başarısız oldu. %s\n)"
 
 #: ../src/config_file.c:180
 msgid "Pi"
@@ -138,42 +114,33 @@ msgstr "e"
 #: ../src/config_file.c:232
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
-msgstr ""
-"[%s] yapılandırma dosyası: bilinmeyen girdiler gözardı ediliyor %s=%s. %s\n"
+msgstr "[%s] yapılandırma dosyası: bilinmeyen girdiler gözardı ediliyor %s=%s. %s\n"
 
 #: ../src/config_file.c:256
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
-msgstr ""
-"[%s] yapılandırma dosyası: %s TRUE veya FALSE olmalı. Vasayılanları "
-"kullanarak. %s\n"
+msgstr "[%s] yapılandırma dosyası: %s TRUE veya FALSE olmalı. Vasayılanları kullanarak. %s\n"
 
 #: ../src/config_file.c:262
 #, c-format
 msgid ""
-"[%s] configuration file: failed to convert %s to a number properly. Have you "
-"changed your locales? %s\n"
-msgstr ""
-"[%s] yapılandırma dosyası: %s ifadesini bir sayıya düzgün şekilde "
-"dönüştürmede hata oluştu. Yerellerinizi değiştirdiniz mi? %s\n"
+"[%s] configuration file: failed to convert %s to a number properly. Have you"
+" changed your locales? %s\n"
+msgstr "[%s] yapılandırma dosyası: %s ifadesini bir sayıya düzgün şekilde dönüştürmede hata oluştu. Yerellerinizi değiştirdiniz mi? %s\n"
 
 #: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr ""
-"[%s] yapılandırma dosyası: yapılandırma yapısı içerisindeki bilinmeyen "
-"key_type göz ardı edilir. %s\n"
+msgstr "[%s] yapılandırma dosyası: yapılandırma yapısı içerisindeki bilinmeyen key_type göz ardı edilir. %s\n"
 
 #: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
-msgstr ""
-"[%s] %s bilinmeyen bölümü %s yapılandırma dosyasında bulundu. Önceki bölüm "
-"kullanılıyor.\n"
+msgstr "[%s] %s bilinmeyen bölümü %s yapılandırma dosyasında bulundu. Önceki bölüm kullanılıyor.\n"
 
 #: ../src/config_file.c:403
 #, c-format
@@ -181,10 +148,7 @@ msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
-msgstr ""
-"[%s] yapılandırma dosyası: %s yapılandırma dosyası okumak için açılamadı. "
-"Eğer %s'yi ilk defa başlatıyorsanız dert edilecek bir durum yok. "
-"Varsayılanlar kullanılıyor.\n"
+msgstr "[%s] yapılandırma dosyası: %s yapılandırma dosyası okumak için açılamadı. Eğer %s'yi ilk defa başlatıyorsanız dert edilecek bir durum yok. Varsayılanlar kullanılıyor.\n"
 
 #: ../src/config_file.c:432
 #, c-format
@@ -192,50 +156,38 @@ msgid ""
 "[%s] configuration file - We reset at least one separator character as it "
 "coincides with the decimal point. If you recently changed your locales "
 "settings, this is nothing to worry about.\n"
-msgstr ""
-"[%s] yapılandırma dosyası: - Ondalık noktasına rastladığından en az bir "
-"ayırıcı karakteri sıfırlıyoruz. Eğer yakın zamanda dil ayarlarınızı "
-"değiştirdiyseniz, telaşlanacak hiçbir şey yok.\n"
+msgstr "[%s] yapılandırma dosyası: - Ondalık noktasına rastladığından en az bir ayırıcı karakteri sıfırlıyoruz. Eğer yakın zamanda dil ayarlarınızı değiştirdiyseniz, telaşlanacak hiçbir şey yok.\n"
 
 #: ../src/config_file.c:470
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr ""
-"[%s] yapılandırma dosyası: yazarken garip ikilik ifade. Bu anahtar "
-"atlanıyor. %s\n"
+msgstr "[%s] yapılandırma dosyası: yazarken garip ikilik ifade. Bu anahtar atlanıyor. %s\n"
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
-"[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure"
-"\". %s\n"
-msgstr ""
-"[%s] yapılandırma dosyası: \"config_structure\" içerisindeki bilinmeyen "
-"\"key_type\" gözardı ediliyor. %s\n"
+"[%s] configuration file: ignoring unknown \"key_type\" in "
+"\"config_structure\". %s\n"
+msgstr "[%s] yapılandırma dosyası: \"config_structure\" içerisindeki bilinmeyen \"key_type\" gözardı ediliyor. %s\n"
 
 #: ../src/config_file.c:501
 #, c-format
-msgid ""
-"[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr ""
-"[%s] yapılandırma dosyası: yapılandırma dosyasına kaydedilemiyor/yazılamıyor "
-"%s.\n"
+msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
+msgstr "[%s] yapılandırma dosyası: yapılandırma dosyasına kaydedilemiyor/yazılamıyor %s.\n"
 
 #: ../src/display.c:420
 #, c-format
 msgid ""
-"[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
-msgstr ""
-"[%s] Line_index \"display_delete_line\" fonksiyonu içerisindeki geçerli "
-"aralığı aştı. %s\n"
+"[%s] Line_index exceeds valid range in function \"display_delete_line\". "
+"%s\n"
+msgstr "[%s] Line_index \"display_delete_line\" fonksiyonu içerisindeki geçerli aralığı aştı. %s\n"
 
 #: ../src/display.c:598
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
-msgstr ""
-"[%s] \"display_change_option\" içerisindeki bilinmeyen gösterim seçeneği"
+msgstr "[%s] \"display_change_option\" içerisindeki bilinmeyen gösterim seçeneği"
 
 #: ../src/general_functions.c:43
 msgid "unsupported inverse function"
@@ -245,238 +197,220 @@ msgstr "desteklenmeyen tersini alma fonksiyonu"
 msgid "unsupported hyperbolic function"
 msgstr "desteklenmeyen hiperbolik fonksiyon"
 
-#: ../src/general_functions.c:110
+#: ../src/general_functions.c:112
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
 msgstr "[%s] \"all_clear\" fonksiyonu içerisindeki bilinmeyen gösterim. %s\n"
 
-#: ../src/general_functions.c:136
+#: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr ""
-"[%s] char %c ifadesinin \"axtof\" fonksiyonu içerisinde dönüşünde hata. %s\n"
+msgstr "[%s] char %c ifadesinin \"axtof\" fonksiyonu içerisinde dönüşünde hata. %s\n"
 
-#: ../src/general_functions.c:272
+#: ../src/general_functions.c:194
+#, c-format
+msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
+msgstr "[%s] \"ftoax\" fonksiyonunda %s çeviremedi. %s\n"
+
+#: ../src/general_functions.c:274
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr ""
-"[%s] renk %s \"set_button_color\" fonksiyon içerisinde dönüştürülemedi. %s\n"
+msgstr "[%s] renk %s \"set_button_color\" fonksiyon içerisinde dönüştürülemedi. %s\n"
 
-#: ../src/general_functions.c:389
+#: ../src/general_functions.c:395
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr ""
-"[%s] %s gerecini \"activate_menu_item\" fonksiyonu içerisinde bulmada "
-"hata oluştu. %s\n"
+msgstr "[%s] %s gerecini \"activate_menu_item\" fonksiyonu içerisinde bulmada hata oluştu. %s\n"
 
-#: ../src/general_functions.c:431
+#: ../src/general_functions.c:437
 msgid "unknown number base"
 msgstr "bilinmeyen sayı tabanı"
 
-#: ../src/general_functions.c:432
+#: ../src/general_functions.c:438
+#, c-format
+msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
+msgstr "[%s] \"get_display_number_string\" fonksiyonu içerisinde bilinmeyen sayı tabanı. %s\n"
+
+#: ../src/general_functions.c:459
+#, c-format
+msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
+msgstr "[%s] \"get_display_number_length\" fonksiyonu içerisinde bilinmeyen sayı tabanı. %s\n"
+
+#: ../src/general_functions.c:568
 #, c-format
 msgid ""
-"[%s] unknown number base in function \"get_display_number_string\". %s\n"
-msgstr ""
-"[%s] \"get_display_number_string\" fonksiyonu içerisinde bilinmeyen sayı "
-"tabanı. %s\n"
+"[%s] failed to convert %s to a number properly in function "
+"\"string2double\". Have you changed your locales? Deleting your "
+"configuration file might solve this problem. %s\n"
+msgstr "[%s] %s ifadesini \"string2double\" fonksiyonu içerisinde uygun bir sayıya dönüştürmede hata oluştu. Dil ayarlarınızı değiştirdiniz mi? Yapılandırma dosyanızı silmek bu sorunu çözebilir. %s\n"
 
-#: ../src/general_functions.c:453
-#, c-format
-msgid ""
-"[%s] unknown number base in function \"get_display_number_length\". %s\n"
-msgstr ""
-"[%s] \"get_display_number_length\" fonksiyonu içerisinde bilinmeyen sayı "
-"tabanı. %s\n"
-
-#: ../src/general_functions.c:562
-#, c-format
-msgid ""
-"[%s] failed to convert %s to a number properly in function \"string2double"
-"\". Have you changed your locales? Deleting your configuration file might "
-"solve this problem. %s\n"
-msgstr ""
-"[%s] %s ifadesini \"string2double\" fonksiyonu içerisinde uygun bir sayıya "
-"dönüştürmede hata oluştu. Dil ayarlarınızı değiştirdiniz mi? Yapılandırma "
-"dosyanızı silmek bu sorunu çözebilir. %s\n"
-
-#: ../src/general_functions.c:580
+#: ../src/general_functions.c:586
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
-msgstr ""
-"[%s] \"string2double\" fonksiyonu içerisinde bilinmeyen sayı tabanı. %s\n"
+msgstr "[%s] \"string2double\" fonksiyonu içerisinde bilinmeyen sayı tabanı. %s\n"
 
-#: ../src/general_functions.c:735
+#: ../src/general_functions.c:741
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
 msgstr "[%s] \"x2rad\" fonksiyonu içerisinde bilinmeyen açı tabası. %s\n"
 
-#: ../src/general_functions.c:750
+#: ../src/general_functions.c:756
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
 msgstr "[%s] \"rad2x\" fonksiyonu içerisinde bilinmeyen açı tabanı. %s\n"
 
-#: ../src/general_functions.c:767
+#: ../src/general_functions.c:773
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
 msgstr "[%s] \"get_sep\" fonksiyonu içerisinde bilinmeyen sayı tabanı. %s\n"
 
-#: ../src/general_functions.c:784
+#: ../src/general_functions.c:790
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
-msgstr ""
-"[%s] \"get_sep_length\" fonksiyonu içerisinde bilinmeyen sayı tabanı. %s\n"
+msgstr "[%s] \"get_sep_length\" fonksiyonu içerisinde bilinmeyen sayı tabanı. %s\n"
 
-#: ../src/general_functions.c:801
+#: ../src/general_functions.c:807
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
-msgstr ""
-"[%s] \"get_sep_char\" fonksiyonu içerisinde bilinmeyen sayı tabanı. %s\n"
+msgstr "[%s] \"get_sep_char\" fonksiyonu içerisinde bilinmeyen sayı tabanı. %s\n"
 
-#: ../src/general_functions.c:869
+#: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
 msgstr "\"change_option\" fonksiyonu içinde bilinmeyen görüntü seçeneği"
 
-#: ../src/general_functions.c:909
+#: ../src/general_functions.c:915
 #, c-format
 msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
 "You might face problems when using %s! %s\n"
 ")"
-msgstr ""
-"[%s] Ondalık noktanın uzunluğu (yerel içerisinde) desteklenmemektedir: >%s<\n"
-"%s kullanırken problemler ile karşılaşabilirsiniz! %s\n"
-")"
+msgstr "[%s] Ondalık noktanın uzunluğu (yerel içerisinde) desteklenmemektedir: >%s<\n%s kullanırken problemler ile karşılaşabilirsiniz! %s\n)"
 
 #: ../src/ui.c:89
 #, c-format
 msgid ""
-"[%s] Couldn't load %s. This file is necessary     to build galculator's user "
-"interface. Make sure you did a make install and the file     is accessible!\n"
-msgstr ""
-"[%s] %s yüklenemedi. Bu dosya gcalculator kullanıcı arayüzünü oluşturmak "
-"için gereklidir. make install komutunu çalıştırdığınızdan ve dosyanın "
-"erişilebilir olduğundan emin olun!\n"
+"[%s] Couldn't load %s. This file is necessary     to build galculator's user"
+" interface. Make sure you did a make install and the file     is "
+"accessible!\n"
+msgstr "[%s] %s yüklenemedi. Bu dosya gcalculator kullanıcı arayüzünü oluşturmak için gereklidir. make install komutunu çalıştırdığınızdan ve dosyanın erişilebilir olduğundan emin olun!\n"
 
-#: ../src/ui.c:951 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
+#: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
 msgstr "_Menü çubuğunu göster"
 
-#: ../src/ui.c:991
+#: ../src/ui.c:999
 #, c-format
 msgid "%s Preferences"
 msgstr "%s Tercihleri"
 
-#: ../src/ui.c:1035 ../src/ui.c:1067
+#: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
 msgstr "İsim"
 
-#: ../src/ui.c:1038
+#: ../src/ui.c:1046
 msgid "Value"
 msgstr "Değer"
 
-#: ../src/ui.c:1041
+#: ../src/ui.c:1049
 msgid "Description"
 msgstr "Açıklama"
 
-#: ../src/ui.c:1070
+#: ../src/ui.c:1078
 msgid "Variable"
 msgstr "Değişken"
 
-#: ../src/ui.c:1073
+#: ../src/ui.c:1081
 msgid "Expression"
 msgstr "İfade"
 
-#: ../src/ui.c:1203 ../ui/basic_buttons_gtk2.ui.h:43
+#: ../src/ui.c:1211 ../ui/basic_buttons_gtk2.ui.h:43
 #: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
 #: ../ui/scientific_buttons_gtk3.ui.h:98
 msgid "="
 msgstr "="
 
-#: ../src/ui.c:1203 ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:44
+#: ../src/ui.c:1211 ../src/ui.c:1223 ../ui/basic_buttons_gtk2.ui.h:44
 #: ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons_gtk2.ui.h:99 ../ui/scientific_buttons_gtk3.ui.h:99
 msgid "Enter"
 msgstr "Eşittir"
 
-#: ../src/ui.c:1205 ../ui/scientific_buttons_gtk2.ui.h:17
+#: ../src/ui.c:1213 ../ui/scientific_buttons_gtk2.ui.h:17
 #: ../ui/scientific_buttons_gtk3.ui.h:17
 msgid "x^y"
 msgstr "x^y"
 
-#: ../src/ui.c:1205 ../src/ui.c:1217 ../ui/scientific_buttons_gtk2.ui.h:18
+#: ../src/ui.c:1213 ../src/ui.c:1225 ../ui/scientific_buttons_gtk2.ui.h:18
 #: ../ui/scientific_buttons_gtk3.ui.h:18
 msgid "Power"
 msgstr "Üs"
 
-#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:33
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:33
 #: ../ui/basic_buttons_gtk3.ui.h:33 ../ui/scientific_buttons_gtk2.ui.h:88
 #: ../ui/scientific_buttons_gtk3.ui.h:88
 msgid "("
 msgstr "("
 
-#: ../src/ui.c:1207 ../ui/basic_buttons_gtk2.ui.h:34
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:34
 #: ../ui/basic_buttons_gtk3.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:89
 #: ../ui/scientific_buttons_gtk3.ui.h:89
 msgid "Open Bracket"
 msgstr "Parantezi Aç"
 
-#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:31
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:31
 #: ../ui/basic_buttons_gtk3.ui.h:31 ../ui/scientific_buttons_gtk2.ui.h:86
 #: ../ui/scientific_buttons_gtk3.ui.h:86
 msgid ")"
 msgstr ")"
 
-#: ../src/ui.c:1209 ../ui/basic_buttons_gtk2.ui.h:32
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:32
 #: ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
 #: ../ui/scientific_buttons_gtk3.ui.h:87
 msgid "Close Bracket"
 msgstr "Parantezi Kapa"
 
-#: ../src/ui.c:1215
+#: ../src/ui.c:1223
 msgid "ENT"
 msgstr "ENT"
 
-#: ../src/ui.c:1217
+#: ../src/ui.c:1225
 msgid "y^x"
 msgstr "y^x"
 
-#: ../src/ui.c:1219
+#: ../src/ui.c:1227
 msgid "x<>y"
 msgstr "x<>y"
 
-#: ../src/ui.c:1219
+#: ../src/ui.c:1227
 msgid "swap current number with top of stack"
 msgstr "mevcut sayıyı yığının tepesindeki ile yer değiştir"
 
-#: ../src/ui.c:1221
+#: ../src/ui.c:1229
 msgid "roll"
 msgstr "döndür"
 
-#: ../src/ui.c:1221
+#: ../src/ui.c:1229
 msgid "roll down stack"
 msgstr "yığını aşağı döndür"
 
-#: ../src/ui.c:1292
+#: ../src/ui.c:1300
 msgid "Result Display"
 msgstr "Sonuç Gösterimi"
 
-#: flex_parser.l:234
+#: ../src/flex_parser.l:233
 #, c-format
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
 "doing? If not: %s\n"
-msgstr ""
-"[%s] flex ayrıştırıcısı %i kereden daha fazla çağrıldı. Ne yaptığınızı "
-"biliyor musunuz? Bilmiyorsanız: %s\n"
+msgstr "[%s] flex ayrıştırıcısı %i kereden daha fazla çağrıldı. Ne yaptığınızı biliyor musunuz? Bilmiyorsanız: %s\n"
 
 #: ../ui/about.ui.in.h:1
 msgid "About galculator"
 msgstr "galculator Hakkında"
 
 #: ../ui/about.ui.in.h:2
-msgid "Copyright (c) 2002-2013 by Simon Flöry <simon.floery@rechenraum.com>"
-msgstr "Telif Hakkı (c) 2002-2013 Simon Flöry <simon.floery@rechenraum.com>"
+msgid "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
+msgstr "Copyright (c) 2002-2014 Simon Flöry <simon.floery@rechenraum.com>"
 
 #: ../ui/about.ui.in.h:3
 msgid "a GTK+ based scientific calculator"
@@ -701,9 +635,7 @@ msgstr "Ana program penceresi."
 
 #: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
 msgid "Formula entry text field - enter string expression to compute here."
-msgstr ""
-"Formül girdisi metin alanı - burada hesaplamak için karakter dizisi "
-"ifadesini girin."
+msgstr "Formül girdisi metin alanı - burada hesaplamak için karakter dizisi ifadesini girin."
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:1 ../ui/dispctrl_bottom_gtk3.ui.h:1
 #: ../ui/dispctrl_right_gtk2.ui.h:1 ../ui/dispctrl_right_gtk3.ui.h:1
@@ -1358,377 +1290,3 @@ msgstr "LSH"
 #: ../ui/scientific_buttons_gtk2.ui.h:75 ../ui/scientific_buttons_gtk3.ui.h:75
 msgid "Left shift"
 msgstr "Sola kaydır"
-
-#~ msgid "About %s"
-#~ msgstr "%s hakkında"
-
-#~ msgid ""
-#~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-#~ "<span size=\"large\">a GTK 2 based scientific calculator</span>\n"
-#~ "\n"
-#~ "(c) 2002-2007 by Simon Floery (chimaira@users.sf.net)"
-#~ msgstr ""
-#~ "<span size=\"x-large\" weight=\"bold\">%s v%s</span>\n"
-#~ "<span size=\"large\">GTK 2 tabanlı bilimsel hesap makinesi</span>\n"
-#~ "\n"
-#~ "(c) Simon Floery (chimaira@users.sf.net) tarafından 2002-2007 "
-
-#~ msgid "A dialog that shows information about this program."
-#~ msgstr "Bu program hakkında bilgi gösteren bir iletişim penceresi."
-
-#~ msgid "Shows information about the program."
-#~ msgstr "Program hakkında bilgi gösterir."
-
-#~ msgid "fill_me"
-#~ msgstr "fill_me"
-
-#~ msgid "Select result font"
-#~ msgstr "Schriftauswahl für Resultat"
-
-#~ msgid "Select stack font"
-#~ msgstr "Schriftauswahl für Stack"
-
-#~ msgid "Select module font"
-#~ msgstr "Schriftauswahl für Module"
-
-#~ msgid "Select active module color"
-#~ msgstr "Farbe eines aktiven Moduls"
-
-#~ msgid "Select inactive module color"
-#~ msgstr "Farbe eines inaktiven Moduls"
-
-#~ msgid "Select result font color"
-#~ msgstr "Schriftfarbe des Resultats"
-
-#~ msgid "Select stack color"
-#~ msgstr "Schriftfarbe des Stacks"
-
-#~ msgid "Select background color"
-#~ msgstr "Hintergrundfarbe"
-
-#~ msgid "Select button font"
-#~ msgstr "eigene Schrift für Tasten"
-
-#~ msgid "A dialog that is used to change a color setting."
-#~ msgstr "Ein Dialogfenster zum Ändern von Farbeinstellungen."
-
-#~ msgid "Applies all changes and closes the dialog."
-#~ msgstr "Äbernimmt die Änderungen und schließt das Dialogfenster."
-
-#~ msgid "Cancels all changes and closes the dialog."
-#~ msgstr "Vergisst alle Änderungen und schließt das Dialogfenster."
-
-#~ msgid "Contains various widgets to select a color value."
-#~ msgstr "Enthält mehrere \"widgets\" zur Farbauswahl."
-
-#~ msgid "Select Color"
-#~ msgstr "Farbenwahl"
-
-#~ msgid "Shows some help about the dialog."
-#~ msgstr "Zeiht Hilfe zum Dialogfenster an."
-
-#~ msgid "A dialog that is used to change a font setting."
-#~ msgstr "Ein Dialogfenster zum Ändern von Schrifteinstellungen."
-
-#~ msgid "Applies all changes."
-#~ msgstr "Übernimmt alle Änderungen."
-
-#~ msgid "Displays various fonts and font sizes to select from."
-#~ msgstr "Gibt verschiedene Schriftarten und Schriftgrößen zur Auswahl."
-
-#~ msgid "Select Font"
-#~ msgstr "Schriftauswahl"
-
-#~ msgid "decimal PI 3.14159265359"
-#~ msgstr "dezimal PI 3.14159265359"
-
-#~ msgid ""
-#~ "[%s] unknown angle base in function \"display_result_get_rad_angle\". %s\n"
-#~ msgstr ""
-#~ "[%s] unbekannte Winkeleinheit in der Funktion "
-#~ "\"display_result_get_rad_angle\". %s\n"
-
-#~ msgid "_Show menu bar"
-#~ msgstr "Menü _sichtbar"
-
-#~ msgid "[%s] on_operation_button_clicked: unknown status. %s\n"
-#~ msgstr "[%s] on_operation_button_clicked: unbekannter status. %s\n"
-
-#~ msgid "unknown function modifier (INV/HYP)"
-#~ msgstr "unbekannte Funktionsart (INV/HYP)"
-
-#~ msgid "[%s] Color Dialog (%s) not found. %s\n"
-#~ msgstr "[%s] Farbdialog (%s) nicht gefunden. %s\n"
-
-#~ msgid "[%s] Font Dialog (%s) not found. %s\n"
-#~ msgstr "[%s] Schriftartendialog (%s) nicht gefunden. %s\n"
-
-#~ msgid "[%s] computing: %f %c %f = %f\n"
-#~ msgstr "[%s] berechne: %f %c %f = %f\n"
-
-#~ msgid "[%s] RPN stack size is %i.\n"
-#~ msgstr "[%s] Die Größe des RPN stacks ist %i.\n"
-
-#~ msgid "1/x"
-#~ msgstr "1/x"
-
-#~ msgid "Adds the current display value to memory."
-#~ msgstr "Addiert den aktuellen Wert zum Speicher."
-
-#~ msgid "Calculates the complete equation and displays the result."
-#~ msgstr "Startet die Berechnung und zeigt das Ergebnis an."
-
-#~ msgid "Changes the sign of the current display value."
-#~ msgstr "Wechselt das Vorzeichen des aktuellen Displaywertes."
-
-#~ msgid "Clear all"
-#~ msgstr "Alles lÃ¶schen"
-
-#~ msgid "Clears the display."
-#~ msgstr "LÃ¶scht das Display"
-
-#~ msgid "Computes the cosine."
-#~ msgstr "Berechnet den Cosinus."
-
-#~ msgid "Computes the factorial."
-#~ msgstr "Berechnet das Faktorielle."
-
-#~ msgid "Computes the logarithm (with base 10)."
-#~ msgstr "Berechnet den Logarithmus (zur Basis 10)."
-
-#~ msgid "Computes the natural logarithm (with base of Euler's number)."
-#~ msgstr ""
-#~ "Berechnet den natÃŒrlichen Logarithmus (zur Basis e - der Eulerschen "
-#~ "Zahl)."
-
-#~ msgid "Computes the power."
-#~ msgstr "Berechnet die Potenz."
-
-#~ msgid "Computes the reciprocal."
-#~ msgstr "Berechnet den Reziprokwert."
-
-#~ msgid "Computes the sine."
-#~ msgstr "Berechnet den Sinus"
-
-#~ msgid "Computes the square root."
-#~ msgstr "Berechnet die Quadratwurzel."
-
-#~ msgid "Computes the square."
-#~ msgstr "Quadriert."
-
-#~ msgid "Computes the tangent."
-#~ msgstr "Berechnet den Tangens."
-
-#~ msgid "Contains the main display."
-#~ msgstr "Enthält das Display."
-
-#~ msgid "Enters a closing paren."
-#~ msgstr "Klammer zu"
-
-#~ msgid "Enters an opening paren."
-#~ msgstr "Klammer auf"
-
-#~ msgid "Enters the bitwise complement operator."
-#~ msgstr "bitweise Negierung"
-
-#~ msgid "Enters the decimal point."
-#~ msgstr "Dezimalpunkt"
-
-#~ msgid "Enters the digit 2."
-#~ msgstr "die Zahl 2."
-
-#~ msgid "Enters the digit 3."
-#~ msgstr "die Zahl 3."
-
-#~ msgid "Enters the digit 4."
-#~ msgstr "die Zahl 4."
-
-#~ msgid "Enters the digit 5."
-#~ msgstr "die Zahl 5."
-
-#~ msgid "Enters the digit 6."
-#~ msgstr "die Zahl 6."
-
-#~ msgid "Enters the digit 7."
-#~ msgstr "die Zahl 7."
-
-#~ msgid "Enters the digit 8."
-#~ msgstr "die Zahl 8."
-
-#~ msgid "Enters the digit 9."
-#~ msgstr "die Zahl 9."
-
-#~ msgid "Enters the division operator."
-#~ msgstr "Divisionszeichen"
-
-#~ msgid "Enters the hexadecimal digit A."
-#~ msgstr "die Hexadezimalzahl A."
-
-#~ msgid "Enters the hexadecimal digit B."
-#~ msgstr "die Hexadezimalzahl B."
-
-#~ msgid "Enters the hexadecimal digit C."
-#~ msgstr "die Hexadezimalzahl C."
-
-#~ msgid "Enters the hexadecimal digit D."
-#~ msgstr "die Hexadezimalzahl D."
-
-#~ msgid "Enters the hexadecimal digit E."
-#~ msgstr "die Hexadezimalzahl E."
-
-#~ msgid "Enters the hexadecimal digit F."
-#~ msgstr "die Hexadezimalzahl F."
-
-#~ msgid "Enters the left-shift operator."
-#~ msgstr "Linksschiebe Operator"
-
-#~ msgid "Enters the logical AND operator."
-#~ msgstr "UND Verknüpfung"
-
-#~ msgid "Enters the logical OR operator."
-#~ msgstr "ODER Verknüpfung"
-
-#~ msgid "Enters the logical exclusive OR operator."
-#~ msgstr "Exklusiv-ODER Verknüpfung"
-
-#~ msgid "Enters the minus operator."
-#~ msgstr "Minuszeichen"
-
-#~ msgid "Enters the modulus operator."
-#~ msgstr "Modulozeichen"
-
-#~ msgid "Enters the multiplication operator."
-#~ msgstr "Multiplikationszeichen."
-
-#~ msgid "Enters the plus operator."
-#~ msgstr "Additionszeichen."
-
-#~ msgid "Main display"
-#~ msgstr "Display"
-
-#~ msgid "Memory add"
-#~ msgstr "Addiere zu Speicher"
-
-#~ msgid "Memory read"
-#~ msgstr "Lese Speicher"
-
-#~ msgid "Memory save"
-#~ msgstr "Schreibe in Speicher"
-
-#~ msgid "Minus"
-#~ msgstr "Minus"
-
-#~ msgid "Open paren"
-#~ msgstr "Klammer auf"
-
-#~ msgid "Plus"
-#~ msgstr "Addition"
-
-#~ msgid "Reads the value saved in memory."
-#~ msgstr "Lese den Wert im Speicher"
-
-#~ msgid "Reciprocal"
-#~ msgstr "Reziprokwert"
-
-#~ msgid "Removes the last digit from the display."
-#~ msgstr "Lösche das letzte Zeichen am Display."
-
-#~ msgid "Resets the calculator."
-#~ msgstr "Setze den Taschenrechner zurück."
-
-#~ msgid "Saves the current display value into memory."
-#~ msgstr "Schreibt aktuellen Wert in den Speicher."
-
-#~ msgid "Set display into \"enter exponent\" mode (base of 10)."
-#~ msgstr "Wechsle in \"Exponenteneingabe-Modus\" (Basis 10)."
-
-#~ msgid "Switches to hyperbolic mode."
-#~ msgstr "Wechselt in hyperbolischen Modus."
-
-#~ msgid "Switches to inverse mode."
-#~ msgstr "Wechselt in inversen Modus."
-
-#~ msgid "The main display."
-#~ msgstr "Display."
-
-#~ msgid "_Settings"
-#~ msgstr "_Einstellungen"
-
-#~ msgid "constants"
-#~ msgstr "Konstanten"
-
-#~ msgid "gives a menu to select constants from"
-#~ msgstr "öffnet ein Menü zur Auswahl von Konstanten"
-
-#~ msgid "Algebraic"
-#~ msgstr "Algebraisch"
-
-#~ msgid "Default angle unit:"
-#~ msgstr "Winkeleinheit:"
-
-#~ msgid "Default notation mode:"
-#~ msgstr "Notationsmodus:"
-
-#~ msgid "Degrees"
-#~ msgstr "Grad"
-
-#~ msgid "Display control buttons (C, AC, <-)"
-#~ msgstr "Display Kontrolltasten (C, AC, <-)"
-
-#~ msgid "Function buttons (sin, cos, etc.)"
-#~ msgstr "Funktionstasten (sin, cos, etc.)"
-
-#~ msgid "Gradians"
-#~ msgstr "Neugrad"
-
-#~ msgid "Logic buttons (AND, OR, etc.)"
-#~ msgstr "Logische Tasten (UND, ODER, etc.)"
-
-#~ msgid "Miscellaneous"
-#~ msgstr "Diverses"
-
-#~ msgid "Radians"
-#~ msgstr "Radiant"
-
-#~ msgid "Reverse Polish (RPN)"
-#~ msgstr "Reverse Polish (RPN)"
-
-#~ msgid "button1"
-#~ msgstr "button1"
-
-#~ msgid "button5"
-#~ msgstr "button5"
-
-#~ msgid "button7"
-#~ msgstr "button7"
-
-#~ msgid ""
-#~ "[%s] unknown number base in function \"display_result_get_as_double\". "
-#~ "%s\n"
-#~ msgstr ""
-#~ "[%s] unbekannte Zahlenbasis in der Funktion \"display_result_get_as_double"
-#~ "\". %s\n"
-
-#~ msgid "Enters Euler's number."
-#~ msgstr "Eulersche Zahl."
-
-#~ msgid "Enters the constant Pi."
-#~ msgstr "Pi"
-
-#~ msgid "unknown operation mapping"
-#~ msgstr "unbekannte OperationsverknÃŒpfung"
-
-#~ msgid "unknown button <-> function relation"
-#~ msgstr "unbekannte Taste <-> Funktion Relation"
-
-#~ msgid "unknown button <-> constant relation"
-#~ msgstr "unbekannte Taste <-> Konstante Relation"
-
-#~ msgid "unknown button <-> gfunc relation"
-#~ msgstr "unbekannte Taste <-> gfunc relation"
-
-#~ msgid "Enters the digit 0."
-#~ msgstr "die Zahl 0."
-
-#~ msgid "Enters the digit 1."
-#~ msgstr "die Zahl 1."

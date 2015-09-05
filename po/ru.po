@@ -3,38 +3,43 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Alexander <alex.grushetskiy@gmail.com>, 2014
 # Alexei Sorokin <sor.alexei@meowr.ru>, 2014
+# equeim <equeim@gmail.com>, 2014
+# Evolve32 <evolve32@yandex.ru>, 2014
+# vlitomsk <kvas.omsk@gmail.com>, 2014
+# Агафонов Владислав <Vlad648@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-17 16:18+0100\n"
-"PO-Revision-Date: 2014-03-18 12:04+0000\n"
+"PO-Revision-Date: 2015-05-29 01:32+0000\n"
 "Last-Translator: Alexei Sorokin <sor.alexei@meowr.ru>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/MATE/language/ru/)\n"
+"Language-Team: Russian (http://www.transifex.com/mate/MATE/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: ../galculator.desktop.in.h:1
 msgid "Perform simple and scientific calculations"
-msgstr ""
+msgstr "Вычисления: простые и инженерные"
 
 #: ../src/callbacks.c:1051
 msgid "save here"
-msgstr ""
+msgstr "сохранить здесь"
 
 #: ../src/callbacks.c:1427
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
-msgstr ""
+msgstr "[%s] on_prefs_number_combo_changed не смог извлечь итер. %s\n"
 
 #: ../src/callbacks.c:1590
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
-msgstr ""
+msgstr "[%s] on_main_window_check_resize не должен быть вызван. %s\n"
 
 #: ../src/main.c:61
 #, c-format
@@ -52,12 +57,12 @@ msgid ""
 "Compiled against GTK version %i.%i.%i\n"
 "Linked against GTK version %i.%i.%i\n"
 "%s-precision floating point numbers.\n"
-msgstr ""
+msgstr "\n%s v%s, (c) 2002-2014 Simon Flöry\n\nИспользование: %s [ключи]\n\nключи:\n(Параметры GTK)\n-h, --help\t\tПоказать эту справку\n-v, --version\t\tНапечатать информацию о версии\n\nСобрано с GTK %i.%i.%i версии\nСлинковано с GTK %i.%i.%i версии\n%s-точность чисел с плавающей точкой.\n"
 
 #: ../src/main.c:196
 #, c-format
 msgid "[%s] configuration file: Failed to create directory %s.\n"
-msgstr ""
+msgstr "[%s] файл конфигурации: Не удалось создать каталог %s.\n"
 
 #: ../src/main.c:201
 #, c-format
@@ -65,7 +70,7 @@ msgid ""
 "[%s] configuration file: We will move the configuration file from %s to %s. "
 "After you quit %s, you may remove the configuration file from its old "
 "location %s.\n"
-msgstr ""
+msgstr "[%s] файл конфигурации: Мы переместим файл конфигурации из %s в %s. После завершения %s вы можете удалить файл конфигурации из старого расположения %s.\n"
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
@@ -74,29 +79,29 @@ msgstr "Оформите сообщение об ошибке"
 #: ../src/calc_basic.c:300
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
-msgstr ""
+msgstr "[%s] %c – неизвестный управляющий символ. %s.\n"
 
 #: ../src/calc_basic.c:690
 #, c-format
 msgid ""
 "[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
 ")"
-msgstr ""
+msgstr "[%s] Конвертация числа с плавающей запятой в float2string завершилась неудачно из-за того, что буфер был слишком мал. %s.\n)"
 
 #: ../src/calc_basic.c:719
 #, c-format
 msgid ""
 "[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
 ")"
-msgstr ""
+msgstr "[%s] Конвертация числа с плавающей запятой в float2stringP завершилась неудачно из-за того, что буфер был слишком мал. %s.\n)"
 
 #: ../src/config_file.c:180
 msgid "Pi"
-msgstr "Пи"
+msgstr "Число Пи"
 
 #: ../src/config_file.c:181
 msgid "pi"
-msgstr "пи"
+msgstr "pi"
 
 #: ../src/config_file.c:183
 msgid "Euler's Number"
@@ -109,33 +114,33 @@ msgstr "е"
 #: ../src/config_file.c:232
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
-msgstr ""
+msgstr "[%s] файл конфигурации: неизвестное вхождение %s=%s игнорируется. %s\n"
 
 #: ../src/config_file.c:256
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
-msgstr ""
+msgstr "[%s] файл конфигурации: %s должен быть TRUE или FALSE. Используются умолчания: %s\n"
 
 #: ../src/config_file.c:262
 #, c-format
 msgid ""
 "[%s] configuration file: failed to convert %s to a number properly. Have you"
 " changed your locales? %s\n"
-msgstr ""
+msgstr "[%s] файл конфигурации: не удалось корректно конвертировать %s в число. Вы поменяли локаль? %s\n"
 
 #: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr ""
+msgstr "[%s] файл конфигурации: игнорируется неизвестный key_type в структуре конфигурации. %s\n"
 
 #: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
-msgstr ""
+msgstr "[%s] найдена неизвестная секция %s в файле конфигурации %s. Используется предшествующая секция.\n"
 
 #: ../src/config_file.c:403
 #, c-format
@@ -143,7 +148,7 @@ msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
-msgstr ""
+msgstr "[%s] файл конфигурации: не удалось открыть файл конфигурации %s для чтения. Беспокоиться не о чем, если вы запускаете %s в первый раз. Используются настройки по умолчанию.\n"
 
 #: ../src/config_file.c:432
 #, c-format
@@ -151,38 +156,38 @@ msgid ""
 "[%s] configuration file - We reset at least one separator character as it "
 "coincides with the decimal point. If you recently changed your locales "
 "settings, this is nothing to worry about.\n"
-msgstr ""
+msgstr "[%s] файл конфигурации – были убраны символы-разделители для длинных чисел, которые совпадали  с десятичным разделителем в текущем языке. Причиной могла послужить недавняя смена локали.\n"
 
 #: ../src/config_file.c:470
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr ""
+msgstr "[%s] файл конфигурации: странное логическое значение встречено при записи. Этот ключ будет пропущен. %s\n"
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in "
 "\"config_structure\". %s\n"
-msgstr ""
+msgstr "[%s] файл конфигурации: игнорирование неизвестного \"key_type\" в \"config_structure\". %s\n"
 
 #: ../src/config_file.c:501
 #, c-format
 msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr ""
+msgstr "[%s] файл конфигурации: не удалось сохранить/записать в файл конфигурации %s.\n"
 
 #: ../src/display.c:420
 #, c-format
 msgid ""
 "[%s] Line_index exceeds valid range in function \"display_delete_line\". "
 "%s\n"
-msgstr ""
+msgstr "[%s] line_index превышает допустимый размер в функции \"display_delete_line\". %s\n"
 
 #: ../src/display.c:598
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
-msgstr ""
+msgstr "[%s] неизвестная опция вывода в функции \"display_change_option\""
 
 #: ../src/general_functions.c:43
 msgid "unsupported inverse function"
@@ -195,27 +200,27 @@ msgstr "неподдерживаемая гиперболическая функ
 #: ../src/general_functions.c:112
 #, c-format
 msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
-msgstr ""
+msgstr "[%s] неизвестная нотация в функции \"all_clear\". %s\n"
 
 #: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr ""
+msgstr "[%s] ошибка преобразования символа %c в функции \"axtof\". %s\n"
 
 #: ../src/general_functions.c:194
 #, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr ""
+msgstr "[%s] ошибка преобразования %s в функции \"floatx\". %s\n"
 
 #: ../src/general_functions.c:274
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr ""
+msgstr "[%s] ошибка преобразования цвета %s в функции \"set_button_color\". %s\n"
 
 #: ../src/general_functions.c:395
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr ""
+msgstr "[%s] не найден виджет %s в функции \"activate_menu_item\". %s\n"
 
 #: ../src/general_functions.c:437
 msgid "unknown number base"
@@ -224,12 +229,12 @@ msgstr "неизвестная система счисления"
 #: ../src/general_functions.c:438
 #, c-format
 msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
-msgstr ""
+msgstr "[%s] неизвестное основание системы счисления в функции \"get_display_number_string\". %s\n"
 
 #: ../src/general_functions.c:459
 #, c-format
 msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
-msgstr ""
+msgstr "[%s] неизвестное основание системы счисления в функции \"get_display_number_length\". %s\n"
 
 #: ../src/general_functions.c:568
 #, c-format
@@ -237,41 +242,41 @@ msgid ""
 "[%s] failed to convert %s to a number properly in function "
 "\"string2double\". Have you changed your locales? Deleting your "
 "configuration file might solve this problem. %s\n"
-msgstr ""
+msgstr "[%s] не получилось правильно сконвертировать %s в число в функции \"string2double\". Вы изменяли локаль?  Удаление конфигурационного файла может решить проблему. %s\n"
 
 #: ../src/general_functions.c:586
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
-msgstr ""
+msgstr "[%s] неизвестное основание системы счисления в функции \"string2double\". %s\n"
 
 #: ../src/general_functions.c:741
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
-msgstr ""
+msgstr "[%s] неизвестная мера измерения угла в функции \"x2rad\". %s\n"
 
 #: ../src/general_functions.c:756
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
-msgstr ""
+msgstr "[%s] неизвестная мера измерения угла в функции \"rad2x\". %s\n"
 
 #: ../src/general_functions.c:773
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
-msgstr ""
+msgstr "[%s] неизвестное основание системы счисления в функции \"get_sep\". %s\n"
 
 #: ../src/general_functions.c:790
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
-msgstr ""
+msgstr "[%s] неизвестное основание системы счисления в функции \"get_sep_length\". %s\n"
 
 #: ../src/general_functions.c:807
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
-msgstr ""
+msgstr "[%s] неизвестное основание системы счисления в функции \"get_sep_char\". %s\n"
 
 #: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
-msgstr ""
+msgstr "неизвестная опция вывода в функции \"display_change_option\""
 
 #: ../src/general_functions.c:915
 #, c-format
@@ -279,7 +284,7 @@ msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
 "You might face problems when using %s! %s\n"
 ")"
-msgstr ""
+msgstr "[%s] длина десятичного разделителя текущей локали не поддерживается: >%s<\nВозможно возникновение проблем при использовании %s! %s"
 
 #: ../src/ui.c:89
 #, c-format
@@ -287,7 +292,7 @@ msgid ""
 "[%s] Couldn't load %s. This file is necessary     to build galculator's user"
 " interface. Make sure you did a make install and the file     is "
 "accessible!\n"
-msgstr ""
+msgstr "[%s] Невозможно прочесть %s. Данный файл обычно используется для построения GUI galculator'а. Убедитесь, что вы выполнили make install и что имеется доступ к файлу!\n"
 
 #: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
@@ -296,7 +301,7 @@ msgstr "Показывать _строку меню"
 #: ../src/ui.c:999
 #, c-format
 msgid "%s Preferences"
-msgstr ""
+msgstr "Настройки %s"
 
 #: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
@@ -366,7 +371,7 @@ msgstr "Закрывающая скобка"
 
 #: ../src/ui.c:1223
 msgid "ENT"
-msgstr ""
+msgstr "ENT"
 
 #: ../src/ui.c:1225
 msgid "y^x"
@@ -378,15 +383,15 @@ msgstr "x<>y"
 
 #: ../src/ui.c:1227
 msgid "swap current number with top of stack"
-msgstr ""
+msgstr "Поменять местами текущее число с вершиной стека"
 
 #: ../src/ui.c:1229
 msgid "roll"
-msgstr ""
+msgstr "roll"
 
 #: ../src/ui.c:1229
 msgid "roll down stack"
-msgstr ""
+msgstr "Прокрутить стек"
 
 #: ../src/ui.c:1300
 msgid "Result Display"
@@ -397,7 +402,7 @@ msgstr "Отображение результата"
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
 "doing? If not: %s\n"
-msgstr ""
+msgstr "[%s] Парсер flex был запущен более чем %i раз. Вы уверены в своих действиях? Если нет: %s\n"
 
 #: ../ui/about.ui.in.h:1
 msgid "About galculator"
@@ -405,7 +410,7 @@ msgstr "О galculator"
 
 #: ../ui/about.ui.in.h:2
 msgid "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
-msgstr ""
+msgstr "Copyright (c) 2002-2014 от Simon Flöry <simon.floery@rechenraum.com>"
 
 #: ../ui/about.ui.in.h:3
 msgid "a GTK+ based scientific calculator"
@@ -693,7 +698,7 @@ msgstr "_Копировать"
 
 #: ../ui/main_frame.ui.h:6
 msgid "_Paste and Append to Display Value"
-msgstr ""
+msgstr "Вставить и дополнить текущее значение справа"
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
@@ -713,7 +718,7 @@ msgstr "_Инженерный"
 
 #: ../ui/main_frame.ui.h:11
 msgid "_Paper Mode"
-msgstr ""
+msgstr "Бумажный режим"
 
 #: ../ui/main_frame.ui.h:12 ../ui/main_frame_hildon.ui.h:11
 #: ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
@@ -879,31 +884,31 @@ msgstr "Цвет стека RPN:"
 
 #: ../ui/prefs_gtk2.ui.h:18 ../ui/prefs_gtk3.ui.h:18
 msgid "Pick a Display Background Color"
-msgstr ""
+msgstr "Выбрать цвет фона"
 
 #: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
 msgid "Pick a Display Result Font Color"
-msgstr ""
+msgstr "Выбрать цвет результата"
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
 msgid "Pick a RPN Stack Color"
-msgstr ""
+msgstr "Выбрать цвет стека RPN"
 
 #: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
 msgid "Pick a Inactive Module Color"
-msgstr ""
+msgstr "Выбрать цвет неактивного модуля"
 
 #: ../ui/prefs_gtk2.ui.h:22 ../ui/prefs_gtk3.ui.h:22
 msgid "Pick a Active Module Color"
-msgstr ""
+msgstr "Выбрать цвет активного модуля"
 
 #: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
 msgid "Pick a Result Font"
-msgstr "Выбрать шрифт результатов"
+msgstr "Выбрать шрифт результата"
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
 msgid "Pick a RPN Stack Font"
-msgstr ""
+msgstr "Выбрать шрифт стека RPN"
 
 #: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
 msgid "Pick a Module Font"
@@ -1228,7 +1233,7 @@ msgstr "Логическое побитовое отрицание"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:41 ../ui/scientific_buttons_gtk3.ui.h:41
 msgid "Hexadecimal 0xC"
-msgstr "Шестнадцатиричное 0xC"
+msgstr "Шестнадцатеричное 0xC"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:42 ../ui/scientific_buttons_gtk3.ui.h:42
 msgid "D"
@@ -1236,7 +1241,7 @@ msgstr "D"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:43 ../ui/scientific_buttons_gtk3.ui.h:43
 msgid "Hexadecimal 0xD"
-msgstr "Шестнадцатиричное  0xD"
+msgstr "Шестнадцатеричное  0xD"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:44 ../ui/scientific_buttons_gtk3.ui.h:44
 msgid "E"
@@ -1244,7 +1249,7 @@ msgstr "E"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:45 ../ui/scientific_buttons_gtk3.ui.h:45
 msgid "Hexadecimal 0xE"
-msgstr "Шестнадцатиричное 0xE"
+msgstr "Шестнадцатеричное 0xE"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:46 ../ui/scientific_buttons_gtk3.ui.h:46
 msgid "F"
@@ -1252,7 +1257,7 @@ msgstr "F"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:47 ../ui/scientific_buttons_gtk3.ui.h:47
 msgid "Hexadecimal 0xF"
-msgstr "Шестнадцатиричное 0xF"
+msgstr "Шестнадцатеричное 0xF"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:48 ../ui/scientific_buttons_gtk3.ui.h:48
 msgid "B"
@@ -1260,7 +1265,7 @@ msgstr "B"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:49 ../ui/scientific_buttons_gtk3.ui.h:49
 msgid "Hexadecimal 0xB"
-msgstr "Шестнадцатиричное 0xB"
+msgstr "Шестнадцатеричное 0xB"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:50 ../ui/scientific_buttons_gtk3.ui.h:50
 msgid "A"
@@ -1268,7 +1273,7 @@ msgstr "A"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:51 ../ui/scientific_buttons_gtk3.ui.h:51
 msgid "Hexadecimal 0xA"
-msgstr "Шестнадцатиричное 0xA"
+msgstr "Шестнадцатеричное 0xA"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:60 ../ui/scientific_buttons_gtk3.ui.h:60
 msgid "MOD"

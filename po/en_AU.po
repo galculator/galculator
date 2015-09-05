@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# k3lt01 <keltoiboy@gmail.com>, 2014
+# Michael Findlay <keltoiboy@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-17 16:18+0100\n"
-"PO-Revision-Date: 2014-03-18 02:54+0000\n"
-"Last-Translator: k3lt01 <keltoiboy@gmail.com>\n"
-"Language-Team: English (Australia) (http://www.transifex.com/projects/p/MATE/language/en_AU/)\n"
+"PO-Revision-Date: 2014-09-06 08:46+0000\n"
+"Last-Translator: Michael Findlay <keltoiboy@gmail.com>\n"
+"Language-Team: English (Australia) (http://www.transifex.com/mate/MATE/language/en_AU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,7 +69,7 @@ msgstr "[%s] configuration file: We will move the configuration file from %s to 
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
-msgstr "Please submit a bugreport."
+msgstr "Please submit a bug report."
 
 #: ../src/calc_basic.c:300
 #, c-format
@@ -200,7 +200,7 @@ msgstr "[%s] unknown notation mode in function \"all_clear\". %s\n"
 #: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr "[%s] failed to convert char %c in function \"axetof\". %s\n"
+msgstr "[%s] failed to convert char %c in function \"axtof\". %s\n"
 
 #: ../src/general_functions.c:194
 #, c-format
@@ -210,7 +210,7 @@ msgstr "[%s] failed to convert %s in function \"ftoax\". %s\n"
 #: ../src/general_functions.c:274
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr "[%s] failed to convert colour %s in function \"set_buttoncolour\". %s\n"
+msgstr "[%s] failed to convert colour %s in function \"set_button_colour\". %s\n"
 
 #: ../src/general_functions.c:395
 #, c-format

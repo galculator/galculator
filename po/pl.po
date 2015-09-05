@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Marcin Kralka <marcink96@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-17 16:18+0100\n"
-"PO-Revision-Date: 2014-03-17 15:23+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
-"Language-Team: Polish (http://www.transifex.com/projects/p/MATE/language/pl/)\n"
+"PO-Revision-Date: 2014-03-21 23:19+0000\n"
+"Last-Translator: Marcin Kralka <marcink96@gmail.com>\n"
+"Language-Team: Polish (http://www.transifex.com/mate/MATE/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,12 +29,12 @@ msgstr "zapisz tutaj"
 #: ../src/callbacks.c:1427
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
-msgstr ""
+msgstr "(%s) on_prefs_number_combo_changed nie powiódł się aby pobrać proces. %s\n"
 
 #: ../src/callbacks.c:1590
 #, c-format
 msgid "[%s] on_main_window_check_resize should not get called. %s\n"
-msgstr ""
+msgstr "(%s) on_main_window_check_resize nie powinien być wywołany. %s\n"
 
 #: ../src/main.c:61
 #, c-format
@@ -51,12 +52,12 @@ msgid ""
 "Compiled against GTK version %i.%i.%i\n"
 "Linked against GTK version %i.%i.%i\n"
 "%s-precision floating point numbers.\n"
-msgstr ""
+msgstr "\n%s v%s, (c) 2002-2014  Simon Flöry\n\nUżywanie: %s [opcje]\n\nopcje:\n(Opcje GTK)\n-h, --help\t\tWyświetla tą informację o sposobie użycia\n-v, --version\t\tWyświetla informację o wersji programu\n\nSkompilowane dla wersji GTK %i.%i.%i\nPowiązane dla wersji GTK %i.%i.%i\n%s-precyzyjne liczby zmiennoprzecinkowe.\n"
 
 #: ../src/main.c:196
 #, c-format
 msgid "[%s] configuration file: Failed to create directory %s.\n"
-msgstr ""
+msgstr "(%s) plik konfiguracyjny: nie powiodło się utworzenie katalogu %s.\n"
 
 #: ../src/main.c:201
 #, c-format
@@ -64,7 +65,7 @@ msgid ""
 "[%s] configuration file: We will move the configuration file from %s to %s. "
 "After you quit %s, you may remove the configuration file from its old "
 "location %s.\n"
-msgstr ""
+msgstr "(%s) plik konfiguracyjny: Przeniesiemy plik konfiguracyjny z %s do %s. Po tym jak wyjdziesz z %s, będziesz mógł usunąć plik konfiguracyjny z jego starej lokalizacji %s.\n\n"
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
@@ -80,22 +81,22 @@ msgstr "(%s) %c - nieznany symbol operacji. %s\n"
 msgid ""
 "[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
 ")"
-msgstr ""
+msgstr "(%s) Konwersja liczby zmiennoprzecinkowej w float2string nie powiodła się ponieważ bufer był za mały. %s\n)"
 
 #: ../src/calc_basic.c:719
 #, c-format
 msgid ""
 "[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
 ")"
-msgstr ""
+msgstr "(%s) Konwersja liczby zmiennoprzecinkowej w float2stringP nie powiodła się ponieważ bufer był za mały. %s\n)"
 
 #: ../src/config_file.c:180
 msgid "Pi"
-msgstr ""
+msgstr "Pi"
 
 #: ../src/config_file.c:181
 msgid "pi"
-msgstr ""
+msgstr "pi"
 
 #: ../src/config_file.c:183
 msgid "Euler's Number"
@@ -103,7 +104,7 @@ msgstr "Stała Eulera"
 
 #: ../src/config_file.c:184
 msgid "e"
-msgstr ""
+msgstr "e"
 
 #: ../src/config_file.c:232
 #, c-format
@@ -150,7 +151,7 @@ msgid ""
 "[%s] configuration file - We reset at least one separator character as it "
 "coincides with the decimal point. If you recently changed your locales "
 "settings, this is nothing to worry about.\n"
-msgstr ""
+msgstr "(%s) plik konfiguracyjny - Zresetujemy przynajmniej jeden znak separatora jako że jest on zbieżny z punktem dziesiętnym. Jeżeli zmieniałeś ostatnio swoje ustawienia lokalizacji, to nie jest to coś czym powinieneś się martwić.\n"
 
 #: ../src/config_file.c:470
 #, c-format
@@ -176,12 +177,12 @@ msgstr "(%s) plik konfiguracyjny: nie mogę zapisać pliku konfiguracyjnego %s.\
 msgid ""
 "[%s] Line_index exceeds valid range in function \"display_delete_line\". "
 "%s\n"
-msgstr ""
+msgstr "(%s) Line_index przekracza dopuszczalny zakres w funkcji \"display_delete_line\". %s\n"
 
 #: ../src/display.c:598
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
-msgstr ""
+msgstr "(%s) nieznana opcja wyświetlania w funkcji \"display_change_option\""
 
 #: ../src/general_functions.c:43
 msgid "unsupported inverse function"
@@ -199,17 +200,17 @@ msgstr "(%s) nieznana notacja w funkcji \"all_clear\". %s\n"
 #: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr ""
+msgstr "(%s) nie powiodło się konwertowanie znaku %c w funkcji \"axtof\". %s\n"
 
 #: ../src/general_functions.c:194
 #, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr ""
+msgstr "(%s) nie powiodło się konwertowanie %s w funkcji \"ftoax\". %s\n"
 
 #: ../src/general_functions.c:274
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr ""
+msgstr "(%s) nie powiodło się konwertowanie koloru %s w funkcji \"set_button_color\". %s\n"
 
 #: ../src/general_functions.c:395
 #, c-format
@@ -236,7 +237,7 @@ msgid ""
 "[%s] failed to convert %s to a number properly in function "
 "\"string2double\". Have you changed your locales? Deleting your "
 "configuration file might solve this problem. %s\n"
-msgstr ""
+msgstr "(%s) nie powiodło się konwertowanie %s do liczby prawidłowo w funkcji \"string2double\". Czy zmieniałeś swoje ustawienia lokalizacji? Usunięcie twojego pliku konfiguracyjnego powinno rozwiązać ten problem. %s\n"
 
 #: ../src/general_functions.c:586
 #, c-format
@@ -256,21 +257,21 @@ msgstr "(%s) nieznana jednostka miary kąta w funkcji \"x2rad\". %s\n"
 #: ../src/general_functions.c:773
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
-msgstr ""
+msgstr "(%s) nieznana baza liczby w funkcji \"get_sep\". %s\n"
 
 #: ../src/general_functions.c:790
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
-msgstr ""
+msgstr "(%s) nieznana baza liczby w funkcji \"get_sep_length\". %s\n"
 
 #: ../src/general_functions.c:807
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
-msgstr ""
+msgstr "(%s) nieznana baza liczby w funkcji \"get_sep_char\". %s\n"
 
 #: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
-msgstr ""
+msgstr "nieznana opcja wyświetlania w funkcji \"change_option\""
 
 #: ../src/general_functions.c:915
 #, c-format
@@ -286,7 +287,7 @@ msgid ""
 "[%s] Couldn't load %s. This file is necessary     to build galculator's user"
 " interface. Make sure you did a make install and the file     is "
 "accessible!\n"
-msgstr ""
+msgstr "(%s) Nie można załadować %s. Ten plik jest niezbędny aby zbudować interfejs użytkownika programu galculator. Upewnij się czy wykonałeś make install i czy plik jest dostępny!\n"
 
 #: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
@@ -299,23 +300,23 @@ msgstr "Ustawienia %s"
 
 #: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
-msgstr ""
+msgstr "Nazwa"
 
 #: ../src/ui.c:1046
 msgid "Value"
-msgstr ""
+msgstr "Wartość"
 
 #: ../src/ui.c:1049
 msgid "Description"
-msgstr ""
+msgstr "Opis"
 
 #: ../src/ui.c:1078
 msgid "Variable"
-msgstr ""
+msgstr "Zmienna"
 
 #: ../src/ui.c:1081
 msgid "Expression"
-msgstr ""
+msgstr "Wyrażenie"
 
 #: ../src/ui.c:1211 ../ui/basic_buttons_gtk2.ui.h:43
 #: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
@@ -389,7 +390,7 @@ msgstr "przesuń stos w dół"
 
 #: ../src/ui.c:1300
 msgid "Result Display"
-msgstr ""
+msgstr "Wyświetlanie wyniku"
 
 #: ../src/flex_parser.l:233
 #, c-format
@@ -400,15 +401,15 @@ msgstr "(%s) parser flex został wywołany więcej niż %i razy. Jesteś pewien 
 
 #: ../ui/about.ui.in.h:1
 msgid "About galculator"
-msgstr ""
+msgstr "O programie galculator"
 
 #: ../ui/about.ui.in.h:2
 msgid "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
-msgstr ""
+msgstr "Wszystkie prawa zastrzeżone (c) 2002-2014 Simon Flöry <simon.floery@rechenraum.com>"
 
 #: ../ui/about.ui.in.h:3
 msgid "a GTK+ based scientific calculator"
-msgstr ""
+msgstr "Oparty na GTK+ kalkulator naukowy"
 
 #: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1
 #: ../ui/scientific_buttons_gtk2.ui.h:52 ../ui/scientific_buttons_gtk3.ui.h:52
@@ -692,7 +693,7 @@ msgstr "S_kopiuj wyświetlaną wartość"
 
 #: ../ui/main_frame.ui.h:6
 msgid "_Paste and Append to Display Value"
-msgstr ""
+msgstr "_Wklej i Dodaj do wyświetlanej wartości"
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
@@ -712,7 +713,7 @@ msgstr "Tryb _naukowy"
 
 #: ../ui/main_frame.ui.h:11
 msgid "_Paper Mode"
-msgstr ""
+msgstr "Tryb _papieru"
 
 #: ../ui/main_frame.ui.h:12 ../ui/main_frame_hildon.ui.h:11
 #: ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
@@ -810,19 +811,19 @@ msgstr "_O programie..."
 
 #: ../ui/prefs_gtk2.ui.h:1 ../ui/prefs_gtk3.ui.h:1
 msgid "Decimal"
-msgstr ""
+msgstr "Dziesiętnie"
 
 #: ../ui/prefs_gtk2.ui.h:2 ../ui/prefs_gtk3.ui.h:2
 msgid "Hexadecimal"
-msgstr ""
+msgstr "Heksadecymalnie"
 
 #: ../ui/prefs_gtk2.ui.h:3 ../ui/prefs_gtk3.ui.h:3
 msgid "Octal"
-msgstr ""
+msgstr "Oktalnie"
 
 #: ../ui/prefs_gtk2.ui.h:4 ../ui/prefs_gtk3.ui.h:4
 msgid "Binary"
-msgstr ""
+msgstr "Binarnie"
 
 #: ../ui/prefs_gtk2.ui.h:5 ../ui/prefs_gtk3.ui.h:5 ../ui/prefs-ume.ui.h:1
 msgid "galculator - Preferences"
@@ -842,7 +843,7 @@ msgstr "<b>Wygląd</b>"
 
 #: ../ui/prefs_gtk2.ui.h:9 ../ui/prefs_gtk3.ui.h:9 ../ui/prefs-ume.ui.h:5
 msgid "    "
-msgstr ""
+msgstr "    "
 
 #: ../ui/prefs_gtk2.ui.h:10 ../ui/prefs_gtk3.ui.h:10
 msgid "Result font:"
@@ -878,35 +879,35 @@ msgstr "Kolor stosu ONP:"
 
 #: ../ui/prefs_gtk2.ui.h:18 ../ui/prefs_gtk3.ui.h:18
 msgid "Pick a Display Background Color"
-msgstr ""
+msgstr "Wybierz kolor tła wyświetlacza"
 
 #: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
 msgid "Pick a Display Result Font Color"
-msgstr ""
+msgstr "Wybierz kolor czcionki wyświetlanego wyniku"
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
 msgid "Pick a RPN Stack Color"
-msgstr ""
+msgstr "Wybierz kolor stosu RPN"
 
 #: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
 msgid "Pick a Inactive Module Color"
-msgstr ""
+msgstr "Wybierz kolor nieaktywnego modułu"
 
 #: ../ui/prefs_gtk2.ui.h:22 ../ui/prefs_gtk3.ui.h:22
 msgid "Pick a Active Module Color"
-msgstr ""
+msgstr "Wybierz kolor aktywnego modułu"
 
 #: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
 msgid "Pick a Result Font"
-msgstr ""
+msgstr "Wybierz czcionkę wyniku"
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
 msgid "Pick a RPN Stack Font"
-msgstr ""
+msgstr "Wybierz czcionkę stosu RPN"
 
 #: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
 msgid "Pick a Module Font"
-msgstr ""
+msgstr "Wybierz czcionkę modułu"
 
 #: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
 msgid "<b>Modules Visibility</b>"
@@ -950,7 +951,7 @@ msgstr "Kolor przycisku:"
 
 #: ../ui/prefs_gtk2.ui.h:36 ../ui/prefs_gtk3.ui.h:36 ../ui/prefs-ume.ui.h:15
 msgid "Pick a Button Font"
-msgstr ""
+msgstr "Wybierz czcionkę przycisku"
 
 #: ../ui/prefs_gtk2.ui.h:37 ../ui/prefs_gtk3.ui.h:37 ../ui/prefs-ume.ui.h:16
 msgid "<b>Dimension</b>"
@@ -1015,55 +1016,55 @@ msgstr "Wyrażenie:"
 
 #: ../ui/prefs_gtk2.ui.h:54 ../ui/prefs_gtk3.ui.h:54 ../ui/prefs-ume.ui.h:20
 msgid "Configure number base: "
-msgstr ""
+msgstr "Skonfiguruj bazę liczby:"
 
 #: ../ui/prefs_gtk2.ui.h:55 ../ui/prefs_gtk3.ui.h:55
 msgid "<b>Decimal Settings</b>"
-msgstr ""
+msgstr "<b>Ustawienia systemu dziesiętnego</b>"
 
 #: ../ui/prefs_gtk2.ui.h:56 ../ui/prefs_gtk3.ui.h:56
 msgid "Show thousands separator"
-msgstr ""
+msgstr "Wyświetlaj separator tysięcy"
 
 #: ../ui/prefs_gtk2.ui.h:57 ../ui/prefs_gtk3.ui.h:57
 msgid "Separator character:"
-msgstr ""
+msgstr "Znak separatora:"
 
 #: ../ui/prefs_gtk2.ui.h:58 ../ui/prefs_gtk3.ui.h:58
 msgid "Separator block length:"
-msgstr ""
+msgstr "Długość bloku separatora:"
 
 #: ../ui/prefs_gtk2.ui.h:59 ../ui/prefs_gtk3.ui.h:59
 msgid " "
-msgstr ""
+msgstr " "
 
 #: ../ui/prefs_gtk2.ui.h:60 ../ui/prefs_gtk3.ui.h:60
 msgid "<b>Hexadecimal Settings</b>"
-msgstr ""
+msgstr "<b>Ustawienia systemu heksadecymalnego</b>"
 
 #: ../ui/prefs_gtk2.ui.h:61 ../ui/prefs_gtk3.ui.h:61
 msgid "Signed"
-msgstr ""
+msgstr "Ze znakiem"
 
 #: ../ui/prefs_gtk2.ui.h:62 ../ui/prefs_gtk3.ui.h:62
 msgid "Show separator"
-msgstr ""
+msgstr "Wyświetlaj separator"
 
 #: ../ui/prefs_gtk2.ui.h:63 ../ui/prefs_gtk3.ui.h:63
 msgid "Number of bits: "
-msgstr ""
+msgstr "Liczba bitów:"
 
 #: ../ui/prefs_gtk2.ui.h:64 ../ui/prefs_gtk3.ui.h:64
 msgid "<b>Octal Settings</b>"
-msgstr ""
+msgstr "<b>Ustawienia systemu oktalnego</b>"
 
 #: ../ui/prefs_gtk2.ui.h:65 ../ui/prefs_gtk3.ui.h:65
 msgid "<b>Binary Settings</b>"
-msgstr ""
+msgstr "<b>Ustawienia systemu binarnego</b>"
 
 #: ../ui/prefs_gtk2.ui.h:66 ../ui/prefs_gtk3.ui.h:66
 msgid "Fix length to a multiple of"
-msgstr ""
+msgstr "Ustal długość na wielokrotność"
 
 #: ../ui/prefs_gtk2.ui.h:67 ../ui/prefs_gtk3.ui.h:67 ../ui/prefs-ume.ui.h:21
 msgid "Numbers"

@@ -19,14 +19,16 @@ to update the po/galculator.pot file and
 to push the new source file (configure in .tx/config) to transifex.
 
 Before a release, do a 
-	tx pull -a --minimum-perc=10
+	tx pull -f -a --minimum-perc=10
 to get all translations with a minimum translation count of 10%.
 
 Add all to SVN, and add the resp. language codes to configure.in!
 
-------------------------------------------------------------------------
-
-This is the old instructions before we use transifex
+################################################################################
+#
+# This is the old instructions before we use transifex
+#
+################################################################################
 
 xgettext -f POTFILES.in -k=_ -o package.pot
 	creates a new package.pot. please note that file galculator.pot exists

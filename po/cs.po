@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Allconius <sinope@seznam.cz>, 2014
+# Michal <sinope@seznam.cz>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-17 16:18+0100\n"
-"PO-Revision-Date: 2014-03-18 13:41+0000\n"
-"Last-Translator: Allconius <sinope@seznam.cz>\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/MATE/language/cs/)\n"
+"PO-Revision-Date: 2014-04-18 09:33+0000\n"
+"Last-Translator: Michal <sinope@seznam.cz>\n"
+"Language-Team: Czech (http://www.transifex.com/mate/MATE/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,30 +65,30 @@ msgid ""
 "[%s] configuration file: We will move the configuration file from %s to %s. "
 "After you quit %s, you may remove the configuration file from its old "
 "location %s.\n"
-msgstr ""
+msgstr "[%s] konfigurační soubor: Konfigurační soubor bude přesunut z %s do %s. Po ukončení %s, můžete odstranit konfigurační soubor z původního místa %s.\n"
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
-msgstr ""
+msgstr "Prosím odešlete zprávu o chybě"
 
 #: ../src/calc_basic.c:300
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
-msgstr ""
+msgstr "[%s] %c - neznámý charakter operace. %s\n"
 
 #: ../src/calc_basic.c:690
 #, c-format
 msgid ""
 "[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
 ")"
-msgstr ""
+msgstr "[%s] Převod desetinného čísla pomocí float2string se nezdařilo, protože vyrovnávací paměť je příliš malá. %s\n)"
 
 #: ../src/calc_basic.c:719
 #, c-format
 msgid ""
 "[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
 ")"
-msgstr ""
+msgstr "[%s] Převod desetinného čísla pomocí float2stringP se nezdařilo, protože vyrovnávací paměť je příliš malá. %s\n)"
 
 #: ../src/config_file.c:180
 msgid "Pi"
@@ -109,33 +109,33 @@ msgstr "e"
 #: ../src/config_file.c:232
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
-msgstr ""
+msgstr "[%s] konfigurační soubor: ignorovat neznámé vstupy %s=%s. %s\n"
 
 #: ../src/config_file.c:256
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
-msgstr ""
+msgstr "[%s] konfigurační soubor: %s musí být TRUE nebo FALSE. Použito výchozí nastavení. %s\n"
 
 #: ../src/config_file.c:262
 #, c-format
 msgid ""
 "[%s] configuration file: failed to convert %s to a number properly. Have you"
 " changed your locales? %s\n"
-msgstr ""
+msgstr "[%s] konfigurační soubor: Nepodařilo se převést %s na číslo správně. Změnili jste umístění? %s\n\n"
 
 #: ../src/config_file.c:265
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr ""
+msgstr "[%s] konfigurační soubor: ignoruje neznámý key_type v konfigurační struktuře. %s\n"
 
 #: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
-msgstr ""
+msgstr "[%s] našel neznámý oddíl %s v konfigurační souboru %s. Bude použita předchozí část.\n"
 
 #: ../src/config_file.c:403
 #, c-format
@@ -143,7 +143,7 @@ msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
-msgstr ""
+msgstr "[%s] konfigurační soubor: Nelze otevřít konfigurační soubor %s pro čtení. Není se čeho bát, pokud jste %s použili poprvé. Bude použito výchozí nastavení.\n"
 
 #: ../src/config_file.c:432
 #, c-format
@@ -151,38 +151,38 @@ msgid ""
 "[%s] configuration file - We reset at least one separator character as it "
 "coincides with the decimal point. If you recently changed your locales "
 "settings, this is nothing to worry about.\n"
-msgstr ""
+msgstr "[%s] konfigurační soubor - Byl obnoven alespoň jeden znak oddělovače, aby se shodoval s desetinnou čárkou. Pokud jste nedávno změnili nastavení umístění, není čeho se bát.\n"
 
 #: ../src/config_file.c:470
 #, c-format
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr ""
+msgstr "[%s] konfigurační soubor: podivné boolean při psaní. Přeskočit touto klávesou. %s\n"
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in "
 "\"config_structure\". %s\n"
-msgstr ""
+msgstr "[%s] konfigurační soubor: ignoruje neznámý \"key_type\" v \"config_structure\". %s\n"
 
 #: ../src/config_file.c:501
 #, c-format
 msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr ""
+msgstr "[%s] konfigurační soubor: nelze uložit/zapsat do konfiguračního souboru %s.\n"
 
 #: ../src/display.c:420
 #, c-format
 msgid ""
 "[%s] Line_index exceeds valid range in function \"display_delete_line\". "
 "%s\n"
-msgstr ""
+msgstr "[%s] Line_index překročí platný rozsah ve funkci \"display_delete_line\". %s\n"
 
 #: ../src/display.c:598
 #, c-format
 msgid "[%s] unknown display option in function \"display_change_option\""
-msgstr ""
+msgstr "[%s] neznámá možnost zobrazení ve funkci \"display_change_option\""
 
 #: ../src/general_functions.c:43
 msgid "unsupported inverse function"
@@ -200,22 +200,22 @@ msgstr "[%s] neznámý zápis režimu ve funkci \"all_clear\". %s\n"
 #: ../src/general_functions.c:138
 #, c-format
 msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
-msgstr ""
+msgstr "[%s] nepodařilo se převést znak %c pomocí funkce \"axtof\". %s\n"
 
 #: ../src/general_functions.c:194
 #, c-format
 msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
-msgstr ""
+msgstr "[%s] se nepodařilo převést %s pomocí funkce \"ftoax\". %s\n"
 
 #: ../src/general_functions.c:274
 #, c-format
 msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
-msgstr ""
+msgstr "[%s] se nepodařilo převést barvu %s pomocí funkce \"set_button_color\". %s\n"
 
 #: ../src/general_functions.c:395
 #, c-format
 msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
-msgstr ""
+msgstr "[%s] se nepodařilo najít widget %s ve funkci \"activate_menu_item\". %s\n"
 
 #: ../src/general_functions.c:437
 msgid "unknown number base"
@@ -224,12 +224,12 @@ msgstr "neznámé základní číslo"
 #: ../src/general_functions.c:438
 #, c-format
 msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
-msgstr ""
+msgstr "[%s] neznámá základní číslice ve funkci \"get_display_number_string\". %s\n"
 
 #: ../src/general_functions.c:459
 #, c-format
 msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
-msgstr ""
+msgstr "[%s] neznámý základní počet ve funkci \"get_display_number_length\". %s\n"
 
 #: ../src/general_functions.c:568
 #, c-format
@@ -237,41 +237,41 @@ msgid ""
 "[%s] failed to convert %s to a number properly in function "
 "\"string2double\". Have you changed your locales? Deleting your "
 "configuration file might solve this problem. %s\n"
-msgstr ""
+msgstr "[%s] se nepodařilo převést %s správně na číslo pomocí funkce \"string2double\". Změnili jste místní nastavení? Tento problém můžete vyřešit odstraněním konfiguračního souboru. %s\n"
 
 #: ../src/general_functions.c:586
 #, c-format
 msgid "[%s] unknown number base in function \"string2double\". %s\n"
-msgstr ""
+msgstr "[%s] neznámé základní číslo ve funkci \"string2double\". %s\n"
 
 #: ../src/general_functions.c:741
 #, c-format
 msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
-msgstr ""
+msgstr "[%s] neznámý základní úhel ve funkci \"x2rad\". %s\n"
 
 #: ../src/general_functions.c:756
 #, c-format
 msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
-msgstr ""
+msgstr "[%s] neznámý základní úhel ve funkci \"rad2x\". %s\n"
 
 #: ../src/general_functions.c:773
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep\". %s\n"
-msgstr ""
+msgstr "[%s] neznámé základní číslo ve funkci \"get_sep\". %s\n"
 
 #: ../src/general_functions.c:790
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
-msgstr ""
+msgstr "[%s] neznámý základní číslo ve funkci \"get_sep_length\". %s\n"
 
 #: ../src/general_functions.c:807
 #, c-format
 msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
-msgstr ""
+msgstr "[%s] neznámé základní číslo ve funkci \"get_sep_char\". %s\n"
 
 #: ../src/general_functions.c:875
 msgid "unknown display option in function \"change_option\""
-msgstr ""
+msgstr "neznámá volba zobrazení ve funkci \"change_option\""
 
 #: ../src/general_functions.c:915
 #, c-format
@@ -279,7 +279,7 @@ msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
 "You might face problems when using %s! %s\n"
 ")"
-msgstr ""
+msgstr "[%s] délka desetinné čárky (v národním nastavení) není podporována: >%s<\nTo může vést k problémům při používání %s! %s\n)"
 
 #: ../src/ui.c:89
 #, c-format
@@ -287,16 +287,16 @@ msgid ""
 "[%s] Couldn't load %s. This file is necessary     to build galculator's user"
 " interface. Make sure you did a make install and the file     is "
 "accessible!\n"
-msgstr ""
+msgstr "[%s] Nelze načíst %s. Tento soubor je třeba vytvořit pomocí uživatelského rozhraní galculatoru. Ujistěte se, že jste provedli instalaci a soubor je přístupný!\n"
 
 #: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
-msgstr ""
+msgstr "Zobraz nabídku _menu"
 
 #: ../src/ui.c:999
 #, c-format
 msgid "%s Preferences"
-msgstr ""
+msgstr "%s Nastavení"
 
 #: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
@@ -397,7 +397,7 @@ msgstr "Zobrazit výsledek"
 msgid ""
 "[%s] flex parser was called more than %i times. Do you know what you are "
 "doing? If not: %s\n"
-msgstr ""
+msgstr "[%s] flex parser byl zavolán více než %i krát. Víte, co děláte? Pokud ne: %s\n"
 
 #: ../ui/about.ui.in.h:1
 msgid "About galculator"
@@ -610,41 +610,41 @@ msgstr "druhá odmocnina"
 #: ../ui/basic_buttons_gtk2.ui.h:46 ../ui/basic_buttons_gtk3.ui.h:46
 #: ../ui/scientific_buttons_gtk2.ui.h:6 ../ui/scientific_buttons_gtk3.ui.h:6
 msgid "Square root"
-msgstr ""
+msgstr "Druhá odmocnina"
 
 #: ../ui/basic_buttons_gtk2.ui.h:48 ../ui/basic_buttons_gtk3.ui.h:48
 #: ../ui/scientific_buttons_gtk2.ui.h:24 ../ui/scientific_buttons_gtk3.ui.h:24
 #, no-c-format
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: ../ui/basic_buttons_gtk2.ui.h:49 ../ui/basic_buttons_gtk3.ui.h:49
 #: ../ui/scientific_buttons_gtk2.ui.h:25 ../ui/scientific_buttons_gtk3.ui.h:25
 msgid "Percent"
-msgstr ""
+msgstr "Procento"
 
 #: ../ui/classic_view.ui.h:1 ../ui/main_frame.ui.h:1
 #: ../ui/main_frame_hildon.ui.h:35 ../ui/paper_view.ui.h:1
 msgid "The main program window."
-msgstr ""
+msgstr "Hlavní okno programu."
 
 #: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
 msgid "Formula entry text field - enter string expression to compute here."
-msgstr ""
+msgstr "Vstupní textové pole pro vzorec - zde zadejte řetězcový výraz pro výpočet."
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:1 ../ui/dispctrl_bottom_gtk3.ui.h:1
 #: ../ui/dispctrl_right_gtk2.ui.h:1 ../ui/dispctrl_right_gtk3.ui.h:1
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:5
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:5
 msgid "AC"
-msgstr ""
+msgstr "AC"
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:2 ../ui/dispctrl_bottom_gtk3.ui.h:2
 #: ../ui/dispctrl_right_gtk2.ui.h:2 ../ui/dispctrl_right_gtk3.ui.h:2
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:6
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:6
 msgid "Reset calculator (clear all)"
-msgstr ""
+msgstr "Obnovit kalkulačku (vymazat vše)"
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:3 ../ui/dispctrl_bottom_gtk3.ui.h:3
 #: ../ui/dispctrl_right_gtk2.ui.h:5 ../ui/dispctrl_right_gtk3.ui.h:5
@@ -652,636 +652,636 @@ msgstr ""
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:3
 #: ../ui/scientific_buttons_gtk2.ui.h:40 ../ui/scientific_buttons_gtk3.ui.h:40
 msgid "C"
-msgstr ""
+msgstr "C"
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:4 ../ui/dispctrl_bottom_gtk3.ui.h:4
 #: ../ui/dispctrl_right_gtk2.ui.h:6 ../ui/dispctrl_right_gtk3.ui.h:6
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:4
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:4
 msgid "Clear display"
-msgstr ""
+msgstr "Vymazat display"
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:5 ../ui/dispctrl_bottom_gtk3.ui.h:5
 #: ../ui/dispctrl_right_gtk2.ui.h:3 ../ui/dispctrl_right_gtk3.ui.h:3
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:1
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:1
 msgid "<-"
-msgstr ""
+msgstr "<-"
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:6 ../ui/dispctrl_bottom_gtk3.ui.h:6
 #: ../ui/dispctrl_right_gtk2.ui.h:4 ../ui/dispctrl_right_gtk3.ui.h:4
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:2
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:2
 msgid "Backspace"
-msgstr ""
+msgstr "Backspace"
 
 #: ../ui/main_frame.ui.h:2 ../ui/main_frame_hildon.ui.h:1
 msgid "_File"
-msgstr ""
+msgstr "_File"
 
 #: ../ui/main_frame.ui.h:3 ../ui/main_frame_hildon.ui.h:3
 msgid "_Edit"
-msgstr ""
+msgstr "_Editace"
 
 #: ../ui/main_frame.ui.h:4 ../ui/main_frame_hildon.ui.h:4
 msgid "Cu_t Display Value"
-msgstr ""
+msgstr "Vyjmou_t zobrazenou hodnotu"
 
 #: ../ui/main_frame.ui.h:5 ../ui/main_frame_hildon.ui.h:5
 msgid "_Copy Display Value"
-msgstr ""
+msgstr "_Kopírovat zobrazenou hodnotu"
 
 #: ../ui/main_frame.ui.h:6
 msgid "_Paste and Append to Display Value"
-msgstr ""
+msgstr "Vložit a _připojit k zobrazené hodnotě"
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
-msgstr ""
+msgstr "_Předvolby..."
 
 #: ../ui/main_frame.ui.h:8 ../ui/main_frame_hildon.ui.h:8
 msgid "_View"
-msgstr ""
+msgstr "_Zobrazit"
 
 #: ../ui/main_frame.ui.h:9 ../ui/main_frame_hildon.ui.h:9
 msgid "_Basic Mode"
-msgstr ""
+msgstr "_Základní režim"
 
 #: ../ui/main_frame.ui.h:10 ../ui/main_frame_hildon.ui.h:10
 msgid "_Scientific Mode"
-msgstr ""
+msgstr "_Vědecký režim"
 
 #: ../ui/main_frame.ui.h:11
 msgid "_Paper Mode"
-msgstr ""
+msgstr "_Papírový režim"
 
 #: ../ui/main_frame.ui.h:12 ../ui/main_frame_hildon.ui.h:11
 #: ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
 msgid "Buttons"
-msgstr ""
+msgstr "Tlačítka"
 
 #: ../ui/main_frame.ui.h:13 ../ui/main_frame_hildon.ui.h:12
 msgid "Display Control"
-msgstr ""
+msgstr "Ovládání displeje"
 
 #: ../ui/main_frame.ui.h:14 ../ui/main_frame_hildon.ui.h:13
 #: ../ui/prefs_gtk2.ui.h:53 ../ui/prefs_gtk3.ui.h:53
 msgid "Functions"
-msgstr ""
+msgstr "Funkce"
 
 #: ../ui/main_frame.ui.h:15 ../ui/main_frame_hildon.ui.h:14
 msgid "Logical"
-msgstr ""
+msgstr "Logická"
 
 #: ../ui/main_frame.ui.h:16 ../ui/main_frame_hildon.ui.h:15
 msgid "Standard"
-msgstr ""
+msgstr "Standardní"
 
 #: ../ui/main_frame.ui.h:18 ../ui/main_frame_hildon.ui.h:17
 msgid "_Calculator"
-msgstr ""
+msgstr "_Kalkulátor"
 
 #: ../ui/main_frame.ui.h:19 ../ui/main_frame_hildon.ui.h:18
 msgid "_Number bases"
-msgstr ""
+msgstr "_Základní číslo"
 
 #: ../ui/main_frame.ui.h:20 ../ui/main_frame_hildon.ui.h:19
 msgid "_Decimal"
-msgstr ""
+msgstr "_Desítková"
 
 #: ../ui/main_frame.ui.h:21 ../ui/main_frame_hildon.ui.h:20
 msgid "_Hexadecimal"
-msgstr ""
+msgstr "_Hexadecimální"
 
 #: ../ui/main_frame.ui.h:22 ../ui/main_frame_hildon.ui.h:21
 msgid "_Octal"
-msgstr ""
+msgstr "_Osmičková"
 
 #: ../ui/main_frame.ui.h:23 ../ui/main_frame_hildon.ui.h:22
 msgid "_Binary"
-msgstr ""
+msgstr "_Binární"
 
 #: ../ui/main_frame.ui.h:24 ../ui/main_frame_hildon.ui.h:23
 msgid "Angle _units"
-msgstr ""
+msgstr "_Úhlové jednotky"
 
 #: ../ui/main_frame.ui.h:25 ../ui/main_frame_hildon.ui.h:24
 msgid "D_egrees"
-msgstr ""
+msgstr "Stupn_ě"
 
 #: ../ui/main_frame.ui.h:26 ../ui/main_frame_hildon.ui.h:25
 msgid "_Radians"
-msgstr ""
+msgstr "_Radiány"
 
 #: ../ui/main_frame.ui.h:27 ../ui/main_frame_hildon.ui.h:26
 msgid "_Gradians"
-msgstr ""
+msgstr "_Gradiány"
 
 #: ../ui/main_frame.ui.h:28 ../ui/main_frame_hildon.ui.h:27
 msgid "Notation _modes"
-msgstr ""
+msgstr "Režim sy_mbolů"
 
 #: ../ui/main_frame.ui.h:29 ../ui/main_frame_hildon.ui.h:28
 msgid "_Algebraic"
-msgstr ""
+msgstr "_Algebraický"
 
 #: ../ui/main_frame.ui.h:30 ../ui/main_frame_hildon.ui.h:29
 msgid "_Reverse Polish (RPN)"
-msgstr ""
+msgstr "_Reverzní polské (RPN)"
 
 #: ../ui/main_frame.ui.h:31 ../ui/main_frame_hildon.ui.h:30
 msgid "_Formula Entry"
-msgstr ""
+msgstr "_Vzorec"
 
 #: ../ui/main_frame.ui.h:32 ../ui/main_frame_hildon.ui.h:31
 msgid "_Help"
-msgstr ""
+msgstr "_Nápověda"
 
 #: ../ui/main_frame_hildon.ui.h:2
 msgid "_Quit"
-msgstr ""
+msgstr "_Konec"
 
 #: ../ui/main_frame_hildon.ui.h:6
 msgid "_Paste As Display Value"
-msgstr ""
+msgstr "_Připoj jako hodnotu displeje"
 
 #: ../ui/main_frame_hildon.ui.h:32
 msgid "_About..."
-msgstr ""
+msgstr "O _aplikaci"
 
 #: ../ui/prefs_gtk2.ui.h:1 ../ui/prefs_gtk3.ui.h:1
 msgid "Decimal"
-msgstr ""
+msgstr "Desítková"
 
 #: ../ui/prefs_gtk2.ui.h:2 ../ui/prefs_gtk3.ui.h:2
 msgid "Hexadecimal"
-msgstr ""
+msgstr "Hexadecimální"
 
 #: ../ui/prefs_gtk2.ui.h:3 ../ui/prefs_gtk3.ui.h:3
 msgid "Octal"
-msgstr ""
+msgstr "Osmičková"
 
 #: ../ui/prefs_gtk2.ui.h:4 ../ui/prefs_gtk3.ui.h:4
 msgid "Binary"
-msgstr ""
+msgstr "Binární"
 
 #: ../ui/prefs_gtk2.ui.h:5 ../ui/prefs_gtk3.ui.h:5 ../ui/prefs-ume.ui.h:1
 msgid "galculator - Preferences"
-msgstr ""
+msgstr "galculator - Nastavení"
 
 #: ../ui/prefs_gtk2.ui.h:6 ../ui/prefs_gtk3.ui.h:6 ../ui/prefs-ume.ui.h:2
 msgid "A dialog that is used to change preferences settings."
-msgstr ""
+msgstr "Dialog, který se používá ke změně nastavení předvoleb."
 
 #: ../ui/prefs_gtk2.ui.h:7 ../ui/prefs_gtk3.ui.h:7 ../ui/prefs-ume.ui.h:3
 msgid "Closes the dialog."
-msgstr ""
+msgstr "Zavře dialogové okno."
 
 #: ../ui/prefs_gtk2.ui.h:8 ../ui/prefs_gtk3.ui.h:8
 msgid "<b>Appearance</b>"
-msgstr ""
+msgstr "<b>Vzhled</b>"
 
 #: ../ui/prefs_gtk2.ui.h:9 ../ui/prefs_gtk3.ui.h:9 ../ui/prefs-ume.ui.h:5
 msgid "    "
-msgstr ""
+msgstr " "
 
 #: ../ui/prefs_gtk2.ui.h:10 ../ui/prefs_gtk3.ui.h:10
 msgid "Result font:"
-msgstr ""
+msgstr "Font výsledku:"
 
 #: ../ui/prefs_gtk2.ui.h:11 ../ui/prefs_gtk3.ui.h:11
 msgid "Inactive module color:"
-msgstr ""
+msgstr "Barva pro neaktivní modul:"
 
 #: ../ui/prefs_gtk2.ui.h:12 ../ui/prefs_gtk3.ui.h:12
 msgid "Active module color:"
-msgstr ""
+msgstr "Barva pro aktivní modul:"
 
 #: ../ui/prefs_gtk2.ui.h:13 ../ui/prefs_gtk3.ui.h:13
 msgid "Result font color:"
-msgstr ""
+msgstr "Barva pro font výsledku:"
 
 #: ../ui/prefs_gtk2.ui.h:14 ../ui/prefs_gtk3.ui.h:14
 msgid "Background color:"
-msgstr ""
+msgstr "Barva pozadí:"
 
 #: ../ui/prefs_gtk2.ui.h:15 ../ui/prefs_gtk3.ui.h:15
 msgid "Module font:"
-msgstr ""
+msgstr "Font pro modul:"
 
 #: ../ui/prefs_gtk2.ui.h:16 ../ui/prefs_gtk3.ui.h:16
 msgid "RPN stack font:"
-msgstr ""
+msgstr "Font pro RPN:"
 
 #: ../ui/prefs_gtk2.ui.h:17 ../ui/prefs_gtk3.ui.h:17
 msgid "RPN stack color:"
-msgstr ""
+msgstr "Barva pro RPN:"
 
 #: ../ui/prefs_gtk2.ui.h:18 ../ui/prefs_gtk3.ui.h:18
 msgid "Pick a Display Background Color"
-msgstr ""
+msgstr "Vyberte barvu pro pozadí displeje"
 
 #: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
 msgid "Pick a Display Result Font Color"
-msgstr ""
+msgstr "Vyberte barvu pro font výsledku"
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
 msgid "Pick a RPN Stack Color"
-msgstr ""
+msgstr "Vyberte barvu pro RPN"
 
 #: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
 msgid "Pick a Inactive Module Color"
-msgstr ""
+msgstr "Vyberte barvu pro neaktivní modul"
 
 #: ../ui/prefs_gtk2.ui.h:22 ../ui/prefs_gtk3.ui.h:22
 msgid "Pick a Active Module Color"
-msgstr ""
+msgstr "Vyberte barvu pro aktivní modul"
 
 #: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
 msgid "Pick a Result Font"
-msgstr ""
+msgstr "Vyberte font výsledku"
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
 msgid "Pick a RPN Stack Font"
-msgstr ""
+msgstr "Vyberte font pro RPN"
 
 #: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
 msgid "Pick a Module Font"
-msgstr ""
+msgstr "Vyberte font pro modul"
 
 #: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
 msgid "<b>Modules Visibility</b>"
-msgstr ""
+msgstr "<b>Viditelnost modulů</b>"
 
 #: ../ui/prefs_gtk2.ui.h:27 ../ui/prefs_gtk3.ui.h:27 ../ui/prefs-ume.ui.h:6
 msgid "Angle base units"
-msgstr ""
+msgstr "Úhel základní jednotky"
 
 #: ../ui/prefs_gtk2.ui.h:28 ../ui/prefs_gtk3.ui.h:28 ../ui/prefs-ume.ui.h:7
 msgid "Notation"
-msgstr ""
+msgstr "Śymboly"
 
 #: ../ui/prefs_gtk2.ui.h:29 ../ui/prefs_gtk3.ui.h:29 ../ui/prefs-ume.ui.h:8
 msgid "Arithmetic operation"
-msgstr ""
+msgstr "Aritmetická operace"
 
 #: ../ui/prefs_gtk2.ui.h:30 ../ui/prefs_gtk3.ui.h:30 ../ui/prefs-ume.ui.h:9
 msgid "Open brackets"
-msgstr ""
+msgstr "Otevřené závorky"
 
 #: ../ui/prefs_gtk2.ui.h:31 ../ui/prefs_gtk3.ui.h:31 ../ui/prefs-ume.ui.h:10
 msgid "Number base units"
-msgstr ""
+msgstr "Číslo základní jednotky"
 
 #: ../ui/prefs_gtk2.ui.h:32 ../ui/prefs_gtk3.ui.h:32 ../ui/prefs-ume.ui.h:11
 msgid "Display"
-msgstr ""
+msgstr "Displej"
 
 #: ../ui/prefs_gtk2.ui.h:33 ../ui/prefs_gtk3.ui.h:33 ../ui/prefs-ume.ui.h:12
 msgid "<b>Font</b>"
-msgstr ""
+msgstr "<b>Písmo</b>"
 
 #: ../ui/prefs_gtk2.ui.h:34 ../ui/prefs_gtk3.ui.h:34 ../ui/prefs-ume.ui.h:13
 msgid "Use custom button font"
-msgstr ""
+msgstr "Použít vlastní písmo pro tlačítka"
 
 #: ../ui/prefs_gtk2.ui.h:35 ../ui/prefs_gtk3.ui.h:35 ../ui/prefs-ume.ui.h:14
 msgid "Button font:"
-msgstr ""
+msgstr "Písmo tlačítka:"
 
 #: ../ui/prefs_gtk2.ui.h:36 ../ui/prefs_gtk3.ui.h:36 ../ui/prefs-ume.ui.h:15
 msgid "Pick a Button Font"
-msgstr ""
+msgstr "Vyber písmo pro tlačítko"
 
 #: ../ui/prefs_gtk2.ui.h:37 ../ui/prefs_gtk3.ui.h:37 ../ui/prefs-ume.ui.h:16
 msgid "<b>Dimension</b>"
-msgstr ""
+msgstr "<b>Rozměry</b>"
 
 #: ../ui/prefs_gtk2.ui.h:38 ../ui/prefs_gtk3.ui.h:38 ../ui/prefs-ume.ui.h:17
 msgid "Minimal button width:"
-msgstr ""
+msgstr "Minimální šířka tlačítka:"
 
 #: ../ui/prefs_gtk2.ui.h:39 ../ui/prefs_gtk3.ui.h:39 ../ui/prefs-ume.ui.h:18
 msgid "Minimal button height:"
-msgstr ""
+msgstr "Minimální výška tlačítka:"
 
 #: ../ui/prefs_gtk2.ui.h:41 ../ui/prefs_gtk3.ui.h:41
 msgid "<b>User defined constants:</b>"
-msgstr ""
+msgstr "<b>Uživatelem definované konstanty:</b>"
 
 #: ../ui/prefs_gtk2.ui.h:42 ../ui/prefs_gtk3.ui.h:42
 msgid "Name:"
-msgstr ""
+msgstr "Jméno:"
 
 #: ../ui/prefs_gtk2.ui.h:43 ../ui/prefs_gtk3.ui.h:43
 msgid "Value:"
-msgstr ""
+msgstr "Hodnota:"
 
 #: ../ui/prefs_gtk2.ui.h:44 ../ui/prefs_gtk3.ui.h:44
 msgid "Description:"
-msgstr ""
+msgstr "Popis:"
 
 #: ../ui/prefs_gtk2.ui.h:45 ../ui/prefs_gtk3.ui.h:45
 msgid "Add"
-msgstr ""
+msgstr "Přidat"
 
 #: ../ui/prefs_gtk2.ui.h:46 ../ui/prefs_gtk3.ui.h:46
 msgid "Update"
-msgstr ""
+msgstr "Aktualizovat"
 
 #: ../ui/prefs_gtk2.ui.h:47 ../ui/prefs_gtk3.ui.h:47
 msgid "Delete"
-msgstr ""
+msgstr "Smazat"
 
 #: ../ui/prefs_gtk2.ui.h:48 ../ui/prefs_gtk3.ui.h:48
 msgid "Clear"
-msgstr ""
+msgstr "Vyčistit"
 
 #: ../ui/prefs_gtk2.ui.h:49 ../ui/prefs_gtk3.ui.h:49
 #: ../ui/scientific_buttons_gtk2.ui.h:21 ../ui/scientific_buttons_gtk3.ui.h:21
 msgid "Constants"
-msgstr ""
+msgstr "Konstanty"
 
 #: ../ui/prefs_gtk2.ui.h:50 ../ui/prefs_gtk3.ui.h:50
 msgid "<b>User defined functions:</b>"
-msgstr ""
+msgstr "<b>Uživatelem definované funkce:</b>"
 
 #: ../ui/prefs_gtk2.ui.h:51 ../ui/prefs_gtk3.ui.h:51
 msgid "Variable:"
-msgstr ""
+msgstr "Proměnná:"
 
 #: ../ui/prefs_gtk2.ui.h:52 ../ui/prefs_gtk3.ui.h:52
 msgid "Expression:"
-msgstr ""
+msgstr "Výraz:"
 
 #: ../ui/prefs_gtk2.ui.h:54 ../ui/prefs_gtk3.ui.h:54 ../ui/prefs-ume.ui.h:20
 msgid "Configure number base: "
-msgstr ""
+msgstr "Konfigurovat základní číslo:"
 
 #: ../ui/prefs_gtk2.ui.h:55 ../ui/prefs_gtk3.ui.h:55
 msgid "<b>Decimal Settings</b>"
-msgstr ""
+msgstr "<b>Nastavení pro desetinné číslo</b>"
 
 #: ../ui/prefs_gtk2.ui.h:56 ../ui/prefs_gtk3.ui.h:56
 msgid "Show thousands separator"
-msgstr ""
+msgstr "Zobrazit oddělovač tisíců"
 
 #: ../ui/prefs_gtk2.ui.h:57 ../ui/prefs_gtk3.ui.h:57
 msgid "Separator character:"
-msgstr ""
+msgstr "Oddělovací znak:"
 
 #: ../ui/prefs_gtk2.ui.h:58 ../ui/prefs_gtk3.ui.h:58
 msgid "Separator block length:"
-msgstr ""
+msgstr "Oddělovač délky bloku:"
 
 #: ../ui/prefs_gtk2.ui.h:59 ../ui/prefs_gtk3.ui.h:59
 msgid " "
-msgstr ""
+msgstr " "
 
 #: ../ui/prefs_gtk2.ui.h:60 ../ui/prefs_gtk3.ui.h:60
 msgid "<b>Hexadecimal Settings</b>"
-msgstr ""
+msgstr "<b>Nastavení pro hexadecimální číslo</b>"
 
 #: ../ui/prefs_gtk2.ui.h:61 ../ui/prefs_gtk3.ui.h:61
 msgid "Signed"
-msgstr ""
+msgstr "Podepsaný"
 
 #: ../ui/prefs_gtk2.ui.h:62 ../ui/prefs_gtk3.ui.h:62
 msgid "Show separator"
-msgstr ""
+msgstr "Zobrazit oddělovač"
 
 #: ../ui/prefs_gtk2.ui.h:63 ../ui/prefs_gtk3.ui.h:63
 msgid "Number of bits: "
-msgstr ""
+msgstr "Počet bitů:"
 
 #: ../ui/prefs_gtk2.ui.h:64 ../ui/prefs_gtk3.ui.h:64
 msgid "<b>Octal Settings</b>"
-msgstr ""
+msgstr "<b>Nastavení pro osmičkové číslo</b>"
 
 #: ../ui/prefs_gtk2.ui.h:65 ../ui/prefs_gtk3.ui.h:65
 msgid "<b>Binary Settings</b>"
-msgstr ""
+msgstr "<b>Nastavení pro binární číslo</b>"
 
 #: ../ui/prefs_gtk2.ui.h:66 ../ui/prefs_gtk3.ui.h:66
 msgid "Fix length to a multiple of"
-msgstr ""
+msgstr "Stanovit délku násobku"
 
 #: ../ui/prefs_gtk2.ui.h:67 ../ui/prefs_gtk3.ui.h:67 ../ui/prefs-ume.ui.h:21
 msgid "Numbers"
-msgstr ""
+msgstr "Čísla"
 
 #: ../ui/prefs_gtk2.ui.h:68 ../ui/prefs_gtk3.ui.h:68 ../ui/prefs-ume.ui.h:22
 msgid "<b>RPN</b>"
-msgstr ""
+msgstr "<b>RPN</b>"
 
 #: ../ui/prefs_gtk2.ui.h:69 ../ui/prefs_gtk3.ui.h:69 ../ui/prefs-ume.ui.h:23
 msgid "finite stack size (x, y, z, t)"
-msgstr ""
+msgstr "konečná velikost zásobníku (x, y, z, t)"
 
 #: ../ui/prefs_gtk2.ui.h:70 ../ui/prefs_gtk3.ui.h:70 ../ui/prefs-ume.ui.h:24
 msgid "infinite stack size"
-msgstr ""
+msgstr "nekonečná velikost zásobníku"
 
 #: ../ui/prefs_gtk2.ui.h:71 ../ui/prefs_gtk3.ui.h:71 ../ui/prefs-ume.ui.h:25
 msgid "<b>Startup</b>"
-msgstr ""
+msgstr "<b>Spuštění</b>"
 
 #: ../ui/prefs_gtk2.ui.h:72 ../ui/prefs_gtk3.ui.h:72 ../ui/prefs-ume.ui.h:26
 msgid "Remember display value on exit"
-msgstr ""
+msgstr "Při ukončení si pamatovat zobrazenou hodnotu"
 
 #: ../ui/prefs_gtk2.ui.h:73 ../ui/prefs_gtk3.ui.h:73
 msgid "<b>Visibility</b>"
-msgstr ""
+msgstr "<b>Viditelnost</b>"
 
 #: ../ui/prefs_gtk2.ui.h:74 ../ui/prefs_gtk3.ui.h:74
 msgid "Show menu bar"
-msgstr ""
+msgstr "Zobrazit menu"
 
 #: ../ui/prefs_gtk2.ui.h:75 ../ui/prefs_gtk3.ui.h:75 ../ui/prefs-ume.ui.h:27
 msgid "General"
-msgstr ""
+msgstr "Obecný"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:1 ../ui/scientific_buttons_gtk3.ui.h:1
 msgid "tan"
-msgstr ""
+msgstr "tan"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:2 ../ui/scientific_buttons_gtk3.ui.h:2
 msgid "Tangent"
-msgstr ""
+msgstr "Tangenta"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:3 ../ui/scientific_buttons_gtk3.ui.h:3
 msgid "ln"
-msgstr ""
+msgstr "ln"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:4 ../ui/scientific_buttons_gtk3.ui.h:4
 msgid "Natural logarithm (base: e)"
-msgstr ""
+msgstr "Přirozený logaritmus (základ: e)"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:7 ../ui/scientific_buttons_gtk3.ui.h:7
 msgid "n!"
-msgstr ""
+msgstr "n!"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:8 ../ui/scientific_buttons_gtk3.ui.h:8
 msgid "Factorial"
-msgstr ""
+msgstr "Faktoriál"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:9 ../ui/scientific_buttons_gtk3.ui.h:9
 msgid "EE"
-msgstr ""
+msgstr "EE"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:10 ../ui/scientific_buttons_gtk3.ui.h:10
 msgid "Enter exponent (base: 10)"
-msgstr ""
+msgstr "Zadej exponent (základ: 10)"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:11 ../ui/scientific_buttons_gtk3.ui.h:11
 msgid "cos"
-msgstr ""
+msgstr "cos"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:12 ../ui/scientific_buttons_gtk3.ui.h:12
 msgid "Cosine"
-msgstr ""
+msgstr "Kosinus"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:13 ../ui/scientific_buttons_gtk3.ui.h:13
 msgid "log"
-msgstr ""
+msgstr "log"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:14 ../ui/scientific_buttons_gtk3.ui.h:14
 msgid "Logarithm (base: 10)"
-msgstr ""
+msgstr "Logaritmus (základ: 10)"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:15 ../ui/scientific_buttons_gtk3.ui.h:15
 msgid "x^2"
-msgstr ""
+msgstr "x^2"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:16 ../ui/scientific_buttons_gtk3.ui.h:16
 msgid "Square"
-msgstr ""
+msgstr "Druhá mocnina"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:19 ../ui/scientific_buttons_gtk3.ui.h:19
 msgid "User defined functions"
-msgstr ""
+msgstr "Uživatelem definované funkce"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:20 ../ui/scientific_buttons_gtk3.ui.h:20
 msgid "fun"
-msgstr ""
+msgstr "fun"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:22 ../ui/scientific_buttons_gtk3.ui.h:22
 msgid "con"
-msgstr ""
+msgstr "con"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:26 ../ui/scientific_buttons_gtk3.ui.h:26
 msgid "inv"
-msgstr ""
+msgstr "inv"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:27 ../ui/scientific_buttons_gtk3.ui.h:27
 msgid "Inverse mode"
-msgstr ""
+msgstr "Inverzní režim"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:28 ../ui/scientific_buttons_gtk3.ui.h:28
 msgid "hyp"
-msgstr ""
+msgstr "hyp"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:29 ../ui/scientific_buttons_gtk3.ui.h:29
 msgid "Hyperbolic mode"
-msgstr ""
+msgstr "Hyperbolický režim"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:30 ../ui/scientific_buttons_gtk3.ui.h:30
 msgid "sin"
-msgstr ""
+msgstr "sin"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:31 ../ui/scientific_buttons_gtk3.ui.h:31
 msgid "Sine"
-msgstr ""
+msgstr "Sinus"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:32 ../ui/scientific_buttons_gtk3.ui.h:32
 msgid "AND"
-msgstr ""
+msgstr "AND"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:33 ../ui/scientific_buttons_gtk3.ui.h:33
 msgid "Logical AND"
-msgstr ""
+msgstr "Logický AND"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:34 ../ui/scientific_buttons_gtk3.ui.h:34
 msgid "OR"
-msgstr ""
+msgstr "OR"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:35 ../ui/scientific_buttons_gtk3.ui.h:35
 msgid "Logical OR"
-msgstr ""
+msgstr "Logický OR"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:36 ../ui/scientific_buttons_gtk3.ui.h:36
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:37 ../ui/scientific_buttons_gtk3.ui.h:37
 msgid "Logical XOR"
-msgstr ""
+msgstr "Logický XOR"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:38 ../ui/scientific_buttons_gtk3.ui.h:38
 msgid "CMP"
-msgstr ""
+msgstr "CMP"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:39 ../ui/scientific_buttons_gtk3.ui.h:39
 msgid "Bitwise complement"
-msgstr ""
+msgstr "Bitový doplněk"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:41 ../ui/scientific_buttons_gtk3.ui.h:41
 msgid "Hexadecimal 0xC"
-msgstr ""
+msgstr "Hexadecimální 0xC"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:42 ../ui/scientific_buttons_gtk3.ui.h:42
 msgid "D"
-msgstr ""
+msgstr "D"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:43 ../ui/scientific_buttons_gtk3.ui.h:43
 msgid "Hexadecimal 0xD"
-msgstr ""
+msgstr "Hexadecimální 0xD"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:44 ../ui/scientific_buttons_gtk3.ui.h:44
 msgid "E"
-msgstr ""
+msgstr "E"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:45 ../ui/scientific_buttons_gtk3.ui.h:45
 msgid "Hexadecimal 0xE"
-msgstr ""
+msgstr "Hexadecimální 0xE"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:46 ../ui/scientific_buttons_gtk3.ui.h:46
 msgid "F"
-msgstr ""
+msgstr "F"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:47 ../ui/scientific_buttons_gtk3.ui.h:47
 msgid "Hexadecimal 0xF"
-msgstr ""
+msgstr "Hexadecimální 0xF"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:48 ../ui/scientific_buttons_gtk3.ui.h:48
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:49 ../ui/scientific_buttons_gtk3.ui.h:49
 msgid "Hexadecimal 0xB"
-msgstr ""
+msgstr "Hexadecimální 0xB"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:50 ../ui/scientific_buttons_gtk3.ui.h:50
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:51 ../ui/scientific_buttons_gtk3.ui.h:51
 msgid "Hexadecimal 0xA"
-msgstr ""
+msgstr "Hexadecimální 0xA"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:60 ../ui/scientific_buttons_gtk3.ui.h:60
 msgid "MOD"
-msgstr ""
+msgstr "MOD"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:61 ../ui/scientific_buttons_gtk3.ui.h:61
 msgid "Modulus"
-msgstr ""
+msgstr "Modulus"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:74 ../ui/scientific_buttons_gtk3.ui.h:74
 msgid "LSH"
-msgstr ""
+msgstr "LSH"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:75 ../ui/scientific_buttons_gtk3.ui.h:75
 msgid "Left shift"
-msgstr ""
+msgstr "Levý shift"
