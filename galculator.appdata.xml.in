@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+ <id>galculator.desktop</id>
+ <metadata_license>CC0-1.0</metadata_license>
+ <project_license>GPL-2.0+</project_license>
+ <name>galculator</name>
+ <summary>a GTK 2 / GTK 3 algebraic and RPN calculator</summary>
+ <description>
+  <p>
+   galculator is a GTK 2 / GTK 3 based calculator with ordinary notation/reverse polish notation (RPN), a
+   formula entry mode, different number bases (DEC, HEX, OCT, BIN) and different units of angular
+   measure (DEG, RAD, GRAD). It supports quad-precision floating point and 112-bit binary arithmetic.
+  </p>
+  <p>
+   galculator's main features include:
+  </p>
+  <ul>
+   <li>Algebraic mode, RPN (Reverse Polish Notation), Formula Entry and Paper mode</li>
+   <li>Decimal, hexadecimal, octal and binary number base</li>
+   <li>Radiant, degree and grad support</li>
+   <li>Basic and Scientific Mode</li>
+   <li>User defined constants and functions</li>
+   <li>Trigonometric functions, power, sqare root, natural and common logarithm, inverse and hyperbolic functions</li>
+   <li>Binary arithmetic of configurable bit length and signedness</li>
+   <li>Quad-precision floating point arithmetic</li>
+   <li>112-bit binary arithmetic</li>
+   <li>Copy and paste</li>
+   <li>Available in more than 20 translations</li>
+  </ul>
+ </description>
+ <screenshots>
+  <screenshot type="default">
+   <caption>main window in scientific mode</caption>
+   <image width="688" height="387">
+    https://alexpl.fedorapeople.org/AppData/galculator/screens/galculator_01.png
+   </image>
+  </screenshot>
+  <screenshot>
+   <caption>main window in scientific RPN mode</caption>
+   <image width="688" height="387">
+    https://alexpl.fedorapeople.org/AppData/galculator/screens/galculator_02.png
+   </image>
+  </screenshot>
+  <screenshot>
+   <caption>main window in scientific formula entry mode</caption>
+   <image width="688" height="387">
+    https://alexpl.fedorapeople.org/AppData/galculator/screens/galculator_03.png
+   </image>
+  </screenshot>
+ </screenshots>
+ <url type="homepage">http://galculator.sf.net</url>
+ <updatecontact>simon.floery@rechenraum.com</updatecontact>
+</component>

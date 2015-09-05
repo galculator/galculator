@@ -84,9 +84,13 @@ DIST_COMMON = INSTALL NEWS README AUTHORS ChangeLog \
 	$(top_srcdir)/configure $(am__configure_deps) \
 	$(srcdir)/config.h.in mkinstalldirs \
 	$(srcdir)/galculator.spec.in ABOUT-NLS COPYING THANKS compile \
-	config.guess config.sub depcomp install-sh missing ltmain.sh
+	config.guess config.sub depcomp install-sh missing ylwrap \
+	ltmain.sh
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/configure.in
+am__aclocal_m4_deps = $(top_srcdir)/m4/intltool.m4 \
+	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
+	$(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 \
+	$(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/configure.in
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
@@ -149,8 +153,8 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-am__installdirs = "$(DESTDIR)$(desktopdir)"
-DATA = $(desktop_DATA)
+am__installdirs = "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(desktopdir)"
+DATA = $(appdata_DATA) $(desktop_DATA)
 RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
   distclean-recursive maintainer-clean-recursive
 am__recursive_targets = \
@@ -380,7 +384,10 @@ ACLOCAL_AMFLAGS = -I m4
 desktopdir = $(datadir)/applications
 desktop_in_files = galculator.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
-CLEANFILES = $(desktop_DATA)
+appdatadir = $(datadir)/appdata
+appdata_in_files = galculator.appdata.xml.in
+appdata_DATA = $(appdata_in_files:.xml.in=.xml)
+CLEANFILES = $(desktop_DATA) $(appdata_DATA)
 SUBDIRS = src po ui doc pixmaps
 
 # things we want to include in the source code distribution
@@ -390,6 +397,7 @@ EXTRA_DIST = galculator.spec \
 	intltool-merge.in \
 	intltool-extract.in \
 	intltool-update.in \
+	galculator.appdata.xml.in \
 	ABOUT-NLS
 
 all: config.h
@@ -456,6 +464,27 @@ clean-libtool:
 
 distclean-libtool:
 	-rm -f libtool config.lt
+install-appdataDATA: $(appdata_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(appdata_DATA)'; test -n "$(appdatadir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(appdatadir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(appdatadir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(appdatadir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(appdatadir)" || exit $$?; \
+	done
+
+uninstall-appdataDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(appdata_DATA)'; test -n "$(appdatadir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(appdatadir)'; $(am__uninstall_files_from_dir)
 install-desktopDATA: $(desktop_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(desktop_DATA)'; test -n "$(desktopdir)" || list=; \
@@ -777,7 +806,7 @@ check: check-recursive
 all-am: Makefile $(DATA) config.h
 installdirs: installdirs-recursive
 installdirs-am:
-	for dir in "$(DESTDIR)$(desktopdir)"; do \
+	for dir in "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(desktopdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-recursive
@@ -833,7 +862,7 @@ info: info-recursive
 
 info-am:
 
-install-data-am: install-desktopDATA
+install-data-am: install-appdataDATA install-desktopDATA
 
 install-dvi: install-dvi-recursive
 
@@ -879,7 +908,7 @@ ps: ps-recursive
 
 ps-am:
 
-uninstall-am: uninstall-desktopDATA
+uninstall-am: uninstall-appdataDATA uninstall-desktopDATA
 
 .MAKE: $(am__recursive_targets) all install-am install-strip
 
@@ -890,17 +919,19 @@ uninstall-am: uninstall-desktopDATA
 	dist-xz dist-zip distcheck distclean distclean-generic \
 	distclean-hdr distclean-libtool distclean-tags distcleancheck \
 	distdir distuninstallcheck dvi dvi-am html html-am info \
-	info-am install install-am install-data install-data-am \
-	install-desktopDATA install-dvi install-dvi-am install-exec \
-	install-exec-am install-html install-html-am install-info \
-	install-info-am install-man install-pdf install-pdf-am \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs installdirs-am maintainer-clean \
-	maintainer-clean-generic mostlyclean mostlyclean-generic \
-	mostlyclean-libtool pdf pdf-am ps ps-am tags tags-am uninstall \
-	uninstall-am uninstall-desktopDATA
+	info-am install install-am install-appdataDATA install-data \
+	install-data-am install-desktopDATA install-dvi install-dvi-am \
+	install-exec install-exec-am install-html install-html-am \
+	install-info install-info-am install-man install-pdf \
+	install-pdf-am install-ps install-ps-am install-strip \
+	installcheck installcheck-am installdirs installdirs-am \
+	maintainer-clean maintainer-clean-generic mostlyclean \
+	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+	tags tags-am uninstall uninstall-am uninstall-appdataDATA \
+	uninstall-desktopDATA
 
 @INTLTOOL_DESKTOP_RULE@
+@INTLTOOL_XML_RULE@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

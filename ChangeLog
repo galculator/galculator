@@ -1,3 +1,6 @@
+2015-09-05 Simon Flöry <simon.floery@rechenraum.com>
+	* adding a fresh "tx pull" of translations (thanks to all translators!)
+
 2014-05-17 Simon Flöry <simon.floery@rechenraum.com>
 	* in ui.c::set_all_dispctrl_buttons_property check for table_children != NULL
 		(fixes sf.net bug #107, thanks to Chris LaFleur for reporting)

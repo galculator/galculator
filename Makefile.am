@@ -7,7 +7,12 @@ desktop_in_files = galculator.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
-CLEANFILES = $(desktop_DATA)
+appdatadir = $(datadir)/appdata
+appdata_in_files = galculator.appdata.xml.in
+appdata_DATA = $(appdata_in_files:.xml.in=.xml)
+@INTLTOOL_XML_RULE@
+
+CLEANFILES = $(desktop_DATA) $(appdata_DATA)
 
 SUBDIRS = src po ui doc pixmaps
 
@@ -19,5 +24,6 @@ EXTRA_DIST = galculator.spec \
 	intltool-merge.in \
 	intltool-extract.in \
 	intltool-update.in \
+	galculator.appdata.xml.in \
 	ABOUT-NLS
 
