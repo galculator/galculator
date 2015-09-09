@@ -1,5 +1,9 @@
 2015-09-09 Simon Flöry <simon.floery@rechenraum.com>
-	* renaming 'configure.in' to 'configure.ac'
+	* renaming 'configure.in' to 'configure.ac', removing some autoconf/automake
+		files from SVN (this and the following thanks to Dmitry for reporting)
+	* adding src/flex_parser.c to POTFILES.skip
+	* Properly include and install new translations
+	* 'make clean' removes auto-generated src/flex-parser.c 
 
 ##############################################
 # 2015-09-05 galculator 2.1.4 released       #

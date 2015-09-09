@@ -30,3 +30,5 @@ galculator_LDADD = \
 
 galculator_LDFLAGS = -export-dynamic
 
+## added on 20150909, the auto-generated files is not removed
+CLEANFILES = flex_parser.c

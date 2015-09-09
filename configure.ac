@@ -76,7 +76,7 @@ AC_SUBST(GETTEXT_PACKAGE)
 AM_PROG_LIBTOOL
 
 dnl Add the languages which your application supports here.
-ALL_LINGUAS="de fr ja pt pt_BR pl ro sk es_MX ru zh_TW zh_CN sv tr lt hu es cs el en_AU gl id it kk mr uk"
+ALL_LINGUAS="am ar be bg cs da de el en_AU en_GB es_MX es et eu fi fr gl hr hu id it ja kk ko lt mr ms nl pl pt_BR pt ro ru sk sl sq sr sv tr uk zh_CN zh_TW"
 AM_GLIB_GNU_GETTEXT
 
 dnl If we don't have msgfmt, then po/ is going to fail -- ensure that
