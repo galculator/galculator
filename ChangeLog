@@ -1,3 +1,6 @@
+2015-09-09 Simon Flöry <simon.floery@rechenraum.com>
+	* renaming 'configure.in' to 'configure.ac'
+
 ##############################################
 # 2015-09-05 galculator 2.1.4 released       #
 ##############################################
