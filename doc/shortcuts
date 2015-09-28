@@ -71,7 +71,7 @@ Ctrl-H	change to hexadecimal number base
 Ctrl-O	change to octal number base
 Ctrl-B	change to binary number base
 Ctrl-E	change to degree angle base
-Ctrl-R	change to radiant angle base
+Ctrl-R	change to radian angle base
 Ctrl-G	change to GRAD angle base
 Ctrl-A	change to (normal) algebraic notation
 Ctrl-N	change to Reverse Polish Notation (RPN)
