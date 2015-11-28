@@ -1,0 +1,1288 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Francesc <kiski97@gmail.com>, 2015
+# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: MATE Desktop Environment\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-17 16:18+0100\n"
+"PO-Revision-Date: 2015-11-28 16:31+0000\n"
+"Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
+"Language-Team: Catalan (http://www.transifex.com/mate/MATE/language/ca/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../galculator.desktop.in.h:1
+msgid "Perform simple and scientific calculations"
+msgstr "Realitzeu càlculs simples i científics"
+
+#: ../src/callbacks.c:1051
+msgid "save here"
+msgstr "desa-ho aquí"
+
+#: ../src/callbacks.c:1427
+#, c-format
+msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
+msgstr ""
+
+#: ../src/callbacks.c:1590
+#, c-format
+msgid "[%s] on_main_window_check_resize should not get called. %s\n"
+msgstr ""
+
+#: ../src/main.c:61
+#, c-format
+msgid ""
+"\n"
+"%s v%s, (c) 2002-2014 Simon Flöry\n"
+"\n"
+"Usage: %s [options]\n"
+"\n"
+"options:\n"
+"(GTK options)\n"
+" -h, --help\t\tShow this usage message\n"
+" -v, --version\t\tShow version information\n"
+"\n"
+"Compiled against GTK version %i.%i.%i\n"
+"Linked against GTK version %i.%i.%i\n"
+"%s-precision floating point numbers.\n"
+msgstr ""
+
+#: ../src/main.c:196
+#, c-format
+msgid "[%s] configuration file: Failed to create directory %s.\n"
+msgstr ""
+
+#: ../src/main.c:201
+#, c-format
+msgid ""
+"[%s] configuration file: We will move the configuration file from %s to %s. "
+"After you quit %s, you may remove the configuration file from its old "
+"location %s.\n"
+msgstr ""
+
+#: ../src/galculator.h:92
+msgid "Please submit a bugreport."
+msgstr "Si us plau, envieu un informe d'error de programari."
+
+#: ../src/calc_basic.c:300
+#, c-format
+msgid "[%s] %c - unknown operation character. %s\n"
+msgstr ""
+
+#: ../src/calc_basic.c:690
+#, c-format
+msgid ""
+"[%s] Conversion of floating point number in float2string failed because buffer was too small. %s\n"
+")"
+msgstr "[%s] La conversió del número en punt flotant al float2string ha fallat a causa que l'àrea d'emmagatzematge temporal era massa petita. %s\n)"
+
+#: ../src/calc_basic.c:719
+#, c-format
+msgid ""
+"[%s] Conversion of floating point number in float2stringP failed because buffer was too small. %s\n"
+")"
+msgstr "[%s] La conversió del número en punt flotant al float2stringP ha fallat a causa que l'àrea d'emmagatzematge temporal era massa petita. %s\n)"
+
+#: ../src/config_file.c:180
+msgid "Pi"
+msgstr "Pi"
+
+#: ../src/config_file.c:181
+msgid "pi"
+msgstr "pi"
+
+#: ../src/config_file.c:183
+msgid "Euler's Number"
+msgstr "Número d'Euler"
+
+#: ../src/config_file.c:184
+msgid "e"
+msgstr "e"
+
+#: ../src/config_file.c:232
+#, c-format
+msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
+msgstr ""
+
+#: ../src/config_file.c:256
+#, c-format
+msgid ""
+"[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
+msgstr ""
+
+#: ../src/config_file.c:262
+#, c-format
+msgid ""
+"[%s] configuration file: failed to convert %s to a number properly. Have you"
+" changed your locales? %s\n"
+msgstr ""
+
+#: ../src/config_file.c:265
+#, c-format
+msgid ""
+"[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
+msgstr ""
+
+#: ../src/config_file.c:284
+#, c-format
+msgid ""
+"[%s] found unknown section %s in configuration file %s. Using preceding "
+"section.\n"
+msgstr ""
+
+#: ../src/config_file.c:403
+#, c-format
+msgid ""
+"[%s] configuration file: couldn't open configuration file %s for reading. "
+"Nothing to worry about if you are starting %s for the first time. Using "
+"defaults.\n"
+msgstr ""
+
+#: ../src/config_file.c:432
+#, c-format
+msgid ""
+"[%s] configuration file - We reset at least one separator character as it "
+"coincides with the decimal point. If you recently changed your locales "
+"settings, this is nothing to worry about.\n"
+msgstr ""
+
+#: ../src/config_file.c:470
+#, c-format
+msgid ""
+"[%s] configuration file: strange boolean when writing. Skipping this key. "
+"%s\n"
+msgstr ""
+
+#: ../src/config_file.c:478
+#, c-format
+msgid ""
+"[%s] configuration file: ignoring unknown \"key_type\" in "
+"\"config_structure\". %s\n"
+msgstr ""
+
+#: ../src/config_file.c:501
+#, c-format
+msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
+msgstr ""
+
+#: ../src/display.c:420
+#, c-format
+msgid ""
+"[%s] Line_index exceeds valid range in function \"display_delete_line\". "
+"%s\n"
+msgstr ""
+
+#: ../src/display.c:598
+#, c-format
+msgid "[%s] unknown display option in function \"display_change_option\""
+msgstr ""
+
+#: ../src/general_functions.c:43
+msgid "unsupported inverse function"
+msgstr "funció inversa no admesa"
+
+#: ../src/general_functions.c:49
+msgid "unsupported hyperbolic function"
+msgstr "funció hiperbòlica no admesa"
+
+#: ../src/general_functions.c:112
+#, c-format
+msgid "[%s] unknown notation mode in function \"all_clear\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:138
+#, c-format
+msgid "[%s] failed to convert char %c in function \"axtof\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:194
+#, c-format
+msgid "[%s] failed to convert %s in function \"ftoax\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:274
+#, c-format
+msgid "[%s] failed to convert color %s in function \"set_button_color\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:395
+#, c-format
+msgid "[%s] failed to find widget %s in function \"activate_menu_item\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:437
+msgid "unknown number base"
+msgstr "base numèrica desconeguda"
+
+#: ../src/general_functions.c:438
+#, c-format
+msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:459
+#, c-format
+msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:568
+#, c-format
+msgid ""
+"[%s] failed to convert %s to a number properly in function "
+"\"string2double\". Have you changed your locales? Deleting your "
+"configuration file might solve this problem. %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:586
+#, c-format
+msgid "[%s] unknown number base in function \"string2double\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:741
+#, c-format
+msgid "[%s] unknown angle base in function \"x2rad\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:756
+#, c-format
+msgid "[%s] unknown angle base in function \"rad2x\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:773
+#, c-format
+msgid "[%s] unknown number base in function \"get_sep\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:790
+#, c-format
+msgid "[%s] unknown number base in function \"get_sep_length\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:807
+#, c-format
+msgid "[%s] unknown number base in function \"get_sep_char\". %s\n"
+msgstr ""
+
+#: ../src/general_functions.c:875
+msgid "unknown display option in function \"change_option\""
+msgstr ""
+
+#: ../src/general_functions.c:915
+#, c-format
+msgid ""
+"[%s] length of decimal point (in locale) is not supported: >%s<\n"
+"You might face problems when using %s! %s\n"
+")"
+msgstr ""
+
+#: ../src/ui.c:89
+#, c-format
+msgid ""
+"[%s] Couldn't load %s. This file is necessary     to build galculator's user"
+" interface. Make sure you did a make install and the file     is "
+"accessible!\n"
+msgstr ""
+
+#: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
+msgid "Show _menu bar"
+msgstr "Mostra la barra de _menús"
+
+#: ../src/ui.c:999
+#, c-format
+msgid "%s Preferences"
+msgstr "Preferències de %s"
+
+#: ../src/ui.c:1043 ../src/ui.c:1075
+msgid "Name"
+msgstr "Nom"
+
+#: ../src/ui.c:1046
+msgid "Value"
+msgstr "Valor"
+
+#: ../src/ui.c:1049
+msgid "Description"
+msgstr "Descripció"
+
+#: ../src/ui.c:1078
+msgid "Variable"
+msgstr "Variable"
+
+#: ../src/ui.c:1081
+msgid "Expression"
+msgstr "Expressió"
+
+#: ../src/ui.c:1211 ../ui/basic_buttons_gtk2.ui.h:43
+#: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
+#: ../ui/scientific_buttons_gtk3.ui.h:98
+msgid "="
+msgstr "="
+
+#: ../src/ui.c:1211 ../src/ui.c:1223 ../ui/basic_buttons_gtk2.ui.h:44
+#: ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
+#: ../ui/scientific_buttons_gtk2.ui.h:99 ../ui/scientific_buttons_gtk3.ui.h:99
+msgid "Enter"
+msgstr ""
+
+#: ../src/ui.c:1213 ../ui/scientific_buttons_gtk2.ui.h:17
+#: ../ui/scientific_buttons_gtk3.ui.h:17
+msgid "x^y"
+msgstr "x^y"
+
+#: ../src/ui.c:1213 ../src/ui.c:1225 ../ui/scientific_buttons_gtk2.ui.h:18
+#: ../ui/scientific_buttons_gtk3.ui.h:18
+msgid "Power"
+msgstr "Potència"
+
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:33
+#: ../ui/basic_buttons_gtk3.ui.h:33 ../ui/scientific_buttons_gtk2.ui.h:88
+#: ../ui/scientific_buttons_gtk3.ui.h:88
+msgid "("
+msgstr "("
+
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:34
+#: ../ui/basic_buttons_gtk3.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:89
+#: ../ui/scientific_buttons_gtk3.ui.h:89
+msgid "Open Bracket"
+msgstr "Obre parèntesi"
+
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:31
+#: ../ui/basic_buttons_gtk3.ui.h:31 ../ui/scientific_buttons_gtk2.ui.h:86
+#: ../ui/scientific_buttons_gtk3.ui.h:86
+msgid ")"
+msgstr ")"
+
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:32
+#: ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
+#: ../ui/scientific_buttons_gtk3.ui.h:87
+msgid "Close Bracket"
+msgstr "Tanca parèntesi"
+
+#: ../src/ui.c:1223
+msgid "ENT"
+msgstr ""
+
+#: ../src/ui.c:1225
+msgid "y^x"
+msgstr "y^x"
+
+#: ../src/ui.c:1227
+msgid "x<>y"
+msgstr "x<>y"
+
+#: ../src/ui.c:1227
+msgid "swap current number with top of stack"
+msgstr ""
+
+#: ../src/ui.c:1229
+msgid "roll"
+msgstr ""
+
+#: ../src/ui.c:1229
+msgid "roll down stack"
+msgstr ""
+
+#: ../src/ui.c:1300
+msgid "Result Display"
+msgstr "Pantalla del resultat"
+
+#: ../src/flex_parser.l:233
+#, c-format
+msgid ""
+"[%s] flex parser was called more than %i times. Do you know what you are "
+"doing? If not: %s\n"
+msgstr ""
+
+#: ../ui/about.ui.in.h:1
+msgid "About galculator"
+msgstr "Quant a galculator"
+
+#: ../ui/about.ui.in.h:2
+msgid "Copyright (c) 2002-2014 by Simon Flöry <simon.floery@rechenraum.com>"
+msgstr "Copyright (c) 2002-2014 per Simon Flöry <simon.floery@rechenraum.com>"
+
+#: ../ui/about.ui.in.h:3
+msgid "a GTK+ based scientific calculator"
+msgstr "una calculadora científica basada en GTK+"
+
+#: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1
+#: ../ui/scientific_buttons_gtk2.ui.h:52 ../ui/scientific_buttons_gtk3.ui.h:52
+msgid "7"
+msgstr "7"
+
+#: ../ui/basic_buttons_gtk2.ui.h:2 ../ui/basic_buttons_gtk3.ui.h:2
+#: ../ui/scientific_buttons_gtk2.ui.h:53 ../ui/scientific_buttons_gtk3.ui.h:53
+msgid "Seven"
+msgstr "Set"
+
+#: ../ui/basic_buttons_gtk2.ui.h:3 ../ui/basic_buttons_gtk3.ui.h:3
+#: ../ui/scientific_buttons_gtk2.ui.h:54 ../ui/scientific_buttons_gtk3.ui.h:54
+msgid "8"
+msgstr "8"
+
+#: ../ui/basic_buttons_gtk2.ui.h:4 ../ui/basic_buttons_gtk3.ui.h:4
+#: ../ui/scientific_buttons_gtk2.ui.h:55 ../ui/scientific_buttons_gtk3.ui.h:55
+msgid "Eight"
+msgstr "Vuit"
+
+#: ../ui/basic_buttons_gtk2.ui.h:5 ../ui/basic_buttons_gtk3.ui.h:5
+#: ../ui/scientific_buttons_gtk2.ui.h:56 ../ui/scientific_buttons_gtk3.ui.h:56
+msgid "9"
+msgstr "9"
+
+#: ../ui/basic_buttons_gtk2.ui.h:6 ../ui/basic_buttons_gtk3.ui.h:6
+#: ../ui/scientific_buttons_gtk2.ui.h:57 ../ui/scientific_buttons_gtk3.ui.h:57
+msgid "Nine"
+msgstr "Nou"
+
+#: ../ui/basic_buttons_gtk2.ui.h:7 ../ui/basic_buttons_gtk3.ui.h:7
+#: ../ui/scientific_buttons_gtk2.ui.h:58 ../ui/scientific_buttons_gtk3.ui.h:58
+msgid "/"
+msgstr "/"
+
+#: ../ui/basic_buttons_gtk2.ui.h:8 ../ui/basic_buttons_gtk3.ui.h:8
+#: ../ui/scientific_buttons_gtk2.ui.h:59 ../ui/scientific_buttons_gtk3.ui.h:59
+msgid "Divide"
+msgstr "Divideix"
+
+#: ../ui/basic_buttons_gtk2.ui.h:9 ../ui/basic_buttons_gtk3.ui.h:9
+#: ../ui/scientific_buttons_gtk2.ui.h:62 ../ui/scientific_buttons_gtk3.ui.h:62
+msgid "4"
+msgstr "4"
+
+#: ../ui/basic_buttons_gtk2.ui.h:10 ../ui/basic_buttons_gtk3.ui.h:10
+#: ../ui/scientific_buttons_gtk2.ui.h:63 ../ui/scientific_buttons_gtk3.ui.h:63
+msgid "Four"
+msgstr "Quatre"
+
+#: ../ui/basic_buttons_gtk2.ui.h:11 ../ui/basic_buttons_gtk3.ui.h:11
+#: ../ui/scientific_buttons_gtk2.ui.h:64 ../ui/scientific_buttons_gtk3.ui.h:64
+msgid "5"
+msgstr "5"
+
+#: ../ui/basic_buttons_gtk2.ui.h:12 ../ui/basic_buttons_gtk3.ui.h:12
+#: ../ui/scientific_buttons_gtk2.ui.h:65 ../ui/scientific_buttons_gtk3.ui.h:65
+msgid "Five"
+msgstr "Cinc"
+
+#: ../ui/basic_buttons_gtk2.ui.h:13 ../ui/basic_buttons_gtk3.ui.h:13
+#: ../ui/scientific_buttons_gtk2.ui.h:66 ../ui/scientific_buttons_gtk3.ui.h:66
+msgid "6"
+msgstr "6"
+
+#: ../ui/basic_buttons_gtk2.ui.h:14 ../ui/basic_buttons_gtk3.ui.h:14
+#: ../ui/scientific_buttons_gtk2.ui.h:67 ../ui/scientific_buttons_gtk3.ui.h:67
+msgid "Six"
+msgstr "Sis"
+
+#: ../ui/basic_buttons_gtk2.ui.h:15 ../ui/basic_buttons_gtk3.ui.h:15
+#: ../ui/scientific_buttons_gtk2.ui.h:68 ../ui/scientific_buttons_gtk3.ui.h:68
+msgid "3"
+msgstr "3"
+
+#: ../ui/basic_buttons_gtk2.ui.h:16 ../ui/basic_buttons_gtk3.ui.h:16
+#: ../ui/scientific_buttons_gtk2.ui.h:69 ../ui/scientific_buttons_gtk3.ui.h:69
+msgid "Three"
+msgstr "Tres"
+
+#: ../ui/basic_buttons_gtk2.ui.h:17 ../ui/basic_buttons_gtk3.ui.h:17
+#: ../ui/scientific_buttons_gtk2.ui.h:70 ../ui/scientific_buttons_gtk3.ui.h:70
+msgid "-"
+msgstr "-"
+
+#: ../ui/basic_buttons_gtk2.ui.h:18 ../ui/basic_buttons_gtk3.ui.h:18
+#: ../ui/scientific_buttons_gtk2.ui.h:71 ../ui/scientific_buttons_gtk3.ui.h:71
+msgid "Subtract"
+msgstr "Resta"
+
+#: ../ui/basic_buttons_gtk2.ui.h:19 ../ui/basic_buttons_gtk3.ui.h:19
+#: ../ui/scientific_buttons_gtk2.ui.h:72 ../ui/scientific_buttons_gtk3.ui.h:72
+msgid "+"
+msgstr "+"
+
+#: ../ui/basic_buttons_gtk2.ui.h:20 ../ui/basic_buttons_gtk3.ui.h:20
+#: ../ui/scientific_buttons_gtk2.ui.h:73 ../ui/scientific_buttons_gtk3.ui.h:73
+msgid "Sum"
+msgstr "Suma"
+
+#: ../ui/basic_buttons_gtk2.ui.h:21 ../ui/basic_buttons_gtk3.ui.h:21
+#: ../ui/scientific_buttons_gtk2.ui.h:76 ../ui/scientific_buttons_gtk3.ui.h:76
+msgid "+/-"
+msgstr "+/-"
+
+#: ../ui/basic_buttons_gtk2.ui.h:22 ../ui/basic_buttons_gtk3.ui.h:22
+#: ../ui/scientific_buttons_gtk2.ui.h:77 ../ui/scientific_buttons_gtk3.ui.h:77
+msgid "Change sign"
+msgstr "Canvia el signe"
+
+#: ../ui/basic_buttons_gtk2.ui.h:23 ../ui/basic_buttons_gtk3.ui.h:23
+#: ../ui/main_frame_hildon.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:78
+#: ../ui/scientific_buttons_gtk3.ui.h:78
+msgid "*"
+msgstr "*"
+
+#: ../ui/basic_buttons_gtk2.ui.h:24 ../ui/basic_buttons_gtk3.ui.h:24
+#: ../ui/scientific_buttons_gtk2.ui.h:79 ../ui/scientific_buttons_gtk3.ui.h:79
+msgid "Multiply"
+msgstr "Multiplica"
+
+#: ../ui/basic_buttons_gtk2.ui.h:25 ../ui/basic_buttons_gtk3.ui.h:25
+#: ../ui/scientific_buttons_gtk2.ui.h:80 ../ui/scientific_buttons_gtk3.ui.h:80
+msgid "Add current display value to memory"
+msgstr ""
+
+#: ../ui/basic_buttons_gtk2.ui.h:26 ../ui/basic_buttons_gtk3.ui.h:26
+#: ../ui/scientific_buttons_gtk2.ui.h:81 ../ui/scientific_buttons_gtk3.ui.h:81
+msgid "M+"
+msgstr "M+"
+
+#: ../ui/basic_buttons_gtk2.ui.h:27 ../ui/basic_buttons_gtk3.ui.h:27
+#: ../ui/scientific_buttons_gtk2.ui.h:82 ../ui/scientific_buttons_gtk3.ui.h:82
+msgid "Read from memory"
+msgstr "Llegeix de la memòria"
+
+#: ../ui/basic_buttons_gtk2.ui.h:28 ../ui/basic_buttons_gtk3.ui.h:28
+#: ../ui/scientific_buttons_gtk2.ui.h:83 ../ui/scientific_buttons_gtk3.ui.h:83
+msgid "MR"
+msgstr "MR"
+
+#: ../ui/basic_buttons_gtk2.ui.h:29 ../ui/basic_buttons_gtk3.ui.h:29
+#: ../ui/scientific_buttons_gtk2.ui.h:84 ../ui/scientific_buttons_gtk3.ui.h:84
+msgid "Save to memory"
+msgstr "Desa a la memòria"
+
+#: ../ui/basic_buttons_gtk2.ui.h:30 ../ui/basic_buttons_gtk3.ui.h:30
+#: ../ui/scientific_buttons_gtk2.ui.h:85 ../ui/scientific_buttons_gtk3.ui.h:85
+msgid "MS"
+msgstr "MS"
+
+#: ../ui/basic_buttons_gtk2.ui.h:35 ../ui/basic_buttons_gtk3.ui.h:35
+#: ../ui/scientific_buttons_gtk2.ui.h:90 ../ui/scientific_buttons_gtk3.ui.h:90
+msgid "0"
+msgstr "0"
+
+#: ../ui/basic_buttons_gtk2.ui.h:36 ../ui/basic_buttons_gtk3.ui.h:36
+#: ../ui/scientific_buttons_gtk2.ui.h:91 ../ui/scientific_buttons_gtk3.ui.h:91
+msgid "Zero"
+msgstr "Zero"
+
+#: ../ui/basic_buttons_gtk2.ui.h:37 ../ui/basic_buttons_gtk3.ui.h:37
+#: ../ui/scientific_buttons_gtk2.ui.h:92 ../ui/scientific_buttons_gtk3.ui.h:92
+msgid "."
+msgstr ","
+
+#: ../ui/basic_buttons_gtk2.ui.h:38 ../ui/basic_buttons_gtk3.ui.h:38
+#: ../ui/scientific_buttons_gtk2.ui.h:93 ../ui/scientific_buttons_gtk3.ui.h:93
+msgid "Decimal point"
+msgstr "Punt decimal"
+
+#: ../ui/basic_buttons_gtk2.ui.h:39 ../ui/basic_buttons_gtk3.ui.h:39
+#: ../ui/scientific_buttons_gtk2.ui.h:94 ../ui/scientific_buttons_gtk3.ui.h:94
+msgid "1"
+msgstr "1"
+
+#: ../ui/basic_buttons_gtk2.ui.h:40 ../ui/basic_buttons_gtk3.ui.h:40
+#: ../ui/scientific_buttons_gtk2.ui.h:95 ../ui/scientific_buttons_gtk3.ui.h:95
+msgid "One"
+msgstr "Un"
+
+#: ../ui/basic_buttons_gtk2.ui.h:41 ../ui/basic_buttons_gtk3.ui.h:41
+#: ../ui/scientific_buttons_gtk2.ui.h:96 ../ui/scientific_buttons_gtk3.ui.h:96
+msgid "2"
+msgstr "2"
+
+#: ../ui/basic_buttons_gtk2.ui.h:42 ../ui/basic_buttons_gtk3.ui.h:42
+#: ../ui/scientific_buttons_gtk2.ui.h:97 ../ui/scientific_buttons_gtk3.ui.h:97
+msgid "Two"
+msgstr "Dos"
+
+#: ../ui/basic_buttons_gtk2.ui.h:45 ../ui/basic_buttons_gtk3.ui.h:45
+#: ../ui/scientific_buttons_gtk2.ui.h:5 ../ui/scientific_buttons_gtk3.ui.h:5
+msgid "sqrt"
+msgstr "arrel"
+
+#: ../ui/basic_buttons_gtk2.ui.h:46 ../ui/basic_buttons_gtk3.ui.h:46
+#: ../ui/scientific_buttons_gtk2.ui.h:6 ../ui/scientific_buttons_gtk3.ui.h:6
+msgid "Square root"
+msgstr "Arrel quadrada"
+
+#: ../ui/basic_buttons_gtk2.ui.h:48 ../ui/basic_buttons_gtk3.ui.h:48
+#: ../ui/scientific_buttons_gtk2.ui.h:24 ../ui/scientific_buttons_gtk3.ui.h:24
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#: ../ui/basic_buttons_gtk2.ui.h:49 ../ui/basic_buttons_gtk3.ui.h:49
+#: ../ui/scientific_buttons_gtk2.ui.h:25 ../ui/scientific_buttons_gtk3.ui.h:25
+msgid "Percent"
+msgstr "Percentatge"
+
+#: ../ui/classic_view.ui.h:1 ../ui/main_frame.ui.h:1
+#: ../ui/main_frame_hildon.ui.h:35 ../ui/paper_view.ui.h:1
+msgid "The main program window."
+msgstr "La finestra principal de programa."
+
+#: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
+msgid "Formula entry text field - enter string expression to compute here."
+msgstr ""
+
+#: ../ui/dispctrl_bottom_gtk2.ui.h:1 ../ui/dispctrl_bottom_gtk3.ui.h:1
+#: ../ui/dispctrl_right_gtk2.ui.h:1 ../ui/dispctrl_right_gtk3.ui.h:1
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:5
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:5
+msgid "AC"
+msgstr "AC"
+
+#: ../ui/dispctrl_bottom_gtk2.ui.h:2 ../ui/dispctrl_bottom_gtk3.ui.h:2
+#: ../ui/dispctrl_right_gtk2.ui.h:2 ../ui/dispctrl_right_gtk3.ui.h:2
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:6
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:6
+msgid "Reset calculator (clear all)"
+msgstr "Restableix la calculadora (neteja-ho tot)"
+
+#: ../ui/dispctrl_bottom_gtk2.ui.h:3 ../ui/dispctrl_bottom_gtk3.ui.h:3
+#: ../ui/dispctrl_right_gtk2.ui.h:5 ../ui/dispctrl_right_gtk3.ui.h:5
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:3
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:3
+#: ../ui/scientific_buttons_gtk2.ui.h:40 ../ui/scientific_buttons_gtk3.ui.h:40
+msgid "C"
+msgstr "C"
+
+#: ../ui/dispctrl_bottom_gtk2.ui.h:4 ../ui/dispctrl_bottom_gtk3.ui.h:4
+#: ../ui/dispctrl_right_gtk2.ui.h:6 ../ui/dispctrl_right_gtk3.ui.h:6
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:4
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:4
+msgid "Clear display"
+msgstr "Neteja la pantalla"
+
+#: ../ui/dispctrl_bottom_gtk2.ui.h:5 ../ui/dispctrl_bottom_gtk3.ui.h:5
+#: ../ui/dispctrl_right_gtk2.ui.h:3 ../ui/dispctrl_right_gtk3.ui.h:3
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:1
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:1
+msgid "<-"
+msgstr "<-"
+
+#: ../ui/dispctrl_bottom_gtk2.ui.h:6 ../ui/dispctrl_bottom_gtk3.ui.h:6
+#: ../ui/dispctrl_right_gtk2.ui.h:4 ../ui/dispctrl_right_gtk3.ui.h:4
+#: ../ui/dispctrl_right_vertical_gtk2.ui.h:2
+#: ../ui/dispctrl_right_vertical_gtk3.ui.h:2
+msgid "Backspace"
+msgstr "Retrocés"
+
+#: ../ui/main_frame.ui.h:2 ../ui/main_frame_hildon.ui.h:1
+msgid "_File"
+msgstr "_Fitxer"
+
+#: ../ui/main_frame.ui.h:3 ../ui/main_frame_hildon.ui.h:3
+msgid "_Edit"
+msgstr "_Edita"
+
+#: ../ui/main_frame.ui.h:4 ../ui/main_frame_hildon.ui.h:4
+msgid "Cu_t Display Value"
+msgstr "Retalla el valor de la pan_talla"
+
+#: ../ui/main_frame.ui.h:5 ../ui/main_frame_hildon.ui.h:5
+msgid "_Copy Display Value"
+msgstr "_Copia el valor de la pantalla"
+
+#: ../ui/main_frame.ui.h:6
+msgid "_Paste and Append to Display Value"
+msgstr "Enganxa i annexa al valor de la _pantalla"
+
+#: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
+msgid "_Preferences..."
+msgstr "_Preferències..."
+
+#: ../ui/main_frame.ui.h:8 ../ui/main_frame_hildon.ui.h:8
+msgid "_View"
+msgstr "_Vista"
+
+#: ../ui/main_frame.ui.h:9 ../ui/main_frame_hildon.ui.h:9
+msgid "_Basic Mode"
+msgstr "Mode _bàsic"
+
+#: ../ui/main_frame.ui.h:10 ../ui/main_frame_hildon.ui.h:10
+msgid "_Scientific Mode"
+msgstr "Mode _científic"
+
+#: ../ui/main_frame.ui.h:11
+msgid "_Paper Mode"
+msgstr "Mode _paper"
+
+#: ../ui/main_frame.ui.h:12 ../ui/main_frame_hildon.ui.h:11
+#: ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
+msgid "Buttons"
+msgstr "Botons"
+
+#: ../ui/main_frame.ui.h:13 ../ui/main_frame_hildon.ui.h:12
+msgid "Display Control"
+msgstr "Control de la pantalla"
+
+#: ../ui/main_frame.ui.h:14 ../ui/main_frame_hildon.ui.h:13
+#: ../ui/prefs_gtk2.ui.h:53 ../ui/prefs_gtk3.ui.h:53
+msgid "Functions"
+msgstr "Funcions"
+
+#: ../ui/main_frame.ui.h:15 ../ui/main_frame_hildon.ui.h:14
+msgid "Logical"
+msgstr "Lògica"
+
+#: ../ui/main_frame.ui.h:16 ../ui/main_frame_hildon.ui.h:15
+msgid "Standard"
+msgstr "Estàndard"
+
+#: ../ui/main_frame.ui.h:18 ../ui/main_frame_hildon.ui.h:17
+msgid "_Calculator"
+msgstr "_Calculadora"
+
+#: ../ui/main_frame.ui.h:19 ../ui/main_frame_hildon.ui.h:18
+msgid "_Number bases"
+msgstr "_Base"
+
+#: ../ui/main_frame.ui.h:20 ../ui/main_frame_hildon.ui.h:19
+msgid "_Decimal"
+msgstr "_Decimal"
+
+#: ../ui/main_frame.ui.h:21 ../ui/main_frame_hildon.ui.h:20
+msgid "_Hexadecimal"
+msgstr "_Hexadecimal"
+
+#: ../ui/main_frame.ui.h:22 ../ui/main_frame_hildon.ui.h:21
+msgid "_Octal"
+msgstr "_Octal"
+
+#: ../ui/main_frame.ui.h:23 ../ui/main_frame_hildon.ui.h:22
+msgid "_Binary"
+msgstr "_Binaria"
+
+#: ../ui/main_frame.ui.h:24 ../ui/main_frame_hildon.ui.h:23
+msgid "Angle _units"
+msgstr "_Unitats angulars"
+
+#: ../ui/main_frame.ui.h:25 ../ui/main_frame_hildon.ui.h:24
+msgid "D_egrees"
+msgstr "Gr_aus"
+
+#: ../ui/main_frame.ui.h:26 ../ui/main_frame_hildon.ui.h:25
+msgid "_Radians"
+msgstr "_Radians"
+
+#: ../ui/main_frame.ui.h:27 ../ui/main_frame_hildon.ui.h:26
+msgid "_Gradians"
+msgstr "_Graus centesimals"
+
+#: ../ui/main_frame.ui.h:28 ../ui/main_frame_hildon.ui.h:27
+msgid "Notation _modes"
+msgstr "_Models de notació"
+
+#: ../ui/main_frame.ui.h:29 ../ui/main_frame_hildon.ui.h:28
+msgid "_Algebraic"
+msgstr "_Algebraic"
+
+#: ../ui/main_frame.ui.h:30 ../ui/main_frame_hildon.ui.h:29
+msgid "_Reverse Polish (RPN)"
+msgstr "Polonès inve_rs (RPN)"
+
+#: ../ui/main_frame.ui.h:31 ../ui/main_frame_hildon.ui.h:30
+msgid "_Formula Entry"
+msgstr "Entrada de _fórmula"
+
+#: ../ui/main_frame.ui.h:32 ../ui/main_frame_hildon.ui.h:31
+msgid "_Help"
+msgstr "_Ajuda"
+
+#: ../ui/main_frame_hildon.ui.h:2
+msgid "_Quit"
+msgstr "_Surt"
+
+#: ../ui/main_frame_hildon.ui.h:6
+msgid "_Paste As Display Value"
+msgstr "Enganxa com el valor de la _pantalla"
+
+#: ../ui/main_frame_hildon.ui.h:32
+msgid "_About..."
+msgstr "_Quant a..."
+
+#: ../ui/prefs_gtk2.ui.h:1 ../ui/prefs_gtk3.ui.h:1
+msgid "Decimal"
+msgstr "Decimal"
+
+#: ../ui/prefs_gtk2.ui.h:2 ../ui/prefs_gtk3.ui.h:2
+msgid "Hexadecimal"
+msgstr "Hexadecimal"
+
+#: ../ui/prefs_gtk2.ui.h:3 ../ui/prefs_gtk3.ui.h:3
+msgid "Octal"
+msgstr "Octal"
+
+#: ../ui/prefs_gtk2.ui.h:4 ../ui/prefs_gtk3.ui.h:4
+msgid "Binary"
+msgstr "Binària"
+
+#: ../ui/prefs_gtk2.ui.h:5 ../ui/prefs_gtk3.ui.h:5 ../ui/prefs-ume.ui.h:1
+msgid "galculator - Preferences"
+msgstr "Preferències del galculator"
+
+#: ../ui/prefs_gtk2.ui.h:6 ../ui/prefs_gtk3.ui.h:6 ../ui/prefs-ume.ui.h:2
+msgid "A dialog that is used to change preferences settings."
+msgstr "Un diàleg que s'utilitza per canviar els ajusts de les preferències."
+
+#: ../ui/prefs_gtk2.ui.h:7 ../ui/prefs_gtk3.ui.h:7 ../ui/prefs-ume.ui.h:3
+msgid "Closes the dialog."
+msgstr "Tanca el diàleg."
+
+#: ../ui/prefs_gtk2.ui.h:8 ../ui/prefs_gtk3.ui.h:8
+msgid "<b>Appearance</b>"
+msgstr "<b>Aparença</b>"
+
+#: ../ui/prefs_gtk2.ui.h:9 ../ui/prefs_gtk3.ui.h:9 ../ui/prefs-ume.ui.h:5
+msgid "    "
+msgstr "    "
+
+#: ../ui/prefs_gtk2.ui.h:10 ../ui/prefs_gtk3.ui.h:10
+msgid "Result font:"
+msgstr "Lletra del resultat:"
+
+#: ../ui/prefs_gtk2.ui.h:11 ../ui/prefs_gtk3.ui.h:11
+msgid "Inactive module color:"
+msgstr "Color del mòdul inactiu:"
+
+#: ../ui/prefs_gtk2.ui.h:12 ../ui/prefs_gtk3.ui.h:12
+msgid "Active module color:"
+msgstr "Color del mòdul actiu:"
+
+#: ../ui/prefs_gtk2.ui.h:13 ../ui/prefs_gtk3.ui.h:13
+msgid "Result font color:"
+msgstr "Color de la lletra del resultat:"
+
+#: ../ui/prefs_gtk2.ui.h:14 ../ui/prefs_gtk3.ui.h:14
+msgid "Background color:"
+msgstr "Color del fons:"
+
+#: ../ui/prefs_gtk2.ui.h:15 ../ui/prefs_gtk3.ui.h:15
+msgid "Module font:"
+msgstr "Lletra del mòdul:"
+
+#: ../ui/prefs_gtk2.ui.h:16 ../ui/prefs_gtk3.ui.h:16
+msgid "RPN stack font:"
+msgstr "Lletra de la pila RPN:"
+
+#: ../ui/prefs_gtk2.ui.h:17 ../ui/prefs_gtk3.ui.h:17
+msgid "RPN stack color:"
+msgstr "Color de la pila RPN:"
+
+#: ../ui/prefs_gtk2.ui.h:18 ../ui/prefs_gtk3.ui.h:18
+msgid "Pick a Display Background Color"
+msgstr "Seleccioneu un color per al fons de la pantalla"
+
+#: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
+msgid "Pick a Display Result Font Color"
+msgstr "Seleccioneu un color per a la lletra del resultat de la pantalla"
+
+#: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
+msgid "Pick a RPN Stack Color"
+msgstr "Seleccioneu un color per a la pila RPN"
+
+#: ../ui/prefs_gtk2.ui.h:21 ../ui/prefs_gtk3.ui.h:21
+msgid "Pick a Inactive Module Color"
+msgstr "Seleccioneu un color per als mòduls inactius"
+
+#: ../ui/prefs_gtk2.ui.h:22 ../ui/prefs_gtk3.ui.h:22
+msgid "Pick a Active Module Color"
+msgstr "Seleccioneu un color per als mòduls actius"
+
+#: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
+msgid "Pick a Result Font"
+msgstr "Seleccioneu una lletra per al resultat"
+
+#: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
+msgid "Pick a RPN Stack Font"
+msgstr "Seleccioneu una lletra per a la pila RPN"
+
+#: ../ui/prefs_gtk2.ui.h:25 ../ui/prefs_gtk3.ui.h:25
+msgid "Pick a Module Font"
+msgstr "Seleccioneu una lletra per als mòduls"
+
+#: ../ui/prefs_gtk2.ui.h:26 ../ui/prefs_gtk3.ui.h:26 ../ui/prefs-ume.ui.h:4
+msgid "<b>Modules Visibility</b>"
+msgstr "<b>Visibilitat dels mòduls</b>"
+
+#: ../ui/prefs_gtk2.ui.h:27 ../ui/prefs_gtk3.ui.h:27 ../ui/prefs-ume.ui.h:6
+msgid "Angle base units"
+msgstr "Unitats de referència dels angles"
+
+#: ../ui/prefs_gtk2.ui.h:28 ../ui/prefs_gtk3.ui.h:28 ../ui/prefs-ume.ui.h:7
+msgid "Notation"
+msgstr "Notació"
+
+#: ../ui/prefs_gtk2.ui.h:29 ../ui/prefs_gtk3.ui.h:29 ../ui/prefs-ume.ui.h:8
+msgid "Arithmetic operation"
+msgstr "Operació aritmètica"
+
+#: ../ui/prefs_gtk2.ui.h:30 ../ui/prefs_gtk3.ui.h:30 ../ui/prefs-ume.ui.h:9
+msgid "Open brackets"
+msgstr "Parèntesis oberts"
+
+#: ../ui/prefs_gtk2.ui.h:31 ../ui/prefs_gtk3.ui.h:31 ../ui/prefs-ume.ui.h:10
+msgid "Number base units"
+msgstr "Unitats de referència dels números"
+
+#: ../ui/prefs_gtk2.ui.h:32 ../ui/prefs_gtk3.ui.h:32 ../ui/prefs-ume.ui.h:11
+msgid "Display"
+msgstr "Pantalla"
+
+#: ../ui/prefs_gtk2.ui.h:33 ../ui/prefs_gtk3.ui.h:33 ../ui/prefs-ume.ui.h:12
+msgid "<b>Font</b>"
+msgstr "<b>Lletra</b>"
+
+#: ../ui/prefs_gtk2.ui.h:34 ../ui/prefs_gtk3.ui.h:34 ../ui/prefs-ume.ui.h:13
+msgid "Use custom button font"
+msgstr "Utilitza la lletra personalitzada per als botons"
+
+#: ../ui/prefs_gtk2.ui.h:35 ../ui/prefs_gtk3.ui.h:35 ../ui/prefs-ume.ui.h:14
+msgid "Button font:"
+msgstr "Lletra dels botons:"
+
+#: ../ui/prefs_gtk2.ui.h:36 ../ui/prefs_gtk3.ui.h:36 ../ui/prefs-ume.ui.h:15
+msgid "Pick a Button Font"
+msgstr "Seleccioneu una lletra per als botons"
+
+#: ../ui/prefs_gtk2.ui.h:37 ../ui/prefs_gtk3.ui.h:37 ../ui/prefs-ume.ui.h:16
+msgid "<b>Dimension</b>"
+msgstr "<b>Dimensió</b>"
+
+#: ../ui/prefs_gtk2.ui.h:38 ../ui/prefs_gtk3.ui.h:38 ../ui/prefs-ume.ui.h:17
+msgid "Minimal button width:"
+msgstr "Amplada mínima dels botons:"
+
+#: ../ui/prefs_gtk2.ui.h:39 ../ui/prefs_gtk3.ui.h:39 ../ui/prefs-ume.ui.h:18
+msgid "Minimal button height:"
+msgstr "Alçada mínima dels botons:"
+
+#: ../ui/prefs_gtk2.ui.h:41 ../ui/prefs_gtk3.ui.h:41
+msgid "<b>User defined constants:</b>"
+msgstr "<b>Constants definides de l'usuari:</b>"
+
+#: ../ui/prefs_gtk2.ui.h:42 ../ui/prefs_gtk3.ui.h:42
+msgid "Name:"
+msgstr "Nom:"
+
+#: ../ui/prefs_gtk2.ui.h:43 ../ui/prefs_gtk3.ui.h:43
+msgid "Value:"
+msgstr "Valor:"
+
+#: ../ui/prefs_gtk2.ui.h:44 ../ui/prefs_gtk3.ui.h:44
+msgid "Description:"
+msgstr "Descripció:"
+
+#: ../ui/prefs_gtk2.ui.h:45 ../ui/prefs_gtk3.ui.h:45
+msgid "Add"
+msgstr "Afegeix"
+
+#: ../ui/prefs_gtk2.ui.h:46 ../ui/prefs_gtk3.ui.h:46
+msgid "Update"
+msgstr "Actualitza"
+
+#: ../ui/prefs_gtk2.ui.h:47 ../ui/prefs_gtk3.ui.h:47
+msgid "Delete"
+msgstr "Suprimeix"
+
+#: ../ui/prefs_gtk2.ui.h:48 ../ui/prefs_gtk3.ui.h:48
+msgid "Clear"
+msgstr "Neteja"
+
+#: ../ui/prefs_gtk2.ui.h:49 ../ui/prefs_gtk3.ui.h:49
+#: ../ui/scientific_buttons_gtk2.ui.h:21 ../ui/scientific_buttons_gtk3.ui.h:21
+msgid "Constants"
+msgstr "Constants"
+
+#: ../ui/prefs_gtk2.ui.h:50 ../ui/prefs_gtk3.ui.h:50
+msgid "<b>User defined functions:</b>"
+msgstr "<b> Funcions definides de l'usuari:</b>"
+
+#: ../ui/prefs_gtk2.ui.h:51 ../ui/prefs_gtk3.ui.h:51
+msgid "Variable:"
+msgstr "Variable:"
+
+#: ../ui/prefs_gtk2.ui.h:52 ../ui/prefs_gtk3.ui.h:52
+msgid "Expression:"
+msgstr "Expressió:"
+
+#: ../ui/prefs_gtk2.ui.h:54 ../ui/prefs_gtk3.ui.h:54 ../ui/prefs-ume.ui.h:20
+msgid "Configure number base: "
+msgstr "Configura la base numèrica:"
+
+#: ../ui/prefs_gtk2.ui.h:55 ../ui/prefs_gtk3.ui.h:55
+msgid "<b>Decimal Settings</b>"
+msgstr "<b>Ajusts dels decimals</b>"
+
+#: ../ui/prefs_gtk2.ui.h:56 ../ui/prefs_gtk3.ui.h:56
+msgid "Show thousands separator"
+msgstr "Mostra el separador de milers"
+
+#: ../ui/prefs_gtk2.ui.h:57 ../ui/prefs_gtk3.ui.h:57
+msgid "Separator character:"
+msgstr "Caràcter de separació:"
+
+#: ../ui/prefs_gtk2.ui.h:58 ../ui/prefs_gtk3.ui.h:58
+msgid "Separator block length:"
+msgstr "Mida del bloc de separació:"
+
+#: ../ui/prefs_gtk2.ui.h:59 ../ui/prefs_gtk3.ui.h:59
+msgid " "
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:60 ../ui/prefs_gtk3.ui.h:60
+msgid "<b>Hexadecimal Settings</b>"
+msgstr "<b>Ajusts dels hexadecimals</b>"
+
+#: ../ui/prefs_gtk2.ui.h:61 ../ui/prefs_gtk3.ui.h:61
+msgid "Signed"
+msgstr "Amb signe"
+
+#: ../ui/prefs_gtk2.ui.h:62 ../ui/prefs_gtk3.ui.h:62
+msgid "Show separator"
+msgstr "Mostra el separador"
+
+#: ../ui/prefs_gtk2.ui.h:63 ../ui/prefs_gtk3.ui.h:63
+msgid "Number of bits: "
+msgstr "Nombre de bits:"
+
+#: ../ui/prefs_gtk2.ui.h:64 ../ui/prefs_gtk3.ui.h:64
+msgid "<b>Octal Settings</b>"
+msgstr "<b>Ajusts octals</b>"
+
+#: ../ui/prefs_gtk2.ui.h:65 ../ui/prefs_gtk3.ui.h:65
+msgid "<b>Binary Settings</b>"
+msgstr "<b>Ajusts binaris</b>"
+
+#: ../ui/prefs_gtk2.ui.h:66 ../ui/prefs_gtk3.ui.h:66
+msgid "Fix length to a multiple of"
+msgstr ""
+
+#: ../ui/prefs_gtk2.ui.h:67 ../ui/prefs_gtk3.ui.h:67 ../ui/prefs-ume.ui.h:21
+msgid "Numbers"
+msgstr "Números"
+
+#: ../ui/prefs_gtk2.ui.h:68 ../ui/prefs_gtk3.ui.h:68 ../ui/prefs-ume.ui.h:22
+msgid "<b>RPN</b>"
+msgstr "<b>RPN</b>"
+
+#: ../ui/prefs_gtk2.ui.h:69 ../ui/prefs_gtk3.ui.h:69 ../ui/prefs-ume.ui.h:23
+msgid "finite stack size (x, y, z, t)"
+msgstr "mida finita de la pila (x, y, z, t)"
+
+#: ../ui/prefs_gtk2.ui.h:70 ../ui/prefs_gtk3.ui.h:70 ../ui/prefs-ume.ui.h:24
+msgid "infinite stack size"
+msgstr "mida infinita de la pila"
+
+#: ../ui/prefs_gtk2.ui.h:71 ../ui/prefs_gtk3.ui.h:71 ../ui/prefs-ume.ui.h:25
+msgid "<b>Startup</b>"
+msgstr "<b>Inici</b>"
+
+#: ../ui/prefs_gtk2.ui.h:72 ../ui/prefs_gtk3.ui.h:72 ../ui/prefs-ume.ui.h:26
+msgid "Remember display value on exit"
+msgstr "Recorda el valor de la pantalla en sortir"
+
+#: ../ui/prefs_gtk2.ui.h:73 ../ui/prefs_gtk3.ui.h:73
+msgid "<b>Visibility</b>"
+msgstr "<b>Visibilitat</b>"
+
+#: ../ui/prefs_gtk2.ui.h:74 ../ui/prefs_gtk3.ui.h:74
+msgid "Show menu bar"
+msgstr "Mostra la barra de menús"
+
+#: ../ui/prefs_gtk2.ui.h:75 ../ui/prefs_gtk3.ui.h:75 ../ui/prefs-ume.ui.h:27
+msgid "General"
+msgstr "General"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:1 ../ui/scientific_buttons_gtk3.ui.h:1
+msgid "tan"
+msgstr "tg"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:2 ../ui/scientific_buttons_gtk3.ui.h:2
+msgid "Tangent"
+msgstr "Tangent"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:3 ../ui/scientific_buttons_gtk3.ui.h:3
+msgid "ln"
+msgstr "ln"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:4 ../ui/scientific_buttons_gtk3.ui.h:4
+msgid "Natural logarithm (base: e)"
+msgstr "Logaritme natural (base: e)"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:7 ../ui/scientific_buttons_gtk3.ui.h:7
+msgid "n!"
+msgstr "n!"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:8 ../ui/scientific_buttons_gtk3.ui.h:8
+msgid "Factorial"
+msgstr "Factorial"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:9 ../ui/scientific_buttons_gtk3.ui.h:9
+msgid "EE"
+msgstr "EE"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:10 ../ui/scientific_buttons_gtk3.ui.h:10
+msgid "Enter exponent (base: 10)"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:11 ../ui/scientific_buttons_gtk3.ui.h:11
+msgid "cos"
+msgstr "cos"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:12 ../ui/scientific_buttons_gtk3.ui.h:12
+msgid "Cosine"
+msgstr "Cosinus"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:13 ../ui/scientific_buttons_gtk3.ui.h:13
+msgid "log"
+msgstr "log"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:14 ../ui/scientific_buttons_gtk3.ui.h:14
+msgid "Logarithm (base: 10)"
+msgstr "Logaritme (base: 10)"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:15 ../ui/scientific_buttons_gtk3.ui.h:15
+msgid "x^2"
+msgstr "x^2"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:16 ../ui/scientific_buttons_gtk3.ui.h:16
+msgid "Square"
+msgstr "Quadrat"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:19 ../ui/scientific_buttons_gtk3.ui.h:19
+msgid "User defined functions"
+msgstr "Funcions definides de l'usuari"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:20 ../ui/scientific_buttons_gtk3.ui.h:20
+msgid "fun"
+msgstr "fun"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:22 ../ui/scientific_buttons_gtk3.ui.h:22
+msgid "con"
+msgstr "con"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:26 ../ui/scientific_buttons_gtk3.ui.h:26
+msgid "inv"
+msgstr "inv"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:27 ../ui/scientific_buttons_gtk3.ui.h:27
+msgid "Inverse mode"
+msgstr "Mode invers"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:28 ../ui/scientific_buttons_gtk3.ui.h:28
+msgid "hyp"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:29 ../ui/scientific_buttons_gtk3.ui.h:29
+msgid "Hyperbolic mode"
+msgstr "Mode hiperbòlic"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:30 ../ui/scientific_buttons_gtk3.ui.h:30
+msgid "sin"
+msgstr "sin"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:31 ../ui/scientific_buttons_gtk3.ui.h:31
+msgid "Sine"
+msgstr "Sinus"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:32 ../ui/scientific_buttons_gtk3.ui.h:32
+msgid "AND"
+msgstr "AND"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:33 ../ui/scientific_buttons_gtk3.ui.h:33
+msgid "Logical AND"
+msgstr "Operador lògic AND"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:34 ../ui/scientific_buttons_gtk3.ui.h:34
+msgid "OR"
+msgstr "OR"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:35 ../ui/scientific_buttons_gtk3.ui.h:35
+msgid "Logical OR"
+msgstr "Operador lògic OR"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:36 ../ui/scientific_buttons_gtk3.ui.h:36
+msgid "XOR"
+msgstr "XOR"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:37 ../ui/scientific_buttons_gtk3.ui.h:37
+msgid "Logical XOR"
+msgstr "Operador lògic XOR"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:38 ../ui/scientific_buttons_gtk3.ui.h:38
+msgid "CMP"
+msgstr ""
+
+#: ../ui/scientific_buttons_gtk2.ui.h:39 ../ui/scientific_buttons_gtk3.ui.h:39
+msgid "Bitwise complement"
+msgstr "Complement bit a bit"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:41 ../ui/scientific_buttons_gtk3.ui.h:41
+msgid "Hexadecimal 0xC"
+msgstr "Hexadecimal 0xC"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:42 ../ui/scientific_buttons_gtk3.ui.h:42
+msgid "D"
+msgstr "D"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:43 ../ui/scientific_buttons_gtk3.ui.h:43
+msgid "Hexadecimal 0xD"
+msgstr "Hexadecimal 0xD"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:44 ../ui/scientific_buttons_gtk3.ui.h:44
+msgid "E"
+msgstr "E"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:45 ../ui/scientific_buttons_gtk3.ui.h:45
+msgid "Hexadecimal 0xE"
+msgstr "Hexadecimal 0xE"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:46 ../ui/scientific_buttons_gtk3.ui.h:46
+msgid "F"
+msgstr "F"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:47 ../ui/scientific_buttons_gtk3.ui.h:47
+msgid "Hexadecimal 0xF"
+msgstr "Hexadecimal 0xF"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:48 ../ui/scientific_buttons_gtk3.ui.h:48
+msgid "B"
+msgstr "B"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:49 ../ui/scientific_buttons_gtk3.ui.h:49
+msgid "Hexadecimal 0xB"
+msgstr "Hexadecimal 0xB"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:50 ../ui/scientific_buttons_gtk3.ui.h:50
+msgid "A"
+msgstr "A"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:51 ../ui/scientific_buttons_gtk3.ui.h:51
+msgid "Hexadecimal 0xA"
+msgstr "Hexadecimal 0xA"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:60 ../ui/scientific_buttons_gtk3.ui.h:60
+msgid "MOD"
+msgstr "MOD"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:61 ../ui/scientific_buttons_gtk3.ui.h:61
+msgid "Modulus"
+msgstr "Mòdul"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:74 ../ui/scientific_buttons_gtk3.ui.h:74
+msgid "LSH"
+msgstr "LSH"
+
+#: ../ui/scientific_buttons_gtk2.ui.h:75 ../ui/scientific_buttons_gtk3.ui.h:75
+msgid "Left shift"
+msgstr "Desplaçament a l'esquerra"
