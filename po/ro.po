@@ -24,7 +24,7 @@ msgstr "Realizează calcule simple și științifice"
 
 #: ../src/callbacks.c:1051
 msgid "save here"
-msgstr "salveaza aici"
+msgstr "salvează aici"
 
 #: ../src/callbacks.c:1427
 #, c-format
@@ -74,7 +74,7 @@ msgstr "Te rog trimite un raport despre eroare"
 #: ../src/calc_basic.c:300
 #, c-format
 msgid "[%s] %c - unknown operation character. %s\n"
-msgstr "[%s] %c - caracter operaþie necunoscut. %s\n"
+msgstr "[%s] %c - caracter operație necunoscut. %s\n"
 
 #: ../src/calc_basic.c:690
 #, c-format
@@ -109,13 +109,13 @@ msgstr "e"
 #: ../src/config_file.c:232
 #, c-format
 msgid "[%s] configuration file: ignoring unknown entry %s=%s. %s\n"
-msgstr "[%s] fiºier de configuraþie: ignora intrarea necunoscuta %s=%s. %s\n"
+msgstr "[%s] fișier de configurație: ignoră intrarea necunoscută %s=%s. %s\n"
 
 #: ../src/config_file.c:256
 #, c-format
 msgid ""
 "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
-msgstr "[%s] fiºier de configuraþie: %s trebuie sa fie TRUE sau FALSE. Se utilizaeaza valoarea implicita. %s\n"
+msgstr "[%s] fișier de configurație: %s trebuie să fie TRUE sau FALSE. Se utilizaeaza valoarea implicită. %s\n"
 
 #: ../src/config_file.c:262
 #, c-format
@@ -128,14 +128,14 @@ msgstr ""
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
-msgstr "[%s] fiºier de configuraþie: se ignora tipul de cheie necunoscuta in structura de configurare. %s\n"
+msgstr "[%s] fișier de configurație: se ignoră tipul de cheie necunoscută în structura de configurare. %s\n"
 
 #: ../src/config_file.c:284
 #, c-format
 msgid ""
 "[%s] found unknown section %s in configuration file %s. Using preceding "
 "section.\n"
-msgstr "[%s] sa gasit o secþiune necunoscuta %s in fiºierul de configuraþie %s.Se utilizeaza secþiunea precedenta.\n"
+msgstr "[%s] sa gasit o secțiune necunoscută %s în fișierul de configurație %s.Se utilizează secțiunea precedentă.\n"
 
 #: ../src/config_file.c:403
 #, c-format
@@ -143,7 +143,7 @@ msgid ""
 "[%s] configuration file: couldn't open configuration file %s for reading. "
 "Nothing to worry about if you are starting %s for the first time. Using "
 "defaults.\n"
-msgstr "[%s] fiºier de configuraþie: nu pot deschide fiºierul de configuraþie %s pentru citire. Nu este o eroare daca utilizati %s pentru prima data. Se utilizeaza setarile implicite.\n"
+msgstr "[%s] fișier de configurație: nu pot deschide fișierul de configurație %s pentru citire. Nu este o eroare dacă utilizați %s pentru prima dată. Se utilizează setările implicite.\n"
 
 #: ../src/config_file.c:432
 #, c-format
@@ -158,19 +158,19 @@ msgstr ""
 msgid ""
 "[%s] configuration file: strange boolean when writing. Skipping this key. "
 "%s\n"
-msgstr "[%s] fiºier de configuraþie: eroare la scriere. Se renunþa la aceasta cheie. %s\n"
+msgstr "[%s] fișier de configurație: eroare la scriere. Se renunță la această cheie. %s\n"
 
 #: ../src/config_file.c:478
 #, c-format
 msgid ""
 "[%s] configuration file: ignoring unknown \"key_type\" in "
 "\"config_structure\". %s\n"
-msgstr "[%s] fiºier de configuraþie: se ignora \"tipul de cheie\" necunoscuta in \"structura de configurare\". %s\n"
+msgstr "[%s] fișier de configurație: se ignoră \"tipul de cheie\" necunoscută în \"structura de configurare\". %s\n"
 
 #: ../src/config_file.c:501
 #, c-format
 msgid "[%s] configuration file: couldn't save/write to configuration file %s.\n"
-msgstr "[%s] fiºier de configuraþie: eroare la scrierea in fiºierul de configuraþiei %s.\n"
+msgstr "[%s] fișier de configurație: eroare la scriere în fișierul de configurație %s.\n"
 
 #: ../src/display.c:420
 #, c-format
@@ -186,11 +186,11 @@ msgstr ""
 
 #: ../src/general_functions.c:43
 msgid "unsupported inverse function"
-msgstr "Funcþie inversa necunoscuta"
+msgstr "Funcție inversă necunoscută"
 
 #: ../src/general_functions.c:49
 msgid "unsupported hyperbolic function"
-msgstr "Funcþie hiperbolica necunoscuta"
+msgstr "Funcție hiperbolică necunoscută"
 
 #: ../src/general_functions.c:112
 #, c-format
@@ -219,17 +219,17 @@ msgstr ""
 
 #: ../src/general_functions.c:437
 msgid "unknown number base"
-msgstr "baza de numerotaþie necunoscuta"
+msgstr "bază de numerotație necunoscută"
 
 #: ../src/general_functions.c:438
 #, c-format
 msgid "[%s] unknown number base in function \"get_display_number_string\". %s\n"
-msgstr "[%s] base de numÃ©rotation inconnue dans la fonction 'get_display_number_string'. %s\n"
+msgstr "[%s] bază de număr necunoscută în funcție 'get_display_number_string'. %s\n"
 
 #: ../src/general_functions.c:459
 #, c-format
 msgid "[%s] unknown number base in function \"get_display_number_length\". %s\n"
-msgstr "[%s] base de numÃ©rotation inconnue dans la fonction 'get_display_number_length. %s\n"
+msgstr "[%s] base de număr necunoscută în funcție 'get_display_number_length. %s\n"
 
 #: ../src/general_functions.c:568
 #, c-format
@@ -296,7 +296,7 @@ msgstr ""
 #: ../src/ui.c:999
 #, c-format
 msgid "%s Preferences"
-msgstr "Preferinþele  %s"
+msgstr "Preferințe  %s"
 
 #: ../src/ui.c:1043 ../src/ui.c:1075
 msgid "Name"
@@ -362,7 +362,7 @@ msgstr ")"
 #: ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
 #: ../ui/scientific_buttons_gtk3.ui.h:87
 msgid "Close Bracket"
-msgstr "Inchide parantezele"
+msgstr "Închide parantezele"
 
 #: ../src/ui.c:1223
 msgid "ENT"
@@ -419,7 +419,7 @@ msgstr "7"
 #: ../ui/basic_buttons_gtk2.ui.h:2 ../ui/basic_buttons_gtk3.ui.h:2
 #: ../ui/scientific_buttons_gtk2.ui.h:53 ../ui/scientific_buttons_gtk3.ui.h:53
 msgid "Seven"
-msgstr "Sapte"
+msgstr "Șapte"
 
 #: ../ui/basic_buttons_gtk2.ui.h:3 ../ui/basic_buttons_gtk3.ui.h:3
 #: ../ui/scientific_buttons_gtk2.ui.h:54 ../ui/scientific_buttons_gtk3.ui.h:54
@@ -439,7 +439,7 @@ msgstr "9"
 #: ../ui/basic_buttons_gtk2.ui.h:6 ../ui/basic_buttons_gtk3.ui.h:6
 #: ../ui/scientific_buttons_gtk2.ui.h:57 ../ui/scientific_buttons_gtk3.ui.h:57
 msgid "Nine"
-msgstr "Noua"
+msgstr "Nouă"
 
 #: ../ui/basic_buttons_gtk2.ui.h:7 ../ui/basic_buttons_gtk3.ui.h:7
 #: ../ui/scientific_buttons_gtk2.ui.h:58 ../ui/scientific_buttons_gtk3.ui.h:58
@@ -449,7 +449,7 @@ msgstr "/"
 #: ../ui/basic_buttons_gtk2.ui.h:8 ../ui/basic_buttons_gtk3.ui.h:8
 #: ../ui/scientific_buttons_gtk2.ui.h:59 ../ui/scientific_buttons_gtk3.ui.h:59
 msgid "Divide"
-msgstr "Impartire"
+msgstr "Împărțire"
 
 #: ../ui/basic_buttons_gtk2.ui.h:9 ../ui/basic_buttons_gtk3.ui.h:9
 #: ../ui/scientific_buttons_gtk2.ui.h:62 ../ui/scientific_buttons_gtk3.ui.h:62
@@ -479,7 +479,7 @@ msgstr "6"
 #: ../ui/basic_buttons_gtk2.ui.h:14 ../ui/basic_buttons_gtk3.ui.h:14
 #: ../ui/scientific_buttons_gtk2.ui.h:67 ../ui/scientific_buttons_gtk3.ui.h:67
 msgid "Six"
-msgstr "Sase"
+msgstr "Șase"
 
 #: ../ui/basic_buttons_gtk2.ui.h:15 ../ui/basic_buttons_gtk3.ui.h:15
 #: ../ui/scientific_buttons_gtk2.ui.h:68 ../ui/scientific_buttons_gtk3.ui.h:68
@@ -499,7 +499,7 @@ msgstr "-"
 #: ../ui/basic_buttons_gtk2.ui.h:18 ../ui/basic_buttons_gtk3.ui.h:18
 #: ../ui/scientific_buttons_gtk2.ui.h:71 ../ui/scientific_buttons_gtk3.ui.h:71
 msgid "Subtract"
-msgstr "Scadere"
+msgstr "Scădere"
 
 #: ../ui/basic_buttons_gtk2.ui.h:19 ../ui/basic_buttons_gtk3.ui.h:19
 #: ../ui/scientific_buttons_gtk2.ui.h:72 ../ui/scientific_buttons_gtk3.ui.h:72
@@ -509,7 +509,7 @@ msgstr "+"
 #: ../ui/basic_buttons_gtk2.ui.h:20 ../ui/basic_buttons_gtk3.ui.h:20
 #: ../ui/scientific_buttons_gtk2.ui.h:73 ../ui/scientific_buttons_gtk3.ui.h:73
 msgid "Sum"
-msgstr ""
+msgstr "Sumă"
 
 #: ../ui/basic_buttons_gtk2.ui.h:21 ../ui/basic_buttons_gtk3.ui.h:21
 #: ../ui/scientific_buttons_gtk2.ui.h:76 ../ui/scientific_buttons_gtk3.ui.h:76
@@ -519,7 +519,7 @@ msgstr "+/-"
 #: ../ui/basic_buttons_gtk2.ui.h:22 ../ui/basic_buttons_gtk3.ui.h:22
 #: ../ui/scientific_buttons_gtk2.ui.h:77 ../ui/scientific_buttons_gtk3.ui.h:77
 msgid "Change sign"
-msgstr "Schimba semnul"
+msgstr "Schimbă semnul"
 
 #: ../ui/basic_buttons_gtk2.ui.h:23 ../ui/basic_buttons_gtk3.ui.h:23
 #: ../ui/main_frame_hildon.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:78
@@ -530,12 +530,12 @@ msgstr "*"
 #: ../ui/basic_buttons_gtk2.ui.h:24 ../ui/basic_buttons_gtk3.ui.h:24
 #: ../ui/scientific_buttons_gtk2.ui.h:79 ../ui/scientific_buttons_gtk3.ui.h:79
 msgid "Multiply"
-msgstr "Inmulþire"
+msgstr "Înmulțire"
 
 #: ../ui/basic_buttons_gtk2.ui.h:25 ../ui/basic_buttons_gtk3.ui.h:25
 #: ../ui/scientific_buttons_gtk2.ui.h:80 ../ui/scientific_buttons_gtk3.ui.h:80
 msgid "Add current display value to memory"
-msgstr "Adauga valoarea afiºajului la memorie"
+msgstr "Adaugă valoarea afișajului la memorie"
 
 #: ../ui/basic_buttons_gtk2.ui.h:26 ../ui/basic_buttons_gtk3.ui.h:26
 #: ../ui/scientific_buttons_gtk2.ui.h:81 ../ui/scientific_buttons_gtk3.ui.h:81
@@ -545,7 +545,7 @@ msgstr "M+"
 #: ../ui/basic_buttons_gtk2.ui.h:27 ../ui/basic_buttons_gtk3.ui.h:27
 #: ../ui/scientific_buttons_gtk2.ui.h:82 ../ui/scientific_buttons_gtk3.ui.h:82
 msgid "Read from memory"
-msgstr "Citeºte din memorie"
+msgstr "Citește din memorie"
 
 #: ../ui/basic_buttons_gtk2.ui.h:28 ../ui/basic_buttons_gtk3.ui.h:28
 #: ../ui/scientific_buttons_gtk2.ui.h:83 ../ui/scientific_buttons_gtk3.ui.h:83
@@ -555,7 +555,7 @@ msgstr "MR"
 #: ../ui/basic_buttons_gtk2.ui.h:29 ../ui/basic_buttons_gtk3.ui.h:29
 #: ../ui/scientific_buttons_gtk2.ui.h:84 ../ui/scientific_buttons_gtk3.ui.h:84
 msgid "Save to memory"
-msgstr "Salveaza in memorie"
+msgstr "Salvează în memorie"
 
 #: ../ui/basic_buttons_gtk2.ui.h:30 ../ui/basic_buttons_gtk3.ui.h:30
 #: ../ui/scientific_buttons_gtk2.ui.h:85 ../ui/scientific_buttons_gtk3.ui.h:85
@@ -610,7 +610,7 @@ msgstr "radical"
 #: ../ui/basic_buttons_gtk2.ui.h:46 ../ui/basic_buttons_gtk3.ui.h:46
 #: ../ui/scientific_buttons_gtk2.ui.h:6 ../ui/scientific_buttons_gtk3.ui.h:6
 msgid "Square root"
-msgstr "Radacina patrata"
+msgstr "Radacină pătrată"
 
 #: ../ui/basic_buttons_gtk2.ui.h:48 ../ui/basic_buttons_gtk3.ui.h:48
 #: ../ui/scientific_buttons_gtk2.ui.h:24 ../ui/scientific_buttons_gtk3.ui.h:24
@@ -626,7 +626,7 @@ msgstr "Procentaj"
 #: ../ui/classic_view.ui.h:1 ../ui/main_frame.ui.h:1
 #: ../ui/main_frame_hildon.ui.h:35 ../ui/paper_view.ui.h:1
 msgid "The main program window."
-msgstr "Fereastra progam principala"
+msgstr "Fereastră de progam principală"
 
 #: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
 msgid "Formula entry text field - enter string expression to compute here."
@@ -644,7 +644,7 @@ msgstr "AC"
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:6
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:6
 msgid "Reset calculator (clear all)"
-msgstr "Reseteaza calculatorul (ºterge tot)"
+msgstr "Resetează calculatorul (șterge tot)"
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:3 ../ui/dispctrl_bottom_gtk3.ui.h:3
 #: ../ui/dispctrl_right_gtk2.ui.h:5 ../ui/dispctrl_right_gtk3.ui.h:5
@@ -659,7 +659,7 @@ msgstr "C"
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:4
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:4
 msgid "Clear display"
-msgstr "Sterge afiºajul"
+msgstr "Șterge afișajul"
 
 #: ../ui/dispctrl_bottom_gtk2.ui.h:5 ../ui/dispctrl_bottom_gtk3.ui.h:5
 #: ../ui/dispctrl_right_gtk2.ui.h:3 ../ui/dispctrl_right_gtk3.ui.h:3
@@ -673,23 +673,23 @@ msgstr "<-"
 #: ../ui/dispctrl_right_vertical_gtk2.ui.h:2
 #: ../ui/dispctrl_right_vertical_gtk3.ui.h:2
 msgid "Backspace"
-msgstr "Spaþiu inapoi"
+msgstr "Spațiu înapoi"
 
 #: ../ui/main_frame.ui.h:2 ../ui/main_frame_hildon.ui.h:1
 msgid "_File"
-msgstr "_Fiºier"
+msgstr "_Fișier"
 
 #: ../ui/main_frame.ui.h:3 ../ui/main_frame_hildon.ui.h:3
 msgid "_Edit"
-msgstr "_Editeaza"
+msgstr "_Editează"
 
 #: ../ui/main_frame.ui.h:4 ../ui/main_frame_hildon.ui.h:4
 msgid "Cu_t Display Value"
-msgstr "Sterge valoarea afiºata"
+msgstr "Șterge valoarea afișată"
 
 #: ../ui/main_frame.ui.h:5 ../ui/main_frame_hildon.ui.h:5
 msgid "_Copy Display Value"
-msgstr "Copiaza valorea afiºata"
+msgstr "Copiază valorea afișată"
 
 #: ../ui/main_frame.ui.h:6
 msgid "_Paste and Append to Display Value"
@@ -697,19 +697,19 @@ msgstr ""
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
-msgstr "_Preferinþe..."
+msgstr "_Preferințe..."
 
 #: ../ui/main_frame.ui.h:8 ../ui/main_frame_hildon.ui.h:8
 msgid "_View"
-msgstr "_Mod de afiºare"
+msgstr "_Mod de afișare"
 
 #: ../ui/main_frame.ui.h:9 ../ui/main_frame_hildon.ui.h:9
 msgid "_Basic Mode"
-msgstr "Mod de _baza"
+msgstr "_Mod de bază"
 
 #: ../ui/main_frame.ui.h:10 ../ui/main_frame_hildon.ui.h:10
 msgid "_Scientific Mode"
-msgstr "Mod _ºtinþific"
+msgstr "_Mod ștințific"
 
 #: ../ui/main_frame.ui.h:11
 msgid "_Paper Mode"
@@ -722,12 +722,12 @@ msgstr "Butoane"
 
 #: ../ui/main_frame.ui.h:13 ../ui/main_frame_hildon.ui.h:12
 msgid "Display Control"
-msgstr "Controleaza afiºajul"
+msgstr "Controlează afișajul"
 
 #: ../ui/main_frame.ui.h:14 ../ui/main_frame_hildon.ui.h:13
 #: ../ui/prefs_gtk2.ui.h:53 ../ui/prefs_gtk3.ui.h:53
 msgid "Functions"
-msgstr "Funcþii"
+msgstr "Funcții"
 
 #: ../ui/main_frame.ui.h:15 ../ui/main_frame_hildon.ui.h:14
 msgid "Logical"
@@ -743,7 +743,7 @@ msgstr "_Calculator"
 
 #: ../ui/main_frame.ui.h:19 ../ui/main_frame_hildon.ui.h:18
 msgid "_Number bases"
-msgstr "Baza de _numerotaþie"
+msgstr "_Bază de numerotație"
 
 #: ../ui/main_frame.ui.h:20 ../ui/main_frame_hildon.ui.h:19
 msgid "_Decimal"
@@ -763,7 +763,7 @@ msgstr "_Binar"
 
 #: ../ui/main_frame.ui.h:24 ../ui/main_frame_hildon.ui.h:23
 msgid "Angle _units"
-msgstr "Unitaþile unghiurilor"
+msgstr "Unitățile unghiurilor"
 
 #: ../ui/main_frame.ui.h:25 ../ui/main_frame_hildon.ui.h:24
 msgid "D_egrees"
@@ -779,7 +779,7 @@ msgstr "_Grade"
 
 #: ../ui/main_frame.ui.h:28 ../ui/main_frame_hildon.ui.h:27
 msgid "Notation _modes"
-msgstr "_Moduri de notaþie"
+msgstr "_Moduri de notație"
 
 #: ../ui/main_frame.ui.h:29 ../ui/main_frame_hildon.ui.h:28
 msgid "_Algebraic"
@@ -787,7 +787,7 @@ msgstr "_Algebric"
 
 #: ../ui/main_frame.ui.h:30 ../ui/main_frame_hildon.ui.h:29
 msgid "_Reverse Polish (RPN)"
-msgstr "Logica Poloneza inve_rsa (RPN)"
+msgstr "_Logica Poloneza inversa (RPN)"
 
 #: ../ui/main_frame.ui.h:31 ../ui/main_frame_hildon.ui.h:30
 msgid "_Formula Entry"
@@ -799,11 +799,11 @@ msgstr "_Ajutor"
 
 #: ../ui/main_frame_hildon.ui.h:2
 msgid "_Quit"
-msgstr "_Inchide"
+msgstr "_Închide"
 
 #: ../ui/main_frame_hildon.ui.h:6
 msgid "_Paste As Display Value"
-msgstr "Insereaza valoarea afiºata"
+msgstr "Inserează valoarea afișată"
 
 #: ../ui/main_frame_hildon.ui.h:32
 msgid "_About..."
@@ -827,15 +827,15 @@ msgstr "Binar"
 
 #: ../ui/prefs_gtk2.ui.h:5 ../ui/prefs_gtk3.ui.h:5 ../ui/prefs-ume.ui.h:1
 msgid "galculator - Preferences"
-msgstr "galculator - Preferinþe"
+msgstr "galculator - Preferințe"
 
 #: ../ui/prefs_gtk2.ui.h:6 ../ui/prefs_gtk3.ui.h:6 ../ui/prefs-ume.ui.h:2
 msgid "A dialog that is used to change preferences settings."
-msgstr "O fereastra de dialog pentru setarea preferintelor."
+msgstr "O fereastră de dialog pentru setarea preferințelor."
 
 #: ../ui/prefs_gtk2.ui.h:7 ../ui/prefs_gtk3.ui.h:7 ../ui/prefs-ume.ui.h:3
 msgid "Closes the dialog."
-msgstr "Inchide fereastra."
+msgstr "Închide fereastra."
 
 #: ../ui/prefs_gtk2.ui.h:8 ../ui/prefs_gtk3.ui.h:8
 msgid "<b>Appearance</b>"
@@ -915,15 +915,15 @@ msgstr "<b>Module vizibile</b>"
 
 #: ../ui/prefs_gtk2.ui.h:27 ../ui/prefs_gtk3.ui.h:27 ../ui/prefs-ume.ui.h:6
 msgid "Angle base units"
-msgstr "Unitatea de masura pentru unghiuri"
+msgstr "Unitatea de masură pentru unghiuri"
 
 #: ../ui/prefs_gtk2.ui.h:28 ../ui/prefs_gtk3.ui.h:28 ../ui/prefs-ume.ui.h:7
 msgid "Notation"
-msgstr "Notaþie"
+msgstr "Notație"
 
 #: ../ui/prefs_gtk2.ui.h:29 ../ui/prefs_gtk3.ui.h:29 ../ui/prefs-ume.ui.h:8
 msgid "Arithmetic operation"
-msgstr "Operatie aritmetica"
+msgstr "Operație aritmetică"
 
 #: ../ui/prefs_gtk2.ui.h:30 ../ui/prefs_gtk3.ui.h:30 ../ui/prefs-ume.ui.h:9
 msgid "Open brackets"
@@ -931,11 +931,11 @@ msgstr "Deschide paranteze"
 
 #: ../ui/prefs_gtk2.ui.h:31 ../ui/prefs_gtk3.ui.h:31 ../ui/prefs-ume.ui.h:10
 msgid "Number base units"
-msgstr "Baza de numerotaþie"
+msgstr "Bază de numerotație"
 
 #: ../ui/prefs_gtk2.ui.h:32 ../ui/prefs_gtk3.ui.h:32 ../ui/prefs-ume.ui.h:11
 msgid "Display"
-msgstr "Afiºaj"
+msgstr "Afișaj"
 
 #: ../ui/prefs_gtk2.ui.h:33 ../ui/prefs_gtk3.ui.h:33 ../ui/prefs-ume.ui.h:12
 msgid "<b>Font</b>"
@@ -943,7 +943,7 @@ msgstr "<b>Font</b>"
 
 #: ../ui/prefs_gtk2.ui.h:34 ../ui/prefs_gtk3.ui.h:34 ../ui/prefs-ume.ui.h:13
 msgid "Use custom button font"
-msgstr "Utilizeaza un font anume pentru butoane"
+msgstr "Utilizează un font anume pentru butoane"
 
 #: ../ui/prefs_gtk2.ui.h:35 ../ui/prefs_gtk3.ui.h:35 ../ui/prefs-ume.ui.h:14
 msgid "Button font:"
@@ -959,11 +959,11 @@ msgstr "<b>Dimensiune</b>"
 
 #: ../ui/prefs_gtk2.ui.h:38 ../ui/prefs_gtk3.ui.h:38 ../ui/prefs-ume.ui.h:17
 msgid "Minimal button width:"
-msgstr "Laþimea minima a butonului:"
+msgstr "Lațimea minimă a butonului:"
 
 #: ../ui/prefs_gtk2.ui.h:39 ../ui/prefs_gtk3.ui.h:39 ../ui/prefs-ume.ui.h:18
 msgid "Minimal button height:"
-msgstr "Inalþimea minima a butonului:"
+msgstr "Înălțimea minimă a butonului:"
 
 #: ../ui/prefs_gtk2.ui.h:41 ../ui/prefs_gtk3.ui.h:41
 msgid "<b>User defined constants:</b>"
@@ -987,15 +987,15 @@ msgstr "Adunare"
 
 #: ../ui/prefs_gtk2.ui.h:46 ../ui/prefs_gtk3.ui.h:46
 msgid "Update"
-msgstr "Actualizeaza"
+msgstr "Actualizează"
 
 #: ../ui/prefs_gtk2.ui.h:47 ../ui/prefs_gtk3.ui.h:47
 msgid "Delete"
-msgstr "Sterge"
+msgstr "Șterge"
 
 #: ../ui/prefs_gtk2.ui.h:48 ../ui/prefs_gtk3.ui.h:48
 msgid "Clear"
-msgstr "Anuleaza"
+msgstr "Anulează"
 
 #: ../ui/prefs_gtk2.ui.h:49 ../ui/prefs_gtk3.ui.h:49
 #: ../ui/scientific_buttons_gtk2.ui.h:21 ../ui/scientific_buttons_gtk3.ui.h:21
@@ -1076,11 +1076,11 @@ msgstr "<b>RPN</b>"
 
 #: ../ui/prefs_gtk2.ui.h:69 ../ui/prefs_gtk3.ui.h:69 ../ui/prefs-ume.ui.h:23
 msgid "finite stack size (x, y, z, t)"
-msgstr "stiva de lungime finita (x, y, z, t)"
+msgstr "stivă de lungime finită (x, y, z, t)"
 
 #: ../ui/prefs_gtk2.ui.h:70 ../ui/prefs_gtk3.ui.h:70 ../ui/prefs-ume.ui.h:24
 msgid "infinite stack size"
-msgstr "stiva infinita"
+msgstr "stivă infinită"
 
 #: ../ui/prefs_gtk2.ui.h:71 ../ui/prefs_gtk3.ui.h:71 ../ui/prefs-ume.ui.h:25
 msgid "<b>Startup</b>"
@@ -1088,7 +1088,7 @@ msgstr "<b>Pornire</b>"
 
 #: ../ui/prefs_gtk2.ui.h:72 ../ui/prefs_gtk3.ui.h:72 ../ui/prefs-ume.ui.h:26
 msgid "Remember display value on exit"
-msgstr "Memoreaza valoarea afiºajului la ieºire"
+msgstr "Memorează valoarea afișajului la ieșire"
 
 #: ../ui/prefs_gtk2.ui.h:73 ../ui/prefs_gtk3.ui.h:73
 msgid "<b>Visibility</b>"
@@ -1096,7 +1096,7 @@ msgstr "<b>Vizibile</b>"
 
 #: ../ui/prefs_gtk2.ui.h:74 ../ui/prefs_gtk3.ui.h:74
 msgid "Show menu bar"
-msgstr "Afiseaza bara de meniu"
+msgstr "Afișează bara de meniu"
 
 #: ../ui/prefs_gtk2.ui.h:75 ../ui/prefs_gtk3.ui.h:75 ../ui/prefs-ume.ui.h:27
 msgid "General"
@@ -1108,7 +1108,7 @@ msgstr "tan"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:2 ../ui/scientific_buttons_gtk3.ui.h:2
 msgid "Tangent"
-msgstr "Tangenta"
+msgstr "Tangentă"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:3 ../ui/scientific_buttons_gtk3.ui.h:3
 msgid "ln"
@@ -1156,11 +1156,11 @@ msgstr "X^2"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:16 ../ui/scientific_buttons_gtk3.ui.h:16
 msgid "Square"
-msgstr "Patrat"
+msgstr "Pătrat"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:19 ../ui/scientific_buttons_gtk3.ui.h:19
 msgid "User defined functions"
-msgstr "Funcþie definita de utilizator"
+msgstr "Funcție definită de utilizator"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:20 ../ui/scientific_buttons_gtk3.ui.h:20
 msgid "fun"
@@ -1216,7 +1216,7 @@ msgstr "XOR"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:37 ../ui/scientific_buttons_gtk3.ui.h:37
 msgid "Logical XOR"
-msgstr "OR exclusif"
+msgstr "OR exclusiv"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:38 ../ui/scientific_buttons_gtk3.ui.h:38
 msgid "CMP"
@@ -1224,7 +1224,7 @@ msgstr "CMP"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:39 ../ui/scientific_buttons_gtk3.ui.h:39
 msgid "Bitwise complement"
-msgstr "Complement pe biþi"
+msgstr "Complement pe biți"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:41 ../ui/scientific_buttons_gtk3.ui.h:41
 msgid "Hexadecimal 0xC"
@@ -1276,7 +1276,7 @@ msgstr "MOD"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:61 ../ui/scientific_buttons_gtk3.ui.h:61
 msgid "Modulus"
-msgstr "Modulo"
+msgstr "Modul"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:74 ../ui/scientific_buttons_gtk3.ui.h:74
 msgid "LSH"
@@ -1284,4 +1284,4 @@ msgstr "LSH"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:75 ../ui/scientific_buttons_gtk3.ui.h:75
 msgid "Left shift"
-msgstr "Deplasare dreapta"
+msgstr "Deplasare stânga"
