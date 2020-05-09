@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Oleh, 2014
 # Shahor <shahorr@gmail.com>, 2014
@@ -11,14 +11,15 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-17 16:18+0100\n"
-"PO-Revision-Date: 2015-05-09 07:10+0000\n"
-"Last-Translator: Микола Ткач <Stuartlittle1970@gmail.com>\n"
+"PO-Revision-Date: 2020-05-09 13:43+0300\n"
+"Last-Translator: Юрій Яновський <lytvyn349@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/mate/MATE/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../galculator.desktop.in.h:1
 msgid "Perform simple and scientific calculations"
@@ -26,12 +27,14 @@ msgstr "Виконання простих і наукових розрахунк
 
 #: ../src/callbacks.c:1051
 msgid "save here"
-msgstr "зберегти тут "
+msgstr "зберегти тут"
 
 #: ../src/callbacks.c:1427
 #, c-format
 msgid "[%s] on_prefs_number_combo_changed failed to retrieve iter. %s\n"
-msgstr "[%s] on_prefs_number_combo_changed не вдалося отримати  процес\n. %s\n"
+msgstr ""
+"[%s] on_prefs_number_combo_changed не вдалося отримати  процес\n"
+". %s\n"
 
 #: ../src/callbacks.c:1590
 #, c-format
@@ -54,7 +57,20 @@ msgid ""
 "Compiled against GTK version %i.%i.%i\n"
 "Linked against GTK version %i.%i.%i\n"
 "%s-precision floating point numbers.\n"
-msgstr "\n%s v%s, (c) 2002-2014 Simon Flöry\n\n Використання: %s [ключі]  \n\nключі:\n(Параметри GTK) \n -h, --help\t\tПоказати цю довідку\n -v, --version\t\tНадрукувати інформацію про версію\n\nЗібрано з GTK %i.%i.%i версії\nЗлінковано з GTK %i.%i.%i версії\n%s-точність чисел з плаваючою точкою.\n"
+msgstr ""
+"\n"
+"%s v%s, (c) 2002-2014 Simon Flöry\n"
+"\n"
+" Використання: %s [ключі]  \n"
+"\n"
+"ключі:\n"
+"(Параметри GTK) \n"
+" -h, --help\t\tПоказати цю довідку\n"
+" -v, --version\t\tНадрукувати інформацію про версію\n"
+"\n"
+"Зібрано з GTK %i.%i.%i версії\n"
+"Злінковано з GTK %i.%i.%i версії\n"
+"%s-точність чисел з плаваючою точкою.\n"
 
 #: ../src/main.c:196
 #, c-format
@@ -64,10 +80,11 @@ msgstr "[%s] файл конфігурації: Не вдалося створи
 #: ../src/main.c:201
 #, c-format
 msgid ""
-"[%s] configuration file: We will move the configuration file from %s to %s. "
-"After you quit %s, you may remove the configuration file from its old "
-"location %s.\n"
-msgstr "[%s] файл конфігурації: Ми перемістимо файл конфігурації з %s у %s. Після завершення %s ви можете вилучити файл конфігурації зі старого розташування %s. \n"
+"[%s] configuration file: We will move the configuration file from %s to %s. After you quit %s, you may remove the configuration "
+"file from its old location %s.\n"
+msgstr ""
+"[%s] файл конфігурації: Ми перемістимо файл конфігурації з %s у %s. Після завершення %s ви можете вилучити файл конфігурації зі "
+"старого розташування %s. \n"
 
 #: ../src/galculator.h:92
 msgid "Please submit a bugreport."
@@ -115,58 +132,50 @@ msgstr "[%s] файл конфігурації: невідоме входжен�
 
 #: ../src/config_file.c:256
 #, c-format
-msgid ""
-"[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
+msgid "[%s] configuration file: %s has to be TRUE or FALSE. Using defaults. %s\n"
 msgstr "[%s] файл конфігурації: %s повинен бути TRUE або FALSE. Використовуються типові: %s \n"
 
 #: ../src/config_file.c:262
 #, c-format
-msgid ""
-"[%s] configuration file: failed to convert %s to a number properly. Have you"
-" changed your locales? %s\n"
+msgid "[%s] configuration file: failed to convert %s to a number properly. Have you changed your locales? %s\n"
 msgstr "[%s] файл конфігурації: не вдалося коректно конвертувати %s у число. Ви змінили локаль? %s \n"
 
 #: ../src/config_file.c:265
 #, c-format
-msgid ""
-"[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
+msgid "[%s] configuration file: ignoring unknown key_type in config structure. %s\n"
 msgstr "[%s] файл конфігурації: ігнорується невідомий key_type у структурі конфігурації. %s \n"
 
 #: ../src/config_file.c:284
 #, c-format
-msgid ""
-"[%s] found unknown section %s in configuration file %s. Using preceding "
-"section.\n"
+msgid "[%s] found unknown section %s in configuration file %s. Using preceding section.\n"
 msgstr "[%s] знайдена невідома секція %s у файлі конфігурації %s. Використовується попередня секція. \n"
 
 #: ../src/config_file.c:403
 #, c-format
 msgid ""
-"[%s] configuration file: couldn't open configuration file %s for reading. "
-"Nothing to worry about if you are starting %s for the first time. Using "
-"defaults.\n"
-msgstr "[%s] файл конфігурації: не вдалося відкрити файл конфігурації %s для читання. Турбуватися немає про що, якщо ви запускаєте %s вперше. Використовуються типові налаштування. \n"
+"[%s] configuration file: couldn't open configuration file %s for reading. Nothing to worry about if you are starting %s for the "
+"first time. Using defaults.\n"
+msgstr ""
+"[%s] файл конфігурації: не вдалося відкрити файл конфігурації %s для читання. Турбуватися немає про що, якщо ви запускаєте %s "
+"вперше. Використовуються типові налаштування. \n"
 
 #: ../src/config_file.c:432
 #, c-format
 msgid ""
-"[%s] configuration file - We reset at least one separator character as it "
-"coincides with the decimal point. If you recently changed your locales "
-"settings, this is nothing to worry about.\n"
-msgstr "[%s] файл налаштувань - Ми скидаємо принаймні один роздільний знак, коли він збігається з десятковою крапкою. Якщо ви нещодавно змінювали свої мовні налаштування, тоді нічого хвилюватись.\n"
+"[%s] configuration file - We reset at least one separator character as it coincides with the decimal point. If you recently "
+"changed your locales settings, this is nothing to worry about.\n"
+msgstr ""
+"[%s] файл налаштувань - Ми скидаємо принаймні один роздільний знак, коли він збігається з десятковою крапкою. Якщо ви нещодавно "
+"змінювали свої мовні налаштування, тоді нічого хвилюватись.\n"
 
 #: ../src/config_file.c:470
 #, c-format
-msgid ""
-"[%s] configuration file: strange boolean when writing. Skipping this key. "
-"%s\n"
+msgid "[%s] configuration file: strange boolean when writing. Skipping this key. %s\n"
 msgstr "[%s] файл налаштувань: дивний логічний знак при написанні. Пропускаю цей знак. %s\n"
 
 #: ../src/config_file.c:478
 #, c-format
-msgid ""
-"[%s] configuration file: ignoring unknown \"key_type\" in "
-"\"config_structure\". %s\n"
+msgid "[%s] configuration file: ignoring unknown \"key_type\" in \"config_structure\". %s\n"
 msgstr "[%s] файл налаштувань: пропускаю невідомий \"key_type\" у \"config_structure\". %s\n"
 
 #: ../src/config_file.c:501
@@ -176,9 +185,7 @@ msgstr "[%s] файл конфігурації: не вдалося зберег
 
 #: ../src/display.c:420
 #, c-format
-msgid ""
-"[%s] Line_index exceeds valid range in function \"display_delete_line\". "
-"%s\n"
+msgid "[%s] Line_index exceeds valid range in function \"display_delete_line\". %s\n"
 msgstr "[%s] Line_index перевищує можливе значення у функції \"display_delete_line\". %s\n"
 
 #: ../src/display.c:598
@@ -236,10 +243,11 @@ msgstr "[%s] невідома система числення у функції 
 #: ../src/general_functions.c:568
 #, c-format
 msgid ""
-"[%s] failed to convert %s to a number properly in function "
-"\"string2double\". Have you changed your locales? Deleting your "
+"[%s] failed to convert %s to a number properly in function \"string2double\". Have you changed your locales? Deleting your "
 "configuration file might solve this problem. %s\n"
-msgstr "[%s] не вдалося правильно перетворити %s у цифру у фукнції \"string2double\". Ви змінювали мовні налаштування? Вилучення файлу з налаштуваннями може вирішити цю проблему. %s\n"
+msgstr ""
+"[%s] не вдалося правильно перетворити %s у цифру у фукнції \"string2double\". Ви змінювали мовні налаштування? Вилучення файлу з "
+"налаштуваннями може вирішити цю проблему. %s\n"
 
 #: ../src/general_functions.c:586
 #, c-format
@@ -281,15 +289,19 @@ msgid ""
 "[%s] length of decimal point (in locale) is not supported: >%s<\n"
 "You might face problems when using %s! %s\n"
 ")"
-msgstr "[%s] довжина десяткової крапки (у мовах) не підтримується: >%s<\nВ вас можуть виникнути складнощі при використанні %s! %s\n)"
+msgstr ""
+"[%s] довжина десяткової крапки (у мовах) не підтримується: >%s<\n"
+"В вас можуть виникнути складнощі при використанні %s! %s\n"
+")"
 
 #: ../src/ui.c:89
 #, c-format
 msgid ""
-"[%s] Couldn't load %s. This file is necessary     to build galculator's user"
-" interface. Make sure you did a make install and the file     is "
-"accessible!\n"
-msgstr "[%s] Не вдалося завантажити %s. Цей файл є необхідним для створення користувацького інтерфейсу galculator. Переконайтеся, що провели встановлення і файл є доступним!\n"
+"[%s] Couldn't load %s. This file is necessary     to build galculator's user interface. Make sure you did a make install and the "
+"file     is accessible!\n"
+msgstr ""
+"[%s] Не вдалося завантажити %s. Цей файл є необхідним для створення користувацького інтерфейсу galculator. Переконайтеся, що "
+"провели встановлення і файл є доступним!\n"
 
 #: ../src/ui.c:959 ../ui/main_frame.ui.h:17 ../ui/main_frame_hildon.ui.h:16
 msgid "Show _menu bar"
@@ -320,48 +332,40 @@ msgstr "Змінна"
 msgid "Expression"
 msgstr "Вираз"
 
-#: ../src/ui.c:1211 ../ui/basic_buttons_gtk2.ui.h:43
-#: ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
+#: ../src/ui.c:1211 ../ui/basic_buttons_gtk2.ui.h:43 ../ui/basic_buttons_gtk3.ui.h:43 ../ui/scientific_buttons_gtk2.ui.h:98
 #: ../ui/scientific_buttons_gtk3.ui.h:98
 msgid "="
 msgstr "="
 
-#: ../src/ui.c:1211 ../src/ui.c:1223 ../ui/basic_buttons_gtk2.ui.h:44
-#: ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
+#: ../src/ui.c:1211 ../src/ui.c:1223 ../ui/basic_buttons_gtk2.ui.h:44 ../ui/basic_buttons_gtk3.ui.h:44 ../ui/paper_view.ui.h:2
 #: ../ui/scientific_buttons_gtk2.ui.h:99 ../ui/scientific_buttons_gtk3.ui.h:99
 msgid "Enter"
-msgstr "Обчислити результат"
+msgstr "Обчислити"
 
-#: ../src/ui.c:1213 ../ui/scientific_buttons_gtk2.ui.h:17
-#: ../ui/scientific_buttons_gtk3.ui.h:17
+#: ../src/ui.c:1213 ../ui/scientific_buttons_gtk2.ui.h:17 ../ui/scientific_buttons_gtk3.ui.h:17
 msgid "x^y"
 msgstr "x^y"
 
-#: ../src/ui.c:1213 ../src/ui.c:1225 ../ui/scientific_buttons_gtk2.ui.h:18
-#: ../ui/scientific_buttons_gtk3.ui.h:18
+#: ../src/ui.c:1213 ../src/ui.c:1225 ../ui/scientific_buttons_gtk2.ui.h:18 ../ui/scientific_buttons_gtk3.ui.h:18
 msgid "Power"
 msgstr "Зведення у ступінь"
 
-#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:33
-#: ../ui/basic_buttons_gtk3.ui.h:33 ../ui/scientific_buttons_gtk2.ui.h:88
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:33 ../ui/basic_buttons_gtk3.ui.h:33 ../ui/scientific_buttons_gtk2.ui.h:88
 #: ../ui/scientific_buttons_gtk3.ui.h:88
 msgid "("
 msgstr "("
 
-#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:34
-#: ../ui/basic_buttons_gtk3.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:89
+#: ../src/ui.c:1215 ../ui/basic_buttons_gtk2.ui.h:34 ../ui/basic_buttons_gtk3.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:89
 #: ../ui/scientific_buttons_gtk3.ui.h:89
 msgid "Open Bracket"
 msgstr "Відкриваюча дужка"
 
-#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:31
-#: ../ui/basic_buttons_gtk3.ui.h:31 ../ui/scientific_buttons_gtk2.ui.h:86
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:31 ../ui/basic_buttons_gtk3.ui.h:31 ../ui/scientific_buttons_gtk2.ui.h:86
 #: ../ui/scientific_buttons_gtk3.ui.h:86
 msgid ")"
 msgstr ")"
 
-#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:32
-#: ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
+#: ../src/ui.c:1217 ../ui/basic_buttons_gtk2.ui.h:32 ../ui/basic_buttons_gtk3.ui.h:32 ../ui/scientific_buttons_gtk2.ui.h:87
 #: ../ui/scientific_buttons_gtk3.ui.h:87
 msgid "Close Bracket"
 msgstr "Закриваюча дужка"
@@ -388,7 +392,7 @@ msgstr "прокрутити"
 
 #: ../src/ui.c:1229
 msgid "roll down stack"
-msgstr "Перемістити стек донизу"
+msgstr "перемістити стек донизу"
 
 #: ../src/ui.c:1300
 msgid "Result Display"
@@ -396,9 +400,7 @@ msgstr "Показ результату"
 
 #: ../src/flex_parser.l:233
 #, c-format
-msgid ""
-"[%s] flex parser was called more than %i times. Do you know what you are "
-"doing? If not: %s\n"
+msgid "[%s] flex parser was called more than %i times. Do you know what you are doing? If not: %s\n"
 msgstr "[%s] парсер гнучкості був викликаний більше, ніж %i разів. Ви знаєте, що робите? Якщо ні: %s\n"
 
 #: ../ui/about.ui.in.h:1
@@ -413,267 +415,253 @@ msgstr "Авторське право (c) 2002-2014 by Simon Flöry <simon.floer
 msgid "a GTK+ based scientific calculator"
 msgstr "Інженерний калькулятор на базі GTK+"
 
-#: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1
-#: ../ui/scientific_buttons_gtk2.ui.h:52 ../ui/scientific_buttons_gtk3.ui.h:52
+#: ../ui/basic_buttons_gtk2.ui.h:1 ../ui/basic_buttons_gtk3.ui.h:1 ../ui/scientific_buttons_gtk2.ui.h:52
+#: ../ui/scientific_buttons_gtk3.ui.h:52
 msgid "7"
 msgstr "7"
 
-#: ../ui/basic_buttons_gtk2.ui.h:2 ../ui/basic_buttons_gtk3.ui.h:2
-#: ../ui/scientific_buttons_gtk2.ui.h:53 ../ui/scientific_buttons_gtk3.ui.h:53
+#: ../ui/basic_buttons_gtk2.ui.h:2 ../ui/basic_buttons_gtk3.ui.h:2 ../ui/scientific_buttons_gtk2.ui.h:53
+#: ../ui/scientific_buttons_gtk3.ui.h:53
 msgid "Seven"
 msgstr "Сім"
 
-#: ../ui/basic_buttons_gtk2.ui.h:3 ../ui/basic_buttons_gtk3.ui.h:3
-#: ../ui/scientific_buttons_gtk2.ui.h:54 ../ui/scientific_buttons_gtk3.ui.h:54
+#: ../ui/basic_buttons_gtk2.ui.h:3 ../ui/basic_buttons_gtk3.ui.h:3 ../ui/scientific_buttons_gtk2.ui.h:54
+#: ../ui/scientific_buttons_gtk3.ui.h:54
 msgid "8"
 msgstr "8"
 
-#: ../ui/basic_buttons_gtk2.ui.h:4 ../ui/basic_buttons_gtk3.ui.h:4
-#: ../ui/scientific_buttons_gtk2.ui.h:55 ../ui/scientific_buttons_gtk3.ui.h:55
+#: ../ui/basic_buttons_gtk2.ui.h:4 ../ui/basic_buttons_gtk3.ui.h:4 ../ui/scientific_buttons_gtk2.ui.h:55
+#: ../ui/scientific_buttons_gtk3.ui.h:55
 msgid "Eight"
 msgstr "Вісім"
 
-#: ../ui/basic_buttons_gtk2.ui.h:5 ../ui/basic_buttons_gtk3.ui.h:5
-#: ../ui/scientific_buttons_gtk2.ui.h:56 ../ui/scientific_buttons_gtk3.ui.h:56
+#: ../ui/basic_buttons_gtk2.ui.h:5 ../ui/basic_buttons_gtk3.ui.h:5 ../ui/scientific_buttons_gtk2.ui.h:56
+#: ../ui/scientific_buttons_gtk3.ui.h:56
 msgid "9"
 msgstr "9"
 
-#: ../ui/basic_buttons_gtk2.ui.h:6 ../ui/basic_buttons_gtk3.ui.h:6
-#: ../ui/scientific_buttons_gtk2.ui.h:57 ../ui/scientific_buttons_gtk3.ui.h:57
+#: ../ui/basic_buttons_gtk2.ui.h:6 ../ui/basic_buttons_gtk3.ui.h:6 ../ui/scientific_buttons_gtk2.ui.h:57
+#: ../ui/scientific_buttons_gtk3.ui.h:57
 msgid "Nine"
 msgstr "Дев’ять"
 
-#: ../ui/basic_buttons_gtk2.ui.h:7 ../ui/basic_buttons_gtk3.ui.h:7
-#: ../ui/scientific_buttons_gtk2.ui.h:58 ../ui/scientific_buttons_gtk3.ui.h:58
+#: ../ui/basic_buttons_gtk2.ui.h:7 ../ui/basic_buttons_gtk3.ui.h:7 ../ui/scientific_buttons_gtk2.ui.h:58
+#: ../ui/scientific_buttons_gtk3.ui.h:58
 msgid "/"
 msgstr "/"
 
-#: ../ui/basic_buttons_gtk2.ui.h:8 ../ui/basic_buttons_gtk3.ui.h:8
-#: ../ui/scientific_buttons_gtk2.ui.h:59 ../ui/scientific_buttons_gtk3.ui.h:59
+#: ../ui/basic_buttons_gtk2.ui.h:8 ../ui/basic_buttons_gtk3.ui.h:8 ../ui/scientific_buttons_gtk2.ui.h:59
+#: ../ui/scientific_buttons_gtk3.ui.h:59
 msgid "Divide"
 msgstr "Поділити"
 
-#: ../ui/basic_buttons_gtk2.ui.h:9 ../ui/basic_buttons_gtk3.ui.h:9
-#: ../ui/scientific_buttons_gtk2.ui.h:62 ../ui/scientific_buttons_gtk3.ui.h:62
+#: ../ui/basic_buttons_gtk2.ui.h:9 ../ui/basic_buttons_gtk3.ui.h:9 ../ui/scientific_buttons_gtk2.ui.h:62
+#: ../ui/scientific_buttons_gtk3.ui.h:62
 msgid "4"
 msgstr "4"
 
-#: ../ui/basic_buttons_gtk2.ui.h:10 ../ui/basic_buttons_gtk3.ui.h:10
-#: ../ui/scientific_buttons_gtk2.ui.h:63 ../ui/scientific_buttons_gtk3.ui.h:63
+#: ../ui/basic_buttons_gtk2.ui.h:10 ../ui/basic_buttons_gtk3.ui.h:10 ../ui/scientific_buttons_gtk2.ui.h:63
+#: ../ui/scientific_buttons_gtk3.ui.h:63
 msgid "Four"
 msgstr "Чотири"
 
-#: ../ui/basic_buttons_gtk2.ui.h:11 ../ui/basic_buttons_gtk3.ui.h:11
-#: ../ui/scientific_buttons_gtk2.ui.h:64 ../ui/scientific_buttons_gtk3.ui.h:64
+#: ../ui/basic_buttons_gtk2.ui.h:11 ../ui/basic_buttons_gtk3.ui.h:11 ../ui/scientific_buttons_gtk2.ui.h:64
+#: ../ui/scientific_buttons_gtk3.ui.h:64
 msgid "5"
 msgstr "5"
 
-#: ../ui/basic_buttons_gtk2.ui.h:12 ../ui/basic_buttons_gtk3.ui.h:12
-#: ../ui/scientific_buttons_gtk2.ui.h:65 ../ui/scientific_buttons_gtk3.ui.h:65
+#: ../ui/basic_buttons_gtk2.ui.h:12 ../ui/basic_buttons_gtk3.ui.h:12 ../ui/scientific_buttons_gtk2.ui.h:65
+#: ../ui/scientific_buttons_gtk3.ui.h:65
 msgid "Five"
 msgstr "П’ять"
 
-#: ../ui/basic_buttons_gtk2.ui.h:13 ../ui/basic_buttons_gtk3.ui.h:13
-#: ../ui/scientific_buttons_gtk2.ui.h:66 ../ui/scientific_buttons_gtk3.ui.h:66
+#: ../ui/basic_buttons_gtk2.ui.h:13 ../ui/basic_buttons_gtk3.ui.h:13 ../ui/scientific_buttons_gtk2.ui.h:66
+#: ../ui/scientific_buttons_gtk3.ui.h:66
 msgid "6"
 msgstr "6"
 
-#: ../ui/basic_buttons_gtk2.ui.h:14 ../ui/basic_buttons_gtk3.ui.h:14
-#: ../ui/scientific_buttons_gtk2.ui.h:67 ../ui/scientific_buttons_gtk3.ui.h:67
+#: ../ui/basic_buttons_gtk2.ui.h:14 ../ui/basic_buttons_gtk3.ui.h:14 ../ui/scientific_buttons_gtk2.ui.h:67
+#: ../ui/scientific_buttons_gtk3.ui.h:67
 msgid "Six"
 msgstr "Шість"
 
-#: ../ui/basic_buttons_gtk2.ui.h:15 ../ui/basic_buttons_gtk3.ui.h:15
-#: ../ui/scientific_buttons_gtk2.ui.h:68 ../ui/scientific_buttons_gtk3.ui.h:68
+#: ../ui/basic_buttons_gtk2.ui.h:15 ../ui/basic_buttons_gtk3.ui.h:15 ../ui/scientific_buttons_gtk2.ui.h:68
+#: ../ui/scientific_buttons_gtk3.ui.h:68
 msgid "3"
 msgstr "3"
 
-#: ../ui/basic_buttons_gtk2.ui.h:16 ../ui/basic_buttons_gtk3.ui.h:16
-#: ../ui/scientific_buttons_gtk2.ui.h:69 ../ui/scientific_buttons_gtk3.ui.h:69
+#: ../ui/basic_buttons_gtk2.ui.h:16 ../ui/basic_buttons_gtk3.ui.h:16 ../ui/scientific_buttons_gtk2.ui.h:69
+#: ../ui/scientific_buttons_gtk3.ui.h:69
 msgid "Three"
 msgstr "Три"
 
-#: ../ui/basic_buttons_gtk2.ui.h:17 ../ui/basic_buttons_gtk3.ui.h:17
-#: ../ui/scientific_buttons_gtk2.ui.h:70 ../ui/scientific_buttons_gtk3.ui.h:70
+#: ../ui/basic_buttons_gtk2.ui.h:17 ../ui/basic_buttons_gtk3.ui.h:17 ../ui/scientific_buttons_gtk2.ui.h:70
+#: ../ui/scientific_buttons_gtk3.ui.h:70
 msgid "-"
 msgstr "-"
 
-#: ../ui/basic_buttons_gtk2.ui.h:18 ../ui/basic_buttons_gtk3.ui.h:18
-#: ../ui/scientific_buttons_gtk2.ui.h:71 ../ui/scientific_buttons_gtk3.ui.h:71
+#: ../ui/basic_buttons_gtk2.ui.h:18 ../ui/basic_buttons_gtk3.ui.h:18 ../ui/scientific_buttons_gtk2.ui.h:71
+#: ../ui/scientific_buttons_gtk3.ui.h:71
 msgid "Subtract"
 msgstr "Відняти"
 
-#: ../ui/basic_buttons_gtk2.ui.h:19 ../ui/basic_buttons_gtk3.ui.h:19
-#: ../ui/scientific_buttons_gtk2.ui.h:72 ../ui/scientific_buttons_gtk3.ui.h:72
+#: ../ui/basic_buttons_gtk2.ui.h:19 ../ui/basic_buttons_gtk3.ui.h:19 ../ui/scientific_buttons_gtk2.ui.h:72
+#: ../ui/scientific_buttons_gtk3.ui.h:72
 msgid "+"
 msgstr "+"
 
-#: ../ui/basic_buttons_gtk2.ui.h:20 ../ui/basic_buttons_gtk3.ui.h:20
-#: ../ui/scientific_buttons_gtk2.ui.h:73 ../ui/scientific_buttons_gtk3.ui.h:73
+#: ../ui/basic_buttons_gtk2.ui.h:20 ../ui/basic_buttons_gtk3.ui.h:20 ../ui/scientific_buttons_gtk2.ui.h:73
+#: ../ui/scientific_buttons_gtk3.ui.h:73
 msgid "Sum"
 msgstr "Додати"
 
-#: ../ui/basic_buttons_gtk2.ui.h:21 ../ui/basic_buttons_gtk3.ui.h:21
-#: ../ui/scientific_buttons_gtk2.ui.h:76 ../ui/scientific_buttons_gtk3.ui.h:76
+#: ../ui/basic_buttons_gtk2.ui.h:21 ../ui/basic_buttons_gtk3.ui.h:21 ../ui/scientific_buttons_gtk2.ui.h:76
+#: ../ui/scientific_buttons_gtk3.ui.h:76
 msgid "+/-"
 msgstr "+/-"
 
-#: ../ui/basic_buttons_gtk2.ui.h:22 ../ui/basic_buttons_gtk3.ui.h:22
-#: ../ui/scientific_buttons_gtk2.ui.h:77 ../ui/scientific_buttons_gtk3.ui.h:77
+#: ../ui/basic_buttons_gtk2.ui.h:22 ../ui/basic_buttons_gtk3.ui.h:22 ../ui/scientific_buttons_gtk2.ui.h:77
+#: ../ui/scientific_buttons_gtk3.ui.h:77
 msgid "Change sign"
 msgstr "Змінити знак"
 
-#: ../ui/basic_buttons_gtk2.ui.h:23 ../ui/basic_buttons_gtk3.ui.h:23
-#: ../ui/main_frame_hildon.ui.h:34 ../ui/scientific_buttons_gtk2.ui.h:78
-#: ../ui/scientific_buttons_gtk3.ui.h:78
+#: ../ui/basic_buttons_gtk2.ui.h:23 ../ui/basic_buttons_gtk3.ui.h:23 ../ui/main_frame_hildon.ui.h:34
+#: ../ui/scientific_buttons_gtk2.ui.h:78 ../ui/scientific_buttons_gtk3.ui.h:78
 msgid "*"
 msgstr "*"
 
-#: ../ui/basic_buttons_gtk2.ui.h:24 ../ui/basic_buttons_gtk3.ui.h:24
-#: ../ui/scientific_buttons_gtk2.ui.h:79 ../ui/scientific_buttons_gtk3.ui.h:79
+#: ../ui/basic_buttons_gtk2.ui.h:24 ../ui/basic_buttons_gtk3.ui.h:24 ../ui/scientific_buttons_gtk2.ui.h:79
+#: ../ui/scientific_buttons_gtk3.ui.h:79
 msgid "Multiply"
 msgstr "Помножити"
 
-#: ../ui/basic_buttons_gtk2.ui.h:25 ../ui/basic_buttons_gtk3.ui.h:25
-#: ../ui/scientific_buttons_gtk2.ui.h:80 ../ui/scientific_buttons_gtk3.ui.h:80
+#: ../ui/basic_buttons_gtk2.ui.h:25 ../ui/basic_buttons_gtk3.ui.h:25 ../ui/scientific_buttons_gtk2.ui.h:80
+#: ../ui/scientific_buttons_gtk3.ui.h:80
 msgid "Add current display value to memory"
 msgstr "Додати поточне значення до значення у пам’яті"
 
-#: ../ui/basic_buttons_gtk2.ui.h:26 ../ui/basic_buttons_gtk3.ui.h:26
-#: ../ui/scientific_buttons_gtk2.ui.h:81 ../ui/scientific_buttons_gtk3.ui.h:81
+#: ../ui/basic_buttons_gtk2.ui.h:26 ../ui/basic_buttons_gtk3.ui.h:26 ../ui/scientific_buttons_gtk2.ui.h:81
+#: ../ui/scientific_buttons_gtk3.ui.h:81
 msgid "M+"
 msgstr "M+"
 
-#: ../ui/basic_buttons_gtk2.ui.h:27 ../ui/basic_buttons_gtk3.ui.h:27
-#: ../ui/scientific_buttons_gtk2.ui.h:82 ../ui/scientific_buttons_gtk3.ui.h:82
+#: ../ui/basic_buttons_gtk2.ui.h:27 ../ui/basic_buttons_gtk3.ui.h:27 ../ui/scientific_buttons_gtk2.ui.h:82
+#: ../ui/scientific_buttons_gtk3.ui.h:82
 msgid "Read from memory"
 msgstr "Прочитати з пам’яті"
 
-#: ../ui/basic_buttons_gtk2.ui.h:28 ../ui/basic_buttons_gtk3.ui.h:28
-#: ../ui/scientific_buttons_gtk2.ui.h:83 ../ui/scientific_buttons_gtk3.ui.h:83
+#: ../ui/basic_buttons_gtk2.ui.h:28 ../ui/basic_buttons_gtk3.ui.h:28 ../ui/scientific_buttons_gtk2.ui.h:83
+#: ../ui/scientific_buttons_gtk3.ui.h:83
 msgid "MR"
 msgstr "MR"
 
-#: ../ui/basic_buttons_gtk2.ui.h:29 ../ui/basic_buttons_gtk3.ui.h:29
-#: ../ui/scientific_buttons_gtk2.ui.h:84 ../ui/scientific_buttons_gtk3.ui.h:84
+#: ../ui/basic_buttons_gtk2.ui.h:29 ../ui/basic_buttons_gtk3.ui.h:29 ../ui/scientific_buttons_gtk2.ui.h:84
+#: ../ui/scientific_buttons_gtk3.ui.h:84
 msgid "Save to memory"
 msgstr "Зберегти у пам’яті"
 
-#: ../ui/basic_buttons_gtk2.ui.h:30 ../ui/basic_buttons_gtk3.ui.h:30
-#: ../ui/scientific_buttons_gtk2.ui.h:85 ../ui/scientific_buttons_gtk3.ui.h:85
+#: ../ui/basic_buttons_gtk2.ui.h:30 ../ui/basic_buttons_gtk3.ui.h:30 ../ui/scientific_buttons_gtk2.ui.h:85
+#: ../ui/scientific_buttons_gtk3.ui.h:85
 msgid "MS"
 msgstr "MS"
 
-#: ../ui/basic_buttons_gtk2.ui.h:35 ../ui/basic_buttons_gtk3.ui.h:35
-#: ../ui/scientific_buttons_gtk2.ui.h:90 ../ui/scientific_buttons_gtk3.ui.h:90
+#: ../ui/basic_buttons_gtk2.ui.h:35 ../ui/basic_buttons_gtk3.ui.h:35 ../ui/scientific_buttons_gtk2.ui.h:90
+#: ../ui/scientific_buttons_gtk3.ui.h:90
 msgid "0"
 msgstr "0"
 
-#: ../ui/basic_buttons_gtk2.ui.h:36 ../ui/basic_buttons_gtk3.ui.h:36
-#: ../ui/scientific_buttons_gtk2.ui.h:91 ../ui/scientific_buttons_gtk3.ui.h:91
+#: ../ui/basic_buttons_gtk2.ui.h:36 ../ui/basic_buttons_gtk3.ui.h:36 ../ui/scientific_buttons_gtk2.ui.h:91
+#: ../ui/scientific_buttons_gtk3.ui.h:91
 msgid "Zero"
 msgstr "Нуль"
 
-#: ../ui/basic_buttons_gtk2.ui.h:37 ../ui/basic_buttons_gtk3.ui.h:37
-#: ../ui/scientific_buttons_gtk2.ui.h:92 ../ui/scientific_buttons_gtk3.ui.h:92
+#: ../ui/basic_buttons_gtk2.ui.h:37 ../ui/basic_buttons_gtk3.ui.h:37 ../ui/scientific_buttons_gtk2.ui.h:92
+#: ../ui/scientific_buttons_gtk3.ui.h:92
 msgid "."
 msgstr "."
 
-#: ../ui/basic_buttons_gtk2.ui.h:38 ../ui/basic_buttons_gtk3.ui.h:38
-#: ../ui/scientific_buttons_gtk2.ui.h:93 ../ui/scientific_buttons_gtk3.ui.h:93
+#: ../ui/basic_buttons_gtk2.ui.h:38 ../ui/basic_buttons_gtk3.ui.h:38 ../ui/scientific_buttons_gtk2.ui.h:93
+#: ../ui/scientific_buttons_gtk3.ui.h:93
 msgid "Decimal point"
 msgstr "Десяткова крапка"
 
-#: ../ui/basic_buttons_gtk2.ui.h:39 ../ui/basic_buttons_gtk3.ui.h:39
-#: ../ui/scientific_buttons_gtk2.ui.h:94 ../ui/scientific_buttons_gtk3.ui.h:94
+#: ../ui/basic_buttons_gtk2.ui.h:39 ../ui/basic_buttons_gtk3.ui.h:39 ../ui/scientific_buttons_gtk2.ui.h:94
+#: ../ui/scientific_buttons_gtk3.ui.h:94
 msgid "1"
 msgstr "1"
 
-#: ../ui/basic_buttons_gtk2.ui.h:40 ../ui/basic_buttons_gtk3.ui.h:40
-#: ../ui/scientific_buttons_gtk2.ui.h:95 ../ui/scientific_buttons_gtk3.ui.h:95
+#: ../ui/basic_buttons_gtk2.ui.h:40 ../ui/basic_buttons_gtk3.ui.h:40 ../ui/scientific_buttons_gtk2.ui.h:95
+#: ../ui/scientific_buttons_gtk3.ui.h:95
 msgid "One"
 msgstr "Один"
 
-#: ../ui/basic_buttons_gtk2.ui.h:41 ../ui/basic_buttons_gtk3.ui.h:41
-#: ../ui/scientific_buttons_gtk2.ui.h:96 ../ui/scientific_buttons_gtk3.ui.h:96
+#: ../ui/basic_buttons_gtk2.ui.h:41 ../ui/basic_buttons_gtk3.ui.h:41 ../ui/scientific_buttons_gtk2.ui.h:96
+#: ../ui/scientific_buttons_gtk3.ui.h:96
 msgid "2"
 msgstr "2"
 
-#: ../ui/basic_buttons_gtk2.ui.h:42 ../ui/basic_buttons_gtk3.ui.h:42
-#: ../ui/scientific_buttons_gtk2.ui.h:97 ../ui/scientific_buttons_gtk3.ui.h:97
+#: ../ui/basic_buttons_gtk2.ui.h:42 ../ui/basic_buttons_gtk3.ui.h:42 ../ui/scientific_buttons_gtk2.ui.h:97
+#: ../ui/scientific_buttons_gtk3.ui.h:97
 msgid "Two"
 msgstr "Два"
 
-#: ../ui/basic_buttons_gtk2.ui.h:45 ../ui/basic_buttons_gtk3.ui.h:45
-#: ../ui/scientific_buttons_gtk2.ui.h:5 ../ui/scientific_buttons_gtk3.ui.h:5
+#: ../ui/basic_buttons_gtk2.ui.h:45 ../ui/basic_buttons_gtk3.ui.h:45 ../ui/scientific_buttons_gtk2.ui.h:5
+#: ../ui/scientific_buttons_gtk3.ui.h:5
 msgid "sqrt"
 msgstr "sqrt"
 
-#: ../ui/basic_buttons_gtk2.ui.h:46 ../ui/basic_buttons_gtk3.ui.h:46
-#: ../ui/scientific_buttons_gtk2.ui.h:6 ../ui/scientific_buttons_gtk3.ui.h:6
+#: ../ui/basic_buttons_gtk2.ui.h:46 ../ui/basic_buttons_gtk3.ui.h:46 ../ui/scientific_buttons_gtk2.ui.h:6
+#: ../ui/scientific_buttons_gtk3.ui.h:6
 msgid "Square root"
 msgstr "Квадратний корінь"
 
-#: ../ui/basic_buttons_gtk2.ui.h:48 ../ui/basic_buttons_gtk3.ui.h:48
-#: ../ui/scientific_buttons_gtk2.ui.h:24 ../ui/scientific_buttons_gtk3.ui.h:24
+#: ../ui/basic_buttons_gtk2.ui.h:48 ../ui/basic_buttons_gtk3.ui.h:48 ../ui/scientific_buttons_gtk2.ui.h:24
+#: ../ui/scientific_buttons_gtk3.ui.h:24
 #, no-c-format
 msgid "%"
 msgstr "%"
 
-#: ../ui/basic_buttons_gtk2.ui.h:49 ../ui/basic_buttons_gtk3.ui.h:49
-#: ../ui/scientific_buttons_gtk2.ui.h:25 ../ui/scientific_buttons_gtk3.ui.h:25
+#: ../ui/basic_buttons_gtk2.ui.h:49 ../ui/basic_buttons_gtk3.ui.h:49 ../ui/scientific_buttons_gtk2.ui.h:25
+#: ../ui/scientific_buttons_gtk3.ui.h:25
 msgid "Percent"
 msgstr "Відсоток"
 
-#: ../ui/classic_view.ui.h:1 ../ui/main_frame.ui.h:1
-#: ../ui/main_frame_hildon.ui.h:35 ../ui/paper_view.ui.h:1
+#: ../ui/classic_view.ui.h:1 ../ui/main_frame.ui.h:1 ../ui/main_frame_hildon.ui.h:35 ../ui/paper_view.ui.h:1
 msgid "The main program window."
-msgstr "Головне вікно проґрами."
+msgstr "Головне вікно програми."
 
 #: ../ui/classic_view.ui.h:2 ../ui/main_frame_hildon.ui.h:33
 msgid "Formula entry text field - enter string expression to compute here."
 msgstr "Поле для уведення формули."
 
-#: ../ui/dispctrl_bottom_gtk2.ui.h:1 ../ui/dispctrl_bottom_gtk3.ui.h:1
-#: ../ui/dispctrl_right_gtk2.ui.h:1 ../ui/dispctrl_right_gtk3.ui.h:1
-#: ../ui/dispctrl_right_vertical_gtk2.ui.h:5
-#: ../ui/dispctrl_right_vertical_gtk3.ui.h:5
+#: ../ui/dispctrl_bottom_gtk2.ui.h:1 ../ui/dispctrl_bottom_gtk3.ui.h:1 ../ui/dispctrl_right_gtk2.ui.h:1
+#: ../ui/dispctrl_right_gtk3.ui.h:1 ../ui/dispctrl_right_vertical_gtk2.ui.h:5 ../ui/dispctrl_right_vertical_gtk3.ui.h:5
 msgid "AC"
 msgstr "AC"
 
-#: ../ui/dispctrl_bottom_gtk2.ui.h:2 ../ui/dispctrl_bottom_gtk3.ui.h:2
-#: ../ui/dispctrl_right_gtk2.ui.h:2 ../ui/dispctrl_right_gtk3.ui.h:2
-#: ../ui/dispctrl_right_vertical_gtk2.ui.h:6
-#: ../ui/dispctrl_right_vertical_gtk3.ui.h:6
+#: ../ui/dispctrl_bottom_gtk2.ui.h:2 ../ui/dispctrl_bottom_gtk3.ui.h:2 ../ui/dispctrl_right_gtk2.ui.h:2
+#: ../ui/dispctrl_right_gtk3.ui.h:2 ../ui/dispctrl_right_vertical_gtk2.ui.h:6 ../ui/dispctrl_right_vertical_gtk3.ui.h:6
 msgid "Reset calculator (clear all)"
-msgstr "Скидання (очистити усе)"
+msgstr "Скинути (очистити все)"
 
-#: ../ui/dispctrl_bottom_gtk2.ui.h:3 ../ui/dispctrl_bottom_gtk3.ui.h:3
-#: ../ui/dispctrl_right_gtk2.ui.h:5 ../ui/dispctrl_right_gtk3.ui.h:5
-#: ../ui/dispctrl_right_vertical_gtk2.ui.h:3
-#: ../ui/dispctrl_right_vertical_gtk3.ui.h:3
+#: ../ui/dispctrl_bottom_gtk2.ui.h:3 ../ui/dispctrl_bottom_gtk3.ui.h:3 ../ui/dispctrl_right_gtk2.ui.h:5
+#: ../ui/dispctrl_right_gtk3.ui.h:5 ../ui/dispctrl_right_vertical_gtk2.ui.h:3 ../ui/dispctrl_right_vertical_gtk3.ui.h:3
 #: ../ui/scientific_buttons_gtk2.ui.h:40 ../ui/scientific_buttons_gtk3.ui.h:40
 msgid "C"
 msgstr "C"
 
-#: ../ui/dispctrl_bottom_gtk2.ui.h:4 ../ui/dispctrl_bottom_gtk3.ui.h:4
-#: ../ui/dispctrl_right_gtk2.ui.h:6 ../ui/dispctrl_right_gtk3.ui.h:6
-#: ../ui/dispctrl_right_vertical_gtk2.ui.h:4
-#: ../ui/dispctrl_right_vertical_gtk3.ui.h:4
+#: ../ui/dispctrl_bottom_gtk2.ui.h:4 ../ui/dispctrl_bottom_gtk3.ui.h:4 ../ui/dispctrl_right_gtk2.ui.h:6
+#: ../ui/dispctrl_right_gtk3.ui.h:6 ../ui/dispctrl_right_vertical_gtk2.ui.h:4 ../ui/dispctrl_right_vertical_gtk3.ui.h:4
 msgid "Clear display"
 msgstr "Очистити дисплей"
 
-#: ../ui/dispctrl_bottom_gtk2.ui.h:5 ../ui/dispctrl_bottom_gtk3.ui.h:5
-#: ../ui/dispctrl_right_gtk2.ui.h:3 ../ui/dispctrl_right_gtk3.ui.h:3
-#: ../ui/dispctrl_right_vertical_gtk2.ui.h:1
-#: ../ui/dispctrl_right_vertical_gtk3.ui.h:1
+#: ../ui/dispctrl_bottom_gtk2.ui.h:5 ../ui/dispctrl_bottom_gtk3.ui.h:5 ../ui/dispctrl_right_gtk2.ui.h:3
+#: ../ui/dispctrl_right_gtk3.ui.h:3 ../ui/dispctrl_right_vertical_gtk2.ui.h:1 ../ui/dispctrl_right_vertical_gtk3.ui.h:1
 msgid "<-"
 msgstr "<-"
 
-#: ../ui/dispctrl_bottom_gtk2.ui.h:6 ../ui/dispctrl_bottom_gtk3.ui.h:6
-#: ../ui/dispctrl_right_gtk2.ui.h:4 ../ui/dispctrl_right_gtk3.ui.h:4
-#: ../ui/dispctrl_right_vertical_gtk2.ui.h:2
-#: ../ui/dispctrl_right_vertical_gtk3.ui.h:2
+#: ../ui/dispctrl_bottom_gtk2.ui.h:6 ../ui/dispctrl_bottom_gtk3.ui.h:6 ../ui/dispctrl_right_gtk2.ui.h:4
+#: ../ui/dispctrl_right_gtk3.ui.h:4 ../ui/dispctrl_right_vertical_gtk2.ui.h:2 ../ui/dispctrl_right_vertical_gtk3.ui.h:2
 msgid "Backspace"
 msgstr "Backspace"
 
@@ -683,7 +671,7 @@ msgstr "_Файл"
 
 #: ../ui/main_frame.ui.h:3 ../ui/main_frame_hildon.ui.h:3
 msgid "_Edit"
-msgstr "_Редагувати..."
+msgstr "_Редагувати"
 
 #: ../ui/main_frame.ui.h:4 ../ui/main_frame_hildon.ui.h:4
 msgid "Cu_t Display Value"
@@ -699,7 +687,7 @@ msgstr "_Вставте і Додайте, щоб вивести значенн�
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
-msgstr "_Налаштування"
+msgstr "_Налаштування..."
 
 #: ../ui/main_frame.ui.h:8 ../ui/main_frame_hildon.ui.h:8
 msgid "_View"
@@ -717,17 +705,15 @@ msgstr "_Інженерний"
 msgid "_Paper Mode"
 msgstr "_Режим паперу"
 
-#: ../ui/main_frame.ui.h:12 ../ui/main_frame_hildon.ui.h:11
-#: ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
+#: ../ui/main_frame.ui.h:12 ../ui/main_frame_hildon.ui.h:11 ../ui/prefs_gtk2.ui.h:40 ../ui/prefs_gtk3.ui.h:40 ../ui/prefs-ume.ui.h:19
 msgid "Buttons"
 msgstr "Кнопки"
 
 #: ../ui/main_frame.ui.h:13 ../ui/main_frame_hildon.ui.h:12
 msgid "Display Control"
-msgstr "Керуючі"
+msgstr "Показувати керування"
 
-#: ../ui/main_frame.ui.h:14 ../ui/main_frame_hildon.ui.h:13
-#: ../ui/prefs_gtk2.ui.h:53 ../ui/prefs_gtk3.ui.h:53
+#: ../ui/main_frame.ui.h:14 ../ui/main_frame_hildon.ui.h:13 ../ui/prefs_gtk2.ui.h:53 ../ui/prefs_gtk3.ui.h:53
 msgid "Functions"
 msgstr "Функції"
 
@@ -765,7 +751,7 @@ msgstr "_Двійкова"
 
 #: ../ui/main_frame.ui.h:24 ../ui/main_frame_hildon.ui.h:23
 msgid "Angle _units"
-msgstr "Вимір _кутів"
+msgstr "Одиниці виміру _кутів"
 
 #: ../ui/main_frame.ui.h:25 ../ui/main_frame_hildon.ui.h:24
 msgid "D_egrees"
@@ -809,7 +795,7 @@ msgstr "_Вставити"
 
 #: ../ui/main_frame_hildon.ui.h:32
 msgid "_About..."
-msgstr "_Про проґраму..."
+msgstr "_Про програму..."
 
 #: ../ui/prefs_gtk2.ui.h:1 ../ui/prefs_gtk3.ui.h:1
 msgid "Decimal"
@@ -837,7 +823,7 @@ msgstr "Діялоґ для зміни налаштувань."
 
 #: ../ui/prefs_gtk2.ui.h:7 ../ui/prefs_gtk3.ui.h:7 ../ui/prefs-ume.ui.h:3
 msgid "Closes the dialog."
-msgstr "Закриває діялоґ."
+msgstr "Закриває діялог."
 
 #: ../ui/prefs_gtk2.ui.h:8 ../ui/prefs_gtk3.ui.h:8
 msgid "<b>Appearance</b>"
@@ -853,11 +839,11 @@ msgstr "Шрифт результату:"
 
 #: ../ui/prefs_gtk2.ui.h:11 ../ui/prefs_gtk3.ui.h:11
 msgid "Inactive module color:"
-msgstr "Колір неактивного модулю:"
+msgstr "Колір неактивного модуля:"
 
 #: ../ui/prefs_gtk2.ui.h:12 ../ui/prefs_gtk3.ui.h:12
 msgid "Active module color:"
-msgstr "Колір активного модулю:"
+msgstr "Колір активного модуля:"
 
 #: ../ui/prefs_gtk2.ui.h:13 ../ui/prefs_gtk3.ui.h:13
 msgid "Result font color:"
@@ -885,7 +871,7 @@ msgstr "Вибрати колір тла дисплею"
 
 #: ../ui/prefs_gtk2.ui.h:19 ../ui/prefs_gtk3.ui.h:19
 msgid "Pick a Display Result Font Color"
-msgstr "Вибрати колір шрифту показу результату"
+msgstr "Вибрати колір шрифту для результату"
 
 #: ../ui/prefs_gtk2.ui.h:20 ../ui/prefs_gtk3.ui.h:20
 msgid "Pick a RPN Stack Color"
@@ -901,7 +887,7 @@ msgstr "Оберіть колір активного модулю"
 
 #: ../ui/prefs_gtk2.ui.h:23 ../ui/prefs_gtk3.ui.h:23
 msgid "Pick a Result Font"
-msgstr "Вибрати шрифт результатів"
+msgstr "Вибрати шрифт результату"
 
 #: ../ui/prefs_gtk2.ui.h:24 ../ui/prefs_gtk3.ui.h:24
 msgid "Pick a RPN Stack Font"
@@ -945,7 +931,7 @@ msgstr "<b>Шрифт</b>"
 
 #: ../ui/prefs_gtk2.ui.h:34 ../ui/prefs_gtk3.ui.h:34 ../ui/prefs-ume.ui.h:13
 msgid "Use custom button font"
-msgstr "Використовувати інший шрифт"
+msgstr "Використовувати користувацький шрифт для кнопок"
 
 #: ../ui/prefs_gtk2.ui.h:35 ../ui/prefs_gtk3.ui.h:35 ../ui/prefs-ume.ui.h:14
 msgid "Button font:"
@@ -961,11 +947,11 @@ msgstr "<b>Розміри</b>"
 
 #: ../ui/prefs_gtk2.ui.h:38 ../ui/prefs_gtk3.ui.h:38 ../ui/prefs-ume.ui.h:17
 msgid "Minimal button width:"
-msgstr "Мінімальна ширина:"
+msgstr "Мінімальна ширина кнопки:"
 
 #: ../ui/prefs_gtk2.ui.h:39 ../ui/prefs_gtk3.ui.h:39 ../ui/prefs-ume.ui.h:18
 msgid "Minimal button height:"
-msgstr "Мінімальна висота:"
+msgstr "Мінімальна висота кнопки:"
 
 #: ../ui/prefs_gtk2.ui.h:41 ../ui/prefs_gtk3.ui.h:41
 msgid "<b>User defined constants:</b>"
@@ -989,7 +975,7 @@ msgstr "Додати"
 
 #: ../ui/prefs_gtk2.ui.h:46 ../ui/prefs_gtk3.ui.h:46
 msgid "Update"
-msgstr "Замінити"
+msgstr "Оновити"
 
 #: ../ui/prefs_gtk2.ui.h:47 ../ui/prefs_gtk3.ui.h:47
 msgid "Delete"
@@ -999,8 +985,7 @@ msgstr "Вилучити"
 msgid "Clear"
 msgstr "Очистити"
 
-#: ../ui/prefs_gtk2.ui.h:49 ../ui/prefs_gtk3.ui.h:49
-#: ../ui/scientific_buttons_gtk2.ui.h:21 ../ui/scientific_buttons_gtk3.ui.h:21
+#: ../ui/prefs_gtk2.ui.h:49 ../ui/prefs_gtk3.ui.h:49 ../ui/scientific_buttons_gtk2.ui.h:21 ../ui/scientific_buttons_gtk3.ui.h:21
 msgid "Constants"
 msgstr "Константи"
 
@@ -1018,7 +1003,7 @@ msgstr "Вираз:"
 
 #: ../ui/prefs_gtk2.ui.h:54 ../ui/prefs_gtk3.ui.h:54 ../ui/prefs-ume.ui.h:20
 msgid "Configure number base: "
-msgstr "Система числення"
+msgstr "Система числення: "
 
 #: ../ui/prefs_gtk2.ui.h:55 ../ui/prefs_gtk3.ui.h:55
 msgid "<b>Decimal Settings</b>"
@@ -1094,7 +1079,7 @@ msgstr "Відновлювати стан дисплею при запуску"
 
 #: ../ui/prefs_gtk2.ui.h:73 ../ui/prefs_gtk3.ui.h:73
 msgid "<b>Visibility</b>"
-msgstr "<b>Зовнішній вигляд</b>"
+msgstr "<b>Вигляд</b>"
 
 #: ../ui/prefs_gtk2.ui.h:74 ../ui/prefs_gtk3.ui.h:74
 msgid "Show menu bar"
@@ -1118,7 +1103,7 @@ msgstr "ln"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:4 ../ui/scientific_buttons_gtk3.ui.h:4
 msgid "Natural logarithm (base: e)"
-msgstr "Натуральный логарифм"
+msgstr "Натуральний логарифм"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:7 ../ui/scientific_buttons_gtk3.ui.h:7
 msgid "n!"
@@ -1178,7 +1163,7 @@ msgstr "inv"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:27 ../ui/scientific_buttons_gtk3.ui.h:27
 msgid "Inverse mode"
-msgstr "Інверсний режим"
+msgstr "Зворотний режим"
 
 #: ../ui/scientific_buttons_gtk2.ui.h:28 ../ui/scientific_buttons_gtk3.ui.h:28
 msgid "hyp"
