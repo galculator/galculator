@@ -6,6 +6,7 @@
 # Oleh, 2014
 # Shahor <shahorr@gmail.com>, 2014
 # Микола Ткач <Stuartlittle1970@gmail.com>, 2014-2015
+# Юрій Яновський <lytvyn349@ukr.net>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
