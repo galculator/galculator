@@ -49,7 +49,7 @@
 
 #define MASK_NUMLOCK GDK_MOD2_MASK
 
-s_preferences		prefs;
+extern s_preferences		prefs;
 s_current_status 	current_status = {0, 0, 0, 0, FALSE, FALSE, TRUE};
 s_array				memory;
 s_constant 			*constant;
