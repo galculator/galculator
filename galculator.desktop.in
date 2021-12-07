@@ -1,6 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=Galculator
+_GenericName=Calculator
 _Comment=Perform simple and scientific calculations
 Exec=galculator
 Icon=galculator
