@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-17 16:18+0100\n"
-"PO-Revision-Date: 2020-12-02 20:38+0000\n"
+"PO-Revision-Date: 2022-03-01 10:33+0100\n"
 "Last-Translator: Ingo Brückl <ib@wupperonline.de>\n"
 "Language-Team: German (http://www.transifex.com/mate/MATE/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -698,7 +698,7 @@ msgstr "Anzeigewert ein-/_anfügen"
 
 #: ../ui/main_frame.ui.h:7 ../ui/main_frame_hildon.ui.h:7
 msgid "_Preferences..."
-msgstr "_Einstellungen …"
+msgstr "_Einstellungen …"
 
 #: ../ui/main_frame.ui.h:8 ../ui/main_frame_hildon.ui.h:8
 msgid "_View"
@@ -808,7 +808,7 @@ msgstr "Als Anzeigewert ein_fügen"
 
 #: ../ui/main_frame_hildon.ui.h:32
 msgid "_About..."
-msgstr "_Über …"
+msgstr "_Über …"
 
 #: ../ui/prefs_gtk2.ui.h:1 ../ui/prefs_gtk3.ui.h:1
 msgid "Decimal"
